@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: darkslategrey;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, top 0.2s;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#header {
+  z-index: 1000;
+  height: 20vw;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-image: url('/public/img/Logo\ Jap.png');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hiddenElement {
+  opacity: 0;
+}
+.hiddenElement.selected {
+  opacity: 1;
+}
+.mainContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#randomDisplay {
+  z-index: 800;
+  padding-top: 10vw;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 5vh;
+}
+#japaneseWords {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#kanji {
+  font-size: calc(80px + 40vw);
+  color: gray;
+}
+#kanas {
+  height: 5vh;
+  font-size: calc(15px + 6vw);
+}
+#separator {
+  margin: 0px 5vw;
+  font-size: calc(20px + 8vw);
+  font-weight: 100;
+}
+#translation {
+  font-size: calc(20px + 8vw);
+  font-weight: 100;
+  padding: 0px 20px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+#selector {
+  width: 70%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+#selector span {
+  font-size: calc(16px + 1.5vw);
+  color: lightgray;
+}
+#selector span:hover {
+  cursor: pointer;
+  color: gray;
+}
+#selector span.selected {
+  color: gray;
+}
+#controls {
+  display: flex;
+  justify-content: space-evenly;
+}
+#controls div {
+  height: calc(32px + 3vw);
+  width: calc(32px + 3vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+#controls div:hover {
+  cursor: pointer;
+}
+#controls div:nth-child(1) {
+  opacity: 0.5;
+}
+#controls div:nth-child(1):hover {
+  opacity: 1;
+}
+#controls div:nth-child(2) {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+#controls div:nth-child(2):hover {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+#controls img {
+  height: calc(16px + 1.5vw);
+}
+
+#wordsListContainer {
+  z-index: 1100;
+  width: 100vw;
+  position: fixed;
+  top: 95vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid gray;
+}
+#wordsListContainer.open {
+  top: 0vh;
+}
+#wordsListIndicator {
+  z-index: 2000;
+  min-height: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wordsListIndicator img {
+  height: calc(8px + 0.75vw);
+}
+#wordsListIndicator.open {
+  transform: rotate(180deg);
+}
+#wordsListIndicator:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#wordsList {
+  overflow-y: scroll;
+}
+.wordsListElement {
+  display: flex;
+  padding: 10px 20px;
+  border-bottom: 1px solid gray;
+}
+.wordsListElement.selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#wordsListElement div {
+  height: 100%;
+}
+#wordsListElementKanji {
+  width: 25%;
+  text-align: left;
+  font-size: calc(10px + 4vw);
+}
+#wordsListElementKana {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+#wordsListElementTranslation {
+  opacity: 0.5;
+}
