@@ -2,7 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, top 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, top 0.2s, flex-direction 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -34,6 +34,7 @@ code {
   background-image: url('/public/img/Logo\ Jap.png');
   background-size: cover;
   background-position: bottom;
+  display: none;
 }
 
 .hiddenElement {
@@ -51,47 +52,103 @@ code {
 
 #randomDisplay {
   z-index: 800;
-  padding-top: 10vw;
+  padding-top: 5vh;
   position: fixed;
   width: 100%;
   padding-bottom: 5vh;
 }
 #japaneseWords {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  margin-bottom: 8vh;
+  font-family: source-han-sans-simplified-c;
 }
 #kanji {
-  font-size: calc(80px + 40vw);
+  font-size: calc(80px + 20vh);
   color: gray;
+  line-height: 38vh;
 }
 #kanas {
-  height: 5vh;
-  font-size: calc(15px + 6vw);
+  width: 67.5%;
+  margin: 0% 16.25%;
+  position: absolute;
+  top: 48vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+#kanas.open {
+  top: 5vh;
+}
+#kanas:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.kanaChild {
+  width: 50%;
+}
+.kanaChild:nth-child(1) {
+  border-right: 1px solid lightgray;
+}
+.kanaChild:nth-child(2) {
+  border-left: 1px solid lightgray;
+}
+.kanaChild:nth-child(1) div {
+  justify-content: flex-start;
+  text-align: left;
+}
+.kanaChild:nth-child(2) div {
+  justify-content: flex-end;
+  text-align: right;
+}
+.kanasReadings {
+  display: flex;
+  align-items: center;
+  font-size: calc(10px + 3vw);
+  margin-bottom: 20px;
+}
+.kanasExamples {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(12px + 0.25vw);
+}
+.kanasSingleExample {
+  display: flex;
+  align-items: center;
+}
+.kanaChild:nth-child(2) .kanasSingleExample {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+.kanasSingleExampleKanji {
+  font-size: calc(10px + 3vw);
+}
+.kanasSingleExampleTranslation {
+  opacity: 0.5;
 }
 #separator {
-  margin: 0px 5vw;
-  font-size: calc(20px + 8vw);
+  margin: 0px 1vw;
+  font-size: calc(20px + 4vw);
   font-weight: 100;
+  opacity: 0.05;
 }
 #translation {
-  font-size: calc(20px + 8vw);
+  font-size: calc(20px + 4vw);
   font-weight: 100;
   padding: 0px 20px;
   white-space: nowrap;
   overflow-x: scroll;
 }
 #selector {
-  width: 70%;
+  width: 67.5%;
   margin: 0px auto;
   display: flex;
   justify-content: space-evenly;
   padding: 20px 0px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 3px solid lightgray;
+  border-bottom: 3px solid lightgray;
 }
 #selector span {
-  font-size: calc(16px + 1.5vw);
+  font-size: calc(16px + 0.75vh);
   color: lightgray;
 }
 #selector span:hover {
@@ -106,8 +163,8 @@ code {
   justify-content: space-evenly;
 }
 #controls div {
-  height: calc(32px + 3vw);
-  width: calc(32px + 3vw);
+  height: calc(32px + 1.5vh);
+  width: calc(32px + 1.5vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +186,7 @@ code {
   background-color: rgba(255, 0, 0, 0.3);
 }
 #controls img {
-  height: calc(16px + 1.5vw);
+  height: calc(16px + 0.75vh);
 }
 
 #wordsListContainer {
@@ -137,8 +194,9 @@ code {
   width: 100vw;
   position: fixed;
   top: 95vh;
+  justify-content: flex-start;
   background-color: rgba(255, 255, 255, 0.9);
-  border-top: 1px solid gray;
+  border-top: 3px solid lightgray;
 }
 #wordsListContainer.open {
   top: 0vh;
@@ -152,7 +210,7 @@ code {
   justify-content: center;
 }
 #wordsListIndicator img {
-  height: calc(8px + 0.75vw);
+  height: calc(8px + 0.375vh);
 }
 #wordsListIndicator.open {
   transform: rotate(180deg);
@@ -166,7 +224,7 @@ code {
 }
 .wordsListElement {
   display: flex;
-  padding: 10px 20px;
+  padding: 10px 4vw;
   border-bottom: 1px solid gray;
 }
 .wordsListElement.selected {
@@ -178,7 +236,7 @@ code {
 #wordsListElementKanji {
   width: 25%;
   text-align: left;
-  font-size: calc(10px + 4vw);
+  font-size: calc(10px + 2vh);
 }
 #wordsListElementKana {
   width: 75%;
@@ -188,4 +246,16 @@ code {
 }
 #wordsListElementTranslation {
   opacity: 0.5;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  #kanas {
+    font-size: calc(10px + 3vh);
+  }
+  #separator {
+    font-size: calc(20px + 4vh);
+  }
+  #translation {
+    font-size: calc(20px + 4vh);
+  }
 }

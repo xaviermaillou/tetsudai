@@ -3,13 +3,13 @@ import { useState } from "react";
 const ListElement = (props) => {
     const { obj, word } = props;
     return (
-        <div className={word.translation === obj.translation ? "wordsListElement selected" : "wordsListElement"}>
+        <div className={(word && word.translation === obj.translation) ? "wordsListElement selected" : "wordsListElement"}>
             <div id="wordsListElementKanji">
                 {obj.kanji}
             </div>
             <div id="wordsListElementKana">
                 <div>
-                    {obj.kunyomi}  &nbsp; {obj.onyomi}
+                    {obj.uses.kunyomi.readings}  &nbsp; {obj.uses.onyomi.readings}
                 </div>
                 <div id="wordsListElementTranslation">
                     {obj.translation}
@@ -32,8 +32,8 @@ const WordsList = (props) => {
         <div id="wordsListContainer" className={open ? "mainContainer open" : "mainContainer"}>
             <div id="wordsListIndicator" className={open ? "open" : ""} onClick={toggle}><img src="/img/up.png" alt="see all words" /></div>
             <div id="wordsList">
-                {words.map((item) => (
-                    <ListElement obj={item} word={currentWord} />
+                {words.map((item, i) => (
+                    <ListElement obj={item} word={currentWord} key={i} />
                 ))}
             </div>
         </div>
