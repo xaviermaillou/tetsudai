@@ -30,7 +30,7 @@ const RandomDisplay = (props) => {
         <div id="randomDisplayContainer">
             {word && <div id="randomDisplay" className="mainContainer">
                 <div id="japaneseWords">
-                    <p id="kanji" className={(displayedElement === 0 || allDisplayed) && !kanasExpanded ? 'hiddenElement selected' : 'hiddenElement'}>{word.kanji}</p>
+                    <p id="kanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.kanji}</p>
                     {word.uses && <KanasReadings 
                         uses={word.uses} 
                         kanasExpanded={kanasExpanded} 
@@ -39,7 +39,7 @@ const RandomDisplay = (props) => {
                         displayedElement={displayedElement}
                     />}
                 </div>
-                <p id="translation" className={displayedElement === 2 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
+                <p id="translation" className={(displayedElement === 2 || allDisplayed)  && !kanasExpanded ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
                 <div id="selector">
                     <span className={(displayedElement === 0 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(0)}>本</span>
                     <span className={(displayedElement === 1 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(1)}>あ</span>
