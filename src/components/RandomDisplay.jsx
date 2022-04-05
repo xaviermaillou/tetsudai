@@ -4,11 +4,11 @@ import KanasReadings from "./KanaReadings";
 
 const RandomDisplay = (props) => {
     const { words } = props;
-    const [word, setWord] = useState(null);
+    const [word, setWord] = useState('');
     useEffect(() => {
         setWord(words[Math.floor(Math.random()*words.length)]);
     }, [words]);
-    console.log(word);
+    console.log('Word selected', word);
     const [displayedElement, setDisplayedElement] = useState(0);
     const [allDisplayed, setAllDisplayed] = useState(true);
     const [kanasExpanded, setKanasExpanded] = useState(false);
@@ -31,8 +31,8 @@ const RandomDisplay = (props) => {
             {word && <div id="randomDisplay" className="mainContainer">
                 <div id="japaneseWords">
                     <p id="kanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.kanji}</p>
-                    {word.uses && <KanasReadings 
-                        uses={word.uses} 
+                    {word.readings && <KanasReadings 
+                        readings={word.readings} 
                         kanasExpanded={kanasExpanded} 
                         setKanasExpanded={setKanasExpanded}
                         allDisplayed={allDisplayed}
@@ -54,7 +54,7 @@ const RandomDisplay = (props) => {
                     </div>
                 </div>
             </div>}
-            <WordsList words={words} currentWord={word} />
+            <WordsList words={words.sort((a, b) => a.strokes - b.strokes)} currentWord={word} />
         </div>
     );
 }

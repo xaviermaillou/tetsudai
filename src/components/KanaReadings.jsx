@@ -18,7 +18,7 @@ const Examples = (props) => {
 }
 
 const kanasReadings = (props) => {
-    const { uses, kanasExpanded, setKanasExpanded, allDisplayed, displayedElement } = props;
+    const { readings, kanasExpanded, setKanasExpanded, allDisplayed, displayedElement } = props;
 
     const expandKanasExamples = () => {
         setKanasExpanded(!kanasExpanded);
@@ -29,25 +29,25 @@ const kanasReadings = (props) => {
             <div id="kanasReadings">
                 <div id="kunyomiReadings">
                     <p className="kanasReadingsHeader">KUNYOMI</p>
-                    {uses.kunyomi.readings.map((r, i) => (
-                        <span key={i}>{i > 0 && <span>, </span>}{r}</span>
+                    {readings.kunyomi?.map((r, i) => (
+                        <span key={i}>{i > 0 && <span>, </span>}{r.kana}</span>
                     ))}
                 </div>
                 <div id="onyomiReadings">
                     <p className="kanasReadingsHeader">ONYOMI</p>
-                    {uses.onyomi.readings.map((r, i) => (
-                        <span key={i}>{i > 0 && <span>, </span>}{r}</span>
+                    {readings.onyomi?.map((r, i) => (
+                        <span key={i}>{i > 0 && <span>, </span>}{r.kana}</span>
                     ))}
                 </div>
             </div>
             <div id="kanasExamples" className={kanasExpanded ? 'open' : ''}>
                 <div id="kunyomiExamples">
-                    {uses.kunyomi.examples.map((e, i) => (
+                    {readings.kunyomi?.examples?.map((e, i) => (
                         <Examples example={e} key={i} />
                     ))}
                 </div>
                 <div id="onyomiExamples">
-                    {uses.onyomi.examples.map((e, i) => (
+                    {readings.onyomi?.examples?.map((e, i) => (
                         <Examples example={e} key={i} />
                     ))}
                 </div>

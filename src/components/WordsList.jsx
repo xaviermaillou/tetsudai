@@ -9,7 +9,28 @@ const ListElement = (props) => {
             </div>
             <div id="wordsListElementKana">
                 <div>
-                    {obj.uses.kunyomi.readings}  &nbsp; {obj.uses.onyomi.readings}
+                    {
+                        obj.readings.kunyomi?.map((item, i) => (
+                            <span key={i}>
+                                {i > 0 && ', '}
+                                {item.kana}
+                            </span>
+                        ))
+                    }
+                    {
+                        (obj.readings.kunyomi.length>0 && obj.readings.onyomi.length>0) && 
+                        <>
+                            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                        </>
+                    }
+                    {
+                        obj.readings.onyomi?.map((item, i) => (
+                            <span key={i}>
+                                {i > 0 && ', '}
+                                {item.kana}
+                            </span>
+                        ))
+                    }
                 </div>
                 <div id="wordsListElementTranslation">
                     {obj.translation}

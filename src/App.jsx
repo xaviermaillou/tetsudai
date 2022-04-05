@@ -3,6 +3,7 @@ import "firebase/firestore";
 import { useState, useEffect } from 'react';
 import './App.css';
 import RandomDisplay from './components/RandomDisplay';
+import Database from './components/Database'
 
 function App() {
   const [vocabulary, setVocabulary] = useState([]);
@@ -18,7 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <div id="header"></div>
+      <div id="header">
+        <Database />
+      </div>
       <RandomDisplay words={vocabulary} />
     </div>
   );
