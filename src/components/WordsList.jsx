@@ -1,16 +1,25 @@
 import { useState } from "react";
 
 const ListElement = (props) => {
-    const { obj, word } = props;
+    const { word, changeCurrentWord, setOpen, currentWord } = props;
+
+    const clickHandle = (id) => {
+        changeCurrentWord(id);
+        setOpen(false);
+    }
+
     return (
-        <div className={(word && word.translation === obj.translation) ? "wordsListElement selected" : "wordsListElement"}>
+        <div 
+            className={(currentWord && currentWord.translation === word.translation) ? "wordsListElement selected" : "wordsListElement"}
+            onClick={() => clickHandle(word.doc.id)}
+        >
             <div id="wordsListElementKanji">
-                {obj.kanji}
+                {word.kanji}
             </div>
             <div id="wordsListElementKana">
                 <div>
                     {
-                        obj.readings.kunyomi?.map((item, i) => (
+                        word.readings.kunyomi?.map((item, i) => (
                             <span key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
@@ -18,13 +27,13 @@ const ListElement = (props) => {
                         ))
                     }
                     {
-                        (obj.readings.kunyomi.length>0 && obj.readings.onyomi.length>0) && 
+                        (word.readings.kunyomi.length>0 && word.readings.onyomi.length>0) && 
                         <>
                             &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                         </>
                     }
                     {
-                        obj.readings.onyomi?.map((item, i) => (
+                        word.readings.onyomi?.map((item, i) => (
                             <span key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
@@ -33,7 +42,7 @@ const ListElement = (props) => {
                     }
                 </div>
                 <div id="wordsListElementTranslation">
-                    {obj.translation}
+                    {word.translation}
                 </div>
             </div>
         </div>
@@ -41,7 +50,7 @@ const ListElement = (props) => {
 }
 
 const WordsList = (props) => {
-    const { words, currentWord } = props;
+    const { words, changeCurrentWord, currentWord } = props;
     const [open, setOpen] = useState(false);
 
     const toggle = () => {
@@ -54,7 +63,13 @@ const WordsList = (props) => {
             <div id="wordsListIndicator" className={open ? "open" : ""} onClick={toggle}><img src="/img/up.png" alt="see all words" /></div>
             <div id="wordsList">
                 {words.map((item, i) => (
-                    <ListElement obj={item} word={currentWord} key={i} />
+                    <ListElement
+                        word={item}
+                        changeCurrentWord={changeCurrentWord}
+                        currentWord={currentWord}
+                        setOpen={setOpen}
+                        key={i}
+                    />
                 ))}
             </div>
         </div>

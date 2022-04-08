@@ -1,16 +1,16 @@
 const Examples = (props) => {
-    const { example } = props;
+    const { example, wordExample } = props;
     return (
         <div className="kanasSingleExample">
             <div className="kanasSingleExampleKanji">
-                {example.kanji}
+                {example.kana}
             </div>
             <div>
                 <div className="kanasSingleExampleKanas">
-                    {example.kana}
+                    {wordExample?.elements.map((element, i) => (<span key={i}>{element.kanji || element.kana}</span>))}
                 </div>
                 <div className="kanasSingleExampleTranslation">
-                    {example.translation}
+                    {wordExample?.translation}
                 </div>
             </div>
         </div>
@@ -18,37 +18,34 @@ const Examples = (props) => {
 }
 
 const kanasReadings = (props) => {
-    const { readings, kanasExpanded, setKanasExpanded, allDisplayed, displayedElement } = props;
-
-    const expandKanasExamples = () => {
-        setKanasExpanded(!kanasExpanded);
-    }
+    const {
+        readings,
+        relatedVocabulary,
+        allDisplayed,
+        displayedElement
+    } = props;
 
     return (
-        <div id="kanas" onClick={expandKanasExamples} className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
-            <div id="kanasReadings">
-                <div id="kunyomiReadings">
-                    <p className="kanasReadingsHeader">KUNYOMI</p>
-                    {readings.kunyomi?.map((r, i) => (
-                        <span key={i}>{i > 0 && <span>, </span>}{r.kana}</span>
-                    ))}
-                </div>
-                <div id="onyomiReadings">
-                    <p className="kanasReadingsHeader">ONYOMI</p>
-                    {readings.onyomi?.map((r, i) => (
-                        <span key={i}>{i > 0 && <span>, </span>}{r.kana}</span>
-                    ))}
-                </div>
-            </div>
-            <div id="kanasExamples" className={kanasExpanded ? 'open' : ''}>
+        <div id="kanas" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
+            <div id="kanasExamples">
                 <div id="kunyomiExamples">
-                    {readings.kunyomi?.examples?.map((e, i) => (
-                        <Examples example={e} key={i} />
+                    {readings.kunyomi.length > 0 && <p className="kanasReadingsHeader">KUNYOMI</p>}
+                    {readings.kunyomi?.map((e, i) => (
+                        <Examples
+                            example={e}
+                            wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
+                            key={i}
+                        />
                     ))}
                 </div>
                 <div id="onyomiExamples">
-                    {readings.onyomi?.examples?.map((e, i) => (
-                        <Examples example={e} key={i} />
+                    {readings.onyomi.length > 0 && <p className="kanasReadingsHeader">ONYOMI</p>}
+                    {readings.onyomi?.map((e, i) => (
+                        <Examples
+                            example={e}
+                            wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
+                            key={i}
+                        />
                     ))}
                 </div>
             </div>

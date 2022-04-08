@@ -52,57 +52,59 @@ code {
 
 #randomDisplay {
   z-index: 800;
-  padding-top: 5vh;
+  padding-top: 2vh;
   position: fixed;
   width: 100%;
-  padding-bottom: 5vh;
+  padding-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #japaneseWords {
   align-items: center;
-  margin-bottom: 8vh;
-  font-family: source-han-sans-simplified-c;
+  display: flex;
+  flex-direction: column;
 }
 #kanji {
   font-size: calc(80px + 20vh);
   color: gray;
   line-height: 38vh;
+  font-family: source-han-sans-simplified-c;
+}
+#translation, #kanas {
+  font-size: calc(10px + 3vw);
+}
+#translation {
+  font-weight: 100;
+  padding: 0px 20px;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 #kanas {
   z-index: 900;
   width: 67.5%;
   margin: 0% 16.25%;
-  position: absolute;
-  top: 48vh;
-  font-size: calc(10px + 3vw);
-}
-#kanasReadings {
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-#kanasReadings:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-#kunyomiReadings {
-  text-align: left;
-}
-#onyomiReadings {
-  text-align: right;
+  top: 45vh;
+  font-family: source-han-sans-simplified-c;
 }
 #kanasExamples {
-  padding: 5px 20px;
-  display: flex;
+  padding: 0px 20px;
   justify-content: space-between;
   overflow-y: scroll;
-  height: 0px;
+  height: calc(21vh - (2vw - 110px));
 }
-#kanasExamples.open {
-  height: calc(21vh - (2vw - 10px));
+#kunyomiExamples, #onyomiExamples {
+  margin-top: 1vh;
+  text-align: left;
 }
 .kanasSingleExample {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.kanasSingleExampleKanas, .kanasSingleExampleTranslation {
+  margin: 0px 10px;
+  text-align: right;
 }
 .kanasSingleExampleKanas, .kanasSingleExampleTranslation, .kanasReadingsHeader {
   font-size: calc(12px + 0.25vw) !important;
@@ -110,22 +112,12 @@ code {
 .kanasSingleExampleTranslation {
   opacity: 0.5;
 }
-#kunyomiExamples {
-  text-align: left;
-}
-#onyomiExamples {
-  text-align: right;
-}
-#onyomiExamples .kanasSingleExample {
-  flex-direction: row-reverse;
-}
 
-#translation {
-  font-size: calc(10px + 3vw);
-  font-weight: 100;
-  padding: 0px 20px;
-  white-space: nowrap;
-  overflow-x: scroll;
+#selectorAndControls {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  justify-content: space-between;
 }
 #selector {
   z-index: 1000;
@@ -133,7 +125,7 @@ code {
   margin: 0px auto;
   display: flex;
   justify-content: space-evenly;
-  padding: 20px 0px;
+  padding: 1vh 0px;
   border-top: 3px solid lightgray;
   border-bottom: 3px solid lightgray;
 }
@@ -143,7 +135,6 @@ code {
 }
 #selector span:hover {
   cursor: pointer;
-  color: gray;
 }
 #selector span.selected {
   color: gray;
@@ -171,9 +162,6 @@ code {
 }
 #controls div:nth-child(2) {
   background-color: rgba(255, 0, 0, 0.2);
-}
-#controls div:nth-child(2):hover {
-  background-color: rgba(255, 0, 0, 0.3);
 }
 #controls img {
   height: calc(16px + 0.75vh);
@@ -207,7 +195,6 @@ code {
 }
 #wordsListIndicator:hover {
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 #wordsList {
   overflow-y: scroll;
@@ -216,6 +203,9 @@ code {
   display: flex;
   padding: 10px 4vw;
   border-bottom: 1px solid gray;
+}
+.wordsListElement:hover {
+  cursor: pointer;
 }
 .wordsListElement.selected {
   background-color: rgba(0, 0, 0, 0.1);
@@ -239,16 +229,30 @@ code {
 }
 
 @media (min-aspect-ratio: 1/1) {
-  #kanas {
+  #randomDisplay {
+    padding-top: 5vh;
+    padding-bottom: 9vh;
+  }
+  #translation, #kanas {
     font-size: calc(20px + 2vh);
   }
-  #kanasExamples.open {
-    height: 19.5vh;
+  #kanasExamples {
+    display: flex;
+    height: calc(21vh - (2vw - 80px));
   }
-  .kanasSingleExampleKanas, .kanasSingleExampleTranslation, .kanasReadingsHeader {
-    font-size: calc(12px + 0.25vh);
+  #kunyomiExamples, #onyomiExamples {
+    margin-top: 0px;
   }
-  #translation {
-    font-size: calc(20px + 2vh);
+  #kunyomiExamples .kanasSingleExampleKanas, #kunyomiExamples .kanasSingleExampleTranslation {
+    text-align: left;
+  }
+  .kanasSingleExample {
+    justify-content: flex-start;
+  }
+  #onyomiExamples {
+    text-align: right;
+  }
+  #onyomiExamples .kanasSingleExample {
+    flex-direction: row-reverse;
   }
 }

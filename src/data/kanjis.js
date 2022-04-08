@@ -1,71 +1,61 @@
-const words = [
+const kanjis = [
     {
         kanji: '日',
-        strokes: null,
+        strokes: 4,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '日',
                     'kana': 'ひ',
                 },
                 {
-                    'kanji': '日',
                     'kana': 'び',
                 },
                 {
-                    'kanji': '日',
                     'kana': 'か',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '日',
                     'kana': '二チ',
                 },
                 {
-                    'kanji': '日',
                     'kana': '二',
                 },
                 {
-                    'kanji': '日',
                     'kana': 'ジツ',
                 },
             ],
         },
-        translation: 'Soleil, jour',
+        translation: 'soleil, jour',
     },
     {
         kanji: '本',
-        strokes: null,
+        strokes: 5,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '本',
                     'kana': 'もと',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '本',
                     'kana': 'ホン',
                 },
             ],
         },
-        translation: 'Origine, livre',
+        translation: 'origine, livre',
     },
     {
         kanji: '東',
-        strokes: null,
+        strokes: 8,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '東',
                     'kana': 'ひがし',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '東',
                     'kana': 'トウ',
                 },
             ],
@@ -74,21 +64,18 @@ const words = [
     },
     {
         kanji: '西',
-        strokes: null,
+        strokes: 6,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '西',
                     'kana': 'にし',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '西',
                     'kana': 'サイ',
                 },
                 {
-                    'kanji': '西',
                     'kana': 'セイ',
                 },
             ],
@@ -97,17 +84,15 @@ const words = [
     },
     {
         kanji: '北',
-        strokes: null,
+        strokes: 5,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '北',
                     'kana': 'きた',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '北',
                     'kana': 'ホク',
                 },
             ],
@@ -116,17 +101,15 @@ const words = [
     },
     {
         kanji: '南',
-        strokes: null,
+        strokes: 9,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '南',
                     'kana': 'みなみ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '南',
                     'kana': 'ナン',
                 },
             ],
@@ -135,198 +118,177 @@ const words = [
     },
     {
         kanji: '京',
-        strokes: null,
+        strokes: 8,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '京',
                     'kana': 'みやこ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '京',
                     'kana': 'キョウ',
                 },
             ],
         },
-        translation: 'Capitale',
+        translation: 'capitale',
     },
     {
         kanji: '国',
-        strokes: null,
+        strokes: 8,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '国',
                     'kana': 'くに',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '国',
                     'kana': 'コク',
                 },
             ],
         },
-        translation: 'Pays',
+        translation: 'pays',
     },
     {
         kanji: '海',
-        strokes: null,
+        strokes: 9,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '海',
                     'kana': 'うみ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '海',
                     'kana': 'カイ',
                 },
             ],
         },
-        translation: 'Mer',
+        translation: 'mer',
     },
     {
         kanji: '風',
-        strokes: null,
+        strokes: 9,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '風',
                     'kana': 'かぜ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '風',
                     'kana': 'フウ',
                 },
             ],
         },
-        translation: 'Vent',
+        translation: 'vent',
     },
     {
         kanji: '火',
-        strokes: null,
+        strokes: 4,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '火',
                     'kana': 'ひ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '火',
                     'kana': 'カ',
                 },
             ],
         },
-        translation: 'Feu',
+        translation: 'feu',
     },
     {
         kanji: '土',
-        strokes: null,
+        strokes: 3,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '土',
                     'kana': 'つち',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '土',
                     'kana': 'ド',
                 },
             ],
         },
-        translation: 'Sol, terre',
+        translation: 'sol, terre',
     },
     {
         kanji: '水',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '水',
                     'kana': 'みず',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '水',
                     'kana': 'スイ',
                 },
             ],
         },
-        translation: 'Eau',
+        translation: 'eau',
     },
     {
         kanji: '時',
-        strokes: null,
+        strokes: 10,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '時',
                     'kana': 'とき',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '時',
                     'kana': 'ジ',
                 },
             ],
         },
-        translation: 'Temps',
+        translation: 'temps',
     },
     {
         kanji: '空',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '空',
                     'kana': 'そら',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '空',
                     'kana': 'クウ',
                 },
             ],
         },
         kunyomi: 'そら',
         onyomi: 'クウ',
-        translation: 'Ciel',
+        translation: 'ciel',
     },
     {
         kanji: '月',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '月',
                     'kana': 'つき',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '月',
                     'kana': 'ゲツ',
                 },
                 {
-                    'kanji': '月',
                     'kana': 'ガツ',
                 },
             ],
@@ -335,143 +297,130 @@ const words = [
     },
     {
         kanji: '山',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '山',
                     'kana': 'やま',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '山',
                     'kana': 'サン',
                 },
             ],
         },
-        translation: 'Montagne',
+        translation: 'montagne',
     },
     {
         kanji: '川',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '川',
                     'kana': 'かわ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '川',
                     'kana': 'セン',
                 },
             ],
         },
-        translation: 'Rivière',
+        translation: 'rivière',
     },
     {
         kanji: '木',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '木',
                     'kana': 'き',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '木',
                     'kana': 'モク',
                 },
             ],
         },
-        translation: 'Arbre, bois',
+        translation: 'arbre, bois',
     },
     {
         kanji: '花',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '花',
                     'kana': 'はな',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Fleur',
+        translation: 'fleur',
     },
     {
         kanji: '雨',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '雨',
                     'kana': 'あめ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Pluie',
+        translation: 'pluie',
     },
     {
         kanji: '金',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '金',
                     'kana': 'かね',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '金',
                     'kana': 'キン',
                 },
             ],
         },
-        translation: 'Or, métal, argent',
+        translation: 'or, métal, argent',
     },
     {
         kanji: '雪',
-        strokes: null,
+        strokes: 11,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '雪',
                     'kana': 'ゆき',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Neige',
+        translation: 'neige',
     },
     {
         kanji: '天',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '天',
                     'kana': 'あめ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '天',
                     'kana': 'テン',
                 },
             ],
@@ -480,555 +429,529 @@ const words = [
     },
     {
         kanji: '曜',
-        strokes: null,
+        strokes: 18,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '曜',
                     'kana': 'ヨウ',
                 },
             ],
         },
-        translation: 'Jour de la semaine',
+        translation: 'jour de la semaine',
     },
     {
         kanji: '星',
-        strokes: null,
+        strokes: 9,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '星',
                     'kana': 'セイ',
                 },
             ],
         },
-        translation: 'Astre',
+        translation: 'astre',
     },
     {
         kanji: '王',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '王',
                     'kana': 'オウ',
                 },
             ],
         },
-        translation: 'Roi',
+        translation: 'roi',
     },
     {
         kanji: '男',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '男',
                     'kana': 'おとこ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '男',
-                    'kana': 'ナンダン',
+                    'kana': 'ナン',
+                },
+                {
+                    'kana': 'ダン',
                 },
             ],
         },
-        translation: 'Homme, masculin',
+        translation: 'homme, masculin',
     },
     {
         kanji: '女',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '女',
                     'kana': 'おんあ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '女',
                     'kana': 'ジョ',
                 },
             ],
         },
-        translation: 'Femme, féminin',
+        translation: 'femme, féminin',
     },
     {
         kanji: '子',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '子',
                     'kana': 'こ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '子',
                     'kana': 'シ',
                 },
             ],
         },
-        translation: 'Enfant',
+        translation: 'enfant',
     },
     {
         kanji: '私',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '私',
                     'kana': 'わたし',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Je (moi), privé',
+        translation: 'je (moi), privé',
     },
     {
         kanji: '犬',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '犬',
                     'kana': 'いぬ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Chien',
+        translation: 'chien',
     },
     {
         kanji: '猫',
-        strokes: null,
+        strokes: 11,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '猫',
                     'kana': 'ねこ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Chat',
+        translation: 'chat',
     },
     {
         kanji: '鳥',
-        strokes: null,
+        strokes: 11,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '鳥',
                     'kana': 'とり',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'チョウ',
+                }
+            ],
         },
-        translation: 'Oiseau',
+        translation: 'oiseau',
     },
     {
         kanji: '馬',
-        strokes: null,
+        strokes: 10,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '馬',
                     'kana': 'うま',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Cheval',
+        translation: 'cheval',
     },
     {
         kanji: '行',
-        strokes: null,
+        strokes: 6,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '行',
                     'kana': 'い.く',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Aller, voyage',
+        translation: 'aller, voyage',
     },
     {
         kanji: '住',
-        strokes: null,
+        strokes: 7,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '住',
                     'kana': 'す.む',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Habiter',
+        translation: 'habiter',
     },
     {
         kanji: '休',
-        strokes: null,
+        strokes: 6,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '休',
                     'kana': 'やす.む',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Se reposer',
+        translation: 'se reposer',
     },
     {
         kanji: '食',
-        strokes: null,
+        strokes: 9,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '食',
                     'kana': 'た.べる',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ショク',
+                },
+            ],
         },
-        translation: 'Manger',
+        translation: 'manger',
     },
     {
         kanji: '飲',
-        strokes: null,
+        strokes: 12,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '飲',
                     'kana': 'の.む',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Boire',
+        translation: 'boire',
     },
     {
         kanji: '分',
-        strokes: null,
+        strokes: 4,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '分',
                     'kana': 'わ.かる',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Comprendre',
+        translation: 'comprendre',
     },
     {
         kanji: '来',
-        strokes: null,
+        strokes: 7,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '来',
                     'kana': 'く.る',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Venir',
+        translation: 'venir',
     },
     {
         kanji: '見',
-        strokes: null,
+        strokes: 7,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '見',
                     'kana': 'み.る',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Voir',
+        translation: 'voir',
     },
     {
         kanji: '聞',
-        strokes: null,
+        strokes: 14,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '聞',
                     'kana': 'き.く',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Ecouter, demander',
+        translation: 'écouter, demander',
     },
     {
         kanji: '言',
-        strokes: null,
+        strokes: 7,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '言',
                     'kana': 'い.う',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Dire',
+        translation: 'dire',
     },
     {
         kanji: '話',
-        strokes: null,
+        strokes: 13,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '話',
                     'kana': 'はな.す',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Parler',
+        translation: 'parler',
     },
     {
         kanji: '語',
-        strokes: null,
+        strokes: 14,
         
         readings: {
-            kunyomi: [],
+            kunyomi: [
+                {
+                    'kana': 'かた',
+                },
+            ],
             onyomi: [
                 {
-                    'kanji': '語',
                     'kana': 'ゴ',
                 },
             ],
         },
-        translation: 'Langue',
+        translation: 'mot, raconter, langue',
     },
     {
         kanji: '読',
-        strokes: null,
+        strokes: 14,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '読',
                     'kana': 'よ.む',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Lire',
+        translation: 'lire',
     },
     {
         kanji: '書',
-        strokes: null,
+        strokes: 10,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '書',
                     'kana': 'か.く',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Ecrire',
+        translation: 'écrire',
     },
     {
         kanji: '知',
-        strokes: null,
+        strokes: 8,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '知',
                     'kana': 'し.る',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Savoir',
+        translation: 'savoir',
     },
     {
         kanji: '思',
-        strokes: null,
+        strokes: 9,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '思',
                     'kana': 'おも.う',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Penser',
+        translation: 'penser',
     },
     {
         kanji: '教',
-        strokes: null,
+        strokes: 11,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '教',
                     'kana': 'おし.える',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Enseigner',
+        translation: 'enseigner',
     },
     {
         kanji: '歩',
-        strokes: null,
+        strokes: 8,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '歩',
                     'kana': 'ある.く',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Marcher',
+        translation: 'marcher',
     },
     {
         kanji: '入',
-        strokes: null,
+        strokes: 2,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '入',
                     'kana': 'はい.る',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Entrer',
+        translation: 'entrer',
     },
     {
         kanji: '夕',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '夕',
                     'kana': 'ゆう',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Soirée',
+        translation: 'soirée',
     },
     {
         kanji: '大',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '大',
                     'kana': 'おお.きい',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '大',
                     'kana': 'ダイ',
                 },
             ],
         },
-        translation: 'Grand',
+        translation: 'grand',
     },
     {
         kanji: '小',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '小',
                     'kana': 'ちい.さい',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Petit',
+        translation: 'petit',
     },
     {
         kanji: '上',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '上',
                     'kana': 'うえ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Le dessus',
+        translation: 'le dessus',
     },
     {
         kanji: '下',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '下',
                     'kana': 'した',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Le dessous',
+        translation: 'le dessous',
     },
     {
         kanji: '口',
-        strokes: null,
+        strokes: 3,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '口',
                     'kana': 'くち',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Bouche',
+        translation: 'bouche',
     },
     {
         kanji: '円',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '円',
                     'kana': 'エン',
                 },
             ],
@@ -1037,574 +960,528 @@ const words = [
     },
     {
         kanji: '今',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '今',
                     'kana': 'いま',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Maintenant',
+        translation: 'maintenant',
     },
     {
         kanji: '中',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '中',
                     'kana': 'なか',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '中',
                     'kana': 'チュウ',
                 },
             ],
         },
-        translation: 'Milieu, intérieur',
+        translation: 'milieu, intérieur',
     },
     {
         kanji: '父',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '父',
                     'kana': 'ちち',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '父',
                     'kana': 'フ',
                 },
             ],
         },
-        translation: 'Père',
+        translation: 'père',
     },
     {
         kanji: '牛',
-        strokes: null,
+        strokes: 4,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '牛',
                     'kana': 'うし',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Bovin',
+        translation: 'bovin',
     },
     {
         kanji: '田',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '田',
                     'kana': 'た',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Rizière',
+        translation: 'rizière',
     },
     {
         kanji: '生',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '生',
                     'kana': 'セイ',
                 },
             ],
         },
-        translation: 'Vie',
+        translation: 'vie',
     },
     {
         kanji: '白',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '白',
                     'kana': 'しろ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '白',
                     'kana': 'ハク',
                 },
             ],
         },
-        translation: 'Blanc',
+        translation: 'blanc',
     },
     {
         kanji: '古',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '古',
                     'kana': 'ふる.い',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Vieux',
+        translation: 'vieux',
     },
     {
         kanji: '目',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '目',
                     'kana': 'め',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Oeil',
+        translation: 'oeil',
     },
     {
         kanji: '母',
-        strokes: null,
+        strokes: 5,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '母',
                     'kana': 'はは',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '母',
                     'kana': 'ボ',
                 },
             ],
         },
-        translation: 'Mère',
+        translation: 'mère',
     },
     {
         kanji: '年',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '年',
                     'kana': 'とし',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '年',
                     'kana': 'ネン',
                 },
             ],
         },
-        translation: 'Année',
+        translation: 'année',
     },
     {
         kanji: '気',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '気',
                     'kana': 'キ',
                 },
             ],
         },
-        translation: 'Espirt, air',
+        translation: 'espirt, air',
     },
     {
         kanji: '先',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '先',
                     'kana': 'セン',
                 },
             ],
         },
-        translation: 'Avance, qui précède',
+        translation: 'avance, qui précède',
     },
     {
         kanji: '字',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '字',
                     'kana': 'ジ',
                 },
             ],
         },
-        translation: 'Caractère, lettre',
+        translation: 'caractère, lettre',
     },
     {
         kanji: '安',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '安',
                     'kana': 'やす.い',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Bon marché, tranquilisant',
+        translation: 'bon marché, tranquilisant',
     },
     {
         kanji: '早',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '早',
                     'kana': 'はや.い',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Tôt, rapide',
+        translation: 'tôt, rapide',
     },
     {
         kanji: '好',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '好',
                     'kana': 'す.く',
                 },
                 {
-                    'kanji': '好',
                     'kana': 'す.きな',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Aimer, favorable',
+        translation: 'aimer, favorable',
     },
     {
         kanji: '何',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '何',
                     'kana': 'なん',
                 },
                 {
-                    'kanji': '何',
                     'kana': 'なに',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Quoi',
+        translation: 'quoi',
     },
     {
         kanji: '耳',
-        strokes: null,
+        strokes: 6,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '耳',
                     'kana': 'みみ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Oreille',
+        translation: 'oreille',
     },
     {
         kanji: '町',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '町',
                     'kana': 'まち',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '町',
                     'kana': 'チョウ',
                 },
             ],
         },
-        translation: 'Ville',
+        translation: 'ville',
     },
     {
         kanji: '車',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '車',
                     'kana': 'くるま',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '車',
                     'kana': 'シャ',
                 },
             ],
         },
-        translation: 'Véhicule',
+        translation: 'véhicule',
     },
     {
         kanji: '赤',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '赤',
                     'kana': 'あか',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Rouge',
+        translation: 'rouge',
     },
     {
         kanji: '体',
-        strokes: null,
+        strokes: 7,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '体',
                     'kana': 'からだ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Corps',
+        translation: 'corps',
     },
     {
         kanji: '学',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '学',
                     'kana': 'まな.ぶ',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '学',
                     'kana': 'ガク',
                 },
             ],
         },
-        translation: 'Etudier, étude',
+        translation: 'étudier, étude',
     },
     {
         kanji: '夜',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '夜',
                     'kana': 'よる',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '夜',
                     'kana': 'ヤ',
                 },
             ],
         },
-        translation: 'Nuit',
+        translation: 'nuit',
     },
     {
         kanji: '店',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '店',
                     'kana': 'みせ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Magasin',
+        translation: 'magasin',
     },
     {
         kanji: '青',
-        strokes: null,
+        strokes: 8,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '青',
                     'kana': 'あお',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Bleu',
+        translation: 'bleu',
     },
     {
         kanji: '音',
-        strokes: null,
+        strokes: 9,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '音',
                     'kana': 'オン',
                 },
             ],
         },
-        translation: 'Son, bruit',
+        translation: 'son, bruit',
     },
     {
         kanji: '昼',
-        strokes: null,
+        strokes: 9,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '昼',
                     'kana': 'ひる',
                 },
             ],
             onyomi: [
                 {
-                    'kanji': '昼',
                     'kana': 'チュウ',
                 },
             ],
         },
-        translation: 'Midi',
+        translation: 'midi',
     },
     {
         kanji: '高',
-        strokes: null,
+        strokes: 10,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '高',
                     'kana': 'たか.い',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Haut, cher',
+        translation: 'haut, cher',
     },
     {
         kanji: '校',
-        strokes: null,
+        strokes: 10,
         
         readings: {
             kunyomi: [],
             onyomi: [
                 {
-                    'kanji': '校',
                     'kana': 'コウ',
                 },
             ],
         },
-        translation: 'Ecole',
+        translation: 'école',
     },
     {
         kanji: '帰',
-        strokes: null,
+        strokes: 10,
         readings: {
             kunyomi: [
                 {
-                    'kanji': '帰',
                     'kana': 'かえ.る',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Retourner',
+        translation: 'retourner',
     },
     {
         kanji: '魚',
-        strokes: null,
+        strokes: 11,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '魚',
                     'kana': 'さかな',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Poisson',
+        translation: 'poisson',
     },
     {
         kanji: '黒',
-        strokes: null,
+        strokes: 11,
         
         readings: {
             kunyomi: [
                 {
-                    'kanji': '黒',
                     'kana': 'くろ',
                 },
             ],
             onyomi: [],
         },
-        translation: 'Noir',
+        translation: 'noir',
     },
     {
         kanji: '朝',
-        strokes: null,
+        strokes: 12,
         
         readings: {
             kunyomi: [
@@ -1620,11 +1497,11 @@ const words = [
                 },
             ],
         },
-        translation: 'Matin',
+        translation: 'matin',
     },
     {
         kanji: '買',
-        strokes: null,
+        strokes: 12,
         readings: {
             kunyomi: [
                 {
@@ -1634,11 +1511,11 @@ const words = [
             ],
             onyomi: [],
         },
-        translation: 'Acheter',
+        translation: 'acheter',
     },
     {
         kanji: '新',
-        strokes: null,
+        strokes: 13,
         
         readings: {
             kunyomi: [
@@ -1649,11 +1526,11 @@ const words = [
             ],
             onyomi: [],
         },
-        translation: 'Nouveau, neuf',
+        translation: 'nouveau, neuf',
     },
     {
         kanji: '楽',
-        strokes: null,
+        strokes: 13,
         
         readings: {
             kunyomi: [
@@ -1669,11 +1546,11 @@ const words = [
                 },
             ],
         },
-        translation: 'Amusant, joyeux',
+        translation: 'amusant, joyeux',
     },
     {
         kanji: '電',
-        strokes: null,
+        strokes: 13,
         
         readings: {
             kunyomi: [],
@@ -1684,11 +1561,11 @@ const words = [
                 },
             ],
         },
-        translation: 'Electricité',
+        translation: 'électricité',
     },
     {
         kanji: '駅',
-        strokes: null,
+        strokes: 14,
         
         readings: {
             kunyomi: [],
@@ -1699,11 +1576,11 @@ const words = [
                 },
             ],
         },
-        translation: 'Gare',
+        translation: 'gare',
     },
     {
         kanji: '薬',
-        strokes: null,
+        strokes: 16,
         
         readings: {
             kunyomi: [
@@ -1719,8 +1596,8 @@ const words = [
                 },
             ],
         },
-        translation: 'Médicament',
+        translation: 'médicament',
     },
 ];
 
-export default words;
+export default kanjis;
