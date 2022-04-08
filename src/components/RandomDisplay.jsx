@@ -3,13 +3,13 @@ import WordsList from './WordsList';
 import KanasReadings from "./KanaReadings";
 
 const RandomDisplay = (props) => {
-    const { kanjis, vocabulary } = props;
+    const { kanjis, vocabulary, preventKanjiReload } = props;
     const [kanji, setKanji] = useState('');
     const [relatedVocabulary, setRelatedVocabulary] = useState([]);
 
     useEffect(() => {
-        setKanji(kanjis[Math.floor(Math.random()*kanjis.length)]);
-    }, [kanjis]);
+        if (!preventKanjiReload) setKanji(kanjis[Math.floor(Math.random()*kanjis.length)]);
+    }, [kanjis, preventKanjiReload]);
 
     useEffect(() => {
         const relatedVocabularyCopy = [];

@@ -8,6 +8,7 @@ import ResetDatabase from './components/Database'
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
+  const [preventKanjiReload, setPreventKanjiReload] = useState(false);
 
   useEffect(() => {
     firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
@@ -29,9 +30,9 @@ function App() {
   return (
     <div className="App">
       <div id="header">
-        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
+        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
       </div>
-      <RandomDisplay kanjis={kanjisList} vocabulary={vocabularyList} />
+      <RandomDisplay kanjis={kanjisList} vocabulary={vocabularyList} preventKanjiReload={preventKanjiReload} />
     </div>
   );
 }
