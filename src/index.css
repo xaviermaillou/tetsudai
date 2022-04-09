@@ -126,8 +126,8 @@ code {
   display: flex;
   justify-content: space-evenly;
   padding: 1vh 0px;
-  border-top: 3px solid lightgray;
-  border-bottom: 3px solid lightgray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 #selector span {
   font-size: calc(16px + 0.75vh);
@@ -154,14 +154,11 @@ code {
 #controls div:hover {
   cursor: pointer;
 }
-#controls div:nth-child(1) {
+#controls div:nth-child(1), #controls div:nth-child(2) {
   opacity: 0.5;
 }
-#controls div:nth-child(1):hover {
+#controls div:nth-child(1):hover, #controls div:nth-child(2):hover {
   opacity: 1;
-}
-#controls div:nth-child(2) {
-  background-color: rgba(255, 0, 0, 0.2);
 }
 #controls img {
   height: calc(16px + 0.75vh);
@@ -173,8 +170,8 @@ code {
   position: fixed;
   top: 95vh;
   justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-top: 3px solid lightgray;
+  background-color: rgba(255, 207, 217, 0.9);
+  color: white;
 }
 #wordsListContainer.open {
   top: 0vh;
@@ -202,7 +199,7 @@ code {
 .wordsListElement {
   display: flex;
   padding: 10px 4vw;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(255, 183, 197, 0.9);
 }
 .wordsListElement:hover {
   cursor: pointer;
