@@ -680,6 +680,16 @@ const vocabulary = [
     {
         elements: [
             {
+                'kanji': '話',
+                'kana': 'はなし',
+            },
+        ],
+        translation: 'conversation',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
                 'kanji': '語',
                 'kana': 'かた',
             },
@@ -1453,6 +1463,186 @@ const vocabulary = [
             },
         ],
         translation: 'cygne',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '飲',
+                'kana': 'イン',
+            },
+            {
+                'kanji': '食',
+                'kana': 'ショク',
+            },
+            {
+                'kanji': '店',
+                'kana': 'テン',
+            },
+        ],
+        translation: 'restaurant',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '明',
+                'kana': 'あか',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+            {
+                'kanji': '',
+                'kana': 'い',
+            },
+        ],
+        translation: 'clair',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                'kanji': '説',
+                'kana': 'セツ',
+            },
+            {
+                'kanji': '明',
+                'kana': 'メイ',
+            },
+        ],
+        translation: 'explication',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '暗',
+                'kana': 'くら',
+            },
+            {
+                'kanji': '',
+                'kana': 'い',
+            },
+        ],
+        translation: 'sombre',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                'kanji': '開',
+                'kana': 'あ',
+            },
+            {
+                'kanji': '',
+                'kana': 'く',
+            },
+        ],
+        translation: 's\'ouvrir',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '開',
+                'kana': 'あ',
+            },
+            {
+                'kanji': '',
+                'kana': 'け',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'ouvrir',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '朝',
+                'kana': 'チョウ',
+            },
+            {
+                'kanji': '食',
+                'kana': 'ショク',
+            },
+        ],
+        translation: 'petit-déjeuner',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '昼',
+                'kana': 'チュウ',
+            },
+            {
+                'kanji': '食',
+                'kana': 'ショク',
+            },
+        ],
+        translation: 'déjeuner',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '毎',
+                'kana': 'マイ',
+            },
+            {
+                'kanji': '日',
+                'kana': 'ニチ',
+            },
+        ],
+        translation: 'tous les jours',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '毎',
+                'kana': 'マイ',
+            },
+            {
+                'kanji': '朝',
+                'kana': 'あさ',
+            },
+        ],
+        translation: 'tous les matins',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '毎',
+                'kana': 'マイ',
+            },
+            {
+                'kanji': '週',
+                'kana': 'シュウ',
+            },
+        ],
+        translation: 'toutes les semaines',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '毎',
+                'kana': 'マイ',
+            },
+            {
+                'kanji': '月',
+                'kana': 'つき',
+            },
+        ],
+        translation: 'tous les mois',
         grammar: 0,
     },
 ];
