@@ -55,7 +55,7 @@ code {
   padding-top: 2vh;
   position: fixed;
   width: 100%;
-  padding-bottom: 8vh;
+  padding-bottom: 7vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,27 +71,27 @@ code {
   line-height: 38vh;
   font-family: source-han-sans-simplified-c;
 }
-#translation, #kanas {
-  font-size: calc(10px + 3vw);
-}
 #translation {
   font-weight: 100;
   padding: 0px 20px;
   white-space: nowrap;
   overflow-x: scroll;
 }
+#translation, #kanas {
+  font-size: calc(10px + 3vw);
+}
 #kanas {
   z-index: 900;
   width: 67.5%;
-  margin: 0% 16.25%;
-  top: 45vh;
+  margin: 2vh 16.25% 0 16.25%;
+  height: calc(21vh - (2vw - 110px));
   font-family: source-han-sans-simplified-c;
 }
 #kanasExamples {
   padding: 0px 20px;
   justify-content: space-between;
   overflow-y: scroll;
-  height: calc(21vh - (2vw - 110px));
+  height: fit-content !important;
 }
 #kunyomiExamples, #onyomiExamples {
   margin-top: 1vh;
@@ -102,12 +102,19 @@ code {
   align-items: center;
   justify-content: space-between;
 }
+.kanasSingleExample.separated {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 .kanasSingleExampleKanas, .kanasSingleExampleTranslation {
   margin: 0px 10px;
-  text-align: right;
+  display: flex;
+  justify-content: end;
 }
 .kanasSingleExampleKanas, .kanasSingleExampleTranslation, .kanasReadingsHeader {
   font-size: calc(12px + 0.25vw) !important;
+}
+.kanasSingleExampleKanasKanas {
+  opacity: 0.5;
 }
 .kanasSingleExampleTranslation {
   opacity: 0.5;
@@ -116,7 +123,7 @@ code {
 #selectorAndControls {
   display: flex;
   flex-direction: column;
-  height: 20vh;
+  height: 12vh;
   justify-content: space-between;
 }
 #selector {
@@ -228,7 +235,6 @@ code {
 @media (min-aspect-ratio: 1/1) {
   #randomDisplay {
     padding-top: 5vh;
-    padding-bottom: 9vh;
   }
   #translation, #kanas {
     font-size: calc(20px + 2vh);
@@ -239,15 +245,15 @@ code {
   }
   #kunyomiExamples, #onyomiExamples {
     margin-top: 0px;
+    width: 50%;
   }
-  #kunyomiExamples .kanasSingleExampleKanas, #kunyomiExamples .kanasSingleExampleTranslation {
-    text-align: left;
-  }
-  .kanasSingleExample {
-    justify-content: flex-start;
+  #onyomiExamples .kanasSingleExampleKanas, #onyomiExamples .kanasSingleExampleTranslation {
+    justify-content: start;
+    flex-direction: row-reverse;
   }
   #onyomiExamples {
     text-align: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
   }
   #onyomiExamples .kanasSingleExample {
     flex-direction: row-reverse;

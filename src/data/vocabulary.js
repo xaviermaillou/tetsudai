@@ -1,6 +1,12 @@
+// Types grammaticaux:
+// 0 - nom commun
+// 1 - nom propre
+// 2 - verbe
+// 3 - adjectif
+
 const vocabulary = [
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '母',
                 'kana': 'はは',
@@ -14,10 +20,11 @@ const vocabulary = [
                 'kana': 'ひ',
             },
         ],
-        'translation': 'fête des mères',
+        translation: 'fête des mères',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '日',
                 'kana': 'ニチ',
@@ -31,10 +38,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'dimanche',
+        translation: 'dimanche',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '月',
                 'kana': 'ゲツ',
@@ -48,10 +56,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'lundi',
+        translation: 'lundi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '火',
                 'kana': 'カ',
@@ -65,10 +74,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'mardi',
+        translation: 'mardi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '水',
                 'kana': 'スイ',
@@ -82,10 +92,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'mercredi',
+        translation: 'mercredi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '木',
                 'kana': 'モク',
@@ -99,10 +110,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'jeudi',
+        translation: 'jeudi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '金',
                 'kana': 'キン',
@@ -116,10 +128,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'vendredi',
+        translation: 'vendredi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '土',
                 'kana': 'ド',
@@ -133,10 +146,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'samedi',
+        translation: 'samedi',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '日',
                 'kana': '二',
@@ -146,10 +160,11 @@ const vocabulary = [
                 'kana': 'ホン',
             },
         ],
-        'translation': 'Japon',
+        translation: 'Japon',
+        grammar: 1,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '食',
                 'kana': 'た',
@@ -163,10 +178,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'manger',
+        translation: 'manger',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '食',
                 'kana': 'た',
@@ -180,10 +196,11 @@ const vocabulary = [
                 'kana': 'もの',
             },
         ],
-        'translation': 'nourriture',
+        translation: 'nourriture',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '飲',
                 'kana': 'の',
@@ -193,10 +210,11 @@ const vocabulary = [
                 'kana': 'む',
             },
         ],
-        'translation': 'boire',
+        translation: 'boire',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '飲',
                 'kana': 'の',
@@ -210,10 +228,11 @@ const vocabulary = [
                 'kana': 'もの',
             },
         ],
-        'translation': 'boisson',
+        translation: 'boisson',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '薬',
                 'kana': 'くすり',
@@ -223,10 +242,11 @@ const vocabulary = [
                 'kana': 'や',
             },
         ],
-        'translation': 'pharmacie',
+        translation: 'pharmacie',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '',
                 'kana': 'パン',
@@ -236,10 +256,11 @@ const vocabulary = [
                 'kana': 'や',
             },
         ],
-        'translation': 'boulangerie',
+        translation: 'boulangerie',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '夕',
                 'kana': 'ゆう',
@@ -249,10 +270,11 @@ const vocabulary = [
                 'kana': 'ショク',
             },
         ],
-        'translation': 'repas du soir, dîner',
+        translation: 'repas du soir, dîner',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '火',
                 'kana': 'カ',
@@ -262,10 +284,11 @@ const vocabulary = [
                 'kana': 'ザン',
             },
         ],
-        'translation': 'volcan',
+        translation: 'volcan',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '大',
                 'kana': 'ダイ',
@@ -275,10 +298,11 @@ const vocabulary = [
                 'kana': 'ガク',
             },
         ],
-        'translation': 'université',
+        translation: 'université',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '学',
                 'kana': 'ガッ',
@@ -288,10 +312,11 @@ const vocabulary = [
                 'kana': 'コウ',
             },
         ],
-        'translation': 'école',
+        translation: 'école',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '学',
                 'kana': 'ガク',
@@ -301,10 +326,11 @@ const vocabulary = [
                 'kana': 'セイ',
             },
         ],
-        'translation': 'étudiant',
+        translation: 'étudiant',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '先',
                 'kana': 'セン',
@@ -314,10 +340,11 @@ const vocabulary = [
                 'kana': 'セイ',
             },
         ],
-        'translation': 'professeur',
+        translation: 'professeur',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '花',
                 'kana': 'はな',
@@ -327,10 +354,11 @@ const vocabulary = [
                 'kana': 'び',
             },
         ],
-        'translation': 'feu d\'artifice',
+        translation: 'feu d\'artifice',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '一',
                 'kana': 'イチ',
@@ -340,10 +368,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'janvier',
+        translation: 'janvier',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '二',
                 'kana': 'に',
@@ -353,10 +382,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'février',
+        translation: 'février',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '三',
                 'kana': 'サン',
@@ -366,10 +396,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'mars',
+        translation: 'mars',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '四',
                 'kana': 'シ',
@@ -379,10 +410,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'avril',
+        translation: 'avril',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '五',
                 'kana': 'ゴ',
@@ -392,10 +424,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'mai',
+        translation: 'mai',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '六',
                 'kana': 'ロク',
@@ -405,10 +438,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'juin',
+        translation: 'juin',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '七',
                 'kana': 'シチ',
@@ -418,10 +452,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'juillet',
+        translation: 'juillet',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '八',
                 'kana': 'ハチ',
@@ -431,10 +466,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'août',
+        translation: 'août',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '九',
                 'kana': 'ク',
@@ -444,10 +480,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'septembre',
+        translation: 'septembre',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '十',
                 'kana': 'ジュウ',
@@ -457,10 +494,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'octobre',
+        translation: 'octobre',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '十',
                 'kana': 'ジュウ',
@@ -474,10 +512,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'novembre',
+        translation: 'novembre',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '十',
                 'kana': 'ジュウ',
@@ -491,10 +530,11 @@ const vocabulary = [
                 'kana': 'ガツ',
             },
         ],
-        'translation': 'décembre',
+        translation: 'décembre',
+        grammar: 0,
         },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '分',
                 'kana': 'わ',
@@ -508,10 +548,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'comprendre',
+        translation: 'comprendre',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '天',
                 'kana': 'テン',
@@ -521,10 +562,11 @@ const vocabulary = [
                 'kana': 'キ',
             },
         ],
-        'translation': 'temps, météo',
+        translation: 'temps, météo',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '行',
                 'kana': 'い',
@@ -534,10 +576,11 @@ const vocabulary = [
                 'kana': 'く',
             },
         ],
-        'translation': 'aller',
+        translation: 'aller',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '住',
                 'kana': 'す',
@@ -547,10 +590,11 @@ const vocabulary = [
                 'kana': 'む',
             },
         ],
-        'translation': 'habiter',
+        translation: 'habiter',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '休',
                 'kana': 'やす',
@@ -560,10 +604,11 @@ const vocabulary = [
                 'kana': 'む',
             },
         ],
-        'translation': 'se reposer',
+        translation: 'se reposer',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '来',
                 'kana': 'く',
@@ -573,10 +618,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'venir',
+        translation: 'venir',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '見',
                 'kana': 'み',
@@ -586,10 +632,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'voir',
+        translation: 'voir',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '聞',
                 'kana': 'き',
@@ -599,10 +646,11 @@ const vocabulary = [
                 'kana': 'く',
             },
         ],
-        'translation': 'écouter, demander',
+        translation: 'écouter, demander',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '言',
                 'kana': 'い',
@@ -612,10 +660,11 @@ const vocabulary = [
                 'kana': 'う',
             },
         ],
-        'translation': 'dire',
+        translation: 'dire',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '話',
                 'kana': 'はな',
@@ -625,10 +674,11 @@ const vocabulary = [
                 'kana': 'す',
             },
         ],
-        'translation': 'parler',
+        translation: 'parler',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '語',
                 'kana': 'かた',
@@ -638,10 +688,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'raconter',
+        translation: 'raconter',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '',
                 'kana': 'フランス',
@@ -651,10 +702,11 @@ const vocabulary = [
                 'kana': 'ゴ',
             },
         ],
-        'translation': 'langue française',
+        translation: 'langue française',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '読',
                 'kana': 'よ',
@@ -664,10 +716,11 @@ const vocabulary = [
                 'kana': 'む',
             },
         ],
-        'translation': 'lire',
+        translation: 'lire',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '書',
                 'kana': 'か',
@@ -677,10 +730,11 @@ const vocabulary = [
                 'kana': 'く',
             },
         ],
-        'translation': 'écrire',
+        translation: 'écrire',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '知',
                 'kana': 'し',
@@ -690,10 +744,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'savoir',
+        translation: 'savoir',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '思',
                 'kana': 'おも',
@@ -703,10 +758,11 @@ const vocabulary = [
                 'kana': 'う',
             },
         ],
-        'translation': 'penser',
+        translation: 'penser',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '教',
                 'kana': 'おし',
@@ -720,10 +776,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'enseigner',
+        translation: 'enseigner',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '歩',
                 'kana': 'ある',
@@ -733,10 +790,11 @@ const vocabulary = [
                 'kana': 'く',
             },
         ],
-        'translation': 'marcher',
+        translation: 'marcher',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '入',
                 'kana': 'はい',
@@ -746,10 +804,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'entrer',
+        translation: 'entrer',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '大',
                 'kana': 'おお',
@@ -763,10 +822,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'grand',
+        translation: 'grand',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '小',
                 'kana': 'ちい',
@@ -780,10 +840,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'petit',
+        translation: 'petit',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '白',
                 'kana': 'しろ',
@@ -793,10 +854,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'blanc',
+        translation: 'blanc',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '黒',
                 'kana': 'くろ',
@@ -806,10 +868,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'noir',
+        translation: 'noir',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '古',
                 'kana': 'ふる',
@@ -819,10 +882,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'vieux',
+        translation: 'vieux',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '安',
                 'kana': 'やす',
@@ -832,10 +896,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'bon marché',
+        translation: 'bon marché',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '早',
                 'kana': 'はや',
@@ -845,10 +910,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'tôt, rapide',
+        translation: 'tôt, rapide',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '好',
                 'kana': 'す',
@@ -858,10 +924,11 @@ const vocabulary = [
                 'kana': 'き',
             },
         ],
-        'translation': 'aimé',
+        translation: 'aimé',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '学',
                 'kana': 'まな',
@@ -871,10 +938,11 @@ const vocabulary = [
                 'kana': 'ぶ',
             },
         ],
-        'translation': 'étudier',
+        translation: 'étudier',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '高',
                 'kana': 'たか',
@@ -884,10 +952,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'haut, cher',
+        translation: 'haut, cher',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '帰',
                 'kana': 'かえ',
@@ -897,10 +966,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'retourner',
+        translation: 'retourner',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '買',
                 'kana': 'か',
@@ -910,10 +980,11 @@ const vocabulary = [
                 'kana': 'う',
             },
         ],
-        'translation': 'acheter',
+        translation: 'acheter',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '新',
                 'kana': 'あたら',
@@ -927,10 +998,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'nouveau',
+        translation: 'nouveau',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '楽',
                 'kana': 'たの',
@@ -944,10 +1016,11 @@ const vocabulary = [
                 'kana': 'い',
             },
         ],
-        'translation': 'amusant, plaisant',
+        translation: 'amusant, plaisant',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '電',
                 'kana': 'デン',
@@ -957,10 +1030,11 @@ const vocabulary = [
                 'kana': 'シャ',
             },
         ],
-        'translation': 'train',
+        translation: 'train',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '電',
                 'kana': 'デン',
@@ -970,10 +1044,11 @@ const vocabulary = [
                 'kana': 'ワ',
             },
         ],
-        'translation': 'téléphone',
+        translation: 'téléphone',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '会',
                 'kana': 'あ',
@@ -983,10 +1058,11 @@ const vocabulary = [
                 'kana': 'う',
             },
         ],
-        'translation': 'se réunir',
+        translation: 'se réunir',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '会',
                 'kana': 'カイ',
@@ -996,10 +1072,11 @@ const vocabulary = [
                 'kana': 'シャ',
             },
         ],
-        'translation': 'entreprise',
+        translation: 'entreprise',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '会',
                 'kana': 'カイ',
@@ -1009,10 +1086,11 @@ const vocabulary = [
                 'kana': 'ワ',
             },
         ],
-        'translation': 'conversation',
+        translation: 'conversation',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '文',
                 'kana': 'モ',
@@ -1022,10 +1100,11 @@ const vocabulary = [
                 'kana': 'ジ',
             },
         ],
-        'translation': 'écriture',
+        translation: 'écriture',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '文',
                 'kana': 'ブン',
@@ -1035,10 +1114,11 @@ const vocabulary = [
                 'kana': 'ガク',
             },
         ],
-        'translation': 'littérature',
+        translation: 'littérature',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '下',
                 'kana': 'した',
@@ -1048,10 +1128,11 @@ const vocabulary = [
                 'kana': 'まち',
             },
         ],
-        'translation': 'quartier populaire',
+        translation: 'quartier populaire',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '長',
                 'kana': 'チョウ',
@@ -1061,10 +1142,11 @@ const vocabulary = [
                 'kana': 'チョウ',
             },
         ],
-        'translation': 'maire',
+        translation: 'maire',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '上',
                 'kana': 'あ',
@@ -1078,10 +1160,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 's\'élever',
+        translation: 's\'élever',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '上',
                 'kana': 'のぼ',
@@ -1091,10 +1174,11 @@ const vocabulary = [
                 'kana': 'る',
             },
         ],
-        'translation': 'monter',
+        translation: 'monter',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '上',
                 'kana': 'ジョウ',
@@ -1104,10 +1188,11 @@ const vocabulary = [
                 'kana': 'ズ',
             },
         ],
-        'translation': 'doué',
+        translation: 'doué',
+        grammar: 3,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '東',
                 'kana': 'トウ',
@@ -1117,10 +1202,11 @@ const vocabulary = [
                 'kana': 'キョウ',
             },
         ],
-        'translation': 'Tokyo',
+        translation: 'Tokyo',
+        grammar: 1,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '関',
                 'kana': 'カン',
@@ -1130,10 +1216,11 @@ const vocabulary = [
                 'kana': 'サイ',
             },
         ],
-        'translation': 'Kansai',
+        translation: 'Kansai',
+        grammar: 1,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '北',
                 'kana': 'ホッ',
@@ -1147,10 +1234,11 @@ const vocabulary = [
                 'kana': 'ドウ',
             },
         ],
-        'translation': 'Hokkaido',
+        translation: 'Hokkaido',
+        grammar: 1,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '飲',
                 'kana': 'イン',
@@ -1160,10 +1248,11 @@ const vocabulary = [
                 'kana': 'シュ',
             },
         ],
-        'translation': 'consommation d\'alcool',
+        translation: 'consommation d\'alcool',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '空',
                 'kana': 'クウ',
@@ -1173,10 +1262,11 @@ const vocabulary = [
                 'kana': 'キ',
             },
         ],
-        'translation': 'atmosphère, humeur',
+        translation: 'atmosphère, humeur',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '中',
                 'kana': 'チュウ',
@@ -1186,10 +1276,11 @@ const vocabulary = [
                 'kana': 'ゴク',
             },
         ],
-        'translation': 'Chine',
+        translation: 'Chine',
+        grammar: 1,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '今',
                 'kana': 'コ',
@@ -1199,10 +1290,11 @@ const vocabulary = [
                 'kana': 'とし',
             },
         ],
-        'translation': 'cette année',
+        translation: 'cette année',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '音',
                 'kana': 'オン',
@@ -1212,10 +1304,11 @@ const vocabulary = [
                 'kana': 'ガク',
             },
         ],
-        'translation': 'musique',
+        translation: 'musique',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '雪',
                 'kana': 'ゆき',
@@ -1225,10 +1318,11 @@ const vocabulary = [
                 'kana': 'ぐに',
             },
         ],
-        'translation': 'pays enneigé',
+        translation: 'pays enneigé',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '外',
                 'kana': 'ガイ',
@@ -1238,10 +1332,11 @@ const vocabulary = [
                 'kana': 'コク',
             },
         ],
-        'translation': 'pays étranger',
+        translation: 'pays étranger',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '外',
                 'kana': 'ガイ',
@@ -1255,10 +1350,11 @@ const vocabulary = [
                 'kana': 'ジン',
             },
         ],
-        'translation': 'personne étrangère',
+        translation: 'personne étrangère',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '愛',
                 'kana': 'アイ',
@@ -1272,10 +1368,11 @@ const vocabulary = [
                 'kana': 'カ',
             },
         ],
-        'translation': 'personne qui aime les chiens',
+        translation: 'personne qui aime les chiens',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '愛',
                 'kana': 'アイ',
@@ -1285,10 +1382,11 @@ const vocabulary = [
                 'kana': 'する',
             },
         ],
-        'translation': 'aimer',
+        translation: 'aimer',
+        grammar: 2,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '海',
                 'kana': 'うみ',
@@ -1298,10 +1396,11 @@ const vocabulary = [
                 'kana': 'かぜ',
             },
         ],
-        'translation': 'vent marin',
+        translation: 'vent marin',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '今',
                 'kana': 'コン',
@@ -1311,10 +1410,11 @@ const vocabulary = [
                 'kana': 'ゲツ',
             },
         ],
-        'translation': 'ce mois',
+        translation: 'ce mois',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '出',
                 'kana': 'で',
@@ -1324,10 +1424,11 @@ const vocabulary = [
                 'kana': 'ぐち',
             },
         ],
-        'translation': 'sortie',
+        translation: 'sortie',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '入',
                 'kana': 'いり',
@@ -1337,10 +1438,11 @@ const vocabulary = [
                 'kana': 'ぐち',
             },
         ],
-        'translation': 'entrée',
+        translation: 'entrée',
+        grammar: 0,
     },
     {
-        'elements': [
+        elements: [
             {
                 'kanji': '白',
                 'kana': 'ハッ',
@@ -1350,7 +1452,8 @@ const vocabulary = [
                 'kana': 'チョウ',
             },
         ],
-        'translation': 'cygne',
+        translation: 'cygne',
+        grammar: 0,
     },
 ];
 

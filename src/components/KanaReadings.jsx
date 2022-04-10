@@ -1,13 +1,19 @@
 const Examples = (props) => {
-    const { example, wordExample } = props;
+    const { example, wordExample, isFirst } = props;
     return (
-        <div className="kanasSingleExample">
+        <div className={isFirst ? "kanasSingleExample" : "kanasSingleExample separated"}>
             <div className="kanasSingleExampleKanji">
                 {example.kana}
             </div>
             <div>
                 <div className="kanasSingleExampleKanas">
-                    {wordExample?.elements.map((element, i) => (<span key={i}>{element.kanji || element.kana}</span>))}
+                    <div className="kanasSingleExampleKanasKanas">
+                        {wordExample?.elements.map((element, i) => (<span key={i}>{element.kana}</span>))}
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <div>
+                        {wordExample?.elements.map((element, i) => (<span key={i}>{element.kanji || element.kana}</span>))}
+                    </div>
                 </div>
                 <div className="kanasSingleExampleTranslation">
                     {wordExample?.translation}
@@ -35,6 +41,7 @@ const kanasReadings = (props) => {
                             example={e}
                             wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
+                            isFirst={i === 0}
                         />
                     ))}
                 </div>
@@ -45,6 +52,7 @@ const kanasReadings = (props) => {
                             example={e}
                             wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
+                            isFirst={i === 0}
                         />
                     ))}
                 </div>
