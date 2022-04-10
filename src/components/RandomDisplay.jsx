@@ -15,7 +15,7 @@ const RandomDisplay = (props) => {
         const relatedVocabularyCopy = [];
         vocabulary.forEach((word) => {
             word.elements.every((element) => {
-                if (element.kanji === kanji.kanji) {
+                if (kanji && (element.kanji === kanji.kanji)) {
                     relatedVocabularyCopy.push(word);
                     return false;
                 }
@@ -29,7 +29,7 @@ const RandomDisplay = (props) => {
         setKanji(kanjis.find((kanji) => kanji.doc.id === id))
     }
 
-    console.log('Kanji selected', kanjis);
+    console.log('Kanji selected', kanji);
     console.log('Related vocabulary', relatedVocabulary);
 
     const [displayedElement, setDisplayedElement] = useState(0);

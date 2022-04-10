@@ -2,13 +2,13 @@ const Examples = (props) => {
     const { example, wordExample, isFirst } = props;
     return (
         <div className={isFirst ? "kanasSingleExample" : "kanasSingleExample separated"}>
-            <div className="kanasSingleExampleKanji">
+            <div className={wordExample ? "kanasSingleExampleKanji" : "kanasSingleExampleKanji grayedOut"}>
                 {example.kana}
             </div>
             <div>
                 <div className="kanasSingleExampleKanas">
                     <div className="kanasSingleExampleKanasKanas">
-                        {wordExample?.elements.map((element, i) => (<span key={i}>{element.kana}</span>))}
+                        {wordExample?.elements.map((element, i) => (<span key={i}>&nbsp;{element.kana}&nbsp;</span>))}
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <div>

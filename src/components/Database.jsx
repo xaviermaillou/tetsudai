@@ -12,8 +12,8 @@ const ResetDatabase = (props) => {
             kanjisList.forEach((kanji) => {
                 firebase.firestore().collection('Kanjis').doc(kanji.doc.id).delete();
             });
-            vocabularyList.forEach((kanji) => {
-                firebase.firestore().collection('Vocabulary').doc(kanji.doc.id).delete();
+            vocabularyList.forEach((word) => {
+                firebase.firestore().collection('Vocabulary').doc(word.doc.id).delete();
             });
         
             kanjis.forEach((kanji) => {
@@ -25,12 +25,12 @@ const ResetDatabase = (props) => {
         }, 1000);
         setTimeout(() => {
             setPreventKanjiReload(false);
-        }, 10000);
+        }, 20000);
     }
 
     return (
         <div style={{
-            height: '100px',
+            height: '60px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',

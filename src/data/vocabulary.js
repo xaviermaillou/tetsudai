@@ -1645,6 +1645,218 @@ const vocabulary = [
         translation: 'tous les mois',
         grammar: 0,
     },
+    {
+        elements: [
+            {
+                'kanji': '日',
+                'kana': 'ジツ',
+            },
+            {
+                'kanji': '外',
+                'kana': 'ガイ',
+            },
+        ],
+        translation: 'il y a peu, une fois',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '男',
+                'kana': 'おとこ',
+            },
+            {
+                'kanji': '',
+                'kana': 'の',
+            },
+            {
+                'kanji': '子',
+                'kana': 'こ',
+            },
+        ],
+        translation: 'garçon',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '女',
+                'kana': 'おんあ',
+            },
+            {
+                'kanji': '',
+                'kana': 'の',
+            },
+            {
+                'kanji': '子',
+                'kana': 'こ',
+            },
+        ],
+        translation: 'fille',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '暗',
+                'kana': 'アン',
+            },
+            {
+                'kanji': '黒',
+                'kana': 'コク',
+            },
+        ],
+        translation: 'ténèbres',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '半',
+                'kana': 'なか',
+            },
+            {
+                'kanji': '',
+                'kana': 'ば',
+            },
+        ],
+        translation: 'milieu, moitié, partiellement',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '漢',
+                'kana': 'カン',
+            },
+            {
+                'kanji': '字',
+                'kana': 'ジ',
+            },
+        ],
+        translation: 'caractère chinois',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '訓',
+                'kana': 'クン',
+            },
+            {
+                'kanji': '読',
+                'kana': 'よ',
+            },
+            {
+                'kanji': '',
+                'kana': 'み',
+            },
+        ],
+        translation: 'lecture purement japonaise',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '音',
+                'kana': 'オン',
+            },
+            {
+                'kanji': '読',
+                'kana': 'よ',
+            },
+            {
+                'kanji': '',
+                'kana': 'み',
+            },
+        ],
+        translation: 'lecture sino-japonaise',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '言',
+                'kana': 'ゲン',
+            },
+            {
+                'kanji': '語',
+                'kana': 'ゴ',
+            },
+        ],
+        translation: 'langue',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '彼',
+                'kana': 'かれ',
+            },
+            {
+                'kanji': '女',
+                'kana': 'ジョ',
+            },
+        ],
+        translation: 'elle',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '一',
+                'kana': 'ひと',
+            },
+            {
+                'kanji': '人',
+                'kana': 'リ',
+            },
+        ],
+        translation: 'une personne',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '二',
+                'kana': 'ふた',
+            },
+            {
+                'kanji': '人',
+                'kana': 'リ',
+            },
+        ],
+        translation: 'deux personnes',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '名',
+                'kana': 'な',
+            },
+            {
+                'kanji': '前',
+                'kana': 'まえ',
+            },
+        ],
+        translation: 'prénom',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '名',
+                'kana': 'メイ',
+            },
+            {
+                'kanji': '人',
+                'kana': 'ジン',
+            },
+        ],
+        translation: 'maître, expert',
+        grammar: 0,
+    },
 ];
 
 

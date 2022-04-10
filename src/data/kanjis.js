@@ -271,7 +271,7 @@ const kanjis = [
             ],
             onyomi: [
                 {
-                    'kana': '二チ',
+                    'kana': 'ニチ',
                 },
                 {
                     'kana': '二',
@@ -1037,9 +1037,13 @@ const kanjis = [
                     'kana': 'い',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ゲン',
+                },
+            ],
         },
-        translation: 'dire',
+        translation: 'mot',
     },
     {
         kanji: '話',
@@ -2656,6 +2660,20 @@ const kanjis = [
             ],
         },
         translation: 'chaque',
+    },
+    {
+        kanji: '訓',
+        strokes: 10,
+        
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'クン',
+                }
+            ],
+        },
+        translation: 'instruction, lecture japonaise',
     },
 ];
 
