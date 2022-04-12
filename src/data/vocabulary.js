@@ -1857,6 +1857,286 @@ const vocabulary = [
         translation: 'maître, expert',
         grammar: 0,
     },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'ご',
+            },
+            {
+                'kanji': '飯',
+                'kana': 'ハン',
+            },
+        ],
+        translation: 'repas, riz cuit (formel)',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'お',
+            },
+            {
+                'kanji': '茶',
+                'kana': 'チャ',
+            },
+        ],
+        translation: 'thé (formel)',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '果',
+                'kana': 'クダ',
+            },
+            {
+                'kanji': '物',
+                'kana': 'もの',
+            },
+        ],
+        translation: 'fruit',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '果',
+                'kana': 'は',
+            },
+            {
+                'kanji': '',
+                'kana': 'た',
+            },
+            {
+                'kanji': '',
+                'kana': 'す',
+            },
+        ],
+        translation: 'accomplir',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '果',
+                'kana': 'は',
+            },
+            {
+                'kanji': '',
+                'kana': 'て',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'être fini, fatigué, mourir',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '菓',
+                'kana': 'カ',
+            },
+            {
+                'kanji': '子',
+                'kana': 'シ',
+            },
+        ],
+        translation: 'confiserie',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '汁',
+                'kana': 'しる',
+            },
+            {
+                'kanji': '物',
+                'kana': 'もの',
+            },
+        ],
+        translation: 'soupe',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'ラーメン',
+            },
+        ],
+        translation: 'ramen',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'パスタ',
+            },
+        ],
+        translation: 'pâtes',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'コーヒー',
+            },
+        ],
+        translation: 'café',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'チーズ',
+            },
+        ],
+        translation: 'fromage',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '',
+                'kana': 'デザート',
+            },
+        ],
+        translation: 'dessert',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '西',
+                'kana': 'セイ',
+            },
+            {
+                'kanji': '洋',
+                'kana': 'ヨウ',
+            },
+        ],
+        translation: 'Occident',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '今',
+                'kana': 'いま',
+            },
+        ],
+        translation: 'maintenant',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '前',
+                'kana': 'まえ',
+            },
+        ],
+        translation: 'avant',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '後',
+                'kana': 'あと',
+            },
+        ],
+        translation: 'après',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '間',
+                'kana': 'あいだ',
+            },
+        ],
+        translation: 'pendant',
+        grammar: 0,
+    },
+    {
+        elements: [
+            {
+                'kanji': '大',
+                'kana': 'おお',
+            },
+            {
+                'kanji': '阪',
+                'kana': 'さか',
+            },
+        ],
+        translation: 'Osaka',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '広',
+                'kana': 'ひろ',
+            },
+            {
+                'kanji': '島',
+                'kana': 'しま',
+            },
+        ],
+        translation: 'Hiroshima',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '川',
+                'kana': 'かわ',
+            },
+            {
+                'kanji': '島',
+                'kana': 'しま',
+            },
+        ],
+        translation: 'Kawashima',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '宮',
+                'kana': 'みや',
+            },
+            {
+                'kanji': '崎',
+                'kana': 'ざき',
+            },
+        ],
+        translation: 'Miyazaki (nom)',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '松',
+                'kana': 'まつ',
+            },
+            {
+                'kanji': '田',
+                'kana': 'だ',
+            },
+        ],
+        translation: 'Matsuda (nom)',
+        grammar: 1,
+    },
 ];
 
 

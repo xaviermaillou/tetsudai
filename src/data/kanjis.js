@@ -1398,6 +1398,9 @@ const kanjis = [
                 {
                     'kana': 'た',
                 },
+                {
+                    'kana': 'だ',
+                },
             ],
             onyomi: [],
         },
@@ -2391,7 +2394,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'devant',
+        translation: 'devant, avant',
     },
     {
         kanji: '後',
@@ -2415,7 +2418,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'devant',
+        translation: 'derrière, après',
     },
     {
         kanji: '夏',
@@ -2656,7 +2659,7 @@ const kanjis = [
             onyomi: [
                 {
                     'kana': 'マイ',
-                }
+                },
             ],
         },
         translation: 'chaque',
@@ -2670,11 +2673,229 @@ const kanjis = [
             onyomi: [
                 {
                     'kana': 'クン',
-                }
+                },
             ],
         },
         translation: 'instruction, lecture japonaise',
     },
+    {
+        kanji: '飯',
+        strokes: 12,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'めし',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ハン',
+                },
+            ],
+        },
+        translation: 'repas, riz cuit',
+    },
+    {
+        kanji: '茶',
+        strokes: 9,
+        
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'チャ',
+                },
+            ],
+        },
+        translation: 'thé',
+    },
+    {
+        kanji: '肉',
+        strokes: 6,
+        
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ニク',
+                },
+            ],
+        },
+        translation: 'viande',
+    },
+    {
+        kanji: '果',
+        strokes: 8,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'は',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カ',
+                },
+                {
+                    'kana': 'クダ',
+                },
+            ],
+        },
+        translation: 'accomplissement, récompense, succès',
+    },
+    {
+        kanji: '菓',
+        strokes: 8,
+        
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'カ',
+                },
+            ],
+        },
+        translation: 'confiserie, gâteau',
+    },
+    {
+        kanji: '菓',
+        strokes: 5,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しる',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'jus, liquide',
+    },
+    {
+        kanji: '洋',
+        strokes: 9,
+        
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ヨウ',
+                },
+            ],
+        },
+        translation: 'océan, étranger',
+    },
+    {
+        kanji: '島',
+        strokes: 10,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しま',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'トウ',
+                },
+            ],
+        },
+        translation: 'île',
+    },
+    {
+        kanji: '松',
+        strokes: 8,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'まつ',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'pin',
+    },
+    {
+        kanji: '宮',
+        strokes: 10,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'みや',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キュウ',
+                },
+                {
+                    'kana': 'グウ',
+                },
+                {
+                    'kana': 'ク',
+                },
+                {
+                    'kana': 'クウ',
+                },
+            ],
+        },
+        translation: 'temple shintoïste, palais',
+    },
+    {
+        kanji: '崎',
+        strokes: 11,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さき',
+                },
+                {
+                    'kana': 'ざき',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'prémontoire',
+    },
+    {
+        kanji: '広',
+        strokes: 5,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ひろ',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'large, spacieux',
+    },
+    {
+        kanji: '阪',
+        strokes: 3,
+        
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さか',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ハン',
+                },
+            ],
+        },
+        translation: 'hauteur (terrain)',
+    },
 ];
+
 
 export default kanjis;
