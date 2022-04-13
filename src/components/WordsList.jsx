@@ -59,8 +59,8 @@ const WordsList = (props) => {
     }
 
     return (
-        <div id="wordsListContainer" className={open ? "mainContainer open" : "mainContainer"}>
-            <div id="wordsListIndicator" className={open ? "open" : ""} onClick={toggle}><img src="/img/up.png" alt="see all words" /></div>
+        <div id="wordsListContainer" className={open ? "open" : ""}>
+            <div id="wordsListIndicator" className={open ? "open" : ""}><img onClick={toggle} src="/img/up.png" alt="see all words" /></div>
             <div id="wordsList">
                 {words.map((item, i) => (
                     <ListElement

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, top 0.2s, height 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -55,7 +55,7 @@ code {
   padding-top: 2vh;
   position: fixed;
   width: 100%;
-  padding-bottom: 7vh;
+  padding-bottom: 4vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -85,6 +85,7 @@ code {
   width: 67.5%;
   margin: 2vh 16.25% 0 16.25%;
   height: calc(21vh - (2vw - 110px));
+  overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
 #kanasExamples {
@@ -126,7 +127,7 @@ code {
 #selectorAndControls {
   display: flex;
   flex-direction: column;
-  height: 12vh;
+  height: 14vh;
   justify-content: space-between;
 }
 #selector {
@@ -141,13 +142,18 @@ code {
 }
 #selector span {
   font-size: calc(16px + 0.75vh);
-  color: lightgray;
+  display: flex;
+  align-items: center;
+  opacity: 0.25;
 }
 #selector span:hover {
   cursor: pointer;
 }
 #selector span.selected {
-  color: gray;
+  opacity: 0.5;
+}
+#selector img {
+  height: calc(16px + 0.75vh);
 }
 #controls {
   display: flex;
@@ -155,56 +161,49 @@ code {
 }
 #controls div {
   height: calc(32px + 1.5vh);
-  width: calc(32px + 1.5vh);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  opacity: 0.5;
 }
 #controls div:hover {
   cursor: pointer;
 }
-#controls div:nth-child(1), #controls div:nth-child(2) {
-  opacity: 0.5;
-}
-#controls div:nth-child(1):hover, #controls div:nth-child(2):hover {
-  opacity: 1;
-}
-#controls img {
-  height: calc(16px + 0.75vh);
-}
 
 #wordsListContainer {
+  display: flex;
   z-index: 1100;
+  height: 100vh;
   width: 100vw;
   position: fixed;
-  top: 95vh;
+  left: calc(100vw - 50px);
   justify-content: flex-start;
-  background-color: rgba(255, 225, 232, 0.9);
   color: white;
 }
 #wordsListContainer.open {
-  top: 0vh;
+  left: 0vw;
+  background-color: rgba(255, 225, 232, 0.9);
 }
 #wordsListIndicator {
   z-index: 1200;
-  min-height: 5vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50px;
+  padding-top: 2.5vh;
 }
 #wordsListIndicator img {
-  height: calc(8px + 0.375vh);
+  height: calc(16px + 0.75vh);
+  opacity: 0.5;
+  transform: rotate(-90deg);
 }
-#wordsListIndicator.open {
-  transform: rotate(180deg);
+#wordsListIndicator.open img {
+  transform: rotate(90deg);
 }
-#wordsListIndicator:hover {
+#wordsListIndicator img:hover {
   cursor: pointer;
 }
 #wordsList {
   overflow-y: scroll;
+  width: calc(100vw - 50px);
 }
 .wordsListElement {
   display: flex;
@@ -260,5 +259,14 @@ code {
   }
   #onyomiExamples .kanasSingleExample {
     flex-direction: row-reverse;
+  }
+  #wordsListContainer {
+    width: 40vw;
+  }
+  #wordsListContainer.open {
+    left: 60vw;
+  }
+  #wordsList {
+    width: calc(40vw - 50px);
   }
 }
