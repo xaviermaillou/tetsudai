@@ -2879,7 +2879,7 @@ const kanjis = [
     },
     {
         kanji: '阪',
-        strokes: 3,
+        strokes: 7,
         
         readings: {
             kunyomi: [

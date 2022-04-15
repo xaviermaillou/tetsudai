@@ -1,43 +1,12 @@
-import { useState, useEffect } from "react";
-import WordsList from './WordsList';
+import { useState } from "react";
 import KanasReadings from "./KanaReadings";
 
 const RandomDisplay = (props) => {
-    const { kanjis, vocabulary, preventKanjiReload } = props;
-    const [kanji, setKanji] = useState('');
-    const [relatedVocabulary, setRelatedVocabulary] = useState([]);
-
-    useEffect(() => {
-        if (!preventKanjiReload) setKanji(kanjis[Math.floor(Math.random()*kanjis.length)]);
-    }, [kanjis, preventKanjiReload]);
-
-    useEffect(() => {
-        const relatedVocabularyCopy = [];
-        vocabulary.forEach((word) => {
-            word.elements.every((element) => {
-                if (kanji && (element.kanji === kanji.kanji)) {
-                    relatedVocabularyCopy.push(word);
-                    return false;
-                }
-                return true;
-            });
-        });
-        setRelatedVocabulary(relatedVocabularyCopy);
-    }, [kanji, vocabulary]);
-
-    const changeCurrentWord = (id) => {
-        setKanji(kanjis.find((kanji) => kanji.doc.id === id))
-    }
-
-    console.log('Kanji selected', kanji);
-    console.log('Related vocabulary', relatedVocabulary);
+    const { kanji, refreshWord, vocabulary } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
     const [allDisplayed, setAllDisplayed] = useState(true);
 
-    const refreshWord = () => {
-        setKanji(kanjis[Math.floor(Math.random()*kanjis.length)]);
-    }
     const changeDisplayedElement = (num) => {
         setAllDisplayed(false);
         setDisplayedElement(num);
@@ -45,6 +14,9 @@ const RandomDisplay = (props) => {
     const displayElements = () => {
         setAllDisplayed(!allDisplayed);
     }
+
+    console.log(kanji);
+    console.log(vocabulary);
 
     return (
         <div id="randomDisplayContainer">
@@ -54,7 +26,7 @@ const RandomDisplay = (props) => {
                     <p id="translation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                     {kanji.readings && <KanasReadings 
                         readings={kanji.readings} 
-                        relatedVocabulary={relatedVocabulary}
+                        vocabulary={vocabulary}
                         allDisplayed={allDisplayed}
                     />}
                 </div>
@@ -73,11 +45,6 @@ const RandomDisplay = (props) => {
                     </div>
                 </div>
             </div>}
-            <WordsList 
-                words={kanjis.sort((a, b) => a.strokes - b.strokes)}
-                changeCurrentWord={changeCurrentWord}
-                currentWord={kanji}
-            />
         </div>
     );
 }

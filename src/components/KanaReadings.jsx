@@ -26,7 +26,7 @@ const Examples = (props) => {
 const kanasReadings = (props) => {
     const {
         readings,
-        relatedVocabulary,
+        vocabulary,
         allDisplayed,
     } = props;
 
@@ -38,7 +38,7 @@ const kanasReadings = (props) => {
                     {readings.kunyomi?.map((e, i) => (
                         <Examples
                             example={e}
-                            wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
+                            wordExample={vocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
                             isFirst={i === 0}
                         />
@@ -49,7 +49,7 @@ const kanasReadings = (props) => {
                     {readings.onyomi?.map((e, i) => (
                         <Examples
                             example={e}
-                            wordExample={relatedVocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
+                            wordExample={vocabulary.find((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
                             isFirst={i === 0}
                         />
