@@ -2,6 +2,7 @@ const kanjis = [
     {
         kanji: '一',
         strokes: 1,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -22,6 +23,7 @@ const kanjis = [
     {
         kanji: '二',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -42,6 +44,7 @@ const kanjis = [
     {
         kanji: '三',
         strokes: 3,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -59,6 +62,7 @@ const kanjis = [
     {
         kanji: '四',
         strokes: 5,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -79,6 +83,7 @@ const kanjis = [
     {
         kanji: '五',
         strokes: 4,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -96,6 +101,7 @@ const kanjis = [
     {
         kanji: '六',
         strokes: 4,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -119,6 +125,7 @@ const kanjis = [
     {
         kanji: '七',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -139,6 +146,7 @@ const kanjis = [
     {
         kanji: '八',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -162,6 +170,7 @@ const kanjis = [
     {
         kanji: '九',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -182,6 +191,7 @@ const kanjis = [
     {
         kanji: '十',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -202,6 +212,7 @@ const kanjis = [
     {
         kanji: '百',
         strokes: 6,
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -221,6 +232,7 @@ const kanjis = [
     {
         kanji: '千',
         strokes: 3,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -241,6 +253,7 @@ const kanjis = [
     {
         kanji: '万',
         strokes: 3,
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -257,6 +270,7 @@ const kanjis = [
     {
         kanji: '日',
         strokes: 4,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -286,6 +300,7 @@ const kanjis = [
     {
         kanji: '本',
         strokes: 5,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -303,6 +318,7 @@ const kanjis = [
     {
         kanji: '東',
         strokes: 8,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -320,6 +336,7 @@ const kanjis = [
     {
         kanji: '西',
         strokes: 6,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -340,6 +357,7 @@ const kanjis = [
     {
         kanji: '北',
         strokes: 5,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -360,6 +378,7 @@ const kanjis = [
     {
         kanji: '南',
         strokes: 9,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -377,6 +396,7 @@ const kanjis = [
     {
         kanji: '京',
         strokes: 8,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -394,6 +414,7 @@ const kanjis = [
     {
         kanji: '国',
         strokes: 8,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -417,6 +438,7 @@ const kanjis = [
     {
         kanji: '海',
         strokes: 9,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -434,6 +456,7 @@ const kanjis = [
     {
         kanji: '風',
         strokes: 9,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -451,6 +474,7 @@ const kanjis = [
     {
         kanji: '火',
         strokes: 4,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -468,6 +492,7 @@ const kanjis = [
     {
         kanji: '土',
         strokes: 3,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -485,7 +510,7 @@ const kanjis = [
     {
         kanji: '水',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -503,11 +528,14 @@ const kanjis = [
     {
         kanji: '時',
         strokes: 10,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
                     'kana': 'とき',
+                },
+                {
+                    'kana': 'どき',
                 },
             ],
             onyomi: [
@@ -521,7 +549,7 @@ const kanjis = [
     {
         kanji: '空',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -541,7 +569,7 @@ const kanjis = [
     {
         kanji: '月',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -562,7 +590,7 @@ const kanjis = [
     {
         kanji: '山',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -583,7 +611,7 @@ const kanjis = [
     {
         kanji: '川',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -601,7 +629,7 @@ const kanjis = [
     {
         kanji: '木',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -619,7 +647,7 @@ const kanjis = [
     {
         kanji: '花',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -633,7 +661,7 @@ const kanjis = [
     {
         kanji: '雨',
         strokes: 8,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -647,7 +675,7 @@ const kanjis = [
     {
         kanji: '金',
         strokes: 8,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -665,7 +693,7 @@ const kanjis = [
     {
         kanji: '雪',
         strokes: 11,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -679,9 +707,12 @@ const kanjis = [
     {
         kanji: '天',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
+                {
+                    'kana': 'あまつ',
+                },
                 {
                     'kana': 'あめ',
                 },
@@ -697,7 +728,7 @@ const kanjis = [
     {
         kanji: '曜',
         strokes: 18,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -711,7 +742,7 @@ const kanjis = [
     {
         kanji: '星',
         strokes: 9,
-        
+        level: 'N2',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -725,7 +756,7 @@ const kanjis = [
     {
         kanji: '王',
         strokes: 4,
-        
+        level: 'N3',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -739,7 +770,7 @@ const kanjis = [
     {
         kanji: '男',
         strokes: 7,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -760,7 +791,7 @@ const kanjis = [
     {
         kanji: '女',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -778,7 +809,7 @@ const kanjis = [
     {
         kanji: '子',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -796,7 +827,7 @@ const kanjis = [
     {
         kanji: '私',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -810,7 +841,7 @@ const kanjis = [
     {
         kanji: '犬',
         strokes: 4,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -828,7 +859,7 @@ const kanjis = [
     {
         kanji: '猫',
         strokes: 11,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -842,7 +873,7 @@ const kanjis = [
     {
         kanji: '鳥',
         strokes: 11,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -860,7 +891,7 @@ const kanjis = [
     {
         kanji: '馬',
         strokes: 10,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -874,6 +905,7 @@ const kanjis = [
     {
         kanji: '行',
         strokes: 6,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -897,6 +929,7 @@ const kanjis = [
     {
         kanji: '住',
         strokes: 7,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -909,11 +942,12 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'résidence, fait d\'habiter',
+        translation: 'demeure, résidence',
     },
     {
         kanji: '休',
         strokes: 6,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -931,6 +965,7 @@ const kanjis = [
     {
         kanji: '食',
         strokes: 9,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -948,6 +983,7 @@ const kanjis = [
     {
         kanji: '飲',
         strokes: 12,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -965,6 +1001,7 @@ const kanjis = [
     {
         kanji: '分',
         strokes: 4,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -988,32 +1025,43 @@ const kanjis = [
     {
         kanji: '来',
         strokes: 7,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
                     'kana': 'く',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ライ',
+                }
+            ],
         },
         translation: 'arrivage, prochain, cause',
     },
     {
         kanji: '見',
         strokes: 7,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
                     'kana': 'み',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ケン',
+                },
+            ],
         },
         translation: 'vision',
     },
     {
         kanji: '聞',
         strokes: 14,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1031,6 +1079,7 @@ const kanjis = [
     {
         kanji: '言',
         strokes: 7,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1048,6 +1097,7 @@ const kanjis = [
     {
         kanji: '話',
         strokes: 13,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1068,7 +1118,7 @@ const kanjis = [
     {
         kanji: '語',
         strokes: 14,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1086,6 +1136,7 @@ const kanjis = [
     {
         kanji: '読',
         strokes: 14,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1106,6 +1157,7 @@ const kanjis = [
     {
         kanji: '書',
         strokes: 10,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1123,6 +1175,7 @@ const kanjis = [
     {
         kanji: '知',
         strokes: 8,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1140,6 +1193,7 @@ const kanjis = [
     {
         kanji: '思',
         strokes: 9,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1153,6 +1207,7 @@ const kanjis = [
     {
         kanji: '教',
         strokes: 11,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1173,6 +1228,7 @@ const kanjis = [
     {
         kanji: '歩',
         strokes: 8,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1186,6 +1242,7 @@ const kanjis = [
     {
         kanji: '入',
         strokes: 2,
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1202,7 +1259,7 @@ const kanjis = [
     {
         kanji: '夕',
         strokes: 3,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1216,7 +1273,7 @@ const kanjis = [
     {
         kanji: '大',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1234,7 +1291,7 @@ const kanjis = [
     {
         kanji: '小',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1248,7 +1305,7 @@ const kanjis = [
     {
         kanji: '上',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1272,7 +1329,7 @@ const kanjis = [
     {
         kanji: '下',
         strokes: 3,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1286,7 +1343,7 @@ const kanjis = [
     {
         kanji: '口',
         strokes: 3,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1307,7 +1364,7 @@ const kanjis = [
     {
         kanji: '円',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1321,7 +1378,7 @@ const kanjis = [
     {
         kanji: '今',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1342,7 +1399,7 @@ const kanjis = [
     {
         kanji: '中',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1360,7 +1417,7 @@ const kanjis = [
     {
         kanji: '父',
         strokes: 4,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1378,7 +1435,7 @@ const kanjis = [
     {
         kanji: '牛',
         strokes: 4,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1392,7 +1449,7 @@ const kanjis = [
     {
         kanji: '田',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1409,7 +1466,7 @@ const kanjis = [
     {
         kanji: '生',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1423,7 +1480,7 @@ const kanjis = [
     {
         kanji: '白',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1444,7 +1501,7 @@ const kanjis = [
     {
         kanji: '古',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1458,7 +1515,7 @@ const kanjis = [
     {
         kanji: '目',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1472,7 +1529,7 @@ const kanjis = [
     {
         kanji: '母',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1490,7 +1547,7 @@ const kanjis = [
     {
         kanji: '年',
         strokes: 6,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1508,7 +1565,7 @@ const kanjis = [
     {
         kanji: '気',
         strokes: 6,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1522,7 +1579,7 @@ const kanjis = [
     {
         kanji: '先',
         strokes: 6,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1536,7 +1593,7 @@ const kanjis = [
     {
         kanji: '文',
         strokes: 4,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1560,7 +1617,7 @@ const kanjis = [
     {
         kanji: '字',
         strokes: 6,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1574,7 +1631,7 @@ const kanjis = [
     {
         kanji: '安',
         strokes: 6,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1583,12 +1640,12 @@ const kanjis = [
             ],
             onyomi: [],
         },
-        translation: 'bon marché, tranquilisant',
+        translation: 'bon marché, paisible',
     },
     {
         kanji: '早',
         strokes: 6,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1602,7 +1659,7 @@ const kanjis = [
     {
         kanji: '好',
         strokes: 6,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -1616,7 +1673,7 @@ const kanjis = [
     {
         kanji: '何',
         strokes: 7,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1633,7 +1690,7 @@ const kanjis = [
     {
         kanji: '耳',
         strokes: 6,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -1647,7 +1704,7 @@ const kanjis = [
     {
         kanji: '町',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1665,7 +1722,7 @@ const kanjis = [
     {
         kanji: '車',
         strokes: 7,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1683,7 +1740,7 @@ const kanjis = [
     {
         kanji: '赤',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1697,7 +1754,7 @@ const kanjis = [
     {
         kanji: '体',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1711,7 +1768,7 @@ const kanjis = [
     {
         kanji: '学',
         strokes: 8,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1732,7 +1789,7 @@ const kanjis = [
     {
         kanji: '店',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1746,7 +1803,7 @@ const kanjis = [
     {
         kanji: '音',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1764,7 +1821,7 @@ const kanjis = [
     {
         kanji: '昼',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1782,7 +1839,7 @@ const kanjis = [
     {
         kanji: '高',
         strokes: 10,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -1796,7 +1853,7 @@ const kanjis = [
     {
         kanji: '校',
         strokes: 10,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1805,11 +1862,12 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'école',
+        translation: 'école, examen',
     },
     {
         kanji: '帰',
         strokes: 10,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1823,7 +1881,7 @@ const kanjis = [
     {
         kanji: '魚',
         strokes: 11,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1837,7 +1895,7 @@ const kanjis = [
     {
         kanji: '黒',
         strokes: 11,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1855,7 +1913,7 @@ const kanjis = [
     {
         kanji: '朝',
         strokes: 12,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1873,20 +1931,25 @@ const kanjis = [
     {
         kanji: '買',
         strokes: 12,
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
                     'kana': 'か',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'バイ',
+                },
+            ],
         },
         translation: 'acheter',
     },
     {
         kanji: '新',
         strokes: 13,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1904,7 +1967,7 @@ const kanjis = [
     {
         kanji: '楽',
         strokes: 13,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1925,7 +1988,7 @@ const kanjis = [
     {
         kanji: '電',
         strokes: 13,
-        
+        level: 'N5',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1939,7 +2002,7 @@ const kanjis = [
     {
         kanji: '駅',
         strokes: 14,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -1953,7 +2016,7 @@ const kanjis = [
     {
         kanji: '薬',
         strokes: 16,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -1971,7 +2034,7 @@ const kanjis = [
     {
         kanji: '物',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -1992,7 +2055,7 @@ const kanjis = [
     {
         kanji: '会',
         strokes: 6,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2010,7 +2073,7 @@ const kanjis = [
     {
         kanji: '手',
         strokes: 4,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2031,7 +2094,7 @@ const kanjis = [
     {
         kanji: '酒',
         strokes: 10,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2052,7 +2115,7 @@ const kanjis = [
     {
         kanji: '外',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2070,7 +2133,7 @@ const kanjis = [
     {
         kanji: '愛',
         strokes: 13,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2088,7 +2151,7 @@ const kanjis = [
     {
         kanji: '出',
         strokes: 13,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2102,7 +2165,7 @@ const kanjis = [
     {
         kanji: '半',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2120,7 +2183,7 @@ const kanjis = [
     {
         kanji: '冬',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2138,7 +2201,7 @@ const kanjis = [
     {
         kanji: '右',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2152,7 +2215,7 @@ const kanjis = [
     {
         kanji: '左',
         strokes: 5,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2166,7 +2229,7 @@ const kanjis = [
     {
         kanji: '兄',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2184,7 +2247,7 @@ const kanjis = [
     {
         kanji: '名',
         strokes: 6,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2202,7 +2265,7 @@ const kanjis = [
     {
         kanji: '弟',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2220,7 +2283,7 @@ const kanjis = [
     {
         kanji: '近',
         strokes: 7,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2238,7 +2301,7 @@ const kanjis = [
     {
         kanji: '長',
         strokes: 8,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2256,7 +2319,7 @@ const kanjis = [
     {
         kanji: '夜',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2277,7 +2340,7 @@ const kanjis = [
     {
         kanji: '姉',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2295,7 +2358,7 @@ const kanjis = [
     {
         kanji: '妹',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2313,7 +2376,7 @@ const kanjis = [
     {
         kanji: '彼',
         strokes: 8,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2327,7 +2390,7 @@ const kanjis = [
     {
         kanji: '青',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2345,7 +2408,7 @@ const kanjis = [
     {
         kanji: '春',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2363,7 +2426,7 @@ const kanjis = [
     {
         kanji: '秋',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2381,7 +2444,7 @@ const kanjis = [
     {
         kanji: '前',
         strokes: 9,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2399,7 +2462,7 @@ const kanjis = [
     {
         kanji: '後',
         strokes: 9,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2407,6 +2470,9 @@ const kanjis = [
                 },
                 {
                     'kana': 'うし',
+                },
+                {
+                    'kana': 'のち',
                 },
             ],
             onyomi: [
@@ -2423,7 +2489,7 @@ const kanjis = [
     {
         kanji: '夏',
         strokes: 10,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2444,7 +2510,7 @@ const kanjis = [
     {
         kanji: '家',
         strokes: 10,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2468,7 +2534,7 @@ const kanjis = [
     {
         kanji: '週',
         strokes: 11,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2482,7 +2548,7 @@ const kanjis = [
     {
         kanji: '閉',
         strokes: 11,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2503,7 +2569,7 @@ const kanjis = [
     {
         kanji: '晩',
         strokes: 12,
-        
+        level: 'N3',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2517,7 +2583,7 @@ const kanjis = [
     {
         kanji: '晴',
         strokes: 12,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2538,7 +2604,7 @@ const kanjis = [
     {
         kanji: '森',
         strokes: 12,
-        
+        level: 'N2',
         readings: {
             kunyomi: [
                 {
@@ -2556,7 +2622,7 @@ const kanjis = [
     {
         kanji: '開',
         strokes: 12,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2577,7 +2643,7 @@ const kanjis = [
     {
         kanji: '間',
         strokes: 12,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2604,7 +2670,7 @@ const kanjis = [
     {
         kanji: '明',
         strokes: 8,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2628,7 +2694,7 @@ const kanjis = [
     {
         kanji: '暗',
         strokes: 13,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2649,7 +2715,7 @@ const kanjis = [
     {
         kanji: '毎',
         strokes: 6,
-        
+        level: 'N5',
         readings: {
             kunyomi: [
                 {
@@ -2667,7 +2733,7 @@ const kanjis = [
     {
         kanji: '訓',
         strokes: 10,
-        
+        level: 'N2',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2681,7 +2747,7 @@ const kanjis = [
     {
         kanji: '飯',
         strokes: 12,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2699,7 +2765,7 @@ const kanjis = [
     {
         kanji: '茶',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2713,7 +2779,7 @@ const kanjis = [
     {
         kanji: '肉',
         strokes: 6,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2727,7 +2793,7 @@ const kanjis = [
     {
         kanji: '果',
         strokes: 8,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2748,7 +2814,7 @@ const kanjis = [
     {
         kanji: '菓',
         strokes: 8,
-        
+        level: 'N1',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2762,7 +2828,7 @@ const kanjis = [
     {
         kanji: '汁',
         strokes: 5,
-        
+        level: 'N1',
         readings: {
             kunyomi: [
                 {
@@ -2776,7 +2842,7 @@ const kanjis = [
     {
         kanji: '洋',
         strokes: 9,
-        
+        level: 'N4',
         readings: {
             kunyomi: [],
             onyomi: [
@@ -2790,7 +2856,7 @@ const kanjis = [
     {
         kanji: '島',
         strokes: 10,
-        
+        level: 'N2',
         readings: {
             kunyomi: [
                 {
@@ -2808,7 +2874,7 @@ const kanjis = [
     {
         kanji: '松',
         strokes: 8,
-        
+        level: 'N1',
         readings: {
             kunyomi: [
                 {
@@ -2822,7 +2888,7 @@ const kanjis = [
     {
         kanji: '宮',
         strokes: 10,
-        
+        level: 'N1',
         readings: {
             kunyomi: [
                 {
@@ -2849,7 +2915,7 @@ const kanjis = [
     {
         kanji: '崎',
         strokes: 11,
-        
+        level: 'N1',
         readings: {
             kunyomi: [
                 {
@@ -2866,7 +2932,7 @@ const kanjis = [
     {
         kanji: '広',
         strokes: 5,
-        
+        level: 'N4',
         readings: {
             kunyomi: [
                 {
@@ -2880,7 +2946,7 @@ const kanjis = [
     {
         kanji: '阪',
         strokes: 7,
-        
+        level: 'N3',
         readings: {
             kunyomi: [
                 {
@@ -2894,6 +2960,91 @@ const kanjis = [
             ],
         },
         translation: 'hauteur (terrain)',
+    },
+    {
+        kanji: '人',
+        strokes: 2,
+        level: 'N5',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ひと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジン',
+                },
+                {
+                    'kana': 'ニノ',
+                },
+            ],
+        },
+        translation: 'personne',
+    },
+    {
+        kanji: '午',
+        strokes: 4,
+        level: 'N5',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'うま',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ゴ',
+                },
+            ],
+        },
+        translation: 'midi',
+    },
+    {
+        kanji: '友',
+        strokes: 4,
+        level: 'N5',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'とも',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ユウ',
+                },
+            ],
+        },
+        translation: 'ami',
+    },
+    {
+        kanji: '英',
+        strokes: 8,
+        level: 'N4',
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'エイ',
+                },
+            ],
+        },
+        translation: 'excellent, anglais',
+    },
+    {
+        kanji: '漢',
+        strokes: 13,
+        level: 'N4',
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'カン',
+                },
+            ],
+        },
+        translation: 'Chine',
     },
 ];
 
