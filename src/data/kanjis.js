@@ -2760,7 +2760,7 @@ const kanjis = [
         translation: 'confiserie, gâteau',
     },
     {
-        kanji: '菓',
+        kanji: '汁',
         strokes: 5,
         
         readings: {

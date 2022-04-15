@@ -2,7 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, margin 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -173,37 +173,51 @@ code {
 
 #wordsListContainer {
   display: flex;
+  flex-direction: column;
   z-index: 1100;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  left: calc(100vw - 50px);
+  left: 100vw;
   justify-content: flex-start;
   color: white;
 }
 #wordsListContainer.open {
   left: 0vw;
-  background-color: rgba(255, 225, 232, 0.9);
+  background-color: rgba(255, 225, 232, 0.8);
 }
 #wordsListIndicator {
   z-index: 1200;
-  width: 50px;
-  padding-top: 2.5vh;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px 4vw;
+}
+#wordsListIndicator.open {
+  background-color: rgba(255, 225, 232, 1);
 }
 #wordsListIndicator img {
   height: calc(16px + 0.75vh);
   opacity: 0.5;
   transform: rotate(-90deg);
+  margin-left: -100px;
 }
 #wordsListIndicator.open img {
   transform: rotate(90deg);
+  margin-left: 0px;
+  opacity: 1;
 }
 #wordsListIndicator img:hover {
   cursor: pointer;
 }
 #wordsList {
+  width: 100%;
+  height: calc(100vh - 50px);
   overflow-y: scroll;
-  width: calc(100vw - 50px);
+  opacity: 0;
+}
+#wordsList.open {
+  opacity: 1;
 }
 .wordsListElement {
   display: flex;
@@ -265,8 +279,5 @@ code {
   }
   #wordsListContainer.open {
     left: 60vw;
-  }
-  #wordsList {
-    width: calc(40vw - 50px);
   }
 }
