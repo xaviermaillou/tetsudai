@@ -9,6 +9,7 @@ import WordsList from './components/WordsList';
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
+  const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
   const [preventKanjiReload, setPreventKanjiReload] = useState(false);
 
   useEffect(() => {
@@ -29,41 +30,41 @@ function App() {
   }, []);
 
   const [kanji, setKanji] = useState('');
-  const [relatedVocabulary, setRelatedVocabulary] = useState([]);
 
   useEffect(() => {
-    if (!preventKanjiReload) setKanji(kanjisList[Math.floor(Math.random()*kanjisList.length)]);
-  }, [kanjisList, preventKanjiReload]);
+    if (!preventKanjiReload) setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
+  }, [kanjisWithVocabulary, preventKanjiReload]);
 
   useEffect(() => {
-    const relatedVocabularyCopy = [];
-    vocabularyList.forEach((word) => {
-      word.elements.every((element) => {
-        if (kanji && (element.kanji === kanji.kanji)) {
-          relatedVocabularyCopy.push(word);
-          return false;
-        }
-        return true;
+    const kanjisListCopy = [ ...kanjisList ];
+    kanjisListCopy.forEach((kanji) => {
+      kanji.vocabulary = [];
+      vocabularyList.forEach((word) => {
+        word.elements.forEach((element) => {
+          if (kanji.kanji === element.kanji) {
+            kanji.vocabulary.push(word);
+          }
+        });
       });
     });
-    setRelatedVocabulary(relatedVocabularyCopy);
-  }, [kanji, vocabularyList]);
+    setKanjisWithVocabulary(kanjisListCopy);
+  }, [kanjisList, vocabularyList]);
 
   const changeCurrentWord = (id) => {
-    setKanji(kanjisList.find((kanji) => kanji.doc.id === id))
+    setKanji(kanjisWithVocabulary.find((kanji) => kanji.doc.id === id))
   }
   const refreshWord = () => {
-    setKanji(kanjisList[Math.floor(Math.random()*kanjisList.length)]);
+    setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
   }
 
   return (
     <div className="App">
       <div id="header">
-        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
+        <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
       </div>
-      <RandomDisplay kanji={kanji} refreshWord={refreshWord} vocabulary={relatedVocabulary} />
+      <RandomDisplay kanji={kanji} refreshWord={refreshWord} />
       <WordsList 
-        words={kanjisList.sort((a, b) => a.strokes - b.strokes)}
+        kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
         changeCurrentWord={changeCurrentWord}
         currentWord={kanji}
       />

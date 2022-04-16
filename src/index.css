@@ -184,9 +184,10 @@ code {
 }
 #wordsListContainer.open {
   left: 0vw;
-  background-color: rgba(255, 225, 232, 0.8);
+  background-color: rgba(255, 237, 242, 0.9);
 }
 #wordsListIndicator {
+  position: relative;
   z-index: 1200;
   height: 50px;
   display: flex;
@@ -200,15 +201,29 @@ code {
   height: calc(16px + 0.75vh);
   opacity: 0.5;
   transform: rotate(-90deg);
-  margin-left: -100px;
+  position: absolute;
+  left: -40px;
 }
 #wordsListIndicator.open img {
   transform: rotate(90deg);
-  margin-left: 0px;
-  opacity: 1;
+  opacity: 0.75;
+  left: 4vw;
 }
-#wordsListIndicator img:hover {
+#wordsListIndicator img:hover, #wordsListIndicator span:hover {
   cursor: pointer;
+}
+.wordsListHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10vw;
+}
+.wordsListHeader span {
+  opacity: 0.5;
+}
+.wordsListHeader span.selected {
+  opacity: 1;
 }
 #wordsList {
   width: 100%;
@@ -219,10 +234,17 @@ code {
 #wordsList.open {
   opacity: 1;
 }
+.wordsListElementContainer {
+  height: 0px;
+  overflow: hidden;
+}
+.wordsListElementContainer.open {
+  height: calc(40px + 2vh);
+  border-bottom: 1px solid rgba(255, 183, 197, 0.9);
+}
 .wordsListElement {
   display: flex;
   padding: 10px 4vw;
-  border-bottom: 1px solid rgba(255, 183, 197, 0.9);
 }
 .wordsListElement:hover {
   cursor: pointer;
@@ -279,5 +301,11 @@ code {
   }
   #wordsListContainer.open {
     left: 60vw;
+  }
+  .wordsListHeader {
+    padding-left: 0;
+  }
+  #wordsListIndicator.open img {
+    left: 1vw;
   }
 }
