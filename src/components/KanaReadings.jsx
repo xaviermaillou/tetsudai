@@ -33,11 +33,10 @@ const kanasReadings = (props) => {
         readings,
         vocabulary,
         allDisplayed,
-        displayedElement,
     } = props;
 
     return (
-        <div id="kanas" className={(allDisplayed || displayedElement === 1) ? 'hiddenElement selected' : 'hiddenElement'}>
+        <div id="kanas" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
             <div id="kanasExamples">
                 <div id="kunyomiExamples">
                     {readings.kunyomi.length > 0 && <p className="kanasReadingsHeader">KUNYOMI</p>}

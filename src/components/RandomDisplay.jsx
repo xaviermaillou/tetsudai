@@ -25,7 +25,6 @@ const RandomDisplay = (props) => {
                         readings={kanji.readings} 
                         vocabulary={kanji.vocabulary}
                         allDisplayed={allDisplayed}
-                        displayedElement={displayedElement}
                     />}
                 </div>
                 <div id="selectorAndControls">
