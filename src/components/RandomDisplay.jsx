@@ -2,7 +2,7 @@ import { useState } from "react";
 import KanasReadings from "./KanaReadings";
 
 const RandomDisplay = (props) => {
-    const { kanji, refreshWord } = props;
+    const { kanji, refreshWord, compressed } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
     const [allDisplayed, setAllDisplayed] = useState(true);
@@ -17,7 +17,7 @@ const RandomDisplay = (props) => {
 
     return (
         <div id="randomDisplayContainer">
-            {kanji && <div id="randomDisplay" className="mainContainer">
+            {kanji && <div id="randomDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
                 <div id="japaneseWords">
                     <p id="kanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                     <p id="translation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>

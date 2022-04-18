@@ -2,7 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, margin 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -189,13 +189,11 @@ code {
 #wordsListIndicator {
   position: relative;
   z-index: 1200;
-  height: 50px;
+  height: 80px;
   display: flex;
   align-items: center;
   padding: 10px 4vw;
-}
-#wordsListIndicator.open {
-  background-color: rgba(255, 225, 232, 1);
+  border-bottom: 1px solid rgba(255, 183, 197, 1);
 }
 #wordsListIndicator img {
   height: calc(16px + 0.75vh);
@@ -206,23 +204,28 @@ code {
 }
 #wordsListIndicator.open img {
   transform: rotate(90deg);
-  opacity: 0.75;
   left: 4vw;
 }
 #wordsListIndicator img:hover, #wordsListIndicator span:hover {
   cursor: pointer;
 }
-.wordsListHeader {
+#wordsListHeader {
+  height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10vw;
+}
+#wordsListHeader div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10vw;
 }
-.wordsListHeader span {
+#wordsListHeader span {
   opacity: 0.5;
 }
-.wordsListHeader span.selected {
+#wordsListHeader span.selected {
   opacity: 1;
 }
 #wordsList {
@@ -240,7 +243,7 @@ code {
 }
 .wordsListElementContainer.open {
   height: calc(40px + 2vh);
-  border-bottom: 1px solid rgba(255, 183, 197, 0.9);
+  border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
 .wordsListElement {
   display: flex;
@@ -302,7 +305,10 @@ code {
   #wordsListContainer.open {
     left: 60vw;
   }
-  .wordsListHeader {
+  #randomDisplay.compressed {
+    width: 60%;
+  }
+  #wordsListHeader {
     padding-left: 0;
   }
   #wordsListIndicator.open img {

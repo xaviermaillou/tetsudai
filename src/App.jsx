@@ -39,10 +39,12 @@ function App() {
     const kanjisListCopy = [ ...kanjisList ];
     kanjisListCopy.forEach((kanji) => {
       kanji.vocabulary = [];
+      kanji.grammar = [];
       vocabularyList.forEach((word) => {
         word.elements.forEach((element) => {
           if (kanji.kanji === element.kanji) {
             kanji.vocabulary.push(word);
+            kanji.grammar.push(word.grammar);
           }
         });
       });
@@ -57,16 +59,21 @@ function App() {
     setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
   }
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="App">
       <div id="header">
         <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
       </div>
-      <RandomDisplay kanji={kanji} refreshWord={refreshWord} />
+      <RandomDisplay kanji={kanji} refreshWord={refreshWord} compressed={menuOpen} />
       <WordsList 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
         changeCurrentWord={changeCurrentWord}
         currentWord={kanji}
+        open={menuOpen}
+        setOpen={setMenuOpen}
+
       />
     </div>
   );
