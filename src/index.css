@@ -11,6 +11,10 @@
   display: none;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -82,9 +86,9 @@ code {
 }
 #kanas {
   z-index: 900;
+  height: calc(21vh - (2vw - 50px));
   width: 67.5%;
   margin: 2vh 16.25% 0 16.25%;
-  height: calc(21vh - (2vw - 110px));
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
@@ -279,6 +283,9 @@ code {
   }
   #translation, #kanas {
     font-size: calc(20px + 2vh);
+  }
+  #kanas {
+    height: calc(21vh - (2vw - 110px));
   }
   #kanasExamples {
     display: flex;

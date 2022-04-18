@@ -4,6 +4,7 @@ const ListElement = (props) => {
     const {
         word,
         changeCurrentWord,
+        setOpen,
         currentWord,
         level,
         grammar,
@@ -11,6 +12,7 @@ const ListElement = (props) => {
 
     const clickHandle = (id) => {
         changeCurrentWord(id);
+        if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
     return (
@@ -102,6 +104,7 @@ const WordsList = (props) => {
                     <ListElement
                         word={item}
                         changeCurrentWord={changeCurrentWord}
+                        setOpen={setOpen}
                         currentWord={currentWord}
                         level={level}
                         grammar={grammar}
