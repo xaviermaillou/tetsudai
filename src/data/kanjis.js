@@ -3046,6 +3046,233 @@ const kanjis = [
         },
         translation: 'Chine',
     },
+    {
+        kanji: '遊',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あそ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ユウ',
+                },
+            ],
+        },
+        translation: 'jeu, jouer',
+    },
+    {
+        kanji: '寝',
+        strokes: 13,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ね',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シン',
+                },
+            ],
+        },
+        translation: 'sommeil, être allongé, dormir',
+    },
+    {
+        kanji: '乗',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'の',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショウ',
+                },
+                {
+                    'kana': 'ジョウ',
+                },
+            ],
+        },
+        translation: 'à bord, puissance, multiplication',
+    },
+    {
+        kanji: '待',
+        strokes: 9,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ま',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タイ',
+                },
+            ],
+        },
+        translation: 'attente',
+    },
+    {
+        kanji: '立',
+        strokes: 5,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'た',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'リツ',
+                },
+                {
+                    'kana': 'リュウ',
+                },
+                {
+                    'kana': 'リットル',
+                },
+            ],
+        },
+        translation: 'debout, s\'ériger',
+    },
+    {
+        kanji: '急',
+        strokes: 9,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'いそ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キュウ',
+                },
+            ],
+        },
+        translation: 'urgence, soudain',
+    },
+    {
+        kanji: '死',
+        strokes: 6,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'し',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シ',
+                },
+            ],
+        },
+        translation: 'mort',
+    },
+    {
+        kanji: '売',
+        strokes: 7,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'う',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'バイ',
+                },
+            ],
+        },
+        translation: 'vente',
+    },
+    {
+        kanji: '探',
+        strokes: 11,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さが',
+                },
+                {
+                    'kana': 'さぐ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タン',
+                },
+            ],
+        },
+        translation: 'recherche',
+    },
+    {
+        kanji: '勝',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'か',
+                },
+                {
+                    'kana': 'まさ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショウ',
+                },
+            ],
+        },
+        translation: 'victoire, excellence',
+    },
+    {
+        kanji: '泳',
+        strokes: 8,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'およ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'エイ',
+                },
+            ],
+        },
+        translation: 'nage',
+    },
+    {
+        kanji: '泳',
+        strokes: 3,
+        level: 'N3',
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'サイ',
+                },
+            ],
+        },
+        translation: 'génie',
+    },
 ];
 
 

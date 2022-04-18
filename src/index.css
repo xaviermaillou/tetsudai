@@ -215,7 +215,7 @@ code {
 #wordsListIndicator img:hover, #wordsListIndicator span:hover {
   cursor: pointer;
 }
-#wordsListHeader {
+#wordsListHFilters {
   height: 100%;
   width: 100%;
   display: flex;
@@ -223,15 +223,15 @@ code {
   justify-content: space-around;
   padding-left: 10vw;
 }
-#wordsListHeader div {
+#wordsListHFilters div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#wordsListHeader span {
+#wordsListHFilters span {
   opacity: 0.5;
 }
-#wordsListHeader span.selected {
+#wordsListHFilters span.selected {
   opacity: 1;
 }
 #wordsList {
@@ -310,18 +310,18 @@ code {
     flex-direction: row-reverse;
   }
   #wordsListContainer {
-    width: 40vw;
+    width: 33vw;
   }
   #wordsListContainer.open {
-    left: 60vw;
+    left: 67vw;
   }
   #wordsList {
     padding-bottom: 2vh;
   }
   #randomDisplay.compressed {
-    width: 60%;
+    width: 67%;
   }
-  #wordsListHeader {
+  #wordsListHFilters {
     padding-left: 0;
   }
   #wordsListIndicator.open img {

@@ -2137,6 +2137,216 @@ const vocabulary = [
         translation: 'Matsuda (nom)',
         grammar: 1,
     },
+    {
+        elements: [
+            {
+                'kanji': '遊',
+                'kana': 'あそ',
+            },
+            {
+                'kanji': '',
+                'kana': 'ぶ',
+            },
+        ],
+        translation: 'jouer',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '寝',
+                'kana': 'ね',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'dormir, aller au lit',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '乗',
+                'kana': 'の',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'monter à bord',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '待',
+                'kana': 'ま',
+            },
+            {
+                'kanji': '',
+                'kana': 'つ',
+            },
+        ],
+        translation: 'attendre',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '国',
+                'kana': 'コク',
+            },
+            {
+                'kanji': '立',
+                'kana': 'リツ',
+            },
+        ],
+        translation: 'national, dirigé par l\'Etat',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '立',
+                'kana': 'た',
+            },
+            {
+                'kanji': '',
+                'kana': 'つ',
+            },
+        ],
+        translation: 'être debout, se lever',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '急',
+                'kana': 'いそ',
+            },
+            {
+                'kanji': '',
+                'kana': 'ぐ',
+            },
+        ],
+        translation: 'se dépêcher',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '死',
+                'kana': 'し',
+            },
+            {
+                'kanji': '',
+                'kana': 'ぬ',
+            },
+        ],
+        translation: 'mourir',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '売',
+                'kana': 'バイ',
+            },
+            {
+                'kanji': '買',
+                'kana': 'バイ',
+            },
+        ],
+        translation: 'commerce',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                'kanji': '売',
+                'kana': 'う',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'vendre',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '探',
+                'kana': 'さが',
+            },
+            {
+                'kanji': '',
+                'kana': 'す',
+            },
+        ],
+        translation: 'chercher',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '勝',
+                'kana': 'か',
+            },
+            {
+                'kanji': '',
+                'kana': 'つ',
+            },
+        ],
+        translation: 'gagner',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '勝',
+                'kana': 'まさ',
+            },
+            {
+                'kanji': '',
+                'kana': 'る',
+            },
+        ],
+        translation: 'surpasser, exceller',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '泳',
+                'kana': 'およ',
+            },
+            {
+                'kanji': '',
+                'kana': 'ぐ',
+            },
+        ],
+        translation: 'nager',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                'kanji': '天',
+                'kana': 'テン',
+            },
+            {
+                'kanji': '才',
+                'kana': 'サイ',
+            },
+        ],
+        translation: 'génie',
+        grammar: 1,
+    },
 ];
 
 
