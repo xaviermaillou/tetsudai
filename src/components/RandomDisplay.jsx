@@ -37,7 +37,9 @@ const RandomDisplay = (props) => {
                     </div>
                     <div id="controls" >
                         <div onClick={refreshWord}>
-                            <span>Nouveau kanji</span>
+                            <span>
+                                <img src="/img/random.png" alt="random" />
+                            </span>
                         </div>
                     </div>
                 </div>

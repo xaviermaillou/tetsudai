@@ -174,12 +174,14 @@ code {
 #controls div:hover {
   cursor: pointer;
 }
+#controls img {
+  height: calc(16px + 0.75vh);
+}
 
 #wordsListContainer {
   display: flex;
   flex-direction: column;
   z-index: 1100;
-  height: 100vh;
   width: 100vw;
   position: fixed;
   left: 100vw;
@@ -234,7 +236,8 @@ code {
 }
 #wordsList {
   width: 100%;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 80px);
+  padding-bottom: 12vh;
   overflow-y: scroll;
   opacity: 0;
 }
@@ -311,6 +314,9 @@ code {
   }
   #wordsListContainer.open {
     left: 60vw;
+  }
+  #wordsList {
+    padding-bottom: 2vh;
   }
   #randomDisplay.compressed {
     width: 60%;
