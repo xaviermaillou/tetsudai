@@ -110,6 +110,11 @@ code {
 .kanasSingleExample.separated {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+.kanasSingleExampleDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .kanasSingleExampleKanji.grayedOut {
   opacity: 0.5;
 }
@@ -173,6 +178,12 @@ code {
 }
 #controls div:hover {
   cursor: pointer;
+}
+#controls div:nth-child(1) {
+  opacity: 0.25;
+}
+#controls div:nth-child(1).selected {
+  opacity: 0.5;
 }
 #controls img {
   height: calc(16px + 0.75vh);
@@ -298,8 +309,10 @@ code {
     margin-top: 0px;
     width: 50%;
   }
+  #onyomiExamples .kanasSingleExampleDetail {
+    align-items: flex-start;
+  }
   #onyomiExamples .kanasSingleExampleKanas, #onyomiExamples .kanasSingleExampleTranslation {
-    justify-content: start;
     flex-direction: row-reverse;
   }
   #onyomiExamples {

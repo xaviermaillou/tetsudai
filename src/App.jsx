@@ -52,27 +52,54 @@ function App() {
     setKanjisWithVocabulary(kanjisListCopy);
   }, [kanjisList, vocabularyList]);
 
+  const [filtersApplied, setFiltersApplied] = useState(false);
+  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [level, setLevel] = useState("");
+  const [grammar, setGrammar] = useState(null);
+
+  useEffect(() => {
+    const kanjisListCopy = [];
+    kanjisWithVocabulary.forEach((kanji) => {
+      if ((level === kanji.level || !level) && (kanji.grammar.includes(grammar) || !grammar)) {
+        kanjisListCopy.push(kanji)
+      }
+    });
+    setFilteredKanjis(kanjisListCopy)
+  }, [level, grammar, kanjisWithVocabulary]);
+
   const changeCurrentWord = (id) => {
     setKanji(kanjisWithVocabulary.find((kanji) => kanji.doc.id === id))
   }
   const refreshWord = () => {
-    setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
+    filtersApplied ? 
+      setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]) :
+      setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
   }
-
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="App">
       <div id="header">
         <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
       </div>
-      <RandomDisplay kanji={kanji} refreshWord={refreshWord} compressed={menuOpen} />
+      <RandomDisplay
+        kanji={kanji}
+        refreshWord={refreshWord}
+        compressed={menuOpen}
+        filtersApplied={filtersApplied}
+        setFiltersApplied={setFiltersApplied}
+      />
       <WordsList 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
         changeCurrentWord={changeCurrentWord}
         currentWord={kanji}
         open={menuOpen}
         setOpen={setMenuOpen}
+        level={level}
+        setLevel={setLevel}
+        grammar={grammar}
+        setGrammar={setGrammar}
 
       />
     </div>

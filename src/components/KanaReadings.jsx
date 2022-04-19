@@ -10,7 +10,7 @@ const Examples = (props) => {
             <div className={wordExample ? "kanasSingleExampleKanji" : "kanasSingleExampleKanji grayedOut"}>
                 {example.kana}
             </div>
-            {!showReadingOnly && <div>
+            {!showReadingOnly && <div className="kanasSingleExampleDetail">
                 <div className="kanasSingleExampleKanas">
                     <div className="kanasSingleExampleKanasKanas">
                         {wordExample?.elements.map((element, i) => (<span key={i}>&nbsp;{element.kana}&nbsp;</span>))}

@@ -42,7 +42,7 @@ const ListHeader = (props) => {
 
 const ListElement = (props) => {
     const {
-        word,
+        kanji,
         changeCurrentWord,
         setOpen,
         currentWord,
@@ -56,21 +56,21 @@ const ListElement = (props) => {
     }
 
     return (
-        <div className={((level === word.level || !level) && (word.grammar.includes(grammar) || !grammar)) ?
+        <div className={((level === kanji.level || !level) && (kanji.grammar.includes(grammar) || !grammar)) ?
             "wordsListElementContainer open" : "wordsListElementContainer"}
         >
             <div 
-                className={(currentWord && currentWord.translation === word.translation) ?
+                className={(currentWord && currentWord.translation === kanji.translation) ?
                     "wordsListElement selected" : "wordsListElement"}
-                onClick={() => clickHandle(word.doc.id)}
+                onClick={() => clickHandle(kanji.doc.id)}
             >
                 <div id="wordsListElementKanji">
-                    {word.kanji}
+                    {kanji.kanji}
                 </div>
                 <div id="wordsListElementKana">
                     <div>
                         {
-                            word.readings.kunyomi?.map((item, i) => (
+                            kanji.readings.kunyomi?.map((item, i) => (
                                 <span key={i}>
                                     {i > 0 && ', '}
                                     {item.kana}
@@ -78,13 +78,13 @@ const ListElement = (props) => {
                             ))
                         }
                         {
-                            (word.readings.kunyomi.length>0 && word.readings.onyomi.length>0) && 
+                            (kanji.readings.kunyomi.length>0 && kanji.readings.onyomi.length>0) && 
                             <>
                                 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                             </>
                         }
                         {
-                            word.readings.onyomi?.map((item, i) => (
+                            kanji.readings.onyomi?.map((item, i) => (
                                 <span key={i}>
                                     {i > 0 && ', '}
                                     {item.kana}
@@ -93,7 +93,7 @@ const ListElement = (props) => {
                         }
                     </div>
                     <div id="wordsListElementTranslation">
-                        {word.translation}
+                        {kanji.translation}
                     </div>
                 </div>
             </div>
@@ -102,10 +102,17 @@ const ListElement = (props) => {
 }
 
 const WordsList = (props) => {
-    const { kanjis, changeCurrentWord, currentWord, open, setOpen } = props;
-
-    const [level, setLevel] = useState("");
-    const [grammar, setGrammar] = useState(null);
+    const {
+        kanjis,
+        changeCurrentWord,
+        currentWord,
+        open,
+        setOpen,
+        level,
+        setLevel,
+        grammar,
+        setGrammar,
+    } = props;
 
     const toggle = () => {
         setOpen(!open);
@@ -124,7 +131,7 @@ const WordsList = (props) => {
             <div id="wordsList" className={open ? "open" : ""}>
                 {kanjis.map((item, i) => (
                     <ListElement
-                        word={item}
+                        kanji={item}
                         changeCurrentWord={changeCurrentWord}
                         setOpen={setOpen}
                         currentWord={currentWord}

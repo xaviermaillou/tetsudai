@@ -1,8 +1,49 @@
 import { useState } from "react";
 import KanasReadings from "./KanaReadings";
 
+const RandomControls = (props) => {
+    const {
+        displayedElement,
+        displayElements,
+        allDisplayed,
+        changeDisplayedElement,
+        refreshWord,
+        filtersApplied,
+        setFiltersApplied,
+    } = props;
+    return (
+        <div id="selectorAndControls">
+            <div id="selector">
+                <span className={(displayedElement === 0 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(0)}>本</span>
+                <span onClick={displayElements} className={allDisplayed ? 'selected' : ''}>
+                    <img src={allDisplayed ? "/img/view-opened.png" : "/img/view-closed.png"} alt={allDisplayed ? "hide" : "view"} />
+                </span>
+                <span className={(displayedElement === 1 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(1)}>fr</span>
+            </div>
+            <div id="controls" >
+                <div className={filtersApplied ? "selected" : ""}>
+                    <span onClick={() => setFiltersApplied(!filtersApplied)}>
+                        <img src="/img/filter.png" alt="apply filters" />
+                    </span>
+                </div>
+                <div onClick={refreshWord}>
+                    <span>
+                        <img src="/img/random.png" alt="random" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 const RandomDisplay = (props) => {
-    const { kanji, refreshWord, compressed } = props;
+    const {
+        kanji,
+        refreshWord,
+        compressed,
+        filtersApplied,
+        setFiltersApplied,
+    } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
     const [allDisplayed, setAllDisplayed] = useState(true);
@@ -27,22 +68,15 @@ const RandomDisplay = (props) => {
                         allDisplayed={allDisplayed}
                     />}
                 </div>
-                <div id="selectorAndControls">
-                    <div id="selector">
-                        <span className={(displayedElement === 0 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(0)}>本</span>
-                        <span onClick={displayElements} className={allDisplayed ? 'selected' : ''}>
-                            <img src={allDisplayed ? "/img/view-opened.png" : "/img/view-closed.png"} alt={allDisplayed ? "hide" : "view"} />
-                        </span>
-                        <span className={(displayedElement === 1 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(1)}>fr</span>
-                    </div>
-                    <div id="controls" >
-                        <div onClick={refreshWord}>
-                            <span>
-                                <img src="/img/random.png" alt="random" />
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <RandomControls
+                    displayedElement={displayedElement}
+                    displayElements={displayElements}
+                    allDisplayed={allDisplayed}
+                    changeDisplayedElement={changeDisplayedElement}
+                    refreshWord={refreshWord}
+                    filtersApplied={filtersApplied}
+                    setFiltersApplied={setFiltersApplied}
+                />
             </div>}
         </div>
     );

@@ -3260,7 +3260,7 @@ const kanjis = [
         translation: 'nage',
     },
     {
-        kanji: '泳',
+        kanji: '才',
         strokes: 3,
         level: 'N3',
         readings: {
