@@ -1,8 +1,8 @@
 // Types grammaticaux:
-// 0 - nom commun
-// 1 - nom propre
-// 2 - verbe
-// 3 - adjectif
+// 1 - nom commun
+// 2 - nom propre
+// 3 - verbe
+// 4 - adjectif
 
 const vocabulary = [
     {
@@ -21,7 +21,7 @@ const vocabulary = [
             },
         ],
         translation: 'fête des mères',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -39,7 +39,7 @@ const vocabulary = [
             },
         ],
         translation: 'dimanche',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -57,7 +57,7 @@ const vocabulary = [
             },
         ],
         translation: 'lundi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -75,7 +75,7 @@ const vocabulary = [
             },
         ],
         translation: 'mardi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -93,7 +93,7 @@ const vocabulary = [
             },
         ],
         translation: 'mercredi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -111,7 +111,7 @@ const vocabulary = [
             },
         ],
         translation: 'jeudi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -129,7 +129,7 @@ const vocabulary = [
             },
         ],
         translation: 'vendredi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -147,7 +147,7 @@ const vocabulary = [
             },
         ],
         translation: 'samedi',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -161,7 +161,7 @@ const vocabulary = [
             },
         ],
         translation: 'Japon',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -179,7 +179,7 @@ const vocabulary = [
             },
         ],
         translation: 'manger',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -197,7 +197,7 @@ const vocabulary = [
             },
         ],
         translation: 'nourriture',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -211,7 +211,7 @@ const vocabulary = [
             },
         ],
         translation: 'boire',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -229,7 +229,7 @@ const vocabulary = [
             },
         ],
         translation: 'boisson',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -243,7 +243,7 @@ const vocabulary = [
             },
         ],
         translation: 'pharmacie',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -257,7 +257,7 @@ const vocabulary = [
             },
         ],
         translation: 'boulangerie',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -271,7 +271,7 @@ const vocabulary = [
             },
         ],
         translation: 'repas du soir, dîner',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -285,7 +285,7 @@ const vocabulary = [
             },
         ],
         translation: 'volcan',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -299,7 +299,7 @@ const vocabulary = [
             },
         ],
         translation: 'université',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -313,7 +313,7 @@ const vocabulary = [
             },
         ],
         translation: 'école',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -327,7 +327,7 @@ const vocabulary = [
             },
         ],
         translation: 'étudiant',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -341,7 +341,7 @@ const vocabulary = [
             },
         ],
         translation: 'professeur',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -355,7 +355,7 @@ const vocabulary = [
             },
         ],
         translation: 'feu d\'artifice',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -369,7 +369,7 @@ const vocabulary = [
             },
         ],
         translation: 'janvier',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -383,7 +383,7 @@ const vocabulary = [
             },
         ],
         translation: 'février',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -397,7 +397,7 @@ const vocabulary = [
             },
         ],
         translation: 'mars',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -411,7 +411,7 @@ const vocabulary = [
             },
         ],
         translation: 'avril',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -425,7 +425,7 @@ const vocabulary = [
             },
         ],
         translation: 'mai',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -439,7 +439,7 @@ const vocabulary = [
             },
         ],
         translation: 'juin',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -453,7 +453,7 @@ const vocabulary = [
             },
         ],
         translation: 'juillet',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -467,7 +467,7 @@ const vocabulary = [
             },
         ],
         translation: 'août',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -481,7 +481,7 @@ const vocabulary = [
             },
         ],
         translation: 'septembre',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -495,7 +495,7 @@ const vocabulary = [
             },
         ],
         translation: 'octobre',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -513,7 +513,7 @@ const vocabulary = [
             },
         ],
         translation: 'novembre',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -531,7 +531,7 @@ const vocabulary = [
             },
         ],
         translation: 'décembre',
-        grammar: 0,
+        grammar: 1,
         },
     {
         elements: [
@@ -549,7 +549,7 @@ const vocabulary = [
             },
         ],
         translation: 'comprendre',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -563,7 +563,7 @@ const vocabulary = [
             },
         ],
         translation: 'temps, météo',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -577,7 +577,7 @@ const vocabulary = [
             },
         ],
         translation: 'aller',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -591,7 +591,7 @@ const vocabulary = [
             },
         ],
         translation: 'habiter',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -605,7 +605,7 @@ const vocabulary = [
             },
         ],
         translation: 'se reposer',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -619,7 +619,7 @@ const vocabulary = [
             },
         ],
         translation: 'venir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -633,7 +633,7 @@ const vocabulary = [
             },
         ],
         translation: 'voir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -647,7 +647,7 @@ const vocabulary = [
             },
         ],
         translation: 'écouter, demander',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -661,7 +661,7 @@ const vocabulary = [
             },
         ],
         translation: 'dire',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -675,7 +675,7 @@ const vocabulary = [
             },
         ],
         translation: 'parler',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -685,7 +685,7 @@ const vocabulary = [
             },
         ],
         translation: 'conversation',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -699,7 +699,7 @@ const vocabulary = [
             },
         ],
         translation: 'raconter',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -713,7 +713,7 @@ const vocabulary = [
             },
         ],
         translation: 'langue française',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -727,7 +727,7 @@ const vocabulary = [
             },
         ],
         translation: 'lire',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -741,7 +741,7 @@ const vocabulary = [
             },
         ],
         translation: 'écrire',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -755,7 +755,7 @@ const vocabulary = [
             },
         ],
         translation: 'savoir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -769,7 +769,7 @@ const vocabulary = [
             },
         ],
         translation: 'penser',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -787,7 +787,7 @@ const vocabulary = [
             },
         ],
         translation: 'enseigner',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -801,7 +801,7 @@ const vocabulary = [
             },
         ],
         translation: 'marcher',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -815,7 +815,7 @@ const vocabulary = [
             },
         ],
         translation: 'entrer',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -833,7 +833,7 @@ const vocabulary = [
             },
         ],
         translation: 'grand',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -851,7 +851,7 @@ const vocabulary = [
             },
         ],
         translation: 'petit',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -865,7 +865,7 @@ const vocabulary = [
             },
         ],
         translation: 'blanc',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -879,7 +879,7 @@ const vocabulary = [
             },
         ],
         translation: 'noir',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -893,7 +893,7 @@ const vocabulary = [
             },
         ],
         translation: 'vieux',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -907,7 +907,7 @@ const vocabulary = [
             },
         ],
         translation: 'bon marché',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -921,7 +921,7 @@ const vocabulary = [
             },
         ],
         translation: 'tôt, rapide',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -935,7 +935,7 @@ const vocabulary = [
             },
         ],
         translation: 'aimé',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -949,7 +949,7 @@ const vocabulary = [
             },
         ],
         translation: 'étudier',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -963,7 +963,7 @@ const vocabulary = [
             },
         ],
         translation: 'haut, cher',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -977,7 +977,7 @@ const vocabulary = [
             },
         ],
         translation: 'retourner',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -991,7 +991,7 @@ const vocabulary = [
             },
         ],
         translation: 'acheter',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1009,7 +1009,7 @@ const vocabulary = [
             },
         ],
         translation: 'nouveau',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -1027,7 +1027,7 @@ const vocabulary = [
             },
         ],
         translation: 'amusant, plaisant',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -1041,7 +1041,7 @@ const vocabulary = [
             },
         ],
         translation: 'train',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1055,7 +1055,7 @@ const vocabulary = [
             },
         ],
         translation: 'téléphone',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1069,7 +1069,7 @@ const vocabulary = [
             },
         ],
         translation: 'se réunir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1083,7 +1083,7 @@ const vocabulary = [
             },
         ],
         translation: 'entreprise',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1097,7 +1097,7 @@ const vocabulary = [
             },
         ],
         translation: 'conversation',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1111,7 +1111,7 @@ const vocabulary = [
             },
         ],
         translation: 'écriture',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1125,7 +1125,7 @@ const vocabulary = [
             },
         ],
         translation: 'littérature',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1139,7 +1139,7 @@ const vocabulary = [
             },
         ],
         translation: 'quartier populaire',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1153,7 +1153,7 @@ const vocabulary = [
             },
         ],
         translation: 'maire',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1171,7 +1171,7 @@ const vocabulary = [
             },
         ],
         translation: 's\'élever',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1185,7 +1185,7 @@ const vocabulary = [
             },
         ],
         translation: 'monter',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1199,7 +1199,7 @@ const vocabulary = [
             },
         ],
         translation: 'doué',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -1213,7 +1213,7 @@ const vocabulary = [
             },
         ],
         translation: 'Tokyo',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -1227,7 +1227,7 @@ const vocabulary = [
             },
         ],
         translation: 'Kansai',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -1245,7 +1245,7 @@ const vocabulary = [
             },
         ],
         translation: 'Hokkaido',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -1259,7 +1259,7 @@ const vocabulary = [
             },
         ],
         translation: 'consommation d\'alcool',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1273,7 +1273,7 @@ const vocabulary = [
             },
         ],
         translation: 'atmosphère, humeur',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1287,7 +1287,7 @@ const vocabulary = [
             },
         ],
         translation: 'Chine',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -1301,7 +1301,7 @@ const vocabulary = [
             },
         ],
         translation: 'cette année',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1315,7 +1315,7 @@ const vocabulary = [
             },
         ],
         translation: 'musique',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1329,7 +1329,7 @@ const vocabulary = [
             },
         ],
         translation: 'pays enneigé',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1343,7 +1343,7 @@ const vocabulary = [
             },
         ],
         translation: 'pays étranger',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1361,7 +1361,7 @@ const vocabulary = [
             },
         ],
         translation: 'personne étrangère',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1379,7 +1379,7 @@ const vocabulary = [
             },
         ],
         translation: 'personne qui aime les chiens',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1393,7 +1393,7 @@ const vocabulary = [
             },
         ],
         translation: 'aimer',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1407,7 +1407,7 @@ const vocabulary = [
             },
         ],
         translation: 'vent marin',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1421,7 +1421,7 @@ const vocabulary = [
             },
         ],
         translation: 'ce mois',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1435,7 +1435,7 @@ const vocabulary = [
             },
         ],
         translation: 'sortie',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1449,7 +1449,7 @@ const vocabulary = [
             },
         ],
         translation: 'entrée',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1463,7 +1463,7 @@ const vocabulary = [
             },
         ],
         translation: 'cygne',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1481,7 +1481,7 @@ const vocabulary = [
             },
         ],
         translation: 'restaurant',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1499,7 +1499,7 @@ const vocabulary = [
             },
         ],
         translation: 'clair',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -1513,7 +1513,7 @@ const vocabulary = [
             },
         ],
         translation: 'explication',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1527,7 +1527,7 @@ const vocabulary = [
             },
         ],
         translation: 'sombre',
-        grammar: 3,
+        grammar: 4,
     },
     {
         elements: [
@@ -1541,7 +1541,7 @@ const vocabulary = [
             },
         ],
         translation: 's\'ouvrir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1559,7 +1559,7 @@ const vocabulary = [
             },
         ],
         translation: 'ouvrir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1573,7 +1573,7 @@ const vocabulary = [
             },
         ],
         translation: 'petit-déjeuner',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1587,7 +1587,7 @@ const vocabulary = [
             },
         ],
         translation: 'déjeuner',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1601,7 +1601,7 @@ const vocabulary = [
             },
         ],
         translation: 'tous les jours',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1615,7 +1615,7 @@ const vocabulary = [
             },
         ],
         translation: 'tous les matins',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1629,7 +1629,7 @@ const vocabulary = [
             },
         ],
         translation: 'toutes les semaines',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1643,7 +1643,7 @@ const vocabulary = [
             },
         ],
         translation: 'tous les mois',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1657,7 +1657,7 @@ const vocabulary = [
             },
         ],
         translation: 'il y a peu, une fois',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1675,7 +1675,7 @@ const vocabulary = [
             },
         ],
         translation: 'garçon',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1693,7 +1693,7 @@ const vocabulary = [
             },
         ],
         translation: 'fille',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1707,7 +1707,7 @@ const vocabulary = [
             },
         ],
         translation: 'ténèbres',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1721,7 +1721,7 @@ const vocabulary = [
             },
         ],
         translation: 'milieu, moitié, partiellement',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1735,7 +1735,7 @@ const vocabulary = [
             },
         ],
         translation: 'caractère chinois',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1753,7 +1753,7 @@ const vocabulary = [
             },
         ],
         translation: 'lecture purement japonaise',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1771,7 +1771,7 @@ const vocabulary = [
             },
         ],
         translation: 'lecture sino-japonaise',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1785,7 +1785,7 @@ const vocabulary = [
             },
         ],
         translation: 'langue',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1799,7 +1799,7 @@ const vocabulary = [
             },
         ],
         translation: 'elle',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1813,7 +1813,7 @@ const vocabulary = [
             },
         ],
         translation: 'une personne',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1827,7 +1827,7 @@ const vocabulary = [
             },
         ],
         translation: 'deux personnes',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1841,7 +1841,7 @@ const vocabulary = [
             },
         ],
         translation: 'prénom',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1855,7 +1855,7 @@ const vocabulary = [
             },
         ],
         translation: 'maître, expert',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1869,7 +1869,7 @@ const vocabulary = [
             },
         ],
         translation: 'repas, riz cuit (formel)',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1883,7 +1883,7 @@ const vocabulary = [
             },
         ],
         translation: 'thé (formel)',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1897,7 +1897,7 @@ const vocabulary = [
             },
         ],
         translation: 'fruit',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1915,7 +1915,7 @@ const vocabulary = [
             },
         ],
         translation: 'accomplir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1933,7 +1933,7 @@ const vocabulary = [
             },
         ],
         translation: 'être fini, fatigué, mourir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -1947,7 +1947,7 @@ const vocabulary = [
             },
         ],
         translation: 'confiserie',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1961,7 +1961,7 @@ const vocabulary = [
             },
         ],
         translation: 'soupe',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1971,7 +1971,7 @@ const vocabulary = [
             },
         ],
         translation: 'ramen',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1981,7 +1981,7 @@ const vocabulary = [
             },
         ],
         translation: 'pâtes',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -1991,7 +1991,7 @@ const vocabulary = [
             },
         ],
         translation: 'café',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2001,7 +2001,7 @@ const vocabulary = [
             },
         ],
         translation: 'fromage',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2011,7 +2011,7 @@ const vocabulary = [
             },
         ],
         translation: 'dessert',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2025,7 +2025,7 @@ const vocabulary = [
             },
         ],
         translation: 'Occident',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2035,7 +2035,7 @@ const vocabulary = [
             },
         ],
         translation: 'maintenant',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2045,7 +2045,7 @@ const vocabulary = [
             },
         ],
         translation: 'avant',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2055,7 +2055,7 @@ const vocabulary = [
             },
         ],
         translation: 'après',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2065,7 +2065,7 @@ const vocabulary = [
             },
         ],
         translation: 'pendant',
-        grammar: 0,
+        grammar: 1,
     },
     {
         elements: [
@@ -2079,7 +2079,7 @@ const vocabulary = [
             },
         ],
         translation: 'Osaka',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2093,7 +2093,7 @@ const vocabulary = [
             },
         ],
         translation: 'Hiroshima',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2107,7 +2107,7 @@ const vocabulary = [
             },
         ],
         translation: 'Kawashima',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2121,7 +2121,7 @@ const vocabulary = [
             },
         ],
         translation: 'Miyazaki (nom)',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2135,7 +2135,7 @@ const vocabulary = [
             },
         ],
         translation: 'Matsuda (nom)',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2149,7 +2149,7 @@ const vocabulary = [
             },
         ],
         translation: 'jouer',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2163,7 +2163,7 @@ const vocabulary = [
             },
         ],
         translation: 'dormir, aller au lit',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2177,7 +2177,7 @@ const vocabulary = [
             },
         ],
         translation: 'monter à bord',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2191,7 +2191,7 @@ const vocabulary = [
             },
         ],
         translation: 'attendre',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2205,7 +2205,7 @@ const vocabulary = [
             },
         ],
         translation: 'national, dirigé par l\'Etat',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2219,7 +2219,7 @@ const vocabulary = [
             },
         ],
         translation: 'être debout, se lever',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2233,7 +2233,7 @@ const vocabulary = [
             },
         ],
         translation: 'se dépêcher',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2247,7 +2247,7 @@ const vocabulary = [
             },
         ],
         translation: 'mourir',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2261,7 +2261,7 @@ const vocabulary = [
             },
         ],
         translation: 'commerce',
-        grammar: 1,
+        grammar: 2,
     },
     {
         elements: [
@@ -2275,7 +2275,7 @@ const vocabulary = [
             },
         ],
         translation: 'vendre',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2289,7 +2289,7 @@ const vocabulary = [
             },
         ],
         translation: 'chercher',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2303,7 +2303,7 @@ const vocabulary = [
             },
         ],
         translation: 'gagner',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2317,7 +2317,7 @@ const vocabulary = [
             },
         ],
         translation: 'surpasser, exceller',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2331,7 +2331,7 @@ const vocabulary = [
             },
         ],
         translation: 'nager',
-        grammar: 2,
+        grammar: 3,
     },
     {
         elements: [
@@ -2345,7 +2345,7 @@ const vocabulary = [
             },
         ],
         translation: 'génie',
-        grammar: 1,
+        grammar: 2,
     },
 ];
 

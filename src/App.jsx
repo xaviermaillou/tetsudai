@@ -54,7 +54,8 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [level, setLevel] = useState("");
-  const [grammar, setGrammar] = useState(null);
+  const [grammar, setGrammar] = useState(0);
+  const [search, setSearch] = useState("");
   const [filterError, setFilterError] = useState("");
 
 
@@ -63,10 +64,10 @@ function App() {
     if (!filtersApplied && !level && !grammar && !menuOpen) {
       setMenuOpen(true);
       setTimeout(() => {
-        setFilterError("Sélectionnez au moins un filtre");
+        setFilterError("Configurez ici les filtres");
       }, 300);
     } else if (!filtersApplied && !level && !grammar) {
-      setFilterError("Sélectionnez au moins un filtre");
+      setFilterError("Configurez ici les filtres");
     } else {
       setFilterError("");
     }
@@ -104,6 +105,8 @@ function App() {
         refreshWord={refreshWord}
         compressed={menuOpen}
         filtersApplied={filtersApplied}
+        level={level}
+        grammar={grammar}
         applyFilters={applyFilters}
       />
       <WordsList 
@@ -116,6 +119,8 @@ function App() {
         setLevel={setLevel}
         grammar={grammar}
         setGrammar={setGrammar}
+        search={search}
+        setSearch={setSearch}
         filterError={filterError}
         setFilterError={setFilterError}
       />

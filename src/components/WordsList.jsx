@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ListHeader = (props) => {
     const {
@@ -8,19 +8,24 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        setSearch,
         filterError,
         setFilterError,
     } = props;
 
     const [filter, setFilter] = useState(1);
+    useEffect(() => {
+        if (filterError) setFilter(1);
+    }, [filterError]);
 
     return (
         <div id="wordsListIndicator" className={filterError ? "focused" : ""}>
-            <img className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
+            <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
             <div id="wordsListHFilters" onClick={() => setFilterError("")}>
                 <div>
                     <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(1)}>JLPT</span>
-                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>Fonction</span>
+                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>Classe</span>
+                    <span className={filter === 3 ? "selected" : ""} onClick={() => setFilter(3)}><img src="/img/search.png" alt="search" /></span>
                 </div>
                 {filter === 1 && <div>
                     <span className={level === "" ? "selected" : ""} onClick={() => setLevel("")} >Tous</span>
@@ -31,11 +36,14 @@ const ListHeader = (props) => {
                     <span className={level === "N1" ? "selected" : ""} onClick={() => setLevel("N1")} >N1</span>
                 </div>}
                 {filter === 2 && <div>
-                    <span className={grammar === null ? "selected" : ""} onClick={() => setGrammar(null)} >Tous</span>
-                    <span className={grammar === 0 ? "selected" : ""} onClick={() => setGrammar(0)} >Communs</span>
-                    <span className={grammar === 1 ? "selected" : ""} onClick={() => setGrammar(1)} >Propres</span>
-                    <span className={grammar === 2 ? "selected" : ""} onClick={() => setGrammar(2)} >Verbes</span>
-                    <span className={grammar === 3 ? "selected" : ""} onClick={() => setGrammar(3)} >Adjectifs</span>
+                    <span className={grammar === 0 ? "selected" : ""} onClick={() => setGrammar(0)} >Tous</span>
+                    <span className={grammar === 1 ? "selected" : ""} onClick={() => setGrammar(1)} >Communs</span>
+                    <span className={grammar === 2 ? "selected" : ""} onClick={() => setGrammar(2)} >Propres</span>
+                    <span className={grammar === 3 ? "selected" : ""} onClick={() => setGrammar(3)} >Verbes</span>
+                    <span className={grammar === 4 ? "selected" : ""} onClick={() => setGrammar(4)} >Adjectifs</span>
+                </div>}
+                {filter === 3 && <div>
+                    <input onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>}
             </div>
             <span id="wordsListFiltersErrorMessage">{filterError}</span>
@@ -51,6 +59,7 @@ const ListElement = (props) => {
         currentWord,
         level,
         grammar,
+        search,
     } = props;
 
     const clickHandle = (id) => {
@@ -59,7 +68,9 @@ const ListElement = (props) => {
     }
 
     return (
-        <div className={((level === kanji.level || !level) && (kanji.grammar.includes(grammar) || !grammar)) ?
+        <div className={((level === kanji.level || !level) 
+            && (kanji.grammar.includes(grammar) || !grammar)) 
+            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || !search) ?
             "wordsListElementContainer open" : "wordsListElementContainer"}
         >
             <div 
@@ -115,6 +126,8 @@ const WordsList = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        search,
+        setSearch,
         filterError,
         setFilterError,
     } = props;
@@ -132,6 +145,7 @@ const WordsList = (props) => {
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                setSearch={setSearch}
                 filterError={filterError}
                 setFilterError={setFilterError}
             />
@@ -144,6 +158,7 @@ const WordsList = (props) => {
                         currentWord={currentWord}
                         level={level}
                         grammar={grammar}
+                        search={search}
                         key={i}
                     />
                 ))}

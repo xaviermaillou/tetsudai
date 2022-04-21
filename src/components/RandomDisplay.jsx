@@ -9,8 +9,18 @@ const RandomControls = (props) => {
         changeDisplayedElement,
         refreshWord,
         filtersApplied,
+        level,
+        grammar,
         applyFilters,
     } = props;
+
+    const adjectives = {
+        0: "nom commun",
+        1: "nom propre",
+        2: "verbe",
+        3: "adjectif"
+    }
+
     return (
         <div id="selectorAndControls">
             <div id="selector">
@@ -21,16 +31,22 @@ const RandomControls = (props) => {
                 <span className={(displayedElement === 1 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(1)}>fr</span>
             </div>
             <div id="controls" >
+                <div></div>
                 <div className={filtersApplied ? "selected" : ""}>
                     <span onClick={applyFilters}>
                         <img src="/img/filter.png" alt="apply filters" />
                     </span>
+                </div>
+                <div>
+                    {filtersApplied && <span>JLPT: {level ? level : "Tous"}</span>}
+                    {filtersApplied && <span>Classe: {grammar ? adjectives[grammar] : "Toutes"}</span>}
                 </div>
                 <div onClick={refreshWord}>
                     <span>
                         <img src="/img/random.png" alt="random" />
                     </span>
                 </div>
+                <div></div>
             </div>
         </div>
     );
@@ -42,6 +58,8 @@ const RandomDisplay = (props) => {
         refreshWord,
         compressed,
         filtersApplied,
+        level,
+        grammar,
         applyFilters,
     } = props;
 
@@ -75,6 +93,8 @@ const RandomDisplay = (props) => {
                     changeDisplayedElement={changeDisplayedElement}
                     refreshWord={refreshWord}
                     filtersApplied={filtersApplied}
+                    level={level}
+                    grammar={grammar}
                     applyFilters={applyFilters}
                 />
             </div>}

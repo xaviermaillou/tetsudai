@@ -1,8 +1,20 @@
+@keyframes emphasize {
+  0% {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0px 0px 45px rgba(255, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
 * {
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s, box-shadow 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s, border 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -27,6 +39,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+input:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
 }
 
 #header {
@@ -166,7 +192,9 @@ code {
 }
 #controls {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 67.5%;
+  margin: 0px auto;
 }
 #controls div {
   height: calc(32px + 1.5vh);
@@ -176,17 +204,25 @@ code {
   border-radius: 50%;
   opacity: 0.5;
 }
-#controls div:hover {
-  cursor: pointer;
-}
-#controls div:nth-child(1) {
+#controls div:nth-child(2) {
   opacity: 0.25;
 }
-#controls div:nth-child(1).selected {
+#controls div:nth-child(2).selected {
   opacity: 0.5;
+}
+#controls div:nth-child(3) {
+  width: calc(16px + 0.75vh);
+  display: flex;
+  flex-direction: column;
+}
+#controls div:nth-child(3) span {
+  white-space: nowrap;
 }
 #controls img {
   height: calc(16px + 0.75vh);
+}
+#controls img:hover {
+  cursor: pointer;
 }
 
 #wordsListContainer {
@@ -215,9 +251,10 @@ code {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 #wordsListIndicator.focused {
-  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.175);
+  animation-name: emphasize;
+  animation-duration: 0.4s;
 }
-#wordsListIndicator img {
+#wordsListOpener {
   height: calc(16px + 0.75vh);
   opacity: 0.5;
   transform: rotate(-90deg);
@@ -225,11 +262,11 @@ code {
   top: 24px;
   left: -64px;
 }
-#wordsListIndicator img.open {
+#wordsListOpener.open {
   transform: rotate(90deg);
   left: 4vw;
 }
-#wordsListIndicator img:hover, #wordsListIndicator span:hover {
+#wordsListOpener:hover, #wordsListIndicator span:hover {
   cursor: pointer;
 }
 #wordsListHFilters {
@@ -250,6 +287,9 @@ code {
 }
 #wordsListHFilters span.selected {
   opacity: 1;
+}
+#wordsListHFilters img {
+  height: calc(12px + 0.5vh);
 }
 #wordsListFiltersErrorMessage {
   position: absolute;
