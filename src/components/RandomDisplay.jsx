@@ -9,7 +9,7 @@ const RandomControls = (props) => {
         changeDisplayedElement,
         refreshWord,
         filtersApplied,
-        setFiltersApplied,
+        applyFilters,
     } = props;
     return (
         <div id="selectorAndControls">
@@ -22,7 +22,7 @@ const RandomControls = (props) => {
             </div>
             <div id="controls" >
                 <div className={filtersApplied ? "selected" : ""}>
-                    <span onClick={() => setFiltersApplied(!filtersApplied)}>
+                    <span onClick={applyFilters}>
                         <img src="/img/filter.png" alt="apply filters" />
                     </span>
                 </div>
@@ -42,7 +42,7 @@ const RandomDisplay = (props) => {
         refreshWord,
         compressed,
         filtersApplied,
-        setFiltersApplied,
+        applyFilters,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
@@ -75,7 +75,7 @@ const RandomDisplay = (props) => {
                     changeDisplayedElement={changeDisplayedElement}
                     refreshWord={refreshWord}
                     filtersApplied={filtersApplied}
-                    setFiltersApplied={setFiltersApplied}
+                    applyFilters={applyFilters}
                 />
             </div>}
         </div>

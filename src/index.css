@@ -2,7 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s;
+  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s, box-shadow 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -198,28 +198,34 @@ code {
   left: 100vw;
   justify-content: flex-start;
   color: white;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 #wordsListContainer.open {
   left: 0vw;
-  background-color: rgba(255, 237, 242, 0.9);
 }
 #wordsListIndicator {
   position: relative;
   z-index: 1200;
-  height: 80px;
+  height: 120px;
+  background-color: rgba(255, 237, 242, 0.9);
   display: flex;
   align-items: center;
+  margin: 24px 24px 12px 24px;
   padding: 10px 4vw;
-  border-bottom: 1px solid rgba(255, 183, 197, 1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+#wordsListIndicator.focused {
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.175);
 }
 #wordsListIndicator img {
   height: calc(16px + 0.75vh);
   opacity: 0.5;
   transform: rotate(-90deg);
   position: absolute;
-  left: -40px;
+  top: 24px;
+  left: -64px;
 }
-#wordsListIndicator.open img {
+#wordsListIndicator img.open {
   transform: rotate(90deg);
   left: 4vw;
 }
@@ -245,12 +251,24 @@ code {
 #wordsListHFilters span.selected {
   opacity: 1;
 }
-#wordsList {
+#wordsListFiltersErrorMessage {
+  position: absolute;
+  bottom: 4px;
+  left: 0px;
+  font-size: 12px;
+  display: inline-block;
   width: 100%;
-  height: calc(100vh - 80px);
+  text-align: center;
+  color: red;
+}
+#wordsList {
+  height: calc(100vh - 192px);
+  margin: 12px 24px 24px 24px;;
   padding-bottom: 12vh;
+  background-color: rgba(255, 237, 242, 0.9);
   overflow-y: scroll;
   opacity: 0;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 #wordsList.open {
   opacity: 1;
@@ -337,7 +355,7 @@ code {
   #wordsListHFilters {
     padding-left: 0;
   }
-  #wordsListIndicator.open img {
+  #wordsListIndicator img.open {
     left: 1vw;
   }
 }

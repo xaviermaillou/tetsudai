@@ -52,12 +52,28 @@ function App() {
     setKanjisWithVocabulary(kanjisListCopy);
   }, [kanjisList, vocabularyList]);
 
-  const [filtersApplied, setFiltersApplied] = useState(false);
-  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
-
   const [menuOpen, setMenuOpen] = useState(false);
   const [level, setLevel] = useState("");
   const [grammar, setGrammar] = useState(null);
+  const [filterError, setFilterError] = useState("");
+
+
+  const [filtersApplied, setFiltersApplied] = useState(false);
+  const applyFilters = () => {
+    if (!filtersApplied && !level && !grammar && !menuOpen) {
+      setMenuOpen(true);
+      setTimeout(() => {
+        setFilterError("Sélectionnez au moins un filtre");
+      }, 300);
+    } else if (!filtersApplied && !level && !grammar) {
+      setFilterError("Sélectionnez au moins un filtre");
+    } else {
+      setFilterError("");
+    }
+    setFiltersApplied(!filtersApplied);
+  }
+
+  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
 
   useEffect(() => {
     const kanjisListCopy = [];
@@ -88,7 +104,7 @@ function App() {
         refreshWord={refreshWord}
         compressed={menuOpen}
         filtersApplied={filtersApplied}
-        setFiltersApplied={setFiltersApplied}
+        applyFilters={applyFilters}
       />
       <WordsList 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
@@ -100,7 +116,8 @@ function App() {
         setLevel={setLevel}
         grammar={grammar}
         setGrammar={setGrammar}
-
+        filterError={filterError}
+        setFilterError={setFilterError}
       />
     </div>
   );

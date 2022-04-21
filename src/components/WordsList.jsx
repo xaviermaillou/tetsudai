@@ -8,17 +8,19 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        filterError,
+        setFilterError,
     } = props;
 
     const [filter, setFilter] = useState(1);
 
     return (
-        <div id="wordsListIndicator" className={open ? "open" : ""}>
-            <img onClick={toggle} src="/img/up.png" alt="see all words" />
-            <div id="wordsListHFilters">
+        <div id="wordsListIndicator" className={filterError ? "focused" : ""}>
+            <img className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
+            <div id="wordsListHFilters" onClick={() => setFilterError("")}>
                 <div>
-                    <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(1)}>Niveaux JLPT</span>
-                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>Fonction grammaticale</span>
+                    <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(1)}>JLPT</span>
+                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>Fonction</span>
                 </div>
                 {filter === 1 && <div>
                     <span className={level === "" ? "selected" : ""} onClick={() => setLevel("")} >Tous</span>
@@ -36,6 +38,7 @@ const ListHeader = (props) => {
                     <span className={grammar === 3 ? "selected" : ""} onClick={() => setGrammar(3)} >Adjectifs</span>
                 </div>}
             </div>
+            <span id="wordsListFiltersErrorMessage">{filterError}</span>
         </div>
     );
 }
@@ -112,6 +115,8 @@ const WordsList = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        filterError,
+        setFilterError,
     } = props;
 
     const toggle = () => {
@@ -127,6 +132,8 @@ const WordsList = (props) => {
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                filterError={filterError}
+                setFilterError={setFilterError}
             />
             <div id="wordsList" className={open ? "open" : ""}>
                 {kanjis.map((item, i) => (
