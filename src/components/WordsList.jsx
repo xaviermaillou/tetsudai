@@ -8,6 +8,7 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        search,
         setSearch,
         filterError,
         setFilterError,
@@ -43,7 +44,7 @@ const ListHeader = (props) => {
                     <span className={grammar === 4 ? "selected" : ""} onClick={() => setGrammar(4)} >Adjectifs</span>
                 </div>}
                 {filter === 3 && <div>
-                    <input onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
+                    <input value={search} onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>}
             </div>
             <span id="wordsListFiltersErrorMessage">{filterError}</span>
@@ -145,6 +146,7 @@ const WordsList = (props) => {
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                search={search}
                 setSearch={setSearch}
                 filterError={filterError}
                 setFilterError={setFilterError}
