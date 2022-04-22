@@ -68,10 +68,19 @@ const ListElement = (props) => {
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
+    const searchThroughVocabulary = (vocabulary, string) => {
+        let includes = false;
+        vocabulary.forEach((word) => {
+            if (word.translation.includes(string)) includes = true;
+        });
+
+        return includes;
+    }
+
     return (
         <div className={((level === kanji.level || !level) 
             && (kanji.grammar.includes(grammar) || !grammar)) 
-            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || !search) ?
+            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughVocabulary(kanji.vocabulary, search) || !search) ?
             "wordsListElementContainer open" : "wordsListElementContainer"}
         >
             <div 
