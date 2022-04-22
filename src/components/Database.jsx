@@ -9,19 +9,31 @@ const ResetDatabase = (props) => {
     const resetDb = () => {
         setPreventKanjiReload(true);
         setTimeout(() => {
+            let erasedKanjis = 0;
+            let erasedWords = 0;
             kanjisList.forEach((kanji) => {
                 firebase.firestore().collection('Kanjis').doc(kanji.doc.id).delete();
+                erasedKanjis++;
             });
             vocabularyList.forEach((word) => {
                 firebase.firestore().collection('Vocabulary').doc(word.doc.id).delete();
+                erasedWords++;
             });
         
+            let addedKanjis = 0;
+            let addedWords = 0;
             kanjis.forEach((kanji) => {
                 firebase.firestore().collection('Kanjis').doc().set(kanji);
+                addedKanjis++;
             });
             vocabulary.forEach((word) => {
                 firebase.firestore().collection('Vocabulary').doc().set(word);
+                addedWords++;
             });
+            console.log('Erased kanjis', erasedKanjis);
+            console.log('Erased words', erasedWords);
+            console.log('Added kanjis', addedKanjis);
+            console.log('Added words', addedWords);
         }, 1000);
         setTimeout(() => {
             setPreventKanjiReload(false);

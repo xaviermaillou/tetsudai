@@ -1092,7 +1092,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'mot',
+        translation: 'dire, mot',
     },
     {
         kanji: '話',
@@ -1113,7 +1113,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'parler',
+        translation: 'récit, conversation',
     },
     {
         kanji: '語',
@@ -1131,7 +1131,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'mot, langue',
+        translation: 'mot, parole, langue',
     },
     {
         kanji: '読',
@@ -1574,7 +1574,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'espirt, air',
+        translation: 'esprit, air',
     },
     {
         kanji: '先',
@@ -1983,7 +1983,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'facilité, confort',
+        translation: 'joie, confort',
     },
     {
         kanji: '電',
@@ -3272,6 +3272,81 @@ const kanjis = [
             ],
         },
         translation: 'génie',
+    },
+    {
+        kanji: '心',
+        strokes: 4,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'こころ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シン',
+                },
+            ],
+        },
+        translation: 'coeur, esprit',
+    },
+    {
+        kanji: '足',
+        strokes: 7,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あし',
+                },
+                {
+                    'kana': 'た',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ソク',
+                },
+            ],
+        },
+        translation: 'pied, suffire',
+    },
+    {
+        kanji: '屋',
+        strokes: 9,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'や',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'オク',
+                },
+            ],
+        },
+        translation: 'maison, marchand',
+    },
+    {
+        kanji: '門',
+        strokes: 8,
+        level: 'N2',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かど',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'モン',
+                },
+            ],
+        },
+        translation: 'porte',
     },
 ];
 

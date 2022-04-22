@@ -14,7 +14,7 @@ const ListHeader = (props) => {
         setFilterError,
     } = props;
 
-    const [filter, setFilter] = useState(1);
+    const [filter, setFilter] = useState(3);
     useEffect(() => {
         if (filterError) setFilter(1);
     }, [filterError]);

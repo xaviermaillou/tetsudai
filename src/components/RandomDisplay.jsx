@@ -15,10 +15,10 @@ const RandomControls = (props) => {
     } = props;
 
     const adjectives = {
-        0: "nom commun",
-        1: "nom propre",
-        2: "verbe",
-        3: "adjectif"
+        1: "Noms communs",
+        2: "Noms propres",
+        3: "Verbes",
+        4: "Adjectifs"
     }
 
     return (

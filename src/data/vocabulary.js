@@ -8,16 +8,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '母',
-                'kana': 'はは',
+                kanji: '母',
+                kana: 'はは',
             },
             {
-                'kanji': '',
-                'kana': 'の',
+                kanji: '',
+                kana: 'の',
             },
             {
-                'kanji': '日',
-                'kana': 'ひ',
+                kanji: '日',
+                kana: 'ひ',
             },
         ],
         translation: 'fête des mères',
@@ -26,16 +26,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '日',
-                'kana': 'ニチ',
+                kanji: '日',
+                kana: 'ニチ',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'dimanche',
@@ -44,16 +44,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '月',
-                'kana': 'ゲツ',
+                kanji: '月',
+                kana: 'ゲツ',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'lundi',
@@ -62,16 +62,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '火',
-                'kana': 'カ',
+                kanji: '火',
+                kana: 'カ',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'mardi',
@@ -80,16 +80,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '水',
-                'kana': 'スイ',
+                kanji: '水',
+                kana: 'スイ',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'mercredi',
@@ -98,16 +98,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '木',
-                'kana': 'モク',
+                kanji: '木',
+                kana: 'モク',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'jeudi',
@@ -116,16 +116,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '金',
-                'kana': 'キン',
+                kanji: '金',
+                kana: 'キン',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'vendredi',
@@ -134,16 +134,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '土',
-                'kana': 'ド',
+                kanji: '土',
+                kana: 'ド',
             },
             {
-                'kanji': '曜',
-                'kana': 'ヨウ',
+                kanji: '曜',
+                kana: 'ヨウ',
             },
             {
-                'kanji': '日',
-                'kana': 'び',
+                kanji: '日',
+                kana: 'び',
             },
         ],
         translation: 'samedi',
@@ -152,12 +152,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '日',
-                'kana': '二',
+                kanji: '日',
+                kana: '二',
             },
             {
-                'kanji': '本',
-                'kana': 'ホン',
+                kanji: '本',
+                kana: 'ホン',
             },
         ],
         translation: 'Japon',
@@ -166,16 +166,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '食',
-                'kana': 'た',
+                kanji: '食',
+                kana: 'た',
             },
             {
-                'kanji': '',
-                'kana': 'べ',
+                kanji: '',
+                kana: 'べ',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'manger',
@@ -184,16 +184,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '食',
-                'kana': 'た',
+                kanji: '食',
+                kana: 'た',
             },
             {
-                'kanji': '',
-                'kana': 'べ',
+                kanji: '',
+                kana: 'べ',
             },
             {
-                'kanji': '物',
-                'kana': 'もの',
+                kanji: '物',
+                kana: 'もの',
             },
         ],
         translation: 'nourriture',
@@ -202,12 +202,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '飲',
-                'kana': 'の',
+                kanji: '飲',
+                kana: 'の',
             },
             {
-                'kanji': '',
-                'kana': 'む',
+                kanji: '',
+                kana: 'む',
             },
         ],
         translation: 'boire',
@@ -216,16 +216,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '飲',
-                'kana': 'の',
+                kanji: '飲',
+                kana: 'の',
             },
             {
-                'kanji': '',
-                'kana': 'み',
+                kanji: '',
+                kana: 'み',
             },
             {
-                'kanji': '物',
-                'kana': 'もの',
+                kanji: '物',
+                kana: 'もの',
             },
         ],
         translation: 'boisson',
@@ -234,12 +234,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '薬',
-                'kana': 'くすり',
+                kanji: '薬',
+                kana: 'くすり',
             },
             {
-                'kanji': '屋',
-                'kana': 'や',
+                kanji: '屋',
+                kana: 'や',
             },
         ],
         translation: 'pharmacie',
@@ -248,12 +248,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'パン',
+                kanji: '',
+                kana: 'パン',
             },
             {
-                'kanji': '屋',
-                'kana': 'や',
+                kanji: '屋',
+                kana: 'や',
             },
         ],
         translation: 'boulangerie',
@@ -262,12 +262,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '夕',
-                'kana': 'ゆう',
+                kanji: '夕',
+                kana: 'ゆう',
             },
             {
-                'kanji': '食',
-                'kana': 'ショク',
+                kanji: '食',
+                kana: 'ショク',
             },
         ],
         translation: 'repas du soir, dîner',
@@ -276,12 +276,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '火',
-                'kana': 'カ',
+                kanji: '火',
+                kana: 'カ',
             },
             {
-                'kanji': '山',
-                'kana': 'ザン',
+                kanji: '山',
+                kana: 'ザン',
             },
         ],
         translation: 'volcan',
@@ -290,12 +290,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '大',
-                'kana': 'ダイ',
+                kanji: '大',
+                kana: 'ダイ',
             },
             {
-                'kanji': '学',
-                'kana': 'ガク',
+                kanji: '学',
+                kana: 'ガク',
             },
         ],
         translation: 'université',
@@ -304,12 +304,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '学',
-                'kana': 'ガッ',
+                kanji: '学',
+                kana: 'ガッ',
             },
             {
-                'kanji': '校',
-                'kana': 'コウ',
+                kanji: '校',
+                kana: 'コウ',
             },
         ],
         translation: 'école',
@@ -318,12 +318,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '学',
-                'kana': 'ガク',
+                kanji: '学',
+                kana: 'ガク',
             },
             {
-                'kanji': '生',
-                'kana': 'セイ',
+                kanji: '生',
+                kana: 'セイ',
             },
         ],
         translation: 'étudiant',
@@ -332,12 +332,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '先',
-                'kana': 'セン',
+                kanji: '先',
+                kana: 'セン',
             },
             {
-                'kanji': '生',
-                'kana': 'セイ',
+                kanji: '生',
+                kana: 'セイ',
             },
         ],
         translation: 'professeur',
@@ -346,12 +346,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '花',
-                'kana': 'はな',
+                kanji: '花',
+                kana: 'はな',
             },
             {
-                'kanji': '火',
-                'kana': 'び',
+                kanji: '火',
+                kana: 'び',
             },
         ],
         translation: 'feu d\'artifice',
@@ -360,12 +360,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '一',
-                'kana': 'イチ',
+                kanji: '一',
+                kana: 'イチ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'janvier',
@@ -374,12 +374,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '二',
-                'kana': 'に',
+                kanji: '二',
+                kana: 'に',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'février',
@@ -388,12 +388,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '三',
-                'kana': 'サン',
+                kanji: '三',
+                kana: 'サン',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'mars',
@@ -402,12 +402,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '四',
-                'kana': 'シ',
+                kanji: '四',
+                kana: 'シ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'avril',
@@ -416,12 +416,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '五',
-                'kana': 'ゴ',
+                kanji: '五',
+                kana: 'ゴ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'mai',
@@ -430,12 +430,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '六',
-                'kana': 'ロク',
+                kanji: '六',
+                kana: 'ロク',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'juin',
@@ -444,12 +444,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '七',
-                'kana': 'シチ',
+                kanji: '七',
+                kana: 'シチ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'juillet',
@@ -458,12 +458,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '八',
-                'kana': 'ハチ',
+                kanji: '八',
+                kana: 'ハチ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'août',
@@ -472,12 +472,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '九',
-                'kana': 'ク',
+                kanji: '九',
+                kana: 'ク',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'septembre',
@@ -486,12 +486,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '十',
-                'kana': 'ジュウ',
+                kanji: '十',
+                kana: 'ジュウ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'octobre',
@@ -500,16 +500,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '十',
-                'kana': 'ジュウ',
+                kanji: '十',
+                kana: 'ジュウ',
             },
             {
-                'kanji': '一',
-                'kana': 'イチ',
+                kanji: '一',
+                kana: 'イチ',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'novembre',
@@ -518,16 +518,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '十',
-                'kana': 'ジュウ',
+                kanji: '十',
+                kana: 'ジュウ',
             },
             {
-                'kanji': '二',
-                'kana': 'に',
+                kanji: '二',
+                kana: 'に',
             },
             {
-                'kanji': '月',
-                'kana': 'ガツ',
+                kanji: '月',
+                kana: 'ガツ',
             },
         ],
         translation: 'décembre',
@@ -536,16 +536,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '分',
-                'kana': 'わ',
+                kanji: '分',
+                kana: 'わ',
             },
             {
-                'kanji': '',
-                'kana': 'か',
+                kanji: '',
+                kana: 'か',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'comprendre',
@@ -554,12 +554,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '天',
-                'kana': 'テン',
+                kanji: '天',
+                kana: 'テン',
             },
             {
-                'kanji': '気',
-                'kana': 'キ',
+                kanji: '気',
+                kana: 'キ',
             },
         ],
         translation: 'temps, météo',
@@ -568,12 +568,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '行',
-                'kana': 'い',
+                kanji: '行',
+                kana: 'い',
             },
             {
-                'kanji': '',
-                'kana': 'く',
+                kanji: '',
+                kana: 'く',
             },
         ],
         translation: 'aller',
@@ -582,12 +582,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '住',
-                'kana': 'す',
+                kanji: '住',
+                kana: 'す',
             },
             {
-                'kanji': '',
-                'kana': 'む',
+                kanji: '',
+                kana: 'む',
             },
         ],
         translation: 'habiter',
@@ -596,12 +596,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '休',
-                'kana': 'やす',
+                kanji: '休',
+                kana: 'やす',
             },
             {
-                'kanji': '',
-                'kana': 'む',
+                kanji: '',
+                kana: 'む',
             },
         ],
         translation: 'se reposer',
@@ -610,12 +610,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '来',
-                'kana': 'く',
+                kanji: '来',
+                kana: 'く',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'venir',
@@ -624,12 +624,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '見',
-                'kana': 'み',
+                kanji: '見',
+                kana: 'み',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'voir',
@@ -638,12 +638,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '聞',
-                'kana': 'き',
+                kanji: '聞',
+                kana: 'き',
             },
             {
-                'kanji': '',
-                'kana': 'く',
+                kanji: '',
+                kana: 'く',
             },
         ],
         translation: 'écouter, demander',
@@ -652,12 +652,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '言',
-                'kana': 'い',
+                kanji: '言',
+                kana: 'い',
             },
             {
-                'kanji': '',
-                'kana': 'う',
+                kanji: '',
+                kana: 'う',
             },
         ],
         translation: 'dire',
@@ -666,12 +666,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '話',
-                'kana': 'はな',
+                kanji: '話',
+                kana: 'はな',
             },
             {
-                'kanji': '',
-                'kana': 'す',
+                kanji: '',
+                kana: 'す',
             },
         ],
         translation: 'parler',
@@ -680,8 +680,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '話',
-                'kana': 'はなし',
+                kanji: '話',
+                kana: 'はなし',
             },
         ],
         translation: 'conversation',
@@ -690,12 +690,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '語',
-                'kana': 'かた',
+                kanji: '語',
+                kana: 'かた',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'raconter',
@@ -704,12 +704,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'フランス',
+                kanji: '',
+                kana: 'フランス',
             },
             {
-                'kanji': '語',
-                'kana': 'ゴ',
+                kanji: '語',
+                kana: 'ゴ',
             },
         ],
         translation: 'langue française',
@@ -718,12 +718,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '読',
-                'kana': 'よ',
+                kanji: '読',
+                kana: 'よ',
             },
             {
-                'kanji': '',
-                'kana': 'む',
+                kanji: '',
+                kana: 'む',
             },
         ],
         translation: 'lire',
@@ -732,12 +732,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '書',
-                'kana': 'か',
+                kanji: '書',
+                kana: 'か',
             },
             {
-                'kanji': '',
-                'kana': 'く',
+                kanji: '',
+                kana: 'く',
             },
         ],
         translation: 'écrire',
@@ -746,12 +746,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '知',
-                'kana': 'し',
+                kanji: '知',
+                kana: 'し',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'savoir',
@@ -760,12 +760,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '思',
-                'kana': 'おも',
+                kanji: '思',
+                kana: 'おも',
             },
             {
-                'kanji': '',
-                'kana': 'う',
+                kanji: '',
+                kana: 'う',
             },
         ],
         translation: 'penser',
@@ -774,16 +774,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '教',
-                'kana': 'おし',
+                kanji: '教',
+                kana: 'おし',
             },
             {
-                'kanji': '',
-                'kana': 'え',
+                kanji: '',
+                kana: 'え',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'enseigner',
@@ -792,12 +792,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '歩',
-                'kana': 'ある',
+                kanji: '歩',
+                kana: 'ある',
             },
             {
-                'kanji': '',
-                'kana': 'く',
+                kanji: '',
+                kana: 'く',
             },
         ],
         translation: 'marcher',
@@ -806,12 +806,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '入',
-                'kana': 'はい',
+                kanji: '入',
+                kana: 'はい',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'entrer',
@@ -820,16 +820,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '大',
-                'kana': 'おお',
+                kanji: '大',
+                kana: 'おお',
             },
             {
-                'kanji': '',
-                'kana': 'き',
+                kanji: '',
+                kana: 'き',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'grand',
@@ -838,16 +838,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '小',
-                'kana': 'ちい',
+                kanji: '小',
+                kana: 'ちい',
             },
             {
-                'kanji': '',
-                'kana': 'さ',
+                kanji: '',
+                kana: 'さ',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'petit',
@@ -856,12 +856,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '白',
-                'kana': 'しろ',
+                kanji: '白',
+                kana: 'しろ',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'blanc',
@@ -870,12 +870,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '黒',
-                'kana': 'くろ',
+                kanji: '黒',
+                kana: 'くろ',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'noir',
@@ -884,12 +884,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '古',
-                'kana': 'ふる',
+                kanji: '古',
+                kana: 'ふる',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'vieux',
@@ -898,12 +898,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '安',
-                'kana': 'やす',
+                kanji: '安',
+                kana: 'やす',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'bon marché',
@@ -912,12 +912,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '早',
-                'kana': 'はや',
+                kanji: '早',
+                kana: 'はや',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'tôt, rapide',
@@ -926,12 +926,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '好',
-                'kana': 'す',
+                kanji: '好',
+                kana: 'す',
             },
             {
-                'kanji': '',
-                'kana': 'き',
+                kanji: '',
+                kana: 'き',
             },
         ],
         translation: 'aimé',
@@ -940,12 +940,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '学',
-                'kana': 'まな',
+                kanji: '学',
+                kana: 'まな',
             },
             {
-                'kanji': '',
-                'kana': 'ぶ',
+                kanji: '',
+                kana: 'ぶ',
             },
         ],
         translation: 'étudier',
@@ -954,12 +954,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '高',
-                'kana': 'たか',
+                kanji: '高',
+                kana: 'たか',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'haut, cher',
@@ -968,12 +968,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '帰',
-                'kana': 'かえ',
+                kanji: '帰',
+                kana: 'かえ',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'retourner',
@@ -982,12 +982,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '買',
-                'kana': 'か',
+                kanji: '買',
+                kana: 'か',
             },
             {
-                'kanji': '',
-                'kana': 'う',
+                kanji: '',
+                kana: 'う',
             },
         ],
         translation: 'acheter',
@@ -996,16 +996,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '新',
-                'kana': 'あたら',
+                kanji: '新',
+                kana: 'あたら',
             },
             {
-                'kanji': '',
-                'kana': 'し',
+                kanji: '',
+                kana: 'し',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'nouveau',
@@ -1014,16 +1014,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '楽',
-                'kana': 'たの',
+                kanji: '楽',
+                kana: 'たの',
             },
             {
-                'kanji': '',
-                'kana': 'し',
+                kanji: '',
+                kana: 'し',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'amusant, plaisant',
@@ -1032,12 +1032,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '電',
-                'kana': 'デン',
+                kanji: '電',
+                kana: 'デン',
             },
             {
-                'kanji': '車',
-                'kana': 'シャ',
+                kanji: '車',
+                kana: 'シャ',
             },
         ],
         translation: 'train',
@@ -1046,12 +1046,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '電',
-                'kana': 'デン',
+                kanji: '電',
+                kana: 'デン',
             },
             {
-                'kanji': '話',
-                'kana': 'ワ',
+                kanji: '話',
+                kana: 'ワ',
             },
         ],
         translation: 'téléphone',
@@ -1060,12 +1060,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '会',
-                'kana': 'あ',
+                kanji: '会',
+                kana: 'あ',
             },
             {
-                'kanji': '',
-                'kana': 'う',
+                kanji: '',
+                kana: 'う',
             },
         ],
         translation: 'se réunir',
@@ -1074,12 +1074,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '会',
-                'kana': 'カイ',
+                kanji: '会',
+                kana: 'カイ',
             },
             {
-                'kanji': '社',
-                'kana': 'シャ',
+                kanji: '社',
+                kana: 'シャ',
             },
         ],
         translation: 'entreprise',
@@ -1088,12 +1088,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '会',
-                'kana': 'カイ',
+                kanji: '会',
+                kana: 'カイ',
             },
             {
-                'kanji': '話',
-                'kana': 'ワ',
+                kanji: '話',
+                kana: 'ワ',
             },
         ],
         translation: 'conversation',
@@ -1102,12 +1102,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '文',
-                'kana': 'モ',
+                kanji: '文',
+                kana: 'モ',
             },
             {
-                'kanji': '字',
-                'kana': 'ジ',
+                kanji: '字',
+                kana: 'ジ',
             },
         ],
         translation: 'écriture',
@@ -1116,12 +1116,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '文',
-                'kana': 'ブン',
+                kanji: '文',
+                kana: 'ブン',
             },
             {
-                'kanji': '学',
-                'kana': 'ガク',
+                kanji: '学',
+                kana: 'ガク',
             },
         ],
         translation: 'littérature',
@@ -1130,12 +1130,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '下',
-                'kana': 'した',
+                kanji: '下',
+                kana: 'した',
             },
             {
-                'kanji': '町',
-                'kana': 'まち',
+                kanji: '町',
+                kana: 'まち',
             },
         ],
         translation: 'quartier populaire',
@@ -1144,12 +1144,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '長',
-                'kana': 'チョウ',
+                kanji: '長',
+                kana: 'チョウ',
             },
             {
-                'kanji': '町',
-                'kana': 'チョウ',
+                kanji: '町',
+                kana: 'チョウ',
             },
         ],
         translation: 'maire',
@@ -1158,16 +1158,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '上',
-                'kana': 'あ',
+                kanji: '上',
+                kana: 'あ',
             },
             {
-                'kanji': '',
-                'kana': 'が',
+                kanji: '',
+                kana: 'が',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 's\'élever',
@@ -1176,12 +1176,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '上',
-                'kana': 'のぼ',
+                kanji: '上',
+                kana: 'のぼ',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'monter',
@@ -1190,12 +1190,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '上',
-                'kana': 'ジョウ',
+                kanji: '上',
+                kana: 'ジョウ',
             },
             {
-                'kanji': '手',
-                'kana': 'ズ',
+                kanji: '手',
+                kana: 'ズ',
             },
         ],
         translation: 'doué',
@@ -1204,12 +1204,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '東',
-                'kana': 'トウ',
+                kanji: '東',
+                kana: 'トウ',
             },
             {
-                'kanji': '京',
-                'kana': 'キョウ',
+                kanji: '京',
+                kana: 'キョウ',
             },
         ],
         translation: 'Tokyo',
@@ -1218,12 +1218,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '関',
-                'kana': 'カン',
+                kanji: '関',
+                kana: 'カン',
             },
             {
-                'kanji': '西',
-                'kana': 'サイ',
+                kanji: '西',
+                kana: 'サイ',
             },
         ],
         translation: 'Kansai',
@@ -1232,16 +1232,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '北',
-                'kana': 'ホッ',
+                kanji: '北',
+                kana: 'ホッ',
             },
             {
-                'kanji': '海',
-                'kana': 'カイ',
+                kanji: '海',
+                kana: 'カイ',
             },
             {
-                'kanji': '道',
-                'kana': 'ドウ',
+                kanji: '道',
+                kana: 'ドウ',
             },
         ],
         translation: 'Hokkaido',
@@ -1250,12 +1250,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '飲',
-                'kana': 'イン',
+                kanji: '飲',
+                kana: 'イン',
             },
             {
-                'kanji': '酒',
-                'kana': 'シュ',
+                kanji: '酒',
+                kana: 'シュ',
             },
         ],
         translation: 'consommation d\'alcool',
@@ -1264,12 +1264,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '空',
-                'kana': 'クウ',
+                kanji: '空',
+                kana: 'クウ',
             },
             {
-                'kanji': '気',
-                'kana': 'キ',
+                kanji: '気',
+                kana: 'キ',
             },
         ],
         translation: 'atmosphère, humeur',
@@ -1278,12 +1278,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '中',
-                'kana': 'チュウ',
+                kanji: '中',
+                kana: 'チュウ',
             },
             {
-                'kanji': '国',
-                'kana': 'ゴク',
+                kanji: '国',
+                kana: 'ゴク',
             },
         ],
         translation: 'Chine',
@@ -1292,12 +1292,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '今',
-                'kana': 'コ',
+                kanji: '今',
+                kana: 'コ',
             },
             {
-                'kanji': '年',
-                'kana': 'とし',
+                kanji: '年',
+                kana: 'とし',
             },
         ],
         translation: 'cette année',
@@ -1306,12 +1306,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '音',
-                'kana': 'オン',
+                kanji: '音',
+                kana: 'オン',
             },
             {
-                'kanji': '楽',
-                'kana': 'ガク',
+                kanji: '楽',
+                kana: 'ガク',
             },
         ],
         translation: 'musique',
@@ -1320,12 +1320,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '雪',
-                'kana': 'ゆき',
+                kanji: '雪',
+                kana: 'ゆき',
             },
             {
-                'kanji': '国',
-                'kana': 'ぐに',
+                kanji: '国',
+                kana: 'ぐに',
             },
         ],
         translation: 'pays enneigé',
@@ -1334,12 +1334,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '外',
-                'kana': 'ガイ',
+                kanji: '外',
+                kana: 'ガイ',
             },
             {
-                'kanji': '国',
-                'kana': 'コク',
+                kanji: '国',
+                kana: 'コク',
             },
         ],
         translation: 'pays étranger',
@@ -1348,16 +1348,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '外',
-                'kana': 'ガイ',
+                kanji: '外',
+                kana: 'ガイ',
             },
             {
-                'kanji': '国',
-                'kana': 'コク',
+                kanji: '国',
+                kana: 'コク',
             },
             {
-                'kanji': '人',
-                'kana': 'ジン',
+                kanji: '人',
+                kana: 'ジン',
             },
         ],
         translation: 'personne étrangère',
@@ -1366,16 +1366,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '愛',
-                'kana': 'アイ',
+                kanji: '愛',
+                kana: 'アイ',
             },
             {
-                'kanji': '犬',
-                'kana': 'ケン',
+                kanji: '犬',
+                kana: 'ケン',
             },
             {
-                'kanji': '家',
-                'kana': 'カ',
+                kanji: '家',
+                kana: 'カ',
             },
         ],
         translation: 'personne qui aime les chiens',
@@ -1384,12 +1384,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '愛',
-                'kana': 'アイ',
+                kanji: '愛',
+                kana: 'アイ',
             },
             {
-                'kanji': '',
-                'kana': 'する',
+                kanji: '',
+                kana: 'する',
             },
         ],
         translation: 'aimer',
@@ -1398,12 +1398,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '海',
-                'kana': 'うみ',
+                kanji: '海',
+                kana: 'うみ',
             },
             {
-                'kanji': '風',
-                'kana': 'かぜ',
+                kanji: '風',
+                kana: 'かぜ',
             },
         ],
         translation: 'vent marin',
@@ -1412,12 +1412,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '今',
-                'kana': 'コン',
+                kanji: '今',
+                kana: 'コン',
             },
             {
-                'kanji': '月',
-                'kana': 'ゲツ',
+                kanji: '月',
+                kana: 'ゲツ',
             },
         ],
         translation: 'ce mois',
@@ -1426,12 +1426,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '出',
-                'kana': 'で',
+                kanji: '出',
+                kana: 'で',
             },
             {
-                'kanji': '口',
-                'kana': 'ぐち',
+                kanji: '口',
+                kana: 'ぐち',
             },
         ],
         translation: 'sortie',
@@ -1440,12 +1440,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '入',
-                'kana': 'いり',
+                kanji: '入',
+                kana: 'いり',
             },
             {
-                'kanji': '口',
-                'kana': 'ぐち',
+                kanji: '口',
+                kana: 'ぐち',
             },
         ],
         translation: 'entrée',
@@ -1454,12 +1454,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '白',
-                'kana': 'ハッ',
+                kanji: '白',
+                kana: 'ハッ',
             },
             {
-                'kanji': '鳥',
-                'kana': 'チョウ',
+                kanji: '鳥',
+                kana: 'チョウ',
             },
         ],
         translation: 'cygne',
@@ -1468,16 +1468,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '飲',
-                'kana': 'イン',
+                kanji: '飲',
+                kana: 'イン',
             },
             {
-                'kanji': '食',
-                'kana': 'ショク',
+                kanji: '食',
+                kana: 'ショク',
             },
             {
-                'kanji': '店',
-                'kana': 'テン',
+                kanji: '店',
+                kana: 'テン',
             },
         ],
         translation: 'restaurant',
@@ -1486,16 +1486,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '明',
-                'kana': 'あか',
+                kanji: '明',
+                kana: 'あか',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'clair',
@@ -1504,12 +1504,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '説',
-                'kana': 'セツ',
+                kanji: '説',
+                kana: 'セツ',
             },
             {
-                'kanji': '明',
-                'kana': 'メイ',
+                kanji: '明',
+                kana: 'メイ',
             },
         ],
         translation: 'explication',
@@ -1518,12 +1518,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '暗',
-                'kana': 'くら',
+                kanji: '暗',
+                kana: 'くら',
             },
             {
-                'kanji': '',
-                'kana': 'い',
+                kanji: '',
+                kana: 'い',
             },
         ],
         translation: 'sombre',
@@ -1532,12 +1532,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '開',
-                'kana': 'あ',
+                kanji: '開',
+                kana: 'あ',
             },
             {
-                'kanji': '',
-                'kana': 'く',
+                kanji: '',
+                kana: 'く',
             },
         ],
         translation: 's\'ouvrir',
@@ -1546,16 +1546,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '開',
-                'kana': 'あ',
+                kanji: '開',
+                kana: 'あ',
             },
             {
-                'kanji': '',
-                'kana': 'け',
+                kanji: '',
+                kana: 'け',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'ouvrir',
@@ -1564,12 +1564,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '朝',
-                'kana': 'チョウ',
+                kanji: '朝',
+                kana: 'チョウ',
             },
             {
-                'kanji': '食',
-                'kana': 'ショク',
+                kanji: '食',
+                kana: 'ショク',
             },
         ],
         translation: 'petit-déjeuner',
@@ -1578,12 +1578,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '昼',
-                'kana': 'チュウ',
+                kanji: '昼',
+                kana: 'チュウ',
             },
             {
-                'kanji': '食',
-                'kana': 'ショク',
+                kanji: '食',
+                kana: 'ショク',
             },
         ],
         translation: 'déjeuner',
@@ -1592,12 +1592,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '毎',
-                'kana': 'マイ',
+                kanji: '毎',
+                kana: 'マイ',
             },
             {
-                'kanji': '日',
-                'kana': 'ニチ',
+                kanji: '日',
+                kana: 'ニチ',
             },
         ],
         translation: 'tous les jours',
@@ -1606,12 +1606,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '毎',
-                'kana': 'マイ',
+                kanji: '毎',
+                kana: 'マイ',
             },
             {
-                'kanji': '朝',
-                'kana': 'あさ',
+                kanji: '朝',
+                kana: 'あさ',
             },
         ],
         translation: 'tous les matins',
@@ -1620,12 +1620,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '毎',
-                'kana': 'マイ',
+                kanji: '毎',
+                kana: 'マイ',
             },
             {
-                'kanji': '週',
-                'kana': 'シュウ',
+                kanji: '週',
+                kana: 'シュウ',
             },
         ],
         translation: 'toutes les semaines',
@@ -1634,12 +1634,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '毎',
-                'kana': 'マイ',
+                kanji: '毎',
+                kana: 'マイ',
             },
             {
-                'kanji': '月',
-                'kana': 'つき',
+                kanji: '月',
+                kana: 'つき',
             },
         ],
         translation: 'tous les mois',
@@ -1648,12 +1648,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '日',
-                'kana': 'ジツ',
+                kanji: '日',
+                kana: 'ジツ',
             },
             {
-                'kanji': '外',
-                'kana': 'ガイ',
+                kanji: '外',
+                kana: 'ガイ',
             },
         ],
         translation: 'il y a peu, une fois',
@@ -1662,16 +1662,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '男',
-                'kana': 'おとこ',
+                kanji: '男',
+                kana: 'おとこ',
             },
             {
-                'kanji': '',
-                'kana': 'の',
+                kanji: '',
+                kana: 'の',
             },
             {
-                'kanji': '子',
-                'kana': 'こ',
+                kanji: '子',
+                kana: 'こ',
             },
         ],
         translation: 'garçon',
@@ -1680,16 +1680,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '女',
-                'kana': 'おんあ',
+                kanji: '女',
+                kana: 'おんあ',
             },
             {
-                'kanji': '',
-                'kana': 'の',
+                kanji: '',
+                kana: 'の',
             },
             {
-                'kanji': '子',
-                'kana': 'こ',
+                kanji: '子',
+                kana: 'こ',
             },
         ],
         translation: 'fille',
@@ -1698,12 +1698,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '暗',
-                'kana': 'アン',
+                kanji: '暗',
+                kana: 'アン',
             },
             {
-                'kanji': '黒',
-                'kana': 'コク',
+                kanji: '黒',
+                kana: 'コク',
             },
         ],
         translation: 'ténèbres',
@@ -1712,12 +1712,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '半',
-                'kana': 'なか',
+                kanji: '半',
+                kana: 'なか',
             },
             {
-                'kanji': '',
-                'kana': 'ば',
+                kanji: '',
+                kana: 'ば',
             },
         ],
         translation: 'milieu, moitié, partiellement',
@@ -1726,12 +1726,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '漢',
-                'kana': 'カン',
+                kanji: '漢',
+                kana: 'カン',
             },
             {
-                'kanji': '字',
-                'kana': 'ジ',
+                kanji: '字',
+                kana: 'ジ',
             },
         ],
         translation: 'caractère chinois',
@@ -1740,16 +1740,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '訓',
-                'kana': 'クン',
+                kanji: '訓',
+                kana: 'クン',
             },
             {
-                'kanji': '読',
-                'kana': 'よ',
+                kanji: '読',
+                kana: 'よ',
             },
             {
-                'kanji': '',
-                'kana': 'み',
+                kanji: '',
+                kana: 'み',
             },
         ],
         translation: 'lecture purement japonaise',
@@ -1758,16 +1758,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '音',
-                'kana': 'オン',
+                kanji: '音',
+                kana: 'オン',
             },
             {
-                'kanji': '読',
-                'kana': 'よ',
+                kanji: '読',
+                kana: 'よ',
             },
             {
-                'kanji': '',
-                'kana': 'み',
+                kanji: '',
+                kana: 'み',
             },
         ],
         translation: 'lecture sino-japonaise',
@@ -1776,12 +1776,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '言',
-                'kana': 'ゲン',
+                kanji: '言',
+                kana: 'ゲン',
             },
             {
-                'kanji': '語',
-                'kana': 'ゴ',
+                kanji: '語',
+                kana: 'ゴ',
             },
         ],
         translation: 'langue',
@@ -1790,12 +1790,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '彼',
-                'kana': 'かれ',
+                kanji: '彼',
+                kana: 'かれ',
             },
             {
-                'kanji': '女',
-                'kana': 'ジョ',
+                kanji: '女',
+                kana: 'ジョ',
             },
         ],
         translation: 'elle',
@@ -1804,12 +1804,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '一',
-                'kana': 'ひと',
+                kanji: '一',
+                kana: 'ひと',
             },
             {
-                'kanji': '人',
-                'kana': 'リ',
+                kanji: '人',
+                kana: 'リ',
             },
         ],
         translation: 'une personne',
@@ -1818,12 +1818,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '二',
-                'kana': 'ふた',
+                kanji: '二',
+                kana: 'ふた',
             },
             {
-                'kanji': '人',
-                'kana': 'リ',
+                kanji: '人',
+                kana: 'リ',
             },
         ],
         translation: 'deux personnes',
@@ -1832,12 +1832,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '名',
-                'kana': 'な',
+                kanji: '名',
+                kana: 'な',
             },
             {
-                'kanji': '前',
-                'kana': 'まえ',
+                kanji: '前',
+                kana: 'まえ',
             },
         ],
         translation: 'prénom',
@@ -1846,12 +1846,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '名',
-                'kana': 'メイ',
+                kanji: '名',
+                kana: 'メイ',
             },
             {
-                'kanji': '人',
-                'kana': 'ジン',
+                kanji: '人',
+                kana: 'ジン',
             },
         ],
         translation: 'maître, expert',
@@ -1860,12 +1860,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'ご',
+                kanji: '',
+                kana: 'ご',
             },
             {
-                'kanji': '飯',
-                'kana': 'ハン',
+                kanji: '飯',
+                kana: 'ハン',
             },
         ],
         translation: 'repas, riz cuit (formel)',
@@ -1874,12 +1874,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'お',
+                kanji: '',
+                kana: 'お',
             },
             {
-                'kanji': '茶',
-                'kana': 'チャ',
+                kanji: '茶',
+                kana: 'チャ',
             },
         ],
         translation: 'thé (formel)',
@@ -1888,12 +1888,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '果',
-                'kana': 'クダ',
+                kanji: '果',
+                kana: 'クダ',
             },
             {
-                'kanji': '物',
-                'kana': 'もの',
+                kanji: '物',
+                kana: 'もの',
             },
         ],
         translation: 'fruit',
@@ -1902,16 +1902,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '果',
-                'kana': 'は',
+                kanji: '果',
+                kana: 'は',
             },
             {
-                'kanji': '',
-                'kana': 'た',
+                kanji: '',
+                kana: 'た',
             },
             {
-                'kanji': '',
-                'kana': 'す',
+                kanji: '',
+                kana: 'す',
             },
         ],
         translation: 'accomplir',
@@ -1920,16 +1920,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '果',
-                'kana': 'は',
+                kanji: '果',
+                kana: 'は',
             },
             {
-                'kanji': '',
-                'kana': 'て',
+                kanji: '',
+                kana: 'て',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'être fini, fatigué, mourir',
@@ -1938,12 +1938,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '菓',
-                'kana': 'カ',
+                kanji: '菓',
+                kana: 'カ',
             },
             {
-                'kanji': '子',
-                'kana': 'シ',
+                kanji: '子',
+                kana: 'シ',
             },
         ],
         translation: 'confiserie',
@@ -1952,12 +1952,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '汁',
-                'kana': 'しる',
+                kanji: '汁',
+                kana: 'しる',
             },
             {
-                'kanji': '物',
-                'kana': 'もの',
+                kanji: '物',
+                kana: 'もの',
             },
         ],
         translation: 'soupe',
@@ -1966,8 +1966,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'ラーメン',
+                kanji: '',
+                kana: 'ラーメン',
             },
         ],
         translation: 'ramen',
@@ -1976,8 +1976,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'パスタ',
+                kanji: '',
+                kana: 'パスタ',
             },
         ],
         translation: 'pâtes',
@@ -1986,8 +1986,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'コーヒー',
+                kanji: '',
+                kana: 'コーヒー',
             },
         ],
         translation: 'café',
@@ -1996,8 +1996,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'チーズ',
+                kanji: '',
+                kana: 'チーズ',
             },
         ],
         translation: 'fromage',
@@ -2006,8 +2006,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '',
-                'kana': 'デザート',
+                kanji: '',
+                kana: 'デザート',
             },
         ],
         translation: 'dessert',
@@ -2016,12 +2016,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '西',
-                'kana': 'セイ',
+                kanji: '西',
+                kana: 'セイ',
             },
             {
-                'kanji': '洋',
-                'kana': 'ヨウ',
+                kanji: '洋',
+                kana: 'ヨウ',
             },
         ],
         translation: 'Occident',
@@ -2030,8 +2030,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '今',
-                'kana': 'いま',
+                kanji: '今',
+                kana: 'いま',
             },
         ],
         translation: 'maintenant',
@@ -2040,8 +2040,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '前',
-                'kana': 'まえ',
+                kanji: '前',
+                kana: 'まえ',
             },
         ],
         translation: 'avant',
@@ -2050,8 +2050,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '後',
-                'kana': 'あと',
+                kanji: '後',
+                kana: 'あと',
             },
         ],
         translation: 'après',
@@ -2060,8 +2060,8 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '間',
-                'kana': 'あいだ',
+                kanji: '間',
+                kana: 'あいだ',
             },
         ],
         translation: 'pendant',
@@ -2070,12 +2070,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '大',
-                'kana': 'おお',
+                kanji: '大',
+                kana: 'おお',
             },
             {
-                'kanji': '阪',
-                'kana': 'さか',
+                kanji: '阪',
+                kana: 'さか',
             },
         ],
         translation: 'Osaka',
@@ -2084,12 +2084,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '広',
-                'kana': 'ひろ',
+                kanji: '広',
+                kana: 'ひろ',
             },
             {
-                'kanji': '島',
-                'kana': 'しま',
+                kanji: '島',
+                kana: 'しま',
             },
         ],
         translation: 'Hiroshima',
@@ -2098,12 +2098,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '川',
-                'kana': 'かわ',
+                kanji: '川',
+                kana: 'かわ',
             },
             {
-                'kanji': '島',
-                'kana': 'しま',
+                kanji: '島',
+                kana: 'しま',
             },
         ],
         translation: 'Kawashima',
@@ -2112,12 +2112,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '宮',
-                'kana': 'みや',
+                kanji: '宮',
+                kana: 'みや',
             },
             {
-                'kanji': '崎',
-                'kana': 'ざき',
+                kanji: '崎',
+                kana: 'ざき',
             },
         ],
         translation: 'Miyazaki (nom)',
@@ -2126,12 +2126,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '松',
-                'kana': 'まつ',
+                kanji: '松',
+                kana: 'まつ',
             },
             {
-                'kanji': '田',
-                'kana': 'だ',
+                kanji: '田',
+                kana: 'だ',
             },
         ],
         translation: 'Matsuda (nom)',
@@ -2140,12 +2140,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '遊',
-                'kana': 'あそ',
+                kanji: '遊',
+                kana: 'あそ',
             },
             {
-                'kanji': '',
-                'kana': 'ぶ',
+                kanji: '',
+                kana: 'ぶ',
             },
         ],
         translation: 'jouer',
@@ -2154,12 +2154,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '寝',
-                'kana': 'ね',
+                kanji: '寝',
+                kana: 'ね',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'dormir, aller au lit',
@@ -2168,12 +2168,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '乗',
-                'kana': 'の',
+                kanji: '乗',
+                kana: 'の',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'monter à bord',
@@ -2182,12 +2182,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '待',
-                'kana': 'ま',
+                kanji: '待',
+                kana: 'ま',
             },
             {
-                'kanji': '',
-                'kana': 'つ',
+                kanji: '',
+                kana: 'つ',
             },
         ],
         translation: 'attendre',
@@ -2196,26 +2196,26 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '国',
-                'kana': 'コク',
+                kanji: '国',
+                kana: 'コク',
             },
             {
-                'kanji': '立',
-                'kana': 'リツ',
+                kanji: '立',
+                kana: 'リツ',
             },
         ],
         translation: 'national, dirigé par l\'Etat',
-        grammar: 2,
+        grammar: 1,
     },
     {
         elements: [
             {
-                'kanji': '立',
-                'kana': 'た',
+                kanji: '立',
+                kana: 'た',
             },
             {
-                'kanji': '',
-                'kana': 'つ',
+                kanji: '',
+                kana: 'つ',
             },
         ],
         translation: 'être debout, se lever',
@@ -2224,12 +2224,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '急',
-                'kana': 'いそ',
+                kanji: '急',
+                kana: 'いそ',
             },
             {
-                'kanji': '',
-                'kana': 'ぐ',
+                kanji: '',
+                kana: 'ぐ',
             },
         ],
         translation: 'se dépêcher',
@@ -2238,12 +2238,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '死',
-                'kana': 'し',
+                kanji: '死',
+                kana: 'し',
             },
             {
-                'kanji': '',
-                'kana': 'ぬ',
+                kanji: '',
+                kana: 'ぬ',
             },
         ],
         translation: 'mourir',
@@ -2252,26 +2252,26 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '売',
-                'kana': 'バイ',
+                kanji: '売',
+                kana: 'バイ',
             },
             {
-                'kanji': '買',
-                'kana': 'バイ',
+                kanji: '買',
+                kana: 'バイ',
             },
         ],
         translation: 'commerce',
-        grammar: 2,
+        grammar: 1,
     },
     {
         elements: [
             {
-                'kanji': '売',
-                'kana': 'う',
+                kanji: '売',
+                kana: 'う',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'vendre',
@@ -2280,12 +2280,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '探',
-                'kana': 'さが',
+                kanji: '探',
+                kana: 'さが',
             },
             {
-                'kanji': '',
-                'kana': 'す',
+                kanji: '',
+                kana: 'す',
             },
         ],
         translation: 'chercher',
@@ -2294,12 +2294,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '勝',
-                'kana': 'か',
+                kanji: '勝',
+                kana: 'か',
             },
             {
-                'kanji': '',
-                'kana': 'つ',
+                kanji: '',
+                kana: 'つ',
             },
         ],
         translation: 'gagner',
@@ -2308,12 +2308,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '勝',
-                'kana': 'まさ',
+                kanji: '勝',
+                kana: 'まさ',
             },
             {
-                'kanji': '',
-                'kana': 'る',
+                kanji: '',
+                kana: 'る',
             },
         ],
         translation: 'surpasser, exceller',
@@ -2322,12 +2322,12 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '泳',
-                'kana': 'およ',
+                kanji: '泳',
+                kana: 'およ',
             },
             {
-                'kanji': '',
-                'kana': 'ぐ',
+                kanji: '',
+                kana: 'ぐ',
             },
         ],
         translation: 'nager',
@@ -2336,16 +2336,16 @@ const vocabulary = [
     {
         elements: [
             {
-                'kanji': '天',
-                'kana': 'テン',
+                kanji: '天',
+                kana: 'テン',
             },
             {
-                'kanji': '才',
-                'kana': 'サイ',
+                kanji: '才',
+                kana: 'サイ',
             },
         ],
         translation: 'génie',
-        grammar: 2,
+        grammar: 1,
     },
 ];
 

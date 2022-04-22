@@ -279,6 +279,7 @@ input::placeholder {
   padding-left: 10vw;
 }
 #wordsListHFilters div {
+  height: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -303,7 +304,7 @@ input::placeholder {
   color: red;
 }
 #wordsList {
-  height: calc(100vh - 192px);
+  height: calc(90vh - 192px);
   margin: 12px 24px 24px 24px;;
   padding-bottom: 12vh;
   background-color: rgba(255, 237, 242, 0.9);
@@ -388,6 +389,7 @@ input::placeholder {
     left: 67vw;
   }
   #wordsList {
+    height: calc(100vh - 192px);
     padding-bottom: 2vh;
   }
   #randomDisplay.compressed {

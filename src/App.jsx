@@ -29,6 +29,9 @@ function App() {
     });
   }, []);
 
+  console.log(kanjisList.length, ' kanjis loaded');
+  console.log(vocabularyList.length, ' words loaded');
+
   const [kanji, setKanji] = useState('');
 
   useEffect(() => {
