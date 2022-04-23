@@ -14,7 +14,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: darkslategrey;
-  transition: color 0.2s, background-color 0.2s, opacity 0.2s, left 0.2s, height 0.2s, width 0.2s, margin 0.2s, border 0.2s;
+  transition: all 0.2s ease-out;
   padding: 0;
   margin: 0;
 }
@@ -81,6 +81,8 @@ input::placeholder {
   justify-content: space-evenly;
 }
 
+/* -------------------------------- MAIN DISPLAY -------------------------------- */
+
 #randomDisplay {
   z-index: 800;
   padding-top: 2vh;
@@ -108,21 +110,27 @@ input::placeholder {
   white-space: nowrap;
   overflow-x: scroll;
 }
-#translation, #kanas {
+#translation {
   font-size: calc(10px + 3vw);
 }
+
+/* -------------------------------- TRAINING KANAS -------------------------------- */
+
 #kanas {
   z-index: 900;
   height: calc(21vh - (2vw - 50px));
   width: 67.5%;
+  font-size: calc(10px + 3vw);
   margin: 2vh 16.25% 0 16.25%;
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
+#kanas.expanded {
+  height: calc(35vh - (2vw - 50px));
+}
 #kanasExamples {
   padding: 0px 20px;
   justify-content: space-between;
-  overflow-y: scroll;
   height: fit-content !important;
 }
 #kunyomiExamples, #onyomiExamples {
@@ -130,35 +138,54 @@ input::placeholder {
   text-align: left;
 }
 .kanasSingleExample {
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  opacity: 0.5;
 }
-.kanasSingleExample.separated {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+.kanasSingleExample.clickable {
+  cursor: pointer;
+  opacity: 1;
+}
+.kanasSingleExampleContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.75vh;
 }
 .kanasSingleExampleDetail {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  height: 0vh;
+  overflow-y: hidden;
 }
-.kanasSingleExampleKanji.grayedOut {
-  opacity: 0.5;
+.kanasSingleExampleKanji {
+  height: 8vh;
 }
-.kanasSingleExampleKanas, .kanasSingleExampleTranslation {
+.kanasSingleExampleDetail.open {
+  height: 7vh;
+}
+.kanasSingleExampleWord, .kanasSingleExampleTranslation {
   margin: 0px 10px;
   display: flex;
-  justify-content: end;
 }
-.kanasSingleExampleKanas, .kanasSingleExampleTranslation, .kanasReadingsHeader {
+.kanasSingleExampleWord, .kanasSingleExampleTranslation, .kanasReadingsHeader {
   font-size: calc(12px + 0.25vw) !important;
 }
-.kanasSingleExampleKanasKanas {
+.kanasSingleExampleKanas {
   opacity: 0.5;
 }
 .kanasSingleExampleTranslation {
   opacity: 0.5;
 }
+.kanasSingleExampleWord div {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.kanasSingleExampleKanji, .kanasSingleExampleWord {
+  white-space: nowrap;
+}
+
+/* -------------------------------- TRAINING CONTROLS -------------------------------- */
 
 #selectorAndControls {
   display: flex;
@@ -226,6 +253,8 @@ input::placeholder {
   cursor: pointer;
 }
 
+/* -------------------------------- SIDE PANEL -------------------------------- */
+
 #wordsListContainer {
   display: flex;
   flex-direction: column;
@@ -244,7 +273,7 @@ input::placeholder {
   position: relative;
   z-index: 1200;
   height: 120px;
-  background-color: rgba(255, 237, 242, 0.9);
+  /* background-color: rgba(255, 237, 242, 0.9); */
   display: flex;
   align-items: center;
   margin: 24px 24px 12px 24px;
@@ -305,12 +334,13 @@ input::placeholder {
 }
 #wordsList {
   height: calc(90vh - 192px);
-  margin: 12px 24px 24px 24px;;
+  margin: 12px 24px 24px 24px;
+  padding-top: 3vh;
   padding-bottom: 12vh;
-  background-color: rgba(255, 237, 242, 0.9);
   overflow-y: scroll;
   opacity: 0;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
 #wordsList.open {
   opacity: 1;
@@ -347,6 +377,14 @@ input::placeholder {
   flex-direction: column;
   text-align: right;
 }
+#wordsListElementKana div {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+#wordsListElementKana span {
+  white-space: nowrap;
+}
 #wordsListElementTranslation {
   opacity: 0.5;
 }
@@ -361,6 +399,9 @@ input::placeholder {
   #kanas {
     height: calc(21vh - (2vw - 110px));
   }
+  #kanas.expanded {
+    height: calc(50vh - (2vw - 50px));
+  }
   #kanasExamples {
     display: flex;
     height: calc(21vh - (2vw - 80px));
@@ -369,10 +410,7 @@ input::placeholder {
     margin-top: 0px;
     width: 50%;
   }
-  #onyomiExamples .kanasSingleExampleDetail {
-    align-items: flex-start;
-  }
-  #onyomiExamples .kanasSingleExampleKanas, #onyomiExamples .kanasSingleExampleTranslation {
+  #onyomiExamples .kanasSingleExampleWord, #onyomiExamples .kanasSingleExampleTranslation {
     flex-direction: row-reverse;
   }
   #onyomiExamples {
@@ -382,6 +420,12 @@ input::placeholder {
   #onyomiExamples .kanasSingleExample {
     flex-direction: row-reverse;
   }
+  .kanasSingleExampleKanji {
+    height: 6vh;
+  }
+  .kanasSingleExampleDetail.open {
+    height: 5vh;
+  }
   #wordsListContainer {
     width: 33vw;
   }
@@ -390,7 +434,7 @@ input::placeholder {
   }
   #wordsList {
     height: calc(100vh - 192px);
-    padding-bottom: 2vh;
+    padding-bottom: 3vh;
   }
   #randomDisplay.compressed {
     width: 67%;

@@ -2,15 +2,14 @@ import firebase from './Firebase';
 import "firebase/firestore";
 import { useState, useEffect } from 'react';
 import './App.css';
-import RandomDisplay from './components/RandomDisplay';
+import KanjiDisplay from './components/KanjiDisplay';
 import ResetDatabase from './components/Database';
-import WordsList from './components/WordsList';
+import SidePanel from './components/SidePanel';
 
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
-  const [preventKanjiReload, setPreventKanjiReload] = useState(false);
 
   useEffect(() => {
     firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
@@ -35,20 +34,18 @@ function App() {
   const [kanji, setKanji] = useState('');
 
   useEffect(() => {
-    if (!preventKanjiReload) setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
-  }, [kanjisWithVocabulary, preventKanjiReload]);
-
-  useEffect(() => {
     const kanjisListCopy = [ ...kanjisList ];
     kanjisListCopy.forEach((kanji) => {
       kanji.vocabulary = [];
       kanji.grammar = [];
       vocabularyList.forEach((word) => {
-        word.elements.forEach((element) => {
+        word.elements.every((element) => {
           if (kanji.kanji === element.kanji) {
             kanji.vocabulary.push(word);
             kanji.grammar.push(word.grammar);
+            return false;
           }
+          return true;
         });
       });
     });
@@ -61,8 +58,13 @@ function App() {
   const [search, setSearch] = useState("");
   const [filterError, setFilterError] = useState("");
 
+  useEffect(() => {
+    setTimeout(() => {
+      setMenuOpen(true);
+    }, 400);
+  }, []);
 
-  const [filtersApplied, setFiltersApplied] = useState(false);
+  const [filtersApplied, setFiltersApplied] = useState(true);
   const applyFilters = () => {
     if (!filtersApplied && !level && !grammar && !menuOpen) {
       setMenuOpen(true);
@@ -98,12 +100,15 @@ function App() {
       setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
   }
 
+  const [trainingMode, setTrainingMode] = useState(false);
+
   return (
     <div className="App">
       <div id="header">
-        <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} setPreventKanjiReload={setPreventKanjiReload} />
+        <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} />
       </div>
-      <RandomDisplay
+      <KanjiDisplay
+        trainingMode={trainingMode}
         kanji={kanji}
         refreshWord={refreshWord}
         compressed={menuOpen}
@@ -112,7 +117,7 @@ function App() {
         grammar={grammar}
         applyFilters={applyFilters}
       />
-      <WordsList 
+      <SidePanel 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
         changeCurrentWord={changeCurrentWord}
         currentWord={kanji}

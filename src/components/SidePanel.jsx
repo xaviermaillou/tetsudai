@@ -125,7 +125,7 @@ const ListElement = (props) => {
     )
 }
 
-const WordsList = (props) => {
+const SidePanel = (props) => {
     const {
         kanjis,
         changeCurrentWord,
@@ -178,4 +178,4 @@ const WordsList = (props) => {
     )
 }
 
-export default WordsList;
+export default SidePanel;
