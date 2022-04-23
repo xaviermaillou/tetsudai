@@ -114,7 +114,7 @@ input::placeholder {
   font-size: calc(10px + 3vw);
 }
 
-/* -------------------------------- TRAINING KANAS -------------------------------- */
+/* -------------------------------- KANAS -------------------------------- */
 
 #kanas {
   z-index: 900;
@@ -142,10 +142,17 @@ input::placeholder {
   justify-content: space-between;
   opacity: 0.5;
 }
-
 .kanasSingleExample.clickable {
   cursor: pointer;
   opacity: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.kanasSingleExampleExpander {
+  height: calc(12px + 0.25vw);
+  opacity: 0.5;
+}
+.kanasSingleExampleExpander.open {
+  transform: rotate(180deg);
 }
 .kanasSingleExampleContainer {
   display: flex;
@@ -157,9 +164,6 @@ input::placeholder {
   flex-direction: column;
   height: 0vh;
   overflow-y: hidden;
-}
-.kanasSingleExampleKanji {
-  height: 8vh;
 }
 .kanasSingleExampleDetail.open {
   height: 7vh;
@@ -181,7 +185,12 @@ input::placeholder {
   display: flex;
   flex-wrap: nowrap;
 }
-.kanasSingleExampleKanji, .kanasSingleExampleWord {
+.kanasSingleExampleKanji {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kanasSingleExampleKanji span, .kanasSingleExampleWord {
   white-space: nowrap;
 }
 
@@ -398,6 +407,7 @@ input::placeholder {
   }
   #kanas {
     height: calc(21vh - (2vw - 110px));
+    font-size: calc(20px + 1vh);
   }
   #kanas.expanded {
     height: calc(50vh - (2vw - 50px));
@@ -415,13 +425,18 @@ input::placeholder {
   }
   #onyomiExamples {
     text-align: right;
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   #onyomiExamples .kanasSingleExample {
     flex-direction: row-reverse;
   }
-  .kanasSingleExampleKanji {
-    height: 6vh;
+  #onyomiExamples .kanasSingleExampleKanji {
+    flex-direction: row-reverse;
+  }
+  .kanasSingleExample {
+    width: 80%;
   }
   .kanasSingleExampleDetail.open {
     height: 5vh;

@@ -14,7 +14,12 @@ const Examples = (props) => {
     return (
         <div onClick={() => setExpanded(!expanded)} className={wordExamples.length > 0 ? "kanasSingleExample clickable" : "kanasSingleExample"}>
             <div className="kanasSingleExampleKanji">
-                {example.kana}
+                <span>
+                    {example.kana}
+                </span>
+                <div>
+                    {wordExamples.length > 0 && <img className={expanded ? "kanasSingleExampleExpander open" : "kanasSingleExampleExpander"} src="/img/up.png" alt="see all examples" />}
+                </div>
             </div>
             <div className="kanasSingleExampleContainer">
                 {wordExamples.map((wordExample) => (
