@@ -84,7 +84,7 @@ const ListElement = (props) => {
             "wordsListElementContainer open" : "wordsListElementContainer"}
         >
             <div 
-                className={(currentWord && currentWord.translation === kanji.translation) ?
+                className={(currentWord && currentWord.kanji === kanji.kanji) ?
                     "wordsListElement selected" : "wordsListElement"}
                 onClick={() => clickHandle(kanji.doc.id)}
             >
