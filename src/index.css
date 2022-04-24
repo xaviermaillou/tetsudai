@@ -105,13 +105,11 @@ input::placeholder {
   font-family: source-han-sans-simplified-c;
 }
 #translation {
+  font-size: 24px;
   font-weight: 100;
   padding: 0px 20px;
   white-space: nowrap;
   overflow-x: scroll;
-}
-#translation {
-  font-size: calc(10px + 3vw);
 }
 
 /* -------------------------------- KANAS -------------------------------- */
@@ -120,7 +118,7 @@ input::placeholder {
   z-index: 900;
   height: calc(21vh - (2vw - 50px));
   width: 67.5%;
-  font-size: calc(10px + 3vw);
+  font-size: 20px;
   margin: 2vh 16.25% 0 16.25%;
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
@@ -137,60 +135,70 @@ input::placeholder {
   margin-top: 1vh;
   text-align: left;
 }
-.kanasSingleExample {
+.yomiContainer {
   align-items: flex-start;
   justify-content: space-between;
   opacity: 0.5;
 }
-.kanasSingleExample.clickable {
+.yomiContainer.clickable {
   cursor: pointer;
   opacity: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.kanasSingleExampleExpander {
-  height: calc(12px + 0.25vw);
+.yomiExpander {
+  height: 12px;
   opacity: 0.5;
 }
-.kanasSingleExampleExpander.open {
+.yomiExpander.open {
   transform: rotate(180deg);
 }
-.kanasSingleExampleContainer {
+.yomiExamples {
   display: flex;
   flex-direction: column;
   padding-top: 0.75vh;
 }
-.kanasSingleExampleDetail {
+.yomiSingleExample {
   display: flex;
-  flex-direction: column;
-  height: 0vh;
+  justify-content: space-between;
+  height: 0px;
   overflow-y: hidden;
 }
-.kanasSingleExampleDetail.open {
-  height: 7vh;
+.yomiSingleExample.open {
+  height: 56px;
 }
-.kanasSingleExampleWord, .kanasSingleExampleTranslation {
-  margin: 0px 10px;
+.yomiSingleExampleJapanese, .yomiSingleExampleTranslation {
   display: flex;
 }
-.kanasSingleExampleWord, .kanasSingleExampleTranslation, .kanasReadingsHeader {
-  font-size: calc(12px + 0.25vw) !important;
+.yomiSingleExampleJapanese, .yomiSingleExampleTranslation, .kanasReadingsHeader {
+  font-size: 16px;
 }
 .kanasSingleExampleKanas {
   opacity: 0.5;
 }
-.kanasSingleExampleTranslation {
+.yomiSingleExampleTranslation {
   opacity: 0.5;
+  white-space: normal;
+  text-align: right;
 }
-.kanasSingleExampleWord div {
+.yomiSingleExampleJapanese div {
   display: flex;
   flex-wrap: nowrap;
 }
-.kanasSingleExampleKanji {
+.yomiSingleExampleKanjiKana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 5px;
+}
+.yomiSingleExampleKana {
+  opacity: 0.5;
+}
+.yomiHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.kanasSingleExampleKanji span, .kanasSingleExampleWord {
+.yomiHeader span, .yomiSingleExampleJapanese {
   white-space: nowrap;
 }
 
@@ -213,7 +221,7 @@ input::placeholder {
   border-bottom: 1px solid lightgray;
 }
 #selector span {
-  font-size: calc(16px + 0.75vh);
+  font-size: 16px;
   display: flex;
   align-items: center;
   opacity: 0.25;
@@ -225,7 +233,7 @@ input::placeholder {
   opacity: 0.5;
 }
 #selector img {
-  height: calc(16px + 0.75vh);
+  height: 16px;
 }
 #controls {
   display: flex;
@@ -234,7 +242,7 @@ input::placeholder {
   margin: 0px auto;
 }
 #controls div {
-  height: calc(32px + 1.5vh);
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,7 +256,7 @@ input::placeholder {
   opacity: 0.5;
 }
 #controls div:nth-child(3) {
-  width: calc(16px + 0.75vh);
+  width: 16px;
   display: flex;
   flex-direction: column;
 }
@@ -256,7 +264,7 @@ input::placeholder {
   white-space: nowrap;
 }
 #controls img {
-  height: calc(16px + 0.75vh);
+  height: 16px;
 }
 #controls img:hover {
   cursor: pointer;
@@ -294,7 +302,7 @@ input::placeholder {
   animation-duration: 0.4s;
 }
 #wordsListOpener {
-  height: calc(16px + 0.75vh);
+  height: 16px;
   opacity: 0.5;
   transform: rotate(-90deg);
   position: absolute;
@@ -329,7 +337,7 @@ input::placeholder {
   opacity: 1;
 }
 #wordsListHFilters img {
-  height: calc(12px + 0.5vh);
+  height: 14px
 }
 #wordsListFiltersErrorMessage {
   position: absolute;
@@ -359,7 +367,7 @@ input::placeholder {
   overflow: hidden;
 }
 .wordsListElementContainer.open {
-  height: calc(40px + 2vh);
+  height: 54px;
   border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
 .wordsListElement {
@@ -378,7 +386,7 @@ input::placeholder {
 #wordsListElementKanji {
   width: 25%;
   text-align: left;
-  font-size: calc(10px + 2vh);
+  font-size: 28px;
 }
 #wordsListElementKana {
   width: 75%;
@@ -402,44 +410,42 @@ input::placeholder {
   #randomDisplay {
     padding-top: 5vh;
   }
-  #translation, #kanas {
-    font-size: calc(20px + 2vh);
+  #translation {
+    font-size: 32px
   }
   #kanas {
     height: calc(21vh - (2vw - 110px));
-    font-size: calc(20px + 1vh);
+    font-size: 28px;
   }
   #kanas.expanded {
-    height: calc(50vh - (2vw - 50px));
+    height: calc(46vh - (2vw - 50px));
   }
   #kanasExamples {
     display: flex;
-    height: calc(21vh - (2vw - 80px));
   }
   #kunyomiExamples, #onyomiExamples {
     margin-top: 0px;
     width: 50%;
   }
-  #onyomiExamples .kanasSingleExampleWord, #onyomiExamples .kanasSingleExampleTranslation {
-    flex-direction: row-reverse;
-  }
   #onyomiExamples {
-    text-align: right;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  #onyomiExamples .kanasSingleExample {
+  #onyomiExamples .yomiContainer {
     flex-direction: row-reverse;
   }
-  #onyomiExamples .kanasSingleExampleKanji {
+  #onyomiExamples .yomiHeader {
     flex-direction: row-reverse;
   }
-  .kanasSingleExample {
+  #onyomiExamples .yomiSingleExample {
+    flex-direction: row-reverse;
+  }
+  #onyomiExamples .yomiSingleExampleTranslation {
+    text-align: left;
+  }
+  .yomiContainer {
     width: 80%;
-  }
-  .kanasSingleExampleDetail.open {
-    height: 5vh;
   }
   #wordsListContainer {
     width: 33vw;
