@@ -8,14 +8,16 @@ const TrainingControls = (props) => {
         filtersApplied,
         level,
         grammar,
-        applyFilters,
+        checkTrainingFilters,
+        toggleTraining,
     } = props;
 
-    const adjectives = {
+    const classes = {
         1: "Noms communs",
         2: "Noms propres",
         3: "Verbes",
-        4: "Adjectifs"
+        4: "Adjectifs",
+        5: "Adverbes",
     }
 
     return (
@@ -28,22 +30,22 @@ const TrainingControls = (props) => {
                 <span className={(displayedElement === 1 && !allDisplayed) ? 'selected' : ''} onClick={() => changeDisplayedElement(1)}>fr</span>
             </div>
             <div id="controls" >
-                <div></div>
-                <div className={filtersApplied ? "selected" : ""}>
-                    <span onClick={applyFilters}>
-                        <img src="/img/filter.png" alt="apply filters" />
+                {window.innerWidth >= window.innerHeight && <div></div>}
+                <div id="trainingClose">
+                    <span onClick={() => toggleTraining(false)}>
+                        <img src="/img/close.png" alt="stop training" />
                     </span>
                 </div>
-                <div>
+                <div id="trainingFilters" onClick={checkTrainingFilters}>
                     {filtersApplied && <span>JLPT: {level ? level : "Tous"}</span>}
-                    {filtersApplied && <span>Classe: {grammar ? adjectives[grammar] : "Toutes"}</span>}
+                    {filtersApplied && <span>Classe: {grammar ? classes[grammar] : "Toutes"}</span>}
                 </div>
-                <div onClick={refreshWord}>
+                <div id="trainingNext" onClick={refreshWord}>
                     <span>
-                        <img src="/img/random.png" alt="random" />
+                        <img src="/img/next.png" alt="random" />
                     </span>
                 </div>
-                <div></div>
+                {window.innerWidth >= window.innerHeight && <div></div>}
             </div>
         </div>
     );

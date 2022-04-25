@@ -3,7 +3,7 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   }
   50% {
-    box-shadow: 0px 0px 45px rgba(255, 0, 0, 0.4);
+    box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.4);
   }
   100% {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -62,9 +62,6 @@ input::placeholder {
   width: 100vw;
   position: fixed;
   top: 0;
-  background-image: url('/public/img/Logo\ Jap.png');
-  background-size: cover;
-  background-position: bottom;
   display: none;
 }
 
@@ -116,7 +113,7 @@ input::placeholder {
 
 #kanas {
   z-index: 900;
-  height: calc(21vh - (2vw - 50px));
+  height: 24vh;
   width: 67.5%;
   font-size: 20px;
   margin: 2vh 16.25% 0 16.25%;
@@ -124,12 +121,11 @@ input::placeholder {
   font-family: source-han-sans-simplified-c;
 }
 #kanas.expanded {
-  height: calc(35vh - (2vw - 50px));
+  height: 48vh;
 }
 #kanasExamples {
   padding: 0px 20px;
   justify-content: space-between;
-  height: fit-content !important;
 }
 #kunyomiExamples, #onyomiExamples {
   margin-top: 1vh;
@@ -215,13 +211,13 @@ input::placeholder {
   width: 67.5%;
   margin: 0px auto;
   display: flex;
-  justify-content: space-evenly;
-  padding: 1vh 0px;
+  justify-content: space-between;
+  padding: 1vh 10px;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
 #selector span {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   opacity: 0.25;
@@ -233,13 +229,15 @@ input::placeholder {
   opacity: 0.5;
 }
 #selector img {
-  height: 16px;
+  height: 20px;
 }
 #controls {
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
   width: 67.5%;
   margin: 0px auto;
+  padding: 0px 10px;
 }
 #controls div {
   height: 32px;
@@ -249,24 +247,21 @@ input::placeholder {
   border-radius: 50%;
   opacity: 0.5;
 }
-#controls div:nth-child(2) {
-  opacity: 0.25;
-}
-#controls div:nth-child(2).selected {
+#trainingClose {
   opacity: 0.5;
 }
-#controls div:nth-child(3) {
+#trainingFilters {
   width: 16px;
   display: flex;
   flex-direction: column;
 }
-#controls div:nth-child(3) span {
+#trainingFilters span {
   white-space: nowrap;
 }
 #controls img {
-  height: 16px;
+  height: 20px;
 }
-#controls img:hover {
+#controls div:hover {
   cursor: pointer;
 }
 
@@ -286,23 +281,20 @@ input::placeholder {
 #wordsListContainer.open {
   left: 0vw;
 }
-#wordsListIndicator {
+#wordsListHeader {
   position: relative;
   z-index: 1200;
   height: 120px;
-  /* background-color: rgba(255, 237, 242, 0.9); */
-  display: flex;
-  align-items: center;
   margin: 24px 24px 12px 24px;
   padding: 10px 4vw;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
-#wordsListIndicator.focused {
+#wordsListHeader.focused {
   animation-name: emphasize;
   animation-duration: 0.4s;
 }
 #wordsListOpener {
-  height: 16px;
+  height: 20px;
   opacity: 0.5;
   transform: rotate(-90deg);
   position: absolute;
@@ -313,10 +305,10 @@ input::placeholder {
   transform: rotate(90deg);
   left: 4vw;
 }
-#wordsListOpener:hover, #wordsListIndicator span:hover {
+#wordsListOpener:hover, #wordsListHeader span:hover {
   cursor: pointer;
 }
-#wordsListHFilters {
+#wordsListFilters {
   height: 100%;
   width: 100%;
   display: flex;
@@ -324,33 +316,43 @@ input::placeholder {
   justify-content: space-around;
   padding-left: 10vw;
 }
-#wordsListHFilters div {
+#wordsListFilters div {
   height: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#wordsListHFilters span {
+#wordsListFilters span {
   opacity: 0.5;
 }
-#wordsListHFilters span.selected {
+#wordsListFilters span.selected {
   opacity: 1;
 }
-#wordsListHFilters img {
+#wordsListFilters img {
   height: 14px
 }
-#wordsListFiltersErrorMessage {
-  position: absolute;
-  bottom: 4px;
-  left: 0px;
-  font-size: 12px;
-  display: inline-block;
+#filtersIndicator {
+  font-size: 14px;
+}
+#filtersIndicator span:hover {
+  cursor: default;
+}
+#launchTrainingButton span, #filtersIndicator span {
   width: 100%;
   text-align: center;
-  color: red;
+}
+#launchTrainingButton {
+  width: 100%;
+  padding: 10px 0px;
+  opacity: 0.5;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+#launchTrainingButton:hover {
+  cursor: pointer;
 }
 #wordsList {
-  height: calc(90vh - 192px);
+  height: calc(90vh - 246px);
   margin: 12px 24px 24px 24px;
   padding-top: 3vh;
   padding-bottom: 12vh;
@@ -361,6 +363,9 @@ input::placeholder {
 }
 #wordsList.open {
   opacity: 1;
+}
+#wordsList.expanded {
+  height: calc(90vh - 192px);
 }
 .wordsListElementContainer {
   height: 0px;
@@ -414,7 +419,7 @@ input::placeholder {
     font-size: 32px
   }
   #kanas {
-    height: calc(21vh - (2vw - 110px));
+    height: 32vh;
     font-size: 28px;
   }
   #kanas.expanded {
@@ -447,6 +452,13 @@ input::placeholder {
   .yomiContainer {
     width: 80%;
   }
+  #selector {
+    justify-content: space-evenly;
+    padding: 1vh 0px;
+  }
+  #controls {
+    padding: 0vh 0px;
+  }
   #wordsListContainer {
     width: 33vw;
   }
@@ -454,16 +466,19 @@ input::placeholder {
     left: 67vw;
   }
   #wordsList {
-    height: calc(100vh - 192px);
+    height: calc(98vh - 246px);
     padding-bottom: 3vh;
+  }
+  #wordsList.expanded {
+    height: calc(100vh - 192px);
   }
   #randomDisplay.compressed {
     width: 67%;
   }
-  #wordsListHFilters {
+  #wordsListFilters {
     padding-left: 0;
   }
-  #wordsListIndicator img.open {
+  #wordsListOpener.open {
     left: 1vw;
   }
 }

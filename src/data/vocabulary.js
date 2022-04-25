@@ -1,9 +1,3 @@
-// Types grammaticaux:
-// 1 - nom commun
-// 2 - nom propre
-// 3 - verbe
-// 4 - adjectif
-
 const vocabulary = [
     {
         elements: [
@@ -1601,7 +1595,7 @@ const vocabulary = [
             },
         ],
         translation: 'tous les jours',
-        grammar: 1,
+        grammar: 5,
     },
     {
         elements: [
@@ -1615,7 +1609,7 @@ const vocabulary = [
             },
         ],
         translation: 'tous les matins',
-        grammar: 1,
+        grammar: 5,
     },
     {
         elements: [
@@ -1629,7 +1623,7 @@ const vocabulary = [
             },
         ],
         translation: 'toutes les semaines',
-        grammar: 1,
+        grammar: 5,
     },
     {
         elements: [
@@ -1657,7 +1651,7 @@ const vocabulary = [
             },
         ],
         translation: 'il y a peu, une fois',
-        grammar: 1,
+        grammar: 5,
     },
     {
         elements: [
@@ -2064,7 +2058,7 @@ const vocabulary = [
                 kana: 'あいだ',
             },
         ],
-        translation: 'pendant',
+        translation: 'intervalle',
         grammar: 1,
     },
     {
@@ -2347,7 +2341,210 @@ const vocabulary = [
         translation: 'génie',
         grammar: 1,
     },
+    {
+        elements: [
+            {
+                kanji: '願',
+                kana: 'ねが',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        translation: 'désirer, implorer',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '願',
+                kana: 'ねが',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'désir, requête',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '宜',
+                kana: 'よろ',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'bien, correct',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '宜',
+                kana: 'よろ',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'く',
+            },
+        ],
+        translation: 'correctement',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '初',
+                kana: 'はじ',
+            },
+            {
+                kanji: '',
+                kana: 'め',
+            },
+        ],
+        translation: 'début',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '初',
+                kana: 'はじ',
+            },
+            {
+                kanji: '',
+                kana: 'め',
+            },
+            {
+                kanji: '',
+                kana: 'て',
+            },
+        ],
+        translation: 'la première fois',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '勉',
+                kana: 'ベン',
+            },
+            {
+                kanji: '強',
+                kana: 'キョウ',
+            },
+        ],
+        translation: 'études',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '勉',
+                kana: 'ベン',
+            },
+            {
+                kanji: '強',
+                kana: 'キョウ',
+            },
+            {
+                kanji: '',
+                kana: 'する',
+            },
+        ],
+        translation: 'étudier',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '勉',
+                kana: 'つと',
+            },
+            {
+                kanji: '',
+                kana: 'め',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        translation: 's\'efforcer',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '強',
+                kana: 'つよ',
+            },
+            {
+                kanji: '',
+                kana: 'ま',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        translation: 'se renforcer, devenir plus fort',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '強',
+                kana: 'つよ',
+            },
+            {
+                kanji: '',
+                kana: 'め',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        translation: 'renforcer, mettre l\'accent',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '強',
+                kana: 'つよ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'fort',
+        grammar: 4,
+    },
 ];
 
+// Types grammaticaux:
+// 1 - nom commun
+// 2 - nom propre
+// 3 - verbe
+// 4 - adjectif
+// 5 - adverbe
 
-export default vocabulary
+
+export default vocabulary;

@@ -28,8 +28,8 @@ function App() {
     });
   }, []);
 
-  console.log(kanjisList.length, ' kanjis loaded');
-  console.log(vocabularyList.length, ' words loaded');
+  // console.log(kanjisList.length, ' kanjis loaded');
+  // console.log(vocabularyList.length, ' words loaded');
 
   const [kanji, setKanji] = useState('');
 
@@ -56,7 +56,7 @@ function App() {
   const [level, setLevel] = useState("");
   const [grammar, setGrammar] = useState(0);
   const [search, setSearch] = useState("");
-  const [filterError, setFilterError] = useState("");
+  const [filterIndication, setFilterIndication] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -64,19 +64,23 @@ function App() {
     }, 400);
   }, []);
 
-  const [filtersApplied, setFiltersApplied] = useState(true);
-  const applyFilters = () => {
-    if (!filtersApplied && !level && !grammar && !menuOpen) {
+  const [filtersApplied] = useState(true);
+
+  const checkTrainingFilters = () => {
+    if (!menuOpen) {
       setMenuOpen(true);
       setTimeout(() => {
-        setFilterError("Configurez ici les filtres");
+        setFilterIndication(true);
+        setTimeout(() => {
+          setFilterIndication(false);
+        }, 300);
       }, 300);
-    } else if (!filtersApplied && !level && !grammar) {
-      setFilterError("Configurez ici les filtres");
     } else {
-      setFilterError("");
+      setFilterIndication(true);
+      setTimeout(() => {
+        setFilterIndication(false);
+      }, 300);
     }
-    setFiltersApplied(!filtersApplied);
   }
 
   const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
@@ -101,6 +105,18 @@ function App() {
   }
 
   const [trainingMode, setTrainingMode] = useState(false);
+  const [allDisplayed, setAllDisplayed] = useState(true);
+  const toggleTraining = (boolean) => {
+    if (boolean) {
+      if (window.innerWidth < window.innerHeight) setMenuOpen(false);
+      setTrainingMode(true);
+      refreshWord();
+    } else {
+      setTrainingMode(false);
+      setFilterIndication(false);
+      setAllDisplayed(true);
+    }
+  }
 
   return (
     <div className="App">
@@ -108,6 +124,8 @@ function App() {
         <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} />
       </div>
       <KanjiDisplay
+        allDisplayed={allDisplayed}
+        setAllDisplayed={setAllDisplayed}
         trainingMode={trainingMode}
         kanji={kanji}
         refreshWord={refreshWord}
@@ -115,7 +133,8 @@ function App() {
         filtersApplied={filtersApplied}
         level={level}
         grammar={grammar}
-        applyFilters={applyFilters}
+        checkTrainingFilters={checkTrainingFilters}
+        toggleTraining={toggleTraining}
       />
       <SidePanel 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
@@ -129,8 +148,9 @@ function App() {
         setGrammar={setGrammar}
         search={search}
         setSearch={setSearch}
-        filterError={filterError}
-        setFilterError={setFilterError}
+        filterIndication={filterIndication}
+        trainingMode={trainingMode}
+        toggleTraining={toggleTraining}
       />
     </div>
   );

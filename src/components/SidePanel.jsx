@@ -10,19 +10,26 @@ const ListHeader = (props) => {
         setGrammar,
         search,
         setSearch,
-        filterError,
-        setFilterError,
+        filterIndication,
     } = props;
 
     const [filter, setFilter] = useState(3);
     useEffect(() => {
-        if (filterError) setFilter(1);
-    }, [filterError]);
+        if (filterIndication && filter === 3) setFilter(1);
+    }, [filterIndication, filter]);
+
+    const classes = {
+        1: "Noms communs",
+        2: "Noms propres",
+        3: "Verbes",
+        4: "Adjectifs",
+        5: "Adverbes",
+    }
 
     return (
-        <div id="wordsListIndicator" className={filterError ? "focused" : ""}>
+        <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>
             <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
-            <div id="wordsListHFilters" onClick={() => setFilterError("")}>
+            <div id="wordsListFilters">
                 <div>
                     <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(1)}>JLPT</span>
                     <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>Classe</span>
@@ -46,8 +53,12 @@ const ListHeader = (props) => {
                 {filter === 3 && <div>
                     <input value={search} onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>}
+                <div id="filtersIndicator">
+                    <span>
+                        {grammar || level ? "Kanjis" : ""}{level ? ` de niveau ${level}` : ""}{grammar ? ` contenant des ${classes[grammar].toLowerCase()}` : ""}{!grammar && !level ? "Tous les kanjis" : ""}
+                    </span>
+                </div>
             </div>
-            <span id="wordsListFiltersErrorMessage">{filterError}</span>
         </div>
     );
 }
@@ -138,8 +149,9 @@ const SidePanel = (props) => {
         setGrammar,
         search,
         setSearch,
-        filterError,
-        setFilterError,
+        filterIndication,
+        trainingMode,
+        toggleTraining,
     } = props;
 
     const toggle = () => {
@@ -157,10 +169,11 @@ const SidePanel = (props) => {
                 setGrammar={setGrammar}
                 search={search}
                 setSearch={setSearch}
-                filterError={filterError}
-                setFilterError={setFilterError}
+                filterIndication={filterIndication}
+                trainingMode={trainingMode}
+                toggleTraining={toggleTraining}
             />
-            <div id="wordsList" className={open ? "open" : ""}>
+            <div id="wordsList" className={open ? (trainingMode ? "open expanded" : "open") : ""}>
                 {kanjis.map((item, i) => (
                     <ListElement
                         kanji={item}
@@ -173,6 +186,11 @@ const SidePanel = (props) => {
                         key={i}
                     />
                 ))}
+            </div>
+            <div id="launchTrainingButton">
+                {!trainingMode && <span onClick={() => toggleTraining(true)}>
+                    S'entraîner sur cette liste
+                </span>}
             </div>
         </div>
     )

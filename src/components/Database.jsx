@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import firebase from '../Firebase';
 import "firebase/firestore";
 import kanjis from '../data/kanjis'
@@ -6,28 +7,29 @@ import vocabulary from '../data/vocabulary';
 const ResetDatabase = (props) => {
     const { kanjisList, vocabularyList } = props;
 
-    const resetDb = () => {
-        let erasedKanjis = 0;
-        let erasedWords = 0;
-        kanjisList.forEach((kanji) => {
-            firebase.firestore().collection('Kanjis').doc(kanji.doc.id).delete();
+    let erasedKanjis = 0;
+    let erasedWords = 0;
+    let addedKanjis = 0;
+    let addedWords = 0;
+
+    const resetDb = async () => {
+        for (let i = 0; i < kanjisList.length; i++) {
+            await firebase.firestore().collection('Kanjis').doc(kanjisList[i].doc.id).delete();
             erasedKanjis++;
-        });
-        vocabularyList.forEach((word) => {
-            firebase.firestore().collection('Vocabulary').doc(word.doc.id).delete();
+        }
+        for (let i = 0; i < vocabularyList.length; i++) {
+            await firebase.firestore().collection('Vocabulary').doc(vocabularyList[i].doc.id).delete();
             erasedWords++;
-        });
+        }
     
-        let addedKanjis = 0;
-        let addedWords = 0;
-        kanjis.forEach((kanji) => {
-            firebase.firestore().collection('Kanjis').doc().set(kanji);
+        for (let i = 0; i < kanjis.length; i++) {
+            await firebase.firestore().collection('Kanjis').doc().set(kanjis[i]);
             addedKanjis++;
-        });
-        vocabulary.forEach((word) => {
-            firebase.firestore().collection('Vocabulary').doc().set(word);
+        }
+        for (let i = 0; i < vocabulary.length; i++) {
+            await firebase.firestore().collection('Vocabulary').doc().set(vocabulary[i]);
             addedWords++;
-        });
+        }
         console.log('Erased kanjis', erasedKanjis);
         console.log('Erased words', erasedWords);
         console.log('Added kanjis', addedKanjis);

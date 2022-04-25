@@ -22,11 +22,11 @@ const Yomi = (props) => {
                 </div>
             </div>
             <div className="yomiExamples">
-                {wordExamples.map((wordExample) => (
-                    <div className={expanded ? "yomiSingleExample open" : "yomiSingleExample"}>
+                {wordExamples.map((wordExample, i) => (
+                    <div className={expanded ? "yomiSingleExample open" : "yomiSingleExample"} key={i}>
                         <div className="yomiSingleExampleJapanese">
-                            {wordExample?.elements.map((element, i) => (
-                                <div className="yomiSingleExampleKanjiKana" key={i}>
+                            {wordExample?.elements.map((element, j) => (
+                                <div className="yomiSingleExampleKanjiKana" key={j}>
                                     <div>{element.kanji || element.kana}</div>
                                     {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
                                 </div>
@@ -60,7 +60,6 @@ const KanaReadings = (props) => {
                             example={e}
                             wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
-                            isFirst={i === 0}
                         />
                     ))}
                 </div>

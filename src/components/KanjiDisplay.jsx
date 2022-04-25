@@ -4,6 +4,8 @@ import TrainingControls from "./TrainingControls";
 
 const KanjiDisplay = (props) => {
     const {
+        allDisplayed,
+        setAllDisplayed,
         trainingMode,
         kanji,
         refreshWord,
@@ -11,11 +13,11 @@ const KanjiDisplay = (props) => {
         filtersApplied,
         level,
         grammar,
-        applyFilters,
+        checkTrainingFilters,
+        toggleTraining,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
-    const [allDisplayed, setAllDisplayed] = useState(true);
 
     const changeDisplayedElement = (num) => {
         setAllDisplayed(false);
@@ -47,7 +49,8 @@ const KanjiDisplay = (props) => {
                     filtersApplied={filtersApplied}
                     level={level}
                     grammar={grammar}
-                    applyFilters={applyFilters}
+                    checkTrainingFilters={checkTrainingFilters}
+                    toggleTraining={toggleTraining}
                 />}
             </div>}
         </div>

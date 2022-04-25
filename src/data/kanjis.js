@@ -1524,7 +1524,7 @@ const kanjis = [
             ],
             onyomi: [],
         },
-        translation: 'oeil',
+        translation: 'œil',
     },
     {
         kanji: '母',
@@ -1796,7 +1796,11 @@ const kanjis = [
                     'kana': 'みせ',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'テン',
+                },
+            ],
         },
         translation: 'magasin',
     },
@@ -2353,7 +2357,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'soeur aînée',
+        translation: 'sœur aînée',
     },
     {
         kanji: '妹',
@@ -2371,7 +2375,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'soeur cadette',
+        translation: 'sœur cadette',
     },
     {
         kanji: '彼',
@@ -3289,7 +3293,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'coeur, esprit',
+        translation: 'cœur, esprit',
     },
     {
         kanji: '足',
@@ -3347,6 +3351,92 @@ const kanjis = [
             ],
         },
         translation: 'porte',
+    },
+    {
+        kanji: '願',
+        strokes: 19,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ねが',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ガン',
+                },
+            ],
+        },
+        translation: 'requête, vœu',
+    },
+    {
+        kanji: '宜',
+        strokes: 8,
+        level: 'N1',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'よろ',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'correctitude',
+    },
+    {
+        kanji: '初',
+        strokes: 7,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'はじ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショ',
+                },
+            ],
+        },
+        translation: 'première fois, début',
+    },
+    {
+        kanji: '勉',
+        strokes: 10,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'つと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ベン',
+                },
+            ],
+        },
+        translation: 'effort',
+    },
+    {
+        kanji: '強',
+        strokes: 11,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'つよ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キョウ',
+                },
+            ],
+        },
+        translation: 'force',
     },
 ];
 
