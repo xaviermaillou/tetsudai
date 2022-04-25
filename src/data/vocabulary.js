@@ -2537,6 +2537,20 @@ const vocabulary = [
         translation: 'fort',
         grammar: 4,
     },
+    {
+        elements: [
+            {
+                kanji: '神',
+                kana: 'ジン',
+            },
+            {
+                kanji: '社',
+                kana: 'ジャ',
+            },
+        ],
+        translation: 'sanctuaire shintoïste',
+        grammar: 1,
+    },
 ];
 
 // Types grammaticaux:

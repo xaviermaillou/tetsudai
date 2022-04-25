@@ -2914,7 +2914,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'temple shintoïste, palais',
+        translation: 'sanctuaire shintoïste, palais',
     },
     {
         kanji: '崎',
@@ -3437,6 +3437,84 @@ const kanjis = [
             ],
         },
         translation: 'force',
+    },
+    {
+        kanji: '寺',
+        strokes: 6,
+        level: 'N2',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'てら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジ',
+                },
+            ],
+        },
+        translation: 'temple boudhiste',
+    },
+    {
+        kanji: '神',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かみ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シン',
+                },
+                {
+                    'kana': 'ジン',
+                },
+            ],
+        },
+        translation: 'dieux, divin',
+    },
+    {
+        kanji: '殿',
+        strokes: 13,
+        level: 'N2',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'との',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'デン',
+                },
+                {
+                    'kana': 'テン',
+                },
+            ],
+        },
+        translation: 'seigneur, palais, temple',
+    },
+    {
+        kanji: '社',
+        strokes: 7,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'やしろ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジャ',
+                },
+            ],
+        },
+        translation: 'compagnie, bureau, sanctuaire',
     },
 ];
 
