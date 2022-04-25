@@ -108,7 +108,7 @@ function App() {
   const [allDisplayed, setAllDisplayed] = useState(true);
   const toggleTraining = (boolean) => {
     if (boolean) {
-      if (window.innerWidth < window.innerHeight) setMenuOpen(false);
+      setMenuOpen(false);
       setTrainingMode(true);
       refreshWord();
     } else {
