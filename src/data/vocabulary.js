@@ -270,6 +270,20 @@ const vocabulary = [
     {
         elements: [
             {
+                kanji: '夕',
+                kana: 'ゆう',
+            },
+            {
+                kanji: '飯',
+                kana: 'ハン',
+            },
+        ],
+        translation: 'repas du soir, dîner',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
                 kanji: '火',
                 kana: 'カ',
             },
@@ -626,7 +640,7 @@ const vocabulary = [
                 kana: 'る',
             },
         ],
-        translation: 'voir',
+        translation: 'voir, regarder',
         grammar: 3,
     },
     {
@@ -1572,12 +1586,48 @@ const vocabulary = [
     {
         elements: [
             {
+                kanji: '朝',
+                kana: 'あさ',
+            },
+            {
+                kanji: '',
+                kana: 'ご',
+            },
+            {
+                kanji: '飯',
+                kana: 'ハン',
+            },
+        ],
+        translation: 'petit-déjeuner',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
                 kanji: '昼',
                 kana: 'チュウ',
             },
             {
                 kanji: '食',
                 kana: 'ショク',
+            },
+        ],
+        translation: 'déjeuner',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '昼',
+                kana: 'ひろ',
+            },
+            {
+                kanji: '',
+                kana: 'ご',
+            },
+            {
+                kanji: '飯',
+                kana: 'ハン',
             },
         ],
         translation: 'déjeuner',
@@ -2058,7 +2108,7 @@ const vocabulary = [
                 kana: 'あいだ',
             },
         ],
-        translation: 'intervalle',
+        translation: 'intervalle, pendant',
         grammar: 1,
     },
     {
@@ -2550,6 +2600,76 @@ const vocabulary = [
         ],
         translation: 'sanctuaire shintoïste',
         grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ギ',
+            },
+            {
+                kanji: '神',
+                kana: 'かみ',
+            },
+        ],
+        translation: 'mythologie grecque',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '忙',
+                kana: 'いそが',
+            },
+            {
+                kanji: '',
+                kana: 'しい',
+            },
+        ],
+        translation: 'occupé',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '映',
+                kana: 'エイ',
+            },
+            {
+                kanji: '画',
+                kana: 'ガ',
+            },
+        ],
+        translation: 'film',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '映',
+                kana: 'エイ',
+            },
+            {
+                kanji: '画',
+                kana: 'ガ',
+            },
+            {
+                kanji: '館',
+                kana: 'カン',
+            },
+        ],
+        translation: 'cinéma',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ちょっと',
+            },
+        ],
+        translation: 'un peu',
+        grammar: 5,
     },
 ];
 

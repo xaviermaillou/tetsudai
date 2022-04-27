@@ -6,6 +6,8 @@ import vocabulary from '../data/vocabulary';
 
 const ResetDatabase = (props) => {
     const { kanjisList, vocabularyList } = props;
+    const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
     let erasedKanjis = 0;
     let erasedWords = 0;
@@ -13,6 +15,7 @@ const ResetDatabase = (props) => {
     let addedWords = 0;
 
     const resetDb = async () => {
+        setLoading(true);
         for (let i = 0; i < kanjisList.length; i++) {
             await firebase.firestore().collection('Kanjis').doc(kanjisList[i].doc.id).delete();
             erasedKanjis++;
@@ -30,6 +33,8 @@ const ResetDatabase = (props) => {
             await firebase.firestore().collection('Vocabulary').doc().set(vocabulary[i]);
             addedWords++;
         }
+        setLoading(false);
+        setSuccessMessage(`${addedKanjis} kanjis loaded, ${addedWords} words loaded`);
         console.log('Erased kanjis', erasedKanjis);
         console.log('Erased words', erasedWords);
         console.log('Added kanjis', addedKanjis);
@@ -38,19 +43,30 @@ const ResetDatabase = (props) => {
 
     return (
         <div style={{
-            height: '60px',
+            padding: '20px',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
+            flexDirection: 'row',
             alignItems: 'center',
+            opacity: '0.75',
         }}>
             <button
                 style={{
                     width: 'fit-content',
-                    padding: '5px',
+                    padding: '20px',
+                    background: 'none',
+                    borderRadius: '5px'
                 }}
                 onClick={resetDb}
             >Renew database</button>
+            {loading ? <img style={{
+                height: '50px',
+                width: '80px',
+            }} src="/img/loading.gif" alt="loading" />
+            : <span style={{
+                marginLeft: '20px',
+            }}>
+                {successMessage}
+            </span>}
         </div>
     )
 }

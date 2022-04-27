@@ -1930,7 +1930,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'matin',
+        translation: 'matin, dynastie, époque',
     },
     {
         kanji: '買',
@@ -2533,7 +2533,7 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'maison',
+        translation: 'maison, foyer',
     },
     {
         kanji: '週',
@@ -3515,6 +3515,120 @@ const kanjis = [
             ],
         },
         translation: 'compagnie, bureau, sanctuaire',
+    },
+    {
+        kanji: '歳',
+        strokes: 13,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'とし',
+                },
+                {
+                    'kana': 'とせ',
+                },
+                {
+                    'kana': 'よわい',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'サイ',
+                },
+                {
+                    'kana': 'セイ',
+                },
+            ],
+        },
+        translation: 'âge, fin d\'année, occasion',
+    },
+    {
+        kanji: '忙',
+        strokes: 6,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'いそが',
+                },
+                {
+                    'kana': 'せわ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ボウ',
+                },
+                {
+                    'kana': 'モウ',
+                },
+            ],
+        },
+        translation: 'occupé, affairé, agité',
+    },
+    {
+        kanji: '映',
+        strokes: 9,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'うつ',
+                },
+                {
+                    'kana': 'は',
+                },
+                {
+                    'kana': 'ば',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'エイ',
+                },
+            ],
+        },
+        translation: 'reflet, projection',
+    },
+    {
+        kanji: '画',
+        strokes: 8,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かく',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'エ',
+                },
+                {
+                    'kana': 'ガ',
+                },
+            ],
+        },
+        translation: 'trait de pinceau, dessin',
+    },
+    {
+        kanji: '館',
+        strokes: 16,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'やかた',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カン',
+                },
+            ],
+        },
+        translation: 'bâtiment, résidence, palais',
     },
 ];
 
