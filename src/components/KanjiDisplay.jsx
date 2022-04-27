@@ -15,6 +15,7 @@ const KanjiDisplay = (props) => {
         grammar,
         checkTrainingFilters,
         toggleTraining,
+        changeCurrentWordByKanji,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
@@ -38,6 +39,7 @@ const KanjiDisplay = (props) => {
                         vocabulary={kanji.vocabulary}
                         allDisplayed={allDisplayed}
                         expanded={!trainingMode}
+                        changeCurrentWordByKanji={changeCurrentWordByKanji}
                     />}
                 </div>
                 {trainingMode && <TrainingControls

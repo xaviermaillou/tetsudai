@@ -95,8 +95,12 @@ function App() {
     setFilteredKanjis(kanjisListCopy)
   }, [level, grammar, kanjisWithVocabulary]);
 
-  const changeCurrentWord = (id) => {
-    setKanji(kanjisWithVocabulary.find((kanji) => kanji.doc.id === id))
+  const changeCurrentWordById = (id) => {
+    setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
+  }
+  const changeCurrentWordByKanji = (kanji) => {
+    console.log(kanji);
+    setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
   const refreshWord = () => {
     filtersApplied ? 
@@ -135,10 +139,11 @@ function App() {
         grammar={grammar}
         checkTrainingFilters={checkTrainingFilters}
         toggleTraining={toggleTraining}
+        changeCurrentWordByKanji={changeCurrentWordByKanji}
       />
       <SidePanel 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
-        changeCurrentWord={changeCurrentWord}
+        changeCurrentWordById={changeCurrentWordById}
         currentWord={kanji}
         open={menuOpen}
         setOpen={setMenuOpen}

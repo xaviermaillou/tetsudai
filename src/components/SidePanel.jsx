@@ -66,7 +66,7 @@ const ListHeader = (props) => {
 const ListElement = (props) => {
     const {
         kanji,
-        changeCurrentWord,
+        changeCurrentWordById,
         setOpen,
         currentWord,
         level,
@@ -75,7 +75,7 @@ const ListElement = (props) => {
     } = props;
 
     const clickHandle = (id) => {
-        changeCurrentWord(id);
+        changeCurrentWordById(id);
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
@@ -139,7 +139,7 @@ const ListElement = (props) => {
 const SidePanel = (props) => {
     const {
         kanjis,
-        changeCurrentWord,
+        changeCurrentWordById,
         currentWord,
         open,
         setOpen,
@@ -177,7 +177,7 @@ const SidePanel = (props) => {
                 {kanjis.map((item, i) => (
                     <ListElement
                         kanji={item}
-                        changeCurrentWord={changeCurrentWord}
+                        changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
                         currentWord={currentWord}
                         level={level}
