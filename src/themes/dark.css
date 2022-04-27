@@ -1,0 +1,40 @@
+* {
+    color: rgb(199, 192, 181)
+}
+
+body {
+    background-color: rgb(36, 37, 37)
+}
+
+input {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+input:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+input::placeholder {
+    color: rgba(199, 192, 181, 0.25)
+}
+
+#kanji {
+    color: rgba(199, 192, 181, 0.75)
+}
+
+#wordsListContainer {
+    background-color: rgba(36, 37, 37, 0.9);
+}
+
+.wordsListElement.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#selector {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wordsListElementContainer.open {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

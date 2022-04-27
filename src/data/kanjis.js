@@ -18,6 +18,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'un',
     },
     {
@@ -39,6 +42,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'deux',
     },
     {
@@ -57,6 +63,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'trois',
     },
     {
@@ -78,6 +87,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'quatre',
     },
     {
@@ -96,6 +108,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'cinq',
     },
     {
@@ -120,6 +135,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'six',
     },
     {
@@ -141,6 +159,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'sept',
     },
     {
@@ -165,6 +186,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'huit',
     },
     {
@@ -186,6 +210,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'neuf',
     },
     {
@@ -207,6 +234,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'dix',
     },
     {
@@ -227,6 +257,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'cent',
     },
     {
@@ -248,6 +281,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'mille',
     },
     {
@@ -265,6 +301,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'dix mille',
     },
     {
@@ -295,6 +334,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'soleil, jour',
     },
     {
@@ -313,6 +355,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'origine, livre',
     },
     {
@@ -331,6 +376,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Est',
     },
     {
@@ -352,6 +400,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Ouest',
     },
     {
@@ -373,6 +424,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Nord',
     },
     {
@@ -391,6 +445,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Sud',
     },
     {
@@ -409,6 +466,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'capitale',
     },
     {
@@ -433,6 +493,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'pays',
     },
     {
@@ -451,6 +514,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'mer',
     },
     {
@@ -469,6 +535,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'vent',
     },
     {
@@ -487,6 +556,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'feu',
     },
     {
@@ -505,6 +577,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'sol, terre',
     },
     {
@@ -523,6 +598,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'eau',
     },
     {
@@ -544,6 +622,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'temps',
     },
     {
@@ -585,6 +666,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Lune',
     },
     {
@@ -606,6 +690,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'montagne',
     },
     {
@@ -624,6 +711,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'rivière',
     },
     {
@@ -642,6 +732,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'arbre, bois',
     },
     {
@@ -656,6 +749,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'fleur',
     },
     {
@@ -670,6 +766,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'pluie',
     },
     {
@@ -688,6 +787,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'or, métal, argent',
     },
     {
@@ -702,6 +804,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'neige',
     },
     {
@@ -723,6 +828,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Ciel, paradis',
     },
     {
@@ -737,6 +845,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'jour de la semaine',
     },
     {
@@ -786,6 +897,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'homme, masculin',
     },
     {
@@ -804,6 +918,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'femme, féminin',
     },
     {
@@ -822,6 +939,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'enfant',
     },
     {
@@ -836,6 +956,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'je (moi), privé',
     },
     {
@@ -854,6 +977,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'chien',
     },
     {
@@ -886,6 +1012,9 @@ const kanjis = [
                 }
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'oiseau',
     },
     {
@@ -900,6 +1029,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'cheval',
     },
     {
@@ -924,6 +1056,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'déplacement, voyage',
     },
     {
@@ -960,6 +1095,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'repos',
     },
     {
@@ -978,7 +1116,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'nourriture',
+        collections: [
+            1,
+        ],
+        translation: 'nourriture, manger',
     },
     {
         kanji: '飲',
@@ -996,7 +1137,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'boisson',
+        collections: [
+            1,
+        ],
+        translation: 'boisson, boire',
     },
     {
         kanji: '分',
@@ -1020,6 +1164,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'part, portion',
     },
     {
@@ -1038,7 +1185,10 @@ const kanjis = [
                 }
             ],
         },
-        translation: 'arrivage, prochain, cause',
+        collections: [
+            1,
+        ],
+        translation: 'arrivée, prochain, cause',
     },
     {
         kanji: '見',
@@ -1056,6 +1206,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'vision',
     },
     {
@@ -1074,6 +1227,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'écouter, demander',
     },
     {
@@ -1092,6 +1248,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'dire, mot',
     },
     {
@@ -1113,6 +1272,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'récit, conversation',
     },
     {
@@ -1131,6 +1293,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'mot, parole, langue',
     },
     {
@@ -1152,6 +1317,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'lecture',
     },
     {
@@ -1170,6 +1338,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'écriture',
     },
     {
@@ -1202,6 +1373,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'penser',
     },
     {
@@ -1223,6 +1397,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'enseignement, foi, doctrine',
     },
     {
@@ -1254,6 +1431,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'entrée',
     },
     {
@@ -1268,6 +1448,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'soirée',
     },
     {
@@ -1286,6 +1469,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'grand',
     },
     {
@@ -1300,6 +1486,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'petit',
     },
     {
@@ -1324,6 +1513,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'le dessus',
     },
     {
@@ -1338,6 +1530,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'le dessous',
     },
     {
@@ -1359,6 +1554,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'bouche',
     },
     {
@@ -1373,6 +1571,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'Yen, cercle',
     },
     {
@@ -1394,6 +1595,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'maintenant',
     },
     {
@@ -1412,6 +1616,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'milieu, intérieur',
     },
     {
@@ -1430,6 +1637,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'père',
     },
     {
@@ -1444,6 +1654,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'bovin',
     },
     {
@@ -1461,6 +1674,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'rizière',
     },
     {
@@ -1475,6 +1691,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'vie',
     },
     {
@@ -1496,6 +1715,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'blanc',
     },
     {
@@ -1510,7 +1732,10 @@ const kanjis = [
             ],
             onyomi: [],
         },
-        translation: 'vieux',
+        collections: [
+            1,
+        ],
+        translation: 'ancienneté, vieillesse',
     },
     {
         kanji: '目',
@@ -1524,6 +1749,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'œil',
     },
     {
@@ -1542,6 +1770,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'mère',
     },
     {
@@ -1560,6 +1791,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'année',
     },
     {
@@ -1574,6 +1808,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'esprit, air',
     },
     {
@@ -1588,6 +1825,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'avance, qui précède',
     },
     {
@@ -1612,6 +1852,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'phrase, lettre',
     },
     {
@@ -1626,6 +1869,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'caractère, lettre',
     },
     {
@@ -1640,6 +1886,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'bon marché, paisible',
     },
     {
@@ -1654,6 +1903,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'tôt, rapide',
     },
     {
@@ -1668,7 +1920,10 @@ const kanjis = [
             ],
             onyomi: [],
         },
-        translation: 'aimer, favorable',
+        collections: [
+            1,
+        ],
+        translation: 'aimé, favorable, apprécié',
     },
     {
         kanji: '何',
@@ -1685,6 +1940,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'quoi',
     },
     {
@@ -1699,6 +1957,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'oreille',
     },
     {
@@ -1717,6 +1978,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'ville',
     },
     {
@@ -1735,7 +1999,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'véhicule',
+        collections: [
+            1,
+        ],
+        translation: 'véhicule, roue',
     },
     {
         kanji: '赤',
@@ -1763,6 +2030,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'corps',
     },
     {
@@ -1784,6 +2054,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'étudier, étude',
     },
     {
@@ -1802,6 +2075,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'magasin',
     },
     {
@@ -1820,6 +2096,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'son, bruit',
     },
     {
@@ -1838,6 +2117,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'midi',
     },
     {
@@ -1852,6 +2134,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'haut, cher',
     },
     {
@@ -1866,6 +2151,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'école, examen',
     },
     {
@@ -1880,6 +2168,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'retourner',
     },
     {
@@ -1894,6 +2185,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'poisson',
     },
     {
@@ -1912,6 +2206,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'noir',
     },
     {
@@ -1930,6 +2227,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'matin, dynastie, époque',
     },
     {
@@ -1948,7 +2248,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'acheter',
+        collections: [
+            1,
+        ],
+        translation: 'achat',
     },
     {
         kanji: '新',
@@ -1966,6 +2269,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'nouveauté',
     },
     {
@@ -1987,6 +2293,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'joie, confort',
     },
     {
@@ -2001,6 +2310,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'électricité',
     },
     {
@@ -2015,7 +2327,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'gare',
+        collections: [
+            1,
+        ],
+        translation: 'gare, station',
     },
     {
         kanji: '薬',
@@ -2033,6 +2348,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'médicament',
     },
     {
@@ -2054,6 +2372,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'objet',
     },
     {
@@ -2072,6 +2393,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'rencontre, réunion',
     },
     {
@@ -2093,6 +2417,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'main',
     },
     {
@@ -2132,6 +2459,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'extérieur',
     },
     {
@@ -2164,6 +2494,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'sortie',
     },
     {
@@ -2182,6 +2515,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'demi',
     },
     {
@@ -2200,6 +2536,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'hiver',
     },
     {
@@ -2214,6 +2553,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'droite',
     },
     {
@@ -2228,6 +2570,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'gauche',
     },
     {
@@ -2246,6 +2591,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'frère aîné',
     },
     {
@@ -2264,6 +2612,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'nom',
     },
     {
@@ -2282,6 +2633,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'frère cadet',
     },
     {
@@ -2300,6 +2654,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'proche',
     },
     {
@@ -2318,6 +2675,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'long, chef',
     },
     {
@@ -2339,6 +2699,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'nuit',
     },
     {
@@ -2357,6 +2720,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'sœur aînée',
     },
     {
@@ -2375,6 +2741,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'sœur cadette',
     },
     {
@@ -2389,6 +2758,9 @@ const kanjis = [
             ],
             onyomi: [],
         },
+        collections: [
+            1,
+        ],
         translation: 'il',
     },
     {
@@ -2407,6 +2779,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'bleu',
     },
     {
@@ -2425,6 +2800,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'printemps',
     },
     {
@@ -2443,6 +2821,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'automne',
     },
     {
@@ -2461,6 +2842,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'devant, avant',
     },
     {
@@ -2488,6 +2872,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'derrière, après',
     },
     {
@@ -2509,6 +2896,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'été',
     },
     {
@@ -2533,6 +2923,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'maison, foyer',
     },
     {
@@ -2547,6 +2940,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'semaine',
     },
     {
@@ -2568,7 +2964,10 @@ const kanjis = [
                 },
             ],
         },
-        translation: 'fermer',
+        collections: [
+            1,
+        ],
+        translation: 'fermeture',
     },
     {
         kanji: '晩',
@@ -2582,6 +2981,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'soir',
     },
     {
@@ -2603,6 +3005,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 's\'éclaircir',
     },
     {
@@ -2621,6 +3026,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'forêt',
     },
     {
@@ -2642,6 +3050,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'ouverture',
     },
     {
@@ -2669,6 +3080,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'intervalle',
     },
     {
@@ -2693,6 +3107,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'clarté',
     },
     {
@@ -2714,6 +3131,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'obscurité',
     },
     {
@@ -2732,6 +3152,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'chaque',
     },
     {
@@ -2984,6 +3407,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'personne',
     },
     {
@@ -3002,6 +3428,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'midi',
     },
     {
@@ -3020,6 +3449,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'ami',
     },
     {
@@ -3034,6 +3466,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'excellent, anglais',
     },
     {
@@ -3293,6 +3728,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'cœur, esprit',
     },
     {
@@ -3314,6 +3752,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'pied, suffire',
     },
     {
@@ -3332,6 +3773,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'maison, marchand',
     },
     {
@@ -3350,6 +3794,9 @@ const kanjis = [
                 },
             ],
         },
+        collections: [
+            1,
+        ],
         translation: 'porte',
     },
     {
@@ -3631,6 +4078,9 @@ const kanjis = [
         translation: 'bâtiment, résidence, palais',
     },
 ];
+
+// Collections:
+// 1 - Le petit livre des kanjis, par Kuniko Braghini (150 kanjis)
 
 
 export default kanjis;

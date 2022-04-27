@@ -6,11 +6,16 @@ const TrainingControls = (props) => {
         changeDisplayedElement,
         refreshWord,
         filtersApplied,
+        collection,
         level,
         grammar,
         checkTrainingFilters,
         toggleTraining,
     } = props;
+
+    const collections = {
+        1: "150 kanjis essentiels"
+    }
 
     const classes = {
         1: "Noms communs",
@@ -37,6 +42,7 @@ const TrainingControls = (props) => {
                     </span>
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters}>
+                    {filtersApplied && <span>Collection: {collection ? collections[collection] : "Toutes"}</span>}
                     {filtersApplied && <span>JLPT: {level ? level : "Tous"}</span>}
                     {filtersApplied && <span>Classe: {grammar ? classes[grammar] : "Toutes"}</span>}
                 </div>

@@ -2,11 +2,29 @@ import firebase from './Firebase';
 import "firebase/firestore";
 import { useState, useEffect } from 'react';
 import './App.css';
+import './themes/light.css';
 import KanjiDisplay from './components/KanjiDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
 
 function App() {
+  const [stylePath] = useState('light.css');
+
+  useEffect(() => {
+    let head = document.head;
+    let link = document.createElement("link");
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = `src/themes/${stylePath}`;
+
+    console.log(link);
+
+    head.appendChild(link);
+
+    return () => { head.removeChild(link); }
+  }, [stylePath]);
+
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
@@ -53,6 +71,7 @@ function App() {
   }, [kanjisList, vocabularyList]);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [collection, setCollection] = useState(0);
   const [level, setLevel] = useState("");
   const [grammar, setGrammar] = useState(0);
   const [search, setSearch] = useState("");
@@ -99,7 +118,6 @@ function App() {
     setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
   }
   const changeCurrentWordByKanji = (kanji) => {
-    console.log(kanji);
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
   const refreshWord = () => {
@@ -135,6 +153,7 @@ function App() {
         refreshWord={refreshWord}
         compressed={menuOpen}
         filtersApplied={filtersApplied}
+        collection={collection}
         level={level}
         grammar={grammar}
         checkTrainingFilters={checkTrainingFilters}
@@ -147,6 +166,8 @@ function App() {
         currentWord={kanji}
         open={menuOpen}
         setOpen={setMenuOpen}
+        collection={collection}
+        setCollection={setCollection}
         level={level}
         setLevel={setLevel}
         grammar={grammar}

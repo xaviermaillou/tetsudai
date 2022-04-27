@@ -11,6 +11,7 @@ const KanjiDisplay = (props) => {
         refreshWord,
         compressed,
         filtersApplied,
+        collection,
         level,
         grammar,
         checkTrainingFilters,
@@ -49,6 +50,7 @@ const KanjiDisplay = (props) => {
                     changeDisplayedElement={changeDisplayedElement}
                     refreshWord={refreshWord}
                     filtersApplied={filtersApplied}
+                    collection={collection}
                     level={level}
                     grammar={grammar}
                     checkTrainingFilters={checkTrainingFilters}
