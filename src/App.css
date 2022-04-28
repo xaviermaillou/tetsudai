@@ -139,7 +139,6 @@ input:focus {
 }
 .yomiContainer.extendable {
   opacity: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .yomiHeader {
   display: flex;
@@ -284,7 +283,6 @@ input:focus {
   height: 120px;
   margin-bottom: 12px;
   padding: 10px 4vw;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 #wordsListHeader.focused {
   animation-name: emphasize;

@@ -2664,12 +2664,196 @@ const vocabulary = [
     {
         elements: [
             {
-                kanji: '',
-                kana: 'ちょっと',
+                kanji: '山',
+                kana: 'やま',
+            },
+            {
+                kanji: '本',
+                kana: 'もと',
             },
         ],
-        translation: 'un peu',
+        translation: 'Yamamoto (nom)',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                kanji: '山',
+                kana: 'やま',
+            },
+            {
+                kanji: '田',
+                kana: 'だ',
+            },
+        ],
+        translation: 'Yamada (nom)',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                kanji: '田',
+                kana: 'た',
+            },
+            {
+                kanji: '中',
+                kana: 'なか',
+            },
+        ],
+        translation: 'Tanaka (nom)',
+        grammar: 2,
+    },
+    {
+        elements: [
+            {
+                kanji: '本',
+                kana: 'ホン',
+            },
+            {
+                kanji: '当',
+                kana: 'トウ',
+            },
+        ],
+        translation: 'vérité, réalité',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '最',
+                kana: 'サイ',
+            },
+            {
+                kanji: '近',
+                kana: 'キン',
+            },
+        ],
+        translation: 'récemment',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '大',
+                kana: 'タイ',
+            },
+            {
+                kanji: '変',
+                kana: 'ヘン',
+            },
+        ],
+        translation: 'situation difficile',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '大',
+                kana: 'ダイ',
+            },
+            {
+                kanji: '丈',
+                kana: 'ジョウ',
+            },
+            {
+                kanji: '夫',
+                kana: 'ブ',
+            },
+        ],
+        translation: 'bien, OK, pas grave',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'な',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+            {
+                kanji: '程',
+                kana: 'ほど',
+            },
+        ],
+        translation: 'je vois, effectivement',
         grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '皆',
+                kana: 'みな',
+            },
+            {
+                kanji: '',
+                kana: 'さ',
+            },
+            {
+                kanji: '',
+                kana: 'ん',
+            },
+        ],
+        translation: 'tout le monde',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '此',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'ce (proche)',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '此',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'ceci, celui-ci',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '其',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'ce (lointain)',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '其',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'cela, celui-là',
+        grammar: 8,
     },
 ];
 
@@ -2679,6 +2863,9 @@ const vocabulary = [
 // 3 - verbe
 // 4 - adjectif
 // 5 - adverbe
+// 6 - conjonction
+// 7 - adjectif démonstratif
+// 8 - pronom démonstratif
 
 
 export default vocabulary;

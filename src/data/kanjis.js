@@ -1467,6 +1467,9 @@ const kanjis = [
                 {
                     'kana': 'ダイ',
                 },
+                {
+                    'kana': 'タイ',
+                },
             ],
         },
         collections: [
@@ -4076,6 +4079,194 @@ const kanjis = [
             ],
         },
         translation: 'bâtiment, résidence, palais',
+    },
+    {
+        kanji: '元',
+        strokes: 4,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'もと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ゲン',
+                },
+                {
+                    'kana': 'ガン',
+                },
+            ],
+        },
+        translation: 'début, origine',
+    },
+    {
+        kanji: '最',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'もっと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'サイ',
+                },
+            ],
+        },
+        translation: 'maximum, extrême',
+    },
+    {
+        kanji: '当',
+        strokes: 6,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'トウ',
+                },
+            ],
+        },
+        translation: 'juste, dans le mille',
+    },
+    {
+        kanji: '変',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'か',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ヘン',
+                },
+            ],
+        },
+        translation: 'inusuel, étrange',
+    },
+    {
+        kanji: '丈',
+        strokes: 3,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'たけ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジョウ',
+                },
+            ],
+        },
+        translation: 'longueur, ten shaku (mesure)',
+    },
+    {
+        kanji: '夫',
+        strokes: 4,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'おっと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'フ',
+                },
+                {
+                    'kana': 'フウ',
+                },
+                {
+                    'kana': 'ブ',
+                },
+            ],
+        },
+        translation: 'mari, homme',
+    },
+    {
+        kanji: '程',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ほど',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'テイ',
+                },
+            ],
+        },
+        translation: 'ampleur, degré',
+    },
+    {
+        kanji: '皆',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'みな',
+                },
+                {
+                    'kana': 'みんな',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カイ',
+                },
+            ],
+        },
+        translation: 'tout',
+    },
+    {
+        kanji: '此',
+        strokes: 6,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'こ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シ',
+                },
+            ],
+        },
+        translation: 'ici, celui-ci',
+    },
+    {
+        kanji: '其',
+        strokes: 8,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'そ',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'cela',
     },
 ];
 

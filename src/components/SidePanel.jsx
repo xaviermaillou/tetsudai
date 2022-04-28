@@ -94,7 +94,7 @@ const ListElement = (props) => {
     const searchThroughVocabulary = (vocabulary, string) => {
         let includes = false;
         vocabulary.forEach((word) => {
-            if (word.translation.includes(string)) includes = true;
+            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
 
         return includes;
