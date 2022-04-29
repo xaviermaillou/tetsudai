@@ -1941,7 +1941,11 @@ const kanjis = [
                     'kana': 'なに',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'カ',
+                },
+            ],
         },
         collections: [
             1,
@@ -4237,38 +4241,6 @@ const kanjis = [
         translation: 'tout',
     },
     {
-        kanji: '此',
-        strokes: 6,
-        level: '',
-        readings: {
-            kunyomi: [
-                {
-                    'kana': 'こ',
-                },
-            ],
-            onyomi: [
-                {
-                    'kana': 'シ',
-                },
-            ],
-        },
-        translation: 'ici, celui-ci',
-    },
-    {
-        kanji: '其',
-        strokes: 8,
-        level: '',
-        readings: {
-            kunyomi: [
-                {
-                    'kana': 'そ',
-                },
-            ],
-            onyomi: [],
-        },
-        translation: 'cela',
-    },
-    {
         kanji: '暑',
         strokes: 12,
         level: 'N1',
@@ -4455,6 +4427,24 @@ const kanjis = [
             ],
         },
         translation: 'beaucoup, fréquent',
+    },
+    {
+        kanji: '誰',
+        strokes: 15,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'だれ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'スイ',
+                },
+            ],
+        },
+        translation: 'qui, quelqu\'un',
     },
 ];
 

@@ -2802,62 +2802,6 @@ const vocabulary = [
     {
         elements: [
             {
-                kanji: '此',
-                kana: 'こ',
-            },
-            {
-                kanji: '',
-                kana: 'の',
-            },
-        ],
-        translation: 'ce (proche)',
-        grammar: 7,
-    },
-    {
-        elements: [
-            {
-                kanji: '此',
-                kana: 'こ',
-            },
-            {
-                kanji: '',
-                kana: 'れ',
-            },
-        ],
-        translation: 'ceci, celui-ci',
-        grammar: 8,
-    },
-    {
-        elements: [
-            {
-                kanji: '其',
-                kana: 'そ',
-            },
-            {
-                kanji: '',
-                kana: 'の',
-            },
-        ],
-        translation: 'ce (lointain)',
-        grammar: 7,
-    },
-    {
-        elements: [
-            {
-                kanji: '其',
-                kana: 'そ',
-            },
-            {
-                kanji: '',
-                kana: 'れ',
-            },
-        ],
-        translation: 'cela, celui-là',
-        grammar: 8,
-    },
-    {
-        elements: [
-            {
                 kanji: '暑',
                 kana: 'あつ',
             },
@@ -2999,6 +2943,244 @@ const vocabulary = [
         translation: 'peut-être, probablement',
         grammar: 5,
     },
+    {
+        elements: [
+            {
+                kanji: '誰',
+                kana: 'だれ',
+            },
+        ],
+        translation: 'qui',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'ce (proche)',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'ceci, celui-ci',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        translation: 'comme ci',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+        ],
+        translation: 'ici',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'ce (lointain)',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'cela, celui-là',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        translation: 'comme ça (lointain)',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+        ],
+        translation: 'là',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'ce (très lointain)',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'cela, celui-là (très lointain)',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'あ',
+            },
+        ],
+        translation: 'comme ça (très lointain)',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'そ',
+            },
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+        ],
+        translation: 'là-bas',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ど',
+            },
+            {
+                kanji: '',
+                kana: 'の',
+            },
+        ],
+        translation: 'quel',
+        grammar: 7,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ど',
+            },
+            {
+                kanji: '',
+                kana: 'れ',
+            },
+        ],
+        translation: 'lequel',
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ど',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        translation: 'comment',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ど',
+            },
+            {
+                kanji: '',
+                kana: 'こ',
+            },
+        ],
+        translation: 'où',
+        grammar: 8,
+    },
 ];
 
 // Types grammaticaux:
@@ -3009,7 +3191,7 @@ const vocabulary = [
 // 5 - adverbe
 // 6 - conjonction
 // 7 - adjectif démonstratif
-// 8 - pronom démonstratif
+// 8 - pronom
 
 
 export default vocabulary;
