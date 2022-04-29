@@ -4268,6 +4268,194 @@ const kanjis = [
         },
         translation: 'cela',
     },
+    {
+        kanji: '暑',
+        strokes: 12,
+        level: 'N1',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あつ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショ',
+                },
+            ],
+        },
+        translation: 'chaleur, chaleur d\'été',
+    },
+    {
+        kanji: '熱',
+        strokes: 15,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あつ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ネツ',
+                },
+            ],
+        },
+        translation: 'chaleur, fièvre, fièvre',
+    },
+    {
+        kanji: '寒',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さむ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カン',
+                },
+            ],
+        },
+        translation: 'froid',
+    },
+    {
+        kanji: '迚',
+        strokes: 8,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'とて',
+                },
+            ],
+            onyomi: [],
+        },
+        translation: 'd\'une façon ou d\'une autre, très',
+    },
+    {
+        kanji: '若',
+        strokes: 8,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'わか',
+                },
+                {
+                    'kana': 'も',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジャク',
+                },
+                {
+                    'kana': 'ニャク',
+                },
+            ],
+        },
+        translation: 'jeunesse, immaturité, possibilité',
+    },
+    {
+        kanji: '幾',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'いく',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キ',
+                },
+            ],
+        },
+        translation: 'combien',
+    },
+    {
+        kanji: '難',
+        strokes: 18,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かた',
+                },
+                {
+                    'kana': 'むずか',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ナン',
+                },
+            ],
+        },
+        translation: 'difficulté',
+    },
+    {
+        kanji: '簡',
+        strokes: 18,
+        level: 'N2',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ふだ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カン',
+                },
+                {
+                    'kana': 'ケン',
+                },
+            ],
+        },
+        translation: 'simplicité, brièveté',
+    },
+    {
+        kanji: '単',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ひとえ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タン',
+                },
+            ],
+        },
+        translation: 'un, unique, seulement',
+    },
+    {
+        kanji: '多',
+        strokes: 6,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'おお',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タ',
+                },
+            ],
+        },
+        translation: 'beaucoup, fréquent',
+    },
 ];
 
 // Collections:

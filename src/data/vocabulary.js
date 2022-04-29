@@ -2855,6 +2855,150 @@ const vocabulary = [
         translation: 'cela, celui-là',
         grammar: 8,
     },
+    {
+        elements: [
+            {
+                kanji: '暑',
+                kana: 'あつ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'chaud (climat)',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '熱',
+                kana: 'あつ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'chaud (au contact), ardent',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '寒',
+                kana: 'さむ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'froid, inintéressant, pathétique',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '迚',
+                kana: 'とて',
+            },
+            {
+                kanji: '',
+                kana: 'も',
+            },
+        ],
+        translation: 'très, excessivement',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '若',
+                kana: 'わか',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'jeune',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '若',
+                kana: 'ジャク',
+            },
+            {
+                kanji: '年',
+                kana: 'ネン',
+            },
+        ],
+        translation: 'jeunesse',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '幾',
+                kana: 'いく',
+            },
+            {
+                kanji: '',
+                kana: 'つ',
+            },
+        ],
+        translation: 'combien, quel âge',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '難',
+                kana: 'むずか',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'difficile, compliqué',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '簡',
+                kana: 'カン',
+            },
+            {
+                kanji: '単',
+                kana: 'タン',
+            },
+        ],
+        translation: 'simple, bref',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '多',
+                kana: 'タ',
+            },
+            {
+                kanji: '分',
+                kana: 'ブン',
+            },
+        ],
+        translation: 'peut-être, probablement',
+        grammar: 5,
+    },
 ];
 
 // Types grammaticaux:
