@@ -8,7 +8,7 @@ const KanjiDisplay = (props) => {
         setAllDisplayed,
         trainingMode,
         kanji,
-        refreshWord,
+        randomWord,
         compressed,
         filtersApplied,
         collection,
@@ -48,7 +48,7 @@ const KanjiDisplay = (props) => {
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}
                     changeDisplayedElement={changeDisplayedElement}
-                    refreshWord={refreshWord}
+                    randomWord={randomWord}
                     filtersApplied={filtersApplied}
                     collection={collection}
                     level={level}

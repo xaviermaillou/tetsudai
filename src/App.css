@@ -346,6 +346,7 @@ input:focus {
 #wordsListSearch {
   position: relative;
   padding: 24px 4vw 12px 4vw;
+  margin-bottom: 12px;
 }
 #wordsListSearch img {
   height: 16px;
@@ -353,60 +354,101 @@ input:focus {
   right: 4vw;
   opacity: 0.25;
 }
-#wordsList {
-  height: calc(90vh - 248px);
-  margin-top: 12px;
-  padding-top: 3vh;
-  padding-bottom: 12vh;
+.listIndicator {
+  z-index: 1200;
+  height: 20px;
+  opacity: 0.75;
+  font-size: 14px;
+}
+.wordsListList {
+  /* 156px is half of the height of the filters+search */
+  height: calc(45vh - 156px);
+  position: relative;
+  padding-top: 1vh;
+  padding-bottom: 3vh;
   overflow-y: scroll;
   opacity: 0;
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
-#wordsList.open {
+.wordsListList.open {
   opacity: 1;
 }
-#wordsList.expanded {
-  height: calc(90vh - 192px);
+#kanjisList {
+  margin-bottom: 24px;
 }
-.wordsListElementContainer {
+#vocabularyList {
+  padding-bottom: 12vh;
+}
+.kanjisListElementContainer {
   height: 0px;
   overflow: hidden;
 }
-.wordsListElementContainer.open {
+.kanjisListElementContainer.open {
   height: 54px;
 }
-.wordsListElement {
+.kanjisListElement {
   display: flex;
   padding: 10px 4vw;
 }
-.wordsListElement:hover {
+.kanjisListElement:hover {
   cursor: pointer;
 }
-#wordsListElement div {
-  height: 100%;
-}
-#wordsListElementKanji {
+.kanjisListElementKanji {
   width: 25%;
   text-align: left;
   font-size: 28px;
 }
-#wordsListElementKana {
+.kanjisListElementKana {
   width: 75%;
   display: flex;
   flex-direction: column;
   text-align: right;
 }
-#wordsListElementKana div {
+.kanjisListElementKana div {
   display: flex;
   justify-content: flex-end;
   flex-wrap: nowrap;
 }
-#wordsListElementKana span {
+.kanjisListElementKana span {
   white-space: nowrap;
 }
-#wordsListElementTranslation {
+.kanjisListElementTranslation {
   opacity: 0.5;
+}
+.vocabularyListElementContainer {
+  height: 0px;
+  overflow: hidden;
+}
+.vocabularyListElementContainer.open {
+  height: 54px;
+}
+.vocabularyListElement {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 4vw;
+}
+.vocabularyListElementJapanese {
+  display: flex;
+  white-space: nowrap;
+  font-size: 16px;
+}
+.vocabularyListElementKanjiKana {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+.vocabularyListElementKana {
+  opacity: 0.5;
+}
+.vocabularyListElementTranslation {
+  display: flex;
+  font-size: 16px;
+  opacity: 0.5;
+  white-space: normal;
+  text-align: right;
 }
 
 @media (min-aspect-ratio: 1/1) {
@@ -464,8 +506,11 @@ input:focus {
   #wordsListContainer.open {
     left: 67vw;
   }
-  #wordsList {
-    height: calc(100vh - 248px);
+  .wordsListList {
+    /* 156px is half of the height of the filters+search */
+    height: calc(50vh - 156px);
+  }
+  #vocabularyList {
     padding-bottom: 3vh;
   }
   #randomDisplay.compressed {

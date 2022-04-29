@@ -27,7 +27,9 @@ function App() {
 
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
+
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
+  const [vocabularyWithKanjis, setVocabularyWithKanjis] = useState([]);
 
   useEffect(() => {
     firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
@@ -45,11 +47,6 @@ function App() {
       setVocabularyList(data);
     });
   }, []);
-
-  // console.log(kanjisList.length, ' kanjis loaded');
-  // console.log(vocabularyList.length, ' words loaded');
-
-  const [kanji, setKanji] = useState('');
 
   useEffect(() => {
     const kanjisListCopy = [ ...kanjisList ];
@@ -69,6 +66,18 @@ function App() {
     });
     setKanjisWithVocabulary(kanjisListCopy);
   }, [kanjisList, vocabularyList]);
+
+  useEffect(() => {
+    const vocabularyListCopy = [ ...vocabularyList ];
+    vocabularyListCopy.forEach((word) => {
+      word.elements.forEach((element) => {
+        element.details = kanjisList.find((kanji) => kanji.kanji === element.kanji);
+      });
+    });
+    setVocabularyWithKanjis(vocabularyListCopy);
+  }, [kanjisList, vocabularyList]);
+
+  const [kanji, setKanji] = useState('');
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [collection, setCollection] = useState(0);
@@ -107,12 +116,16 @@ function App() {
   useEffect(() => {
     const kanjisListCopy = [];
     kanjisWithVocabulary.forEach((kanji) => {
-      if ((level === kanji.level || !level) && (kanji.grammar.includes(grammar) || !grammar)) {
+      if (
+        (kanji.collections?.includes(collection) || collection === 0)
+        && (level === kanji.level || !level)
+        && (kanji.grammar.includes(grammar) || !grammar)
+      ) {
         kanjisListCopy.push(kanji)
       }
     });
     setFilteredKanjis(kanjisListCopy)
-  }, [level, grammar, kanjisWithVocabulary]);
+  }, [collection, level, grammar, kanjisWithVocabulary]);
 
   const changeCurrentWordById = (id) => {
     setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
@@ -120,7 +133,7 @@ function App() {
   const changeCurrentWordByKanji = (kanji) => {
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
-  const refreshWord = () => {
+  const randomWord = () => {
     filtersApplied ? 
       setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]) :
       setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
@@ -132,7 +145,7 @@ function App() {
     if (boolean) {
       setMenuOpen(false);
       setTrainingMode(true);
-      refreshWord();
+      randomWord();
     } else {
       setTrainingMode(false);
       setFilterIndication(false);
@@ -143,14 +156,14 @@ function App() {
   return (
     <div className="App">
       <div id="header">
-        <ResetDatabase kanjisList={kanjisWithVocabulary} vocabularyList={vocabularyList} />
+        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
       <KanjiDisplay
         allDisplayed={allDisplayed}
         setAllDisplayed={setAllDisplayed}
         trainingMode={trainingMode}
         kanji={kanji}
-        refreshWord={refreshWord}
+        randomWord={randomWord}
         compressed={menuOpen}
         filtersApplied={filtersApplied}
         collection={collection}
@@ -162,6 +175,7 @@ function App() {
       />
       <SidePanel 
         kanjis={kanjisWithVocabulary?.sort((a, b) => a.strokes - b.strokes)}
+        vocabulary={vocabularyWithKanjis}
         changeCurrentWordById={changeCurrentWordById}
         currentWord={kanji}
         open={menuOpen}

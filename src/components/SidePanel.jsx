@@ -74,7 +74,7 @@ const ListHeader = (props) => {
     );
 }
 
-const ListElement = (props) => {
+const ListKanji = (props) => {
     const {
         kanji,
         changeCurrentWordById,
@@ -100,8 +100,6 @@ const ListElement = (props) => {
         return includes;
     }
 
-    console.log(kanji);
-
     return (
         <div className={
             (
@@ -110,17 +108,17 @@ const ListElement = (props) => {
                 && (kanji.grammar.includes(grammar) || grammar === 0)
             ) 
             && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughVocabulary(kanji.vocabulary, search) || !search)
-            ? "wordsListElementContainer open" : "wordsListElementContainer"}
+            ? "kanjisListElementContainer open" : "kanjisListElementContainer"}
         >
             <div 
                 className={(currentWord && currentWord.kanji === kanji.kanji) ?
-                    "wordsListElement selected" : "wordsListElement"}
+                    "kanjisListElement selected" : "kanjisListElement"}
                 onClick={() => clickHandle(kanji.doc.id)}
             >
-                <div id="wordsListElementKanji">
+                <div className="kanjisListElementKanji">
                     {kanji.kanji}
                 </div>
-                <div id="wordsListElementKana">
+                <div className="kanjisListElementKana">
                     <div>
                         {
                             kanji.readings.kunyomi?.map((item, i) => (
@@ -145,7 +143,7 @@ const ListElement = (props) => {
                             ))
                         }
                     </div>
-                    <div id="wordsListElementTranslation">
+                    <div className="kanjisListElementTranslation">
                         {kanji.translation}
                     </div>
                 </div>
@@ -154,9 +152,53 @@ const ListElement = (props) => {
     )
 }
 
+const ListWord = (props) => {
+    const {
+        word,
+        setOpen,
+        currentWord,
+        collection,
+        level,
+        grammar,
+        search,
+    } = props;
+
+    const clickHandle = (id) => {
+        // changeCurrentWordById(id);
+        if (window.innerWidth < window.innerHeight) setOpen(false);
+    }
+
+    return (
+        <div className={
+            (
+                (word.collections?.includes(collection) || collection === 0)
+                && (level === word.level || !level || !word.level) 
+                && (word.grammar === grammar || grammar === 0)
+                && (word.translation.toLowerCase().includes(search.toLowerCase()) || !search)
+            ) 
+            ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"}
+        >
+            <div className="vocabularyListElement">
+                <div className="vocabularyListElementJapanese">
+                    {word.elements.map((element, j) => (
+                        <div className="vocabularyListElementKanjiKana" key={j}>
+                            <div>{element.kanji || element.kana}</div>
+                            {element.kanji && <div className="vocabularyListElementKana">{element.kana}</div>}
+                        </div>
+                    ))}
+                </div>
+                <div className="vocabularyListElementTranslation">
+                    {word.translation}
+                </div>
+            </div>
+        </div>
+    );
+}
+
 const SidePanel = (props) => {
     const {
         kanjis,
+        vocabulary,
         changeCurrentWordById,
         currentWord,
         open,
@@ -201,11 +243,27 @@ const SidePanel = (props) => {
                     <input value={search} onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>
             </div>
-            <div id="wordsList" className={open ? (trainingMode ? "open expanded" : "open") : ""}>
+            <span className="listIndicator">Kanjis</span>
+            <div id="kanjisList" className={open ? "open wordsListList" : "wordsListList"}>
                 {kanjis.map((item, i) => (
-                    <ListElement
+                    <ListKanji
                         kanji={item}
                         changeCurrentWordById={changeCurrentWordById}
+                        setOpen={setOpen}
+                        currentWord={currentWord}
+                        collection={collection}
+                        level={level}
+                        grammar={grammar}
+                        search={search}
+                        key={i}
+                    />
+                ))}
+            </div>
+            <span className="listIndicator">Vocabulaire</span>
+            <div id="vocabularyList" className={open ? "open wordsListList" : "wordsListList"}>
+                {vocabulary.map((item, i) => (
+                    <ListWord
+                        word={item}
                         setOpen={setOpen}
                         currentWord={currentWord}
                         collection={collection}
