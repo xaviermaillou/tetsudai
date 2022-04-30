@@ -428,6 +428,9 @@ input:focus {
   justify-content: space-between;
   padding: 10px 4vw;
 }
+.vocabularyListElement:hover {
+  cursor: pointer;
+}
 .vocabularyListElementJapanese {
   display: flex;
   white-space: nowrap;

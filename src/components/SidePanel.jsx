@@ -77,9 +77,9 @@ const ListHeader = (props) => {
 const ListKanji = (props) => {
     const {
         kanji,
-        changeCurrentWordById,
+        changeCurrentKanjiById,
         setOpen,
-        currentWord,
+        currentElement,
         collection,
         level,
         grammar,
@@ -87,7 +87,7 @@ const ListKanji = (props) => {
     } = props;
 
     const clickHandle = (id) => {
-        changeCurrentWordById(id);
+        changeCurrentKanjiById(id);
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
@@ -111,7 +111,7 @@ const ListKanji = (props) => {
             ? "kanjisListElementContainer open" : "kanjisListElementContainer"}
         >
             <div 
-                className={(currentWord && currentWord.kanji === kanji.kanji) ?
+                className={(currentElement && currentElement.doc.id === kanji.doc.id) ?
                     "kanjisListElement selected" : "kanjisListElement"}
                 onClick={() => clickHandle(kanji.doc.id)}
             >
@@ -155,8 +155,9 @@ const ListKanji = (props) => {
 const ListWord = (props) => {
     const {
         word,
+        changeCurrentWordById,
         setOpen,
-        currentWord,
+        currentElement,
         collection,
         level,
         grammar,
@@ -164,7 +165,7 @@ const ListWord = (props) => {
     } = props;
 
     const clickHandle = (id) => {
-        // changeCurrentWordById(id);
+        changeCurrentWordById(id);
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
@@ -178,7 +179,11 @@ const ListWord = (props) => {
             ) 
             ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"}
         >
-            <div className="vocabularyListElement">
+            <div 
+                className={(currentElement && currentElement.doc.id === word.doc.id) ?
+                    "vocabularyListElement selected" : "vocabularyListElement"}
+                onClick={() => clickHandle(word.doc.id)}
+            >
                 <div className="vocabularyListElementJapanese">
                     {word.elements.map((element, j) => (
                         <div className="vocabularyListElementKanjiKana" key={j}>
@@ -199,8 +204,9 @@ const SidePanel = (props) => {
     const {
         kanjis,
         vocabulary,
+        changeCurrentKanjiById,
         changeCurrentWordById,
-        currentWord,
+        currentElement,
         open,
         setOpen,
         collection,
@@ -248,9 +254,9 @@ const SidePanel = (props) => {
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
-                        changeCurrentWordById={changeCurrentWordById}
+                        changeCurrentKanjiById={changeCurrentKanjiById}
                         setOpen={setOpen}
-                        currentWord={currentWord}
+                        currentElement={currentElement}
                         collection={collection}
                         level={level}
                         grammar={grammar}
@@ -264,8 +270,9 @@ const SidePanel = (props) => {
                 {vocabulary.map((item, i) => (
                     <ListWord
                         word={item}
+                        changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
-                        currentWord={currentWord}
+                        currentElement={currentElement}
                         collection={collection}
                         level={level}
                         grammar={grammar}

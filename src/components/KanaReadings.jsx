@@ -4,7 +4,7 @@ const Yomi = (props) => {
     const {
         example,
         wordExamples,
-        changeCurrentWordByKanji,
+        changeCurrentKanjiByKanji,
     } = props;
 
     const [expanded, setExpanded] = useState(false);
@@ -28,7 +28,7 @@ const Yomi = (props) => {
                         <div className="yomiSingleExampleJapanese">
                             {wordExample?.elements.map((element, j) => (
                                 <div className="yomiSingleExampleKanjiKana" key={j}>
-                                    {element.kanji ? <div className="clickable" onClick={() => changeCurrentWordByKanji(element.kanji)}>{element.kanji}</div> : <div>{element.kana}</div>}
+                                    {element.kanji ? <div className="clickable" onClick={() => changeCurrentKanjiByKanji(element.kanji)}>{element.kanji}</div> : <div>{element.kana}</div>}
                                     {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
                                 </div>
                             ))}
@@ -49,7 +49,7 @@ const KanaReadings = (props) => {
         vocabulary,
         allDisplayed,
         expanded,
-        changeCurrentWordByKanji,
+        changeCurrentKanjiByKanji,
     } = props;
 
     return (
@@ -62,7 +62,7 @@ const KanaReadings = (props) => {
                             example={e}
                             wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
-                            changeCurrentWordByKanji={changeCurrentWordByKanji}
+                            changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                         />
                     ))}
                 </div>
@@ -73,7 +73,7 @@ const KanaReadings = (props) => {
                             example={e}
                             wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
-                            changeCurrentWordByKanji={changeCurrentWordByKanji}
+                            changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                         />
                     ))}
                 </div>

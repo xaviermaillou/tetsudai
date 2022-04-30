@@ -8,15 +8,14 @@ const KanjiDisplay = (props) => {
         setAllDisplayed,
         trainingMode,
         kanji,
-        randomWord,
+        randomKanji,
         compressed,
-        filtersApplied,
         collection,
         level,
         grammar,
         checkTrainingFilters,
         toggleTraining,
-        changeCurrentWordByKanji,
+        changeCurrentKanjiByKanji,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
@@ -40,7 +39,7 @@ const KanjiDisplay = (props) => {
                         vocabulary={kanji.vocabulary}
                         allDisplayed={allDisplayed}
                         expanded={!trainingMode}
-                        changeCurrentWordByKanji={changeCurrentWordByKanji}
+                        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                     />}
                 </div>
                 {trainingMode && <TrainingControls
@@ -48,8 +47,7 @@ const KanjiDisplay = (props) => {
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}
                     changeDisplayedElement={changeDisplayedElement}
-                    randomWord={randomWord}
-                    filtersApplied={filtersApplied}
+                    randomKanji={randomKanji}
                     collection={collection}
                     level={level}
                     grammar={grammar}

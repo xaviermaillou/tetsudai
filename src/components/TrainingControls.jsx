@@ -4,8 +4,7 @@ const TrainingControls = (props) => {
         displayElements,
         allDisplayed,
         changeDisplayedElement,
-        randomWord,
-        filtersApplied,
+        randomKanji,
         collection,
         level,
         grammar,
@@ -42,11 +41,11 @@ const TrainingControls = (props) => {
                     </span>
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters}>
-                    {filtersApplied && <span>Collection: {collection ? collections[collection] : "Toutes"}</span>}
-                    {filtersApplied && <span>JLPT: {level ? level : "Tous"}</span>}
-                    {filtersApplied && <span>Classe: {grammar ? classes[grammar] : "Toutes"}</span>}
+                    <span>Collection: {collection ? collections[collection] : "Toutes"}</span>
+                    <span>JLPT: {level ? level : "Tous"}</span>
+                    <span>Classe: {grammar ? classes[grammar] : "Toutes"}</span>
                 </div>
-                <div id="trainingNext" onClick={randomWord}>
+                <div id="trainingNext" onClick={randomKanji}>
                     <span>
                         <img src="/img/next.png" alt="random" />
                     </span>
