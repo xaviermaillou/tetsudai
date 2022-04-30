@@ -3181,6 +3181,124 @@ const vocabulary = [
         translation: 'où',
         grammar: 8,
     },
+    {
+        elements: [
+            {
+                kanji: '面',
+                kana: 'おも',
+            },
+            {
+                kanji: '白',
+                kana: 'しろ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'intéressant, amusant',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '単',
+                kana: 'タン',
+            },
+            {
+                kanji: '語',
+                kana: 'ゴ',
+            },
+        ],
+        translation: 'mot, vocabulaire',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '単',
+                kana: 'タン',
+            },
+            {
+                kanji: '語',
+                kana: 'ゴ',
+            },
+        ],
+        translation: 'meilleur, premier, numéro 1',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '余',
+                kana: 'あま',
+            },
+            {
+                kanji: '',
+                kana: 'り',
+            },
+        ],
+        translation: 'très, trop (suivi d\'une négation)',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '事',
+                kana: 'こと',
+            },
+        ],
+        translation: 'matière, incident, évènement',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '全',
+                kana: 'ゼン',
+            },
+            {
+                kanji: '然',
+                kana: 'ゼン',
+            },
+        ],
+        translation: 'du tout (suivi d\'une négation)',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '趣',
+                kana: 'シュ',
+            },
+            {
+                kanji: '味',
+                kana: 'ミ',
+            },
+        ],
+        translation: 'passe-temps, interêt',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'パソコン',
+            },
+        ],
+        translation: 'ordinateur',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ゲーム',
+            },
+        ],
+        translation: 'jeu vidéo',
+        grammar: 1,
+    },
 ];
 
 // Types grammaticaux:
@@ -3192,6 +3310,7 @@ const vocabulary = [
 // 6 - conjonction
 // 7 - adjectif démonstratif
 // 8 - pronom
+// 9 - particule
 
 
 export default vocabulary;

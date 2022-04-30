@@ -4446,6 +4446,174 @@ const kanjis = [
         },
         translation: 'qui, quelqu\'un',
     },
+    {
+        kanji: '面',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'おも',
+                },
+                {
+                    'kana': 'おもて',
+                },
+                {
+                    'kana': 'つら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'メン',
+                },
+                {
+                    'kana': 'ベン',
+                },
+            ],
+        },
+        translation: 'masque, visage, traits',
+    },
+    {
+        kanji: '番',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'つが',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'バン',
+                },
+            ],
+        },
+        translation: 'tour, numéro, ordre',
+    },
+    {
+        kanji: '余',
+        strokes: 7,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あま',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ヨ',
+                },
+            ],
+        },
+        translation: 'excès',
+    },
+    {
+        kanji: '事',
+        strokes: 8,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'こと',
+                },
+                {
+                    'kana': 'つか',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジ',
+                },
+                {
+                    'kana': 'ズ',
+                },
+            ],
+        },
+        translation: 'fait, chose, matière',
+    },
+    {
+        kanji: '全',
+        strokes: 6,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'まった',
+                },
+                {
+                    'kana': 'すべ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ゼン',
+                },
+            ],
+        },
+        translation: 'entier, tout, complet',
+    },
+    {
+        kanji: '然',
+        strokes: 12,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しか',
+                },
+                {
+                    'kana': 'さ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ゼン',
+                },
+                {
+                    'kana': 'ネン',
+                },
+            ],
+        },
+        translation: 'état naturel, suffixe adverbial',
+    },
+    {
+        kanji: '趣',
+        strokes: 15,
+        level: 'N1',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'おもむき',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シュ',
+                },
+            ],
+        },
+        translation: 'teneur, apparence',
+    },
+    {
+        kanji: '味',
+        strokes: 8,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あじ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ミ',
+                },
+            ],
+        },
+        translation: 'saveur',
+    },
 ];
 
 // Collections:
