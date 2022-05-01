@@ -3,7 +3,7 @@ import "firebase/firestore";
 import { useState, useEffect } from 'react';
 import './App.css';
 import './themes/light.css';
-import KanjiDisplay from './components/KanjiDisplay';
+import MainDisplay from './components/MainDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
 
@@ -33,14 +33,16 @@ function App() {
 
   useEffect(() => {
     const kanjisListCopy = [ ...kanjisList ];
+    const vocabularyListCopy = [ ...vocabularyList ];
     kanjisListCopy.forEach((kanji) => {
       kanji.vocabulary = [];
       kanji.grammar = [];
-      vocabularyList.forEach((word) => {
+      vocabularyListCopy.forEach((word) => {
         word.elements.every((element) => {
           if (kanji.kanji === element.kanji) {
             kanji.vocabulary.push(word);
             kanji.grammar.push(word.grammar);
+            element.details = kanji;
             return false;
           }
           return true;
@@ -48,17 +50,18 @@ function App() {
       });
     });
     setKanjisWithVocabulary(kanjisListCopy);
-  }, [kanjisList, vocabularyList]);
-
-  useEffect(() => {
-    const vocabularyListCopy = [ ...vocabularyList ];
-    vocabularyListCopy.forEach((word) => {
-      word.elements.forEach((element) => {
-        element.details = kanjisList.find((kanji) => kanji.kanji === element.kanji);
-      });
-    });
     setVocabularyWithKanjis(vocabularyListCopy);
   }, [kanjisList, vocabularyList]);
+
+  // useEffect(() => {
+  //   const vocabularyListCopy = [ ...vocabularyList ];
+  //   vocabularyListCopy.forEach((word) => {
+  //     word.elements.forEach((element) => {
+  //       element.details = kanjisList.find((kanji) => kanji.kanji === element.kanji);
+  //     });
+  //   });
+  //   setVocabularyWithKanjis(vocabularyListCopy);
+  // }, [kanjisList, vocabularyList]);
 
   const [kanji, setKanji] = useState(null);
   const [word, setWord] = useState(null);
@@ -75,8 +78,6 @@ function App() {
       setMenuOpen(true);
     }, 400);
   }, []);
-
-  const [filtersApplied] = useState(true);
 
   const checkTrainingFilters = () => {
     if (!menuOpen) {
@@ -96,9 +97,11 @@ function App() {
   }
 
   const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
+  const [filteredWords, setFilteredWords] = useState([...vocabularyWithKanjis])
 
   useEffect(() => {
     const kanjisListCopy = [];
+    const vocabularyListCopy = [];
     kanjisWithVocabulary.forEach((kanji) => {
       if (
         (kanji.collections?.includes(collection) || collection === 0)
@@ -108,8 +111,18 @@ function App() {
         kanjisListCopy.push(kanji)
       }
     });
-    setFilteredKanjis(kanjisListCopy)
-  }, [collection, level, grammar, kanjisWithVocabulary]);
+    vocabularyWithKanjis.forEach((word) => {
+      if (
+        (word.collections?.includes(collection) || collection === 0)
+        && (level === word.level || !level)
+        && (word.grammar === grammar || !grammar)
+      ) {
+        vocabularyListCopy.push(word)
+      }
+    });
+    setFilteredKanjis(kanjisListCopy);
+    setFilteredWords(vocabularyListCopy);
+  }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithKanjis]);
 
   const changeCurrentKanjiById = (id) => {
     setWord(null);
@@ -120,9 +133,8 @@ function App() {
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
   const randomKanji = () => {
-    filtersApplied ? 
-      setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]) :
-      setKanji(kanjisWithVocabulary[Math.floor(Math.random()*kanjisWithVocabulary.length)]);
+    if (kanji) setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
+    if (word) setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
   }
 
   const changeCurrentWordById = (id) => {
@@ -149,10 +161,11 @@ function App() {
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
-      <KanjiDisplay
-        // Displayed kanji
+      <MainDisplay
+        // Displayed element
         kanji={kanji}
         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+        word={word}
 
         // Height
         compressed={menuOpen}

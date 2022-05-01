@@ -18,12 +18,16 @@ input:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-#kanji {
+#kanjiDisplayKanji, .wordDisplayWordElement span {
     color: gray;
 }
 
 .yomiContainer.extendable {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#wordDisplayGrammar {
+    color: silver;
 }
 
 #wordsListContainer {

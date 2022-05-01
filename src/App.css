@@ -82,7 +82,7 @@ input:focus {
 
 /* -------------------------------- MAIN DISPLAY -------------------------------- */
 
-#randomDisplay {
+#mainDisplay {
   z-index: 800;
   padding-top: 2vh;
   position: fixed;
@@ -92,27 +92,51 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
 }
-#japaneseWords {
+#kanjiDisplay, #wordDisplay {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-#kanji {
-  font-size: calc(80px + 20vh);
+#kanjiDisplayKanji {
   line-height: 38vh;
+}
+#kanjiDisplayKanji, #wordDisplayWord {
+  font-size: calc(80px + 20vh);
   font-family: source-han-sans-simplified-c;
 }
-#translation {
+#kanjiDisplayTranslation, #wordDisplayTranslation {
   font-size: 24px;
   font-weight: 100;
   padding: 0px 20px;
   white-space: nowrap;
   overflow-x: scroll;
 }
+#wordDisplayWord {
+  height: 38vh;
+  width: 100%;
+  font-size: calc(40px + 10vh);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+.wordDisplayWordElement {
+  display: flex;
+  flex-direction: column;
+}
+.wordDisplayWordElement span {
+  white-space: nowrap;
+}
+.wordDisplayWordElementYomi {
+  font-size: calc(10px + 2.5vh);
+  line-height: calc(10px + 2.5vh);
+  height: calc(20px + 5vh);
+}
 
-/* -------------------------------- KANAS -------------------------------- */
+/* -------------------------------- KANAS & KANJIS -------------------------------- */
 
-#kanas {
+#kanas, #kanjis {
   z-index: 900;
   height: 24vh;
   width: 67.5%;
@@ -121,7 +145,10 @@ input:focus {
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
-#kanas.expanded {
+#kanjis {
+  width: 33.75%;
+}
+#kanas.expanded, #kanjis.expanded {
   height: 48vh;
 }
 #kanasExamples {
@@ -194,6 +221,33 @@ input:focus {
   margin: 0px 5px;
 }
 .yomiSingleExampleKana {
+  opacity: 0.5;
+}
+.kanjisElement {
+  display: flex;
+  padding: 0px 20px;
+}
+.kanjisElementKanji {
+  width: 25%;
+  text-align: left;
+  font-size: 32px;
+}
+.kanjisElementKana {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 16px;
+}
+.kanjisElementKana div {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+.kanjisElementKana span {
+  white-space: nowrap;
+}
+.kanjisListTranslation {
   opacity: 0.5;
 }
 
@@ -455,17 +509,17 @@ input:focus {
 }
 
 @media (min-aspect-ratio: 1/1) {
-  #randomDisplay {
+  #mainDisplay {
     padding-top: 5vh;
   }
-  #translation {
+  #kanjiDisplayTranslation, #wordDisplayTranslation {
     font-size: 32px
   }
-  #kanas {
+  #kanas, #kanjis {
     height: 32vh;
     font-size: 28px;
   }
-  #kanas.expanded {
+  #kanas.expanded, #kanjis.expanded {
     height: calc(46vh - (2vw - 50px));
   }
   #kanasExamples {
@@ -516,7 +570,7 @@ input:focus {
   #vocabularyList {
     padding-bottom: 3vh;
   }
-  #randomDisplay.compressed {
+  #mainDisplay.compressed {
     width: 67%;
   }
   #wordsListFilters {

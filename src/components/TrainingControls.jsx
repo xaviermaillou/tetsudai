@@ -1,3 +1,5 @@
+import { classes, collections} from "../lib/common";
+
 const TrainingControls = (props) => {
     const {
         displayedElement,
@@ -11,18 +13,6 @@ const TrainingControls = (props) => {
         checkTrainingFilters,
         toggleTraining,
     } = props;
-
-    const collections = {
-        1: "150 kanjis essentiels"
-    }
-
-    const classes = {
-        1: "Noms communs",
-        2: "Noms propres",
-        3: "Verbes",
-        4: "Adjectifs",
-        5: "Adverbes",
-    }
 
     return (
         <div id="selectorAndControls">

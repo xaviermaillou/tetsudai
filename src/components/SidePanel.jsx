@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { classes, collections} from "../lib/common";
 
 const ListHeader = (props) => {
     const {
@@ -19,18 +20,6 @@ const ListHeader = (props) => {
     useEffect(() => {
         if (filterIndication) setFilter(1);
     }, [filterIndication, filter]);
-
-    const collections = {
-        1: "150 kanjis essentiels"
-    }
-
-    const classes = {
-        1: "Noms communs",
-        2: "Noms propres",
-        3: "Verbes",
-        4: "Adjectifs",
-        5: "Adverbes",
-    }
 
     return (
         <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>

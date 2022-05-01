@@ -1843,7 +1843,17 @@ const vocabulary = [
             },
         ],
         translation: 'elle',
-        grammar: 1,
+        grammar: 8,
+    },
+    {
+        elements: [
+            {
+                kanji: '彼',
+                kana: 'かれ',
+            },
+        ],
+        translation: 'il',
+        grammar: 8,
     },
     {
         elements: [
