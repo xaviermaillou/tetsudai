@@ -54,6 +54,7 @@ const WordKanjis = (props) => {
                 <Kanji
                     element={element}
                     changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                    key={i}
                 />
             ))}
         </div>

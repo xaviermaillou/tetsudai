@@ -19,6 +19,7 @@ const MainDisplay = (props) => {
         toggleTraining,
         changeCurrentKanjiByKanji,
         word,
+        changeCurrentWordById,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
@@ -30,7 +31,7 @@ const MainDisplay = (props) => {
     const displayElements = () => {
         setAllDisplayed(!allDisplayed);
     }
-console.log(word)
+
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
@@ -43,6 +44,7 @@ console.log(word)
                         allDisplayed={allDisplayed}
                         expanded={!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                        changeCurrentWordById={changeCurrentWordById}
                     />}
                 </div>}
                 {word && <div id="wordDisplay">

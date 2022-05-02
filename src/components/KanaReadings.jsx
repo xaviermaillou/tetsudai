@@ -5,12 +5,18 @@ const Yomi = (props) => {
         example,
         wordExamples,
         changeCurrentKanjiByKanji,
+        changeCurrentWordById,
     } = props;
 
     const [expanded, setExpanded] = useState(false);
     useEffect(() => {
         setExpanded(false);
     }, [example]);
+
+    const handleKanjiClick = (e, kanji) => {
+        e.stopPropagation();
+        changeCurrentKanjiByKanji(kanji);
+    }
 
     return (
         <div className={wordExamples.length > 0 ? "yomiContainer extendable" : "yomiContainer"}>
@@ -24,11 +30,11 @@ const Yomi = (props) => {
             </div>
             <div className="yomiExamples">
                 {wordExamples.map((wordExample, i) => (
-                    <div className={expanded ? "yomiSingleExample open" : "yomiSingleExample"} key={i}>
+                    <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} key={i} onClick={() => changeCurrentWordById(wordExample.doc.id)}>
                         <div className="yomiSingleExampleJapanese">
                             {wordExample?.elements.map((element, j) => (
                                 <div className="yomiSingleExampleKanjiKana" key={j}>
-                                    {element.kanji ? <div className="clickable" onClick={() => changeCurrentKanjiByKanji(element.kanji)}>{element.kanji}</div> : <div>{element.kana}</div>}
+                                    {element.kanji ? <div className="clickable" onClick={(e) => handleKanjiClick(e, element.kanji)}>{element.kanji}</div> : <div>{element.kana}</div>}
                                     {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
                                 </div>
                             ))}
@@ -50,6 +56,7 @@ const KanaReadings = (props) => {
         allDisplayed,
         expanded,
         changeCurrentKanjiByKanji,
+        changeCurrentWordById,
     } = props;
 
     return (
@@ -63,6 +70,7 @@ const KanaReadings = (props) => {
                             wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                            changeCurrentWordById={changeCurrentWordById}
                         />
                     ))}
                 </div>
@@ -74,6 +82,7 @@ const KanaReadings = (props) => {
                             wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                            changeCurrentWordById={changeCurrentWordById}
                         />
                     ))}
                 </div>

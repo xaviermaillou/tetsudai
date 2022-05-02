@@ -3309,6 +3309,120 @@ const vocabulary = [
         translation: 'jeu vidéo',
         grammar: 1,
     },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'でも',
+            },
+        ],
+        translation: 'mais',
+        grammar: 6,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'もう',
+            },
+        ],
+        translation: 'bientôt',
+        grammar: 5,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'じゃあ',
+            },
+        ],
+        translation: 'alors',
+        grammar: 6,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'まあまあ',
+            },
+        ],
+        translation: 'passable',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '大',
+                kana: 'タイ',
+            },
+            {
+                kanji: '切',
+                kana: 'セツ',
+            },
+        ],
+        translation: 'important',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '部',
+                kana: 'へ',
+            },
+            {
+                kanji: '屋',
+                kana: 'や',
+            },
+        ],
+        translation: 'chambre',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '静',
+                kana: 'しず',
+            },
+            {
+                kanji: '',
+                kana: 'か',
+            },
+        ],
+        translation: 'calme',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '優',
+                kana: 'やさ',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        translation: 'gentil, doux',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '必',
+                kana: 'ヒツ',
+            },
+            {
+                kanji: '要',
+                kana: 'ヨウ',
+            },
+        ],
+        translation: 'nécessaire',
+        grammar: 4,
+    },
 ];
 
 // Types grammaticaux:

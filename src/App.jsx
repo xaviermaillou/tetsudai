@@ -166,6 +166,7 @@ function App() {
         kanji={kanji}
         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
         word={word}
+        changeCurrentWordById={changeCurrentWordById}
 
         // Height
         compressed={menuOpen}

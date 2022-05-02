@@ -145,9 +145,6 @@ input:focus {
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
-#kanjis {
-  width: 33.75%;
-}
 #kanas.expanded, #kanjis.expanded {
   height: 48vh;
 }
@@ -468,7 +465,9 @@ input:focus {
   white-space: nowrap;
 }
 .kanjisListElementTranslation {
+  width: 100%;
   opacity: 0.5;
+  white-space: nowrap;
 }
 .vocabularyListElementContainer {
   height: 0px;
@@ -519,6 +518,9 @@ input:focus {
     height: 32vh;
     font-size: 28px;
   }
+  #kanjis {
+    width: 33.75%;
+  }
   #kanas.expanded, #kanjis.expanded {
     height: calc(46vh - (2vw - 50px));
   }
@@ -547,7 +549,7 @@ input:focus {
     text-align: left;
   }
   .yomiContainer {
-    width: 80%;
+    width: 90%;
   }
   #selector {
     justify-content: space-evenly;

@@ -4614,6 +4614,144 @@ const kanjis = [
         },
         translation: 'saveur',
     },
+    {
+        kanji: '切',
+        strokes: 4,
+        level: 'N4',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'き',
+                },
+                {
+                    'kana': 'ぎ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'セツ',
+                },
+                {
+                    'kana': 'サイ',
+                },
+            ],
+        },
+        translation: 'coupant, tranchant',
+    },
+    {
+        kanji: '部',
+        strokes: 11,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'へ',
+                },
+                {
+                    'kana': 'べ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'フ',
+                },
+                {
+                    'kana': 'ブ',
+                },
+                {
+                    'kana': 'ホ',
+                },
+            ],
+        },
+        translation: 'section, bureau, departement',
+    },
+    {
+        kanji: '静',
+        strokes: 14,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しず',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'セイ',
+                },
+                {
+                    'kana': 'ジョウ',
+                },
+            ],
+        },
+        translation: 'calme',
+    },
+    {
+        kanji: '優',
+        strokes: 17,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'やさ',
+                },
+                {
+                    'kana': 'すぐ',
+                },
+                {
+                    'kana': 'まさ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ユウ',
+                },
+                {
+                    'kana': 'ウ',
+                },
+            ],
+        },
+        translation: 'tendresse, gentillesse, supériorité',
+    },
+    {
+        kanji: '必',
+        strokes: 5,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かなら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ヒツ',
+                },
+            ],
+        },
+        translation: 'nécessairement, certain, inévitable',
+    },
+    {
+        kanji: '要',
+        strokes: 9,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'い',
+                },
+                {
+                    'kana': 'かなめ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ヨウ',
+                },
+            ],
+        },
+        translation: 'besoin, point principal, essence',
+    },
 ];
 
 // Collections:
