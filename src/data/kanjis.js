@@ -2762,6 +2762,9 @@ const kanjis = [
                 {
                     'kana': 'かれ',
                 },
+                {
+                    'kana': 'かの',
+                },
             ],
             onyomi: [],
         },
