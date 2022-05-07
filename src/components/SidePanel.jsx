@@ -1,5 +1,43 @@
 import { useState, useEffect } from "react";
-import { classes, collections} from "../lib/common";
+import { classes, collections, levels, kinds } from "../lib/common";
+
+const FilterModal = (props) => {
+    const {
+        filter,
+        setFilter,
+        collection,
+        setCollection,
+        level,
+        setLevel,
+        grammar,
+        setGrammar,
+    } = props;
+
+    const handleClick = (key, filterSetter) => {
+        filterSetter(key);
+        setFilter(0);
+    }
+
+    return (
+        <div id="wordsListFilterModal" className={filter !== 0 ? "open" : ""}>
+            {filter === 1 && <>
+                {Object.values(collections).map((value, key) => (
+                    <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected" : ""}>{value}</span>
+                ))}
+            </>}
+            {filter === 2 && <>
+                {Object.values(levels).map((value, key) => (
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected" : ""}>{value}</span>
+                ))}
+            </>}
+            {filter === 3 && <>
+                {Object.values(classes).map((value, key) => (
+                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected" : ""}>{value}</span>
+                ))}
+            </>}
+        </div>
+    );
+}
 
 const ListHeader = (props) => {
     const {
@@ -11,54 +49,61 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        kind,
+        setKind,
         filterIndication,
         trainingMode,
         toggleTraining,
+        searchExecuted,
+        setSearchExecuted,
     } = props;
 
-    const [filter, setFilter] = useState(1);
+    const [filter, setFilter] = useState(0);
     useEffect(() => {
-        if (filterIndication) setFilter(1);
+        if (filterIndication) setFilter(0);
     }, [filterIndication, filter]);
 
     return (
         <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>
             <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
-            {!trainingMode && <img id="wordsListTrainer" onClick={toggleTraining} src="/img/book.png" alt="training" />}
+            {!trainingMode && <img id="wordsListTrainerIcon" onClick={toggleTraining} src="/img/book.png" alt="training" />}
+            {searchExecuted ? 
+            <img id="wordsListFilterIcon" onClick={() => setSearchExecuted(false)} src="/img/close.png" alt="search" />
+            :
+            <img id="wordsListFilterIcon" onClick={() => setSearchExecuted(true)} src="/img/search.png" alt="search" />
+            }
             <div id="wordsListFilters">
                 <div>
-                    <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(1)}>Collections</span>
-                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(2)}>JLPT</span>
-                    <span className={filter === 3 ? "selected" : ""} onClick={() => setFilter(3)}>Classe</span>
+                    <span className="selected" onClick={() => setFilter(1)}>Collection</span>
+                    <span className="selected" onClick={() => setFilter(2)}>JLPT</span>
+                    <span className="selected" onClick={() => setFilter(3)}>Classe</span>
                 </div>
-                {filter === 1 && <div>
-                    <span className={collection === 0 ? "selected" : ""} onClick={() => setCollection(0)} >Tous</span>
-                    <span className={collection === 1 ? "selected" : ""} onClick={() => setCollection(1)} >150 kanjis essentiels</span>
-                </div>}
-                {filter === 2 && <div>
-                    <span className={level === "" ? "selected" : ""} onClick={() => setLevel("")} >Tous</span>
-                    <span className={level === "N5" ? "selected" : ""} onClick={() => setLevel("N5")} >N5</span>
-                    <span className={level === "N4" ? "selected" : ""} onClick={() => setLevel("N4")} >N4</span>
-                    <span className={level === "N3" ? "selected" : ""} onClick={() => setLevel("N3")} >N3</span>
-                    <span className={level === "N2" ? "selected" : ""} onClick={() => setLevel("N2")} >N2</span>
-                    <span className={level === "N1" ? "selected" : ""} onClick={() => setLevel("N1")} >N1</span>
-                </div>}
-                {filter === 3 && <div>
-                    <span className={grammar === 0 ? "selected" : ""} onClick={() => setGrammar(0)} >Tous</span>
-                    <span className={grammar === 1 ? "selected" : ""} onClick={() => setGrammar(1)} >Communs</span>
-                    <span className={grammar === 2 ? "selected" : ""} onClick={() => setGrammar(2)} >Propres</span>
-                    <span className={grammar === 3 ? "selected" : ""} onClick={() => setGrammar(3)} >Verbes</span>
-                    <span className={grammar === 4 ? "selected" : ""} onClick={() => setGrammar(4)} >Adjectifs</span>
-                </div>}
+                <div>
+                    <span className={kind === 0 ? "selected" : ""} onClick={() => setKind(0)}>Tous</span>
+                    <span className={kind === 1 ? "selected" : ""} onClick={() => setKind(1)}>Kanjis</span>
+                    <span className={kind === 2 ? "selected" : ""} onClick={() => setKind(2)}>Vocabulaire</span>
+                </div>
                 <div id="filtersIndicator">
+                    <div></div>
                     <span>
-                        {grammar || level ? "Kanjis" : ""}
-                        {level ? ` de niveau ${level}` : ""}{grammar ? ` contenant des ${classes[grammar].toLowerCase()}` : ""}
-                        {!grammar && !level ? "Tous les kanjis" : ""}
+                        {grammar || level ? kinds[kind] : ""}
+                        {level ? ` de niveau ${levels[level]}` : ""}{grammar ? ` contenant des ${classes[grammar].toLowerCase()}` : ""}
+                        {!grammar && !level ? `Tous les ${kinds[kind].toLowerCase()}` : ""}
                         {collection !== 0 && ` dans "${collections[collection]}"`}
                     </span>
+                    <div></div>
                 </div>
             </div>
+            <FilterModal
+                filter={filter}
+                setFilter={setFilter}
+                collection={collection}
+                setCollection={setCollection}
+                level={level}
+                setLevel={setLevel}
+                grammar={grammar}
+                setGrammar={setGrammar}
+            />
         </div>
     );
 }
@@ -93,7 +138,7 @@ const ListKanji = (props) => {
         <div className={
             (
                 (kanji.collections?.includes(collection) || collection === 0)
-                && (level === kanji.level || !level) 
+                && (levels[level] === kanji.level || !level) 
                 && (kanji.grammar.includes(grammar) || grammar === 0)
             ) 
             && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughVocabulary(kanji.vocabulary, search) || !search)
@@ -162,7 +207,7 @@ const ListWord = (props) => {
         <div className={
             (
                 (word.collections?.includes(collection) || collection === 0)
-                && (level === word.level || !level || !word.level) 
+                && (levels[level] === word.level || !level || !word.level) 
                 && (word.grammar === grammar || grammar === 0)
                 && (word.translation.toLowerCase().includes(search.toLowerCase()) || !search)
             ) 
@@ -214,6 +259,8 @@ const SidePanel = (props) => {
     const toggle = () => {
         setOpen(!open);
     }
+    const [kind, setKind] = useState(0);
+    const [searchExecuted, setSearchExecuted] = useState(false);
 
     return (
         <div id="wordsListContainer" className={open ? "open" : ""}>
@@ -226,20 +273,23 @@ const SidePanel = (props) => {
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                kind={kind}
+                setKind={setKind}
                 search={search}
                 setSearch={setSearch}
                 filterIndication={filterIndication}
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
+                searchExecuted={searchExecuted}
+                setSearchExecuted={setSearchExecuted}
             />
             <div>
-                <div id="wordsListSearch">
-                    <img src="/img/search.png" alt="search" />
+                <div id="wordsListSearch" className={searchExecuted ? "open" : ""}>
                     <input value={search} onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>
             </div>
-            <span className="listIndicator">Kanjis</span>
-            <div id="kanjisList" className={open ? "open wordsListList" : "wordsListList"}>
+            <span className={(kind === 1 || kind === 0) && searchExecuted ? "listIndicator open" : "listIndicator"}>Kanjis</span>
+            <div id="kanjisList" className={kind === 1 ? "extended wordsListList" : (kind === 0 && searchExecuted ? "wordsListList" : "closed wordsListList")}>
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
@@ -254,8 +304,8 @@ const SidePanel = (props) => {
                     />
                 ))}
             </div>
-            <span className="listIndicator">Vocabulaire</span>
-            <div id="vocabularyList" className={open ? "open wordsListList" : "wordsListList"}>
+            <span className={(kind === 2 || kind === 0) && searchExecuted ? "listIndicator open" : "listIndicator"}>Vocabulaire</span>
+            <div id="vocabularyList" className={kind === 2 ? "extended wordsListList" : (kind === 0 && searchExecuted ? "wordsListList" : "closed wordsListList")}>
                 {vocabulary.map((item, i) => (
                     <ListWord
                         word={item}

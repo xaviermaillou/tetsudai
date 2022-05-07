@@ -1,4 +1,4 @@
-import { classes, collections} from "../lib/common";
+import { classes, collections, levels} from "../lib/common";
 
 const TrainingControls = (props) => {
     const {
@@ -32,7 +32,7 @@ const TrainingControls = (props) => {
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters}>
                     <span>Collection: {collection ? collections[collection] : "Toutes"}</span>
-                    <span>JLPT: {level ? level : "Tous"}</span>
+                    <span>JLPT: {level ? levels[level] : "Tous"}</span>
                     <span>Classe: {grammar ? classes[grammar] : "Toutes"}</span>
                 </div>
                 <div id="trainingNext" onClick={randomKanji}>

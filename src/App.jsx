@@ -6,6 +6,7 @@ import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
+import { levels } from "./lib/common";
 
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
@@ -68,7 +69,7 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [collection, setCollection] = useState(0);
-  const [level, setLevel] = useState("");
+  const [level, setLevel] = useState(0);
   const [grammar, setGrammar] = useState(0);
   const [search, setSearch] = useState("");
   const [filterIndication, setFilterIndication] = useState(false);
@@ -105,7 +106,7 @@ function App() {
     kanjisWithVocabulary.forEach((kanji) => {
       if (
         (kanji.collections?.includes(collection) || collection === 0)
-        && (level === kanji.level || !level)
+        && (levels[level] === kanji.level || !level)
         && (kanji.grammar.includes(grammar) || !grammar)
       ) {
         kanjisListCopy.push(kanji)
@@ -114,7 +115,7 @@ function App() {
     vocabularyWithKanjis.forEach((word) => {
       if (
         (word.collections?.includes(collection) || collection === 0)
-        && (level === word.level || !level)
+        && (levels[level] === word.level || !level)
         && (word.grammar === grammar || !grammar)
       ) {
         vocabularyListCopy.push(word)

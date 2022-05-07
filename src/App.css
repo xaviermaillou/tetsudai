@@ -80,7 +80,7 @@ input:focus {
   height: 100vh;
 }
 
-/* -------------------------------- MAIN DISPLAY -------------------------------- */
+/* ------------------------------------------------ MAIN DISPLAY ------------------------------------------------ */
 
 #mainDisplay {
   z-index: 800;
@@ -134,7 +134,7 @@ input:focus {
   height: calc(20px + 5vh);
 }
 
-/* -------------------------------- KANAS & KANJIS -------------------------------- */
+/* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
 
 #kanas, #kanjis {
   z-index: 900;
@@ -248,7 +248,7 @@ input:focus {
   opacity: 0.5;
 }
 
-/* -------------------------------- TRAINING CONTROLS -------------------------------- */
+/* ------------------------------------------------ TRAINING CONTROLS ------------------------------------------------ */
 
 #selectorAndControls {
   display: flex;
@@ -313,7 +313,7 @@ input:focus {
   cursor: pointer;
 }
 
-/* -------------------------------- SIDE PANEL -------------------------------- */
+/* ------------------------------------------------ SIDE PANEL ------------------------------------------------ */
 
 #wordsListContainer {
   display: flex;
@@ -328,6 +328,9 @@ input:focus {
 #wordsListContainer.open {
   left: 0vw;
 }
+
+/* ------------------------------------------------ SIDE PANEL HEADER ------------------------------------------------ */
+
 #wordsListHeader {
   position: relative;
   z-index: 1200;
@@ -351,14 +354,23 @@ input:focus {
   transform: rotate(90deg);
   left: 4vw;
 }
-#wordsListTrainer {
-  height: 20px;
+#wordsListTrainerIcon, #wordsListFilterIcon {
+  z-index: 1000;
+  height: 16px;
   opacity: 0.5;
   position: absolute;
   bottom: 16px;
-  left: 4vw;
 }
-#wordsListOpener:hover, #wordsListTrainer:hover, #wordsListHeader span:hover {
+#wordsListTrainerIcon {
+  left: 14.5vw;
+}
+#wordsListFilterIcon {
+  right: 4vw;
+}
+#wordsListOpener:hover,
+#wordsListTrainerIcon:hover,
+#wordsListFilterIcon:hover,
+#wordsListHeader span:hover {
   cursor: pointer;
 }
 #wordsListFilters {
@@ -386,30 +398,57 @@ input:focus {
 }
 #filtersIndicator {
   font-size: 14px;
+  margin-top: 10px;
 }
 #filtersIndicator span:hover {
   cursor: default;
 }
 #filtersIndicator span {
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
 #wordsListSearch {
   position: relative;
-  padding: 24px 4vw 12px 4vw;
   margin-bottom: 12px;
+  height: 0px;
+  overflow-y: hidden;
 }
-#wordsListSearch img {
-  height: 16px;
+#wordsListSearch.open {
+  height: 56px;
+  padding: 24px 4vw 12px 4vw;
+}
+#wordsListFilterModal {
+  z-index: 1500;
   position: absolute;
-  right: 4vw;
-  opacity: 0.25;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  height: 0vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+#wordsListFilterModal.open {
+  height: 100vh;
+}
+#wordsListFilterModal span {
+  margin-top: 20px;
+  opacity: 0.5;
+}
+#wordsListFilterModal span.selected {
+  opacity: 1;
+}
+
+/* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
+
 .listIndicator {
-  z-index: 1200;
-  height: 20px;
+  height: 0px;
+  overflow-y: hidden;
   opacity: 0.75;
   font-size: 14px;
+}
+.listIndicator.open {
+  height: 20px;
 }
 .wordsListList {
   /* 156px is half of the height of the filters+search */
@@ -418,18 +457,19 @@ input:focus {
   padding-top: 1vh;
   padding-bottom: 3vh;
   overflow-y: scroll;
-  opacity: 0;
-  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
-  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
-.wordsListList.open {
-  opacity: 1;
+.wordsListList.extended {
+  height: calc(90vh - 312px);
+}
+.wordsListList.closed {
+  height: calc(0vh - 0px);
+  overflow-y: hidden;
+  padding: 0;
 }
 #kanjisList {
   margin-bottom: 24px;
-}
-#vocabularyList {
-  padding-bottom: 12vh;
 }
 .kanjisListElementContainer {
   height: 0px;
@@ -507,6 +547,8 @@ input:focus {
   text-align: right;
 }
 
+/* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
+
 @media (min-aspect-ratio: 1/1) {
   #mainDisplay {
     padding-top: 5vh;
@@ -569,8 +611,8 @@ input:focus {
     /* 156px is half of the height of the filters+search */
     height: calc(50vh - 156px);
   }
-  #vocabularyList {
-    padding-bottom: 3vh;
+  .wordsListList.extended {
+    height: calc(100vh - 312px);
   }
   #mainDisplay.compressed {
     width: 67%;
@@ -581,8 +623,8 @@ input:focus {
   #wordsListOpener.open {
     left: 1vw;
   }
-  #wordsListTrainer {
-    left: 1vw;
+  #wordsListTrainerIcon {
+    left: 4.2vw;
   }
 }
 
