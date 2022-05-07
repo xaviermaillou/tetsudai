@@ -65,13 +65,8 @@ const ListHeader = (props) => {
 
     return (
         <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>
-            <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
             {!trainingMode && <img id="wordsListTrainerIcon" onClick={toggleTraining} src="/img/book.png" alt="training" />}
-            {searchExecuted ? 
-            <img id="wordsListFilterIcon" onClick={() => setSearchExecuted(false)} src="/img/close.png" alt="search" />
-            :
-            <img id="wordsListFilterIcon" onClick={() => setSearchExecuted(true)} src="/img/search.png" alt="search" />
-            }
+            <img id="wordsListFilterIcon" className={searchExecuted ? "open" : ""} onClick={() => setSearchExecuted(!searchExecuted)} src="/img/up.png" alt="search" />
             <div id="wordsListFilters">
                 <div>
                     <span className="selected" onClick={() => setFilter(1)}>Collection</span>
@@ -256,14 +251,26 @@ const SidePanel = (props) => {
         toggleTraining,
     } = props;
 
-    const toggle = () => {
-        setOpen(!open);
-    }
     const [kind, setKind] = useState(0);
     const [searchExecuted, setSearchExecuted] = useState(false);
 
+    const toggle = () => {
+        setOpen(!open);
+    }
+    const handleSearch = (search) => {
+        setSearch(search);
+        setSearchExecuted(true);
+    }
+
     return (
         <div id="wordsListContainer" className={open ? "open" : ""}>
+            <div id="wordsListSearchContainer">
+                <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
+                <div id="wordsListSearch">
+                    <img src="/img/search.png" alt="search" />
+                    <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
+                </div>
+            </div>
             <ListHeader
                 open={open}
                 toggle={toggle}
@@ -283,11 +290,6 @@ const SidePanel = (props) => {
                 searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
-            <div>
-                <div id="wordsListSearch" className={searchExecuted ? "open" : ""}>
-                    <input value={search} onChange={(e) => {setSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
-                </div>
-            </div>
             <span className={(kind === 1 || kind === 0) && searchExecuted ? "listIndicator open" : "listIndicator"}>Kanjis</span>
             <div id="kanjisList" className={kind === 1 ? "extended wordsListList" : (kind === 0 && searchExecuted ? "wordsListList" : "closed wordsListList")}>
                 {kanjis.map((item, i) => (
