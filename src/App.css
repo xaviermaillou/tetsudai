@@ -437,6 +437,10 @@ input:focus {
   right: 20px;
   opacity: 0.25;
 }
+#wordsListSearch img.close {
+  height: 12px;
+  cursor: pointer;
+}
 
 #wordsListFilterModal {
   z-index: 1500;

@@ -260,7 +260,11 @@ const SidePanel = (props) => {
             <div id="wordsListSearchContainer">
                 <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
                 <div id="wordsListSearch">
-                    <img src="/img/search.png" alt="search" />
+                    {search ?
+                        <img className="close" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
+                        :
+                        <img src="/img/search.png" alt="search" />
+                    }
                     <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
                 </div>
             </div>
