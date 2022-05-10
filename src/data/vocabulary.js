@@ -3723,6 +3723,21 @@ const vocabulary = [
         translation: 'nécessaire',
         grammar: 4,
     },
+    {
+        elements: [
+            {
+                kanji: '勿',
+                kana: 'モチ',
+            },
+            {
+                kanji: '論',
+                kana: 'ロン',
+            },
+        ],
+        level : 'N5',
+        translation: 'bien sûr, évidemment',
+        grammar: 5,
+    },
 ];
 
 // Types grammaticaux:

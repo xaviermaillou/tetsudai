@@ -15,7 +15,7 @@ input::placeholder {
 }
 
 input:focus {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
 
 #kanjiDisplayKanji, .wordDisplayWordElement span {
@@ -31,11 +31,12 @@ input:focus {
 }
 
 #wordsListContainer {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
-#wordsListHeader {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+.highlighted {
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 #wordsListFilterModal {
@@ -43,11 +44,11 @@ input:focus {
 }
 
 .kanjisListElement.selected {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.033);
 }
 
 .vocabularyListElement.selected {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.033);
 }
 
 #selector {

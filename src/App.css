@@ -335,8 +335,7 @@ input:focus {
   position: relative;
   z-index: 1200;
   height: 120px;
-  margin-bottom: 24px;
-  padding: 10px 4vw;
+  padding-bottom: 10px;
 }
 #wordsListHeader.focused {
   animation-name: emphasize;
@@ -347,17 +346,16 @@ input:focus {
   height: 16px;
   opacity: 0.5;
   position: absolute;
-  bottom: 16px;
+  bottom: 72px;
+}
+#wordsListTrainerIcon.open, #wordsListFilterIcon.open {
+  opacity: 1;
 }
 #wordsListTrainerIcon {
-  left: 14.5vw;
+  left: 20px;
 }
 #wordsListFilterIcon {
-  right: 4vw;
-  transform: rotate(180deg);
-}
-#wordsListFilterIcon.open {
-  transform: rotate(0deg);
+  right: 20px;
 }
 #wordsListOpener:hover,
 #wordsListTrainerIcon:hover,
@@ -372,8 +370,9 @@ input:focus {
   flex-direction: column;
   justify-content: space-around;
 }
-#wordsListFilters div {
+.wordsListHeaderRow {
   height: 20px;
+  padding: 0vw 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -390,6 +389,9 @@ input:focus {
 #filtersIndicator {
   font-size: 14px;
   margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
 }
 #filtersIndicator span:hover {
   cursor: default;
@@ -398,39 +400,48 @@ input:focus {
   width: 80%;
   text-align: center;
 }
+#filtersTabs {
+  opacity: 0;
+  pointer-events: none;
+}
+#filtersTabs.open {
+  opacity: 1;
+  pointer-events: all;
+}
 #wordsListSearchContainer {
   position: relative;
   padding-left: 8vw;
 }
 #wordsListOpener {
+  z-index: 2000;
   height: 20px;
   opacity: 0.5;
   transform: rotate(-90deg);
   position: absolute;
-  top: 12px;
+  top: 24px;
   left: -64px;
 }
 #wordsListOpener.open {
   transform: rotate(90deg);
-  left: 4vw;
+  left: 20px;
 }
 #wordsListSearch {
   position: relative;
-  padding: 12px 4vw 12px 4vw;
+  padding: 24px 20px 0px 20px;
   height: 56px;
   overflow-y: hidden;
 }
 #wordsListSearch img {
   height: 16px;
   position: absolute;
-  right: 4vw;
+  right: 20px;
   opacity: 0.25;
 }
 
 #wordsListFilterModal {
   z-index: 1500;
   position: absolute;
-  top: 0px;
+  top: 100px;
   left: 0px;
   overflow: hidden;
   height: 0vh;
@@ -452,17 +463,27 @@ input:focus {
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
 
 .listIndicator {
-  height: 0px;
+  height: 20px;
   overflow-y: hidden;
   opacity: 0.75;
   font-size: 14px;
+  position: relative;
 }
-.listIndicator.open {
-  height: 20px;
+.listIndicator:hover {
+  cursor: pointer;
+}
+.listIndicator img {
+  height: 12px;
+  position: absolute;
+  right: 20px;
+  bottom: 6px;
+}
+.listIndicator.closed img {
+  transform: rotate(180deg);
 }
 .wordsListList {
-  /* 156px is half of the height of the filters+search */
-  height: calc(45vh - 156px);
+  /* 144px is half of the height of the filters+search */
+  height: calc(45vh - 144px);
   position: relative;
   padding-top: 1vh;
   padding-bottom: 3vh;
@@ -471,7 +492,7 @@ input:focus {
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
 .wordsListList.extended {
-  height: calc(90vh - 312px);
+  height: calc(90vh - 288px);
 }
 .wordsListList.closed {
   height: calc(0vh - 0px);
@@ -490,7 +511,7 @@ input:focus {
 }
 .kanjisListElement {
   display: flex;
-  padding: 10px 4vw;
+  padding: 10px 20px;
 }
 .kanjisListElement:hover {
   cursor: pointer;
@@ -529,7 +550,7 @@ input:focus {
 .vocabularyListElement {
   display: flex;
   justify-content: space-between;
-  padding: 10px 4vw;
+  padding: 10px 20px;
 }
 .vocabularyListElement:hover {
   cursor: pointer;
@@ -622,10 +643,10 @@ input:focus {
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
-    height: calc(50vh - 156px);
+    height: calc(50vh - 144px);
   }
   .wordsListList.extended {
-    height: calc(100vh - 312px);
+    height: calc(100vh - 288px);
   }
   #mainDisplay.compressed {
     width: 67%;
@@ -634,10 +655,10 @@ input:focus {
     padding-left: 0;
   }
   #wordsListOpener.open {
-    left: 1vw;
+    left: -32px;
   }
   #wordsListTrainerIcon {
-    left: 4.2vw;
+    left: 20px;
   }
 }
 

@@ -4755,6 +4755,51 @@ const kanjis = [
         },
         translation: 'besoin, point principal, essence',
     },
+    {
+        kanji: '勿',
+        strokes: 4,
+        level: '',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'はか',
+                },
+                {
+                    'kana': 'なし',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'モチ',
+                },
+                {
+                    'kana': 'ブツ',
+                },
+                {
+                    'kana': 'ボツ',
+                },
+            ],
+        },
+        translation: 'ne pas, négation',
+    },
+    {
+        kanji: '論',
+        strokes: 15,
+        level: 'N3',
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あげつら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ロン',
+                },
+            ],
+        },
+        translation: 'argumentation, discours',
+    },
 ];
 
 // Collections:
