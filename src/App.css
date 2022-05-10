@@ -423,7 +423,7 @@ input:focus {
 }
 #wordsListOpener.open {
   transform: rotate(90deg);
-  left: 20px;
+  left: 10px;
 }
 #wordsListSearch {
   position: relative;
