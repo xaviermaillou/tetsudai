@@ -3,6 +3,7 @@ import { classes, collections, levels } from "../lib/common";
 
 const FilterModal = (props) => {
     const {
+        openFilter,
         filter,
         setFilter,
         collection,
@@ -19,7 +20,7 @@ const FilterModal = (props) => {
     }
 
     return (
-        <div id="wordsListFilterModal" className={filter !== 0 ? "open" : ""}>
+        <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
             {filter === 1 && <>
                 {Object.values(collections).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected" : ""}>{value}</span>
@@ -50,7 +51,6 @@ const ListHeader = (props) => {
         filterIndication,
         trainingMode,
         toggleTraining,
-        searchExecuted,
         setSearchExecuted,
     } = props;
 
@@ -60,10 +60,16 @@ const ListHeader = (props) => {
         if (filterIndication) setFilter(0);
     }, [filterIndication, filter]);
 
+    const handleFilterIconClick = () => {
+        if (openFilter) setSearchExecuted(true);
+        setOpenFilter(!openFilter);
+        setFilter(0);
+    }
+
     return (
         <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>
             <img id="wordsListTrainerIcon" className={trainingMode ? "open" : ""} onClick={toggleTraining} src="/img/book.png" alt="training" />
-            <img id="wordsListFilterIcon" className={openFilter ? "open" : ""} onClick={() => setOpenFilter(!openFilter)} src="/img/filter.png" alt="search" />
+            <img id="wordsListFilterIcon" className={openFilter ? "open" : ""} onClick={() => handleFilterIconClick()} src="/img/filter.png" alt="search" />
             <div id="wordsListFilters">
                 <div id="filtersIndicator" className="wordsListHeaderRow highlighted">
                     <div></div>
@@ -82,6 +88,7 @@ const ListHeader = (props) => {
                 </div>
             </div>
             <FilterModal
+                openFilter={openFilter}
                 filter={filter}
                 setFilter={setFilter}
                 collection={collection}
@@ -258,7 +265,7 @@ const SidePanel = (props) => {
     return (
         <div id="wordsListContainer" className={open ? "open" : ""}>
             <div id="wordsListSearchContainer">
-                <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />
+                {currentElement && <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />}
                 <div id="wordsListSearch">
                     {search ?
                         <img className="close" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
@@ -282,14 +289,13 @@ const SidePanel = (props) => {
                 filterIndication={filterIndication}
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
-                searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
-            <span className={displayKanjis ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
-                Kanjis
+            {searchExecuted && <span className={displayKanjis ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
+                Kanji
                 <img src="/img/up.png" alt="open/close kanji" />
-            </span>
-            <div id="kanjisList" className={displayKanjis ? (displayWords ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
+            </span>}
+            <div id="kanjisList" className={(displayKanjis && searchExecuted) ? (displayWords ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
@@ -304,11 +310,11 @@ const SidePanel = (props) => {
                     />
                 ))}
             </div>
-            <span className={displayWords ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayWords(!displayWords)}>
+            {searchExecuted && <span className={displayWords ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayWords(!displayWords)}>
                 Vocabulaire
                 <img src="/img/up.png" alt="open/close words" />
-            </span>
-            <div id="vocabularyList" className={displayWords ? (displayKanjis ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
+            </span>}
+            <div id="vocabularyList" className={(displayWords && searchExecuted) ? (displayKanjis ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
                 {vocabulary.map((item, i) => (
                     <ListWord
                         word={item}
