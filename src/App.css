@@ -445,6 +445,7 @@ input:focus {
 }
 
 #wordsListFilterModal, #wordsListTrainingModal {
+  opacity: 0;
   position: absolute;
   left: 0px;
   overflow-y: hidden;
@@ -463,6 +464,7 @@ input:focus {
   padding-top: 20px;
 }
 #wordsListFilterModal.open, #wordsListTrainingModal.open {
+  opacity: 1;
   height: 100vh;
 }
 #wordsListFilterModal span, #wordsListTrainingModal span {
