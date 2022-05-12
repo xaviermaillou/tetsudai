@@ -1,6 +1,27 @@
 import { useState, useEffect } from "react";
 import { classes, collections, levels } from "../lib/common";
 
+const TrainingModal = (props) => {
+    const {
+        openTrainingModal,
+        setOpenTrainingModal,
+        trainingMode,
+        toggleTraining,
+    } = props;
+
+    const handleClick = (mode) => {
+        setOpenTrainingModal(false);
+        toggleTraining(mode);
+    }
+
+    return (
+        <div id="wordsListTrainingModal" className={openTrainingModal ? "open" : ""}>
+            <span className={trainingMode === 1 ? "selected" : ""} onClick={() => handleClick(1)}>Réviser les kanji</span>
+            <span className={trainingMode === 2 ? "selected" : ""} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
+        </div>
+    );
+}
+
 const FilterModal = (props) => {
     const {
         openFilter,
@@ -54,24 +75,34 @@ const ListHeader = (props) => {
         setSearchExecuted,
     } = props;
 
+    const [openTrainingModal, setOpenTrainingModal] = useState(false);
+    const handleTrainingIconClick = () => {
+        setOpenTrainingModal(!openTrainingModal);
+        setOpenFilter(false);
+    }
+
     const [openFilter, setOpenFilter] = useState(false);
     const [filter, setFilter] = useState(0);
     useEffect(() => {
-        if (filterIndication) setFilter(0);
+        if (filterIndication) {
+            setOpenTrainingModal(false);
+            setFilter(0);
+            setOpenFilter(true);
+        }
     }, [filterIndication, filter]);
-
     const handleFilterIconClick = () => {
         if (openFilter) setSearchExecuted(true);
         setOpenFilter(!openFilter);
         setFilter(0);
+        setOpenTrainingModal(false);
     }
 
     return (
-        <div id="wordsListHeader" className={filterIndication ? "focused" : ""}>
-            <img id="wordsListTrainerIcon" className={trainingMode ? "open" : ""} onClick={toggleTraining} src="/img/book.png" alt="training" />
-            <img id="wordsListFilterIcon" className={openFilter ? "open" : ""} onClick={() => handleFilterIconClick()} src="/img/filter.png" alt="search" />
+        <div id="wordsListHeader">
+            <img id="wordsListTrainerIcon" className={openTrainingModal ? "open" : ""} onClick={() => handleTrainingIconClick()} src="/img/book.png" alt="training" />
+            <img id="wordsListFilterIcon" className={filterIndication ? "focused open" : (openFilter ? "open" : "")} onClick={() => handleFilterIconClick()} src="/img/filter.png" alt="search" />
             <div id="wordsListFilters">
-                <div id="filtersIndicator" className="wordsListHeaderRow highlighted">
+                <div id="filtersIndicator" className="wordsListHeaderRow">
                     <div></div>
                     <span>
                         {grammar || level ? "Eléments" : ""}
@@ -87,6 +118,12 @@ const ListHeader = (props) => {
                     <span className={filter === 3 ? "selected" : ""} onClick={() => setFilter(filter === 3 ? 0 : 3)}>Classe</span>
                 </div>
             </div>
+            <TrainingModal
+                openTrainingModal={openTrainingModal}
+                setOpenTrainingModal={setOpenTrainingModal}
+                trainingMode={trainingMode}
+                toggleTraining={toggleTraining}
+            />
             <FilterModal
                 openFilter={openFilter}
                 filter={filter}

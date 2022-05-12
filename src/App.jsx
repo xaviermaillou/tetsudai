@@ -133,9 +133,15 @@ function App() {
     setWord(null);
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
-  const randomKanji = () => {
-    if (kanji) setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
-    if (word) setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
+  const randomKanji = (type) => {
+    if (type === 1 || trainingMode === 1) {
+      setWord(null);
+      setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
+    } 
+    if (type === 2 || trainingMode === 2) {
+      setKanji(null);
+      setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
+    } 
   }
 
   const changeCurrentWordById = (id) => {
@@ -143,17 +149,15 @@ function App() {
     setWord(vocabularyWithKanjis.find((item) => item.doc.id === id));
   }
 
-  const [trainingMode, setTrainingMode] = useState(false);
+  const [trainingMode, setTrainingMode] = useState(0);
   const [allDisplayed, setAllDisplayed] = useState(true);
-  const toggleTraining = (boolean) => {
-    if (boolean) {
+  const toggleTraining = (type) => {
+    setTrainingMode(type);
+    setAllDisplayed(true);
+    setFilterIndication(false);
+    if (!!type) {
       setMenuOpen(false);
-      setTrainingMode(true);
-      randomKanji();
-    } else {
-      setTrainingMode(false);
-      setFilterIndication(false);
-      setAllDisplayed(true);
+      randomKanji(type);
     }
   }
 

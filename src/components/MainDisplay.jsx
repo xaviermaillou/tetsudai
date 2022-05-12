@@ -1,7 +1,7 @@
 import { useState } from "react";
 import KanaReadings from "./KanaReadings";
-import TrainingControls from "./TrainingControls";
 import WordKanjis from "./WordKanjis";
+import TrainingControls from "./TrainingControls";
 import { classes } from "../lib/common";
 
 const MainDisplay = (props) => {
@@ -42,7 +42,7 @@ const MainDisplay = (props) => {
                         readings={kanji.readings} 
                         vocabulary={kanji.vocabulary}
                         allDisplayed={allDisplayed}
-                        expanded={!trainingMode}
+                        expanded={!!!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                         changeCurrentWordById={changeCurrentWordById}
                     />}
@@ -59,11 +59,11 @@ const MainDisplay = (props) => {
                     <WordKanjis
                         elements={word.elements.filter((element) => element.details)}
                         allDisplayed={allDisplayed}
-                        expanded={!trainingMode}
+                        expanded={!!!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                     />
                 </div>}
-                {trainingMode && <TrainingControls
+                {!!trainingMode && <TrainingControls
                     displayedElement={displayedElement}
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}

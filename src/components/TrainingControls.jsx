@@ -26,7 +26,7 @@ const TrainingControls = (props) => {
             <div id="controls" >
                 {window.innerWidth >= window.innerHeight && <div></div>}
                 <div id="trainingClose">
-                    <span onClick={() => toggleTraining(false)}>
+                    <span onClick={() => toggleTraining(0)}>
                         <img src="/img/close.png" alt="stop training" />
                     </span>
                 </div>
