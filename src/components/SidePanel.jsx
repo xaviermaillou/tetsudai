@@ -108,10 +108,7 @@ const ListKanji = (props) => {
         changeCurrentKanjiById,
         setOpen,
         currentElement,
-        collection,
-        level,
-        grammar,
-        search,
+        open,
     } = props;
 
     const clickHandle = (id) => {
@@ -119,29 +116,8 @@ const ListKanji = (props) => {
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
-    const searchThroughKanji = (vocabulary, romaji, string) => {
-        let includes = false;
-        vocabulary.forEach((word) => {
-            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
-            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-        romaji.forEach((word) => {
-            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-
-        return includes;
-    }
-
     return (
-        <div className={
-            (
-                (kanji.collections?.includes(collection) || collection === 0)
-                && (levels[level] === kanji.level || !level) 
-                && (kanji.grammar.includes(grammar) || grammar === 0)
-            ) 
-            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughKanji(kanji.vocabulary, kanji.romaji, search) || !search)
-            ? "kanjisListElementContainer open" : "kanjisListElementContainer"}
-        >
+        <div className={open ? "kanjisListElementContainer open" : "kanjisListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === kanji.doc.id) ?
                     "kanjisListElement selected" : "kanjisListElement"}
@@ -190,10 +166,7 @@ const ListWord = (props) => {
         changeCurrentWordById,
         setOpen,
         currentElement,
-        collection,
-        level,
-        grammar,
-        search,
+        open
     } = props;
 
     const clickHandle = (id) => {
@@ -202,17 +175,7 @@ const ListWord = (props) => {
     }
 
     return (
-        <div className={
-            (
-                (word.collections?.includes(collection) || collection === 0)
-                && (levels[level] === word.level || !level || !word.level) 
-                && (word.grammar === grammar || grammar === 0)
-                && (word.translation.toLowerCase().includes(search.toLowerCase())
-                    || (word.romaji.toLowerCase().includes(search.toLowerCase()))
-                    || !search)
-            ) 
-            ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"}
-        >
+        <div className={open ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === word.doc.id) ?
                     "vocabularyListElement selected" : "vocabularyListElement"}
@@ -260,12 +223,64 @@ const SidePanel = (props) => {
     const [displayWords, setDisplayWords] = useState(true);
     const [searchExecuted, setSearchExecuted] = useState(false);
 
+    const [noKanji, setNoKanji] = useState(true);
+    const [noWord, setNoWord] = useState(true);
+
+
     const toggle = () => {
         setOpen(!open);
     }
     const handleSearch = (search) => {
         setSearch(search);
         setSearchExecuted(true);
+    }
+
+    useEffect(() => {
+        setNoKanji(true);
+        setNoWord(true);
+    }, [search, collection, level, grammar]);
+
+    const searchThroughKanji = (vocabulary, romaji, string) => {
+        let includes = false;
+        vocabulary.forEach((word) => {
+            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
+            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
+        romaji.forEach((word) => {
+            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
+
+        return includes;
+    }
+
+    const filterKanji = (kanji) => {
+        if (
+            (
+                (kanji.collections?.includes(collection) || collection === 0)
+                && (levels[level] === kanji.level || !level) 
+                && (kanji.grammar.includes(grammar) || grammar === 0)
+            ) 
+            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughKanji(kanji.vocabulary, kanji.romaji, search) || !search)
+        ) {
+            if (noKanji) setNoKanji(false);
+            return true;
+        }
+        return false;
+    }
+
+    const filterWord = (word) => {
+        if (
+            (word.collections?.includes(collection) || collection === 0)
+            && (levels[level] === word.level || !level || !word.level) 
+            && (word.grammar === grammar || grammar === 0)
+            && (word.translation.toLowerCase().includes(search.toLowerCase())
+                || (word.romaji.toLowerCase().includes(search.toLowerCase()))
+                || !search)
+        ) {
+            if (noWord) setNoWord(false);
+            return true;
+        }
+        return false;
     }
 
     return (
@@ -302,19 +317,18 @@ const SidePanel = (props) => {
                 <img src="/img/up.png" alt="open/close kanji" />
             </span>}
             <div id="kanjisList" className={(displayKanjis && searchExecuted) ? (displayWords ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
+
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        collection={collection}
-                        level={level}
-                        grammar={grammar}
-                        search={search}
+                        open={filterKanji(item)}
                         key={i}
                     />
                 ))}
+                {noKanji && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
             </div>
             {searchExecuted && <span className={displayWords ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayWords(!displayWords)}>
                 Vocabulaire
@@ -327,13 +341,11 @@ const SidePanel = (props) => {
                         changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        collection={collection}
-                        level={level}
-                        grammar={grammar}
-                        search={search}
+                        open={filterWord(item)}
                         key={i}
                     />
                 ))}
+                {noWord && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
         </div>
     )
