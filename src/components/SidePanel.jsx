@@ -119,10 +119,14 @@ const ListKanji = (props) => {
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
-    const searchThroughVocabulary = (vocabulary, string) => {
+    const searchThroughKanji = (vocabulary, romaji, string) => {
         let includes = false;
         vocabulary.forEach((word) => {
             if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
+            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
+        romaji.forEach((word) => {
+            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
 
         return includes;
@@ -135,7 +139,7 @@ const ListKanji = (props) => {
                 && (levels[level] === kanji.level || !level) 
                 && (kanji.grammar.includes(grammar) || grammar === 0)
             ) 
-            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughVocabulary(kanji.vocabulary, search) || !search)
+            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughKanji(kanji.vocabulary, kanji.romaji, search) || !search)
             ? "kanjisListElementContainer open" : "kanjisListElementContainer"}
         >
             <div 
@@ -203,7 +207,9 @@ const ListWord = (props) => {
                 (word.collections?.includes(collection) || collection === 0)
                 && (levels[level] === word.level || !level || !word.level) 
                 && (word.grammar === grammar || grammar === 0)
-                && (word.translation.toLowerCase().includes(search.toLowerCase()) || !search)
+                && (word.translation.toLowerCase().includes(search.toLowerCase())
+                    || (word.romaji.toLowerCase().includes(search.toLowerCase()))
+                    || !search)
             ) 
             ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"}
         >

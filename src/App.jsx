@@ -6,7 +6,7 @@ import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
-import { levels, shuffleArray } from "./lib/common";
+import { levels } from "./lib/common";
 
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
@@ -187,8 +187,8 @@ function App() {
       />
       <SidePanel 
         // Content
-        kanjis={shuffleArray(kanjisWithVocabulary)}
-        vocabulary={shuffleArray(vocabularyWithKanjis)}
+        kanjis={kanjisWithVocabulary}
+        vocabulary={vocabularyWithKanjis}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
 
