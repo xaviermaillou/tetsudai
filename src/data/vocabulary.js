@@ -2124,7 +2124,7 @@ const vocabulary = [
         ],
         level: 'N4',
         romaji: 'kanojo',
-        translation: 'elle',
+        translation: 'elle, petite copine',
         grammar: 8,
     },
     {
@@ -4008,7 +4008,7 @@ const vocabulary = [
         ],
         level: '',
         romaji: 'kaishain',
-        translation: 'employé d\'entreprise, de bureau, col blanc',
+        translation: 'employé de bureau, col blanc',
         grammar: 1,
     },
     {

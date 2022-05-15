@@ -16,8 +16,9 @@ const TrainingModal = (props) => {
 
     return (
         <div id="wordsListTrainingModal" className={openTrainingModal ? "open" : ""}>
-            <span className={trainingMode === 1 ? "selected" : ""} onClick={() => handleClick(1)}>Réviser les kanji</span>
-            <span className={trainingMode === 2 ? "selected" : ""} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
+            <div className="tooltip">Lancer le mode entraînement pour apprendre et réviser les kanji ou mots de vocabulaire correspondant aux filtres appliqués</div>
+            <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
+            <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
         </div>
     );
 }
@@ -44,17 +45,17 @@ const FilterModal = (props) => {
         <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
             {filter === 1 && <>
                 {Object.values(collections).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected" : ""}>{value}</span>
+                    <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </>}
             {filter === 2 && <>
                 {Object.values(levels).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected" : ""}>{value}</span>
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </>}
             {filter === 3 && <>
                 {Object.values(classes).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected" : ""}>{value}</span>
+                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </>}
         </div>
@@ -99,8 +100,18 @@ const ListHeader = (props) => {
 
     return (
         <div id="wordsListHeader">
-            <img id="wordsListTrainerIcon" className={openTrainingModal ? "open" : ""} onClick={() => handleTrainingIconClick()} src="/img/book.png" alt="training" />
-            <img id="wordsListFilterIcon" className={filterIndication ? "focused open" : (openFilter ? "open" : "")} onClick={() => handleFilterIconClick()} src="/img/filter.png" alt="search" />
+            <img id="wordsListTrainerIcon"
+                className={openTrainingModal ? "open clickable" : "clickable"}
+                onClick={() => handleTrainingIconClick()}
+                src="/img/book.png"
+                alt="training"
+            />
+            <img id="wordsListFilterIcon"
+                className={filterIndication ? "focused open clickable" : (openFilter ? "open clickable" : "clickable")}
+                onClick={() => handleFilterIconClick()}
+                src="/img/filter.png"
+                alt="search"
+            />
             <div id="wordsListFilters">
                 <div id="filtersIndicator" className="wordsListHeaderRow">
                     <div></div>
@@ -113,9 +124,9 @@ const ListHeader = (props) => {
                     <div></div>
                 </div>
                 <div id="filtersTabs" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    <span className={filter === 1 ? "selected" : ""} onClick={() => setFilter(filter === 1 ? 0 : 1)}>Collection</span>
-                    <span className={filter === 2 ? "selected" : ""} onClick={() => setFilter(filter === 2 ? 0 : 2)}>JLPT</span>
-                    <span className={filter === 3 ? "selected" : ""} onClick={() => setFilter(filter === 3 ? 0 : 3)}>Classe</span>
+                    <span className={filter === 1 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 1 ? 0 : 1)}>Collection</span>
+                    <span>|</span><span className={filter === 2 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 2 ? 0 : 2)}>JLPT</span><span>|</span>
+                    <span className={filter === 3 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 3 ? 0 : 3)}>Classe</span>
                 </div>
             </div>
             <TrainingModal
@@ -157,7 +168,7 @@ const ListKanji = (props) => {
         <div className={open ? "kanjisListElementContainer open" : "kanjisListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === kanji.doc.id) ?
-                    "kanjisListElement selected" : "kanjisListElement"}
+                    "kanjisListElement clickable selected" : "kanjisListElement clickable"}
                 onClick={() => clickHandle(kanji.doc.id)}
             >
                 <div className="kanjisListElementKanji">
@@ -215,7 +226,7 @@ const ListWord = (props) => {
         <div className={open ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === word.doc.id) ?
-                    "vocabularyListElement selected" : "vocabularyListElement"}
+                    "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
                 onClick={() => clickHandle(word.doc.id)}
             >
                 <div className="vocabularyListElementJapanese">
@@ -323,10 +334,10 @@ const SidePanel = (props) => {
     return (
         <div id="wordsListContainer" className={open ? "open" : ""}>
             <div id="wordsListSearchContainer">
-                {currentElement && <img id="wordsListOpener" className={open ? "open" : ""} onClick={toggle} src="/img/up.png" alt="see all words" />}
+                {currentElement && <img id="wordsListOpener" className={open ? "open clickable" : "clickable"} onClick={toggle} src="/img/up.png" alt="see all words" />}
                 <div id="wordsListSearch">
                     {search ?
-                        <img className="close" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
+                        <img className="close clickable" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
                         :
                         <img src="/img/search.png" alt="search" />
                     }
@@ -349,7 +360,7 @@ const SidePanel = (props) => {
                 toggleTraining={toggleTraining}
                 setSearchExecuted={setSearchExecuted}
             />
-            {searchExecuted && <span className={displayKanjis ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
+            {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 Kanji
                 <img src="/img/up.png" alt="open/close kanji" />
             </span>}
@@ -367,7 +378,7 @@ const SidePanel = (props) => {
                 ))}
                 {noKanji && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
             </div>
-            {searchExecuted && <span className={displayWords ? "listIndicator" : "listIndicator closed"} onClick={() => setDisplayWords(!displayWords)}>
+            {searchExecuted && <span className={displayWords ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayWords(!displayWords)}>
                 Vocabulaire
                 <img src="/img/up.png" alt="open/close words" />
             </span>}
@@ -384,6 +395,7 @@ const SidePanel = (props) => {
                 ))}
                 {noWord && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
+            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des filtres<br />pour afficher des résultats</span>}
         </div>
     )
 }

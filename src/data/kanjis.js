@@ -1296,7 +1296,7 @@ const kanjis = [
             1,
         ],
         romaji: ['ku', 'rai'],
-        translation: 'arrivée, prochain, cause',
+        translation: 'arriver, prochain, cause',
     },
     {
         kanji: '見',
@@ -1319,7 +1319,7 @@ const kanjis = [
             1,
         ],
         romaji: ['mi', 'ken'],
-        translation: 'vision',
+        translation: 'voir, vision',
     },
     {
         kanji: '聞',
@@ -1391,7 +1391,7 @@ const kanjis = [
             1,
         ],
         romaji: ['hana', 'hanashi', 'wa'],
-        translation: 'récit, conversation',
+        translation: 'parler, récit, conversation',
     },
     {
         kanji: '語',

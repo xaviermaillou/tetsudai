@@ -191,7 +191,7 @@ function App() {
       />
       <SidePanel 
         // Content
-        kanjis={kanjisWithVocabulary}
+        kanjis={kanjisWithVocabulary?.sort((a, b) => a.frequency - b.frequency)}
         vocabulary={vocabularyWithKanjis}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}

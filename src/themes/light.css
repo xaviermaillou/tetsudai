@@ -38,6 +38,10 @@ input:focus {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.listIndicator {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
 .kanjisListElement.selected {
     background-color: rgba(0, 0, 0, 0.033);
 }
