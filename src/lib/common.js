@@ -14,6 +14,7 @@ export const classes = {
     7: "Adjectifs démonstratifs",
     8: "Pronoms",
     9: "Particules",
+    10: "Expressions",
 }
 
 export const levels = {

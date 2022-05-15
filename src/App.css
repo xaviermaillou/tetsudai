@@ -558,6 +558,7 @@ input:focus {
   height: 54px;
 }
 .vocabularyListElement {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;

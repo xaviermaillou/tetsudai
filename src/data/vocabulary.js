@@ -4103,6 +4103,18 @@ const vocabulary = [
         translation: 'clôture (évènement)',
         grammar: 1,
     },
+    {
+    elements: [
+        {
+            kanji: '',
+            kana: 'またね',
+        },
+    ],
+    level: '',
+    romaji: 'matane',
+    translation: 'aurevoir, salut',
+    grammar: 10,
+    },
 ];
 
 // Types grammaticaux:
@@ -4115,6 +4127,7 @@ const vocabulary = [
 // 7 - adjectif démonstratif
 // 8 - pronom
 // 9 - particule
+// 10 - expression
 
 
 export default vocabulary;
