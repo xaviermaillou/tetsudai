@@ -5342,6 +5342,78 @@ const kanjis = [
         romaji: ['tsuka', 'shi', 'ji'],
         translation: 'servir, travailler',
     },
+    {
+        kanji: '成',
+        strokes: 6,
+        level: 'N3',
+        frequency: 116,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'な',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'セイ',
+                },
+                {
+                    'kana': 'ジョウ',
+                },
+            ],
+        },
+        romaji: ['na', 'sei', 'jo', 'jou'],
+        translation: 'se transformer, devenir, croissance',
+    },
+    {
+        kanji: '有',
+        strokes: 6,
+        level: 'N4',
+        frequency: 282,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ユウ',
+                },
+                {
+                    'kana': 'ウ',
+                },
+            ],
+        },
+        romaji: ['a', 'yu', 'yuu', 'u'],
+        translation: 'posséder, exister, avoir lieu',
+    },
+    {
+        kanji: '居',
+        strokes: 8,
+        level: 'N3',
+        frequency: 836,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'い',
+                },
+                {
+                    'kana': 'お',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キョ',
+                },
+                {
+                    'kana': 'コ',
+                },
+            ],
+        },
+        romaji: ['i', 'o', 'kyo', 'ko'],
+        translation: 'exister, se trouver, vivre avec',
+    },
 ];
 
 // Collections:

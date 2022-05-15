@@ -4104,16 +4104,90 @@ const vocabulary = [
         grammar: 1,
     },
     {
-    elements: [
-        {
-            kanji: '',
-            kana: 'またね',
-        },
-    ],
-    level: '',
-    romaji: 'matane',
-    translation: 'aurevoir, salut',
-    grammar: 10,
+        elements: [
+            {
+                kanji: '',
+                kana: 'またね',
+            },
+        ],
+        level: '',
+        romaji: 'matane',
+        translation: 'aurevoir, salut',
+        grammar: 10,
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'です',
+            },
+        ],
+        level: '',
+        romaji: 'desu',
+        variants: [
+            'da',
+            'dearu',
+            'deshita',
+            'datta',
+            'dehaarimasen',
+            'jaarimasen',
+            'dehanai',
+            'janai',
+            'dehaarimasendeshita',
+            'jaarimasendeshita',
+            'dehanakatta',
+            'janakatta'
+        ],
+        translation: 'être, verbe d\'état',
+        grammar: 11,
+    },
+    {
+        elements: [
+            {
+                kanji: '有',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        romaji: 'aru',
+        translation: 'verbe de présence (inanimés)',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '居',
+                kana: 'い',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        romaji: 'iru',
+        translation: 'verbe de présence (animés)',
+        grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '成',
+                kana: 'な',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        romaji: 'naru',
+        translation: 'devenir, grandir, atteindre',
+        grammar: 3,
     },
 ];
 
@@ -4128,6 +4202,7 @@ const vocabulary = [
 // 8 - pronom
 // 9 - particule
 // 10 - expression
+// 11 - copule
 
 
 export default vocabulary;

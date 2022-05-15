@@ -15,6 +15,7 @@ export const classes = {
     8: "Pronoms",
     9: "Particules",
     10: "Expressions",
+    11: "Copule",
 }
 
 export const levels = {
