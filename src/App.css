@@ -81,6 +81,14 @@ input:focus {
   height: 100vh;
 }
 
+#logoContainer {
+  width: 6%;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  opacity: 0.25;
+}
+
 .tooltip {
   font-size: 14px;
   opacity: 0.5;
@@ -591,6 +599,11 @@ input:focus {
 @media (min-aspect-ratio: 1/1) {
   #mainDisplay {
     padding-top: 5vh;
+  }
+  #logoContainer {
+    width: 3%;
+    top: auto;
+    bottom: 20px;
   }
   #kanjiDisplayTranslation, #wordDisplayTranslation {
     font-size: 32px

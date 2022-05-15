@@ -4154,7 +4154,7 @@ const vocabulary = [
         ],
         level: 'N5',
         romaji: 'aru',
-        translation: 'verbe de présence (inanimés)',
+        translation: 'verbe de présence (objets inanimés)',
         grammar: 3,
     },
     {
@@ -4170,7 +4170,7 @@ const vocabulary = [
         ],
         level: 'N5',
         romaji: 'iru',
-        translation: 'verbe de présence (animés)',
+        translation: 'verbe de présence (objets animés)',
         grammar: 3,
     },
     {

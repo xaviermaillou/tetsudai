@@ -166,6 +166,7 @@ function App() {
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
+      <img id="logoContainer" src='/img/main_logo.png' alt='logo' />
       <MainDisplay
         // Displayed element
         kanji={kanji}
