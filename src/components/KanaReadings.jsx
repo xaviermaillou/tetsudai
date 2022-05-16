@@ -51,8 +51,7 @@ const Yomi = (props) => {
 
 const KanaReadings = (props) => {
     const {
-        readings,
-        vocabulary,
+        kanji,
         allDisplayed,
         expanded,
         changeCurrentKanjiByKanji,
@@ -63,11 +62,12 @@ const KanaReadings = (props) => {
         <div id="kanas" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="kanasExamples">
                 <div id="kunyomiExamples">
-                    {readings.kunyomi.length > 0 && <p className="kanasReadingsHeader">KUNYOMI</p>}
-                    {readings.kunyomi?.map((e, i) => (
+                    {kanji.readings.kunyomi.length > 0 && <p className="kanasReadingsHeader">KUNYOMI</p>}
+                    {kanji.readings.kunyomi?.map((e, i) => (
                         <Yomi
                             example={e}
-                            wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
+                            wordExamples={kanji.vocabulary.filter((word) => word.elements
+                                .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                             changeCurrentWordById={changeCurrentWordById}
@@ -75,11 +75,12 @@ const KanaReadings = (props) => {
                     ))}
                 </div>
                 <div id="onyomiExamples">
-                    {readings.onyomi.length > 0 && <p className="kanasReadingsHeader">ONYOMI</p>}
-                    {readings.onyomi?.map((e, i) => (
+                    {kanji.readings.onyomi.length > 0 && <p className="kanasReadingsHeader">ONYOMI</p>}
+                    {kanji.readings.onyomi?.map((e, i) => (
                         <Yomi
                             example={e}
-                            wordExamples={vocabulary.filter((word) => word.elements.find((element) => element.kana === e.kana))}
+                            wordExamples={kanji.vocabulary.filter((word) => word.elements
+                                .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                             changeCurrentWordById={changeCurrentWordById}

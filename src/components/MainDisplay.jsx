@@ -39,8 +39,7 @@ const MainDisplay = (props) => {
                     <p id="kanjiDisplayKanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                     <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                     {kanji.readings && <KanaReadings
-                        readings={kanji.readings} 
-                        vocabulary={kanji.vocabulary}
+                        kanji={kanji}
                         allDisplayed={allDisplayed}
                         expanded={!!!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}

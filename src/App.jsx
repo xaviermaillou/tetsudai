@@ -21,7 +21,7 @@ function App() {
         ...doc.data(),
         doc,
       }));
-      setKanjisList(data);
+      setKanjisList(data?.sort((a, b) => a.frequency - b.frequency));
     });
     firebase.firestore().collection('Vocabulary').onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({
@@ -192,7 +192,7 @@ function App() {
       />
       <SidePanel 
         // Content
-        kanjis={kanjisWithVocabulary?.sort((a, b) => a.frequency - b.frequency)}
+        kanjis={kanjisWithVocabulary}
         vocabulary={vocabularyWithKanjis}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}

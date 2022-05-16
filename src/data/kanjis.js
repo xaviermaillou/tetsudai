@@ -5414,6 +5414,29 @@ const kanjis = [
         romaji: ['i', 'o', 'kyo', 'ko'],
         translation: 'exister, se trouver, vivre avec',
     },
+    {
+        kanji: '良',
+        strokes: 7,
+        level: 'N3',
+        frequency: 501,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'よ',
+                },
+                {
+                    'kana': 'い',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'リョウ',
+                },
+            ],
+        },
+        romaji: ['yo', 'i', 'ryo', 'ryou'],
+        translation: 'bien, plaisant, habile',
+    },
 ];
 
 // Collections:

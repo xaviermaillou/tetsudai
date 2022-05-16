@@ -2136,7 +2136,7 @@ const vocabulary = [
         ],
         level: 'N4',
         romaji: 'kare',
-        translation: 'il',
+        translation: 'il, petit ami',
         grammar: 8,
     },
     {
@@ -2147,7 +2147,7 @@ const vocabulary = [
             },
             {
                 kanji: '人',
-                kana: 'リ',
+                kana: 'り',
             },
         ],
         level: 'N5',
@@ -2163,7 +2163,7 @@ const vocabulary = [
             },
             {
                 kanji: '人',
-                kana: 'リ',
+                kana: 'り',
             },
         ],
         level: 'N5',
@@ -2420,7 +2420,7 @@ const vocabulary = [
         ],
         level: 'N5',
         romaji: 'mae',
-        translation: 'derrière, avant',
+        translation: 'devant, avant',
         grammar: 1,
     },
     {
@@ -2432,7 +2432,7 @@ const vocabulary = [
         ],
         level: 'N5',
         romaji: 'ato',
-        translation: 'derrière, après',
+        translation: 'derrière, arrière, après',
         grammar: 1,
     },
     {
@@ -4188,6 +4188,66 @@ const vocabulary = [
         romaji: 'naru',
         translation: 'devenir, grandir, atteindre',
         grammar: 3,
+    },
+    {
+        elements: [
+            {
+                kanji: '良',
+                kana: 'よ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        level: 'N5',
+        romaji: 'yoi',
+        translation: 'bien, excellent',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '良',
+                kana: 'い',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        level: 'N5',
+        romaji: 'ii',
+        translation: 'bien, excellent',
+        grammar: 4,
+    },
+    {
+        elements: [
+            {
+                kanji: '後',
+                kana: 'うし',
+            },
+            {
+                kanji: '',
+                kana: 'ろ',
+            },
+        ],
+        level: 'N5',
+        romaji: 'ushiro',
+        translation: 'arrière, derrière',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '後',
+                kana: 'のち',
+            },
+        ],
+        level: 'N3',
+        romaji: 'nochi',
+        translation: 'après, ensuite',
+        grammar: 1,
     },
 ];
 
