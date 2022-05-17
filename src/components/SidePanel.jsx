@@ -117,7 +117,7 @@ const ListHeader = (props) => {
                     <div></div>
                     <span>
                         {grammar || level ? "Eléments" : ""}
-                        {level ? ` de niveau ${levels[level]}` : ""}{grammar ? ` contenant des ${classes[grammar].toLowerCase()}` : ""}
+                        {level ? ` de niveau ${levels[level]}` : ""}{grammar ? ` étant / contenant un ${classes[grammar].toLowerCase()}` : ""}
                         {!grammar && !level ? "Tous les éléments" : ""}
                         {collection !== 0 && ` dans "${collections[collection]}"`}
                     </span>
@@ -336,7 +336,7 @@ const SidePanel = (props) => {
         if (
             (word.collections?.includes(collection) || collection === 0)
             && (levels[level] === word.level || !level || !word.level) 
-            && (word.grammar === grammar || grammar === 0)
+            && (word.grammar.includes(grammar) || grammar === 0)
             && (word.translation.toLowerCase().includes(search.toLowerCase())
                 || (word.romaji.toLowerCase().includes(search.toLowerCase()))
                 || !search)

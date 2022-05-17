@@ -1624,7 +1624,11 @@ const kanjis = [
                     'kana': 'ちい',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ショウ',
+                },
+            ],
         },
         collections: [
             1,
@@ -2342,7 +2346,11 @@ const kanjis = [
                     'kana': 'たか',
                 },
             ],
-            onyomi: [],
+            onyomi: [
+                {
+                    'kana': 'コウ',
+                },
+            ],
         },
         collections: [
             1,
@@ -5516,7 +5524,7 @@ const kanjis = [
         translation: 'offrir, soumettre, accompagner',
     },
     {
-        kanji: '達 ',
+        kanji: '達',
         strokes: 12,
         level: 'N3',
         frequency: 500,
@@ -5540,6 +5548,74 @@ const kanjis = [
         },
         romaji: ['tachi', 'dachi', 'tatsu', 'da'],
         translation: 'accompli, atteindre, aboutir',
+    },
+    {
+        kanji: '昨',
+        strokes: 9,
+        level: 'N3',
+        frequency: 226,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'サク',
+                },
+            ],
+        },
+        romaji: ['saku'],
+        translation: 'hier, précédent',
+    },
+    {
+        kanji: '合',
+        strokes: 6,
+        level: 'N3',
+        frequency: 41,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ゴウ',
+                },
+                {
+                    'kana': 'ガッ',
+                },
+                {
+                    'kana': 'カッ',
+                },
+            ],
+        },
+        romaji: ['a', 'go', 'gou', 'gatsu', 'katsu'],
+        translation: 'correspondre, convenir, joindre',
+    },
+    {
+        kanji: '図',
+        strokes: 7,
+        level: 'N4',
+        frequency: 539,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'え',
+                },
+                {
+                    'kana': 'はか',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ズ',
+                },
+                {
+                    'kana': 'ト',
+                },
+            ],
+        },
+        romaji: ['e', 'haka', 'zu', 'to'],
+        translation: 'carte, plan, dessin',
     },
 ];
 

@@ -5,16 +5,16 @@ export const collections = {
 
 export const classes = {
     0: "Toutes",
-    1: "Noms communs",
-    2: "Noms propres",
-    3: "Verbes",
-    4: "Adjectifs",
-    5: "Adverbes",
-    6: "Conjonctions",
-    7: "Adjectifs démonstratifs",
-    8: "Pronoms",
-    9: "Particules",
-    10: "Expressions",
+    1: "Nom commun",
+    2: "Nom propre",
+    3: "Verbe",
+    4: "Adjectif",
+    5: "Adverbe",
+    6: "Conjonction",
+    7: "Adjectif démonstratif",
+    8: "Pronom",
+    9: "Particule",
+    10: "Expression",
     11: "Copule",
 }
 

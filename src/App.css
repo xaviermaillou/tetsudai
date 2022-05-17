@@ -201,9 +201,10 @@ input:focus {
 .yomiExpander {
   height: 12px;
   opacity: 0.5;
+  transform: rotate(180deg);
 }
 .yomiExpander.open {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 .yomiExamples {
   display: flex;
@@ -504,10 +505,9 @@ input:focus {
   position: absolute;
   right: 20px;
   bottom: 4px;
-  transform: rotate(180deg);
 }
 .listIndicator.closed img {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 .noElementsFilteredIndicator {
   margin-top: 20%;

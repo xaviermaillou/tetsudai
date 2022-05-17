@@ -42,7 +42,7 @@ function App() {
         word.elements.every((element) => {
           if (kanji.kanji === element.kanji) {
             kanji.vocabulary.push(word);
-            kanji.grammar.push(word.grammar);
+            kanji.grammar.push(...word.grammar);
             element.details = kanji;
             return false;
           }
@@ -50,6 +50,8 @@ function App() {
         });
       });
     });
+    console.log(kanjisListCopy);
+    console.log(vocabularyListCopy);
     setKanjisWithVocabulary(kanjisListCopy);
     setVocabularyWithKanjis(vocabularyListCopy);
   }, [kanjisList, vocabularyList]);

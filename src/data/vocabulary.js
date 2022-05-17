@@ -17,7 +17,7 @@ const vocabulary = [
         level: '',
         romaji: 'hahanohi',
         translation: 'fête des mères',
-        grammar: 1,
+        grammar: [10],
     },
     {
         elements: [
@@ -37,7 +37,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'nichiyoubi',
         translation: 'dimanche',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -57,7 +57,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'getsuyoubi',
         translation: 'lundi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -77,7 +77,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kayoubi',
         translation: 'mardi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -97,7 +97,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'suiyoubi',
         translation: 'mercredi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -117,7 +117,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'mokuyoubi',
         translation: 'jeudi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -137,7 +137,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kinyoubi',
         translation: 'vendredi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -157,7 +157,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'doyoubi',
         translation: 'samedi',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -173,7 +173,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'nihon',
         translation: 'Japon',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -193,7 +193,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'taberu',
         translation: 'manger',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -213,7 +213,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tabemono',
         translation: 'nourriture',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -229,7 +229,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'nomu',
         translation: 'boire',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -249,7 +249,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'nomimono',
         translation: 'boisson',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -265,7 +265,7 @@ const vocabulary = [
         level: '',
         romaji: 'kusuriya',
         translation: 'pharmacie',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -281,7 +281,7 @@ const vocabulary = [
         level: '',
         romaji: 'panya',
         translation: 'boulangerie',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -297,7 +297,7 @@ const vocabulary = [
         level: '',
         romaji: 'yuushoku',
         translation: 'repas du soir, dîner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -313,7 +313,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'yuuhan',
         translation: 'repas du soir, dîner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -329,7 +329,7 @@ const vocabulary = [
         level: '',
         romaji: 'kazan',
         translation: 'volcan',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -345,7 +345,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'daigaku',
         translation: 'université',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -361,7 +361,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'gakkou',
         translation: 'école',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -377,7 +377,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'gakusei',
         translation: 'étudiant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -393,7 +393,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'sensei',
         translation: 'professeur',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -409,7 +409,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'hanabi',
         translation: 'feu d\'artifice',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -425,7 +425,7 @@ const vocabulary = [
         level: '',
         romaji: 'ichigatsu',
         translation: 'janvier',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -441,7 +441,7 @@ const vocabulary = [
         level: '',
         romaji: 'nigatsu',
         translation: 'février',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -457,7 +457,7 @@ const vocabulary = [
         level: '',
         romaji: 'sangatsu',
         translation: 'mars',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -473,7 +473,7 @@ const vocabulary = [
         level: '',
         romaji: 'shigatsu',
         translation: 'avril',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -489,7 +489,7 @@ const vocabulary = [
         level: '',
         romaji: 'gogatsu',
         translation: 'mai',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -505,7 +505,7 @@ const vocabulary = [
         level: '',
         romaji: 'rokugatsu',
         translation: 'juin',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -521,7 +521,7 @@ const vocabulary = [
         level: '',
         romaji: 'shichigatsu',
         translation: 'juillet',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -537,7 +537,7 @@ const vocabulary = [
         level: '',
         romaji: 'hachigatsu',
         translation: 'août',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -553,7 +553,7 @@ const vocabulary = [
         level: '',
         romaji: 'kugatsu',
         translation: 'septembre',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -569,7 +569,7 @@ const vocabulary = [
         level: '',
         romaji: 'juugatsu',
         translation: 'octobre',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -589,7 +589,7 @@ const vocabulary = [
         level: '',
         romaji: 'juuichigatsu',
         translation: 'novembre',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -609,7 +609,7 @@ const vocabulary = [
         level: '',
         romaji: 'juunigatsu',
         translation: 'décembre',
-        grammar: 1,
+        grammar: [1],
         },
     {
         elements: [
@@ -629,7 +629,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'wakaru',
         translation: 'comprendre',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -645,7 +645,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tenki',
         translation: 'temps, météo',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -661,7 +661,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'iku',
         translation: 'aller',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -677,7 +677,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'sumu',
         translation: 'habiter',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -693,7 +693,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'yasumu',
         translation: 'se reposer',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -709,7 +709,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kuru',
         translation: 'venir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -725,7 +725,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'miru',
         translation: 'voir, regarder',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -741,7 +741,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kiku',
         translation: 'écouter, demander',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -757,7 +757,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'iu',
         translation: 'dire',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -773,7 +773,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hanasu',
         translation: 'parler',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -785,7 +785,7 @@ const vocabulary = [
         level: '',
         romaji: 'hanashi',
         translation: 'conversation',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -801,7 +801,7 @@ const vocabulary = [
         level: '',
         romaji: 'kataru',
         translation: 'raconter',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -817,7 +817,7 @@ const vocabulary = [
         level: '',
         romaji: 'furansugo',
         translation: 'langue française',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -833,7 +833,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'eigo',
         translation: 'langue anglaise',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -849,7 +849,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'yomu',
         translation: 'lire',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -865,7 +865,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kaku',
         translation: 'écrire',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -881,7 +881,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shiru',
         translation: 'savoir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -897,7 +897,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'omou',
         translation: 'penser',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -917,7 +917,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'oshieru',
         translation: 'enseigner',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -933,7 +933,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'aruku',
         translation: 'marcher',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -949,7 +949,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hairu',
         translation: 'entrer',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -969,7 +969,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ookii',
         translation: 'grand',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -989,7 +989,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'chiisai',
         translation: 'petit',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1005,7 +1005,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shiroi',
         translation: 'blanc',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1021,7 +1021,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kuroi',
         translation: 'noir',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1037,7 +1037,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'furui',
         translation: 'vieux',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1053,7 +1053,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'yasui',
         translation: 'bon marché',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1069,7 +1069,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hayai',
         translation: 'tôt, rapide',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1085,7 +1085,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'suki',
         translation: 'aimé',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1101,7 +1101,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'manabu',
         translation: 'étudier',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1117,7 +1117,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'takai',
         translation: 'haut, cher',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1133,7 +1133,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kaeru',
         translation: 'retourner',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1149,7 +1149,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kau',
         translation: 'acheter',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1169,7 +1169,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'atarashii',
         translation: 'nouveau',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1189,7 +1189,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tanoshii',
         translation: 'amusant, plaisant',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1205,7 +1205,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'densha',
         translation: 'train',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1221,7 +1221,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'denwa',
         translation: 'téléphone',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1237,7 +1237,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'au',
         translation: 'se réunir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1257,7 +1257,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'deau',
         translation: 'rencontrer, croiser',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1273,7 +1273,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kaisha',
         translation: 'entreprise',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1289,7 +1289,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kaiwa',
         translation: 'conversation',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1305,7 +1305,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'moji',
         translation: 'écriture',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1321,7 +1321,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'bungaku',
         translation: 'littérature',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1337,7 +1337,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'shitamachi',
         translation: 'quartier populaire',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1353,7 +1353,7 @@ const vocabulary = [
         level: '',
         romaji: 'chouchou',
         translation: 'maire',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1373,7 +1373,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'agaru',
         translation: 's\'élever',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1389,7 +1389,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'noboru',
         translation: 'monter',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1405,7 +1405,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'jouzu',
         translation: 'doué',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1421,7 +1421,7 @@ const vocabulary = [
         level: '',
         romaji: 'toukyou',
         translation: 'Tokyo',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -1437,7 +1437,7 @@ const vocabulary = [
         level: '',
         romaji: 'kansai',
         translation: 'Kansai',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -1457,7 +1457,7 @@ const vocabulary = [
         level: '',
         romaji: 'hokkaidou',
         translation: 'Hokkaido',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -1473,7 +1473,7 @@ const vocabulary = [
         level: '',
         romaji: 'inshu',
         translation: 'consommation d\'alcool',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1489,7 +1489,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kuuki',
         translation: 'air, atmosphère',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1505,7 +1505,7 @@ const vocabulary = [
         level: '',
         romaji: 'chuugoku',
         translation: 'Chine',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -1521,7 +1521,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kotoshi',
         translation: 'cette année',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1537,7 +1537,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ongaku',
         translation: 'musique',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1553,7 +1553,7 @@ const vocabulary = [
         level: '',
         romaji: 'yukiguni',
         translation: 'pays enneigé',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1569,7 +1569,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'gaikoku',
         translation: 'pays étranger',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1589,7 +1589,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'gaikokujin',
         translation: 'personne étrangère',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1609,7 +1609,7 @@ const vocabulary = [
         level: '',
         romaji: 'aikenka',
         translation: 'personne qui aime les chiens',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1625,7 +1625,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'aisuru',
         translation: 'aimer, être amoureux',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1641,7 +1641,7 @@ const vocabulary = [
         level: '',
         romaji: 'umikaze',
         translation: 'vent marin',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1657,7 +1657,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kongetsu',
         translation: 'ce mois',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1673,7 +1673,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'deguchi',
         translation: 'sortie',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1689,7 +1689,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'iriguchi',
         translation: 'entrée',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1705,7 +1705,7 @@ const vocabulary = [
         level: '',
         romaji: 'hakuchou',
         translation: 'cygne',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1725,7 +1725,7 @@ const vocabulary = [
         level: '',
         romaji: 'inshokuten',
         translation: 'restaurant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1745,7 +1745,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'akarui',
         translation: 'clair',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1761,7 +1761,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'setsumei',
         translation: 'explication',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1777,7 +1777,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kurai',
         translation: 'sombre',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -1793,7 +1793,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'aku',
         translation: 's\'ouvrir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1813,7 +1813,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'akeru',
         translation: 'ouvrir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -1829,7 +1829,7 @@ const vocabulary = [
         level: '',
         romaji: 'choushoku',
         translation: 'petit-déjeuner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1849,7 +1849,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'asagohan',
         translation: 'petit-déjeuner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1865,7 +1865,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'chuushoku',
         translation: 'déjeuner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1885,7 +1885,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hirugohan',
         translation: 'déjeuner',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1901,7 +1901,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'mainichi',
         translation: 'tous les jours',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -1917,7 +1917,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'maiasa',
         translation: 'tous les matins',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -1933,7 +1933,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'maishuu',
         translation: 'toutes les semaines',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -1949,7 +1949,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'maitsuki',
         translation: 'tous les mois',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -1965,7 +1965,7 @@ const vocabulary = [
         level: '',
         romaji: 'jitsugai',
         translation: 'il y a peu, une fois',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -1985,7 +1985,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'otokonoko',
         translation: 'garçon',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2005,7 +2005,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'onnanoko',
         translation: 'fille',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2021,7 +2021,7 @@ const vocabulary = [
         level: '',
         romaji: 'ankoku',
         translation: 'ténèbres',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2037,7 +2037,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'nakaba',
         translation: 'milieu, moitié, partiellement',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2053,7 +2053,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kanji',
         translation: 'caractère chinois',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2073,7 +2073,7 @@ const vocabulary = [
         level: '',
         romaji: 'kunyomi',
         translation: 'lecture purement japonaise',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2093,7 +2093,7 @@ const vocabulary = [
         level: '',
         romaji: 'onyomi',
         translation: 'lecture sino-japonaise',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2109,7 +2109,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'gengo',
         translation: 'langue',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2125,7 +2125,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kanojo',
         translation: 'elle, petite amie',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -2137,7 +2137,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kare',
         translation: 'il, petit ami',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -2153,7 +2153,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hitori',
         translation: 'une personne',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2169,7 +2169,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'futari',
         translation: 'deux personnes',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2185,7 +2185,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'namae',
         translation: 'prénom',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2201,7 +2201,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'meijin',
         translation: 'maître, expert',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2217,7 +2217,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'gohan',
         translation: 'repas, riz cuit (formel)',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2233,7 +2233,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ocha',
         translation: 'thé (formel)',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2249,7 +2249,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kudamono',
         translation: 'fruit',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2269,7 +2269,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'hatasu',
         translation: 'accomplir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2289,7 +2289,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'hateru',
         translation: 'se terminer, être fini, épuisé',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2305,7 +2305,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kashi',
         translation: 'confiserie',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2321,7 +2321,7 @@ const vocabulary = [
         level: '',
         romaji: 'shirumono',
         translation: 'soupe',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2333,7 +2333,7 @@ const vocabulary = [
         level: '',
         romaji: 'raamen',
         translation: 'ramen',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2345,7 +2345,7 @@ const vocabulary = [
         level: '',
         romaji: 'pasuta',
         translation: 'pâtes',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2357,7 +2357,7 @@ const vocabulary = [
         level: '',
         romaji: 'kouhii',
         translation: 'café',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2369,7 +2369,7 @@ const vocabulary = [
         level: '',
         romaji: 'chiizu',
         translation: 'fromage',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2381,7 +2381,7 @@ const vocabulary = [
         level: '',
         romaji: 'dezaato',
         translation: 'dessert',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2397,7 +2397,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'seiyou',
         translation: 'Occident',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2409,7 +2409,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ima',
         translation: 'maintenant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2421,7 +2421,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'mae',
         translation: 'devant, avant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2433,7 +2433,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ato',
         translation: 'derrière, arrière, après',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2445,7 +2445,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'aida',
         translation: 'intervalle, pendant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2461,7 +2461,7 @@ const vocabulary = [
         level: '',
         romaji: 'oosaka',
         translation: 'Osaka',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -2477,7 +2477,7 @@ const vocabulary = [
         level: '',
         romaji: 'hiroshima',
         translation: 'Hiroshima',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -2493,7 +2493,7 @@ const vocabulary = [
         level: '',
         romaji: 'kawashima',
         translation: 'Kawashima',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -2509,7 +2509,7 @@ const vocabulary = [
         level: '',
         romaji: 'miyazaki',
         translation: 'Miyazaki (nom)',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -2525,7 +2525,7 @@ const vocabulary = [
         level: '',
         romaji: 'matsuda',
         translation: 'Matsuda (nom)',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -2541,7 +2541,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'asobu',
         translation: 'jouer',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2557,7 +2557,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'neru',
         translation: 'dormir, aller au lit',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2573,7 +2573,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'noru',
         translation: 'monter à bord',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2589,7 +2589,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'matsu',
         translation: 'attendre',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2605,7 +2605,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'kokiritsu',
         translation: 'national, dirigé par l\'Etat',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2621,7 +2621,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tatsu',
         translation: 'être debout, se lever',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2637,7 +2637,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'isogu',
         translation: 'se dépêcher',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2653,7 +2653,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shinu',
         translation: 'mourir',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2669,7 +2669,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'baibai',
         translation: 'commerce',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2685,7 +2685,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'uru',
         translation: 'vendre',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2701,7 +2701,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'sagasu',
         translation: 'chercher',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2717,7 +2717,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'katsu',
         translation: 'gagner',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2733,7 +2733,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'masaru',
         translation: 'surpasser, exceller',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2749,7 +2749,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'oyogu',
         translation: 'nager',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2765,7 +2765,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'tensai',
         translation: 'génie',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2781,7 +2781,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'negau',
         translation: 'désirer, implorer',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2797,7 +2797,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'negai',
         translation: 'désir, requête',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2817,7 +2817,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'yoroshii',
         translation: 'bien, correct',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -2837,7 +2837,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'yoroshiku',
         translation: 'correctement',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -2853,7 +2853,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hajime',
         translation: 'début',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2873,7 +2873,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hajimete',
         translation: 'la première fois',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -2889,7 +2889,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'benkyou',
         translation: 'études',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2909,7 +2909,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'benkyousuru',
         translation: 'étudier',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2929,7 +2929,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'tsuyomaru',
         translation: 'se renforcer, devenir plus fort',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2949,7 +2949,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'tsuyomeru',
         translation: 'renforcer, mettre l\'accent',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -2965,7 +2965,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'tsuyoi',
         translation: 'fort',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -2981,7 +2981,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'jinja',
         translation: 'sanctuaire shintoïste',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -2997,7 +2997,7 @@ const vocabulary = [
         level: '',
         romaji: 'gikami',
         translation: 'mythologie grecque',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3013,7 +3013,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'isogashii',
         translation: 'occupé',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3029,7 +3029,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'eiga',
         translation: 'film',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3049,7 +3049,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'eigakan',
         translation: 'cinéma',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3065,7 +3065,7 @@ const vocabulary = [
         level: '',
         romaji: 'yamamoto',
         translation: 'Yamamoto (nom)',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -3081,7 +3081,7 @@ const vocabulary = [
         level: '',
         romaji: 'yamada',
         translation: 'Yamada (nom)',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -3097,7 +3097,7 @@ const vocabulary = [
         level: '',
         romaji: 'tanaka',
         translation: 'Tanaka (nom)',
-        grammar: 2,
+        grammar: [2],
     },
     {
         elements: [
@@ -3113,7 +3113,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'hontou',
         translation: 'vérité, réalité',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3129,7 +3129,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'saikin',
         translation: 'récemment',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3145,7 +3145,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'taihen',
         translation: 'situation difficile',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3165,7 +3165,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'daijoubu',
         translation: 'bien, OK, pas grave',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3185,7 +3185,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'naruhodo',
         translation: 'je vois, effectivement',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3205,7 +3205,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'minasan',
         translation: 'tout le monde',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3221,7 +3221,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'atsui',
         translation: 'chaud (climat)',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3237,7 +3237,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'atsui',
         translation: 'chaud (au contact), ardent',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3253,7 +3253,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'samui',
         translation: 'froid, inintéressant, pathétique',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3269,7 +3269,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'totemo',
         translation: 'très, excessivement',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3285,7 +3285,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'wakai',
         translation: 'jeune',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3301,7 +3301,7 @@ const vocabulary = [
         level: '',
         romaji: 'jakunen',
         translation: 'jeunesse',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3317,7 +3317,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ikutsu',
         translation: 'combien (quantité), quel âge',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3333,7 +3333,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ikura',
         translation: 'combien (prix)',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3353,7 +3353,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'muzukashii',
         translation: 'difficile, compliqué',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3369,7 +3369,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kantan',
         translation: 'simple, bref',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3385,7 +3385,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tabun',
         translation: 'peut-être, probablement',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3397,7 +3397,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'dare',
         translation: 'qui',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3413,7 +3413,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'dareka',
         translation: 'quelqu\'un',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3429,7 +3429,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kono',
         translation: 'ce (proche)',
-        grammar: 7,
+        grammar: [7],
     },
     {
         elements: [
@@ -3445,7 +3445,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kore',
         translation: 'ceci, celui-ci',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3461,7 +3461,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'kou',
         translation: 'comme ci',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3477,7 +3477,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'koko',
         translation: 'ici',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3493,7 +3493,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'sono',
         translation: 'ce (lointain)',
-        grammar: 7,
+        grammar: [7],
     },
     {
         elements: [
@@ -3509,7 +3509,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'sore',
         translation: 'cela, celui-là',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3525,7 +3525,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'sou',
         translation: 'comme ça (lointain)',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3541,7 +3541,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'soko',
         translation: 'là',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3557,7 +3557,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ano',
         translation: 'ce (très lointain)',
-        grammar: 7,
+        grammar: [7],
     },
     {
         elements: [
@@ -3573,7 +3573,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'are',
         translation: 'cela, celui-là (très lointain)',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3589,7 +3589,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'aa',
         translation: 'comme ça (très lointain)',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3609,7 +3609,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'asoko',
         translation: 'là-bas',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3625,7 +3625,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'dono',
         translation: 'quel',
-        grammar: 7,
+        grammar: [7],
     },
     {
         elements: [
@@ -3641,7 +3641,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'dore',
         translation: 'lequel',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3657,7 +3657,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'dou',
         translation: 'comment',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3673,7 +3673,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'doko',
         translation: 'où',
-        grammar: 8,
+        grammar: [8],
     },
     {
         elements: [
@@ -3693,7 +3693,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'omoshiroi',
         translation: 'intéressant, amusant',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3709,7 +3709,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'tango',
         translation: 'mot, vocabulaire',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3725,7 +3725,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ichiban',
         translation: 'meilleur, premier, numéro 1',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3741,7 +3741,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'amari',
         translation: 'très, trop (suivi d\'une négation)',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3753,7 +3753,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'koto',
         translation: 'matière, incident, évènement',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3769,7 +3769,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'zenzne',
         translation: 'du tout (suivi d\'une négation)',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3785,7 +3785,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'shumi',
         translation: 'passe-temps, interêt',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3797,7 +3797,7 @@ const vocabulary = [
         level: '',
         romaji: 'pasokon',
         translation: 'ordinateur',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3809,7 +3809,7 @@ const vocabulary = [
         level: '',
         romaji: 'geemu',
         translation: 'jeu vidéo',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3821,7 +3821,7 @@ const vocabulary = [
         level: 'N1',
         romaji: 'demo',
         translation: 'mais',
-        grammar: 6,
+        grammar: [6],
     },
     {
         elements: [
@@ -3833,7 +3833,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'mou',
         translation: 'bientôt, encore, déjà',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3845,7 +3845,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'jaa',
         translation: 'alors',
-        grammar: 6,
+        grammar: [6],
     },
     {
         elements: [
@@ -3857,7 +3857,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'maamaa',
         translation: 'passable',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3873,7 +3873,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'taisetsu',
         translation: 'important',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3889,7 +3889,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'heya',
         translation: 'chambre',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3905,7 +3905,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shizuka',
         translation: 'calme',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3925,7 +3925,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'yasashii',
         translation: 'gentil, doux',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3941,7 +3941,7 @@ const vocabulary = [
         level: 'N4',
         romaji: 'hitsuyou',
         translation: 'nécessaire',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -3957,7 +3957,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'mochiron',
         translation: 'bien sûr, évidemment',
-        grammar: 5,
+        grammar: [5],
     },
     {
         elements: [
@@ -3969,7 +3969,7 @@ const vocabulary = [
         level: '',
         romaji: 'hachi',
         translation: 'abeille, guêpe',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -3989,7 +3989,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kaimono',
         translation: 'achats, courses',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4009,7 +4009,7 @@ const vocabulary = [
         level: '',
         romaji: 'kaishain',
         translation: 'employé de bureau, col blanc',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4025,7 +4025,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shigoto',
         translation: 'travail, job',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4045,7 +4045,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'tojiru',
         translation: 'fermer (doucement)',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4065,7 +4065,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shimeru',
         translation: 'fermer',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4085,7 +4085,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'shimaru',
         translation: 'être fermé',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4101,7 +4101,7 @@ const vocabulary = [
         level: 'N2',
         romaji: 'heikai',
         translation: 'clôture (évènement)',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4113,7 +4113,7 @@ const vocabulary = [
         level: '',
         romaji: 'matane',
         translation: 'aurevoir, salut',
-        grammar: 10,
+        grammar: [10],
     },
     {
         elements: [
@@ -4139,7 +4139,7 @@ const vocabulary = [
             'janakatta'
         ],
         translation: 'être, verbe d\'état',
-        grammar: 11,
+        grammar: [11],
     },
     {
         elements: [
@@ -4155,7 +4155,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'aru',
         translation: 'verbe de présence (objets inanimés)',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4171,7 +4171,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'iru',
         translation: 'verbe de présence (objets animés)',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4187,7 +4187,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'naru',
         translation: 'devenir, grandir, atteindre',
-        grammar: 3,
+        grammar: [3],
     },
     {
         elements: [
@@ -4203,7 +4203,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'yoi',
         translation: 'bien, excellent',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -4219,7 +4219,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ii',
         translation: 'bien, excellent',
-        grammar: 4,
+        grammar: [4],
     },
     {
         elements: [
@@ -4235,7 +4235,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'ushiro',
         translation: 'arrière, derrière',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4247,7 +4247,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'nochi',
         translation: 'après, ensuite',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4263,7 +4263,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'jugyou',
         translation: 'cours, classe, leçon',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4279,7 +4279,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'shokuji',
         translation: 'repas',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4295,7 +4295,7 @@ const vocabulary = [
         level: 'N3',
         romaji: 'shokuji',
         translation: 'repas',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4311,7 +4311,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kodomo',
         translation: 'enfant',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4327,7 +4327,7 @@ const vocabulary = [
         level: 'N5',
         romaji: 'tomodachi',
         translation: 'ami, compagnon',
-        grammar: 1,
+        grammar: [1],
     },
     {
         elements: [
@@ -4344,7 +4344,178 @@ const vocabulary = [
         level: 'N5',
         romaji: 'kyou',
         translation: 'aujourd\'hui',
-        grammar: 1,
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '明',
+                kana: '',
+            },
+            {
+                kanji: '日',
+                kana: '',
+            },
+        ],
+        jukujikun: 'あした',
+        level: 'N5',
+        romaji: 'ashita',
+        translation: 'demain',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '昨',
+                kana: '',
+            },
+            {
+                kanji: '日',
+                kana: '',
+            },
+        ],
+        jukujikun: 'きのう',
+        level: 'N5',
+        romaji: 'kinou',
+        translation: 'hier',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '今',
+                kana: '',
+            },
+            {
+                kanji: '朝',
+                kana: '',
+            },
+        ],
+        jukujikun: 'けさ',
+        level: 'N5',
+        romaji: 'kesa',
+        translation: 'ce matin',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '大',
+                kana: '',
+            },
+            {
+                kanji: '人',
+                kana: '',
+            },
+        ],
+        jukujikun: 'おとな',
+        level: 'N5',
+        romaji: 'otona',
+        translation: 'adulte',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '小',
+                kana: 'ショウ',
+            },
+            {
+                kanji: '学',
+                kana: 'ガッ',
+            },
+            {
+                kanji: '校',
+                kana: 'コウ',
+            },
+        ],
+        level: 'N4',
+        romaji: 'shougakkou',
+        translation: 'école primaire',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '中',
+                kana: 'チュウ',
+            },
+            {
+                kanji: '学',
+                kana: 'ガッ',
+            },
+            {
+                kanji: '校',
+                kana: 'コウ',
+            },
+        ],
+        level: 'N4',
+        romaji: 'chuugakkou',
+        translation: 'collège',
+        grammar: [1],
+    },
+    {
+        elements: [
+            
+            {
+                kanji: '高',
+                kana: 'コウ',
+            },
+            {
+                kanji: '校',
+                kana: 'コウ',
+            },
+        ],
+        level: 'N4',
+        romaji: 'koukou',
+        translation: 'lycée',
+        grammar: [1],
+    },
+    {
+        elements: [
+            
+            {
+                kanji: '知',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'り',
+            },
+            {
+                kanji: '合',
+                kana: 'あ',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        level: 'N2',
+        romaji: 'shiriai',
+        translation: 'connaissance (personne)',
+        grammar: [1],
+    },
+    {
+        elements: [
+            
+            {
+                kanji: '図',
+                kana: 'ト',
+            },
+            {
+                kanji: '書',
+                kana: 'ショ',
+            },
+            {
+                kanji: '館',
+                kana: 'カン',
+            },
+        ],
+        level: 'N5',
+        romaji: 'toshokan',
+        translation: 'bibliothèque',
+        grammar: [1],
     },
 ];
 
