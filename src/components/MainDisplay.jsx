@@ -47,12 +47,26 @@ const MainDisplay = (props) => {
                     />}
                 </div>}
                 {word && <div id="wordDisplay">
-                    <div id="wordDisplayWord" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
-                        {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                            <span>{element.kanji || element.kana}</span>
-                            {element.kanji ? <span className="wordDisplayWordElementYomi">{element.kana}</span> : <span className="wordDisplayWordElementYomi"></span>}
-                        </div>)}
-                    </div>
+                    {word.jukujikun ? 
+                        <div id="wordDisplayWordJukujikun">
+                            <div id="wordDisplayWordKanjiOnly">
+                                {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
+                                    <span>{element.kanji || element.kana}</span>
+                                </div>)}
+                            </div>
+                            <div className="wordDisplayWordElementYomi jukujikun">
+                                {word.jukujikun}
+                                <div>*Jukujikun</div>
+                            </div>
+                        </div>
+                        :
+                        <div id="wordDisplayWord" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
+                            {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
+                                <span>{element.kanji || element.kana}</span>
+                                {element.kanji ? <span className="wordDisplayWordElementYomi">{element.kana}</span> : <span className="wordDisplayWordElementYomi"></span>}
+                            </div>)}
+                        </div>
+                    }
                     <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
                     <p id="wordDisplayGrammar" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{classes[word.grammar]}</p>
                     <WordKanjis

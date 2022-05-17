@@ -125,7 +125,7 @@ input:focus {
   white-space: nowrap;
   overflow-x: scroll;
 }
-#wordDisplayWord {
+#wordDisplayWord, #wordDisplayWordJukujikun {
   height: 38vh;
   width: 100%;
   font-size: calc(40px + 10vh);
@@ -134,6 +134,14 @@ input:focus {
   align-items: flex-end;
   flex-wrap: nowrap;
   overflow-x: scroll;
+}
+#wordDisplayWordJukujikun {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+#wordDisplayWordKanjiOnly {
+  display: flex;
 }
 .wordDisplayWordElement {
   display: flex;
@@ -146,6 +154,10 @@ input:focus {
   font-size: calc(10px + 2.5vh);
   line-height: calc(10px + 2.5vh);
   height: calc(20px + 5vh);
+}
+.wordDisplayWordElementYomi.jukujikun div {
+  font-size: 16px;
+  opacity: 0.5;
 }
 
 /* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
@@ -576,12 +588,20 @@ input:focus {
   white-space: nowrap;
   font-size: 16px;
 }
+.vocabularyListElementJapaneseJukujikun {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .vocabularyListElementKanjiKana {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   margin-right: 10px;
+}
+.vocabularyListElementKanjiOnly {
+  display: flex;
 }
 .vocabularyListElementKana {
   opacity: 0.5;

@@ -4329,6 +4329,23 @@ const vocabulary = [
         translation: 'ami, compagnon',
         grammar: 1,
     },
+    {
+        elements: [
+            {
+                kanji: '今',
+                kana: '',
+            },
+            {
+                kanji: '日',
+                kana: '',
+            },
+        ],
+        jukujikun: 'きょう',
+        level: 'N5',
+        romaji: 'kyou',
+        translation: 'aujourd\'hui',
+        grammar: 1,
+    },
 ];
 
 // Types grammaticaux:

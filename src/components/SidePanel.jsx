@@ -229,14 +229,25 @@ const ListWord = (props) => {
                     "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
                 onClick={() => clickHandle(word.doc.id)}
             >
-                <div className="vocabularyListElementJapanese">
-                    {word.elements.map((element, j) => (
-                        <div className="vocabularyListElementKanjiKana" key={j}>
-                            <div>{element.kanji || element.kana}</div>
-                            {element.kanji && <div className="vocabularyListElementKana">{element.kana}</div>}
+                {word.jukujikun ?
+                    <div className="vocabularyListElementJapaneseJukujikun">
+                        <div className="vocabularyListElementKanjiOnly">
+                            {word.elements.map((element, j) => (
+                                <div key={j}>{element.kanji || element.kana}</div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                        <div className="vocabularyListElementKana">{word.jukujikun}</div>
+                    </div>
+                    :
+                    <div className="vocabularyListElementJapanese">
+                        {word.elements.map((element, j) => (
+                            <div className="vocabularyListElementKanjiKana" key={j}>
+                                <div>{element.kanji || element.kana}</div>
+                                {element.kanji && <div className="vocabularyListElementKana">{element.kana}</div>}
+                            </div>
+                        ))}
+                    </div>
+                }
                 <div className="vocabularyListElementTranslation">
                     {word.translation}
                 </div>
@@ -290,10 +301,10 @@ const SidePanel = (props) => {
 
     const searchThroughKanji = (vocabulary, romaji, string) => {
         let includes = false;
-        vocabulary.forEach((word) => {
-            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
-            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
+        // vocabulary.forEach((word) => {
+        //     if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
+        //     if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
+        // });
         romaji.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
@@ -308,7 +319,12 @@ const SidePanel = (props) => {
                 && (levels[level] === kanji.level || !level) 
                 && (kanji.grammar.includes(grammar) || grammar === 0)
             ) 
-            && (kanji.translation.toLowerCase().includes(search.toLowerCase()) || searchThroughKanji(kanji.vocabulary, kanji.romaji, search) || !search)
+            &&
+            (
+                kanji.translation.toLowerCase().includes(search.toLowerCase())
+                || searchThroughKanji(kanji.vocabulary, kanji.romaji, search)
+                || !search
+            )
         ) {
             if (noKanji) setNoKanji(false);
             return true;
@@ -341,7 +357,7 @@ const SidePanel = (props) => {
                         :
                         <img src="/img/search.png" alt="search" />
                     }
-                    <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par traduction" />
+                    <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par romaji ou traduction" />
                 </div>
             </div>
             <ListHeader
