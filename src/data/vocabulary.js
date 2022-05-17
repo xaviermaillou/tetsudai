@@ -2124,7 +2124,7 @@ const vocabulary = [
         ],
         level: 'N4',
         romaji: 'kanojo',
-        translation: 'elle, petite copine',
+        translation: 'elle, petite amie',
         grammar: 8,
     },
     {
@@ -4247,6 +4247,86 @@ const vocabulary = [
         level: 'N3',
         romaji: 'nochi',
         translation: 'après, ensuite',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '授',
+                kana: 'ジュ',
+            },
+            {
+                kanji: '業',
+                kana: 'ギョウ',
+            },
+        ],
+        level: 'N5',
+        romaji: 'jugyou',
+        translation: 'cours, classe, leçon',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '食',
+                kana: 'ショク',
+            },
+            {
+                kanji: '事',
+                kana: 'ジ',
+            },
+        ],
+        level: 'N3',
+        romaji: 'shokuji',
+        translation: 'repas',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '食',
+                kana: 'ショク',
+            },
+            {
+                kanji: '事',
+                kana: 'ジ',
+            },
+        ],
+        level: 'N3',
+        romaji: 'shokuji',
+        translation: 'repas',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '子',
+                kana: 'こ',
+            },
+            {
+                kanji: '供',
+                kana: 'ども',
+            },
+        ],
+        level: 'N5',
+        romaji: 'kodomo',
+        translation: 'enfant',
+        grammar: 1,
+    },
+    {
+        elements: [
+            {
+                kanji: '友',
+                kana: 'とも',
+            },
+            {
+                kanji: '達',
+                kana: 'だち',
+            },
+        ],
+        level: 'N5',
+        romaji: 'tomodachi',
+        translation: 'ami, compagnon',
         grammar: 1,
     },
 ];

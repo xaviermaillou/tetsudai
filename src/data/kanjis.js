@@ -5437,6 +5437,110 @@ const kanjis = [
         romaji: ['yo', 'i', 'ryo', 'ryou'],
         translation: 'bien, plaisant, habile',
     },
+    {
+        kanji: '授',
+        strokes: 11,
+        level: 'N1',
+        frequency: 523,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さず',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジュ',
+                },
+            ],
+        },
+        romaji: ['sazu', 'ju'],
+        translation: 'instruire, dispenser, conférer',
+    },
+    {
+        kanji: '業',
+        strokes: 13,
+        level: 'N1',
+        frequency: 43,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'わざ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ギョウ',
+                },
+                {
+                    'kana': 'ゴウ',
+                },
+            ],
+        },
+        romaji: ['waza', 'gyo', 'gyou', 'go', 'gou'],
+        translation: 'affaire, vocation, art',
+    },
+    {
+        kanji: '供',
+        strokes: 8,
+        level: 'N3',
+        frequency: 313,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'そな',
+                },
+                {
+                    'kana': 'とも',
+                },
+                {
+                    'kana': 'ども',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キョウ',
+                },
+                {
+                    'kana': 'ク',
+                },
+                {
+                    'kana': 'クウ',
+                },
+                {
+                    'kana': 'グ',
+                },
+            ],
+        },
+        romaji: ['sona', 'tomo', 'domo', 'kyo', 'kyou', 'ku', 'kuu', 'gu'],
+        translation: 'offrir, soumettre, accompagner',
+    },
+    {
+        kanji: '達 ',
+        strokes: 12,
+        level: 'N3',
+        frequency: 500,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'たち',
+                },
+                {
+                    'kana': 'だち',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タツ',
+                },
+                {
+                    'kana': 'ダ',
+                },
+            ],
+        },
+        romaji: ['tachi', 'dachi', 'tatsu', 'da'],
+        translation: 'accompli, atteindre, aboutir',
+    },
 ];
 
 // Collections:
