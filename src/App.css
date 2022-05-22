@@ -521,6 +521,8 @@ input:focus {
   padding-top: 1vh;
   padding-bottom: 3vh;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
@@ -532,12 +534,20 @@ input:focus {
   overflow-y: hidden;
   padding: 0;
 }
+.importance2 {
+  order: 1 !important;
+}
+.importance1 {
+  order: 2 !important;
+}
 #kanjisList {
   margin-bottom: 24px;
 }
 .kanjisListElementContainer {
   height: 0px;
   overflow: hidden;
+  flex-shrink: 0;
+  order: 3;
 }
 .kanjisListElementContainer.open {
   height: 54px;
@@ -573,6 +583,8 @@ input:focus {
 .vocabularyListElementContainer {
   height: 0px;
   overflow: hidden;
+  flex-shrink: 0;
+  order: 5;
 }
 .vocabularyListElementContainer.open {
   height: 54px;

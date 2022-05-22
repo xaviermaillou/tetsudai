@@ -156,7 +156,7 @@ const ListKanji = (props) => {
         changeCurrentKanjiById,
         setOpen,
         currentElement,
-        open,
+        filter,
     } = props;
 
     const clickHandle = (id) => {
@@ -165,7 +165,7 @@ const ListKanji = (props) => {
     }
 
     return (
-        <div className={open ? "kanjisListElementContainer open" : "kanjisListElementContainer"} >
+        <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open`: "kanjisListElementContainer open") : "kanjisListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === kanji.doc.id) ?
                     "kanjisListElement clickable selected" : "kanjisListElement clickable"}
@@ -214,7 +214,7 @@ const ListWord = (props) => {
         changeCurrentWordById,
         setOpen,
         currentElement,
-        open
+        filter,
     } = props;
 
     const clickHandle = (id) => {
@@ -223,7 +223,7 @@ const ListWord = (props) => {
     }
 
     return (
-        <div className={open ? "vocabularyListElementContainer open" : "vocabularyListElementContainer"} >
+        <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open` : "vocabularyListElementContainer open") : "vocabularyListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.doc.id === word.doc.id) ?
                     "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
@@ -299,7 +299,7 @@ const SidePanel = (props) => {
         setNoWord(true);
     }, [search, collection, level, grammar]);
 
-    const searchThroughKanji = (vocabulary, romaji, string) => {
+    const searchThroughKanji = (vocabulary, romaji, translation, string) => {
         let includes = false;
         // vocabulary.forEach((word) => {
         //     if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
@@ -308,11 +308,25 @@ const SidePanel = (props) => {
         romaji.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
+        translation.forEach((word) => {
+            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
 
         return includes;
     }
+    const getKanjiImportance = (romaji, translation, string) => {
+        let matchingScore = 0
+        romaji.forEach((word) => {
+            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        });
+        translation.forEach((word) => {
+            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        });
+        return matchingScore;
+    }
 
     const filterKanji = (kanji) => {
+        let result = {};
         if (
             (
                 (kanji.collections?.includes(collection) || collection === 0)
@@ -321,30 +335,63 @@ const SidePanel = (props) => {
             ) 
             &&
             (
-                kanji.translation.toLowerCase().includes(search.toLowerCase())
-                || searchThroughKanji(kanji.vocabulary, kanji.romaji, search)
+                searchThroughKanji(kanji.vocabulary, kanji.romaji, kanji.translationArray, search)
                 || !search
             )
         ) {
             if (noKanji) setNoKanji(false);
-            return true;
+            result = {
+                open: true,
+                importance: getKanjiImportance(kanji.romaji, kanji.translationArray, search)
+            };
+        } else {
+            result = {
+                open: false,
+                importance: null,
+            };
         }
-        return false;
+        return result;
+    }
+
+    const searchThroughWord = (translation, string) => {
+        let includes = false;
+        translation.forEach((word) => {
+            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
+
+        return includes;
+    }
+    const getWordImportance = (romaji, translation, string) => {
+        let matchingScore = 0
+        if (romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        translation.forEach((word) => {
+            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        });
+        return matchingScore;
     }
 
     const filterWord = (word) => {
+        let result = {};
         if (
             (word.collections?.includes(collection) || collection === 0)
             && (levels[level] === word.level || !level || !word.level) 
             && (word.grammar.includes(grammar) || grammar === 0)
-            && (word.translation.toLowerCase().includes(search.toLowerCase())
+            && (searchThroughWord(word.translationArray, search)
                 || (word.romaji.toLowerCase().includes(search.toLowerCase()))
                 || !search)
         ) {
             if (noWord) setNoWord(false);
-            return true;
+            result = {
+                open: true,
+                importance: getWordImportance(word.romaji, word.translationArray, search),
+            };
+        } else {
+            result = {
+                open: false,
+                importance: null,
+            };
         }
-        return false;
+        return result;
     }
 
     return (
@@ -381,14 +428,13 @@ const SidePanel = (props) => {
                 <img src="/img/up.png" alt="open/close kanji" />
             </span>}
             <div id="kanjisList" className={(displayKanjis && searchExecuted) ? (displayWords ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
-
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        open={filterKanji(item)}
+                        filter={filterKanji(item)}
                         key={i}
                     />
                 ))}
@@ -405,7 +451,7 @@ const SidePanel = (props) => {
                         changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        open={filterWord(item)}
+                        filter={filterWord(item)}
                         key={i}
                     />
                 ))}

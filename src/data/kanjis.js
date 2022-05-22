@@ -5617,6 +5617,46 @@ const kanjis = [
         romaji: ['e', 'haka', 'zu', 'to'],
         translation: 'carte, plan, dessin',
     },
+    {
+        kanji: '美',
+        strokes: 9,
+        level: 'N3',
+        frequency: 462,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'うつく',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ビ',
+                },
+            ],
+        },
+        romaji: ['utsuku', 'bi'],
+        translation: 'beauté',
+    },
+    {
+        kanji: '味',
+        strokes: 8,
+        level: 'N4',
+        frequency: 442,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あじ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ミ',
+                },
+            ],
+        },
+        romaji: ['aji', 'mi'],
+        translation: 'saveur, goût',
+    },
 ];
 
 // Collections:

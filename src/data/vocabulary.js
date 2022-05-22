@@ -4517,6 +4517,31 @@ const vocabulary = [
         translation: 'bibliothèque',
         grammar: [1],
     },
+    {
+        elements: [
+            {
+                kanji: '美',
+                kana: '',
+            },
+            {
+                kanji: '味',
+                kana: '',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'い',
+            },
+        ],
+        jukujikun: 'おいしい',
+        level: 'N5',
+        romaji: 'oishii',
+        translation: 'délicieux',
+        grammar: [4],
+    },
 ];
 
 // Types grammaticaux:

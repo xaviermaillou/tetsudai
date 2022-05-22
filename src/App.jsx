@@ -6,7 +6,7 @@ import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
-import { levels } from "./lib/common";
+import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
 
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
@@ -16,19 +16,22 @@ function App() {
   const [vocabularyWithKanjis, setVocabularyWithKanjis] = useState([]);
 
   useEffect(() => {
+    // Fetching kanjis
     firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({
         ...doc.data(),
         doc,
       }));
-      setKanjisList(data?.sort((a, b) => a.frequency - b.frequency));
+      const sortedByFrecuencyData = data?.sort((a, b) => a.frequency - b.frequency);
+      setKanjisList(sortByObjectKey(sortedByFrecuencyData, levels));
     });
+    // Fetching vocabulary
     firebase.firestore().collection('Vocabulary').onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({
         ...doc.data(),
         doc,
       }));
-      setVocabularyList(data);
+      setVocabularyList(sortByObjectKey(data, levels));
     });
   }, []);
 
@@ -36,9 +39,11 @@ function App() {
     const kanjisListCopy = [ ...kanjisList ];
     const vocabularyListCopy = [ ...vocabularyList ];
     kanjisListCopy.forEach((kanji) => {
+      kanji.translationArray = cutStringToArray(kanji.translation);
       kanji.vocabulary = [];
       kanji.grammar = [];
       vocabularyListCopy.forEach((word) => {
+        word.translationArray = cutStringToArray(word.translation);
         word.elements.every((element) => {
           if (kanji.kanji === element.kanji) {
             kanji.vocabulary.push(word);
@@ -50,8 +55,6 @@ function App() {
         });
       });
     });
-    console.log(kanjisListCopy);
-    console.log(vocabularyListCopy);
     setKanjisWithVocabulary(kanjisListCopy);
     setVocabularyWithKanjis(vocabularyListCopy);
   }, [kanjisList, vocabularyList]);
