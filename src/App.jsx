@@ -122,7 +122,7 @@ function App() {
       if (
         (word.collections?.includes(collection) || collection === 0)
         && (levels[level] === word.level || !level)
-        && (word.grammar === grammar || !grammar)
+        && (word.grammar.includes(grammar) || !grammar)
       ) {
         vocabularyListCopy.push(word)
       }
@@ -146,6 +146,7 @@ function App() {
     } 
     if (type === 2 || trainingMode === 2) {
       setKanji(null);
+      console.log(filteredWords);
       setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
     } 
   }

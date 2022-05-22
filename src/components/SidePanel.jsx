@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { classes, collections, levels } from "../lib/common";
+import { classes, pluralClasses, collections, levels } from "../lib/common";
 
 const TrainingModal = (props) => {
     const {
@@ -54,7 +54,7 @@ const FilterModal = (props) => {
                 ))}
             </>}
             {filter === 3 && <>
-                {Object.values(classes).map((value, key) => (
+                {Object.values(pluralClasses).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </>}
