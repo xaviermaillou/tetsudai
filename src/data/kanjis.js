@@ -4600,7 +4600,7 @@ const kanjis = [
     {
         kanji: '丈',
         strokes: 3,
-        level: '',
+        level: null,
         frequency: 1375,
         readings: {
             kunyomi: [
@@ -4749,7 +4749,7 @@ const kanjis = [
     {
         kanji: '迚',
         strokes: 8,
-        level: '',
+        level: null,
         frequency: 2500,
         readings: {
             kunyomi: [
@@ -4897,7 +4897,7 @@ const kanjis = [
     {
         kanji: '誰',
         strokes: 15,
-        level: '',
+        level: null,
         frequency: 1933,
         readings: {
             kunyomi: [
@@ -5251,7 +5251,7 @@ const kanjis = [
     {
         kanji: '勿',
         strokes: 4,
-        level: '',
+        level: null,
         frequency: 2500,
         readings: {
             kunyomi: [
@@ -5300,7 +5300,7 @@ const kanjis = [
     {
         kanji: '蜂',
         strokes: 13,
-        level: '',
+        level: null,
         frequency: 2223,
         readings: {
             kunyomi: [
@@ -5718,7 +5718,7 @@ const kanjis = [
     {
         kanji: '迄',
         strokes: 6,
-        level: '',
+        level: null,
         frequency: 2500,
         readings: {
             kunyomi: [
@@ -5734,7 +5734,7 @@ const kanjis = [
     {
         kanji: '又',
         strokes: 2,
-        level: '',
+        level: null,
         frequency: 2500,
         readings: {
             kunyomi: [

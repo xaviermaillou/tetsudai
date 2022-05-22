@@ -68,7 +68,9 @@ const MainDisplay = (props) => {
                         </div>
                     }
                     <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
-                    <p id="wordDisplayGrammar" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.grammar.map((el, i) => <span key={i}>{classes[el]}</span>)}</p>
+                    <p id="wordDisplayGrammar" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
+                        {word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}
+                    </p>
                     <WordKanjis
                         elements={word.elements.filter((element) => element.details)}
                         allDisplayed={allDisplayed}

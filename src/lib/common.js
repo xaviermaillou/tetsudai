@@ -25,7 +25,7 @@ export const levels = {
     3: "N3",
     4: "N2",
     5: "N1",
-    6: "",
+    6: null,
 }
 
 export const kinds = {
