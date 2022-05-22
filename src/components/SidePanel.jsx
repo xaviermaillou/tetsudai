@@ -305,10 +305,10 @@ const SidePanel = (props) => {
         //     if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
         //     if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
         // });
-        romaji.forEach((word) => {
+        romaji?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
-        translation.forEach((word) => {
+        translation?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
 
@@ -316,10 +316,10 @@ const SidePanel = (props) => {
     }
     const getKanjiImportance = (romaji, translation, string) => {
         let matchingScore = 0
-        romaji.forEach((word) => {
+        romaji?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
-        translation.forEach((word) => {
+        translation?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
         return matchingScore;
@@ -355,7 +355,7 @@ const SidePanel = (props) => {
 
     const searchThroughWord = (translation, string) => {
         let includes = false;
-        translation.forEach((word) => {
+        translation?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
 
@@ -364,7 +364,7 @@ const SidePanel = (props) => {
     const getWordImportance = (romaji, translation, string) => {
         let matchingScore = 0
         if (romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        translation.forEach((word) => {
+        translation?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
         return matchingScore;

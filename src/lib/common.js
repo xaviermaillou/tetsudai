@@ -5,8 +5,8 @@ export const collections = {
 
 export const classes = {
     0: "Toutes",
-    1: "Nom commun",
-    2: "Nom propre",
+    1: "Nom propre",
+    2: "Nom commun",
     3: "Verbe",
     4: "Adjectif",
     5: "Adverbe",
@@ -25,6 +25,7 @@ export const levels = {
     3: "N3",
     4: "N2",
     5: "N1",
+    6: "",
 }
 
 export const kinds = {

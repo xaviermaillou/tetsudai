@@ -1138,6 +1138,9 @@ const kanjis = [
                 {
                     'kana': 'い',
                 },
+                {
+                    'kana': 'おこな',
+                },
             ],
             onyomi: [
                 {
@@ -1154,8 +1157,8 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['i', 'ko', 'kou', 'gyo', 'gyou', 'an'],
-        translation: 'déplacement, voyage',
+        romaji: ['i', 'okona', 'ko', 'kou', 'gyo', 'gyou', 'an'],
+        translation: 'déplacement, conduite, agissement',
     },
     {
         kanji: '住',
@@ -1284,6 +1287,9 @@ const kanjis = [
             kunyomi: [
                 {
                     'kana': 'く',
+                },
+                {
+                    'kana': 'き',
                 },
             ],
             onyomi: [
@@ -5656,6 +5662,90 @@ const kanjis = [
         },
         romaji: ['aji', 'mi'],
         translation: 'saveur, goût',
+    },
+    {
+        kanji: '為',
+        strokes: 9,
+        level: 'N1',
+        frequency: 831,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ため',
+                },
+                {
+                    'kana': 'な',
+                },
+                {
+                    'kana': 'す',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'イ',
+                },
+            ],
+        },
+        romaji: ['tame', 'na', 'su', 'i'],
+        translation: 'faire, bénéfice, bien-être',
+    },
+    {
+        kanji: '等',
+        strokes: 12,
+        level: 'N3',
+        frequency: 798,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ひと',
+                },
+                {
+                    'kana': 'など',
+                },
+                {
+                    'kana': 'ら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'トウ',
+                },
+            ],
+        },
+        romaji: ['hito', 'nado', 'ra', 'to', 'tou'],
+        translation: 'semblable, etc, et ainsi de suite',
+    },
+    {
+        kanji: '迄',
+        strokes: 6,
+        level: '',
+        frequency: 2500,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'まで',
+                },
+            ],
+            onyomi: [],
+        },
+        romaji: ['made'],
+        translation: 'jusqu\'à',
+    },
+    {
+        kanji: '又',
+        strokes: 2,
+        level: '',
+        frequency: 2500,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'また',
+                },
+            ],
+            onyomi: [],
+        },
+        romaji: ['mata'],
+        translation: 'de plus, ou encore',
     },
 ];
 

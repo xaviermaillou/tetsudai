@@ -31,7 +31,8 @@ function App() {
         ...doc.data(),
         doc,
       }));
-      setVocabularyList(sortByObjectKey(data, levels));
+      const sortedByFrecuencyData = data?.sort((a, b) => a.frequency - b.frequency);
+      setVocabularyList(sortByObjectKey(sortedByFrecuencyData, levels));
     });
   }, []);
 
