@@ -51,6 +51,13 @@ input:focus {
     background-color: rgba(0, 0, 0, 0.033);
 }
 
+.importance2 {
+    background-color: rgba(238,232,170, 0.3);
+}
+.importance1 {
+    background-color: rgba(238,232,170, 0.2);
+}
+
 #selector {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;

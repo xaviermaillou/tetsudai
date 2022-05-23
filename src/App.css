@@ -513,6 +513,7 @@ input:focus {
   margin-top: 20%;
   opacity: 0.5;
   font-size: 14px;
+  order: 10;
 }
 .wordsListList {
   /* 144px is half of the height of the filters+search */
