@@ -16,7 +16,7 @@ const TrainingModal = (props) => {
 
     return (
         <div id="wordsListTrainingModal" className={openTrainingModal ? "open" : ""}>
-            <div className="tooltip">Lancer le mode entraînement pour apprendre et réviser les kanji ou mots de vocabulaire correspondant aux filtres appliqués</div>
+            <div className="tooltip">Lancer le mode entraînement pour apprendre et réviser les kanji ou le vocabulaire correspondant aux filtres appliqués</div>
             <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
             <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
         </div>
@@ -34,15 +34,20 @@ const FilterModal = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        setSearchExecuted,
     } = props;
 
     const handleClick = (key, filterSetter) => {
         filterSetter(key);
         setFilter(0);
+        setSearchExecuted(true);
     }
 
     return (
         <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
+            {filter === 0 && <>
+                
+            </>}
             {filter === 1 && <>
                 {Object.values(collections).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected clickable" : "clickable"}>{value}</span>
@@ -73,6 +78,7 @@ const ListHeader = (props) => {
         filterIndication,
         trainingMode,
         toggleTraining,
+        searchExecuted,
         setSearchExecuted,
     } = props;
 
@@ -92,7 +98,6 @@ const ListHeader = (props) => {
         }
     }, [filterIndication, filter]);
     const handleFilterIconClick = () => {
-        if (openFilter) setSearchExecuted(true);
         setOpenFilter(!openFilter);
         setFilter(0);
         setOpenTrainingModal(false);
@@ -100,27 +105,44 @@ const ListHeader = (props) => {
 
     return (
         <div id="wordsListHeader">
-            <img id="wordsListTrainerIcon"
-                className={openTrainingModal ? "open clickable" : "clickable"}
+            <div
+                id="wordsListTrainerIcon"
+                className="clickable"
                 onClick={() => handleTrainingIconClick()}
-                src="/img/book.png"
-                alt="training"
-            />
-            <img id="wordsListFilterIcon"
-                className={filterIndication ? "focused open clickable" : (openFilter ? "open clickable" : "clickable")}
-                onClick={() => handleFilterIconClick()}
-                src="/img/filter.png"
-                alt="search"
-            />
+            >
+                <img
+                    className={openTrainingModal ? "open" : ""}
+                    src="/img/book.png"
+                    alt="training"
+                />
+            </div>
+            <div id="wordsListFilterIcon">
+                <img
+                    className={openFilter ? "open" : ""}
+                    src="/img/close.png"
+                    alt="search"
+                />
+            </div>
             <div id="wordsListFilters">
-                <div id="filtersIndicator" className="wordsListHeaderRow">
+                <div
+                    id="filtersIndicator"
+                    className="wordsListHeaderRow clickable"
+                    onClick={() => handleFilterIconClick()}
+                >
                     <div></div>
-                    <span>
-                        {grammar || level ? "Eléments" : ""}
-                        {level ? ` de niveau ${levels[level]}` : ""}{grammar ? ` étant / contenant un ${classes[grammar].toLowerCase()}` : ""}
-                        {!grammar && !level ? "Tous les éléments" : ""}
-                        {collection !== 0 && ` dans "${collections[collection]}"`}
-                    </span>
+                    {searchExecuted ? 
+                        <span>
+                            {grammar || level ? "Eléments" : ""}
+                            {level ? ` de niveau ${levels[level]}` : ""}
+                            {grammar ? ` étant / contenant un${[6, 9, 10].includes(grammar) ? 'e' : ''} ${classes[grammar].toLowerCase()}` : ""}
+                            {!grammar && !level ? "Tous les éléments" : ""}
+                            {collection !== 0 && ` dans "${collections[collection]}"`}
+                        </span>
+                        :
+                        <span>
+                            Aucun filtre appliqué
+                        </span>
+                    }
                     <div></div>
                 </div>
                 <div id="filtersTabs" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
@@ -145,6 +167,7 @@ const ListHeader = (props) => {
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                setSearchExecuted={setSearchExecuted}
             />
         </div>
     );
@@ -431,6 +454,7 @@ const SidePanel = (props) => {
                 filterIndication={filterIndication}
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
+                searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>

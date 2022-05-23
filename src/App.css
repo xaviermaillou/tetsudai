@@ -84,7 +84,7 @@ input:focus {
 #logoContainer {
   width: 6%;
   position: absolute;
-  top: 30px;
+  bottom: 100px;
   left: 20px;
   opacity: 0.25;
 }
@@ -360,23 +360,38 @@ input:focus {
 }
 #wordsListTrainerIcon, #wordsListFilterIcon {
   z-index: 1000;
-  height: 16px;
-  opacity: 0.5;
   position: absolute;
-  bottom: 72px;
+  bottom: 62px;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#wordsListTrainerIcon.open, #wordsListFilterIcon.open {
+#wordsListFilterIcon img {
+  transform: rotate(45deg);
+}
+#wordsListTrainerIcon img.open {
   opacity: 1;
 }
+#wordsListFilterIcon img.open {
+  transform: rotate(0deg);
+}
 #wordsListTrainerIcon {
-  left: 20px;
+  left: 2px;
 }
 #wordsListFilterIcon {
-  right: 20px;
+  right: 8px;
+  pointer-events: none;
 }
-#wordsListFilterIcon.focused {
+#wordsListFilterIcon img.focused {
   animation-name: emphasize;
   animation-duration: 0.4s;
+}
+#wordsListTrainerIcon img, #wordsListFilterIcon img {
+  height: 16px;
+  opacity: 0.5;
 }
 #wordsListFilters {
   height: 100%;
@@ -407,14 +422,9 @@ input:focus {
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 20px;
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.05);
-}
-#filtersIndicator span:hover {
-  cursor: default;
 }
 #filtersIndicator span {
-  width: 80%;
+  width: 90%;
   text-align: center;
 }
 #filtersTabs {
@@ -635,7 +645,6 @@ input:focus {
   }
   #logoContainer {
     width: 3%;
-    top: auto;
     bottom: 20px;
   }
   #kanjiDisplayTranslation, #wordDisplayTranslation {
@@ -710,9 +719,6 @@ input:focus {
   }
   #wordsListOpener.open {
     left: -32px;
-  }
-  #wordsListTrainerIcon {
-    left: 20px;
   }
 }
 
