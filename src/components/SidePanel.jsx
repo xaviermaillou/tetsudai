@@ -299,6 +299,8 @@ const SidePanel = (props) => {
         setNoWord(true);
     }, [search, collection, level, grammar]);
 
+    // Kanji filters
+
     const searchThroughKanji = (vocabulary, romaji, translation, string) => {
         let includes = false;
         // vocabulary.forEach((word) => {
@@ -353,18 +355,26 @@ const SidePanel = (props) => {
         return result;
     }
 
-    const searchThroughWord = (translation, string) => {
+    // Vocabulary filters
+
+    const searchThroughWord = (translation, variants, string) => {
         let includes = false;
         translation?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
+        variants?.forEach((word) => {
+            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
+        })
 
         return includes;
     }
-    const getWordImportance = (romaji, translation, string) => {
+    const getWordImportance = (romaji, translation, variants, string) => {
         let matchingScore = 0
         if (romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
         translation?.forEach((word) => {
+            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        });
+        variants?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
         return matchingScore;
@@ -376,14 +386,14 @@ const SidePanel = (props) => {
             (word.collections?.includes(collection) || collection === 0)
             && (levels[level] === word.level || !level || !word.level) 
             && (word.grammar.includes(grammar) || grammar === 0)
-            && (searchThroughWord(word.translationArray, search)
+            && (searchThroughWord(word.translationArray, word.variants, search)
                 || (word.romaji.toLowerCase().includes(search.toLowerCase()))
                 || !search)
         ) {
             if (noWord) setNoWord(false);
             result = {
                 open: true,
-                importance: getWordImportance(word.romaji, word.translationArray, search),
+                importance: getWordImportance(word.romaji, word.translationArray, word.variants, search),
             };
         } else {
             result = {
