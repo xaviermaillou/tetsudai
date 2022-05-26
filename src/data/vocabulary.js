@@ -5375,6 +5375,40 @@ const vocabulary = [
         translation: 'quand',
         grammar: [8],
     },
+    {
+        elements: [
+            {
+                kanji: '時',
+                kana: 'ジ',
+            },
+            {
+                kanji: '間',
+                kana: 'カン',
+            },
+        ],
+        level: 'N5',
+        frequency: 132,
+        romaji: 'jikan',
+        translation: 'temps',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '愛',
+                kana: 'アイ',
+            },
+            {
+                kanji: '湖',
+                kana: 'コ',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'aiko',
+        translation: 'Aiko (nom)',
+        grammar: [2],
+    },
 ];
 
 // Types grammaticaux:

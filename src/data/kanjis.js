@@ -5786,6 +5786,26 @@ const kanjis = [
         romaji: ['goto', 'jo', 'nyo'],
         translation: 'similitude, meilleur',
     },
+    {
+        kanji: '湖',
+        strokes: 12,
+        level: 'N2',
+        frequency: 1344,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'みずうみ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'コ',
+                },
+            ],
+        },
+        romaji: ['mizuumi', 'ko'],
+        translation: 'lac',
+    },
 ];
 
 // Collections:
