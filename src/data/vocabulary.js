@@ -5291,6 +5291,90 @@ const vocabulary = [
         translation: 'ville',
         grammar: [1],
     },
+    {
+        elements: [
+            {
+                kanji: '一',
+                kana: '',
+            },
+            {
+                kanji: '寸',
+                kana: '',
+            },
+        ],
+        jukujikun: 'ちょっと',
+        level: 'N5',
+        frequency: 10000,
+        romaji: 'chotto',
+        translation: 'un peu',
+        grammar: [5],
+    },
+    {
+        elements: [
+            {
+                kanji: '何',
+                kana: '',
+            },
+            {
+                kanji: '時',
+                kana: '',
+            },
+            {
+                kanji: '',
+                kana: 'も',
+            },
+        ],
+        jukujikun: 'いつも',
+        level: 'N5',
+        frequency: 5997,
+        romaji: 'itsumo',
+        translation: 'toujours, tout le temps',
+        grammar: [5],
+    },
+    {
+        elements: [
+            {
+                kanji: '如',
+                kana: '',
+            },
+            {
+                kanji: '何',
+                kana: '',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+            {
+                kanji: '',
+                kana: 'て',
+            },
+        ],
+        jukujikun: 'どうして',
+        level: 'N5',
+        frequency: 10000,
+        romaji: 'doushite',
+        translation: 'pourquoi',
+        grammar: [5],
+    },
+    {
+        elements: [
+            {
+                kanji: '何',
+                kana: '',
+            },
+            {
+                kanji: '時',
+                kana: '',
+            },
+        ],
+        jukujikun: 'いつ',
+        level: 'N5',
+        frequency: 7508,
+        romaji: 'itsu',
+        translation: 'quand',
+        grammar: [8],
+    },
 ];
 
 // Types grammaticaux:

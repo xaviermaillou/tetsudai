@@ -5747,6 +5747,45 @@ const kanjis = [
         romaji: ['mata'],
         translation: 'de plus, ou encore',
     },
+    {
+        kanji: '寸',
+        strokes: 3,
+        level: 'N1',
+        frequency: 1669,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'スン',
+                },
+            ],
+        },
+        romaji: ['sun'],
+        translation: 'mesure, sun (3,03 cm)',
+    },
+    {
+        kanji: '如',
+        strokes: 6,
+        level: 'N1',
+        frequency: 1704,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ごと',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジョ',
+                },
+                {
+                    'kana': 'ニョ',
+                },
+            ],
+        },
+        romaji: ['goto', 'jo', 'nyo'],
+        translation: 'similitude, meilleur',
+    },
 ];
 
 // Collections:
