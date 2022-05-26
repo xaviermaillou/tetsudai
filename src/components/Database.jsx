@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import firebase from '../Firebase';
 import "firebase/firestore";
 import kanjis from '../data/kanjis'
