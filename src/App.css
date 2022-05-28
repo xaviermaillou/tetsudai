@@ -89,6 +89,15 @@ input:focus {
   opacity: 0.25;
 }
 
+#logoContainer.full {
+  width: 32%;
+  opacity: 0.1;
+}
+
+#introText {
+  display: none;
+}
+
 .tooltip {
   font-size: 14px;
   opacity: 0.5;
@@ -429,12 +438,16 @@ input:focus {
   text-align: center;
 }
 #filtersTabs {
+  z-index: 1600;
   opacity: 0;
   pointer-events: none;
 }
 #filtersTabs.open {
-  opacity: 1;
+  opacity: 0.75;
   pointer-events: all;
+}
+#filtersTabs span {
+  width: 33%;
 }
 #wordsListSearchContainer {
   position: relative;
@@ -647,6 +660,22 @@ input:focus {
   #logoContainer {
     width: 3%;
     bottom: 20px;
+  }
+  #logoContainer.full {
+    width: 12%;
+    bottom: 25%;
+    opacity: 0.1;
+  }
+  #introText {
+    width: 30%;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 30px;
+    opacity: 0.5;
+    display: block;
+    position: absolute;
+    left: 20%;
+    top: 40%;
   }
   #kanjiDisplayTranslation, #wordDisplayTranslation {
     font-size: 32px

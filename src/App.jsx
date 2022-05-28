@@ -83,7 +83,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setMenuOpen(true);
-    }, 400);
+    }, 1000);
   }, []);
 
   const checkTrainingFilters = () => {
@@ -173,7 +173,13 @@ function App() {
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
-      <img id="logoContainer" src='/img/main_logo.png' alt='logo' />
+      <img id="logoContainer" className={kanji || word ? '' : 'full'} src='/img/main_logo.png' alt='logo' />
+      {(!kanji && !word) && <div id="introText">
+        <p>
+          Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
+          en lui fournissant un dictionnaire franco-japonais dont le contenu se veut à la fois complet et pertinent.
+        </p>
+      </div>}
       <MainDisplay
         // Displayed element
         kanji={kanji}

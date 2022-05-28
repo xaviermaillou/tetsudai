@@ -1669,7 +1669,7 @@ const kanjis = [
             1,
         ],
         romaji: ['ue', 'a', 'nobo', 'jo', 'jou'],
-        translation: 'le dessus',
+        translation: 'dessus',
     },
     {
         kanji: '下',
@@ -1688,7 +1688,7 @@ const kanjis = [
             1,
         ],
         romaji: ['shita'],
-        translation: 'le dessous',
+        translation: 'dessous',
     },
     {
         kanji: '口',
@@ -5805,6 +5805,209 @@ const kanjis = [
         },
         romaji: ['mizuumi', 'ko'],
         translation: 'lac',
+    },
+    {
+        kanji: '着',
+        strokes: 12,
+        level: 'N4',
+        frequency: 376,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'き',
+                },
+                {
+                    'kana': 'つ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'チャク',
+                },
+                {
+                    'kana': 'ジャク',
+                },
+            ],
+        },
+        romaji: ['ki', 'tsu', 'chaku', 'jaku'],
+        translation: 'porter, mettre',
+    },
+    {
+        kanji: '信',
+        strokes: 9,
+        level: 'N3',
+        frequency: 208,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'シン',
+                },
+            ],
+        },
+        romaji: ['shin'],
+        translation: 'foi, vérité, fidélité',
+    },
+    {
+        kanji: '起',
+        strokes: 10,
+        level: 'N4',
+        frequency: 374,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'お',
+                },
+                {
+                    'kana': 'た',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'キ',
+                },
+            ],
+        },
+        romaji: ['o', 'ta', 'ki'],
+        translation: 'se lever, se réveiller',
+    },
+    {
+        kanji: '掛',
+        strokes: 11,
+        level: 'N3',
+        frequency: 1027,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'か',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カイ',
+                },
+                {
+                    'kana': 'ケイ',
+                },
+            ],
+        },
+        romaji: ['ka', 'kai', 'kei'],
+        translation: 'accrocher, suspendre',
+    },
+    {
+        kanji: '捨',
+        strokes: 11,
+        level: 'N2',
+        frequency: 1266,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'す',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シャ',
+                },
+            ],
+        },
+        romaji: ['su', 'sha'],
+        translation: 'jeter, abandonner, écarter, démissionner',
+    },
+    {
+        kanji: '調',
+        strokes: 15,
+        level: 'N3',
+        frequency: 87,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しら',
+                },
+                {
+                    'kana': 'ととの',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'チョウ',
+                },
+            ],
+        },
+        romaji: ['shira', 'totono', 'cho', 'chou'],
+        translation: 'mélodie, ton, note',
+    },
+    {
+        kanji: '治',
+        strokes: 8,
+        level: 'N3',
+        frequency: 109,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'おさ',
+                },
+                {
+                    'kana': 'なお',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ジ',
+                },
+                {
+                    'kana': 'チ',
+                },
+            ],
+        },
+        romaji: ['osa', 'nao', 'ji', 'chi'],
+        translation: 'règne, être en paix, calme',
+    },
+    {
+        kanji: '喋',
+        strokes: 12,
+        level: null,
+        frequency: 2403,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'しゃべ',
+                },
+                {
+                    'kana': 'ついば',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'チョウ',
+                },
+                {
+                    'kana': 'トウ',
+                },
+            ],
+        },
+        romaji: ['shabe', 'tsuiba', 'cho', 'chou', 'to', 'tou'],
+        translation: 'conversation, discussion',
+    },
+    {
+        kanji: '走',
+        strokes: 7,
+        level: 'N4',
+        frequency: 626,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'はし',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ソウ',
+                },
+            ],
+        },
+        romaji: ['hashi', 'so', 'sou'],
+        translation: 'courir',
     },
 ];
 

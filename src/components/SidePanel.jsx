@@ -146,9 +146,9 @@ const ListHeader = (props) => {
                     <div></div>
                 </div>
                 <div id="filtersTabs" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    <span className={filter === 1 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 1 ? 0 : 1)}>Collection</span>
-                    <span>|</span><span className={filter === 2 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 2 ? 0 : 2)}>JLPT</span><span>|</span>
-                    <span className={filter === 3 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 3 ? 0 : 3)}>Classe</span>
+                    <span className={filter === 1 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 1 ? 0 : 1)}>{collection === 0 ? 'Collection' : collections[collection]}</span>
+                    |<span className={filter === 2 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 2 ? 0 : 2)}>JLPT{level === 0 ? '' : ` ${levels[level]}`}</span>|
+                    <span className={filter === 3 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 3 ? 0 : 3)}>{grammar === 0 ? 'Classe' : pluralClasses[grammar]}</span>
                 </div>
             </div>
             <TrainingModal
@@ -491,7 +491,7 @@ const SidePanel = (props) => {
                 ))}
                 {noWord && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
-            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des filtres<br />pour afficher des résultats</span>}
+            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des filtres<br />pour commencer à explorer</span>}
         </div>
     )
 }

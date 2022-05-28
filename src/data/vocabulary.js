@@ -4059,7 +4059,7 @@ const vocabulary = [
         ],
         level: null,
         frequency: 148,
-        romaji: 'geemu',
+        romaji: 'geimu',
         translation: 'jeu vidéo',
         grammar: [1],
     },
@@ -5408,6 +5408,247 @@ const vocabulary = [
         romaji: 'aiko',
         translation: 'Aiko (nom)',
         grammar: [2],
+    },
+    {
+        elements: [
+            {
+                kanji: '愛',
+                kana: 'アイ',
+            },
+            {
+                kanji: '湖',
+                kana: 'コ',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'aiko',
+        translation: 'Aiko (nom)',
+        grammar: [2],
+    },
+    {
+        elements: [
+            {
+                kanji: '',
+                kana: 'ローマ',
+            },
+            {
+                kanji: '字',
+                kana: 'ジ',
+            },
+        ],
+        level: 'N2',
+        frequency: 9522,
+        romaji: 'roumaji',
+        translation: 'Romaji, écriture latine',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '着',
+                kana: 'き',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 821,
+        romaji: 'kiru',
+        translation: 'porter, mettre',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '信',
+                kana: 'シン',
+            },
+            {
+                kanji: '',
+                kana: 'じ',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N3',
+        frequency: 6172,
+        romaji: 'shinjiru',
+        translation: 'croire, faire confiance',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '起',
+                kana: 'お',
+            },
+            {
+                kanji: '',
+                kana: 'き',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 1346,
+        romaji: 'okiru',
+        translation: 'se lever, se réveiller',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '掛',
+                kana: 'か',
+            },
+            {
+                kanji: '',
+                kana: 'け',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 161,
+        romaji: 'kakeru',
+        translation: 'accrocher, suspendre, mettre, couvrir, étaler',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '捨',
+                kana: 'す',
+            },
+            {
+                kanji: '',
+                kana: 'て',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N4',
+        frequency: 3305,
+        romaji: 'suteru',
+        translation: 'jeter, abandonner, écarter, démissionner',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '調',
+                kana: 'しら',
+            },
+            {
+                kanji: '',
+                kana: 'べ',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N4',
+        frequency: 3467,
+        romaji: 'shiraberu',
+        translation: 'examiner, investiguer, rechercher',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '治',
+                kana: 'なお',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N4',
+        frequency: 10000,
+        romaji: 'naoru',
+        translation: 'aller mieux, se remettre',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '喋',
+                kana: 'しゃべ',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N3',
+        frequency: 8405,
+        romaji: 'shaberu',
+        translation: 'parler, converser, discuter',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '要',
+                kana: 'い',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 10000,
+        romaji: 'iru',
+        translation: 'avoir besoin, vouloir',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '切',
+                kana: 'き',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 1155,
+        romaji: 'kiru',
+        translation: 'couper',
+        grammar: [3],
+    },
+    {
+        elements: [
+            {
+                kanji: '走',
+                kana: 'はし',
+            },
+            {
+                kanji: '',
+                kana: 'る',
+            },
+        ],
+        level: 'N5',
+        frequency: 1100,
+        romaji: 'hashiru',
+        translation: 'courir',
+        grammar: [3],
     },
 ];
 
