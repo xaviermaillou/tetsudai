@@ -100,7 +100,7 @@ input:focus {
 
 .tooltip {
   font-size: 14px;
-  opacity: 0.5;
+  opacity: 0.66;
 }
 
 /* ------------------------------------------------ MAIN DISPLAY ------------------------------------------------ */
@@ -393,7 +393,6 @@ input:focus {
 }
 #wordsListFilterIcon {
   right: 8px;
-  pointer-events: none;
 }
 #wordsListFilterIcon img.focused {
   animation-name: emphasize;
@@ -417,11 +416,15 @@ input:focus {
   justify-content: space-between;
   align-items: center;
 }
-#wordsListFilters span {
-  opacity: 0.5;
+#filtersTip {
+  z-index: 1600;
+  opacity: 0;
 }
-#wordsListFilters span.selected {
+#filtersTip.open {
   opacity: 1;
+}
+#filtersTip div {
+  width: 100%;
 }
 #wordsListFilters img {
   height: 14px
@@ -433,21 +436,32 @@ input:focus {
   padding-bottom: 20px;
   border-radius: 20px;
 }
-#filtersIndicator span {
+#filtersIndicatorsElement, #filtersIndicatorRow {
   width: 90%;
-  text-align: center;
+  overflow-x: hidden;
 }
-#filtersTabs {
-  z-index: 1600;
-  opacity: 0;
-  pointer-events: none;
+#filtersIndicatorsEmpty {
+  opacity: 0.5;
 }
-#filtersTabs.open {
+#filtersIndicatorRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#filtersIndicatorRow span {
   opacity: 0.75;
-  pointer-events: all;
 }
-#filtersTabs span {
-  width: 33%;
+#filtersIndicatorRow img {
+  height: 8px;
+}
+.filtersIndicatorsElement {
+  padding: 0px 5px;
+  display: flex;
+  align-items: baseline;
+}
+.filtersIndicatorsElement span {
+  text-overflow: ellipsis;
+  text-align: right;
 }
 #wordsListSearchContainer {
   position: relative;
@@ -490,27 +504,57 @@ input:focus {
   height: 0vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
-}
-#wordsListTrainingModal {
-  z-index: 1600;
-  top: 75px;
 }
 #wordsListFilterModal {
   z-index: 1500;
   top: 100px;
   padding-top: 20px;
 }
+#wordsListTrainingModal {
+  z-index: 1600;
+  top: 75px;
+  flex-direction: column;
+}
+#wordsListFilterModal div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+#wordsListFilterModal div:nth-child(1) {
+  align-items: flex-start;
+}
+#wordsListFilterModal div:nth-child(1) span {
+  text-align: left;
+}
+#wordsListFilterModal div:nth-child(3) {
+  align-items: flex-end;
+}
+#wordsListFilterModal div:nth-child(3) span {
+  text-align: right;
+}
 #wordsListFilterModal.open, #wordsListTrainingModal.open {
   opacity: 1;
   height: 100vh;
 }
-#wordsListFilterModal span, #wordsListTrainingModal span {
+#wordsListFilterModal span {
   margin-top: 20px;
   opacity: 0.5;
 }
-#wordsListFilterModal span.selected, #wordsListTrainingModal span.selected {
+#wordsListTrainingModalButtons {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#wordsListTrainingModalButtons span {
+  opacity: 0.5;
+}
+#wordsListFilterModal span.selected, #wordsListTrainingModalButtons span.selected {
   opacity: 1;
+}
+#wordsListFilterModal div span:nth-child(1) {
+  opacity: 0.75;
+  margin-bottom: 10px;
 }
 
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
@@ -671,7 +715,7 @@ input:focus {
     text-align: justify;
     font-size: 18px;
     line-height: 30px;
-    opacity: 0.5;
+    opacity: 0.75;
     display: block;
     position: absolute;
     left: 20%;

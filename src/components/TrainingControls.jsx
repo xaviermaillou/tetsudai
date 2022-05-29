@@ -31,9 +31,9 @@ const TrainingControls = (props) => {
                     </span>
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters} className="clickable">
-                    <span>Collection: {collection ? collections[collection] : "Toutes"}</span>
-                    <span>JLPT: {level ? levels[level] : "Tous"}</span>
                     <span>Classe: {grammar ? pluralClasses[grammar] : "Toutes"}</span>
+                    <span>JLPT: {level ? levels[level] : "Tous"}</span>
+                    <span>Collection: {collection ? collections[collection] : "Toutes"}</span>
                 </div>
                 <div id="trainingNext" onClick={randomKanji} className="clickable">
                     <span>

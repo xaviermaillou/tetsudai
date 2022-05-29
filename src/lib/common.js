@@ -5,8 +5,8 @@ export const collections = {
 
 export const classes = {
     0: "Toutes",
-    1: "Nom propre",
-    2: "Nom commun",
+    1: "Nom commun",
+    2: "Nom propre",
     3: "Verbe",
     4: "Adjectif",
     5: "Adverbe",
@@ -20,8 +20,8 @@ export const classes = {
 
 export const pluralClasses = {
     0: "Toutes",
-    1: "Noms propres",
-    2: "Noms communs",
+    1: "Noms communs",
+    2: "Noms propres",
     3: "Verbes",
     4: "Adjectifs",
     5: "Adverbes",

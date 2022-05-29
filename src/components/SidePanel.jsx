@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { classes, pluralClasses, collections, levels } from "../lib/common";
+import { pluralClasses, collections, levels } from "../lib/common";
 
 const TrainingModal = (props) => {
     const {
@@ -16,9 +16,13 @@ const TrainingModal = (props) => {
 
     return (
         <div id="wordsListTrainingModal" className={openTrainingModal ? "open" : ""}>
-            <div className="tooltip">Lancer le mode entraînement pour apprendre et réviser les kanji ou le vocabulaire correspondant aux filtres appliqués</div>
-            <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
-            <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
+            <div className="tooltip">
+                Lancer le mode entraînement pour apprendre et réviser les kanji ou le vocabulaire correspondant aux catégories sélectionnées
+            </div>
+            <div id="wordsListTrainingModalButtons">
+                <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
+                <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
+            </div>
         </div>
     );
 }
@@ -26,8 +30,6 @@ const TrainingModal = (props) => {
 const FilterModal = (props) => {
     const {
         openFilter,
-        filter,
-        setFilter,
         collection,
         setCollection,
         level,
@@ -39,30 +41,29 @@ const FilterModal = (props) => {
 
     const handleClick = (key, filterSetter) => {
         filterSetter(key);
-        setFilter(0);
         setSearchExecuted(true);
     }
 
     return (
         <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
-            {filter === 0 && <>
-                
-            </>}
-            {filter === 1 && <>
-                {Object.values(collections).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected clickable" : "clickable"}>{value}</span>
-                ))}
-            </>}
-            {filter === 2 && <>
-                {Object.values(levels).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value}</span>
-                ))}
-            </>}
-            {filter === 3 && <>
+            <div>
+                <span>Classe grammaticale</span>
                 {Object.values(pluralClasses).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
-            </>}
+            </div>
+            <div>
+                <span>Niveau JLPT</span>
+                {Object.values(levels).map((value, key) => (
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value}</span>
+                ))}
+            </div>
+            <div>
+                <span>Collection</span>
+                {Object.values(collections).map((value, key) => (
+                    <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected clickable" : "clickable"}>{value}</span>
+                ))}
+            </div>
         </div>
     );
 }
@@ -78,7 +79,6 @@ const ListHeader = (props) => {
         filterIndication,
         trainingMode,
         toggleTraining,
-        searchExecuted,
         setSearchExecuted,
     } = props;
 
@@ -89,17 +89,14 @@ const ListHeader = (props) => {
     }
 
     const [openFilter, setOpenFilter] = useState(false);
-    const [filter, setFilter] = useState(0);
     useEffect(() => {
         if (filterIndication) {
             setOpenTrainingModal(false);
-            setFilter(0);
             setOpenFilter(true);
         }
-    }, [filterIndication, filter]);
+    }, [filterIndication]);
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter);
-        setFilter(0);
         setOpenTrainingModal(false);
     }
 
@@ -116,7 +113,11 @@ const ListHeader = (props) => {
                     alt="training"
                 />
             </div>
-            <div id="wordsListFilterIcon">
+            <div
+                id="wordsListFilterIcon"
+                className="clickable"
+                onClick={() => handleFilterIconClick()}
+            >
                 <img
                     className={openFilter ? "open" : ""}
                     src="/img/close.png"
@@ -126,29 +127,48 @@ const ListHeader = (props) => {
             <div id="wordsListFilters">
                 <div
                     id="filtersIndicator"
-                    className="wordsListHeaderRow clickable"
-                    onClick={() => handleFilterIconClick()}
+                    className="wordsListHeaderRow"
                 >
                     <div></div>
-                    {searchExecuted ? 
-                        <span>
+                    {(collection || level || grammar) ? 
+                        /* <span>
                             {grammar || level ? "Eléments" : ""}
                             {level ? ` de niveau ${levels[level]}` : ""}
                             {grammar ? ` étant / contenant un${[6, 9, 10].includes(grammar) ? 'e' : ''} ${classes[grammar].toLowerCase()}` : ""}
                             {!grammar && !level ? "Tous les éléments" : ""}
                             {collection !== 0 && ` dans "${collections[collection]}"`}
-                        </span>
+                        </span> */
+                        <div id="filtersIndicatorRow">
+                            {grammar !==0 &&
+                                <span className="filtersIndicatorsElement">
+                                    <span>{pluralClasses[grammar]}</span>&nbsp;&nbsp;
+                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setGrammar(0)} />
+                                </span>
+                            }
+                            {(level !==0 && grammar !==0) && <span>|</span>}
+                            {level !==0 &&
+                                <span className="filtersIndicatorsElement">
+                                    <span>JLPT {levels[level]}</span>&nbsp;&nbsp;
+                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setLevel(0)} />
+                                </span>
+                            }
+                            {(collection !==0 && level !==0) && <span>|</span>}
+                            {collection !==0 &&
+                                <span className="filtersIndicatorsElement">
+                                    <span>{collections[collection]}</span>&nbsp;&nbsp;
+                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setCollection(0)} />
+                                </span>
+                            }
+                        </div>
                         :
-                        <span>
-                            Aucun filtre appliqué
+                        <span id="filtersIndicatorsEmpty">
+                            Aucune catégorie sélectionnée
                         </span>
                     }
                     <div></div>
                 </div>
-                <div id="filtersTabs" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    <span className={filter === 1 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 1 ? 0 : 1)}>{collection === 0 ? 'Collection' : collections[collection]}</span>
-                    |<span className={filter === 2 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 2 ? 0 : 2)}>JLPT{level === 0 ? '' : ` ${levels[level]}`}</span>|
-                    <span className={filter === 3 ? "selected clickable" : "clickable"} onClick={() => setFilter(filter === 3 ? 0 : 3)}>{grammar === 0 ? 'Classe' : pluralClasses[grammar]}</span>
+                <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
+                    <div className="tooltip">Sélectionnez une catégorie, afin d'en afficher le contenu<br />ou l'appliquer comme filtre de recherche</div>
                 </div>
             </div>
             <TrainingModal
@@ -159,8 +179,6 @@ const ListHeader = (props) => {
             />
             <FilterModal
                 openFilter={openFilter}
-                filter={filter}
-                setFilter={setFilter}
                 collection={collection}
                 setCollection={setCollection}
                 level={level}
@@ -454,7 +472,6 @@ const SidePanel = (props) => {
                 filterIndication={filterIndication}
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
-                searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
@@ -491,7 +508,7 @@ const SidePanel = (props) => {
                 ))}
                 {noWord && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
-            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des filtres<br />pour commencer à explorer</span>}
+            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
         </div>
     )
 }
