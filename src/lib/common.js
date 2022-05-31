@@ -1,10 +1,10 @@
 export const collections = {
-    0: "Toutes",
+    0: "Tous",
     1: "150 kanjis essentiels",
 }
 
 export const classes = {
-    0: "Toutes",
+    0: "Tous",
     1: "Nom commun",
     2: "Nom propre",
     3: "Verbe",
@@ -19,14 +19,14 @@ export const classes = {
 }
 
 export const pluralClasses = {
-    0: "Toutes",
+    0: "Tous",
     1: "Noms communs",
     2: "Noms propres",
     3: "Verbes",
     4: "Adjectifs",
     5: "Adverbes",
     6: "Conjonctions",
-    7: "Adjectifs démonstratifs",
+    7: "Démonstratifs",
     8: "Pronoms",
     9: "Particules",
     10: "Expressions",

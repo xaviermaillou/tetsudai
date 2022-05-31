@@ -25,7 +25,12 @@ const Yomi = (props) => {
                     {example.kana}
                 </span>
                 <div>
-                    {wordExamples.length > 0 && <img className={expanded ? "yomiExpander open" : "yomiExpander"} src="/img/up.png" alt="see all examples" />}
+                    {wordExamples.length > 0 && (
+                        expanded ?
+                            <img className="yomiExpander open" src="/img/less.png" alt="hide readings" />
+                            :
+                            <img className="yomiExpander" src="/img/plus.png" alt="show readings" />
+                    )}
                 </div>
             </div>
             <div className="yomiExamples">

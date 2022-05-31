@@ -168,13 +168,15 @@ function App() {
     }
   }
 
+  const [searchExecuted, setSearchExecuted] = useState(false);
+
   return (
     <div className="App">
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
       <img id="logoContainer" className={kanji || word ? '' : 'full'} src='/img/main_logo.png' alt='logo' />
-      {(!kanji && !word) && <div id="introText">
+      {(!kanji && !word) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
           en lui fournissant un dictionnaire franco-japonais dont le contenu se veut à la fois complet et pertinent.
@@ -231,6 +233,9 @@ function App() {
         // Training mode
         trainingMode={trainingMode}
         toggleTraining={toggleTraining}
+
+        searchExecuted={searchExecuted}
+        setSearchExecuted={setSearchExecuted}
       />
     </div>
   );

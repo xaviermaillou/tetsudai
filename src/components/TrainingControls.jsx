@@ -32,7 +32,7 @@ const TrainingControls = (props) => {
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters} className="clickable">
                     <span>Classe: {grammar ? pluralClasses[grammar] : "Toutes"}</span>
-                    <span>JLPT: {level ? levels[level] : "Tous"}</span>
+                    <span>JLPT: {level ? (levels[level] ? levels[level] : "Aucun") : "Tous"}</span>
                     <span>Collection: {collection ? collections[collection] : "Toutes"}</span>
                 </div>
                 <div id="trainingNext" onClick={randomKanji} className="clickable">

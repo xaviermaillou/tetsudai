@@ -84,14 +84,13 @@ input:focus {
 #logoContainer {
   width: 6%;
   position: absolute;
-  bottom: 20px;
+  top: 10px;
   left: 20px;
   opacity: 0.25;
 }
 
 #logoContainer.full {
-  width: 32%;
-  opacity: 0.1;
+  z-index: 2000;
 }
 
 #introText {
@@ -380,7 +379,7 @@ input:focus {
   justify-content: center;
 }
 #wordsListFilterIcon img {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 #wordsListTrainerIcon img.open {
   opacity: 1;
@@ -507,8 +506,8 @@ input:focus {
 }
 #wordsListFilterModal {
   z-index: 1500;
-  top: 100px;
-  padding-top: 20px;
+  top: 125px;
+  overflow-y: scroll;
 }
 #wordsListTrainingModal {
   z-index: 1600;
@@ -520,24 +519,25 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
-#wordsListFilterModal div:nth-child(1) {
-  align-items: flex-start;
-}
-#wordsListFilterModal div:nth-child(1) span {
-  text-align: left;
-}
-#wordsListFilterModal div:nth-child(3) {
+#wordsListFilterModal div {
+  height: fit-content;
   align-items: flex-end;
+  padding: 0px 5px;
 }
-#wordsListFilterModal div:nth-child(3) span {
+#wordsListFilterModal div span {
   text-align: right;
 }
-#wordsListFilterModal.open, #wordsListTrainingModal.open {
+#wordsListFilterModal.open {
   opacity: 1;
-  height: 100vh;
+  height: calc(100vh - 205px);
+  padding-top: 15px;
+}
+#wordsListTrainingModal.open {
+  opacity: 1;
+  height: calc(100vh - 155px);
 }
 #wordsListFilterModal span {
-  margin-top: 20px;
+  margin-bottom: 20px;
   opacity: 0.5;
 }
 #wordsListTrainingModalButtons {
@@ -553,8 +553,8 @@ input:focus {
   opacity: 1;
 }
 #wordsListFilterModal div span:nth-child(1) {
+  margin-bottom: 30px;
   opacity: 0.75;
-  margin-bottom: 10px;
 }
 
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
@@ -703,6 +703,7 @@ input:focus {
   }
   #logoContainer {
     width: 3%;
+    top: auto;
     bottom: 20px;
   }
   #logoContainer.full {
@@ -720,6 +721,9 @@ input:focus {
     position: absolute;
     left: 20%;
     top: 40%;
+  }
+  #introText.lowOpacity {
+    opacity: 0.25;
   }
   #kanjiDisplayTranslation, #wordDisplayTranslation {
     font-size: 32px
