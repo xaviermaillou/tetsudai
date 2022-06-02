@@ -165,7 +165,7 @@ const ListHeader = (props) => {
                     <div></div>
                 </div>
                 <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    <div className="tooltip">Sélectionnez une catégorie, afin d'en afficher le contenu<br />ou l'appliquer comme filtre de recherche</div>
+                    <div className="tooltip">Sélectionnez les catégories dont vous voulez voir le contenu</div>
                 </div>
             </div>
             <TrainingModal

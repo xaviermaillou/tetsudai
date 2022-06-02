@@ -325,7 +325,6 @@ input:focus {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  opacity: 0.5;
 }
 #trainingClose {
   opacity: 0.5;
@@ -333,13 +332,28 @@ input:focus {
 #trainingFilters {
   width: 16px;
   display: flex;
+  opacity: 0.5;
+}
+#trainingFilters div {
+  width: 50%;
+  display: flex;
   flex-direction: column;
+  padding: 0px 2.5px;
+}
+#trainingFilters div:nth-child(1) {
+  align-items: flex-end;
+}
+#trainingFilters div:nth-child(2) {
+  align-items: flex-start;
 }
 #trainingFilters span {
   white-space: nowrap;
 }
 #controls img {
   height: 20px;
+}
+#trainingNext {
+  opacity: 0.5;
 }
 
 /* ------------------------------------------------ SIDE PANEL ------------------------------------------------ */
@@ -485,6 +499,9 @@ input:focus {
   height: 56px;
   overflow-y: hidden;
 }
+#wordsListSearch input {
+  padding-right: 20px;
+}
 #wordsListSearch img {
   height: 16px;
   position: absolute;
@@ -531,6 +548,7 @@ input:focus {
   opacity: 1;
   height: calc(100vh - 205px);
   padding-top: 15px;
+  padding-bottom: 100px;
 }
 #wordsListTrainingModal.open {
   opacity: 1;
