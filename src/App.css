@@ -82,15 +82,26 @@ input:focus {
 }
 
 #logoContainer {
-  width: 6%;
+  z-index: 1000;
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 24px;
   opacity: 0.25;
+  display: flex;
+  flex-direction: column;
 }
-
 #logoContainer.full {
   z-index: 2000;
+  pointer-events: none;
+}
+#logoContainer.full img:nth-child(1) {
+  opacity: 0;
+}
+#logoContainer.full img:nth-child(3) {
+  opacity: 0;
+}
+#logoContainer img {
+  height: 32px;
 }
 
 #introText {
@@ -358,7 +369,7 @@ input:focus {
 
 /* ------------------------------------------------ SIDE PANEL ------------------------------------------------ */
 
-#wordsListContainer {
+#sidePanel {
   display: flex;
   flex-direction: column;
   z-index: 1100;
@@ -369,7 +380,7 @@ input:focus {
   justify-content: flex-start;
   padding: 24px 24px 24px 24px;
 }
-#wordsListContainer.open {
+#sidePanel.open {
   left: 0vw;
 }
 
@@ -523,20 +534,19 @@ input:focus {
 }
 #wordsListFilterModal {
   z-index: 1500;
-  top: 125px;
+  top: 112px;
   overflow-y: scroll;
 }
 #wordsListTrainingModal {
   z-index: 1600;
   top: 75px;
   flex-direction: column;
+  overflow: hidden;
 }
 #wordsListFilterModal div {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-#wordsListFilterModal div {
   height: fit-content;
   align-items: flex-end;
   padding: 0px 5px;
@@ -558,10 +568,31 @@ input:focus {
   margin-bottom: 20px;
   opacity: 0.5;
 }
+#wordsListTrainingModalScreenshot {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+  opacity: 0.75;
+}
+#wordsListTrainingModalScreenshot img {
+  width: 50%;
+  margin: 0px -18%;
+}
+#wordsListTrainingModalScreenshot img:nth-child(1) {
+  transform: rotate(-15deg);
+}
+#wordsListTrainingModalScreenshot img:nth-child(2) {
+  transform: rotate(0deg);
+}
+#wordsListTrainingModalScreenshot img:nth-child(3) {
+  transform: rotate(15deg);
+}
 #wordsListTrainingModalButtons {
   width: 100%;
+  height: 100px;
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 #wordsListTrainingModalButtons span {
@@ -578,19 +609,20 @@ input:focus {
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
 
 .listIndicator {
-  height: 20px;
-  line-height: 20px;
+  height: 30px;
+  line-height: 30px;
   overflow-y: hidden;
-  opacity: 0.75;
   font-size: 14px;
   position: relative;
-  border-radius: 10px;
+}
+.listIndicator span {
+  opacity: 0.75;
 }
 .listIndicator img {
   height: 12px;
   position: absolute;
   right: 20px;
-  bottom: 4px;
+  bottom: 8px;
 }
 .listIndicator.closed img {
   transform: rotate(180deg);
@@ -610,8 +642,7 @@ input:focus {
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
-  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  opacity: 1;
 }
 .wordsListList.extended {
   height: calc(90vh - 288px);
@@ -621,14 +652,19 @@ input:focus {
   overflow-y: hidden;
   padding: 0;
 }
+.wordsListList.hidden {
+  opacity: 0;
+}
 .importance2 {
   order: 1 !important;
 }
 .importance1 {
   order: 2 !important;
 }
-#kanjisList {
-  margin-bottom: 24px;
+#vocabularyList {
+  margin-top: 33px;
+  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
 .kanjisListElementContainer {
   height: 0px;
@@ -720,16 +756,28 @@ input:focus {
     padding-top: 5vh;
   }
   #logoContainer {
-    width: 3%;
     top: auto;
     bottom: 20px;
+    justify-content: center;
   }
   #logoContainer.full {
-    width: 12%;
-    bottom: 25%;
+    height: 100vh;
     opacity: 0.1;
   }
+  #logoContainer img {
+    height: 48px;
+  }
+  #logoContainer.full img {
+    height: 192px;
+  }
+  #logoContainer.full img:nth-child(1) {
+    opacity: 1;
+  }
+  #logoContainer.full img:nth-child(3) {
+    opacity: 1;
+  }
   #introText {
+    height: 100vh;
     width: 30%;
     text-align: justify;
     font-size: 18px;
@@ -738,7 +786,9 @@ input:focus {
     display: block;
     position: absolute;
     left: 20%;
-    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   #introText.lowOpacity {
     opacity: 0.25;
@@ -789,12 +839,13 @@ input:focus {
   }
   #controls {
     padding: 0vh 0px;
+    justify-content: space-evenly;
   }
-  #wordsListContainer {
+  #sidePanel {
     width: 33vw;
     background: none;
   }
-  #wordsListContainer.open {
+  #sidePanel.open {
     left: 67vw;
   }
   #wordsListSearchContainer {

@@ -5395,23 +5395,6 @@ const vocabulary = [
     {
         elements: [
             {
-                kanji: '愛',
-                kana: 'アイ',
-            },
-            {
-                kanji: '湖',
-                kana: 'コ',
-            },
-        ],
-        level: null,
-        frequency: 10000,
-        romaji: 'aiko',
-        translation: 'Aiko (nom)',
-        grammar: [2],
-    },
-    {
-        elements: [
-            {
                 kanji: '',
                 kana: 'ローマ',
             },
@@ -5687,6 +5670,23 @@ const vocabulary = [
         romaji: 'ouen',
         translation: 'aide, assistance, renfort',
         grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '愛',
+                kana: 'アイ',
+            },
+            {
+                kanji: '子',
+                kana: 'こ',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'aiko',
+        translation: 'Aiko (nom)',
+        grammar: [2],
     },
 ];
 

@@ -146,7 +146,6 @@ function App() {
     } 
     if (type === 2 || trainingMode === 2) {
       setKanji(null);
-      console.log(filteredWords);
       setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
     } 
   }
@@ -175,7 +174,11 @@ function App() {
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
       </div>
-      <img id="logoContainer" className={kanji || word ? '' : 'full'} src='/img/main_logo.png' alt='logo' />
+      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji || word ? 'clickable' : 'full'}>
+        <img src='/img/Logo1.png' alt='logo' />
+        <img src='/img/Logo2.png' alt='logo' />
+        <img src='/img/Logo3.png' alt='logo' />
+      </div>
       {(!kanji && !word) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,

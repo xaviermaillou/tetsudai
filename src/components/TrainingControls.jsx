@@ -24,7 +24,6 @@ const TrainingControls = (props) => {
                 <span className={(displayedElement === 1 && !allDisplayed) ? 'selected clickable' : 'clickable'} onClick={() => changeDisplayedElement(1)}>fr</span>
             </div>
             <div id="controls" >
-                {window.innerWidth >= window.innerHeight && <div></div>}
                 <div id="trainingClose" className="clickable">
                     <span onClick={() => toggleTraining(0)}>
                         <img src="/img/close.png" alt="stop training" />
@@ -47,7 +46,6 @@ const TrainingControls = (props) => {
                         <img src="/img/next.png" alt="random" />
                     </span>
                 </div>
-                {window.innerWidth >= window.innerHeight && <div></div>}
             </div>
         </div>
     );

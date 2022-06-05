@@ -19,6 +19,11 @@ const TrainingModal = (props) => {
             <div className="tooltip">
                 Lancer le mode entraînement pour apprendre et réviser les kanji ou le vocabulaire correspondant aux catégories sélectionnées
             </div>
+            <div id="wordsListTrainingModalScreenshot">
+                <img src="/img/TrainingScreen3.png" alt="training screen" />
+                <img src="/img/TrainingScreen2.png" alt="training screen" />
+                <img src="/img/TrainingScreen.png" alt="training screen" />
+            </div>
             <div id="wordsListTrainingModalButtons">
                 <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
                 <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
@@ -318,8 +323,8 @@ const SidePanel = (props) => {
         setSearchExecuted,
     } = props;
 
-    const [displayKanjis, setDisplayKanjis] = useState(true);
-    const [displayWords, setDisplayWords] = useState(true);
+    const [displayKanjis, setDisplayKanjis] = useState(false);
+    const [displayWords] = useState(true);
 
     const [noKanji, setNoKanji] = useState(true);
     const [noWord, setNoWord] = useState(true);
@@ -342,26 +347,29 @@ const SidePanel = (props) => {
 
     const searchThroughKanji = (vocabulary, romaji, translation, string) => {
         let includes = false;
-        // vocabulary.forEach((word) => {
-        //     if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
-        //     if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
-        // });
         romaji?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
         translation?.forEach((word) => {
             if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
         });
-
+        vocabulary.forEach((word) => {
+            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
+            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
+        });
         return includes;
     }
-    const getKanjiImportance = (romaji, translation, string) => {
+    const getKanjiImportance = (vocabulary, romaji, translation, string) => {
         let matchingScore = 0
         romaji?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
         translation?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
+        });
+        vocabulary.forEach((word) => {
+            if (word.translation.toLowerCase() === string.toLowerCase()) matchingScore ++;
+            if (word.romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
         return matchingScore;
     }
@@ -383,7 +391,7 @@ const SidePanel = (props) => {
             if (noKanji) setNoKanji(false);
             result = {
                 open: true,
-                importance: getKanjiImportance(kanji.romaji, kanji.translationArray, search)
+                importance: getKanjiImportance(kanji.vocabulary, kanji.romaji, kanji.translationArray, search)
             };
         } else {
             result = {
@@ -444,7 +452,7 @@ const SidePanel = (props) => {
     }
 
     return (
-        <div id="wordsListContainer" className={open ? "open" : ""}>
+        <div id="sidePanel" className={open ? "open" : ""}>
             <div id="wordsListSearchContainer">
                 {currentElement && <img id="wordsListOpener" className={open ? "open clickable" : "clickable"} onClick={toggle} src="/img/up.png" alt="see all words" />}
                 <div id="wordsListSearch">
@@ -473,14 +481,23 @@ const SidePanel = (props) => {
                 setSearchExecuted={setSearchExecuted}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
-                Kanji
+                <span>Kanji</span>
                 {displayKanjis ?
                     <img src="/img/less.png" alt="close kanji" />
                     :
                     <img src="/img/plus.png" alt="open kanji" />
                 }
             </span>}
-            <div id="kanjisList" className={(displayKanjis && searchExecuted) ? (displayWords ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
+            <div id="kanjisList" className={searchExecuted ?
+                ((displayKanjis) ?
+                    (displayWords ?
+                        "wordsListList"
+                        :
+                        "extended wordsListList")
+                    :
+                    "closed wordsListList")
+                :
+                "hidden closed wordsListList"}>
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
@@ -493,15 +510,24 @@ const SidePanel = (props) => {
                 ))}
                 {noKanji && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
             </div>
-            {searchExecuted && <span className={displayWords ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayWords(!displayWords)}>
+            {/* searchExecuted && <span className={displayWords ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayWords(!displayWords)}>
                 Vocabulaire
                 {displayWords ?
                     <img src="/img/less.png" alt="close words" />
                     :
                     <img src="/img/plus.png" alt="open words" />
                 }
-            </span>}
-            <div id="vocabularyList" className={(displayWords && searchExecuted) ? (displayKanjis ? "wordsListList" : "extended wordsListList") : "closed wordsListList"}>
+            </span> */}
+            <div id="vocabularyList" className={searchExecuted ?
+                ((displayWords) ?
+                    (displayKanjis ?
+                        "wordsListList"
+                        :
+                        "extended wordsListList")
+                    :
+                    "closed wordsListList")
+                :
+                "hidden closed wordsListList"}>
                 {vocabulary.map((item, i) => (
                     <ListWord
                         word={item}
