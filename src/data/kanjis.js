@@ -186,6 +186,9 @@ const kanjis = [
         readings: {
             kunyomi: [
                 {
+                    'kana': 'や',
+                },
+                {
                     'kana': 'やっ',
                 },
                 {
@@ -204,7 +207,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['yo', 'you', 'hachi'],
+        romaji: ['ya', 'you', 'hachi'],
         translation: 'huit',
     },
     {
@@ -230,7 +233,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['kokono', 'kyu', 'kyuu', 'ku'],
+        romaji: ['kokono', 'kyuu', 'ku'],
         translation: 'neuf',
     },
     {
@@ -249,14 +252,17 @@ const kanjis = [
                     'kana': 'ジュウ',
                 },
                 {
-                    'kana': 'ジュっ',
+                    'kana': 'ジッ',
+                },
+                {
+                    'kana': 'ジュッ',
                 },
             ],
         },
         collections: [
             1,
         ],
-        romaji: ['to', 'tou', 'ju', 'juu'],
+        romaji: ['tou', 'juu'],
         translation: 'dix',
     },
     {
@@ -410,7 +416,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['higashi', 'to', 'tou'],
+        romaji: ['higashi', 'tou'],
         translation: 'Est',
     },
     {
@@ -508,7 +514,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['miyako', 'kyo', 'kyou'],
+        romaji: ['miyako', 'kyou'],
         translation: 'capitale',
     },
     {
@@ -583,7 +589,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['kaze', 'fu', 'fuu'],
+        romaji: ['kaze', 'fuu'],
         translation: 'vent',
     },
     {
@@ -698,7 +704,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['sora', 'ku', 'kuu'],
+        romaji: ['sora', 'kuu'],
         translation: 'ciel',
     },
     {
@@ -921,7 +927,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['yo', 'you'],
+        romaji: ['you'],
         translation: 'jour de la semaine',
     },
     {
@@ -953,7 +959,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['o', 'ou'],
+        romaji: ['ou'],
         translation: 'roi',
     },
     {
@@ -1106,7 +1112,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['tori', 'cho', 'chou'],
+        romaji: ['tori', 'chou'],
         translation: 'oiseau',
     },
     {
@@ -1157,7 +1163,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['i', 'okona', 'ko', 'kou', 'gyo', 'gyou', 'an'],
+        romaji: ['i', 'okona','kou', 'gyou', 'an'],
         translation: 'déplacement, conduite, agissement',
     },
     {
@@ -1177,7 +1183,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['su', 'ju', 'juu'],
+        romaji: ['su', 'juu'],
         translation: 'demeure, résidence',
     },
     {
@@ -1200,7 +1206,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['yasu', 'kyo', 'kyou'],
+        romaji: ['yasu', 'kyou'],
         translation: 'repos',
     },
     {
@@ -1533,7 +1539,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['oshi', 'oso', 'kyo', 'kyou'],
+        romaji: ['oshi', 'oso', 'kyou'],
         translation: 'enseignement, foi, doctrine',
     },
     {
@@ -1590,7 +1596,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['yu', 'yuu'],
+        romaji: ['yuu'],
         translation: 'soirée',
     },
     {
@@ -1668,7 +1674,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['ue', 'a', 'nobo', 'jo', 'jou'],
+        romaji: ['ue', 'a', 'nobo', 'jou'],
         translation: 'dessus',
     },
     {
@@ -1713,7 +1719,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['kuchi', 'guchi', 'ko', 'kou'],
+        romaji: ['kuchi', 'guchi', 'kou'],
         translation: 'bouche',
     },
     {
@@ -1781,7 +1787,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['naka', 'chu', 'chuu'],
+        romaji: ['naka', 'chuu'],
         translation: 'milieu, intérieur',
     },
     {
@@ -2185,7 +2191,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['machi', 'cho', 'chou'],
+        romaji: ['machi', 'chou'],
         translation: 'ville',
     },
     {
@@ -2338,7 +2344,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['hiru', 'chu', 'chuu'],
+        romaji: ['hiru', 'chuu'],
         translation: 'midi',
     },
     {
@@ -2380,7 +2386,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['ko', 'kou'],
+        romaji: ['kou'],
         translation: 'école, examen',
     },
     {
@@ -2464,7 +2470,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['asa', 'cho', 'chou'],
+        romaji: ['asa', 'chou'],
         translation: 'matin, dynastie, époque',
     },
     {
@@ -2812,7 +2818,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['fuyu', 'to', 'tou'],
+        romaji: ['fuyu', 'tou'],
         translation: 'hiver',
     },
     {
@@ -2919,7 +2925,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['ototo', 'otouto', 'tei'],
+        romaji: ['otouto', 'tei'],
         translation: 'frère cadet',
     },
     {
@@ -2965,7 +2971,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['naga', 'cho', 'chou'],
+        romaji: ['naga', 'chou'],
         translation: 'long, chef',
     },
     {
@@ -3037,7 +3043,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['imoto', 'imouto', 'mai'],
+        romaji: ['imouto', 'mai'],
         translation: 'sœur cadette',
     },
     {
@@ -3128,7 +3134,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['aki', 'shu', 'shuu'],
+        romaji: ['aki', 'shuu'],
         translation: 'automne',
     },
     {
@@ -3183,7 +3189,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['ato', 'ushi', 'nochi', 'go', 'ko', 'kou'],
+        romaji: ['ato', 'ushi', 'nochi', 'go', 'kou'],
         translation: 'derrière, après',
     },
     {
@@ -3257,7 +3263,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['shu', 'shuu'],
+        romaji: ['shuu'],
         translation: 'semaine',
     },
     {
@@ -3438,7 +3444,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['aka', 'a', 'mei', 'myo', 'myou'],
+        romaji: ['aka', 'a', 'mei', 'myou'],
         translation: 'clarté',
     },
     {
@@ -3626,7 +3632,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['yo', 'you'],
+        romaji: ['you'],
         translation: 'océan, étranger',
     },
     {
@@ -3646,7 +3652,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['shima', 'to', 'tou'],
+        romaji: ['shima', 'tou'],
         translation: 'île',
     },
     {
@@ -3691,7 +3697,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['miya', 'kyu', 'kyuu', 'gu', 'guu', 'ku', 'kuu'],
+        romaji: ['miya', 'kyuu', 'guu', 'ku', 'kuu'],
         translation: 'sanctuaire shintoïste, palais',
     },
     {
@@ -3824,7 +3830,7 @@ const kanjis = [
         collections: [
             1,
         ],
-        romaji: ['tomo', 'yu', 'yuu'],
+        romaji: ['tomo', 'yuu'],
         translation: 'ami',
     },
     {
@@ -3879,7 +3885,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['aso', 'yu', 'yuu'],
+        romaji: ['aso', 'yuu'],
         translation: 'jeu, jouer',
     },
     {
@@ -3922,7 +3928,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['no', 'sho', 'shou', 'jo', 'jou'],
+        romaji: ['no', 'shou', 'jou'],
         translation: 'à bord, puissance, multiplication',
     },
     {
@@ -3968,7 +3974,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['ta', 'ritsu', 'ryu', 'ryuu', 'rittoru'],
+        romaji: ['ta', 'ritsu', 'ryuu', 'rittoru'],
         translation: 'debout, s\'ériger',
     },
     {
@@ -3988,7 +3994,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['iso', 'kyu', 'kyuu'],
+        romaji: ['iso', 'kyuu'],
         translation: 'urgence, soudain',
     },
     {
@@ -4074,7 +4080,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['ka', 'masa', 'sho', 'shou'],
+        romaji: ['ka', 'masa', 'shou'],
         translation: 'victoire, excellence',
     },
     {
@@ -4301,7 +4307,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['tsuyo', 'kyo', 'kyou'],
+        romaji: ['tsuyo', 'kyou'],
         translation: 'force',
     },
     {
@@ -4442,7 +4448,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['isoga', 'sewa', 'bo', 'bou', 'mo', 'mou'],
+        romaji: ['isoga', 'sewa', 'bou', 'mou'],
         translation: 'occupé, affairé, agité',
     },
     {
@@ -4574,7 +4580,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['a', 'to', 'tou'],
+        romaji: ['a', 'tou'],
         translation: 'juste, dans le mille',
     },
     {
@@ -4614,7 +4620,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['take', 'jo', 'jou'],
+        romaji: ['take', 'jou'],
         translation: 'longueur, ten shaku (mesure)',
     },
     {
@@ -5173,7 +5179,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['shizu', 'sei', 'jo', 'jou'],
+        romaji: ['shizu', 'sei', 'jou'],
         translation: 'calme',
     },
     {
@@ -5202,7 +5208,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['yasa', 'sugu', 'masa', 'yu', 'yuu', 'u'],
+        romaji: ['yasa', 'sugu', 'masa', 'yuu', 'u'],
         translation: 'tendresse, gentillesse, supériorité',
     },
     {
@@ -5245,7 +5251,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['i', 'kaname', 'yo', 'you'],
+        romaji: ['i', 'kaname', 'you'],
         translation: 'besoin, point principal, essence',
     },
     {
@@ -5314,7 +5320,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['hachi', 'ho', 'hou'],
+        romaji: ['hachi', 'hou'],
         translation: 'abeille, guêpe',
     },
     {
@@ -5376,7 +5382,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['na', 'sei', 'jo', 'jou'],
+        romaji: ['na', 'sei', 'jou'],
         translation: 'se transformer, devenir, croissance',
     },
     {
@@ -5399,7 +5405,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['a', 'yu', 'yuu', 'u'],
+        romaji: ['a', 'yuu', 'u'],
         translation: 'posséder, exister, avoir lieu',
     },
     {
@@ -5448,7 +5454,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['yo', 'i', 'ryo', 'ryou'],
+        romaji: ['yo', 'i', 'ryou'],
         translation: 'bien, plaisant, habile',
     },
     {
@@ -5491,7 +5497,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['waza', 'gyo', 'gyou', 'go', 'gou'],
+        romaji: ['waza', 'gyou', 'gou'],
         translation: 'affaire, vocation, art',
     },
     {
@@ -5526,7 +5532,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['sona', 'tomo', 'domo', 'kyo', 'kyou', 'ku', 'kuu', 'gu'],
+        romaji: ['sona', 'tomo', 'domo', 'kyou', 'ku', 'kuu', 'gu'],
         translation: 'offrir, soumettre, accompagner',
     },
     {
@@ -5594,7 +5600,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['a', 'go', 'gou', 'gatsu', 'katsu'],
+        romaji: ['a', 'gou', 'gatsu', 'katsu'],
         translation: 'correspondre, convenir, joindre',
     },
     {
@@ -5712,7 +5718,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['hito', 'nado', 'ra', 'to', 'tou'],
+        romaji: ['hito', 'nado', 'ra', 'tou'],
         translation: 'semblable, etc, et ainsi de suite',
     },
     {
@@ -5934,7 +5940,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['shira', 'totono', 'cho', 'chou'],
+        romaji: ['shira', 'totono', 'chou'],
         translation: 'mélodie, ton, note',
     },
     {
@@ -5986,7 +5992,7 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['shabe', 'tsuiba', 'cho', 'chou', 'to', 'tou'],
+        romaji: ['shabe', 'tsuiba', 'chou', 'tou'],
         translation: 'conversation, discussion',
     },
     {
@@ -6006,8 +6012,87 @@ const kanjis = [
                 },
             ],
         },
-        romaji: ['hashi', 'so', 'sou'],
+        romaji: ['hashi', 'sou'],
         translation: 'courir',
+    },
+    {
+        kanji: '習',
+        strokes: 11,
+        level: 'N4',
+        frequency: 706,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'なら',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シュウ',
+                },
+                {
+                    'kana': 'ジュ',
+                },
+            ],
+        },
+        romaji: ['nara', 'shuu', 'ju'],
+        translation: 'apprendre',
+    },
+    {
+        kanji: '者',
+        strokes: 8,
+        level: 'N4',
+        frequency: 38,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'もの',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シャ',
+                },
+            ],
+        },
+        romaji: ['mono', 'sha'],
+        translation: 'quelqu\'un, personne, individu',
+    },
+    {
+        kanji: '応',
+        strokes: 7,
+        level: 'N1',
+        frequency: 266,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'あた',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'オウ',
+                },
+            ],
+        },
+        romaji: ['ata', 'ou'],
+        translation: 'postuler, réponse, oui, accepter',
+    },
+    {
+        kanji: '援',
+        strokes: 12,
+        level: 'N1',
+        frequency: 312,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'エン',
+                },
+            ],
+        },
+        romaji: ['en'],
+        translation: 'renfort, aide, assistance',
     },
 ];
 

@@ -5633,6 +5633,61 @@ const vocabulary = [
         translation: 'courir',
         grammar: [3],
     },
+    {
+        elements: [
+            {
+                kanji: '学',
+                kana: 'ガク',
+            },
+            {
+                kanji: '習',
+                kana: 'シュウ',
+            },
+        ],
+        level: 'N3',
+        frequency: 2238,
+        romaji: 'gakushuu',
+        translation: 'étude, apprentissage, tutoriel',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '学',
+                kana: 'ガク',
+            },
+            {
+                kanji: '習',
+                kana: 'シュウ',
+            },
+            {
+                kanji: '者',
+                kana: 'シャ',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'gakushuusha',
+        translation: 'étudiant, apprenti',
+        grammar: [1],
+    },
+    {
+        elements: [
+            {
+                kanji: '応',
+                kana: 'オウ',
+            },
+            {
+                kanji: '援',
+                kana: 'エン',
+            },
+        ],
+        level: 'N2',
+        frequency: 3295,
+        romaji: 'ouen',
+        translation: 'aide, assistance, renfort',
+        grammar: [1],
+    },
 ];
 
 // Types grammaticaux:
