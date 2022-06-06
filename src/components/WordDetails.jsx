@@ -42,14 +42,17 @@ const Kanji = (props) => {
 }
 
 const Sentence = (props) => {
-    const { sentence } = props;
+    const {
+        sentence,
+        changeCurrentWordById
+    } = props;
 
 
     return (
         <div className="sentencesElement">
             <div>
                 {sentence.fullSentence.elements.map((element, i) => (
-                    <span key={i}>{element.word}</span>
+                    <span onClick={() => changeCurrentWordById(element.id)} className="clickable" key={i}>{element.word}</span>
                 ))}
             </div>
             <div className="sentencesElementTranslation">{sentence.fullSentence.translation}</div>
@@ -64,7 +67,9 @@ const WordDetails = (props) => {
         allDisplayed,
         expanded,
         changeCurrentKanjiByKanji,
+        changeCurrentWordById,
     } = props;
+
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="wordDetailsKanjis">
@@ -76,15 +81,18 @@ const WordDetails = (props) => {
                         key={i}
                     />
                 ))}
+                {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
             </div>
             <div id="wordDetailsSentences">
                 <p className="kanasReadingsHeader">PHRASES</p>
                 {sentences?.map((sentence, i) => (
                     <Sentence
                         sentence={sentence}
+                        changeCurrentWordById={changeCurrentWordById}
                         key={i}
                     />
                 ))}
+                {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
             </div>
         </div>
     );

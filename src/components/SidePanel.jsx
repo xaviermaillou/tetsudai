@@ -268,9 +268,9 @@ const ListWord = (props) => {
     return (
         <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open` : "vocabularyListElementContainer open") : "vocabularyListElementContainer"} >
             <div 
-                className={(currentElement && currentElement.doc.id === word.doc.id) ?
+                className={(currentElement && currentElement.id === word.id) ?
                     "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
-                onClick={() => clickHandle(word.doc.id)}
+                onClick={() => clickHandle(word.id)}
             >
                 {word.jukujikun ?
                     <div className="vocabularyListElementJapaneseJukujikun">

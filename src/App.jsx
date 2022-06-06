@@ -172,7 +172,7 @@ function App() {
 
   const changeCurrentWordById = (id) => {
     setKanji(null);
-    setWord(vocabularyWithRelated.find((item) => item.doc.id === id));
+    setWord(vocabularyWithRelated.find((item) => item.id === id));
   }
 
   const [trainingMode, setTrainingMode] = useState(0);

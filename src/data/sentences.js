@@ -56,6 +56,10 @@ const sentences = [
                 id: 262,
             },
             {
+                word: 'は',
+                id: 278,
+            },
+            {
                 word: '飲食店',
                 id: 103,
             },
