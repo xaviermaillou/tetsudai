@@ -181,7 +181,7 @@ input:focus {
 
 /* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
 
-#kanas, #kanjis {
+#kanas, #wordDetails {
   z-index: 900;
   height: 24vh;
   width: 67.5%;
@@ -190,8 +190,16 @@ input:focus {
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
 }
-#kanas.expanded, #kanjis.expanded {
+#kanas.expanded, #wordDetails.expanded {
   height: 48vh;
+}
+#wordDetails {
+  display: flex;
+  flex-direction: column;
+}
+#wordDetailsKanjis, #wordDetailsSentences {
+  width: 100%;
+  text-align: left;
 }
 #kanasExamples {
   padding: 0px 20px;
@@ -268,7 +276,6 @@ input:focus {
 }
 .kanjisElement {
   display: flex;
-  padding: 0px 20px;
 }
 .kanjisElementKanji {
   width: 25%;
@@ -292,6 +299,10 @@ input:focus {
 }
 .kanjisListTranslation {
   opacity: 0.5;
+}
+.sentencesElement {
+  font-size: 32px;
+  opacity: 0.66;
 }
 
 /* ------------------------------------------------ TRAINING CONTROLS ------------------------------------------------ */
@@ -663,6 +674,7 @@ input:focus {
 }
 #vocabularyList {
   margin-top: 33px;
+  padding-top: 8%;
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
@@ -796,15 +808,24 @@ input:focus {
   #kanjiDisplayTranslation, #wordDisplayTranslation {
     font-size: 32px
   }
-  #kanas, #kanjis {
+  #kanas, #wordDetails {
     height: 32vh;
     font-size: 28px;
   }
-  #kanjis {
-    width: 33.75%;
-  }
-  #kanas.expanded, #kanjis.expanded {
+  #kanas.expanded, #wordDetails.expanded {
     height: calc(46vh - (2vw - 50px));
+  }
+  #wordDetails {
+    flex-direction: row;
+  }
+  #wordDetailsKanjis, #wordDetailsSentences {
+    width: 50%;
+  }
+  #wordDetailsSentences {
+    text-align: right;
+  }
+  .kanjisElement {
+    padding-right: 20px;
   }
   #kanasExamples {
     display: flex;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import KanaReadings from "./KanaReadings";
-import WordKanjis from "./WordKanjis";
+import WordDetails from "./WordDetails";
 import TrainingControls from "./TrainingControls";
 import { classes } from "../lib/common";
 
@@ -71,8 +71,9 @@ const MainDisplay = (props) => {
                     <p id="wordDisplayGrammar" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                         {word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}
                     </p>
-                    <WordKanjis
+                    <WordDetails
                         elements={word.elements.filter((element) => element.details)}
+                        sentences={word.sentences}
                         allDisplayed={allDisplayed}
                         expanded={!!!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}

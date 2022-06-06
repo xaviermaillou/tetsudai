@@ -11,9 +11,10 @@ import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
 function App() {
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
+  const [sentencesList, setSentencesList] = useState([]);
 
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
-  const [vocabularyWithKanjis, setVocabularyWithKanjis] = useState([]);
+  const [vocabularyWithRelated, setVocabularyWithRelated] = useState([]);
 
   useEffect(() => {
     // Fetching kanjis
@@ -34,6 +35,14 @@ function App() {
       const sortedByFrecuencyData = data?.sort((a, b) => a.frequency - b.frequency);
       setVocabularyList(sortByObjectKey(sortedByFrecuencyData, levels));
     });
+    // Fetching sentences
+    firebase.firestore().collection('Sentences').onSnapshot((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        doc,
+      }));
+      setSentencesList(data);
+    });
   }, []);
 
   useEffect(() => {
@@ -44,6 +53,7 @@ function App() {
       kanji.vocabulary = [];
       kanji.grammar = [];
       vocabularyListCopy.forEach((word) => {
+        word.sentences = [];
         word.translationArray = cutStringToArray(word.translation);
         word.elements.every((element) => {
           if (kanji.kanji === element.kanji) {
@@ -54,11 +64,21 @@ function App() {
           }
           return true;
         });
+        sentencesList.forEach((sentence) => {
+          sentence.elements.forEach((element) => {
+            if (element.id === word.id) {
+              word.sentences.push({
+                commonWord: element,
+                fullSentence: sentence
+              });
+            }
+          });
+        });
       });
     });
     setKanjisWithVocabulary(kanjisListCopy);
-    setVocabularyWithKanjis(vocabularyListCopy);
-  }, [kanjisList, vocabularyList]);
+    setVocabularyWithRelated(vocabularyListCopy);
+  }, [kanjisList, vocabularyList, sentencesList]);
 
   // useEffect(() => {
   //   const vocabularyListCopy = [ ...vocabularyList ];
@@ -67,7 +87,7 @@ function App() {
   //       element.details = kanjisList.find((kanji) => kanji.kanji === element.kanji);
   //     });
   //   });
-  //   setVocabularyWithKanjis(vocabularyListCopy);
+  //   setVocabularyWithRelated(vocabularyListCopy);
   // }, [kanjisList, vocabularyList]);
 
   const [kanji, setKanji] = useState(null);
@@ -104,7 +124,7 @@ function App() {
   }
 
   const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
-  const [filteredWords, setFilteredWords] = useState([...vocabularyWithKanjis])
+  const [filteredWords, setFilteredWords] = useState([...vocabularyWithRelated])
 
   useEffect(() => {
     const kanjisListCopy = [];
@@ -118,7 +138,7 @@ function App() {
         kanjisListCopy.push(kanji)
       }
     });
-    vocabularyWithKanjis.forEach((word) => {
+    vocabularyWithRelated.forEach((word) => {
       if (
         (word.collections?.includes(collection) || collection === 0)
         && (levels[level] === word.level || !level)
@@ -129,7 +149,7 @@ function App() {
     });
     setFilteredKanjis(kanjisListCopy);
     setFilteredWords(vocabularyListCopy);
-  }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithKanjis]);
+  }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithRelated]);
 
   const changeCurrentKanjiById = (id) => {
     setWord(null);
@@ -152,7 +172,7 @@ function App() {
 
   const changeCurrentWordById = (id) => {
     setKanji(null);
-    setWord(vocabularyWithKanjis.find((item) => item.doc.id === id));
+    setWord(vocabularyWithRelated.find((item) => item.doc.id === id));
   }
 
   const [trainingMode, setTrainingMode] = useState(0);
@@ -172,7 +192,7 @@ function App() {
   return (
     <div className="App">
       <div id="header">
-        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} />
+        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} sentencesList={sentencesList} />
       </div>
       <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji || word ? 'clickable' : 'full'}>
         <img src='/img/Logo1.png' alt='logo' />
@@ -211,7 +231,7 @@ function App() {
       <SidePanel 
         // Content
         kanjis={kanjisWithVocabulary}
-        vocabulary={vocabularyWithKanjis}
+        vocabulary={vocabularyWithRelated}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
 

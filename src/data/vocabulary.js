@@ -6027,8 +6027,41 @@ const vocabulary = [
         level: 'N5',
         frequency: 1066,
         romaji: 'watashi',
-        translation: 'Je, moi',
+        translation: 'je, moi',
         grammar: [8],
+    },
+    {
+        id: 330,
+        elements: [
+            {
+                kanji: '',
+                kana: 'フランス',
+            },
+            {
+                kanji: '人',
+                kana: 'ジン',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'furansujin',
+        translation: 'Français (personne)',
+        grammar: [1],
+    },
+    {
+        id: 331,
+        elements: [
+            {
+                kanji: '仏蘭西',
+                kana: '',
+            },
+        ],
+        jukujikun: 'フランス',
+        level: null,
+        frequency: 142,
+        romaji: 'furansu',
+        translation: 'France',
+        grammar: [2],
     },
 ];
 
