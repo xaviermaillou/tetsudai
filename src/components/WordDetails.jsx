@@ -47,9 +47,12 @@ const Sentence = (props) => {
 
     return (
         <div className="sentencesElement">
-            {sentence.fullSentence.elements.map((element, i) => (
-                <span key={i}>{element.word}</span>
-            ))}
+            <div>
+                {sentence.fullSentence.elements.map((element, i) => (
+                    <span key={i}>{element.word}</span>
+                ))}
+            </div>
+            <div className="sentencesElementTranslation">{sentence.fullSentence.translation}</div>
         </div>
     );
 }
@@ -65,7 +68,7 @@ const WordDetails = (props) => {
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="wordDetailsKanjis">
-                <p className="kanasReadingsHeader">KANJIS</p>
+                <p className="kanasReadingsHeader">KANJI</p>
                 {elements?.map((element, i) => (
                     <Kanji
                         element={element}

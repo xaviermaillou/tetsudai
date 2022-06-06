@@ -6063,6 +6063,20 @@ const vocabulary = [
         translation: 'France',
         grammar: [2],
     },
+    {
+        id: 332,
+        elements: [
+            {
+                kanji: '犬',
+                kana: 'いぬ',
+            },
+        ],
+        level: 'N5',
+        frequency: 1762,
+        romaji: 'inu',
+        translation: 'chien',
+        grammar: [1],
+    },
 ];
 
 // Types grammaticaux:

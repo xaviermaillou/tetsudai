@@ -197,12 +197,14 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
+#wordDetailsSentences {
+  margin-top: 20px;
+}
 #wordDetailsKanjis, #wordDetailsSentences {
   width: 100%;
   text-align: left;
 }
 #kanasExamples {
-  padding: 0px 20px;
   justify-content: space-between;
 }
 #kunyomiExamples, #onyomiExamples {
@@ -218,6 +220,7 @@ input:focus {
   opacity: 1;
 }
 .yomiHeader {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -275,6 +278,7 @@ input:focus {
   opacity: 0.5;
 }
 .kanjisElement {
+  margin-top: 10px;
   display: flex;
 }
 .kanjisElementKanji {
@@ -301,8 +305,11 @@ input:focus {
   opacity: 0.5;
 }
 .sentencesElement {
-  font-size: 32px;
-  opacity: 0.66;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.sentencesElementTranslation {
+  opacity: 0.5;
 }
 
 /* ------------------------------------------------ TRAINING CONTROLS ------------------------------------------------ */
@@ -822,12 +829,14 @@ input:focus {
     width: 50%;
   }
   #wordDetailsSentences {
+    margin-top: 0px;
     text-align: right;
   }
   .kanjisElement {
     padding-right: 20px;
   }
   #kanasExamples {
+    padding: 0px 20px;
     display: flex;
   }
   #kunyomiExamples, #onyomiExamples {
