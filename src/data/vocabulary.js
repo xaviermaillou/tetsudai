@@ -1,5 +1,6 @@
 const vocabulary = [
     {
+        id: 1,
         elements: [
             {
                 kanji: '母',
@@ -21,6 +22,7 @@ const vocabulary = [
         grammar: [10],
     },
     {
+        id: 2,
         elements: [
             {
                 kanji: '日',
@@ -42,6 +44,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 3,
         elements: [
             {
                 kanji: '月',
@@ -63,6 +66,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 4,
         elements: [
             {
                 kanji: '火',
@@ -84,6 +88,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 5,
         elements: [
             {
                 kanji: '水',
@@ -105,6 +110,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 6,
         elements: [
             {
                 kanji: '木',
@@ -126,6 +132,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 7,
         elements: [
             {
                 kanji: '金',
@@ -147,6 +154,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 8,
         elements: [
             {
                 kanji: '土',
@@ -168,6 +176,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 9,
         elements: [
             {
                 kanji: '日',
@@ -185,6 +194,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 10,
         elements: [
             {
                 kanji: '食',
@@ -206,6 +216,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 11,
         elements: [
             {
                 kanji: '食',
@@ -227,6 +238,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 12,
         elements: [
             {
                 kanji: '飲',
@@ -244,6 +256,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 13,
         elements: [
             {
                 kanji: '飲',
@@ -265,6 +278,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 14,
         elements: [
             {
                 kanji: '薬',
@@ -282,6 +296,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 15,
         elements: [
             {
                 kanji: '',
@@ -299,6 +314,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 16,
         elements: [
             {
                 kanji: '夕',
@@ -316,6 +332,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 17,
         elements: [
             {
                 kanji: '夕',
@@ -333,6 +350,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 18,
         elements: [
             {
                 kanji: '火',
@@ -350,6 +368,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 19,
         elements: [
             {
                 kanji: '大',
@@ -367,6 +386,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 20,
         elements: [
             {
                 kanji: '学',
@@ -384,6 +404,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 21,
         elements: [
             {
                 kanji: '学',
@@ -401,6 +422,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 22,
         elements: [
             {
                 kanji: '先',
@@ -418,6 +440,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 23,
         elements: [
             {
                 kanji: '花',
@@ -435,6 +458,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 24,
         elements: [
             {
                 kanji: '一',
@@ -452,6 +476,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 25,
         elements: [
             {
                 kanji: '二',
@@ -469,6 +494,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 26,
         elements: [
             {
                 kanji: '三',
@@ -486,6 +512,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 27,
         elements: [
             {
                 kanji: '四',
@@ -503,6 +530,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 28,
         elements: [
             {
                 kanji: '五',
@@ -520,6 +548,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 29,
         elements: [
             {
                 kanji: '六',
@@ -537,6 +566,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 30,
         elements: [
             {
                 kanji: '七',
@@ -554,6 +584,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 31,
         elements: [
             {
                 kanji: '八',
@@ -571,6 +602,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 32,
         elements: [
             {
                 kanji: '九',
@@ -588,6 +620,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 33,
         elements: [
             {
                 kanji: '十',
@@ -605,6 +638,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 34,
         elements: [
             {
                 kanji: '十',
@@ -626,6 +660,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 35,
         elements: [
             {
                 kanji: '十',
@@ -647,6 +682,7 @@ const vocabulary = [
         grammar: [1],
         },
     {
+        id: 36,
         elements: [
             {
                 kanji: '分',
@@ -668,6 +704,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 37,
         elements: [
             {
                 kanji: '天',
@@ -685,6 +722,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 38,
         elements: [
             {
                 kanji: '行',
@@ -702,6 +740,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 39,
         elements: [
             {
                 kanji: '住',
@@ -719,6 +758,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 40,
         elements: [
             {
                 kanji: '休',
@@ -736,6 +776,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 41,
         elements: [
             {
                 kanji: '来',
@@ -753,6 +794,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 42,
         elements: [
             {
                 kanji: '見',
@@ -770,6 +812,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 43,
         elements: [
             {
                 kanji: '聞',
@@ -787,6 +830,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 44,
         elements: [
             {
                 kanji: '言',
@@ -804,6 +848,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 45,
         elements: [
             {
                 kanji: '話',
@@ -821,6 +866,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 46,
         elements: [
             {
                 kanji: '話',
@@ -834,6 +880,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 47,
         elements: [
             {
                 kanji: '語',
@@ -851,6 +898,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 48,
         elements: [
             {
                 kanji: '',
@@ -868,6 +916,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 49,
         elements: [
             {
                 kanji: '英',
@@ -885,6 +934,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 50,
         elements: [
             {
                 kanji: '読',
@@ -902,6 +952,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 51,
         elements: [
             {
                 kanji: '書',
@@ -919,6 +970,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 52,
         elements: [
             {
                 kanji: '知',
@@ -936,6 +988,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 53,
         elements: [
             {
                 kanji: '思',
@@ -953,6 +1006,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 54,
         elements: [
             {
                 kanji: '教',
@@ -974,6 +1028,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 55,
         elements: [
             {
                 kanji: '歩',
@@ -991,6 +1046,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 56,
         elements: [
             {
                 kanji: '入',
@@ -1008,6 +1064,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 57,
         elements: [
             {
                 kanji: '大',
@@ -1029,6 +1086,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 58,
         elements: [
             {
                 kanji: '小',
@@ -1050,6 +1108,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 59,
         elements: [
             {
                 kanji: '白',
@@ -1067,6 +1126,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 60,
         elements: [
             {
                 kanji: '黒',
@@ -1084,6 +1144,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 61,
         elements: [
             {
                 kanji: '古',
@@ -1101,6 +1162,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 62,
         elements: [
             {
                 kanji: '安',
@@ -1118,6 +1180,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 63,
         elements: [
             {
                 kanji: '早',
@@ -1135,6 +1198,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 64,
         elements: [
             {
                 kanji: '好',
@@ -1152,6 +1216,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 65,
         elements: [
             {
                 kanji: '学',
@@ -1169,6 +1234,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 66,
         elements: [
             {
                 kanji: '高',
@@ -1186,6 +1252,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 67,
         elements: [
             {
                 kanji: '帰',
@@ -1203,6 +1270,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 68,
         elements: [
             {
                 kanji: '買',
@@ -1220,6 +1288,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 69,
         elements: [
             {
                 kanji: '新',
@@ -1241,6 +1310,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 70,
         elements: [
             {
                 kanji: '楽',
@@ -1262,6 +1332,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 71,
         elements: [
             {
                 kanji: '電',
@@ -1279,6 +1350,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 72,
         elements: [
             {
                 kanji: '電',
@@ -1296,6 +1368,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 73,
         elements: [
             {
                 kanji: '会',
@@ -1313,6 +1386,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 74,
         elements: [
             {
                 kanji: '出',
@@ -1334,6 +1408,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 75,
         elements: [
             {
                 kanji: '会',
@@ -1351,6 +1426,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 76,
         elements: [
             {
                 kanji: '会',
@@ -1368,6 +1444,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 77,
         elements: [
             {
                 kanji: '文',
@@ -1385,6 +1462,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 78,
         elements: [
             {
                 kanji: '文',
@@ -1402,6 +1480,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 79,
         elements: [
             {
                 kanji: '下',
@@ -1419,6 +1498,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 80,
         elements: [
             {
                 kanji: '町',
@@ -1436,6 +1516,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 81,
         elements: [
             {
                 kanji: '上',
@@ -1457,6 +1538,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 82,
         elements: [
             {
                 kanji: '上',
@@ -1474,6 +1556,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 83,
         elements: [
             {
                 kanji: '上',
@@ -1491,6 +1574,7 @@ const vocabulary = [
         grammar: [1, 4],
     },
     {
+        id: 84,
         elements: [
             {
                 kanji: '上',
@@ -1513,6 +1597,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 85,
         elements: [
             {
                 kanji: '東',
@@ -1530,6 +1615,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 86,
         elements: [
             {
                 kanji: '関',
@@ -1547,6 +1633,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 87,
         elements: [
             {
                 kanji: '北',
@@ -1568,6 +1655,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 88,
         elements: [
             {
                 kanji: '飲',
@@ -1585,6 +1673,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 89,
         elements: [
             {
                 kanji: '空',
@@ -1602,6 +1691,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 90,
         elements: [
             {
                 kanji: '中',
@@ -1619,6 +1709,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 91,
         elements: [
             {
                 kanji: '今',
@@ -1636,6 +1727,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 92,
         elements: [
             {
                 kanji: '音',
@@ -1653,6 +1745,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 93,
         elements: [
             {
                 kanji: '雪',
@@ -1670,6 +1763,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 94,
         elements: [
             {
                 kanji: '外',
@@ -1687,6 +1781,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 95,
         elements: [
             {
                 kanji: '外',
@@ -1708,6 +1803,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 96,
         elements: [
             {
                 kanji: '愛',
@@ -1729,6 +1825,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 97,
         elements: [
             {
                 kanji: '愛',
@@ -1746,6 +1843,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 98,
         elements: [
             {
                 kanji: '海',
@@ -1763,6 +1861,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 99,
         elements: [
             {
                 kanji: '今',
@@ -1780,6 +1879,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 100,
         elements: [
             {
                 kanji: '出',
@@ -1797,6 +1897,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 101,
         elements: [
             {
                 kanji: '入',
@@ -1814,6 +1915,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 102,
         elements: [
             {
                 kanji: '白',
@@ -1831,6 +1933,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 103,
         elements: [
             {
                 kanji: '飲',
@@ -1852,6 +1955,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 104,
         elements: [
             {
                 kanji: '明',
@@ -1873,6 +1977,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 105,
         elements: [
             {
                 kanji: '説',
@@ -1890,6 +1995,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 106,
         elements: [
             {
                 kanji: '暗',
@@ -1907,6 +2013,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 107,
         elements: [
             {
                 kanji: '開',
@@ -1924,6 +2031,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 108,
         elements: [
             {
                 kanji: '開',
@@ -1945,6 +2053,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 109,
         elements: [
             {
                 kanji: '朝',
@@ -1962,6 +2071,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 110,
         elements: [
             {
                 kanji: '朝',
@@ -1983,6 +2093,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 111,
         elements: [
             {
                 kanji: '昼',
@@ -2000,6 +2111,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 112,
         elements: [
             {
                 kanji: '昼',
@@ -2021,6 +2133,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 113,
         elements: [
             {
                 kanji: '毎',
@@ -2038,6 +2151,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 114,
         elements: [
             {
                 kanji: '毎',
@@ -2055,6 +2169,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 115,
         elements: [
             {
                 kanji: '毎',
@@ -2072,6 +2187,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 116,
         elements: [
             {
                 kanji: '毎',
@@ -2089,6 +2205,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 117,
         elements: [
             {
                 kanji: '日',
@@ -2106,6 +2223,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 118,
         elements: [
             {
                 kanji: '男',
@@ -2127,6 +2245,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 119,
         elements: [
             {
                 kanji: '女',
@@ -2148,6 +2267,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 120,
         elements: [
             {
                 kanji: '暗',
@@ -2165,6 +2285,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 121,
         elements: [
             {
                 kanji: '半',
@@ -2182,6 +2303,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 122,
         elements: [
             {
                 kanji: '漢',
@@ -2199,6 +2321,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 123,
         elements: [
             {
                 kanji: '訓',
@@ -2220,6 +2343,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 124,
         elements: [
             {
                 kanji: '音',
@@ -2241,6 +2365,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 125,
         elements: [
             {
                 kanji: '言',
@@ -2258,6 +2383,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 126,
         elements: [
             {
                 kanji: '彼',
@@ -2275,6 +2401,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 127,
         elements: [
             {
                 kanji: '彼',
@@ -2288,6 +2415,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 128,
         elements: [
             {
                 kanji: '一',
@@ -2305,6 +2433,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 129,
         elements: [
             {
                 kanji: '二',
@@ -2322,6 +2451,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 130,
         elements: [
             {
                 kanji: '名',
@@ -2339,6 +2469,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 131,
         elements: [
             {
                 kanji: '名',
@@ -2356,6 +2487,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 132,
         elements: [
             {
                 kanji: '',
@@ -2373,6 +2505,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 133,
         elements: [
             {
                 kanji: '',
@@ -2390,6 +2523,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 134,
         elements: [
             {
                 kanji: '果',
@@ -2407,6 +2541,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 135,
         elements: [
             {
                 kanji: '果',
@@ -2428,6 +2563,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 136,
         elements: [
             {
                 kanji: '果',
@@ -2449,6 +2585,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 137,
         elements: [
             {
                 kanji: '菓',
@@ -2466,6 +2603,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 138,
         elements: [
             {
                 kanji: '汁',
@@ -2483,6 +2621,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 139,
         elements: [
             {
                 kanji: '',
@@ -2496,6 +2635,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 140,
         elements: [
             {
                 kanji: '',
@@ -2509,6 +2649,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 141,
         elements: [
             {
                 kanji: '',
@@ -2522,6 +2663,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 142,
         elements: [
             {
                 kanji: '',
@@ -2535,6 +2677,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 143,
         elements: [
             {
                 kanji: '',
@@ -2548,6 +2691,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 144,
         elements: [
             {
                 kanji: '西',
@@ -2565,6 +2709,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 145,
         elements: [
             {
                 kanji: '今',
@@ -2578,6 +2723,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 146,
         elements: [
             {
                 kanji: '前',
@@ -2591,6 +2737,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 147,
         elements: [
             {
                 kanji: '後',
@@ -2604,6 +2751,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 148,
         elements: [
             {
                 kanji: '間',
@@ -2617,6 +2765,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 149,
         elements: [
             {
                 kanji: '大',
@@ -2634,6 +2783,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 150,
         elements: [
             {
                 kanji: '広',
@@ -2651,6 +2801,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 151,
         elements: [
             {
                 kanji: '川',
@@ -2668,6 +2819,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 152,
         elements: [
             {
                 kanji: '宮',
@@ -2685,6 +2837,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 153,
         elements: [
             {
                 kanji: '松',
@@ -2702,6 +2855,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 154,
         elements: [
             {
                 kanji: '遊',
@@ -2719,6 +2873,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 155,
         elements: [
             {
                 kanji: '寝',
@@ -2736,6 +2891,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 156,
         elements: [
             {
                 kanji: '乗',
@@ -2753,6 +2909,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 157,
         elements: [
             {
                 kanji: '待',
@@ -2770,6 +2927,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 158,
         elements: [
             {
                 kanji: '国',
@@ -2787,6 +2945,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 159,
         elements: [
             {
                 kanji: '立',
@@ -2804,6 +2963,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 160,
         elements: [
             {
                 kanji: '急',
@@ -2821,6 +2981,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 161,
         elements: [
             {
                 kanji: '死',
@@ -2838,6 +2999,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 162,
         elements: [
             {
                 kanji: '売',
@@ -2855,6 +3017,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 163,
         elements: [
             {
                 kanji: '売',
@@ -2872,6 +3035,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 164,
         elements: [
             {
                 kanji: '探',
@@ -2889,6 +3053,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 165,
         elements: [
             {
                 kanji: '勝',
@@ -2906,6 +3071,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 166,
         elements: [
             {
                 kanji: '勝',
@@ -2923,6 +3089,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 167,
         elements: [
             {
                 kanji: '泳',
@@ -2940,6 +3107,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 168,
         elements: [
             {
                 kanji: '天',
@@ -2957,6 +3125,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 169,
         elements: [
             {
                 kanji: '願',
@@ -2974,6 +3143,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 170,
         elements: [
             {
                 kanji: '願',
@@ -2991,6 +3161,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 171,
         elements: [
             {
                 kanji: '宜',
@@ -3012,6 +3183,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 172,
         elements: [
             {
                 kanji: '宜',
@@ -3033,6 +3205,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 173,
         elements: [
             {
                 kanji: '初',
@@ -3050,6 +3223,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 174,
         elements: [
             {
                 kanji: '初',
@@ -3071,6 +3245,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 175,
         elements: [
             {
                 kanji: '勉',
@@ -3088,6 +3263,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 176,
         elements: [
             {
                 kanji: '勉',
@@ -3109,6 +3285,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 177,
         elements: [
             {
                 kanji: '強',
@@ -3130,6 +3307,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 178,
         elements: [
             {
                 kanji: '強',
@@ -3151,6 +3329,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 179,
         elements: [
             {
                 kanji: '強',
@@ -3168,6 +3347,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 180,
         elements: [
             {
                 kanji: '神',
@@ -3185,6 +3365,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 181,
         elements: [
             {
                 kanji: '',
@@ -3202,6 +3383,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 182,
         elements: [
             {
                 kanji: '忙',
@@ -3219,6 +3401,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 183,
         elements: [
             {
                 kanji: '映',
@@ -3236,6 +3419,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 184,
         elements: [
             {
                 kanji: '映',
@@ -3257,6 +3441,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 185,
         elements: [
             {
                 kanji: '山',
@@ -3274,6 +3459,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 186,
         elements: [
             {
                 kanji: '山',
@@ -3291,6 +3477,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 187,
         elements: [
             {
                 kanji: '田',
@@ -3308,6 +3495,7 @@ const vocabulary = [
         grammar: [2],
     },
     {
+        id: 188,
         elements: [
             {
                 kanji: '本',
@@ -3325,6 +3513,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 189,
         elements: [
             {
                 kanji: '最',
@@ -3342,6 +3531,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 190,
         elements: [
             {
                 kanji: '大',
@@ -3359,6 +3549,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 191,
         elements: [
             {
                 kanji: '大',
@@ -3380,6 +3571,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 192,
         elements: [
             {
                 kanji: '',
@@ -3401,6 +3593,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 193,
         elements: [
             {
                 kanji: '皆',
@@ -3422,6 +3615,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 194,
         elements: [
             {
                 kanji: '暑',
@@ -3439,6 +3633,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 195,
         elements: [
             {
                 kanji: '熱',
@@ -3456,6 +3651,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 196,
         elements: [
             {
                 kanji: '寒',
@@ -3473,6 +3669,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 197,
         elements: [
             {
                 kanji: '迚',
@@ -3490,6 +3687,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 198,
         elements: [
             {
                 kanji: '若',
@@ -3507,6 +3705,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 199,
         elements: [
             {
                 kanji: '若',
@@ -3524,6 +3723,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 200,
         elements: [
             {
                 kanji: '幾',
@@ -3541,6 +3741,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 201,
         elements: [
             {
                 kanji: '幾',
@@ -3558,6 +3759,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 202,
         elements: [
             {
                 kanji: '難',
@@ -3579,6 +3781,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 203,
         elements: [
             {
                 kanji: '簡',
@@ -3596,6 +3799,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 204,
         elements: [
             {
                 kanji: '多',
@@ -3613,6 +3817,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 205,
         elements: [
             {
                 kanji: '誰',
@@ -3626,6 +3831,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 206,
         elements: [
             {
                 kanji: '誰',
@@ -3643,6 +3849,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 207,
         elements: [
             {
                 kanji: '',
@@ -3660,6 +3867,7 @@ const vocabulary = [
         grammar: [7],
     },
     {
+        id: 208,
         elements: [
             {
                 kanji: '',
@@ -3677,6 +3885,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 209,
         elements: [
             {
                 kanji: '',
@@ -3694,6 +3903,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 210,
         elements: [
             {
                 kanji: '',
@@ -3711,6 +3921,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 211,
         elements: [
             {
                 kanji: '',
@@ -3728,6 +3939,7 @@ const vocabulary = [
         grammar: [7],
     },
     {
+        id: 212,
         elements: [
             {
                 kanji: '',
@@ -3745,6 +3957,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 213,
         elements: [
             {
                 kanji: '',
@@ -3762,6 +3975,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 214,
         elements: [
             {
                 kanji: '',
@@ -3779,6 +3993,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 215,
         elements: [
             {
                 kanji: '',
@@ -3796,6 +4011,7 @@ const vocabulary = [
         grammar: [7],
     },
     {
+        id: 216,
         elements: [
             {
                 kanji: '',
@@ -3813,6 +4029,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 217,
         elements: [
             {
                 kanji: '',
@@ -3830,6 +4047,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 218,
         elements: [
             {
                 kanji: '',
@@ -3851,6 +4069,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 219,
         elements: [
             {
                 kanji: '',
@@ -3868,6 +4087,7 @@ const vocabulary = [
         grammar: [7],
     },
     {
+        id: 220,
         elements: [
             {
                 kanji: '',
@@ -3885,6 +4105,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 221,
         elements: [
             {
                 kanji: '',
@@ -3902,6 +4123,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 222,
         elements: [
             {
                 kanji: '',
@@ -3919,6 +4141,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 223,
         elements: [
             {
                 kanji: '面',
@@ -3940,6 +4163,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 224,
         elements: [
             {
                 kanji: '単',
@@ -3957,6 +4181,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 225,
         elements: [
             {
                 kanji: '一',
@@ -3974,6 +4199,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 226,
         elements: [
             {
                 kanji: '余',
@@ -3991,6 +4217,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 227,
         elements: [
             {
                 kanji: '事',
@@ -4004,6 +4231,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 228,
         elements: [
             {
                 kanji: '全',
@@ -4021,6 +4249,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 229,
         elements: [
             {
                 kanji: '趣',
@@ -4038,6 +4267,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 230,
         elements: [
             {
                 kanji: '',
@@ -4051,6 +4281,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 231,
         elements: [
             {
                 kanji: '',
@@ -4064,6 +4295,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 232,
         elements: [
             {
                 kanji: '',
@@ -4077,6 +4309,7 @@ const vocabulary = [
         grammar: [6],
     },
     {
+        id: 233,
         elements: [
             {
                 kanji: '',
@@ -4090,6 +4323,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 234,
         elements: [
             {
                 kanji: '',
@@ -4103,6 +4337,7 @@ const vocabulary = [
         grammar: [6],
     },
     {
+        id: 235,
         elements: [
             {
                 kanji: '',
@@ -4116,6 +4351,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 236,
         elements: [
             {
                 kanji: '大',
@@ -4133,6 +4369,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 237,
         elements: [
             {
                 kanji: '部',
@@ -4150,6 +4387,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 238,
         elements: [
             {
                 kanji: '静',
@@ -4167,6 +4405,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 239,
         elements: [
             {
                 kanji: '優',
@@ -4188,6 +4427,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 240,
         elements: [
             {
                 kanji: '必',
@@ -4205,6 +4445,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 241,
         elements: [
             {
                 kanji: '勿',
@@ -4222,6 +4463,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 242,
         elements: [
             {
                 kanji: '蜂',
@@ -4235,6 +4477,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 243,
         elements: [
             {
                 kanji: '買',
@@ -4256,6 +4499,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 244,
         elements: [
             {
                 kanji: '会',
@@ -4277,6 +4521,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 245,
         elements: [
             {
                 kanji: '仕',
@@ -4294,6 +4539,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 246,
         elements: [
             {
                 kanji: '閉',
@@ -4315,6 +4561,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 247,
         elements: [
             {
                 kanji: '閉',
@@ -4336,6 +4583,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 248,
         elements: [
             {
                 kanji: '閉',
@@ -4357,6 +4605,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 249,
         elements: [
             {
                 kanji: '閉',
@@ -4374,6 +4623,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 250,
         elements: [
             {
                 kanji: '',
@@ -4387,6 +4637,7 @@ const vocabulary = [
         grammar: [10],
     },
     {
+        id: 251,
         elements: [
             {
                 kanji: '',
@@ -4414,6 +4665,7 @@ const vocabulary = [
         grammar: [11],
     },
     {
+        id: 252,
         elements: [
             {
                 kanji: '有',
@@ -4431,6 +4683,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 253,
         elements: [
             {
                 kanji: '居',
@@ -4448,6 +4701,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 254,
         elements: [
             {
                 kanji: '成',
@@ -4465,6 +4719,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 255,
         elements: [
             {
                 kanji: '良',
@@ -4482,6 +4737,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 256,
         elements: [
             {
                 kanji: '良',
@@ -4499,6 +4755,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 257,
         elements: [
             {
                 kanji: '後',
@@ -4516,6 +4773,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 258,
         elements: [
             {
                 kanji: '後',
@@ -4529,6 +4787,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 259,
         elements: [
             {
                 kanji: '授',
@@ -4546,6 +4805,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 260,
         elements: [
             {
                 kanji: '食',
@@ -4563,6 +4823,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 261,
         elements: [
             {
                 kanji: '子',
@@ -4580,6 +4841,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 262,
         elements: [
             {
                 kanji: '友',
@@ -4597,6 +4859,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 263,
         elements: [
             {
                 kanji: '今',
@@ -4615,6 +4878,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 264,
         elements: [
             {
                 kanji: '明',
@@ -4633,6 +4897,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 265,
         elements: [
             {
                 kanji: '昨',
@@ -4651,6 +4916,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 266,
         elements: [
             {
                 kanji: '今',
@@ -4669,6 +4935,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 267,
         elements: [
             {
                 kanji: '大',
@@ -4687,6 +4954,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 268,
         elements: [
             {
                 kanji: '小',
@@ -4708,6 +4976,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 269,
         elements: [
             {
                 kanji: '中',
@@ -4729,6 +4998,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 270,
         elements: [
             
             {
@@ -4747,6 +5017,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 271,
         elements: [
             
             {
@@ -4773,6 +5044,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 272,
         elements: [
             
             {
@@ -4799,6 +5071,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 273,
         elements: [
             
             {
@@ -4821,6 +5094,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 274,
         elements: [
             {
                 kanji: '美',
@@ -4847,6 +5121,7 @@ const vocabulary = [
         grammar: [4],
     },
     {
+        id: 275,
         elements: [
             {
                 kanji: '為',
@@ -4864,6 +5139,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 276,
         elements: [
             {
                 kanji: '',
@@ -4877,6 +5153,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 277,
         elements: [
             {
                 kanji: '',
@@ -4890,6 +5167,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 278,
         elements: [
             {
                 kanji: '',
@@ -4903,6 +5181,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 279,
         elements: [
             {
                 kanji: '',
@@ -4916,6 +5195,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 280,
         elements: [
             {
                 kanji: '',
@@ -4929,6 +5209,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 281,
         elements: [
             {
                 kanji: '',
@@ -4942,6 +5223,7 @@ const vocabulary = [
         grammar: [9, 6],
     },
     {
+        id: 282,
         elements: [
             {
                 kanji: '年',
@@ -4955,6 +5237,7 @@ const vocabulary = [
         grammar: [1, 5],
     },
     {
+        id: 283,
         elements: [
             {
                 kanji: '',
@@ -4968,6 +5251,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 284,
         elements: [
             {
                 kanji: '月',
@@ -4981,6 +5265,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 285,
         elements: [
             {
                 kanji: '',
@@ -4994,6 +5279,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 286,
         elements: [
             {
                 kanji: '',
@@ -5007,6 +5293,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 287,
         elements: [
             {
                 kanji: '日',
@@ -5020,6 +5307,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 288,
         elements: [
             {
                 kanji: '',
@@ -5033,6 +5321,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 289,
         elements: [
             {
                 kanji: '等',
@@ -5046,6 +5335,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 290,
         elements: [
             {
                 kanji: '為',
@@ -5059,6 +5349,7 @@ const vocabulary = [
         grammar: [1, 5],
     },
     {
+        id: 291,
         elements: [
             {
                 kanji: '人',
@@ -5072,6 +5363,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 292,
         elements: [
             {
                 kanji: '迄',
@@ -5085,6 +5377,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 293,
         elements: [
             {
                 kanji: '',
@@ -5098,6 +5391,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 294,
         elements: [
             {
                 kanji: '',
@@ -5111,6 +5405,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 295,
         elements: [
             {
                 kanji: '又',
@@ -5124,6 +5419,7 @@ const vocabulary = [
         grammar: [5, 6],
     },
     {
+        id: 296,
         elements: [
             {
                 kanji: '行',
@@ -5141,6 +5437,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 297,
         elements: [
             {
                 kanji: '出',
@@ -5162,6 +5459,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 298,
         elements: [
             {
                 kanji: '駅',
@@ -5175,6 +5473,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 299,
         elements: [
             {
                 kanji: '国',
@@ -5188,6 +5487,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 300,
         elements: [
             {
                 kanji: '',
@@ -5201,6 +5501,7 @@ const vocabulary = [
         grammar: [9],
     },
     {
+        id: 301,
         elements: [
             {
                 kanji: '時',
@@ -5214,6 +5515,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 302,
         elements: [
             {
                 kanji: '会',
@@ -5227,6 +5529,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 303,
         elements: [
             {
                 kanji: '語',
@@ -5240,6 +5543,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 304,
         elements: [
             {
                 kanji: '車',
@@ -5253,6 +5557,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 305,
         elements: [
             {
                 kanji: '川',
@@ -5266,6 +5571,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 306,
         elements: [
             {
                 kanji: '',
@@ -5279,6 +5585,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 307,
         elements: [
             {
                 kanji: '町',
@@ -5292,6 +5599,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 308,
         elements: [
             {
                 kanji: '一',
@@ -5310,6 +5618,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 309,
         elements: [
             {
                 kanji: '何',
@@ -5332,6 +5641,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 310,
         elements: [
             {
                 kanji: '如',
@@ -5358,6 +5668,7 @@ const vocabulary = [
         grammar: [5],
     },
     {
+        id: 311,
         elements: [
             {
                 kanji: '何',
@@ -5376,6 +5687,7 @@ const vocabulary = [
         grammar: [8],
     },
     {
+        id: 312,
         elements: [
             {
                 kanji: '時',
@@ -5393,6 +5705,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 313,
         elements: [
             {
                 kanji: '',
@@ -5410,6 +5723,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 314,
         elements: [
             {
                 kanji: '着',
@@ -5427,6 +5741,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 315,
         elements: [
             {
                 kanji: '信',
@@ -5448,6 +5763,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 316,
         elements: [
             {
                 kanji: '起',
@@ -5469,6 +5785,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 317,
         elements: [
             {
                 kanji: '掛',
@@ -5490,6 +5807,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 318,
         elements: [
             {
                 kanji: '捨',
@@ -5511,6 +5829,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 319,
         elements: [
             {
                 kanji: '調',
@@ -5532,6 +5851,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 320,
         elements: [
             {
                 kanji: '治',
@@ -5549,6 +5869,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 321,
         elements: [
             {
                 kanji: '喋',
@@ -5566,6 +5887,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 322,
         elements: [
             {
                 kanji: '要',
@@ -5583,6 +5905,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 323,
         elements: [
             {
                 kanji: '切',
@@ -5600,6 +5923,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 324,
         elements: [
             {
                 kanji: '走',
@@ -5617,6 +5941,7 @@ const vocabulary = [
         grammar: [3],
     },
     {
+        id: 325,
         elements: [
             {
                 kanji: '学',
@@ -5634,6 +5959,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 326,
         elements: [
             {
                 kanji: '学',
@@ -5655,6 +5981,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 327,
         elements: [
             {
                 kanji: '応',
@@ -5672,6 +5999,7 @@ const vocabulary = [
         grammar: [1],
     },
     {
+        id: 328,
         elements: [
             {
                 kanji: '愛',
@@ -5687,6 +6015,20 @@ const vocabulary = [
         romaji: 'aiko',
         translation: 'Aiko (nom)',
         grammar: [2],
+    },
+    {
+        id: 329,
+        elements: [
+            {
+                kanji: '私',
+                kana: 'わたし',
+            },
+        ],
+        level: 'N5',
+        frequency: 1066,
+        romaji: 'watashi',
+        translation: 'Je, moi',
+        grammar: [8],
     },
 ];
 
