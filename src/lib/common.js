@@ -16,6 +16,8 @@ export const classes = {
     9: "Particule",
     10: "Expression",
     11: "Copule",
+    12: "Nombre",
+    13: "Suffixe",
 }
 
 export const pluralClasses = {
@@ -31,6 +33,8 @@ export const pluralClasses = {
     9: "Particules",
     10: "Expressions",
     11: "Copule",
+    12: "Nombres",
+    13: "Suffixes",
 }
 
 export const levels = {

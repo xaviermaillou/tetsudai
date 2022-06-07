@@ -6077,6 +6077,328 @@ const vocabulary = [
         translation: 'chien',
         grammar: [1],
     },
+    {
+        id: 333,
+        elements: [
+            {
+                kanji: '',
+                kana: 'ゆっくり',
+            },
+        ],
+        level: 'N5',
+        frequency: 8815,
+        romaji: 'yukkuri',
+        translation: 'lentement',
+        grammar: [5],
+    },
+    {
+        id: 334,
+        elements: [
+            {
+                kanji: '確',
+                kana: 'しっか',
+            },
+            {
+                kanji: '',
+                kana: 'り',
+            },
+        ],
+        level: 'N4',
+        frequency: 10000,
+        romaji: 'shikkari',
+        translation: 'fermement',
+        grammar: [5],
+    },
+    {
+        id: 335,
+        elements: [
+            {
+                kanji: '',
+                kana: 'きちんと',
+            },
+        ],
+        level: 'N3',
+        frequency: 10000,
+        romaji: 'kichinto',
+        translation: 'soigneusement, précisément',
+        grammar: [5],
+    },
+    {
+        id: 336,
+        elements: [
+            {
+                kanji: '',
+                kana: 'さん',
+            },
+        ],
+        level: 'N1',
+        frequency: 10000,
+        romaji: 'san',
+        translation: 'M., Mme',
+        grammar: [13],
+    },
+    {
+        id: 337,
+        elements: [
+            {
+                kanji: '',
+                kana: 'もっと',
+            },
+        ],
+        level: 'N5',
+        frequency: 4906,
+        romaji: 'motto',
+        translation: 'encore plus',
+        grammar: [5],
+    },
+    {
+        id: 338,
+        elements: [
+            {
+                kanji: '可',
+                kana: 'カ',
+            },
+            {
+                kanji: '也',
+                kana: 'なり',
+            },
+        ],
+        level: 'N3',
+        frequency: 10000,
+        romaji: 'kanari',
+        translation: 'assez, plutôt, considérablement',
+        grammar: [5],
+    },
+    {
+        id: 339,
+        elements: [
+            {
+                kanji: '沢',
+                kana: 'タク',
+            },
+            {
+                kanji: '山',
+                kana: 'サン',
+            },
+        ],
+        level: 'N5',
+        frequency: 6294,
+        romaji: 'takusan',
+        translation: 'beaucoup',
+        grammar: [5],
+    },
+    {
+        id: 340,
+        elements: [
+            {
+                kanji: '一',
+                kana: 'イッ',
+            },
+            {
+                kanji: '杯',
+                kana: 'パイ',
+            },
+        ],
+        level: 'N4',
+        frequency: 7171,
+        romaji: 'ippai',
+        translation: 'pleinement, beaucoup, plein, un verre (d\'alcool)',
+        grammar: [5, 4, 1],
+    },
+    {
+        id: 341,
+        elements: [
+            {
+                kanji: '少',
+                kana: 'すこ',
+            },
+            {
+                kanji: '',
+                kana: 'し',
+            },
+        ],
+        level: 'N5',
+        frequency: 2947,
+        romaji: 'sukoshi',
+        translation: 'un peu',
+        grammar: [5],
+    },
+    {
+        id: 342,
+        elements: [
+            {
+                kanji: '本',
+                kana: 'ホン',
+            },
+        ],
+        level: 'N5',
+        frequency: 217,
+        romaji: 'hon',
+        translation: 'livre',
+        grammar: [1],
+    },
+    {
+        id: 343,
+        elements: [
+            {
+                kanji: '',
+                kana: 'ずっと',
+            },
+        ],
+        level: 'N3',
+        frequency: 6108,
+        romaji: 'zutto',
+        translation: 'constamment',
+        grammar: [5],
+    },
+    {
+        id: 344,
+        elements: [
+            {
+                kanji: '直',
+                kana: 'す',
+            },
+            {
+                kanji: '',
+                kana: 'ぐ',
+            },
+        ],
+        level: 'N1',
+        frequency: 10000,
+        romaji: 'sugu',
+        translation: 'immédiatement, d\'un coup, directement',
+        grammar: [5],
+    },
+    {
+        id: 345,
+        elements: [
+            {
+                kanji: '間',
+                kana: 'ま',
+            },
+            {
+                kanji: '',
+                kana: 'も',
+            },
+            {
+                kanji: '',
+                kana: 'な',
+            },
+            {
+                kanji: '',
+                kana: 'く',
+            },
+        ],
+        level: 'N2',
+        frequency: 10000,
+        romaji: 'mamonaku',
+        translation: 'bientôt, sous peu',
+        grammar: [5],
+    },
+    {
+        id: 346,
+        elements: [
+            {
+                kanji: '時',
+                kana: 'とき',
+            },
+            {
+                kanji: '々',
+                kana: 'どき',
+            },
+        ],
+        level: 'N5',
+        frequency: 7982,
+        romaji: 'tokidoki',
+        translation: 'de temps en temps',
+        grammar: [5, 1],
+    },
+    {
+        id: 347,
+        elements: [
+            {
+                kanji: '良',
+                kana: 'よ',
+            },
+            {
+                kanji: '',
+                kana: 'く',
+            },
+        ],
+        level: 'N5',
+        frequency: 10000,
+        romaji: 'yoku',
+        translation: 'correctement, souvent',
+        grammar: [5],
+    },
+    {
+        id: 348,
+        elements: [
+            {
+                kanji: '側',
+                kana: 'そば',
+            },
+        ],
+        level: 'N5',
+        frequency: 1756,
+        romaji: 'soba',
+        translation: 'à côté, proche',
+        grammar: [1],
+    },
+    {
+        id: 349,
+        elements: [
+            {
+                kanji: '遂',
+                kana: 'つい',
+            },
+            {
+                kanji: '',
+                kana: 'に',
+            },
+        ],
+        level: 'N3',
+        frequency: 2456,
+        romaji: 'tsuini',
+        translation: 'finalement, enfin',
+        grammar: [5],
+    },
+    {
+        id: 350,
+        elements: [
+            {
+                kanji: '',
+                kana: 'バカンス',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'bakansu',
+        translation: 'vacances',
+        grammar: [1],
+    },
+    {
+        id: 351,
+        elements: [
+            {
+                kanji: '本',
+                kana: 'ホン',
+            },
+            {
+                kanji: '当',
+                kana: 'トウ',
+            },
+            {
+                kanji: '',
+                kana: 'に',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'hontouni',
+        translation: 'vraiment',
+        grammar: [5],
+    },
 ];
 
 // Types grammaticaux:
@@ -6091,6 +6413,8 @@ const vocabulary = [
 // 9 - particule
 // 10 - expression
 // 11 - copule
+// 12 - numérique
+// 13 - suffixe
 
 
 export default vocabulary;

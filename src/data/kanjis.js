@@ -6094,6 +6094,230 @@ const kanjis = [
         romaji: ['en'],
         translation: 'renfort, aide, assistance',
     },
+    {
+        kanji: '確',
+        strokes: 15,
+        level: 'N3',
+        frequency: 252,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'たし',
+                },
+                {
+                    'kana': 'しっか',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'カク',
+                },
+                {
+                    'kana': 'コウ',
+                },
+            ],
+        },
+        romaji: ['tashi', 'shikka', 'kaku', 'kou'],
+        translation: 'certitude, confirmation, évident',
+    },
+    {
+        kanji: '可',
+        strokes: 5,
+        level: null,
+        frequency: 314,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'カ',
+                },
+                {
+                    'kana': 'コク',
+                },
+            ],
+        },
+        romaji: ['ka', 'koku'],
+        translation: 'possible, acceptable',
+    },
+    {
+        kanji: '也',
+        strokes: 3,
+        level: 'N1',
+        frequency: 1404,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'なり',
+                },
+                {
+                    'kana': 'か',
+                },
+                {
+                    'kana': 'また',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ヤ',
+                },
+            ],
+        },
+        romaji: ['nari', 'ka', 'mata', 'ya'],
+        translation: 'être',
+    },
+    {
+        kanji: '沢',
+        strokes: 7,
+        level: 'N1',
+        frequency: 296,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さわ',
+                },
+                {
+                    'kana': 'うるお',
+                },
+                {
+                    'kana': 'つや',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'タク',
+                },
+            ],
+        },
+        romaji: ['sawa', 'uruo', 'tsuya', 'taku'],
+        translation: 'marais, abondance',
+    },
+    {
+        kanji: '杯',
+        strokes: 8,
+        level: 'N3',
+        frequency: 1235,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'さかずき',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ハイ',
+                },
+                {
+                    'kana': 'パイ',
+                },
+            ],
+        },
+        romaji: ['sakazuki', 'hai', 'pai'],
+        translation: 'verre, compteur de verres',
+    },
+    {
+        kanji: '少',
+        strokes: 4,
+        level: 'N4',
+        frequency: 287,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'すく',
+                },
+                {
+                    'kana': 'すこ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショウ',
+                },
+            ],
+        },
+        romaji: ['suku', 'suko', 'shou'],
+        translation: 'un peu',
+    },
+    {
+        kanji: '直',
+        strokes: 8,
+        level: 'N3',
+        frequency: 246,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ただ',
+                },
+                {
+                    'kana': 'なお',
+                },
+                {
+                    'kana': 'す',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'チョク',
+                },
+                {
+                    'kana': 'ジキ',
+                },
+                {
+                    'kana': 'ジカ',
+                },
+            ],
+        },
+        romaji: ['tada', 'nao', 'su', 'choku', 'jiki', 'jika'],
+        translation: 'directement, honnêteté, réparer',
+    },
+    {
+        kanji: '直',
+        strokes: 8,
+        level: 'N3',
+        frequency: 246,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'かわ',
+                },
+                {
+                    'kana': 'がわ',
+                },
+                {
+                    'kana': 'そば',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ソク',
+                },
+            ],
+        },
+        romaji: ['kawa', 'gawa', 'soba', 'soku'],
+        translation: 'côté, pencher, opposer, regretter',
+    },
+    {
+        kanji: '遂',
+        strokes: 12,
+        level: 'N1',
+        frequency: 1423,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'と',
+                },
+                {
+                    'kana': 'つい',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'スイ',
+                },
+            ],
+        },
+        romaji: ['to', 'tsui', 'sui'],
+        translation: 'réussir, accomplir, consommer',
+    },
 ];
 
 // Collections:

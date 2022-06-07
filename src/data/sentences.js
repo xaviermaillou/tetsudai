@@ -82,6 +82,118 @@ const sentences = [
         ],
         translation: 'Mon ami a mangé des ramens au restaurant.',
     },
+    {
+        elements: [
+            {
+                word: '田中',
+                id: 187,
+            },
+            {
+                word: 'さん',
+                id: 336,
+            },
+            {
+                word: 'は',
+                id: 278,
+            },
+            {
+                word: '迚も',
+                id: 197,
+            },
+            {
+                word: 'ゆっくり',
+                id: 333,
+            },
+            {
+                word: '話す',
+                id: 45,
+            },
+        ],
+        translation: 'M. Tanaka parle lentement.',
+    },
+    {
+        elements: [
+            {
+                word: '先生',
+                id: 22,
+            },
+            {
+                word: 'が',
+                id: 280,
+            },
+            {
+                word: '沢山',
+                id: 339,
+            },
+            {
+                word: '本',
+                id: 342,
+            },
+            {
+                word: 'を',
+                id: 279,
+            },
+            {
+                word: '読んだ',
+                id: 50,
+            },
+        ],
+        translation: 'C\'est le professeur qui a lu beaucoup de livres.',
+    },
+    {
+        elements: [
+            {
+                word: '会社員',
+                id: 244,
+            },
+            {
+                word: 'は',
+                id: 278,
+            },
+            {
+                word: '良く',
+                id: 347,
+            },
+            {
+                word: 'コーヒー',
+                id: 141,
+            },
+            {
+                word: 'を',
+                id: 279,
+            },
+            {
+                word: '飲む',
+                id: 12,
+            },
+        ],
+        translation: 'L\'employé boit souvent du café.',
+    },
+    {
+        elements: [
+            {
+                word: '今日',
+                id: 263,
+            },
+            {
+                word: 'は',
+                id: 278,
+            },
+            {
+                word: 'もう',
+                id: 233,
+            },
+            {
+                word: 'バカンス',
+                id: 350,
+            },
+            {
+                word: 'だ',
+                id: 251,
+            },
+        ],
+        translation: 'Aujourd\'hui c\'est déjà les vacances.',
+    },
 ];
 
 export default sentences;
