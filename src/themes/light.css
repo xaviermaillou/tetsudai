@@ -29,7 +29,7 @@ input:focus {
 .yomiSingleExampleKanjiKana.highlighted div,
 .sentencesElement .highlighted,
 .kanjisElementKana .highlighted {
-    color: rgb(220, 161, 161);
+    color: rgb(220, 121, 121);
 }
 
 #wordDisplayGrammar {
