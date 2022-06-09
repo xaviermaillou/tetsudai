@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import KanaReadings from "./KanaReadings";
 import WordDetails from "./WordDetails";
 import TrainingControls from "./TrainingControls";
@@ -20,9 +20,17 @@ const MainDisplay = (props) => {
         changeCurrentKanjiByKanji,
         word,
         changeCurrentWordById,
+        valueChanged,
+        setValueChanged,
     } = props;
 
     const [displayedElement, setDisplayedElement] = useState(0);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setValueChanged(false);
+        }, 100);
+    }, [kanji, word, setValueChanged]);
 
     const changeDisplayedElement = (num) => {
         setAllDisplayed(false);
@@ -32,8 +40,9 @@ const MainDisplay = (props) => {
         setAllDisplayed(!allDisplayed);
     }
 
+
     return (
-        <div id="mainDisplayContainer">
+        <div id="mainDisplayContainer" className={valueChanged ? "rerenderOpacity" : ""}>
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
                 {kanji && <div id="kanjiDisplay">
                     <p id="kanjiDisplayKanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>

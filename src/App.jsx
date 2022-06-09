@@ -151,15 +151,25 @@ function App() {
     setFilteredWords(vocabularyListCopy);
   }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithRelated]);
 
+  const [valueChanged, setValueChanged] = useState(false);
+
   const changeCurrentKanjiById = (id) => {
+    setValueChanged(true);
     setWord(null);
     setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
   }
   const changeCurrentKanjiByKanji = (kanji) => {
+    setValueChanged(true);
     setWord(null);
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
   }
+  const changeCurrentWordById = (id) => {
+    setValueChanged(true);
+    setKanji(null);
+    setWord(vocabularyWithRelated.find((item) => item.id === id));
+  }
   const randomKanji = (type) => {
+    setValueChanged(true);
     if (type === 1 || trainingMode === 1) {
       setWord(null);
       setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
@@ -168,11 +178,6 @@ function App() {
       setKanji(null);
       setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
     } 
-  }
-
-  const changeCurrentWordById = (id) => {
-    setKanji(null);
-    setWord(vocabularyWithRelated.find((item) => item.id === id));
   }
 
   const [trainingMode, setTrainingMode] = useState(0);
@@ -211,6 +216,8 @@ function App() {
         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
         word={word}
         changeCurrentWordById={changeCurrentWordById}
+        valueChanged={valueChanged}
+        setValueChanged={setValueChanged}
 
         // Height
         compressed={menuOpen}
