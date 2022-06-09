@@ -29,9 +29,7 @@ input:focus {
 .yomiSingleExampleKanjiKana.highlighted div,
 .sentencesElement .highlighted,
 .kanjisElementKana .highlighted {
-    color: rgba(1, 1, 1, 1);
-    background-color: rgba(238,232,170, 0.1);
-    box-shadow: 0px 0px 10px rgba(238,232,170, 0.1);
+    color: rgb(220, 161, 161);
 }
 
 #wordDisplayGrammar {
@@ -87,10 +85,10 @@ input:focus {
 }
 
 .importance2 {
-    background-color: rgba(238,232,170, 0.3);
+    background-color: rgba(255, 183, 197, 0.2);
 }
 .importance1 {
-    background-color: rgba(238,232,170, 0.2);
+    background-color: rgba(255, 183, 197, 0.15);
 }
 
 #selector {
