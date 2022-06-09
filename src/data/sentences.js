@@ -194,6 +194,31 @@ const sentences = [
         ],
         translation: 'Aujourd\'hui c\'est déjà les vacances.',
     },
+    {
+        elements: [
+            {
+                word: '彼',
+                id: 127,
+            },
+            {
+                word: 'は',
+                id: 278,
+            },
+            {
+                word: '妹',
+                id: 352,
+            },
+            {
+                word: 'が',
+                id: 280,
+            },
+            {
+                word: '居る',
+                id: 253,
+            },
+        ],
+        translation: 'Il a une petite sœur.',
+    },
 ];
 
 export default sentences;

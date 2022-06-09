@@ -6310,7 +6310,7 @@ const vocabulary = [
         level: 'N5',
         frequency: 7982,
         romaji: 'tokidoki',
-        translation: 'de temps en temps',
+        translation: 'parfois, de temps en temps',
         grammar: [5, 1],
     },
     {
@@ -6398,6 +6398,62 @@ const vocabulary = [
         romaji: 'hontouni',
         translation: 'vraiment',
         grammar: [5],
+    },
+    {
+        id: 352,
+        elements: [
+            {
+                kanji: '妹',
+                kana: 'いもうと',
+            },
+        ],
+        level: 'N5',
+        frequency: 2279,
+        romaji: 'imouto',
+        translation: 'petite sœur',
+        grammar: [1],
+    },
+    {
+        id: 353,
+        elements: [
+            {
+                kanji: '姉',
+                kana: 'あね',
+            },
+        ],
+        level: 'N5',
+        frequency: 2880,
+        romaji: 'ane',
+        translation: 'grande sœur',
+        grammar: [1],
+    },
+    {
+        id: 354,
+        elements: [
+            {
+                kanji: '弟',
+                kana: 'おとうと',
+            },
+        ],
+        level: 'N5',
+        frequency: 943,
+        romaji: 'imouto',
+        translation: 'petit frère',
+        grammar: [1],
+    },
+    {
+        id: 355,
+        elements: [
+            {
+                kanji: '兄',
+                kana: 'あに',
+            },
+        ],
+        level: 'N5',
+        frequency: 1059,
+        romaji: 'ani',
+        translation: 'grand frère',
+        grammar: [1],
     },
 ];
 
