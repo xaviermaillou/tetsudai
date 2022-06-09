@@ -78,6 +78,7 @@ const MainDisplay = (props) => {
                         expanded={!!!trainingMode}
                         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                         changeCurrentWordById={changeCurrentWordById}
+                        referenceId={word.id}
                     />
                 </div>}
                 {!!trainingMode && <TrainingControls

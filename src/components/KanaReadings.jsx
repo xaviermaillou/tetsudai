@@ -6,6 +6,7 @@ const Yomi = (props) => {
         wordExamples,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
+        referenceKanji,
     } = props;
 
     const [expanded, setExpanded] = useState(false);
@@ -38,7 +39,7 @@ const Yomi = (props) => {
                     <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} key={i} onClick={() => changeCurrentWordById(wordExample.id)}>
                         <div className="yomiSingleExampleJapanese">
                             {wordExample?.elements.map((element, j) => (
-                                <div className="yomiSingleExampleKanjiKana" key={j}>
+                                <div className={element.kanji === referenceKanji ? "yomiSingleExampleKanjiKana highlighted" : "yomiSingleExampleKanjiKana"} key={j}>
                                     {element.kanji ? <div className="clickable" onClick={(e) => handleKanjiClick(e, element.kanji)}>{element.kanji}</div> : <div>{element.kana}</div>}
                                     {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
                                 </div>
@@ -76,6 +77,7 @@ const KanaReadings = (props) => {
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                             changeCurrentWordById={changeCurrentWordById}
+                            referenceKanji={kanji.kanji}
                         />
                     ))}
                     {kanji.readings.kunyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun kunyomi</span>}
@@ -90,6 +92,7 @@ const KanaReadings = (props) => {
                             key={i}
                             changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
                             changeCurrentWordById={changeCurrentWordById}
+                            referenceKanji={kanji.kanji}
                         />
                     ))}
                     {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}

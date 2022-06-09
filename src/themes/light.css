@@ -26,6 +26,14 @@ input:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.yomiSingleExampleKanjiKana.highlighted div,
+.sentencesElement .highlighted,
+.kanjisElementKana .highlighted {
+    color: rgba(1, 1, 1, 1);
+    background-color: rgba(238,232,170, 0.1);
+    box-shadow: 0px 0px 10px rgba(238,232,170, 0.1);
+}
+
 #wordDisplayGrammar {
     color: silver;
 }

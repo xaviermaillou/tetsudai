@@ -12,7 +12,7 @@ const Kanji = (props) => {
                 <div>
                     {
                         element.details.readings.kunyomi?.map((item, i) => (
-                            <span key={i}>
+                            <span className={element.kana === item.kana ? "highlighted" : ""} key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
                             </span>
@@ -26,7 +26,7 @@ const Kanji = (props) => {
                     }
                     {
                         element.details.readings.onyomi?.map((item, i) => (
-                            <span key={i}>
+                            <span className={element.kana === item.kana ? "highlighted" : ""} key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
                             </span>
@@ -44,7 +44,8 @@ const Kanji = (props) => {
 const Sentence = (props) => {
     const {
         sentence,
-        changeCurrentWordById
+        changeCurrentWordById,
+        referenceId,
     } = props;
 
 
@@ -52,7 +53,7 @@ const Sentence = (props) => {
         <div className="sentencesElement">
             <div>
                 {sentence.fullSentence.elements.map((element, i) => (
-                    <span onClick={() => changeCurrentWordById(element.id)} className="clickable" key={i}>{element.word}</span>
+                    <span onClick={() => changeCurrentWordById(element.id)} className={referenceId === element.id ? "clickable highlighted" : "clickable"} key={i}>{element.word}</span>
                 ))}
             </div>
             <div className="sentencesElementTranslation">{sentence.fullSentence.translation}</div>
@@ -68,6 +69,7 @@ const WordDetails = (props) => {
         expanded,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
+        referenceId,
     } = props;
 
     return (
@@ -89,6 +91,7 @@ const WordDetails = (props) => {
                     <Sentence
                         sentence={sentence}
                         changeCurrentWordById={changeCurrentWordById}
+                        referenceId={referenceId}
                         key={i}
                     />
                 ))}
