@@ -109,7 +109,7 @@ const sentences = [
                 id: 45,
             },
         ],
-        translation: 'M. Tanaka parle lentement.',
+        translation: 'M. Tanaka parle très lentement.',
     },
     {
         elements: [

@@ -20,9 +20,13 @@ const HistoryElement = (props) => {
             className={selected ? "historyElement clickable selected" : "historyElement clickable"}
             onClick={handleClick}
         >
-            {historyElementData.kanji || historyElementData.elements.map((e, i) => (
-                <span key={i}>{e.kanji || e.kana}</span>
-            ))}
+            <div className="historyElementMain">
+                {historyElementData.kanji || historyElementData.elements.map((e, i) => (
+                    <span key={i}>{e.kanji || e.kana}</span>
+                ))}
+            </div>
+            <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
+            <span className="historyElementTranslation">{historyElementData.translation}</span>
         </div>
     );
 }
@@ -66,7 +70,6 @@ const DisplayHistory = (props) => {
                 />
             </div>}
             <div id="displayHistory">
-                <div className="historyElement"></div>
                 {displayHistory.map((e, i) => (
                     <HistoryElement
                         historyElementData={e}

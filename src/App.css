@@ -798,20 +798,42 @@ input:focus {
   display: none;
 }
 #displayHistory {
-  padding-top: 40px;
+  margin-top: 40px;
+  padding: 0px 10px 40px 10px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
 }
 .historyElement {
-  height: 46px;
+  z-index: 2100;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0px 10px;
-  font-size: 22px;
+  padding: 15px 0px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.historyElementMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+.historyElementLabel {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 5px 0px;
+}
+.historyElementTranslation {
+  font-size: 14px;
+  opacity: 0.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+}
+.historyElementMain span, {
+  white-space: nowrap;
 }
 
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */

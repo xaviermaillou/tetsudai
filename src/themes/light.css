@@ -106,15 +106,14 @@ input:focus {
 #displayHistoryContainer {
     background-color: rgba(255, 255, 255, 0.95);
 }
-.historyElement {
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
-}
-.historyElement.selected {
-    background-color: rgba(0, 0, 0, 0.1);
-}
 @media (min-aspect-ratio: 1/1) {
     .historyElement {
-        border-left: none;
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .historyElement:nth-child(1) {
+        border-bottom: none;
+    }
+    .historyElement.selected {
+        border-right: 5px solid rgba(0, 0, 0, 0.1);
     }
 }

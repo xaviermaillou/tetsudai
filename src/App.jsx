@@ -160,7 +160,6 @@ function App() {
 
   const prepareDisplayChange = () => {
     setValueChanged(true);
-    console.log(openedHistory);
     if ((kanji || word) && !openedHistory) {
       const displayHistoryCopy = [ ...displayHistory ]
         .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id);
