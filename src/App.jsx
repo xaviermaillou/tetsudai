@@ -6,6 +6,7 @@ import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
 import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
+import DisplayHistory from './components/DisplayHistory';
 import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
 
 function App() {
@@ -151,25 +152,42 @@ function App() {
     setFilteredWords(vocabularyListCopy);
   }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithRelated]);
 
+  // Main display value handling
+
   const [valueChanged, setValueChanged] = useState(false);
+  const [displayHistory, setDisplayHistory] = useState([]);
+  const [openedHistory, setOpenedHistory] = useState();
+
+  const prepareDisplayChange = () => {
+    setValueChanged(true);
+    console.log(openedHistory);
+    if ((kanji || word) && !openedHistory) {
+      const displayHistoryCopy = [ ...displayHistory ]
+        .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id);
+      displayHistoryCopy.push(kanji || word);
+      setDisplayHistory(displayHistoryCopy);
+    }
+  }
 
   const changeCurrentKanjiById = (id) => {
-    setValueChanged(true);
+    prepareDisplayChange();
     setWord(null);
     setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
   }
-  const changeCurrentKanjiByKanji = (kanji) => {
-    setValueChanged(true);
+  const changeCurrentKanjiByKanji = (kanji, fromHistory) => {
+    prepareDisplayChange();
     setWord(null);
     setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
+    setOpenedHistory(fromHistory);
   }
-  const changeCurrentWordById = (id) => {
-    setValueChanged(true);
+  const changeCurrentWordById = (id, fromHistory) => {
+    prepareDisplayChange();
     setKanji(null);
     setWord(vocabularyWithRelated.find((item) => item.id === id));
+    setOpenedHistory(fromHistory);
   }
   const randomKanji = (type) => {
-    setValueChanged(true);
+    prepareDisplayChange();
     if (type === 1 || trainingMode === 1) {
       setWord(null);
       setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
@@ -266,6 +284,13 @@ function App() {
 
         searchExecuted={searchExecuted}
         setSearchExecuted={setSearchExecuted}
+      />
+      <DisplayHistory
+        displayHistory={displayHistory}
+        kanji={kanji}
+        word={word}
+        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+        changeCurrentWordById={changeCurrentWordById}
       />
     </div>
   );

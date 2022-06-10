@@ -102,3 +102,19 @@ input:focus {
 .vocabularyListElementContainer.open {
     border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
+
+#displayHistoryContainer {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.historyElement {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.historyElement.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+@media (min-aspect-ratio: 1/1) {
+    .historyElement {
+        border-left: none;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}

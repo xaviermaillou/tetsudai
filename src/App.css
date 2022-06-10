@@ -780,6 +780,40 @@ input:focus {
   text-align: right;
 }
 
+/* ------------------------------------------------ DISPLAY HISTORY ------------------------------------------------ */
+
+#displayHistoryContainer {
+  z-index: 2000;
+  height: 100vh;
+  width: 8%;
+  position: absolute;
+  top: 0px;
+  left: -8%;
+  overflow-y: scroll;
+}
+#displayHistoryContainer.open {
+  left: 0%;
+}
+#historyIconContainer img {
+  display: none;
+}
+#displayHistory {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+.historyElement {
+  height: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 10px;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
 
 @media (min-aspect-ratio: 1/1) {
@@ -908,6 +942,21 @@ input:focus {
   }
   #wordsListOpener.open {
     left: -32px;
+  }
+
+  #displayHistoryContainer {
+    width: 8%;
+  }
+  #historyIconContainer img {
+    display: block;
+    position: fixed;
+    top: 48px;
+    left: 24px;
+    height: 32px;
+    opacity: 0.33;
+  }
+  .historyElement {
+    justify-content: flex-end;
   }
 }
 

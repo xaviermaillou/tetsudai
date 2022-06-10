@@ -15,7 +15,7 @@ const Yomi = (props) => {
 
     const handleKanjiClick = (e, kanji) => {
         e.stopPropagation();
-        changeCurrentKanjiByKanji(kanji);
+        changeCurrentKanjiByKanji(kanji, false);
     }
 
     return (
@@ -35,7 +35,7 @@ const Yomi = (props) => {
             </div>
             <div className="yomiExamples">
                 {wordExamples.map((wordExample, i) => (
-                    <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} key={i} onClick={() => changeCurrentWordById(wordExample.id)}>
+                    <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} key={i} onClick={() => changeCurrentWordById(wordExample.id, false)}>
                         <div className="yomiSingleExampleJapanese">
                             {wordExample?.elements.map((element, j) => (
                                 <div className={element.kana === example.kana ? "yomiSingleExampleKanjiKana highlighted" : "yomiSingleExampleKanjiKana"} key={j}>

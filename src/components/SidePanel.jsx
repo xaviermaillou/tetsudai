@@ -261,7 +261,7 @@ const ListWord = (props) => {
     } = props;
 
     const clickHandle = (id) => {
-        changeCurrentWordById(id);
+        changeCurrentWordById(id, false);
         if (window.innerWidth < window.innerHeight) setOpen(false);
     }
 
