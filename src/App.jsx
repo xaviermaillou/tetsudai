@@ -195,7 +195,8 @@ function App() {
     if (type === 2 || trainingMode === 2) {
       setKanji(null);
       setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
-    } 
+    }
+    setOpenedHistory(false);
   }
 
   const [trainingMode, setTrainingMode] = useState(0);
