@@ -832,7 +832,7 @@ input:focus {
   width: 100%;
   overflow: hidden;
 }
-.historyElementMain span, {
+.historyElementMain span {
   white-space: nowrap;
 }
 
