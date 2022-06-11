@@ -2,6 +2,7 @@ export const collections = {
     0: "Tous",
     1: "150 kanjis essentiels",
     2: "Mots occidentaux kanatakinés",
+    3: "Jukujikun",
 }
 
 export const classes = {

@@ -1593,6 +1593,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'うまい',
+        collections: [
+            3,
+        ],
         level: 'N3',
         frequency: 3685,
         romaji: 'umai',
@@ -4895,6 +4898,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'きょう',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 1331,
         romaji: 'kyou',
@@ -4914,6 +4920,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'あした',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 5173,
         romaji: 'ashita',
@@ -4933,6 +4942,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'きのう',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 10000,
         romaji: 'kinou',
@@ -4952,6 +4964,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'けさ',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 10000,
         romaji: 'kesa',
@@ -4971,6 +4986,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'おとな',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 3732,
         romaji: 'otona',
@@ -5138,6 +5156,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'おいしい',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 10000,
         romaji: 'oishii',
@@ -5638,6 +5659,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'ちょっと',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 10000,
         romaji: 'chotto',
@@ -5661,6 +5685,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'いつも',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 5997,
         romaji: 'itsumo',
@@ -5688,6 +5715,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'どうして',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 10000,
         romaji: 'doushite',
@@ -5707,6 +5737,9 @@ const vocabulary = [
             },
         ],
         jukujikun: 'いつ',
+        collections: [
+            3,
+        ],
         level: 'N5',
         frequency: 7508,
         romaji: 'itsu',
@@ -6097,10 +6130,11 @@ const vocabulary = [
                 kana: '',
             },
         ],
+        jukujikun: 'フランス',
         collections: [
             2,
+            3,
         ],
-        jukujikun: 'フランス',
         level: null,
         frequency: 142,
         romaji: 'furansu',
