@@ -157,6 +157,7 @@ function App() {
   const [valueChanged, setValueChanged] = useState(false);
   const [displayHistory, setDisplayHistory] = useState([]);
   const [openedHistory, setOpenedHistory] = useState();
+  const [trainingHistory, setTrainingHistory] = useState([]);
 
   const prepareDisplayChange = () => {
     setValueChanged(true);
@@ -187,13 +188,33 @@ function App() {
   }
   const randomKanji = (type) => {
     prepareDisplayChange();
-    if (type === 1 || trainingMode === 1) {
+    const trainingHistoryCopy = [ ...trainingHistory ];
+    if (type === 1) {
       setWord(null);
-      setKanji(filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]);
+      let remainingFilteredKanjis = [ ...filteredKanjis ];
+      trainingHistory.forEach((historyElement) => {
+        if (historyElement.kanji) remainingFilteredKanjis = remainingFilteredKanjis
+          .filter((remaining) => (remaining.kanji !== historyElement.kanji && (kanji ? remaining.kanji !== kanji.kanji : true)));
+      });
+      console.log(remainingFilteredKanjis);
+      const newKanji = remainingFilteredKanjis[Math.floor(Math.random()*remainingFilteredKanjis.length)];
+      setKanji(newKanji);
+      if (newKanji) trainingHistoryCopy.push(newKanji);
+      if (remainingFilteredKanjis.length > 0) setTrainingHistory(trainingHistoryCopy);
+      else setTrainingHistory([]);
     } 
-    if (type === 2 || trainingMode === 2) {
+    if (type === 2) {
       setKanji(null);
-      setWord(filteredWords[Math.floor(Math.random()*filteredWords.length)]);
+      let remainingFilteredWords = [ ...filteredWords ];
+      trainingHistory.forEach((historyElement) => {
+        if (historyElement.id) remainingFilteredWords = remainingFilteredWords
+          .filter((remaining) => (remaining.id !== historyElement.id && (word ? remaining.id !== word.id : true)));
+      });
+      const newWord = remainingFilteredWords[Math.floor(Math.random()*remainingFilteredWords.length)];
+      setWord(newWord);
+      if (newWord) trainingHistoryCopy.push(newWord);
+      if (remainingFilteredWords.length > 0) setTrainingHistory(trainingHistoryCopy);
+      else setTrainingHistory([]);
     }
     setOpenedHistory(false);
   }
@@ -210,6 +231,10 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    setTrainingHistory([])
+  }, [trainingMode]);
+
   const [searchExecuted, setSearchExecuted] = useState(false);
 
   return (
@@ -217,12 +242,12 @@ function App() {
       <div id="header">
         <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} sentencesList={sentencesList} />
       </div>
-      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji || word ? 'clickable' : 'full'}>
+      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null ? 'full' : 'clickable'}>
         <img src='/img/Logo1.png' alt='logo' />
         <img src='/img/Logo2.png' alt='logo' />
         <img src='/img/Logo3.png' alt='logo' />
       </div>
-      {(!kanji && !word) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
+      {(kanji === null && word === null) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
           en lui fournissant un dictionnaire franco-japonais dont le contenu se veut à la fois complet et pertinent.

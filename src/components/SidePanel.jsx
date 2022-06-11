@@ -343,6 +343,10 @@ const SidePanel = (props) => {
         setNoWord(true);
     }, [search, collection, level, grammar]);
 
+    useEffect(() => {
+        if (searchExecuted && noWord) setDisplayKanjis(true);
+    }, [searchExecuted, noKanji, noWord]);
+
     // Kanji filters
 
     const searchThroughKanji = (vocabulary, romaji, translation, string) => {
@@ -431,7 +435,7 @@ const SidePanel = (props) => {
         let result = {};
         if (
             (word.collections?.includes(collection) || collection === 0)
-            && (levels[level] === word.level || !level || !word.level) 
+            && (levels[level] === word.level || !level) 
             && (word.grammar.includes(grammar) || grammar === 0)
             && (searchThroughWord(word.translationArray, word.variants, search)
                 || (word.romaji.toLowerCase().includes(search.toLowerCase()))
@@ -454,7 +458,7 @@ const SidePanel = (props) => {
     return (
         <div id="sidePanel" className={open ? "open" : ""}>
             <div id="wordsListSearchContainer">
-                {currentElement && <img id="wordsListOpener" className={open ? "open clickable" : "clickable"} onClick={toggle} src="/img/up.png" alt="see all words" />}
+                {currentElement !== null && <img id="wordsListOpener" className={open ? "open clickable" : "clickable"} onClick={toggle} src="/img/up.png" alt="see all words" />}
                 <div id="wordsListSearch">
                     {search ?
                         <img className="close clickable" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
@@ -489,13 +493,12 @@ const SidePanel = (props) => {
                 }
             </span>}
             <div id="kanjisList" className={searchExecuted ?
-                ((displayKanjis) ?
-                    (displayWords ?
+                (
+                    displayKanjis ?
                         "wordsListList"
                         :
-                        "extended wordsListList")
-                    :
-                    "closed wordsListList")
+                        "closed wordsListList"
+                )
                 :
                 "hidden closed wordsListList"}>
                 {kanjis.map((item, i) => (

@@ -6318,6 +6318,48 @@ const kanjis = [
         romaji: ['to', 'tsui', 'sui'],
         translation: 'réussir, accomplir, consommer',
     },
+    {
+        kanji: '仏',
+        strokes: 4,
+        level: 'N2',
+        frequency: 819,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ほとけ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ブツ',
+                },
+                {
+                    'kana': 'フツ',
+                },
+            ],
+        },
+        romaji: ['hotoke', 'butsu', 'futsu'],
+        translation: 'Bouddha, la mort, France',
+    },
+    {
+        kanji: '蘭',
+        strokes: 19,
+        level: 'N1',
+        frequency: 1886,
+        readings: {
+            kunyomi: [],
+            onyomi: [
+                {
+                    'kana': 'ラン',
+                },
+                {
+                    'kana': 'ラ',
+                },
+            ],
+        },
+        romaji: ['ran', 'ra'],
+        translation: 'orchidée, Hollande',
+    },
 ];
 
 // Collections:

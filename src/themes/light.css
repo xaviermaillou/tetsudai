@@ -32,10 +32,6 @@ input:focus {
     color: rgb(220, 121, 121);
 }
 
-#wordDisplayGrammar {
-    color: silver;
-}
-
 #filtersIndicator {
     box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.05);

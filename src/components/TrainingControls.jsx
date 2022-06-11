@@ -12,6 +12,7 @@ const TrainingControls = (props) => {
         grammar,
         checkTrainingFilters,
         toggleTraining,
+        endedTraining
     } = props;
 
     return (
@@ -43,7 +44,7 @@ const TrainingControls = (props) => {
                 </div>
                 <div id="trainingNext" onClick={randomKanji} className="clickable">
                     <span>
-                        <img src="/img/next.png" alt="random" />
+                        <img src={endedTraining ? "/img/reset.png" : "/img/next.png"} alt="random" />
                     </span>
                 </div>
             </div>

@@ -58,6 +58,7 @@ const ResetDatabase = (props) => {
     return (
         <div style={{
             padding: '20px',
+            paddingLeft: '80px',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',

@@ -909,6 +909,9 @@ const vocabulary = [
                 kana: 'ゴ',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 10000,
         romaji: 'furansugo',
@@ -2628,6 +2631,9 @@ const vocabulary = [
                 kana: 'ラーメン',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 5794,
         romaji: 'raamen',
@@ -2641,6 +2647,9 @@ const vocabulary = [
                 kanji: '',
                 kana: 'パスタ',
             },
+        ],
+        collections: [
+            2,
         ],
         level: null,
         frequency: 10000,
@@ -2656,6 +2665,9 @@ const vocabulary = [
                 kana: 'コーヒー',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 10000,
         romaji: 'kouhii',
@@ -2670,6 +2682,9 @@ const vocabulary = [
                 kana: 'チーズ',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 8563,
         romaji: 'chiizu',
@@ -2683,6 +2698,9 @@ const vocabulary = [
                 kanji: '',
                 kana: 'デザート',
             },
+        ],
+        collections: [
+            2,
         ],
         level: null,
         frequency: 10000,
@@ -4274,6 +4292,9 @@ const vocabulary = [
                 kana: 'パソコン',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 2653,
         romaji: 'pasokon',
@@ -4287,6 +4308,9 @@ const vocabulary = [
                 kanji: '',
                 kana: 'ゲーム',
             },
+        ],
+        collections: [
+            2,
         ],
         level: null,
         frequency: 148,
@@ -5578,6 +5602,9 @@ const vocabulary = [
                 kana: 'テレビ',
             },
         ],
+        collections: [
+            2,
+        ],
         level: 'N5',
         frequency: 92,
         romaji: 'terebi',
@@ -5715,6 +5742,9 @@ const vocabulary = [
                 kanji: '字',
                 kana: 'ジ',
             },
+        ],
+        collections: [
+            2,
         ],
         level: 'N2',
         frequency: 9522,
@@ -6042,6 +6072,9 @@ const vocabulary = [
                 kana: 'ジン',
             },
         ],
+        collections: [
+            2,
+        ],
         level: null,
         frequency: 10000,
         romaji: 'furansujin',
@@ -6052,9 +6085,20 @@ const vocabulary = [
         id: 331,
         elements: [
             {
-                kanji: '仏蘭西',
+                kanji: '仏',
                 kana: '',
             },
+            {
+                kanji: '蘭',
+                kana: '',
+            },
+            {
+                kanji: '西',
+                kana: '',
+            },
+        ],
+        collections: [
+            2,
         ],
         jukujikun: 'フランス',
         level: null,
@@ -6370,6 +6414,9 @@ const vocabulary = [
                 kanji: '',
                 kana: 'バカンス',
             },
+        ],
+        collections: [
+            2,
         ],
         level: null,
         frequency: 10000,
