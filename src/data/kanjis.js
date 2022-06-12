@@ -5000,6 +5000,9 @@ const kanjis = [
                     'kana': 'こと',
                 },
                 {
+                    'kana': 'ごと',
+                },
+                {
                     'kana': 'つか',
                 },
             ],
@@ -6399,6 +6402,26 @@ const kanjis = [
         },
         romaji: ['mo', 'kou'],
         translation: 'faire face, se diriger vers, confronter, défier',
+    },
+    {
+        kanji: '始',
+        strokes: 8,
+        level: 'N4',
+        frequency: 244,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'はじ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シ',
+                },
+            ],
+        },
+        romaji: ['haji', 'shi'],
+        translation: 'débuter, commencer',
     },
 ];
 
