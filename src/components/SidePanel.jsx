@@ -371,10 +371,10 @@ const SidePanel = (props) => {
         translation?.forEach((word) => {
             if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
         });
-        vocabulary.forEach((word) => {
+        /* vocabulary.forEach((word) => {
             if (word.translation.toLowerCase() === string.toLowerCase()) matchingScore ++;
             if (word.romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        });
+        }); */
         return matchingScore;
     }
 

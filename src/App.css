@@ -836,12 +836,12 @@ input:focus {
 }
 .historyElementLabel {
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.5;
   margin: 5px 0px;
 }
 .historyElementTranslation {
   font-size: 14px;
-  opacity: 0.5;
+  opacity: 0.75;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;

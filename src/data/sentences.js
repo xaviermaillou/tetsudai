@@ -219,6 +219,31 @@ const sentences = [
         ],
         translation: 'Il a une petite sœur.',
     },
+    {
+        elements: [
+            {
+                word: '私たち',
+                id: 361,
+            },
+            {
+                word: 'は',
+                id: 278,
+            },
+            {
+                word: '勝ち',
+                id: 360,
+            },
+            {
+                word: 'へ',
+                id: 294,
+            },
+            {
+                word: '向かっています',
+                id: 359,
+            },
+        ],
+        translation: 'Nous nous dirigeons vers la victoire.',
+    },
 ];
 
 export default sentences;

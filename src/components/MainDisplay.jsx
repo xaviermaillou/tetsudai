@@ -51,7 +51,7 @@ const MainDisplay = (props) => {
                             <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                             <p id="kanjiDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{kanji.strokes} traits</div>
-                                <div>JLPT {kanji.level}</div>
+                                <div>{kanji.level ? `JLPT ${kanji.level}` : 'Hors JLPT'}</div>
                             </p>
                             {kanji.readings && <KanaReadings
                                 kanji={kanji}
@@ -93,7 +93,7 @@ const MainDisplay = (props) => {
                             <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
                             <p id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}</div>
-                                <div>JLPT {word.level}</div>
+                                <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
                             </p>
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}

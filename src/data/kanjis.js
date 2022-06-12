@@ -6360,6 +6360,46 @@ const kanjis = [
         romaji: ['ran', 'ra'],
         translation: 'orchidée, Hollande',
     },
+    {
+        kanji: '医',
+        strokes: 7,
+        level: 'N4',
+        frequency: 437,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'い',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'イ',
+                },
+            ],
+        },
+        romaji: ['i'],
+        translation: 'médecin, docteur',
+    },
+    {
+        kanji: '向',
+        strokes: 6,
+        level: 'N3',
+        frequency: 182,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'む',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'コウ',
+                },
+            ],
+        },
+        romaji: ['mo', 'kou'],
+        translation: 'faire face, se diriger vers, confronter, défier',
+    },
 ];
 
 // Collections:

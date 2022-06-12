@@ -25,8 +25,8 @@ const HistoryElement = (props) => {
                     <span key={i}>{e.kanji || e.kana}</span>
                 ))}
             </div>
-            <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
             <span className="historyElementTranslation">{historyElementData.translation}</span>
+            <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
         </div>
     );
 }

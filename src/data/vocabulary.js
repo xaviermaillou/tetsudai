@@ -6536,6 +6536,121 @@ const vocabulary = [
         translation: 'grand frère',
         grammar: [1],
     },
+    {
+        id: 356,
+        elements: [
+            {
+                kanji: '習',
+                kana: 'なら',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        level: 'N5',
+        frequency: 7338,
+        romaji: 'narau',
+        translation: 'apprendre, prendre des cours',
+        grammar: [3],
+    },
+    {
+        id: 357,
+        elements: [
+            {
+                kanji: '',
+                kana: 'メールアドレス',
+            },
+        ],
+        collections: [
+            2,
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'meiruadoresu',
+        translation: 'adresse mail',
+        grammar: [1],
+    },
+    {
+        id: 358,
+        elements: [
+            {
+                kanji: '医',
+                kana: 'イ',
+            },
+            {
+                kanji: '者',
+                kana: 'シャ',
+            },
+        ],
+        level: 'N5',
+        frequency: 7390,
+        romaji: 'isha',
+        translation: 'médecin, docteur',
+        grammar: [1],
+    },
+    {
+        id: 359,
+        elements: [
+            {
+                kanji: '向',
+                kana: 'む',
+            },
+            {
+                kanji: '',
+                kana: 'か',
+            },
+            {
+                kanji: '',
+                kana: 'う',
+            },
+        ],
+        level: 'N4',
+        frequency: 569,
+        romaji: 'mokau',
+        translation: 'se diriger vers, faire face',
+        grammar: [3],
+    },
+    {
+        id: 360,
+        elements: [
+            {
+                kanji: '勝',
+                kana: 'か',
+            },
+            {
+                kanji: '',
+                kana: 'ち',
+            },
+        ],
+        level: 'N3',
+        frequency: 10000,
+        romaji: 'kachi',
+        translation: 'victoire',
+        grammar: [1],
+    },
+    {
+        id: 361,
+        elements: [
+            {
+                kanji: '私',
+                kana: 'わたし',
+            },
+            {
+                kanji: '',
+                kana: 'た',
+            },
+            {
+                kanji: '',
+                kana: 'ち',
+            },
+        ],
+        level: null,
+        frequency: 10000,
+        romaji: 'watashitachi',
+        translation: 'nous',
+        grammar: [8],
+    },
 ];
 
 // Types grammaticaux:
