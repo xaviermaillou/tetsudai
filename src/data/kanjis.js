@@ -2139,6 +2139,9 @@ const kanjis = [
                 {
                     'kana': 'なに',
                 },
+                {
+                    'kana': 'ど',
+                },
             ],
             onyomi: [
                 {
@@ -3058,6 +3061,18 @@ const kanjis = [
                 },
                 {
                     'kana': 'かの',
+                },
+                {
+                    'kana': 'か',
+                },
+                {
+                    'kana': 'あ',
+                },
+                {
+                    'kana': 'あれ',
+                },
+                {
+                    'kana': 'あそ',
                 },
             ],
             onyomi: [],
@@ -6422,6 +6437,82 @@ const kanjis = [
         },
         romaji: ['haji', 'shi'],
         translation: 'débuter, commencer',
+    },
+    {
+        kanji: '故',
+        strokes: 9,
+        level: 'N1',
+        frequency: 612,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'ゆえ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'コ',
+                },
+            ],
+        },
+        romaji: ['yue', 'ko'],
+        translation: 'coïncidence, intentionnellement, raison',
+    },
+    {
+        kanji: '此',
+        strokes: 6,
+        level: null,
+        frequency: 2078,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'こ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'シ',
+                },
+            ],
+        },
+        romaji: ['ko', 'shi'],
+        translation: 'ici, celui-ci, courant',
+    },
+    {
+        kanji: '其',
+        strokes: 8,
+        level: null,
+        frequency: 1930,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'そ',
+                },
+            ],
+            onyomi: [],
+        },
+        romaji: ['so'],
+        translation: 'cela',
+    },
+    {
+        kanji: '処',
+        strokes: 5,
+        level: 'N3',
+        frequency: 547,
+        readings: {
+            kunyomi: [
+                {
+                    'kana': 'こ',
+                },
+            ],
+            onyomi: [
+                {
+                    'kana': 'ショ',
+                },
+            ],
+        },
+        romaji: ['ko', 'sho'],
+        translation: 'traiter, se débarasser, sentance, condamnation',
     },
 ];
 

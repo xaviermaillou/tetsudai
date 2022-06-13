@@ -275,18 +275,34 @@ const ListWord = (props) => {
                 {word.jukujikun ?
                     <div className="vocabularyListElementJapaneseJukujikun">
                         <div className="vocabularyListElementKanjiOnly">
-                            {word.elements.map((element, j) => (
-                                <div key={j}>{element.kanji || element.kana}</div>
-                            ))}
+                            {word.rareKanji ?
+                                <div>{word.jukujikun}</div>
+                                :
+                                word.elements.map((element, j) => (
+                                    <div key={j}>{element.kanji || element.kana}</div>
+                                ))
+                            }
                         </div>
-                        <div className="vocabularyListElementKana">{word.jukujikun}</div>
+                        <div className="vocabularyListElementKana">
+                            {word.rareKanji ?
+                                word.elements.map((element, j) => (
+                                    <span key={j}>{element.kanji || element.kana}</span>
+                                ))
+                                :
+                                <span>{word.jukujikun}</span>
+                            }
+                        </div>
                     </div>
                     :
                     <div className="vocabularyListElementJapanese">
                         {word.elements.map((element, j) => (
                             <div className="vocabularyListElementKanjiKana" key={j}>
-                                <div>{element.kanji || element.kana}</div>
-                                {element.kanji && <div className="vocabularyListElementKana">{element.kana}</div>}
+                                <div>{word.rareKanji ? element.kana : element.kanji || element.kana}</div>
+                                {element.kanji &&
+                                    <div className="vocabularyListElementKana">
+                                        {word.rareKanji ? element.kanji || element.kana : element.kana}
+                                    </div>
+                                }
                             </div>
                         ))}
                     </div>

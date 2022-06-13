@@ -18,7 +18,7 @@ input:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
 
-#kanjiDisplayKanji, .wordDisplayWordElement span {
+#kanjiDisplayKanji, .wordDisplayWordElement span, .wordDisplayWordElementYomi span {
     color: gray;
 }
 

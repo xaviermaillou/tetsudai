@@ -53,7 +53,9 @@ const Sentence = (props) => {
         <div className="sentencesElement">
             <div>
                 {sentence.fullSentence.elements.map((element, i) => (
-                    <span onClick={() => changeCurrentWordById(element.id, false)} className={referenceId === element.id ? "clickable highlighted" : "clickable"} key={i}>{element.word}</span>
+                    <span onClick={() => changeCurrentWordById(element.id, false)} className={referenceId === element.id ? "clickable highlighted" : "clickable"} key={i}>
+                        {element.word}
+                    </span>
                 ))}
             </div>
             <div className="sentencesElementTranslation">{sentence.fullSentence.translation}</div>

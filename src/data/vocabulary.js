@@ -3882,7 +3882,7 @@ const vocabulary = [
         id: 207,
         elements: [
             {
-                kanji: '',
+                kanji: '此',
                 kana: 'こ',
             },
             {
@@ -3890,6 +3890,7 @@ const vocabulary = [
                 kana: 'の',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 24,
         romaji: 'kono',
@@ -3900,7 +3901,7 @@ const vocabulary = [
         id: 208,
         elements: [
             {
-                kanji: '',
+                kanji: '此',
                 kana: 'こ',
             },
             {
@@ -3908,6 +3909,7 @@ const vocabulary = [
                 kana: 'れ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 31,
         romaji: 'kore',
@@ -3936,14 +3938,15 @@ const vocabulary = [
         id: 210,
         elements: [
             {
-                kanji: '',
+                kanji: '此',
                 kana: 'こ',
             },
             {
-                kanji: '',
+                kanji: '処',
                 kana: 'こ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 465,
         romaji: 'koko',
@@ -3954,7 +3957,7 @@ const vocabulary = [
         id: 211,
         elements: [
             {
-                kanji: '',
+                kanji: '其',
                 kana: 'そ',
             },
             {
@@ -3962,6 +3965,7 @@ const vocabulary = [
                 kana: 'の',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 26,
         romaji: 'sono',
@@ -3972,7 +3976,7 @@ const vocabulary = [
         id: 212,
         elements: [
             {
-                kanji: '',
+                kanji: '其',
                 kana: 'そ',
             },
             {
@@ -3980,6 +3984,7 @@ const vocabulary = [
                 kana: 'れ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 63,
         romaji: 'sore',
@@ -4008,14 +4013,15 @@ const vocabulary = [
         id: 214,
         elements: [
             {
-                kanji: '',
+                kanji: '其',
                 kana: 'そ',
             },
             {
-                kanji: '',
+                kanji: '処',
                 kana: 'こ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 470,
         romaji: 'soko',
@@ -4026,7 +4032,7 @@ const vocabulary = [
         id: 215,
         elements: [
             {
-                kanji: '',
+                kanji: '彼',
                 kana: 'あ',
             },
             {
@@ -4034,6 +4040,7 @@ const vocabulary = [
                 kana: 'の',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 5242,
         romaji: 'ano',
@@ -4044,14 +4051,11 @@ const vocabulary = [
         id: 216,
         elements: [
             {
-                kanji: '',
-                kana: 'あ',
-            },
-            {
-                kanji: '',
-                kana: 'れ',
+                kanji: '彼',
+                kana: 'あれ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 10000,
         romaji: 'are',
@@ -4080,18 +4084,15 @@ const vocabulary = [
         id: 218,
         elements: [
             {
-                kanji: '',
-                kana: 'あ',
+                kanji: '彼',
+                kana: 'あそ',
             },
             {
-                kanji: '',
-                kana: 'そ',
-            },
-            {
-                kanji: '',
+                kanji: '処',
                 kana: 'こ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 10000,
         romaji: 'asoko',
@@ -4102,7 +4103,7 @@ const vocabulary = [
         id: 219,
         elements: [
             {
-                kanji: '',
+                kanji: '何',
                 kana: 'ど',
             },
             {
@@ -4110,6 +4111,7 @@ const vocabulary = [
                 kana: 'の',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 2631,
         romaji: 'dono',
@@ -4120,7 +4122,7 @@ const vocabulary = [
         id: 220,
         elements: [
             {
-                kanji: '',
+                kanji: '何',
                 kana: 'ど',
             },
             {
@@ -4128,6 +4130,7 @@ const vocabulary = [
                 kana: 'れ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 5237,
         romaji: 'dore',
@@ -4138,13 +4141,18 @@ const vocabulary = [
         id: 221,
         elements: [
             {
-                kanji: '',
-                kana: 'ど',
+                kanji: '如',
+                kana: '',
             },
             {
-                kanji: '',
-                kana: 'う',
+                kanji: '何',
+                kana: '',
             },
+        ],
+        jukujikun: 'どう',
+        rareKanji: true,
+        collections: [
+            3,
         ],
         level: 'N5',
         frequency: 1511,
@@ -4156,14 +4164,15 @@ const vocabulary = [
         id: 222,
         elements: [
             {
-                kanji: '',
+                kanji: '何',
                 kana: 'ど',
             },
             {
-                kanji: '',
+                kanji: '処',
                 kana: 'こ',
             },
         ],
+        rareKanji: true,
         level: 'N5',
         frequency: 3078,
         romaji: 'doko',
@@ -6689,6 +6698,62 @@ const vocabulary = [
         romaji: 'watashitachi',
         translation: 'nous',
         grammar: [8],
+    },
+    {
+        id: 362,
+        elements: [
+            {
+                kanji: '',
+                kana: 'レストラン',
+            },
+        ],
+        level: 'N5',
+        frequency: 3650,
+        romaji: 'resutoran',
+        translation: 'restaurant',
+        grammar: [1],
+    },
+    {
+        id: 363,
+        elements: [
+            {
+                kanji: '何',
+                kana: '',
+            },
+            {
+                kanji: '故',
+                kana: '',
+            },
+        ],
+        jukujikun: 'なぜ',
+        collections: [
+            3,
+        ],
+        rareKanji: true,
+        level: 'N5',
+        frequency: 4244,
+        romaji: 'naze',
+        translation: 'pourquoi, comment',
+        grammar: [5],
+    },
+    {
+        id: 364,
+        elements: [
+            {
+                kanji: '何',
+                kana: 'なん',
+            },
+            {
+                kanji: '',
+                kana: 'で',
+            },
+        ],
+        rareKanji: true,
+        level: 'N3',
+        frequency: 9747,
+        romaji: 'nande',
+        translation: 'pourquoi, comment',
+        grammar: [5],
     },
 ];
 

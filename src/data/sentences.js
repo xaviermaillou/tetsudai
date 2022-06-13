@@ -97,7 +97,7 @@ const sentences = [
                 id: 278,
             },
             {
-                word: '迚も',
+                word: 'とても',
                 id: 197,
             },
             {
@@ -122,7 +122,7 @@ const sentences = [
                 id: 280,
             },
             {
-                word: '沢山',
+                word: 'たくさん',
                 id: 339,
             },
             {
@@ -151,7 +151,7 @@ const sentences = [
                 id: 278,
             },
             {
-                word: '良く',
+                word: 'よく',
                 id: 347,
             },
             {
@@ -213,7 +213,7 @@ const sentences = [
                 id: 280,
             },
             {
-                word: '居る',
+                word: 'いる',
                 id: 253,
             },
         ],

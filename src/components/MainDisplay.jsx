@@ -73,27 +73,47 @@ const MainDisplay = (props) => {
                             {word.jukujikun ? 
                                 <div id="wordDisplayWordJukujikun">
                                     <div id="wordDisplayWordKanjiOnly">
-                                        {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                                            <span>{element.kanji || element.kana}</span>
-                                        </div>)}
+                                        {word.rareKanji ?
+                                            <div className="wordDisplayWordElement">
+                                                <span>{word.jukujikun}</span>
+                                            </div>
+                                            :
+                                            word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
+                                                <span className="wordDisplayWordElementKanji">{element.kanji || element.kana}</span>
+                                            </div>)
+                                        }
                                     </div>
                                     <div className="wordDisplayWordElementYomi jukujikun">
-                                        {word.jukujikun}
-                                        <div>*Jukujikun</div>
+                                        {word.rareKanji ?
+                                            word.elements.map((element, i) => 
+                                                <span className="wordDisplayWordElementKanji">{element.kanji || element.kana}</span>
+                                            )
+                                            :
+                                            <span>{word.jukujikun}</span>
+                                        }
+                                        <div>Jukujikun</div>
                                     </div>
                                 </div>
                                 :
                                 <div id="wordDisplayWord" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
-                                    {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                                        <span>{element.kanji || element.kana}</span>
-                                        {element.kanji ? <span className="wordDisplayWordElementYomi">{element.kana}</span> : <span className="wordDisplayWordElementYomi"></span>}
-                                    </div>)}
+                                    <div id="wordDisplayWordElements">
+                                        {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
+                                            <span className="wordDisplayWordElementKanji">{word.rareKanji ? element.kana : element.kanji || element.kana}</span>
+                                            {element.kanji ?
+                                                <span className="wordDisplayWordElementYomi">{word.rareKanji ? element.kanji || element.kana : element.kana}</span>
+                                                :
+                                                <span className="wordDisplayWordElementYomi"></span>
+                                            }
+                                        </div>)}
+                                    </div>
                                 </div>
                             }
                             <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
                             <p id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}</div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
+                                {word.rareKanji && <div>généralement écrit en kanas</div>}
+                                {word.obscure && <div>très peu utilisé</div>}
                             </p>
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}

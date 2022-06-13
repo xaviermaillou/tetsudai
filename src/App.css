@@ -170,15 +170,16 @@ input:focus {
   width: 100%;
   font-size: calc(40px + 10vh);
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+#wordDisplayWordElements {
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   flex-wrap: nowrap;
   overflow-x: scroll;
-}
-#wordDisplayWordJukujikun {
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
 }
 #wordDisplayWordKanjiOnly {
   display: flex;
@@ -837,12 +838,12 @@ input:focus {
 }
 .historyElementLabel {
   font-size: 14px;
-  opacity: 0.5;
+  opacity: 0.33;
   margin: 5px 0px;
 }
 .historyElementTranslation {
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.5;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
