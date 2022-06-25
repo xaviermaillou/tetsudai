@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
-import ResetDatabase from './components/Database';
 import SidePanel from './components/SidePanel';
 import DisplayHistory from './components/DisplayHistory';
 import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
@@ -238,9 +237,6 @@ function App() {
 
   return (
     <div className="App">
-      <div id="header">
-        <ResetDatabase kanjisList={kanjisList} vocabularyList={vocabularyList} sentencesList={sentencesList} />
-      </div>
       <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null ? 'full' : 'clickable'}>
         <img src='/img/Logo1.png' alt='logo' />
         <img src='/img/Logo2.png' alt='logo' />
