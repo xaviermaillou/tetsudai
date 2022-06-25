@@ -113,7 +113,8 @@ const MainDisplay = (props) => {
                                 <div>{word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}</div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
                                 {word.rareKanji && <div>généralement écrit en kanas</div>}
-                                {word.obscure && <div>très peu utilisé</div>}
+                                {word.obscure && <div>⚠ très peu utilisé</div>}
+                                {word.common && <div>✓ courant</div>}
                             </p>
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}

@@ -196,7 +196,6 @@ function App() {
         if (historyElement.kanji) remainingFilteredKanjis = remainingFilteredKanjis
           .filter((remaining) => (remaining.kanji !== historyElement.kanji && (kanji ? remaining.kanji !== kanji.kanji : true)));
       });
-      console.log(remainingFilteredKanjis);
       const newKanji = remainingFilteredKanjis[Math.floor(Math.random()*remainingFilteredKanjis.length)];
       setKanji(newKanji);
       if (newKanji) trainingHistoryCopy.push(newKanji);

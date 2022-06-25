@@ -4404,11 +4404,14 @@ const kanjis = [
             ],
             onyomi: [
                 {
+                    'kana': 'シャ',
+                },
+                {
                     'kana': 'ジャ',
                 },
             ],
         },
-        romaji: ['yashiro', 'ja'],
+        romaji: ['yashiro', 'sha', 'ja'],
         translation: 'compagnie, bureau, sanctuaire',
     },
     {
