@@ -1,4 +1,4 @@
-const conjugationStructure = (base, inflexions, exceptionBases) => {
+const verbConjugationStructure = (base, inflexions, exceptionBases) => {
     return {
         nonPast: {
             affirmative: {
@@ -46,26 +46,26 @@ const conjugationStructure = (base, inflexions, exceptionBases) => {
         }
     }
 }
-const copuleConjugationStructure = () => {
+const copuleConjugationStructure = (adjective) => {
     return {
         nonPast: {
             affirmative: {
                 neutral: {
-                    main: 'だ',
+                    main: adjective + 'だ',
                     ending: '',
                 },
                 polite: {
-                    main: 'で',
+                    main: adjective + 'で',
                     ending: 'す',
                 }
             },
             negative: {
                 neutral: {
-                    main: 'では',
+                    main: adjective + 'では',
                     ending: 'ない',
                 },
                 polite: {
-                    main: 'では',
+                    main: adjective + 'では',
                     ending: 'ありません',
                 }
             }
@@ -73,29 +73,28 @@ const copuleConjugationStructure = () => {
         past: {
             affirmative: {
                 neutral: {
-                    main: 'だ',
+                    main: adjective + 'だ',
                     ending: 'った',
                 },
                 polite: {
-                    main: 'で',
+                    main: adjective + 'で',
                     ending: 'した',
                 }
             },
             negative: {
                 neutral: {
-                    main: 'では',
+                    main: adjective + 'では',
                     ending: 'なかった',
                 },
                 polite: {
-                    main: 'では',
+                    main: adjective + 'では',
                     ending: 'ありませんでした',
                 }
             }
         }
     }
 }
-
-export const getVerbConjugation = (word) => {
+const getVerbConjugation = (word) => {
     const base = word.rareKanji ?
         word.elements.map((element) => element.kana).join('').slice(0, -1)
         :
@@ -103,7 +102,7 @@ export const getVerbConjugation = (word) => {
     const info = word.verbPrecisions;
 
     if (info.type === 'ichidan') {
-        return conjugationStructure(base, {
+        return verbConjugationStructure(base, {
             okurigana: 'る',
             politeInterm: '',
             connective: '',
@@ -112,7 +111,7 @@ export const getVerbConjugation = (word) => {
     }
     if (info.type === 'godan') {
         if (info.ending === 'u') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'う',
                 politeInterm: 'い',
                 connective: 'わ',
@@ -120,7 +119,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'ku') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'く',
                 politeInterm: 'き',
                 connective: 'か',
@@ -128,7 +127,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'gu') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'ぐ',
                 politeInterm: 'ぎ',
                 connective: 'が',
@@ -136,7 +135,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'su') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'す',
                 politeInterm: 'し',
                 connective: 'さ',
@@ -144,7 +143,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'mu') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'む',
                 politeInterm: 'み',
                 connective: 'ま',
@@ -152,7 +151,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'bu') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'ぶ',
                 politeInterm: 'び',
                 connective: 'ば',
@@ -160,7 +159,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'nu') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'ぬ',
                 politeInterm: 'に',
                 connective: 'な',
@@ -168,7 +167,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'ru') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'る',
                 politeInterm: 'り',
                 connective: 'ら',
@@ -176,7 +175,7 @@ export const getVerbConjugation = (word) => {
             });
         }
         if (info.ending === 'tsu') {
-            return conjugationStructure(base, {
+            return verbConjugationStructure(base, {
                 okurigana: 'つ',
                 politeInterm: 'ち',
                 connective: 'た',
@@ -185,7 +184,7 @@ export const getVerbConjugation = (word) => {
         }
     }
     if (info.type === 'suru') {
-        return conjugationStructure(base, {
+        return verbConjugationStructure(base, {
             okurigana: 'る',
             politeInterm: '',
             connective: '',
@@ -202,7 +201,7 @@ export const getVerbConjugation = (word) => {
         });
     }
     if (info.type === 'kuru') {
-        return conjugationStructure(base, {
+        return verbConjugationStructure(base, {
             okurigana: 'る',
             politeInterm: '',
             connective: '',
@@ -219,7 +218,7 @@ export const getVerbConjugation = (word) => {
         });
     }
     if (info.type === 'iku') {
-        return conjugationStructure(base, {
+        return verbConjugationStructure(base, {
             okurigana: 'く',
             politeInterm: 'き',
             connective: 'か',
@@ -231,8 +230,56 @@ export const getVerbConjugation = (word) => {
     }
 }
 
+const adjectiveConjugationStructure = (base) => {
+    return {
+        nonPast: {
+            affirmative: {
+                neutral: {
+                    main: base,
+                    ending: 'い',
+                },
+            },
+            negative: {
+                neutral: {
+                    main: base,
+                    ending: 'くない',
+                }
+            } 
+        },
+        past: {
+            affirmative: {
+                neutral: {
+                    main: base,
+                    ending: 'かった',
+                },
+            } ,
+            negative: {
+                neutral: {
+                    main: base,
+                    ending: 'くなかった',
+                }
+            } 
+        }
+    }
+}
+const getAdjectiveConjugation = (word) => {
+    let base = word.elements.map((element) => element.kanji || element.kana).join('');
+    const info = word.adjectivePrecisions;
+
+    if (info.type === 'na') {
+        return copuleConjugationStructure(base);
+    }
+    if (info.type === 'i') {
+        base = base.slice(0, -1);
+        return adjectiveConjugationStructure(base);
+    }
+}
+
 export const dispatchInflexion = (word) => {
     if (word.verbPrecisions) {
-        return getVerbConjugation(word)
+        return getVerbConjugation(word);
+    }
+    if (word.adjectivePrecisions) {
+        return getAdjectiveConjugation(word);
     }
 }

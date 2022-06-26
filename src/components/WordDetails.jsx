@@ -6,9 +6,9 @@ const VerbInflexionLine = (props) => {
 
     return (
         <div className="wordDetailsInflexionsMode">
-            <span className="wordDetailsInflexionsVerb">{inflexion['neutral']['main']}{inflexion['neutral']['ending']}</span>
+            <span className="wordDetailsInflexionsVerb">{inflexion['polite']?.['main']}{inflexion['polite']?.['ending']}</span>
             <span className="wordDetailsInflexionsIndicator">{dictionnary[tenseName]} {dictionnary[modeName]}</span>
-            <span className="wordDetailsInflexionsVerb">{inflexion['polite']['main']}{inflexion['polite']['ending']}</span>
+            <span className="wordDetailsInflexionsVerb">{inflexion['neutral']?.['main']}{inflexion['neutral']?.['ending']}</span>
         </div>
     );
 }
