@@ -3,7 +3,7 @@ import KanaReadings from "./KanaReadings";
 import WordDetails from "./WordDetails";
 import TrainingControls from "./TrainingControls";
 import { classes } from "../lib/common";
-import { getVerbConjugation } from "../lib/inflexions"
+import { dispatchInflexion } from "../lib/inflexions"
 
 const MainDisplay = (props) => {
     const {
@@ -120,7 +120,7 @@ const MainDisplay = (props) => {
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={word.sentences}
-                                inflexions={getVerbConjugation(word)}
+                                inflexions={dispatchInflexion(word)}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}

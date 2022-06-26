@@ -4,21 +4,21 @@ const conjugationStructure = (base, inflexions, exceptionBases) => {
             affirmative: {
                 neutral: {
                     main: exceptionBases?.nonPastAffNeutral || base,
-                    okurigana: inflexions.nonPastAffNeutral,
+                    ending: inflexions.okurigana,
                 },
                 polite: {
                     main: exceptionBases?.nonPastAffPolite || base,
-                    okurigana: inflexions.nonPastAffPolite,
+                    ending: inflexions.politeInterm + 'ます',
                 }
             },
             negative: {
                 neutral: {
                     main: exceptionBases?.nonPastNegNeutral || base,
-                    okurigana: inflexions.nonPastNegNeutral,
+                    ending: inflexions.connective + 'ない',
                 },
                 polite: {
                     main: exceptionBases?.nonPastNegPolite || base,
-                    okurigana: inflexions.nonPastNegPolite,
+                    ending: inflexions.politeInterm + 'ません',
                 }
             }
         },
@@ -26,21 +26,21 @@ const conjugationStructure = (base, inflexions, exceptionBases) => {
             affirmative: {
                 neutral: {
                     main: exceptionBases?.pastAffNeutral || base,
-                    okurigana: inflexions.pastAffNeutral,
+                    ending: inflexions.past,
                 },
                 polite: {
                     main: exceptionBases?.pastAffPolite || base,
-                    okurigana: inflexions.pastAffPolite,
+                    ending: inflexions.politeInterm + 'ました',
                 }
             },
             negative: {
                 neutral: {
                     main: exceptionBases?.pastNegNeutral || base,
-                    okurigana: inflexions.pastNegNeutral,
+                    ending: inflexions.connective + 'なかった',
                 },
                 polite: {
                     main: exceptionBases?.pastNegPolite || base,
-                    okurigana: inflexions.pastNegPolite,
+                    ending: inflexions.politeInterm + 'ませんでした',
                 }
             }
         }
@@ -56,136 +56,92 @@ export const getVerbConjugation = (word) => {
 
     if (info.type === 'ichidan') {
         return conjugationStructure(base, {
-            nonPastAffNeutral: 'る',
-            nonPastAffPolite: 'ます',
-            nonPastNegNeutral: 'ない',
-            nonPastNegPolite: 'ません',
-            pastAffNeutral: 'た',
-            pastAffPolite: 'ました',
-            pastNegNeutral: 'なかった',
-            pastNegPolite: 'ませんでした'
+            okurigana: 'る',
+            politeInterm: '',
+            connective: '',
+            past: 'た',
         })
     }
     if (info.type === 'godan') {
         if (info.ending === 'u') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'う',
-                nonPastAffPolite: 'います',
-                nonPastNegNeutral: 'わない',
-                nonPastNegPolite: 'いません',
-                pastAffNeutral: 'った',
-                pastAffPolite: 'いました',
-                pastNegNeutral: 'わなかった',
-                pastNegPolite: 'いませんでした'
+                okurigana: 'う',
+                politeInterm: 'い',
+                connective: 'わ',
+                past: 'った',
             })
         }
         if (info.ending === 'ku') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'く',
-                nonPastAffPolite: 'きます',
-                nonPastNegNeutral: 'かない',
-                nonPastNegPolite: 'きません',
-                pastAffNeutral: 'いた',
-                pastAffPolite: 'きました',
-                pastNegNeutral: 'かなかった',
-                pastNegPolite: 'きませんでした'
+                okurigana: 'く',
+                politeInterm: 'き',
+                connective: 'か',
+                past: 'いた',
             })
         }
         if (info.ending === 'gu') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'ぐ',
-                nonPastAffPolite: 'ぎます',
-                nonPastNegNeutral: 'がない',
-                nonPastNegPolite: 'ぎません',
-                pastAffNeutral: 'いだ',
-                pastAffPolite: 'ぎました',
-                pastNegNeutral: 'がなかった',
-                pastNegPolite: 'ぎませんでした'
+                okurigana: 'ぐ',
+                politeInterm: 'ぎ',
+                connective: 'が',
+                past: 'いだ',
             })
         }
         if (info.ending === 'su') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'す',
-                nonPastAffPolite: 'します',
-                nonPastNegNeutral: 'さない',
-                nonPastNegPolite: 'しません',
-                pastAffNeutral: 'した',
-                pastAffPolite: 'しました',
-                pastNegNeutral: 'さなかった',
-                pastNegPolite: 'しませんでした'
+                okurigana: 'す',
+                politeInterm: 'し',
+                connective: 'さ',
+                past: 'した',
             })
         }
         if (info.ending === 'mu') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'む',
-                nonPastAffPolite: 'みます',
-                nonPastNegNeutral: 'まない',
-                nonPastNegPolite: 'みません',
-                pastAffNeutral: 'んだ',
-                pastAffPolite: 'みました',
-                pastNegNeutral: 'まなかった',
-                pastNegPolite: 'みませんでした'
+                okurigana: 'む',
+                politeInterm: 'み',
+                connective: 'ま',
+                past: 'んだ',
             })
         }
         if (info.ending === 'bu') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'ぶ',
-                nonPastAffPolite: 'びます',
-                nonPastNegNeutral: 'ばない',
-                nonPastNegPolite: 'びません',
-                pastAffNeutral: 'んだ',
-                pastAffPolite: 'びました',
-                pastNegNeutral: 'ばなかった',
-                pastNegPolite: 'びませんでした'
+                okurigana: 'ぶ',
+                politeInterm: 'び',
+                connective: 'ば',
+                past: 'んだ',
             })
         }
         if (info.ending === 'nu') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'ぬ',
-                nonPastAffPolite: 'にます',
-                nonPastNegNeutral: 'なない',
-                nonPastNegPolite: 'にません',
-                pastAffNeutral: 'んだ',
-                pastAffPolite: 'にました',
-                pastNegNeutral: 'ななかった',
-                pastNegPolite: 'にませんでした'
+                okurigana: 'ぬ',
+                politeInterm: 'に',
+                connective: 'な',
+                past: 'んだ',
             })
         }
         if (info.ending === 'ru') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'る',
-                nonPastAffPolite: 'ります',
-                nonPastNegNeutral: 'らない',
-                nonPastNegPolite: 'りません',
-                pastAffNeutral: 'った',
-                pastAffPolite: 'りました',
-                pastNegNeutral: 'らなかった',
-                pastNegPolite: 'りませんでした'
+                okurigana: 'る',
+                politeInterm: 'り',
+                connective: 'ら',
+                past: 'った',
             })
         }
         if (info.ending === 'tsu') {
             return conjugationStructure(base, {
-                nonPastAffNeutral: 'つ',
-                nonPastAffPolite: 'ちます',
-                nonPastNegNeutral: 'たない',
-                nonPastNegPolite: 'ちません',
-                pastAffNeutral: 'った',
-                pastAffPolite: 'ちました',
-                pastNegNeutral: 'たなかった',
-                pastNegPolite: 'ちませんでした'
+                okurigana: 'つ',
+                politeInterm: 'ち',
+                connective: 'た',
+                past: 'った',
             })
         }
     }
     if (info.type === 'suru') {
         return conjugationStructure(base, {
-            nonPastAffNeutral: 'る',
-            nonPastAffPolite: 'ます',
-            nonPastNegNeutral: 'ない',
-            nonPastNegPolite: 'ません',
-            pastAffNeutral: 'た',
-            pastAffPolite: 'ました',
-            pastNegNeutral: 'なかった',
-            pastNegPolite: 'ませんでした'
+            okurigana: 'る',
+            politeInterm: '',
+            connective: '',
+            past: 'た',
         }, {
             nonPastAffNeutral: 'す',
             nonPastAffPolite: 'し',
@@ -199,14 +155,10 @@ export const getVerbConjugation = (word) => {
     }
     if (info.type === 'kuru') {
         return conjugationStructure(base, {
-            nonPastAffNeutral: 'る',
-            nonPastAffPolite: 'ます',
-            nonPastNegNeutral: 'ない',
-            nonPastNegPolite: 'ません',
-            pastAffNeutral: 'た',
-            pastAffPolite: 'ました',
-            pastNegNeutral: 'なかった',
-            pastNegPolite: 'ませんでした'
+            okurigana: 'る',
+            politeInterm: '',
+            connective: '',
+            past: 'た',
         }, {
             nonPastAffNeutral: 'く',
             nonPastAffPolite: 'き',
@@ -220,14 +172,16 @@ export const getVerbConjugation = (word) => {
     }
     if (info.type === 'iku') {
         return conjugationStructure(base, {
-            nonPastAffNeutral: 'く',
-            nonPastAffPolite: 'きます',
-            nonPastNegNeutral: 'かない',
-            nonPastNegPolite: 'きません',
-            pastAffNeutral: 'った',
-            pastAffPolite: 'きました',
-            pastNegNeutral: 'かなかった',
-            pastNegPolite: 'きませんでした'
+            okurigana: 'く',
+            politeInterm: 'き',
+            connective: 'か',
+            past: 'った',
         })
+    }
+}
+
+export const dispatchInflexion = (word) => {
+    if (word.verbPrecisions) {
+        return getVerbConjugation(word)
     }
 }
