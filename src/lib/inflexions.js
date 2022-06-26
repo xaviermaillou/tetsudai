@@ -184,20 +184,21 @@ const getVerbConjugation = (word) => {
         }
     }
     if (info.type === 'suru') {
+        const noun = base.slice(0, -1);
         return verbConjugationStructure(base, {
             okurigana: 'る',
             politeInterm: '',
             connective: '',
             past: 'た',
         }, {
-            nonPastAffNeutral: 'す',
-            nonPastAffPolite: 'し',
-            nonPastNegNeutral: 'し',
-            nonPastNegPolite: 'し',
-            pastAffNeutral: 'し',
-            pastAffPolite: 'し',
-            pastNegNeutral: 'し',
-            pastNegPolite: 'し'
+            nonPastAffNeutral: noun + 'す',
+            nonPastAffPolite: noun + 'し',
+            nonPastNegNeutral: noun + 'し',
+            nonPastNegPolite: noun + 'し',
+            pastAffNeutral: noun + 'し',
+            pastAffPolite: noun + 'し',
+            pastNegNeutral: noun + 'し',
+            pastNegPolite: noun + 'し'
         });
     }
     if (info.type === 'kuru') {
