@@ -1,6 +1,50 @@
 import { useState } from "react";
 import { dictionnary } from "../lib/dictionnary";
 
+const Kosoado = (props) => {
+    const { referenceId, changeCurrentWordById } = props;
+
+    return (
+        <div id="kosoadoTable">
+            <div className="kosoadoRow">
+                <div onClick={() => changeCurrentWordById(209)} className={referenceId === 209 ? "selected" : "clickable"}>こう</div>
+                <div onClick={() => changeCurrentWordById(213)} className={referenceId === 213 ? "selected" : "clickable"}>そう</div>
+                <div onClick={() => changeCurrentWordById(217)} className={referenceId === 217 ? "selected" : "clickable"}>ああ</div>
+                <div onClick={() => changeCurrentWordById(221)} className={referenceId === 221 ? "selected" : "clickable"}>どう</div>
+                <div>façon</div>
+            </div>
+            <div className="kosoadoRow">
+                <div onClick={() => changeCurrentWordById(210)} className={referenceId === 210 ? "selected" : "clickable"}>ここ</div>
+                <div onClick={() => changeCurrentWordById(214)} className={referenceId === 214 ? "selected" : "clickable"}>そこ</div>
+                <div onClick={() => changeCurrentWordById(218)} className={referenceId === 218 ? "selected" : "clickable"}>あそこ</div>
+                <div onClick={() => changeCurrentWordById(222)} className={referenceId === 222 ? "selected" : "clickable"}>どこ</div>
+                <div>lieu</div>
+            </div>
+            <div className="kosoadoRow">
+                <div onClick={() => changeCurrentWordById(208)} className={referenceId === 208 ? "selected" : "clickable"}>これ</div>
+                <div onClick={() => changeCurrentWordById(212)} className={referenceId === 212 ? "selected" : "clickable"}>それ</div>
+                <div onClick={() => changeCurrentWordById(216)} className={referenceId === 216 ? "selected" : "clickable"}>あれ</div>
+                <div onClick={() => changeCurrentWordById(220)} className={referenceId === 220 ? "selected" : "clickable"}>どれ</div>
+                <div>pronom</div>
+            </div>
+            <div className="kosoadoRow">
+                <div onClick={() => changeCurrentWordById(207)} className={referenceId === 207 ? "selected" : "clickable"}>この</div>
+                <div onClick={() => changeCurrentWordById(211)} className={referenceId === 211 ? "selected" : "clickable"}>その</div>
+                <div onClick={() => changeCurrentWordById(215)} className={referenceId === 215 ? "selected" : "clickable"}>あの</div>
+                <div onClick={() => changeCurrentWordById(219)} className={referenceId === 219 ? "selected" : "clickable"}>どの</div>
+                <div>adjectif</div>
+            </div>
+            <div className="kosoadoRow">
+                <div>proche</div>
+                <div>distant</div>
+                <div>très distant</div>
+                <div>question</div>
+                <div></div>
+            </div>
+        </div>
+    );
+}
+
 const VerbInflexionLine = (props) => {
     const { inflexion, tenseName, modeName } = props;
 
@@ -36,25 +80,23 @@ const Inflexions = (props) => {
 }
 
 const WordDetailsPlus = (props) => {
-    const { inflexions } = props;
+    const { referenceId, changeCurrentWordById, inflexions, kosoado } = props;
     
     const [open, setOpen] = useState(false);
 
     return (
         <div id="wordDetailsPlus" className={open ? "expanded" : ""}>
             <div id="wordDetailsPlusIndicator" className="clickable" onClick={() => setOpen(!open)}>
-                {inflexions &&
-                    <span>CONJUGAISON</span>
-                }
+                {inflexions && <span>CONJUGAISON</span>}
+                {kosoado && <span>KOSOADO</span>}
                 {open ?
                     <img className="open" src="/img/less.png" alt="hide readings" />
                     :
                     <img src="/img/plus.png" alt="show readings" />
                 }
             </div>
-            {inflexions &&
-                <Inflexions inflexions={inflexions} />
-            }
+            {inflexions && <Inflexions inflexions={inflexions} />}
+            {kosoado && <Kosoado referenceId={referenceId} changeCurrentWordById={changeCurrentWordById} />}
         </div>
     );
 }
@@ -129,6 +171,7 @@ const WordDetails = (props) => {
         elements,
         sentences,
         inflexions,
+        kosoado,
         allDisplayed,
         expanded,
         changeCurrentKanjiByKanji,
@@ -161,8 +204,13 @@ const WordDetails = (props) => {
                 ))}
                 {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
             </div>
-            {(expanded && inflexions) &&
-                <WordDetailsPlus inflexions={inflexions} />
+            {(expanded && (inflexions || kosoado)) &&
+                <WordDetailsPlus
+                    referenceId={referenceId}
+                    changeCurrentWordById={changeCurrentWordById}
+                    inflexions={inflexions}
+                    kosoado={kosoado}
+                />
             }
         </div>
     );

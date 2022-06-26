@@ -340,12 +340,10 @@ input:focus {
   height: 50px;
   width: 100%;
   font-size: 16px;
+  overflow: hidden;
 }
 #wordDetailsPlus.expanded {
   height: 48vh;
-}
-#wordDetailsPlus.expanded #wordDetailsInflexions {
-  opacity: 1;
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -368,7 +366,6 @@ input:focus {
 #wordDetailsInflexions {
   display: flex;
   flex-direction: column;
-  opacity: 0;
 }
 .wordDetailsInflexionsTense {
   margin: 10px 0px;
@@ -388,6 +385,21 @@ input:focus {
 }
 .wordDetailsInflexionsMode span:nth-child(3) {
   text-align: left;
+}
+#kosoadoTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.kosoadoRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kosoadoRow div {
+  width: 20%;
+  padding: 5px;
 }
 
 .trainingEndNotifier {

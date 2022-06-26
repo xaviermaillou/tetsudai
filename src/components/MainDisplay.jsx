@@ -121,6 +121,7 @@ const MainDisplay = (props) => {
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={word.sentences}
                                 inflexions={dispatchInflexion(word)}
+                                kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
