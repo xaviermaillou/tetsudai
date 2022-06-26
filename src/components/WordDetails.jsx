@@ -24,7 +24,7 @@ const VerbInflexionTense = (props) => {
     );
 }
 
-const VerbInflexions = (props) => {
+const Inflexions = (props) => {
     const { inflexions } = props;
 
     return (
@@ -53,7 +53,7 @@ const WordDetailsPlus = (props) => {
                 }
             </div>
             {inflexions &&
-                <VerbInflexions inflexions={inflexions} />
+                <Inflexions inflexions={inflexions} />
             }
         </div>
     );
