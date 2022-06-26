@@ -1,3 +1,64 @@
+import { useState } from "react";
+import { dictionnary } from "../lib/dictionnary";
+
+const VerbInflexionLine = (props) => {
+    const { inflexion, tenseName, modeName } = props;
+
+    return (
+        <div className="wordDetailsInflexionsMode">
+            <span className="wordDetailsInflexionsVerb">{inflexion['neutral']['main']}{inflexion['neutral']['okurigana']}</span>
+            <span className="wordDetailsInflexionsIndicator">{dictionnary[tenseName]} {dictionnary[modeName]}</span>
+            <span className="wordDetailsInflexionsVerb">{inflexion['polite']['main']}{inflexion['polite']['okurigana']}</span>
+        </div>
+    );
+}
+
+const VerbInflexionTense = (props) => {
+    const { tense, tenseName } = props;
+
+    return (
+        <div className="wordDetailsInflexionsTense">
+            <VerbInflexionLine inflexion={tense['affirmative']} tenseName={tenseName} modeName={'affirmative'} />
+            <VerbInflexionLine inflexion={tense['negative']} tenseName={tenseName} modeName={'negative'} />
+        </div>
+    );
+}
+
+const VerbInflexions = (props) => {
+    const { inflexions } = props;
+
+    return (
+        <div id="wordDetailsInflexions">
+            <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />
+            <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />
+        </div>
+    );
+}
+
+const WordDetailsPlus = (props) => {
+    const { inflexions } = props;
+    
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div id="wordDetailsPlus" className={open ? "expanded" : ""}>
+            <div id="wordDetailsPlusIndicator" className="clickable" onClick={() => setOpen(!open)}>
+                {inflexions &&
+                    <span>CONJUGAISON</span>
+                }
+                {open ?
+                    <img className="open" src="/img/less.png" alt="hide readings" />
+                    :
+                    <img src="/img/plus.png" alt="show readings" />
+                }
+            </div>
+            {inflexions &&
+                <VerbInflexions inflexions={inflexions} />
+            }
+        </div>
+    );
+}
+
 const Kanji = (props) => {
     const {
         element,
@@ -67,6 +128,7 @@ const WordDetails = (props) => {
     const {
         elements,
         sentences,
+        inflexions,
         allDisplayed,
         expanded,
         changeCurrentKanjiByKanji,
@@ -99,6 +161,9 @@ const WordDetails = (props) => {
                 ))}
                 {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
             </div>
+            {inflexions &&
+                <WordDetailsPlus inflexions={inflexions} />
+            }
         </div>
     );
 }

@@ -12,6 +12,7 @@ function App() {
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
   const [sentencesList, setSentencesList] = useState([]);
+  const [inflexionsList, setInflexionsList] = useState([]);
 
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
   const [vocabularyWithRelated, setVocabularyWithRelated] = useState([]);
@@ -42,6 +43,14 @@ function App() {
         doc,
       }));
       setSentencesList(data);
+    });
+    // Fetching inflexions
+    firebase.firestore().collection('Inflexions').onSnapshot((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+        doc,
+      }));
+      setInflexionsList(data);
     });
   }, []);
 
@@ -74,11 +83,16 @@ function App() {
             }
           });
         });
+        inflexionsList.forEach((inflexion) => {
+          if (inflexion.id === word.id) {
+            word.inflexions = inflexion.conjugation;
+          }
+        })
       });
     });
     setKanjisWithVocabulary(kanjisListCopy);
     setVocabularyWithRelated(vocabularyListCopy);
-  }, [kanjisList, vocabularyList, sentencesList]);
+  }, [kanjisList, vocabularyList, sentencesList, inflexionsList]);
 
   // useEffect(() => {
   //   const vocabularyListCopy = [ ...vocabularyList ];

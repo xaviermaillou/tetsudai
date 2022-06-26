@@ -218,6 +218,7 @@ input:focus {
 #wordDetails {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 #wordDetailsSentences {
   margin-top: 20px;
@@ -332,6 +333,61 @@ input:focus {
 }
 .sentencesElementTranslation {
   opacity: 0.5;
+}
+#wordDetailsPlus {
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+}
+#wordDetailsPlus.expanded {
+  height: 48vh;
+}
+#wordDetailsPlus.expanded #wordDetailsInflexions {
+  opacity: 1;
+}
+#wordDetailsPlusIndicator {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#wordDetailsPlusIndicator img {
+  height: 12px;
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 70px);
+  transform: rotate(180deg);
+}
+#wordDetailsPlusIndicator img.open {
+  transform: rotate(0deg);
+}
+#wordDetailsInflexions {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+.wordDetailsInflexionsTense {
+  margin: 10px 0px;
+}
+.wordDetailsInflexionsMode {
+  display: flex;
+  justify-content: space-between;
+}
+.wordDetailsInflexionsVerb {
+  width: calc(50% - 75px);
+}
+.wordDetailsInflexionsMode span:nth-child(1) {
+  text-align: right;
+}
+.wordDetailsInflexionsIndicator {
+  opacity: 0.5;
+}
+.wordDetailsInflexionsMode span:nth-child(3) {
+  text-align: left;
 }
 
 .trainingEndNotifier {
@@ -909,6 +965,9 @@ input:focus {
   }
   #wordDetails {
     flex-direction: row;
+  }
+  #wordDetailsPlus.expanded {
+    height: calc(46vh - (2vw - 50px));
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;

@@ -119,6 +119,7 @@ const MainDisplay = (props) => {
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={word.sentences}
+                                inflexions={word.inflexions}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
