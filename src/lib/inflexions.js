@@ -46,6 +46,54 @@ const conjugationStructure = (base, inflexions, exceptionBases) => {
         }
     }
 }
+const copuleConjugationStructure = () => {
+    return {
+        nonPast: {
+            affirmative: {
+                neutral: {
+                    main: 'だ',
+                    ending: '',
+                },
+                polite: {
+                    main: 'で',
+                    ending: 'す',
+                }
+            },
+            negative: {
+                neutral: {
+                    main: 'では',
+                    ending: 'ない',
+                },
+                polite: {
+                    main: 'では',
+                    ending: 'ありません',
+                }
+            }
+        },
+        past: {
+            affirmative: {
+                neutral: {
+                    main: 'だ',
+                    ending: 'った',
+                },
+                polite: {
+                    main: 'で',
+                    ending: 'した',
+                }
+            },
+            negative: {
+                neutral: {
+                    main: 'では',
+                    ending: 'なかった',
+                },
+                polite: {
+                    main: 'では',
+                    ending: 'ありませんでした',
+                }
+            }
+        }
+    }
+}
 
 export const getVerbConjugation = (word) => {
     const base = word.rareKanji ?
@@ -60,7 +108,7 @@ export const getVerbConjugation = (word) => {
             politeInterm: '',
             connective: '',
             past: 'た',
-        })
+        });
     }
     if (info.type === 'godan') {
         if (info.ending === 'u') {
@@ -69,7 +117,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'い',
                 connective: 'わ',
                 past: 'った',
-            })
+            });
         }
         if (info.ending === 'ku') {
             return conjugationStructure(base, {
@@ -77,7 +125,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'き',
                 connective: 'か',
                 past: 'いた',
-            })
+            });
         }
         if (info.ending === 'gu') {
             return conjugationStructure(base, {
@@ -85,7 +133,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'ぎ',
                 connective: 'が',
                 past: 'いだ',
-            })
+            });
         }
         if (info.ending === 'su') {
             return conjugationStructure(base, {
@@ -93,7 +141,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'し',
                 connective: 'さ',
                 past: 'した',
-            })
+            });
         }
         if (info.ending === 'mu') {
             return conjugationStructure(base, {
@@ -101,7 +149,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'み',
                 connective: 'ま',
                 past: 'んだ',
-            })
+            });
         }
         if (info.ending === 'bu') {
             return conjugationStructure(base, {
@@ -109,7 +157,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'び',
                 connective: 'ば',
                 past: 'んだ',
-            })
+            });
         }
         if (info.ending === 'nu') {
             return conjugationStructure(base, {
@@ -117,7 +165,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'に',
                 connective: 'な',
                 past: 'んだ',
-            })
+            });
         }
         if (info.ending === 'ru') {
             return conjugationStructure(base, {
@@ -125,7 +173,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'り',
                 connective: 'ら',
                 past: 'った',
-            })
+            });
         }
         if (info.ending === 'tsu') {
             return conjugationStructure(base, {
@@ -133,7 +181,7 @@ export const getVerbConjugation = (word) => {
                 politeInterm: 'ち',
                 connective: 'た',
                 past: 'った',
-            })
+            });
         }
     }
     if (info.type === 'suru') {
@@ -151,7 +199,7 @@ export const getVerbConjugation = (word) => {
             pastAffPolite: 'し',
             pastNegNeutral: 'し',
             pastNegPolite: 'し'
-        })
+        });
     }
     if (info.type === 'kuru') {
         return conjugationStructure(base, {
@@ -168,7 +216,7 @@ export const getVerbConjugation = (word) => {
             pastAffPolite: 'き',
             pastNegNeutral: 'こ',
             pastNegPolite: 'き'
-        })
+        });
     }
     if (info.type === 'iku') {
         return conjugationStructure(base, {
@@ -176,7 +224,10 @@ export const getVerbConjugation = (word) => {
             politeInterm: 'き',
             connective: 'か',
             past: 'った',
-        })
+        });
+    }
+    if (info.type === 'desu') {
+        return copuleConjugationStructure();
     }
 }
 
