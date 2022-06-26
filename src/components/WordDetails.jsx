@@ -161,7 +161,7 @@ const WordDetails = (props) => {
                 ))}
                 {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
             </div>
-            {inflexions &&
+            {(expanded && inflexions) &&
                 <WordDetailsPlus inflexions={inflexions} />
             }
         </div>
