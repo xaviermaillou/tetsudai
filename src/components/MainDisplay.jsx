@@ -110,13 +110,12 @@ const MainDisplay = (props) => {
                                 </div>
                             }
                             <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
-                            <p id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
+                            <div id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}</div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
-                                {word.rareKanji && <div>généralement écrit en kanas</div>}
                                 {word.obscure && <div>⚠ très peu utilisé</div>}
                                 {word.common && <div>✓ courant</div>}
-                            </p>
+                            </div>
                             <WordDetails
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={word.sentences}
