@@ -85,7 +85,7 @@ input:focus {
   cursor: pointer;
 }
 
-.App {
+#App {
   text-align: center;
   height: 100vh;
 }
@@ -127,6 +127,15 @@ input:focus {
 #kanjiDisplay.rerenderOpacity, #wordDisplay.rerenderOpacity {
   animation-name: rerenderOpacity;
   animation-duration: 0.2s;
+}
+#themeSwitcher {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#themeSwitcher div {
+  width: fit-content;
 }
 #mainDisplay {
   z-index: 800;
@@ -402,6 +411,9 @@ input:focus {
 .kosoadoRow div {
   width: 20%;
   padding: 5px;
+}
+.kosoadoIndicator {
+  opacity: 0.5;
 }
 
 .trainingEndNotifier {
@@ -1077,3 +1089,256 @@ input:focus {
   }
 }
 
+/* ------------------------------------------------ LIGHT THEME ------------------------------------------------ */
+
+#App.light {
+  color: darkslategrey;
+  background-color: white;
+}
+
+#App.light input {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#App.light input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+#App.light input:focus {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+#App.light #kanjiDisplayKanji,
+#App.light .wordDisplayWordElement span,
+#App.light .wordDisplayWordElementYomi span {
+  color: gray;
+}
+
+#App.light .yomiContainer.extendable {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#App.light .yomiSingleExampleKanjiKana.highlighted div,
+#App.light .sentencesElement .highlighted,
+#App.light .kanjisElementKana .highlighted {
+  color: rgb(220, 121, 121);
+}
+
+#App.light #wordDetailsPlus {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#App.light .kosoadoRow div.selected {
+  background-color: rgba(255, 183, 197, 0.15);
+}
+
+#App.light #filtersIndicator {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#App.light #wordsListFilterModal div {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#App.light #wordsListTrainerIcon {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#App.light #sidePanel {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+#App.light #wordsListFilterModal,
+#App.light #wordsListTrainingModal {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#App.light #wordsListTrainingModalScreenshot img {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+}
+
+#App.light #wordsListTrainingModalButtons {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#App.light .listIndicator {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+#App.light #kanjisList {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+#App.light .kanjisListElement.selected {
+  border-left: 5px solid rgba(0, 0, 0, 0.15);
+}
+
+#App.light .vocabularyListElement.selected {
+  border-left: 5px solid rgba(0, 0, 0, 0.15);
+}
+
+#App.light .importance2 {
+  background-color: rgba(255, 183, 197, 0.2);
+}
+#App.light .importance1 {
+  background-color: rgba(255, 183, 197, 0.15);
+}
+
+#App.light #selector {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+#App.light .kanjisListElementContainer.open {
+  border-bottom: 1px solid rgba(255, 183, 197, 0.5);
+}
+#App.light .vocabularyListElementContainer.open {
+  border-bottom: 1px solid rgba(255, 183, 197, 0.5);
+}
+
+#App.light #displayHistoryContainer {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+@media (min-aspect-ratio: 1/1) {
+  #App.light .historyElement {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #App.light .historyElement:nth-child(1) {
+      border-bottom: none;
+  }
+  #App.light .historyElement.selected {
+      border-right: 5px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ------------------------------------------------ DARK THEME ------------------------------------------------ */
+
+#App.dark {
+  color: rgb(199, 192, 181);
+  background-color: rgb(36, 37, 37);
+}
+
+#App.dark input {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.4);
+}
+
+#App.dark input::placeholder {
+  color: rgba(199, 192, 181, 0.25);
+}
+
+#App.dark input:focus {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.8);
+}
+
+#App.dark #kanjiDisplayKanji,
+#App.dark .wordDisplayWordElement span,
+#App.dark .wordDisplayWordElementYomi span {
+  color: rgba(199, 192, 181, 0.75)
+}
+
+#App.dark .yomiContainer.extendable {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+}
+
+#App.dark .yomiSingleExampleKanjiKana.highlighted div,
+#App.dark .sentencesElement .highlighted,
+#App.dark .kanjisElementKana .highlighted {
+  color: rgb(220, 121, 121);
+}
+
+#App.dark #wordDetailsPlus {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);;
+  background-color: rgba(36, 37, 37, 0.9);
+}
+
+#App.dark .kosoadoRow div.selected {
+  background-color: rgba(199, 192, 181, 0.1);
+}
+
+#App.dark #filtersIndicator {
+  box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.1);
+  background-color: rgba(199, 192, 181, 0.05);
+}
+
+#App.dark #wordsListFilterModal div {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#App.dark #wordsListTrainerIcon {
+  background-color: rgba(36, 37, 37, 1);
+}
+
+#App.dark #sidePanel {
+  background-color: rgba(36, 37, 37, 0.9);
+}
+
+#App.dark #wordsListFilterModal,
+#App.dark #wordsListTrainingModal {
+  background-color: rgba(36, 37, 37, 0.9);
+}
+
+#App.dark #wordsListTrainingModalScreenshot img {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+}
+
+#App.dark #wordsListTrainingModalButtons {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#App.dark .listIndicator {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+#App.dark #kanjisList {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+#App.dark .kanjisListElement.selected {
+  border-left: 5px solid rgba(199, 192, 181, 0.25);
+}
+
+#App.dark .vocabularyListElement.selected {
+  border-left: 5px solid rgba(199, 192, 181, 0.25);
+}
+
+#App.dark .importance2 {
+  background-color: rgba(199, 192, 181, 0.1);
+}
+#App.dark .importance1 {
+  background-color: rgba(199, 192, 181, 0.05);
+}
+
+#App.dark #selector {
+  border-top: 1px solid rgba(199, 192, 181, 0.1);
+  border-bottom: 1px solid rgba(199, 192, 181, 0.1);
+}
+
+#App.dark .kanjisListElementContainer.open {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+}
+#App.dark .vocabularyListElementContainer.open {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+}
+
+#App.dark #displayHistoryContainer {
+  background-color: rgba(36, 37, 37, 0.95)
+}
+@media (min-aspect-ratio: 1/1) {
+  #App.dark .historyElement {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #App.dark .historyElement:nth-child(1) {
+      border-bottom: none;
+  }
+  #App.dark .historyElement.selected {
+      border-right: 5px solid rgba(199, 192, 181, 0.25);
+  }
+}

@@ -7,42 +7,118 @@ body {
 }
 
 input {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-input:focus {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(199, 192, 181, 0.4);
 }
 
 input::placeholder {
-    color: rgba(199, 192, 181, 0.25)
+    color: rgba(199, 192, 181, 0.25);
 }
 
-#kanji {
+input:focus {
+    border-bottom: 1px solid rgba(199, 192, 181, 0.8);
+}
+
+#kanjiDisplayKanji, .wordDisplayWordElement span, .wordDisplayWordElementYomi span {
     color: rgba(199, 192, 181, 0.75)
 }
 
 .yomiContainer.extendable {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(199, 192, 181, 0.2);
 }
 
-#wordsListContainer {
+.yomiSingleExampleKanjiKana.highlighted div,
+.sentencesElement .highlighted,
+.kanjisElementKana .highlighted {
+    color: rgb(220, 121, 121);
+}
+
+#wordDetailsPlus {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);;
     background-color: rgba(36, 37, 37, 0.9);
 }
 
-#wordsListHeader {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+.kosoadoRow div.selected {
+    background-color: rgba(199, 192, 181, 0.1);
 }
 
-.wordsListElement.selected {
-    background-color: rgba(255, 255, 255, 0.1);
+#filtersIndicator {
+    box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.1);
+    background-color: rgba(199, 192, 181, 0.05);
+}
+
+#wordsListFilterModal div {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#wordsListTrainerIcon {
+    background-color: rgba(36, 37, 37, 1);
+}
+
+#sidePanel {
+    background-color: rgba(36, 37, 37, 0.9);
+}
+
+#wordsListFilterModal, #wordsListTrainingModal {
+    background-color: rgba(36, 37, 37, 0.9);
+}
+
+#wordsListTrainingModalScreenshot img {
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+}
+
+#wordsListTrainingModalButtons {
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.listIndicator {
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+#kanjisList {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.kanjisListElement.selected {
+    border-left: 5px solid rgba(199, 192, 181, 0.25);
+}
+
+.vocabularyListElement.selected {
+    border-left: 5px solid rgba(199, 192, 181, 0.25);
+}
+
+.importance2 {
+    background-color: rgba(199, 192, 181, 0.1);
+}
+.importance1 {
+    background-color: rgba(199, 192, 181, 0.05);
 }
 
 #selector {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(199, 192, 181, 0.1);
+    border-bottom: 1px solid rgba(199, 192, 181, 0.1);
 }
 
-.wordsListElementContainer.open {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.kanjisListElementContainer.open {
+    border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+}
+.vocabularyListElementContainer.open {
+    border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+}
+
+#displayHistoryContainer {
+    background-color: rgba(36, 37, 37, 0.95)
+}
+@media (min-aspect-ratio: 1/1) {
+    .historyElement {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .historyElement:nth-child(1) {
+        border-bottom: none;
+    }
+    .historyElement.selected {
+        border-right: 5px solid rgba(199, 192, 181, 0.25);
+    }
 }

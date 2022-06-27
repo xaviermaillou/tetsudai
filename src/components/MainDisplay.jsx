@@ -5,8 +5,21 @@ import TrainingControls from "./TrainingControls";
 import { classes } from "../lib/common";
 import { dispatchInflexion } from "../lib/inflexions"
 
+const ThemeSwitcher = (props) => {
+    const { darkMode, setDarkMode } = props;
+    return (
+        <div id="themeSwitcher">
+            <div className="clickable" onClick={() => setDarkMode(!darkMode)}>
+                <span>switch</span>
+            </div>
+        </div>
+    );
+}
+
 const MainDisplay = (props) => {
     const {
+        darkMode,
+        setDarkMode,
         allDisplayed,
         setAllDisplayed,
         trainingMode,
@@ -45,6 +58,7 @@ const MainDisplay = (props) => {
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
+                <ThemeSwitcher darkMode={darkMode} setDarkMode={setDarkMode} />
                 {kanji !== null &&
                     (kanji ?
                         <div id="kanjiDisplay" className={valueChanged ? "rerenderOpacity" : ""}>

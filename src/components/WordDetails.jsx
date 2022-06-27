@@ -11,35 +11,35 @@ const Kosoado = (props) => {
                 <div onClick={() => changeCurrentWordById(213)} className={referenceId === 213 ? "selected" : "clickable"}>そう</div>
                 <div onClick={() => changeCurrentWordById(217)} className={referenceId === 217 ? "selected" : "clickable"}>ああ</div>
                 <div onClick={() => changeCurrentWordById(221)} className={referenceId === 221 ? "selected" : "clickable"}>どう</div>
-                <div>façon</div>
+                <div className="kosoadoIndicator">façon</div>
             </div>
             <div className="kosoadoRow">
                 <div onClick={() => changeCurrentWordById(210)} className={referenceId === 210 ? "selected" : "clickable"}>ここ</div>
                 <div onClick={() => changeCurrentWordById(214)} className={referenceId === 214 ? "selected" : "clickable"}>そこ</div>
                 <div onClick={() => changeCurrentWordById(218)} className={referenceId === 218 ? "selected" : "clickable"}>あそこ</div>
                 <div onClick={() => changeCurrentWordById(222)} className={referenceId === 222 ? "selected" : "clickable"}>どこ</div>
-                <div>lieu</div>
+                <div className="kosoadoIndicator">lieu</div>
             </div>
             <div className="kosoadoRow">
                 <div onClick={() => changeCurrentWordById(208)} className={referenceId === 208 ? "selected" : "clickable"}>これ</div>
                 <div onClick={() => changeCurrentWordById(212)} className={referenceId === 212 ? "selected" : "clickable"}>それ</div>
                 <div onClick={() => changeCurrentWordById(216)} className={referenceId === 216 ? "selected" : "clickable"}>あれ</div>
                 <div onClick={() => changeCurrentWordById(220)} className={referenceId === 220 ? "selected" : "clickable"}>どれ</div>
-                <div>pronom</div>
+                <div className="kosoadoIndicator">pronom</div>
             </div>
             <div className="kosoadoRow">
                 <div onClick={() => changeCurrentWordById(207)} className={referenceId === 207 ? "selected" : "clickable"}>この</div>
                 <div onClick={() => changeCurrentWordById(211)} className={referenceId === 211 ? "selected" : "clickable"}>その</div>
                 <div onClick={() => changeCurrentWordById(215)} className={referenceId === 215 ? "selected" : "clickable"}>あの</div>
                 <div onClick={() => changeCurrentWordById(219)} className={referenceId === 219 ? "selected" : "clickable"}>どの</div>
-                <div>adjectif</div>
+                <div className="kosoadoIndicator">adjectif</div>
             </div>
             <div className="kosoadoRow">
-                <div>proche</div>
-                <div>distant</div>
-                <div>très distant</div>
-                <div>question</div>
-                <div></div>
+                <div className="kosoadoIndicator">proche</div>
+                <div className="kosoadoIndicator">distant</div>
+                <div className="kosoadoIndicator">très distant</div>
+                <div className="kosoadoIndicator">question</div>
+                <div className="kosoadoIndicator"></div>
             </div>
         </div>
     );

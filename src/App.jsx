@@ -2,13 +2,14 @@ import firebase from './Firebase';
 import "firebase/firestore";
 import { useState, useEffect } from 'react';
 import './App.css';
-import './themes/light.css';
 import MainDisplay from './components/MainDisplay';
 import SidePanel from './components/SidePanel';
 import DisplayHistory from './components/DisplayHistory';
 import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
   const [sentencesList, setSentencesList] = useState([]);
@@ -236,7 +237,7 @@ function App() {
   const [searchExecuted, setSearchExecuted] = useState(false);
 
   return (
-    <div className="App">
+    <div id="App" className={darkMode ? 'dark' : 'light'}>
       <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null ? 'full' : 'clickable'}>
         <img src='/img/Logo1.png' alt='logo' />
         <img src='/img/Logo2.png' alt='logo' />
@@ -249,6 +250,9 @@ function App() {
         </p>
       </div>}
       <MainDisplay
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+
         // Displayed element
         kanji={kanji}
         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
