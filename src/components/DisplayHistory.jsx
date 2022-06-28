@@ -45,6 +45,7 @@ const HistoryElement = (props) => {
 
 const DisplayHistory = (props) => {
     const {
+        imgPath,
         displayHistory,
         kanji,
         word,
@@ -76,7 +77,7 @@ const DisplayHistory = (props) => {
             >
                 <img
                     className='clickable'
-                    src='/img/history.png'
+                    src={`/img/${imgPath}/history.png`}
                     alt='history'
                     onClick={() => setOpen(true)}
                 />

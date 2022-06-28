@@ -6,9 +6,10 @@ import { classes } from "../lib/common";
 import { dispatchInflexion } from "../lib/inflexions"
 
 const ThemeSwitcher = (props) => {
-    const { darkMode, setDarkMode } = props;
+    const { darkMode, setDarkMode, historyDisplayed } = props;
+    console.log(historyDisplayed)
     return (
-        <div id="themeSwitcher">
+        <div id="themeSwitcher" className={historyDisplayed ? "down" : ""}>
             <div id="themeSwitcherPill" className="clickable" onClick={() => setDarkMode(!darkMode)}>
                 <div id="themeSwitcherDot"></div>
             </div>
@@ -20,6 +21,8 @@ const MainDisplay = (props) => {
     const {
         darkMode,
         setDarkMode,
+        imgPath,
+        historyDisplayed,
         allDisplayed,
         setAllDisplayed,
         trainingMode,
@@ -58,7 +61,7 @@ const MainDisplay = (props) => {
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
-                <ThemeSwitcher darkMode={darkMode} setDarkMode={setDarkMode} />
+                <ThemeSwitcher darkMode={darkMode} setDarkMode={setDarkMode} historyDisplayed={historyDisplayed} />
                 {kanji !== null &&
                     (kanji ?
                         <div id="kanjiDisplay" className={valueChanged ? "rerenderOpacity" : ""}>
@@ -69,6 +72,7 @@ const MainDisplay = (props) => {
                                 <div>{kanji.level ? `JLPT ${kanji.level}` : 'Hors JLPT'}</div>
                             </p>
                             {kanji.readings && <KanaReadings
+                                imgPath={imgPath}
                                 kanji={kanji}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
@@ -131,6 +135,7 @@ const MainDisplay = (props) => {
                                 {word.common && <div>✓ courant</div>}
                             </div>
                             <WordDetails
+                                imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={word.sentences}
                                 inflexions={dispatchInflexion(word)}
@@ -149,6 +154,7 @@ const MainDisplay = (props) => {
                     )
                 }
                 {!!trainingMode && <TrainingControls
+                    imgPath={imgPath}
                     displayedElement={displayedElement}
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}

@@ -131,18 +131,22 @@ input:focus {
 #themeSwitcher {
   position: absolute;
   width: 100%;
-  padding: 0px 40px;
+  padding: 0px 14px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   animation-name: rerenderOpacity;
   animation-duration: 0.4s;
+}
+#themeSwitcher.down {
+  padding: 70px 14px;
 }
 #themeSwitcherPill {
   position: relative;
   height: 28px;
   width: 56px;
   border-radius: 14px;
-  opacity: 0.075;
+  opacity: 0.1;
+  transform: rotate(90deg);
 }
 #themeSwitcherDot {
   position: absolute;
@@ -1096,7 +1100,7 @@ input:focus {
   #historyIconContainer img {
     display: block;
     position: fixed;
-    top: 48px;
+    top: 40px;
     left: 24px;
     height: 32px;
     opacity: 0.33;
@@ -1123,6 +1127,7 @@ input:focus {
 
 #App.light input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 1);
 }
 
 #App.light input::placeholder {
@@ -1244,10 +1249,10 @@ input:focus {
 /* ------------------------------------------------ DARK THEME ------------------------------------------------ */
 
 #App.dark #themeSwitcherPill {
-  border: 3px solid rgb(255, 255, 255);
+  border: 3px solid rgb(199, 192, 181);
 }
 #App.dark #themeSwitcherDot {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(199, 192, 181);
   left: 28px;
 }
 
@@ -1258,6 +1263,7 @@ input:focus {
 
 #App.dark input {
   border-bottom: 1px solid rgba(199, 192, 181, 0.4);
+  color: rgba(199, 192, 181, 1);
 }
 
 #App.dark input::placeholder {
@@ -1285,7 +1291,7 @@ input:focus {
 }
 
 #App.dark #wordDetailsPlus {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);;
+  border-top: 1px solid rgba(199, 192, 181, 0.1);;
   background-color: rgba(36, 37, 37, 0.9);
 }
 
@@ -1299,7 +1305,7 @@ input:focus {
 }
 
 #App.dark #wordsListFilterModal div {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(199, 192, 181, 0.1);
 }
 
 #App.dark #wordsListTrainerIcon {
@@ -1316,22 +1322,22 @@ input:focus {
 }
 
 #App.dark #wordsListTrainingModalScreenshot img {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 7.5px rgba(36, 37, 37, 0.1);
 }
 
 #App.dark #wordsListTrainingModalButtons {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(199, 192, 181, 0.25);
+  border-bottom: 1px solid rgba(199, 192, 181, 0.25);
 }
 
 #App.dark .listIndicator {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.01);
+  border-top: 1px solid rgba(199, 192, 181, 0.25);
+  background-color: rgba(36, 37, 37, 0.01);
 }
 
 #App.dark #kanjisList {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.01);
+  border-bottom: 1px solid rgba(199, 192, 181, 0.25);
+  background-color: rgba(36, 37, 37, 0.01);
 }
 
 #App.dark .kanjisListElement.selected {
@@ -1366,7 +1372,7 @@ input:focus {
 }
 @media (min-aspect-ratio: 1/1) {
   #App.dark .historyElement {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(199, 192, 181, 0.1);
   }
   #App.dark .historyElement:nth-child(1) {
       border-bottom: none;

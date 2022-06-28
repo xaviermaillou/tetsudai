@@ -80,7 +80,13 @@ const Inflexions = (props) => {
 }
 
 const WordDetailsPlus = (props) => {
-    const { referenceId, changeCurrentWordById, inflexions, kosoado } = props;
+    const {
+        imgPath,
+        referenceId,
+        changeCurrentWordById,
+        inflexions,
+        kosoado
+    } = props;
     
     const [open, setOpen] = useState(false);
 
@@ -90,9 +96,9 @@ const WordDetailsPlus = (props) => {
                 {inflexions && <span>CONJUGAISON</span>}
                 {kosoado && <span>KOSOADO</span>}
                 {open ?
-                    <img className="open" src="/img/less.png" alt="hide readings" />
+                    <img className="open" src={`/img/${imgPath}/less.png`} alt="hide readings" />
                     :
-                    <img src="/img/plus.png" alt="show readings" />
+                    <img src={`/img/${imgPath}/plus.png`} alt="show readings" />
                 }
             </div>
             {inflexions && <Inflexions inflexions={inflexions} />}
@@ -168,6 +174,7 @@ const Sentence = (props) => {
 
 const WordDetails = (props) => {
     const {
+        imgPath,
         elements,
         sentences,
         inflexions,
@@ -206,6 +213,7 @@ const WordDetails = (props) => {
             </div>
             {(expanded && (inflexions || kosoado)) &&
                 <WordDetailsPlus
+                    imgPath={imgPath}
                     referenceId={referenceId}
                     changeCurrentWordById={changeCurrentWordById}
                     inflexions={inflexions}

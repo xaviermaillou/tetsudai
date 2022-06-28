@@ -9,6 +9,11 @@ import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [imgPath, setImgPath] = useState('light');
+  useEffect(() => {
+    if (darkMode) setImgPath('dark');
+    else setImgPath('light');
+  }, [darkMode]);
 
   const [kanjisList, setKanjisList] = useState([]);
   const [vocabularyList, setVocabularyList] = useState([]);
@@ -243,9 +248,9 @@ function App() {
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
       <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null ? 'full' : 'clickable'}>
-        <img src='/img/Logo1.png' alt='logo' />
-        <img src='/img/Logo2.png' alt='logo' />
-        <img src='/img/Logo3.png' alt='logo' />
+        <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
+        <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
+        <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
       </div>
       {(kanji === null && word === null) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
@@ -254,8 +259,11 @@ function App() {
         </p>
       </div>}
       <MainDisplay
+        // Theme switcher
         darkMode={darkMode}
         setDarkMode={setDarkMode}
+        imgPath={imgPath}
+        historyDisplayed={displayHistory.length > 0}
 
         // Displayed element
         kanji={kanji}
@@ -282,6 +290,8 @@ function App() {
         toggleTraining={toggleTraining}
       />
       <SidePanel 
+        imgPath={imgPath}
+
         // Content
         kanjis={kanjisWithVocabulary}
         vocabulary={vocabularyWithRelated}
@@ -314,6 +324,7 @@ function App() {
         setSearchExecuted={setSearchExecuted}
       />
       <DisplayHistory
+        imgPath={imgPath}
         displayHistory={displayHistory}
         kanji={kanji}
         word={word}

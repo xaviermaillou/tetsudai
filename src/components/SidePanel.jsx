@@ -3,6 +3,7 @@ import { pluralClasses, collections, levels } from "../lib/common";
 
 const TrainingModal = (props) => {
     const {
+        imgPath,
         openTrainingModal,
         setOpenTrainingModal,
         trainingMode,
@@ -20,9 +21,9 @@ const TrainingModal = (props) => {
                 Lancer le mode entraînement pour apprendre et réviser les kanji ou le vocabulaire correspondant aux catégories sélectionnées
             </div>
             <div id="wordsListTrainingModalScreenshot">
-                <img src="/img/TrainingScreen3.png" alt="training screen" />
-                <img src="/img/TrainingScreen2.png" alt="training screen" />
-                <img src="/img/TrainingScreen.png" alt="training screen" />
+                <img src={`/img/${imgPath}/TrainingScreen3.png`} alt="training screen" />
+                <img src={`/img/${imgPath}/TrainingScreen2.png`} alt="training screen" />
+                <img src={`/img/${imgPath}/TrainingScreen.png`} alt="training screen" />
             </div>
             <div id="wordsListTrainingModalButtons">
                 <span className={trainingMode === 1 ? "selected clickable" : "clickable"} onClick={() => handleClick(1)}>Réviser les kanji</span>
@@ -72,6 +73,7 @@ const FilterModal = (props) => {
 
 const ListHeader = (props) => {
     const {
+        imgPath,
         collection,
         setCollection,
         level,
@@ -111,7 +113,7 @@ const ListHeader = (props) => {
             >
                 <img
                     className={openTrainingModal ? "open" : ""}
-                    src="/img/book.png"
+                    src={`/img/${imgPath}/book.png`}
                     alt="training"
                 />
             </div>
@@ -122,7 +124,7 @@ const ListHeader = (props) => {
             >
                 <img
                     className={openFilter ? "open" : ""}
-                    src="/img/up.png"
+                    src={`/img/${imgPath}/up.png`}
                     alt="search"
                 />
             </div>
@@ -144,21 +146,21 @@ const ListHeader = (props) => {
                             {grammar !==0 &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{pluralClasses[grammar]}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setGrammar(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar(0)} />
                                 </span>
                             }
                             {(level !==0 && grammar !==0) && <span>|</span>}
                             {level !==0 &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{levels[level] ? `JLPT ${levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setLevel(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel(0)} />
                                 </span>
                             }
                             {(collection !==0 && level !==0) && <span>|</span>}
                             {collection !==0 &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{collections[collection]}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src="/img/close.png" alt="close filter" onClick={() => setCollection(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection(0)} />
                                 </span>
                             }
                         </div>
@@ -174,6 +176,7 @@ const ListHeader = (props) => {
                 </div>
             </div>
             <TrainingModal
+                imgPath={imgPath}
                 openTrainingModal={openTrainingModal}
                 setOpenTrainingModal={setOpenTrainingModal}
                 trainingMode={trainingMode}
@@ -317,6 +320,7 @@ const ListWord = (props) => {
 
 const SidePanel = (props) => {
     const {
+        imgPath,
         kanjis,
         vocabulary,
         changeCurrentKanjiById,
@@ -474,17 +478,26 @@ const SidePanel = (props) => {
     return (
         <div id="sidePanel" className={open ? "open" : ""}>
             <div id="wordsListSearchContainer">
-                {currentElement !== null && <img id="wordsListOpener" className={open ? "open clickable" : "clickable"} onClick={toggle} src="/img/up.png" alt="see all words" />}
+                {
+                    currentElement !== null &&
+                    <img
+                        id="wordsListOpener"
+                        className={open ? "open clickable" : "clickable"}
+                        onClick={toggle}
+                        src={`/img/${imgPath}/up.png`}
+                        alt="see all words"
+                    />}
                 <div id="wordsListSearch">
                     {search ?
-                        <img className="close clickable" onClick={() => handleSearch("")} src="/img/close.png" alt="erase search" />
+                        <img className="close clickable" onClick={() => handleSearch("")} src={`/img/${imgPath}/close.png`} alt="erase search" />
                         :
-                        <img src="/img/search.png" alt="search" />
+                        <img src={`/img/${imgPath}/search.png`} alt="search" />
                     }
                     <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par romaji ou traduction" />
                 </div>
             </div>
             <ListHeader
+                imgPath={imgPath}
                 open={open}
                 toggle={toggle}
                 collection={collection}
@@ -503,9 +516,9 @@ const SidePanel = (props) => {
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span>Kanji</span>
                 {displayKanjis ?
-                    <img src="/img/less.png" alt="close kanji" />
+                    <img src={`/img/${imgPath}/less.png`} alt="close kanji" />
                     :
-                    <img src="/img/plus.png" alt="open kanji" />
+                    <img src={`/img/${imgPath}/plus.png`} alt="open kanji" />
                 }
             </span>}
             <div id="kanjisList" className={searchExecuted ?
