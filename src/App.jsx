@@ -102,9 +102,13 @@ function App() {
   const [filterIndication, setFilterIndication] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    if (window.innerWidth > window.innerHeight) {
+      setTimeout(() => {
+        setMenuOpen(true);
+      }, 1000);
+    } else {
       setMenuOpen(true);
-    }, 1000);
+    }
   }, []);
 
   const checkTrainingFilters = () => {

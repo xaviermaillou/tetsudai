@@ -131,11 +131,25 @@ input:focus {
 #themeSwitcher {
   position: absolute;
   width: 100%;
+  padding: 0px 40px;
   display: flex;
   justify-content: center;
+  animation-name: rerenderOpacity;
+  animation-duration: 0.4s;
 }
-#themeSwitcher div {
-  width: fit-content;
+#themeSwitcherPill {
+  position: relative;
+  height: 28px;
+  width: 56px;
+  border-radius: 14px;
+  opacity: 0.075;
+}
+#themeSwitcherDot {
+  position: absolute;
+  top: 1px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
 }
 #mainDisplay {
   z-index: 800;
@@ -962,6 +976,9 @@ input:focus {
   #logoContainer.full img:nth-child(3) {
     opacity: 1;
   }
+  #themeSwitcher {
+    justify-content: flex-start;
+  }
   #introText {
     height: 100vh;
     width: 30%;
@@ -1091,6 +1108,14 @@ input:focus {
 
 /* ------------------------------------------------ LIGHT THEME ------------------------------------------------ */
 
+#App.light #themeSwitcherPill {
+  border: 3px solid rgb(0, 0, 0);
+}
+#App.light #themeSwitcherDot {
+  background-color: rgb(0, 0, 0);
+  left: 1px;
+}
+
 #App.light {
   color: darkslategrey;
   background-color: white;
@@ -1217,6 +1242,14 @@ input:focus {
 }
 
 /* ------------------------------------------------ DARK THEME ------------------------------------------------ */
+
+#App.dark #themeSwitcherPill {
+  border: 3px solid rgb(255, 255, 255);
+}
+#App.dark #themeSwitcherDot {
+  background-color: rgb(255, 255, 255);
+  left: 28px;
+}
 
 #App.dark {
   color: rgb(199, 192, 181);

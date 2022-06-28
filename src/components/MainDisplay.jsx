@@ -9,8 +9,8 @@ const ThemeSwitcher = (props) => {
     const { darkMode, setDarkMode } = props;
     return (
         <div id="themeSwitcher">
-            <div className="clickable" onClick={() => setDarkMode(!darkMode)}>
-                <span>switch</span>
+            <div id="themeSwitcherPill" className="clickable" onClick={() => setDarkMode(!darkMode)}>
+                <div id="themeSwitcherDot"></div>
             </div>
         </div>
     );
