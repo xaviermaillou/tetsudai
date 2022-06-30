@@ -7,7 +7,6 @@ import { dispatchInflexion } from "../lib/inflexions"
 
 const ThemeSwitcher = (props) => {
     const { darkMode, setDarkMode, historyDisplayed } = props;
-    console.log(historyDisplayed)
     return (
         <div id="themeSwitcher" className={historyDisplayed ? "down" : ""}>
             <div id="themeSwitcherPill" className="clickable" onClick={() => setDarkMode(!darkMode)}>

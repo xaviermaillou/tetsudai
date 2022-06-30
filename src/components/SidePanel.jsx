@@ -213,9 +213,9 @@ const ListKanji = (props) => {
     return (
         <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open`: "kanjisListElementContainer open") : "kanjisListElementContainer"} >
             <div 
-                className={(currentElement && currentElement.doc.id === kanji.doc.id) ?
+                className={(currentElement && currentElement.id === kanji.id) ?
                     "kanjisListElement clickable selected" : "kanjisListElement clickable"}
-                onClick={() => clickHandle(kanji.doc.id)}
+                onClick={() => clickHandle(kanji.id)}
             >
                 <div className="kanjisListElementKanji">
                     {kanji.kanji}

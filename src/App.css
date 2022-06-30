@@ -1196,12 +1196,10 @@ input:focus {
 
 #App.light .listIndicator {
   border-top: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.01);
 }
 
 #App.light #kanjisList {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.01);
 }
 
 #App.light .kanjisListElement.selected {
@@ -1332,12 +1330,10 @@ input:focus {
 
 #App.dark .listIndicator {
   border-top: 1px solid rgba(199, 192, 181, 0.25);
-  background-color: rgba(36, 37, 37, 0.01);
 }
 
 #App.dark #kanjisList {
   border-bottom: 1px solid rgba(199, 192, 181, 0.25);
-  background-color: rgba(36, 37, 37, 0.01);
 }
 
 #App.dark .kanjisListElement.selected {

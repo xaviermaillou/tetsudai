@@ -5,7 +5,8 @@ import './App.css';
 import MainDisplay from './components/MainDisplay';
 import SidePanel from './components/SidePanel';
 import DisplayHistory from './components/DisplayHistory';
-import { levels, sortByObjectKey, cutStringToArray } from "./lib/common";
+import { levels, sortByObjectKey, cutStringToArray } from './lib/common';
+import axios from 'axios';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,7 +23,7 @@ function App() {
   const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
   const [vocabularyWithRelated, setVocabularyWithRelated] = useState([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     // Fetching kanjis
     firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({
@@ -49,6 +50,24 @@ function App() {
       }));
       setSentencesList(data);
     });
+  }, []); */
+
+  const fetchKanjiData = async () => {
+    const result = await axios('http://localhost:8000/kanji');
+    setKanjisList(result.data);
+  }
+  const fetchVocabularyData = async () => {
+    const result = await axios('http://localhost:8000/vocabulary');
+    setVocabularyList(result.data);
+  }
+  const fetchSentencesData = async () => {
+    const result = await axios('http://localhost:8000/sentences');
+    setSentencesList(result.data);
+  }
+  useEffect(() => {
+    fetchKanjiData();
+    fetchVocabularyData();
+    fetchSentencesData();
   }, []);
 
   useEffect(() => {
@@ -181,7 +200,7 @@ function App() {
   const changeCurrentKanjiById = (id) => {
     prepareDisplayChange();
     setWord(null);
-    setKanji(kanjisWithVocabulary.find((item) => item.doc.id === id));
+    setKanji(kanjisWithVocabulary.find((item) => item.id === id));
   }
   const changeCurrentKanjiByKanji = (kanji, fromHistory) => {
     prepareDisplayChange();
