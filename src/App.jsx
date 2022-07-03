@@ -12,7 +12,6 @@ import {
   fetchInflexions,
   fetchKanji,
   fetchWord,
-  fetchKanjiByKanji,
 } from './request'
 
 function App() {
@@ -102,14 +101,12 @@ function App() {
 
   // Main display value handling
 
-  const [valueChanged, setValueChanged] = useState(false)
   const [displayHistory, setDisplayHistory] = useState([])
   const [openedHistory, setOpenedHistory] = useState()
   const [trainingHistory, setTrainingHistory] = useState([])
 
   const prepareDisplayChange = () => {
-    setValueChanged(true)
-    if ((kanji || word) && !openedHistory) {
+    if ((kanji || word) && !openedHistory) {
       const displayHistoryCopy = [ ...displayHistory ]
         .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id)
       displayHistoryCopy.push(kanji || word)
@@ -189,7 +186,7 @@ function App() {
         <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
         <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
       </div>
-      {(kanji === null && word === null) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
+      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
           en lui fournissant un dictionnaire franco-japonais dont le contenu se veut à la fois complet et pertinent.
@@ -209,8 +206,7 @@ function App() {
         changeCurrentWordById={changeCurrentWordById}
         sentences={sentencesList}
         inflexions={inflexions}
-        valueChanged={valueChanged}
-        setValueChanged={setValueChanged}
+        loading={loadingMainDisplay}
 
         // Height
         compressed={menuOpen}

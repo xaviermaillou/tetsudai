@@ -125,8 +125,7 @@ input:focus {
 /* ------------------------------------------------ MAIN DISPLAY ------------------------------------------------ */
 
 #kanjiDisplay.rerenderOpacity, #wordDisplay.rerenderOpacity {
-  animation-name: rerenderOpacity;
-  animation-duration: 0.2s;
+  opacity: 0;
 }
 #themeSwitcher {
   position: absolute;
@@ -169,6 +168,9 @@ input:focus {
   align-items: center;
   display: flex;
   flex-direction: column;
+  animation-name: rerenderOpacity;
+  animation-duration: 0.4s;
+  opacity: 1;
 }
 #kanjiDisplayKanji {
   line-height: 38vh;

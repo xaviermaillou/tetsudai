@@ -35,19 +35,12 @@ const MainDisplay = (props) => {
         changeCurrentKanjiById,
         word,
         changeCurrentWordById,
-        valueChanged,
-        setValueChanged,
         sentences,
         inflexions,
+        loading,
     } = props
 
     const [displayedElement, setDisplayedElement] = useState(0)
-
-    useEffect(() => {
-        setTimeout(() => {
-            setValueChanged(false)
-        }, 100)
-    }, [kanji, word, setValueChanged])
 
     const changeDisplayedElement = (num) => {
         setAllDisplayed(false)
@@ -64,7 +57,7 @@ const MainDisplay = (props) => {
                 <ThemeSwitcher darkMode={darkMode} setDarkMode={setDarkMode} historyDisplayed={historyDisplayed} />
                 {kanji !== null &&
                     (kanji ?
-                        <div id="kanjiDisplay" className={valueChanged ? "rerenderOpacity" : ""}>
+                        <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
                             <p id="kanjiDisplayKanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                             <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                             <p id="kanjiDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
@@ -88,7 +81,7 @@ const MainDisplay = (props) => {
                 }
                 {word !== null &&
                     (word ?
-                        <div id="wordDisplay" className={valueChanged ? "rerenderOpacity" : ""}>
+                        <div id="wordDisplay" className={loading ? "rerenderOpacity" : ""}>
                             {word.jukujikun ? 
                                 <div id="wordDisplayWordJukujikun">
                                     <div id="wordDisplayWordKanjiOnly">

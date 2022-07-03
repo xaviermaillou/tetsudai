@@ -28,11 +28,6 @@ export const fetchKanji = async (id) => {
     return result.data
 }
 
-export const fetchKanjiByKanji = async (kanji) => {
-    const result = await axios(`${REQUEST_URL}/kanji/${kanji}`)
-    return result.data
-}
-
 export const fetchWord = async (id) => {
     const result = await axios(`${REQUEST_URL}/word/${id}`)
     return result.data
