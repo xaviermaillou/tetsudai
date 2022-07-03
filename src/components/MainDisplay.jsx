@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-import KanaReadings from "./KanaReadings";
-import WordDetails from "./WordDetails";
-import TrainingControls from "./TrainingControls";
-import { classes } from "../lib/common";
+import { useState, useEffect } from "react"
+import KanaReadings from "./KanaReadings"
+import WordDetails from "./WordDetails"
+import TrainingControls from "./TrainingControls"
+import { classes } from "../lib/common"
 import { dispatchInflexion } from "../lib/inflexions"
 
 const ThemeSwitcher = (props) => {
-    const { darkMode, setDarkMode, historyDisplayed } = props;
+    const { darkMode, setDarkMode, historyDisplayed } = props
     return (
         <div id="themeSwitcher" className={historyDisplayed ? "down" : ""}>
             <div id="themeSwitcherPill" className="clickable" onClick={() => setDarkMode(!darkMode)}>
                 <div id="themeSwitcherDot"></div>
             </div>
         </div>
-    );
+    )
 }
 
 const MainDisplay = (props) => {
@@ -38,22 +38,23 @@ const MainDisplay = (props) => {
         changeCurrentWordById,
         valueChanged,
         setValueChanged,
-    } = props;
+        sentences,
+    } = props
 
-    const [displayedElement, setDisplayedElement] = useState(0);
+    const [displayedElement, setDisplayedElement] = useState(0)
 
     useEffect(() => {
         setTimeout(() => {
-            setValueChanged(false);
-        }, 100);
-    }, [kanji, word, setValueChanged]);
+            setValueChanged(false)
+        }, 100)
+    }, [kanji, word, setValueChanged])
 
     const changeDisplayedElement = (num) => {
-        setAllDisplayed(false);
-        setDisplayedElement(num);
+        setAllDisplayed(false)
+        setDisplayedElement(num)
     }
     const displayElements = () => {
-        setAllDisplayed(!allDisplayed);
+        setAllDisplayed(!allDisplayed)
     }
 
 
@@ -136,7 +137,7 @@ const MainDisplay = (props) => {
                             <WordDetails
                                 imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
-                                sentences={word.sentences}
+                                sentences={sentences}
                                 inflexions={dispatchInflexion(word)}
                                 kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
@@ -168,7 +169,7 @@ const MainDisplay = (props) => {
                 />}
             </div>
         </div>
-    );
+    )
 }
 
-export default MainDisplay;
+export default MainDisplay

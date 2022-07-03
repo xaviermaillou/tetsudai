@@ -1,4 +1,4 @@
-import { pluralClasses, collections, levels} from "../lib/common";
+import { pluralClasses, collections, levels} from "../lib/common"
 
 const TrainingControls = (props) => {
     const {
@@ -14,7 +14,7 @@ const TrainingControls = (props) => {
         checkTrainingFilters,
         toggleTraining,
         endedTraining
-    } = props;
+    } = props
 
     return (
         <div id="selectorAndControls">
@@ -50,7 +50,7 @@ const TrainingControls = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default TrainingControls;
+export default TrainingControls

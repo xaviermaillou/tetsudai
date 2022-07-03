@@ -1,268 +1,173 @@
-import firebase from './Firebase';
-import "firebase/firestore";
-import { useState, useEffect } from 'react';
-import './App.css';
-import MainDisplay from './components/MainDisplay';
-import SidePanel from './components/SidePanel';
-import DisplayHistory from './components/DisplayHistory';
-import { levels, sortByObjectKey, cutStringToArray } from './lib/common';
-import axios from 'axios';
+// import firebase from './Firebase'
+import "firebase/firestore"
+import { useState, useEffect, useCallback } from 'react'
+import './App.css'
+import MainDisplay from './components/MainDisplay'
+import SidePanel from './components/SidePanel'
+import DisplayHistory from './components/DisplayHistory'
+import axios from 'axios'
+import { fetchKanji, fetchVocabulary, fetchSentences } from './request'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [imgPath, setImgPath] = useState('light');
+  const [darkMode, setDarkMode] = useState(false)
+  const [imgPath, setImgPath] = useState('light')
   useEffect(() => {
-    if (darkMode) setImgPath('dark');
-    else setImgPath('light');
-  }, [darkMode]);
+    if (darkMode) setImgPath('dark')
+    else setImgPath('light')
+  }, [darkMode])
 
-  const [kanjisList, setKanjisList] = useState([]);
-  const [vocabularyList, setVocabularyList] = useState([]);
-  const [sentencesList, setSentencesList] = useState([]);
+  const [kanjisList, setKanjisList] = useState([])
+  const [vocabularyList, setVocabularyList] = useState([])
+  const [sentencesList, setSentencesList] = useState([])
 
-  const [kanjisWithVocabulary, setKanjisWithVocabulary] = useState([]);
-  const [vocabularyWithRelated, setVocabularyWithRelated] = useState([]);
+  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisList])
+  const [filteredWords, setFilteredWords] = useState([...vocabularyList])
 
-  /* useEffect(() => {
-    // Fetching kanjis
-    firebase.firestore().collection('Kanjis').onSnapshot((snapshot) => {
-      const data = snapshot.docs.map((doc) => ({
-        ...doc.data(),
-        doc,
-      }));
-      const sortedByFrecuencyData = data?.sort((a, b) => a.frequency - b.frequency);
-      setKanjisList(sortByObjectKey(sortedByFrecuencyData, levels));
-    });
-    // Fetching vocabulary
-    firebase.firestore().collection('Vocabulary').onSnapshot((snapshot) => {
-      const data = snapshot.docs.map((doc) => ({
-        ...doc.data(),
-        doc,
-      }));
-      const sortedByFrecuencyData = data?.sort((a, b) => a.frequency - b.frequency);
-      setVocabularyList(sortByObjectKey(sortedByFrecuencyData, levels));
-    });
-    // Fetching sentences
-    firebase.firestore().collection('Sentences').onSnapshot((snapshot) => {
-      const data = snapshot.docs.map((doc) => ({
-        ...doc.data(),
-        doc,
-      }));
-      setSentencesList(data);
-    });
-  }, []); */
+  const [searchExecuted, setSearchExecuted] = useState(false)
 
-  const fetchKanjiData = async () => {
-    const result = await axios('http://localhost:8000/kanji');
-    setKanjisList(result.data);
-  }
-  const fetchVocabularyData = async () => {
-    const result = await axios('http://localhost:8000/vocabulary');
-    setVocabularyList(result.data);
-  }
-  const fetchSentencesData = async () => {
-    const result = await axios('http://localhost:8000/sentences');
-    setSentencesList(result.data);
-  }
-  useEffect(() => {
-    fetchKanjiData();
-    fetchVocabularyData();
-    fetchSentencesData();
-  }, []);
+  const [collection, setCollection] = useState(0)
+  const [level, setLevel] = useState(0)
+  const [grammar, setGrammar] = useState(0)
+  const [search, setSearch] = useState("")
+
+  const [kanji, setKanji] = useState(null)
+  const [word, setWord] = useState(null)
+
+  const fetchKanjiData = useCallback(async () => {
+    const result = await fetchKanji(level, grammar, collection, search)
+    setKanjisList(result)
+  }, [level, grammar, collection, search])
+
+  const fetchVocabularyData = useCallback(async () => {
+    const result = await fetchVocabulary(level, grammar, collection, search)
+    setVocabularyList(result)
+  }, [level, grammar, collection, search])
+
+  const fetchSentencesData = useCallback(async () => {
+    const result = await fetchSentences(word.id)
+    setSentencesList(result)
+  }, [word])
 
   useEffect(() => {
-    const kanjisListCopy = [ ...kanjisList ];
-    const vocabularyListCopy = [ ...vocabularyList ];
-    kanjisListCopy.forEach((kanji) => {
-      kanji.translationArray = cutStringToArray(kanji.translation);
-      kanji.vocabulary = [];
-      kanji.grammar = [];
-      vocabularyListCopy.forEach((word) => {
-        word.sentences = [];
-        word.translationArray = cutStringToArray(word.translation);
-        word.elements.every((element) => {
-          if (kanji.kanji === element.kanji) {
-            kanji.vocabulary.push(word);
-            kanji.grammar.push(...word.grammar);
-            element.details = kanji;
-            return false;
-          }
-          return true;
-        });
-        sentencesList.forEach((sentence) => {
-          sentence.elements.forEach((element) => {
-            if (element.id === word.id) {
-              word.sentences.push({
-                commonWord: element,
-                fullSentence: sentence
-              });
-            }
-          });
-        });
-      });
-    });
-    setKanjisWithVocabulary(kanjisListCopy);
-    setVocabularyWithRelated(vocabularyListCopy);
-  }, [kanjisList, vocabularyList, sentencesList]);
+    fetchKanjiData()
+    fetchVocabularyData()
+  }, [fetchKanjiData, fetchVocabularyData, level, grammar, collection, search])
 
-  // useEffect(() => {
-  //   const vocabularyListCopy = [ ...vocabularyList ];
-  //   vocabularyListCopy.forEach((word) => {
-  //     word.elements.forEach((element) => {
-  //       element.details = kanjisList.find((kanji) => kanji.kanji === element.kanji);
-  //     });
-  //   });
-  //   setVocabularyWithRelated(vocabularyListCopy);
-  // }, [kanjisList, vocabularyList]);
+  useEffect(() => {
+    if (word) fetchSentencesData()
+  }, [fetchSentencesData, word])
 
-  const [kanji, setKanji] = useState(null);
-  const [word, setWord] = useState(null);
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [collection, setCollection] = useState(0);
-  const [level, setLevel] = useState(0);
-  const [grammar, setGrammar] = useState(0);
-  const [search, setSearch] = useState("");
-  const [filterIndication, setFilterIndication] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [filterIndication, setFilterIndication] = useState(false)
 
   useEffect(() => {
     if (window.innerWidth > window.innerHeight) {
       setTimeout(() => {
-        setMenuOpen(true);
-      }, 1000);
+        setMenuOpen(true)
+      }, 1000)
     } else {
-      setMenuOpen(true);
+      setMenuOpen(true)
     }
-  }, []);
+  }, [])
 
   const checkTrainingFilters = () => {
     if (!menuOpen) {
-      setMenuOpen(true);
+      setMenuOpen(true)
       setTimeout(() => {
-        setFilterIndication(true);
+        setFilterIndication(true)
         setTimeout(() => {
-          setFilterIndication(false);
-        }, 300);
-      }, 300);
+          setFilterIndication(false)
+        }, 300)
+      }, 300)
     } else {
-      setFilterIndication(true);
+      setFilterIndication(true)
       setTimeout(() => {
-        setFilterIndication(false);
-      }, 300);
+        setFilterIndication(false)
+      }, 300)
     }
   }
 
-  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisWithVocabulary])
-  const [filteredWords, setFilteredWords] = useState([...vocabularyWithRelated])
-
-  useEffect(() => {
-    const kanjisListCopy = [];
-    const vocabularyListCopy = [];
-    kanjisWithVocabulary.forEach((kanji) => {
-      if (
-        (kanji.collections?.includes(collection) || collection === 0)
-        && (levels[level] === kanji.level || !level)
-        && (kanji.grammar.includes(grammar) || !grammar)
-      ) {
-        kanjisListCopy.push(kanji)
-      }
-    });
-    vocabularyWithRelated.forEach((word) => {
-      if (
-        (word.collections?.includes(collection) || collection === 0)
-        && (levels[level] === word.level || !level)
-        && (word.grammar.includes(grammar) || !grammar)
-      ) {
-        vocabularyListCopy.push(word)
-      }
-    });
-    setFilteredKanjis(kanjisListCopy);
-    setFilteredWords(vocabularyListCopy);
-  }, [collection, level, grammar, kanjisWithVocabulary, vocabularyWithRelated]);
-
   // Main display value handling
 
-  const [valueChanged, setValueChanged] = useState(false);
-  const [displayHistory, setDisplayHistory] = useState([]);
-  const [openedHistory, setOpenedHistory] = useState();
-  const [trainingHistory, setTrainingHistory] = useState([]);
+  const [valueChanged, setValueChanged] = useState(false)
+  const [displayHistory, setDisplayHistory] = useState([])
+  const [openedHistory, setOpenedHistory] = useState()
+  const [trainingHistory, setTrainingHistory] = useState([])
 
   const prepareDisplayChange = () => {
-    setValueChanged(true);
+    setValueChanged(true)
     if ((kanji || word) && !openedHistory) {
       const displayHistoryCopy = [ ...displayHistory ]
-        .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id);
-      displayHistoryCopy.push(kanji || word);
-      setDisplayHistory(displayHistoryCopy);
+        .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id)
+      displayHistoryCopy.push(kanji || word)
+      setDisplayHistory(displayHistoryCopy)
     }
   }
 
   const changeCurrentKanjiById = (id) => {
-    prepareDisplayChange();
-    setWord(null);
-    setKanji(kanjisWithVocabulary.find((item) => item.id === id));
+    prepareDisplayChange()
+    setWord(null)
+    setKanji(kanjisList.find((item) => item.id === id))
   }
   const changeCurrentKanjiByKanji = (kanji, fromHistory) => {
-    prepareDisplayChange();
-    setWord(null);
-    setKanji(kanjisWithVocabulary.find((item) => item.kanji === kanji));
-    setOpenedHistory(fromHistory);
+    prepareDisplayChange()
+    setWord(null)
+    setKanji(kanjisList.find((item) => item.kanji === kanji))
+    setOpenedHistory(fromHistory)
   }
   const changeCurrentWordById = (id, fromHistory) => {
-    prepareDisplayChange();
-    setKanji(null);
-    setWord(vocabularyWithRelated.find((item) => item.id === id));
-    setOpenedHistory(fromHistory);
+    prepareDisplayChange()
+    setKanji(null)
+    setWord(vocabularyList.find((item) => item.id === id))
+    setOpenedHistory(fromHistory)
   }
   const randomKanji = (type) => {
-    prepareDisplayChange();
-    const trainingHistoryCopy = [ ...trainingHistory ];
+    prepareDisplayChange()
+    const trainingHistoryCopy = [ ...trainingHistory ]
     if (type === 1) {
-      setWord(null);
-      let remainingFilteredKanjis = [ ...filteredKanjis ];
+      setWord(null)
+      let remainingFilteredKanjis = [ ...filteredKanjis ]
       trainingHistory.forEach((historyElement) => {
         if (historyElement.kanji) remainingFilteredKanjis = remainingFilteredKanjis
-          .filter((remaining) => (remaining.kanji !== historyElement.kanji && (kanji ? remaining.kanji !== kanji.kanji : true)));
-      });
-      const newKanji = remainingFilteredKanjis[Math.floor(Math.random()*remainingFilteredKanjis.length)];
-      setKanji(newKanji);
-      if (newKanji) trainingHistoryCopy.push(newKanji);
-      if (remainingFilteredKanjis.length > 0) setTrainingHistory(trainingHistoryCopy);
-      else setTrainingHistory([]);
+          .filter((remaining) => (remaining.kanji !== historyElement.kanji && (kanji ? remaining.kanji !== kanji.kanji : true)))
+      })
+      const newKanji = remainingFilteredKanjis[Math.floor(Math.random()*remainingFilteredKanjis.length)]
+      setKanji(newKanji)
+      if (newKanji) trainingHistoryCopy.push(newKanji)
+      if (remainingFilteredKanjis.length > 0) setTrainingHistory(trainingHistoryCopy)
+      else setTrainingHistory([])
     } 
     if (type === 2) {
-      setKanji(null);
-      let remainingFilteredWords = [ ...filteredWords ];
+      setKanji(null)
+      let remainingFilteredWords = [ ...filteredWords ]
       trainingHistory.forEach((historyElement) => {
         if (historyElement.id) remainingFilteredWords = remainingFilteredWords
-          .filter((remaining) => (remaining.id !== historyElement.id && (word ? remaining.id !== word.id : true)));
-      });
-      const newWord = remainingFilteredWords[Math.floor(Math.random()*remainingFilteredWords.length)];
-      setWord(newWord);
-      if (newWord) trainingHistoryCopy.push(newWord);
-      if (remainingFilteredWords.length > 0) setTrainingHistory(trainingHistoryCopy);
-      else setTrainingHistory([]);
+          .filter((remaining) => (remaining.id !== historyElement.id && (word ? remaining.id !== word.id : true)))
+      })
+      const newWord = remainingFilteredWords[Math.floor(Math.random()*remainingFilteredWords.length)]
+      setWord(newWord)
+      if (newWord) trainingHistoryCopy.push(newWord)
+      if (remainingFilteredWords.length > 0) setTrainingHistory(trainingHistoryCopy)
+      else setTrainingHistory([])
     }
-    setOpenedHistory(false);
+    setOpenedHistory(false)
   }
 
-  const [trainingMode, setTrainingMode] = useState(0);
-  const [allDisplayed, setAllDisplayed] = useState(true);
+  const [trainingMode, setTrainingMode] = useState(0)
+  const [allDisplayed, setAllDisplayed] = useState(true)
   const toggleTraining = (type) => {
-    setTrainingMode(type);
-    setAllDisplayed(true);
-    setFilterIndication(false);
+    setTrainingMode(type)
+    setAllDisplayed(true)
+    setFilterIndication(false)
     if (!!type) {
-      setMenuOpen(false);
-      randomKanji(type);
+      setMenuOpen(false)
+      randomKanji(type)
     }
   }
 
   useEffect(() => {
     setTrainingHistory([])
-  }, [trainingMode]);
-
-  const [searchExecuted, setSearchExecuted] = useState(false);
+  }, [trainingMode])
 
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
@@ -289,6 +194,7 @@ function App() {
         changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
         word={word}
         changeCurrentWordById={changeCurrentWordById}
+        sentences={sentencesList}
         valueChanged={valueChanged}
         setValueChanged={setValueChanged}
 
@@ -312,8 +218,8 @@ function App() {
         imgPath={imgPath}
 
         // Content
-        kanjis={kanjisWithVocabulary}
-        vocabulary={vocabularyWithRelated}
+        kanjis={kanjisList}
+        vocabulary={vocabularyList}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
 
@@ -351,7 +257,7 @@ function App() {
         changeCurrentWordById={changeCurrentWordById}
       />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

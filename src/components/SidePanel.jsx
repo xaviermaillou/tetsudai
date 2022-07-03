@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { pluralClasses, collections, levels } from "../lib/common";
+import { useState, useEffect } from "react"
+import { pluralClasses, collections, levels } from "../lib/common"
 
 const TrainingModal = (props) => {
     const {
@@ -8,11 +8,11 @@ const TrainingModal = (props) => {
         setOpenTrainingModal,
         trainingMode,
         toggleTraining,
-    } = props;
+    } = props
 
     const handleClick = (mode) => {
-        setOpenTrainingModal(false);
-        toggleTraining(mode);
+        setOpenTrainingModal(false)
+        toggleTraining(mode)
     }
 
     return (
@@ -30,7 +30,7 @@ const TrainingModal = (props) => {
                 <span className={trainingMode === 2 ? "selected clickable" : "clickable"} onClick={() => handleClick(2)}>Réviser le vocabulaire</span>
             </div>
         </div>
-    );
+    )
 }
 
 const FilterModal = (props) => {
@@ -43,11 +43,11 @@ const FilterModal = (props) => {
         grammar,
         setGrammar,
         setSearchExecuted,
-    } = props;
+    } = props
 
     const handleClick = (key, filterSetter) => {
-        filterSetter(key);
-        setSearchExecuted(true);
+        filterSetter(key)
+        setSearchExecuted(true)
     }
 
     return (
@@ -68,7 +68,7 @@ const FilterModal = (props) => {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
 const ListHeader = (props) => {
@@ -84,24 +84,24 @@ const ListHeader = (props) => {
         trainingMode,
         toggleTraining,
         setSearchExecuted,
-    } = props;
+    } = props
 
-    const [openTrainingModal, setOpenTrainingModal] = useState(false);
+    const [openTrainingModal, setOpenTrainingModal] = useState(false)
     const handleTrainingIconClick = () => {
-        setOpenTrainingModal(!openTrainingModal);
-        setOpenFilter(false);
+        setOpenTrainingModal(!openTrainingModal)
+        setOpenFilter(false)
     }
 
-    const [openFilter, setOpenFilter] = useState(false);
+    const [openFilter, setOpenFilter] = useState(false)
     useEffect(() => {
         if (filterIndication) {
-            setOpenTrainingModal(false);
-            setOpenFilter(true);
+            setOpenTrainingModal(false)
+            setOpenFilter(true)
         }
-    }, [filterIndication]);
+    }, [filterIndication])
     const handleFilterIconClick = () => {
-        setOpenFilter(!openFilter);
-        setOpenTrainingModal(false);
+        setOpenFilter(!openFilter)
+        setOpenTrainingModal(false)
     }
 
     return (
@@ -193,7 +193,7 @@ const ListHeader = (props) => {
                 setSearchExecuted={setSearchExecuted}
             />
         </div>
-    );
+    )
 }
 
 const ListKanji = (props) => {
@@ -203,11 +203,11 @@ const ListKanji = (props) => {
         setOpen,
         currentElement,
         filter,
-    } = props;
+    } = props
 
     const clickHandle = (id) => {
-        changeCurrentKanjiById(id);
-        if (window.innerWidth < window.innerHeight) setOpen(false);
+        changeCurrentKanjiById(id)
+        if (window.innerWidth < window.innerHeight) setOpen(false)
     }
 
     return (
@@ -261,15 +261,15 @@ const ListWord = (props) => {
         setOpen,
         currentElement,
         filter,
-    } = props;
+    } = props
 
     const clickHandle = (id) => {
-        changeCurrentWordById(id, false);
-        if (window.innerWidth < window.innerHeight) setOpen(false);
+        changeCurrentWordById(id, false)
+        if (window.innerWidth < window.innerHeight) setOpen(false)
     }
 
     return (
-        <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open` : "vocabularyListElementContainer open") : "vocabularyListElementContainer"} >
+        <div className={filter.open ? (filter.importance ? `importance${filter.importance} vocabularyListElementContainer open` : "vocabularyListElementContainer open") : "vocabularyListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.id === word.id) ?
                     "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
@@ -315,7 +315,7 @@ const ListWord = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 const SidePanel = (props) => {
@@ -341,139 +341,46 @@ const SidePanel = (props) => {
         toggleTraining,
         searchExecuted,
         setSearchExecuted,
-    } = props;
+    } = props
 
-    const [displayKanjis, setDisplayKanjis] = useState(false);
-    const [displayWords] = useState(true);
+    const [displayKanjis, setDisplayKanjis] = useState(false)
+    const [displayWords] = useState(true)
 
-    const [noKanji, setNoKanji] = useState(true);
-    const [noWord, setNoWord] = useState(true);
+    const [noKanji, setNoKanji] = useState(true)
+    const [noWord, setNoWord] = useState(true)
+
+    const [searchCopy, setSearchCopy] = useState(search)
 
 
     const toggle = () => {
-        setOpen(!open);
+        setOpen(!open)
+    }
+
+    const [searchTimer, setSearchTimer] = useState(undefined)
+    const runSearchTimer = (search) => {
+        setSearchTimer(setTimeout(() => {
+            setSearch(search)
+            setSearchExecuted(true)
+        }, 1000))
     }
     const handleSearch = (search) => {
-        setSearch(search);
-        setSearchExecuted(true);
+        setSearchCopy(search)
+        clearTimeout(searchTimer)
+        runSearchTimer(search)
     }
 
     useEffect(() => {
-        setNoKanji(true);
-        setNoWord(true);
-    }, [search, collection, level, grammar]);
+        // TODO: find a better way to determine result's length
+        setTimeout(() => {
+            setNoKanji(document.querySelectorAll(".kanjisListElementContainer.open").length === 0)
+            setNoWord(document.querySelectorAll(".vocabularyListElementContainer.open").length === 0)
+        }, 100)
+    }, [search, collection, level, grammar])
 
     useEffect(() => {
-        if (searchExecuted && noWord) setDisplayKanjis(true);
-    }, [searchExecuted, noKanji, noWord]);
+        if (searchExecuted && noWord) setDisplayKanjis(true)
+    }, [searchExecuted, noKanji, noWord])
 
-    // Kanji filters
-
-    const searchThroughKanji = (vocabulary, romaji, translation, string) => {
-        let includes = false;
-        romaji?.forEach((word) => {
-            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-        translation?.forEach((word) => {
-            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-        vocabulary.forEach((word) => {
-            if (word.translation.toLowerCase().includes(string.toLowerCase())) includes = true;
-            if (word.romaji.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-        return includes;
-    }
-    const getKanjiImportance = (vocabulary, romaji, translation, string) => {
-        let matchingScore = 0
-        romaji?.forEach((word) => {
-            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        });
-        translation?.forEach((word) => {
-            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        });
-        /* vocabulary.forEach((word) => {
-            if (word.translation.toLowerCase() === string.toLowerCase()) matchingScore ++;
-            if (word.romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        }); */
-        return matchingScore;
-    }
-
-    const filterKanji = (kanji) => {
-        let result = {};
-        if (
-            (
-                (kanji.collections?.includes(collection) || collection === 0)
-                && (levels[level] === kanji.level || !level) 
-                && (kanji.grammar.includes(grammar) || grammar === 0)
-            ) 
-            &&
-            (
-                searchThroughKanji(kanji.vocabulary, kanji.romaji, kanji.translationArray, search)
-                || !search
-            )
-        ) {
-            if (noKanji) setNoKanji(false);
-            result = {
-                open: true,
-                importance: getKanjiImportance(kanji.vocabulary, kanji.romaji, kanji.translationArray, search)
-            };
-        } else {
-            result = {
-                open: false,
-                importance: null,
-            };
-        }
-        return result;
-    }
-
-    // Vocabulary filters
-
-    const searchThroughWord = (translation, variants, string) => {
-        let includes = false;
-        translation?.forEach((word) => {
-            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
-        });
-        variants?.forEach((word) => {
-            if (word.toLowerCase().includes(string.toLowerCase())) includes = true;
-        })
-
-        return includes;
-    }
-    const getWordImportance = (romaji, translation, variants, string) => {
-        let matchingScore = 0
-        if (romaji.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        translation?.forEach((word) => {
-            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        });
-        variants?.forEach((word) => {
-            if (word.toLowerCase() === string.toLowerCase()) matchingScore ++;
-        });
-        return matchingScore;
-    }
-
-    const filterWord = (word) => {
-        let result = {};
-        if (
-            (word.collections?.includes(collection) || collection === 0)
-            && (levels[level] === word.level || !level) 
-            && (word.grammar.includes(grammar) || grammar === 0)
-            && (searchThroughWord(word.translationArray, word.variants, search)
-                || (word.romaji.toLowerCase().includes(search.toLowerCase()))
-                || !search)
-        ) {
-            if (noWord) setNoWord(false);
-            result = {
-                open: true,
-                importance: getWordImportance(word.romaji, word.translationArray, word.variants, search),
-            };
-        } else {
-            result = {
-                open: false,
-                importance: null,
-            };
-        }
-        return result;
-    }
 
     return (
         <div id="sidePanel" className={open ? "open" : ""}>
@@ -493,7 +400,7 @@ const SidePanel = (props) => {
                         :
                         <img src={`/img/${imgPath}/search.png`} alt="search" />
                     }
-                    <input value={search} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par romaji ou traduction" />
+                    <input value={searchCopy} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par romaji ou traduction" />
                 </div>
             </div>
             <ListHeader
@@ -536,7 +443,7 @@ const SidePanel = (props) => {
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        filter={filterKanji(item)}
+                        filter={item.result}
                         key={i}
                     />
                 ))}
@@ -566,7 +473,7 @@ const SidePanel = (props) => {
                         changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        filter={filterWord(item)}
+                        filter={item.result}
                         key={i}
                     />
                 ))}
@@ -577,4 +484,4 @@ const SidePanel = (props) => {
     )
 }
 
-export default SidePanel;
+export default SidePanel

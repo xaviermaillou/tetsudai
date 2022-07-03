@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { dictionnary } from "../lib/dictionnary";
+import { useState } from "react"
+import { dictionnary } from "../lib/dictionnary"
 
 const Kosoado = (props) => {
-    const { referenceId, changeCurrentWordById } = props;
+    const { referenceId, changeCurrentWordById } = props
 
     return (
         <div id="kosoadoTable">
@@ -42,11 +42,11 @@ const Kosoado = (props) => {
                 <div className="kosoadoIndicator"></div>
             </div>
         </div>
-    );
+    )
 }
 
 const VerbInflexionLine = (props) => {
-    const { inflexion, tenseName, modeName } = props;
+    const { inflexion, tenseName, modeName } = props
 
     return (
         <div className="wordDetailsInflexionsMode">
@@ -54,29 +54,29 @@ const VerbInflexionLine = (props) => {
             <span className="wordDetailsInflexionsIndicator">{dictionnary[tenseName]} {dictionnary[modeName]}</span>
             <span className="wordDetailsInflexionsVerb">{inflexion['neutral']?.['main']}{inflexion['neutral']?.['ending']}</span>
         </div>
-    );
+    )
 }
 
 const VerbInflexionTense = (props) => {
-    const { tense, tenseName } = props;
+    const { tense, tenseName } = props
 
     return (
         <div className="wordDetailsInflexionsTense">
             <VerbInflexionLine inflexion={tense['affirmative']} tenseName={tenseName} modeName={'affirmative'} />
             <VerbInflexionLine inflexion={tense['negative']} tenseName={tenseName} modeName={'negative'} />
         </div>
-    );
+    )
 }
 
 const Inflexions = (props) => {
-    const { inflexions } = props;
+    const { inflexions } = props
 
     return (
         <div id="wordDetailsInflexions">
             <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />
             <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />
         </div>
-    );
+    )
 }
 
 const WordDetailsPlus = (props) => {
@@ -86,9 +86,9 @@ const WordDetailsPlus = (props) => {
         changeCurrentWordById,
         inflexions,
         kosoado
-    } = props;
+    } = props
     
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false)
 
     return (
         <div id="wordDetailsPlus" className={open ? "expanded" : ""}>
@@ -104,14 +104,14 @@ const WordDetailsPlus = (props) => {
             {inflexions && <Inflexions inflexions={inflexions} />}
             {kosoado && <Kosoado referenceId={referenceId} changeCurrentWordById={changeCurrentWordById} />}
         </div>
-    );
+    )
 }
 
 const Kanji = (props) => {
     const {
         element,
         changeCurrentKanjiByKanji,
-    } = props;
+    } = props
     return (
         <div className="kanjisElement clickable" onClick={() => changeCurrentKanjiByKanji(element.kanji, false)}>
             <div className="kanjisElementKanji">
@@ -147,7 +147,7 @@ const Kanji = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 const Sentence = (props) => {
@@ -155,21 +155,21 @@ const Sentence = (props) => {
         sentence,
         changeCurrentWordById,
         referenceId,
-    } = props;
+    } = props
 
 
     return (
         <div className="sentencesElement">
             <div>
-                {sentence.fullSentence.elements.map((element, i) => (
+                {sentence.elements.map((element, i) => (
                     <span onClick={() => changeCurrentWordById(element.id, false)} className={referenceId === element.id ? "clickable highlighted" : "clickable"} key={i}>
                         {element.word}
                     </span>
                 ))}
             </div>
-            <div className="sentencesElementTranslation">{sentence.fullSentence.translation}</div>
+            <div className="sentencesElementTranslation">{sentence.translation}</div>
         </div>
-    );
+    )
 }
 
 const WordDetails = (props) => {
@@ -184,7 +184,7 @@ const WordDetails = (props) => {
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
         referenceId,
-    } = props;
+    } = props
 
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
@@ -221,7 +221,7 @@ const WordDetails = (props) => {
                 />
             }
         </div>
-    );
+    )
 }
 
-export default WordDetails;
+export default WordDetails

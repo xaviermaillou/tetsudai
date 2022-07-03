@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 const Yomi = (props) => {
     const {
@@ -7,16 +7,16 @@ const Yomi = (props) => {
         wordExamples,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
-    } = props;
+    } = props
 
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(false)
     useEffect(() => {
-        setExpanded(false);
-    }, [example]);
+        setExpanded(false)
+    }, [example])
 
     const handleKanjiClick = (e, kanji) => {
-        e.stopPropagation();
-        changeCurrentKanjiByKanji(kanji, false);
+        e.stopPropagation()
+        changeCurrentKanjiByKanji(kanji, false)
     }
 
     return (
@@ -52,7 +52,7 @@ const Yomi = (props) => {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
 const KanaReadings = (props) => {
@@ -63,7 +63,7 @@ const KanaReadings = (props) => {
         expanded,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
-    } = props;
+    } = props
 
     return (
         <div id="kanas" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
@@ -100,7 +100,7 @@ const KanaReadings = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default KanaReadings;
+export default KanaReadings

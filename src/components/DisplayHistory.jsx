@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const HistoryElement = (props) => {
     const {
@@ -6,7 +6,7 @@ const HistoryElement = (props) => {
         selected,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
-    } = props;
+    } = props
 
     const handleClick = () => {
         historyElementData.kanji ?
@@ -40,7 +40,7 @@ const HistoryElement = (props) => {
             <span className="historyElementTranslation">{historyElementData.translation}</span>
             <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
         </div>
-    );
+    )
 }
 
 const DisplayHistory = (props) => {
@@ -51,18 +51,18 @@ const DisplayHistory = (props) => {
         word,
         changeCurrentKanjiByKanji,
         changeCurrentWordById,
-    } = props;
+    } = props
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false)
 
     const checkSelected = (element) => {
         if (kanji && element.kanji) {
-            if (kanji.kanji === element.kanji) return true;
+            if (kanji.kanji === element.kanji) return true
         }
         if (word && element.id) {
-            if (word.id === element.id) return true;
+            if (word.id === element.id) return true
         }
-        return false;
+        return false
     }
 
     return (
@@ -94,7 +94,7 @@ const DisplayHistory = (props) => {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
-export default DisplayHistory;
+export default DisplayHistory
