@@ -110,10 +110,10 @@ const WordDetailsPlus = (props) => {
 const Kanji = (props) => {
     const {
         element,
-        changeCurrentKanjiByKanji,
+        changeCurrentKanjiById,
     } = props
     return (
-        <div className="kanjisElement clickable" onClick={() => changeCurrentKanjiByKanji(element.kanji, false)}>
+        <div className="kanjisElement clickable" onClick={() => changeCurrentKanjiById(element.details.id, false)}>
             <div className="kanjisElementKanji">
                 {element.details.kanji}
             </div>
@@ -181,7 +181,7 @@ const WordDetails = (props) => {
         kosoado,
         allDisplayed,
         expanded,
-        changeCurrentKanjiByKanji,
+        changeCurrentKanjiById,
         changeCurrentWordById,
         referenceId,
     } = props
@@ -193,7 +193,7 @@ const WordDetails = (props) => {
                 {elements?.map((element, i) => (
                     <Kanji
                         element={element}
-                        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                        changeCurrentKanjiById={changeCurrentKanjiById}
                         key={i}
                     />
                 ))}

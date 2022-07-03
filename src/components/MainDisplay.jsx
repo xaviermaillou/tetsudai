@@ -3,7 +3,6 @@ import KanaReadings from "./KanaReadings"
 import WordDetails from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { classes } from "../lib/common"
-import { dispatchInflexion } from "../lib/inflexions"
 
 const ThemeSwitcher = (props) => {
     const { darkMode, setDarkMode, historyDisplayed } = props
@@ -33,12 +32,13 @@ const MainDisplay = (props) => {
         grammar,
         checkTrainingFilters,
         toggleTraining,
-        changeCurrentKanjiByKanji,
+        changeCurrentKanjiById,
         word,
         changeCurrentWordById,
         valueChanged,
         setValueChanged,
         sentences,
+        inflexions,
     } = props
 
     const [displayedElement, setDisplayedElement] = useState(0)
@@ -76,7 +76,7 @@ const MainDisplay = (props) => {
                                 kanji={kanji}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
-                                changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
                                 changeCurrentWordById={changeCurrentWordById}
                             />}
                         </div>
@@ -138,11 +138,11 @@ const MainDisplay = (props) => {
                                 imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={sentences}
-                                inflexions={dispatchInflexion(word)}
+                                inflexions={inflexions}
                                 kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
-                                changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
                                 changeCurrentWordById={changeCurrentWordById}
                                 referenceId={word.id}
                             />

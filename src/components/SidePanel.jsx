@@ -84,6 +84,7 @@ const ListHeader = (props) => {
         trainingMode,
         toggleTraining,
         setSearchExecuted,
+        loading,
     } = props
 
     const [openTrainingModal, setOpenTrainingModal] = useState(false)
@@ -174,6 +175,14 @@ const ListHeader = (props) => {
                 <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
                     <div className="tooltip">Sélectionnez les catégories dont vous voulez voir le contenu</div>
                 </div>
+                {loading &&
+                    <div id="loadingAnimation">
+                        <img
+                            src={`/img/${imgPath}/loading.gif`}
+                            alt="loading"
+                        />
+                    </div>
+                }
             </div>
             <TrainingModal
                 imgPath={imgPath}
@@ -202,7 +211,7 @@ const ListKanji = (props) => {
         changeCurrentKanjiById,
         setOpen,
         currentElement,
-        filter,
+        importance,
     } = props
 
     const clickHandle = (id) => {
@@ -211,9 +220,9 @@ const ListKanji = (props) => {
     }
 
     return (
-        <div className={filter.open ? (filter.importance ? `importance${filter.importance} kanjisListElementContainer open`: "kanjisListElementContainer open") : "kanjisListElementContainer"} >
+        <div className={importance ? `importance${importance} kanjisListElementContainer open`: "kanjisListElementContainer open"} >
             <div 
-                className={(currentElement && currentElement.id === kanji.id) ?
+                className={(currentElement && currentElement.kanji && currentElement.id === kanji.id) ?
                     "kanjisListElement clickable selected" : "kanjisListElement clickable"}
                 onClick={() => clickHandle(kanji.id)}
             >
@@ -260,7 +269,7 @@ const ListWord = (props) => {
         changeCurrentWordById,
         setOpen,
         currentElement,
-        filter,
+        importance,
     } = props
 
     const clickHandle = (id) => {
@@ -269,9 +278,9 @@ const ListWord = (props) => {
     }
 
     return (
-        <div className={filter.open ? (filter.importance ? `importance${filter.importance} vocabularyListElementContainer open` : "vocabularyListElementContainer open") : "vocabularyListElementContainer"} >
+        <div className={importance ? `importance${importance} vocabularyListElementContainer open` : "vocabularyListElementContainer open"} >
             <div 
-                className={(currentElement && currentElement.id === word.id) ?
+                className={(currentElement && currentElement.elements && currentElement.id === word.id) ?
                     "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
                 onClick={() => clickHandle(word.id)}
             >
@@ -341,6 +350,7 @@ const SidePanel = (props) => {
         toggleTraining,
         searchExecuted,
         setSearchExecuted,
+        loading,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
@@ -361,7 +371,7 @@ const SidePanel = (props) => {
         setSearchTimer(setTimeout(() => {
             setSearch(search)
             setSearchExecuted(true)
-        }, 1000))
+        }, 500))
     }
     const handleSearch = (search) => {
         setSearchCopy(search)
@@ -370,12 +380,9 @@ const SidePanel = (props) => {
     }
 
     useEffect(() => {
-        // TODO: find a better way to determine result's length
-        setTimeout(() => {
-            setNoKanji(document.querySelectorAll(".kanjisListElementContainer.open").length === 0)
-            setNoWord(document.querySelectorAll(".vocabularyListElementContainer.open").length === 0)
-        }, 100)
-    }, [search, collection, level, grammar])
+        setNoKanji(kanjis.length === 0)
+        setNoWord(vocabulary.length === 0)
+    }, [kanjis, vocabulary])
 
     useEffect(() => {
         if (searchExecuted && noWord) setDisplayKanjis(true)
@@ -419,6 +426,7 @@ const SidePanel = (props) => {
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
                 setSearchExecuted={setSearchExecuted}
+                loading={loading}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span>Kanji</span>
@@ -443,7 +451,7 @@ const SidePanel = (props) => {
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        filter={item.result}
+                        importance={item.importance}
                         key={i}
                     />
                 ))}
@@ -473,7 +481,7 @@ const SidePanel = (props) => {
                         changeCurrentWordById={changeCurrentWordById}
                         setOpen={setOpen}
                         currentElement={currentElement}
-                        filter={item.result}
+                        importance={item.importance}
                         key={i}
                     />
                 ))}

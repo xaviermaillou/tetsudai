@@ -600,6 +600,16 @@ input:focus {
 #wordsListFilters img {
   height: 14px
 }
+#wordsListFilters #loadingAnimation {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#wordsListFilters #loadingAnimation img {
+  height: 56px;
+}
 #filtersIndicator {
   font-size: 14px;
   margin-top: 10px;

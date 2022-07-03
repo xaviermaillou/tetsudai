@@ -4,13 +4,13 @@ const HistoryElement = (props) => {
     const {
         historyElementData,
         selected,
-        changeCurrentKanjiByKanji,
+        changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
 
     const handleClick = () => {
         historyElementData.kanji ?
-        changeCurrentKanjiByKanji(historyElementData.kanji, true)
+        changeCurrentKanjiById(historyElementData.id, true)
         :
         changeCurrentWordById(historyElementData.id, true)
     }
@@ -49,7 +49,7 @@ const DisplayHistory = (props) => {
         displayHistory,
         kanji,
         word,
-        changeCurrentKanjiByKanji,
+        changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
 
@@ -87,7 +87,7 @@ const DisplayHistory = (props) => {
                     <HistoryElement
                         historyElementData={e}
                         selected={checkSelected(e)}
-                        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+                        changeCurrentKanjiById={changeCurrentKanjiById}
                         changeCurrentWordById={changeCurrentWordById}
                         key={i}
                     />

@@ -5,8 +5,15 @@ import './App.css'
 import MainDisplay from './components/MainDisplay'
 import SidePanel from './components/SidePanel'
 import DisplayHistory from './components/DisplayHistory'
-import axios from 'axios'
-import { fetchKanji, fetchVocabulary, fetchSentences } from './request'
+import {
+  fetchKanjiList,
+  fetchVocabularyList,
+  fetchSentences,
+  fetchInflexions,
+  fetchKanji,
+  fetchWord,
+  fetchKanjiByKanji,
+} from './request'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -19,6 +26,7 @@ function App() {
   const [kanjisList, setKanjisList] = useState([])
   const [vocabularyList, setVocabularyList] = useState([])
   const [sentencesList, setSentencesList] = useState([])
+  const [inflexions, setInflexions] = useState(undefined)
 
   const [filteredKanjis, setFilteredKanjis] = useState([...kanjisList])
   const [filteredWords, setFilteredWords] = useState([...vocabularyList])
@@ -33,25 +41,30 @@ function App() {
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
 
-  const fetchKanjiData = useCallback(async () => {
-    const result = await fetchKanji(level, grammar, collection, search)
-    setKanjisList(result)
-  }, [level, grammar, collection, search])
+  const [loadingList, setLoadingList] = useState(false)
+  const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
 
-  const fetchVocabularyData = useCallback(async () => {
-    const result = await fetchVocabulary(level, grammar, collection, search)
-    setVocabularyList(result)
+  const fetchData = useCallback(async () => {
+    setLoadingList(true)
+    const resultKanji = await fetchKanjiList(level, grammar, collection, search)
+    setKanjisList(resultKanji)
+    const resultVocabulary = await fetchVocabularyList(level, grammar, collection, search)
+    setVocabularyList(resultVocabulary)
+    setLoadingList(false)
   }, [level, grammar, collection, search])
 
   const fetchSentencesData = useCallback(async () => {
-    const result = await fetchSentences(word.id)
-    setSentencesList(result)
+    const resultSentences = await fetchSentences(word.id)
+    setSentencesList(resultSentences)
+    const resultInflexions = await fetchInflexions(word.id)
+    setInflexions(resultInflexions)
   }, [word])
 
   useEffect(() => {
-    fetchKanjiData()
-    fetchVocabularyData()
-  }, [fetchKanjiData, fetchVocabularyData, level, grammar, collection, search])
+    if (searchExecuted) {
+      fetchData()
+    }
+  }, [searchExecuted, fetchData, level, grammar, collection, search])
 
   useEffect(() => {
     if (word) fetchSentencesData()
@@ -104,22 +117,22 @@ function App() {
     }
   }
 
-  const changeCurrentKanjiById = (id) => {
+  const changeCurrentKanjiById = async (id) => {
+    setLoadingMainDisplay(true)
     prepareDisplayChange()
     setWord(null)
-    setKanji(kanjisList.find((item) => item.id === id))
+    const result = await fetchKanji(id)
+    setKanji(result)
+    setLoadingMainDisplay(false)
   }
-  const changeCurrentKanjiByKanji = (kanji, fromHistory) => {
-    prepareDisplayChange()
-    setWord(null)
-    setKanji(kanjisList.find((item) => item.kanji === kanji))
-    setOpenedHistory(fromHistory)
-  }
-  const changeCurrentWordById = (id, fromHistory) => {
+  const changeCurrentWordById = async (id, fromHistory) => {
+    setLoadingMainDisplay(true)
     prepareDisplayChange()
     setKanji(null)
-    setWord(vocabularyList.find((item) => item.id === id))
+    const result = await fetchWord(id)
+    setWord(result)
     setOpenedHistory(fromHistory)
+    setLoadingMainDisplay(false)
   }
   const randomKanji = (type) => {
     prepareDisplayChange()
@@ -171,7 +184,7 @@ function App() {
 
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
-      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null ? 'full' : 'clickable'}>
+      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
         <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
         <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
         <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
@@ -191,10 +204,11 @@ function App() {
 
         // Displayed element
         kanji={kanji}
-        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+        changeCurrentKanjiById={changeCurrentKanjiById}
         word={word}
         changeCurrentWordById={changeCurrentWordById}
         sentences={sentencesList}
+        inflexions={inflexions}
         valueChanged={valueChanged}
         setValueChanged={setValueChanged}
 
@@ -247,13 +261,14 @@ function App() {
 
         searchExecuted={searchExecuted}
         setSearchExecuted={setSearchExecuted}
+        loading={loadingList}
       />
       <DisplayHistory
         imgPath={imgPath}
         displayHistory={displayHistory}
         kanji={kanji}
         word={word}
-        changeCurrentKanjiByKanji={changeCurrentKanjiByKanji}
+        changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
       />
     </div>
