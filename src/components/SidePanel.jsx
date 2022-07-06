@@ -389,8 +389,8 @@ const SidePanel = (props) => {
     }, [kanjis, vocabulary])
 
     useEffect(() => {
-        if (searchExecuted && noWord) setDisplayKanjis(true)
-    }, [searchExecuted, noKanji, noWord])
+        if (searchExecuted && noWord && !loading) setDisplayKanjis(true)
+    }, [searchExecuted, noKanji, noWord, loading])
 
     if (kanjis.length >= kanjiListOffset + 100) {
         const kanjiContainer = document.getElementById('kanjisList')
