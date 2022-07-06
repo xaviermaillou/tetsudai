@@ -5,7 +5,7 @@ const Yomi = (props) => {
         imgPath,
         example,
         wordExamples,
-        changeCurrentKanjiById,
+        // changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
 

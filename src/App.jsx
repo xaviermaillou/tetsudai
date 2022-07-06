@@ -15,6 +15,7 @@ import {
 } from './request'
 
 function App() {
+  // Theme state
   const [darkMode, setDarkMode] = useState(false)
   const [imgPath, setImgPath] = useState('light')
   useEffect(() => {
@@ -22,36 +23,97 @@ function App() {
     else setImgPath('light')
   }, [darkMode])
 
+  // Listing data
   const [kanjisList, setKanjisList] = useState([])
+  const [kanjiListOffset, setKanjisListOffset] = useState(0)
   const [vocabularyList, setVocabularyList] = useState([])
+  const [vocabularyListOffset, setVocabularyListOffset] = useState(0)
+
+  // Complementary data
   const [sentencesList, setSentencesList] = useState([])
   const [inflexions, setInflexions] = useState(undefined)
 
+  // Training data
   const [filteredKanjis, setFilteredKanjis] = useState([...kanjisList])
   const [filteredWords, setFilteredWords] = useState([...vocabularyList])
 
-  const [searchExecuted, setSearchExecuted] = useState(false)
-
+  // Filtering states
   const [collection, setCollection] = useState(0)
   const [level, setLevel] = useState(0)
   const [grammar, setGrammar] = useState(0)
   const [search, setSearch] = useState("")
+  const [searchExecuted, setSearchExecuted] = useState(false)
 
+  // Main display data
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
 
+  // Loading states
   const [loadingList, setLoadingList] = useState(false)
   const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
 
+  // Fetch data callback
   const fetchData = useCallback(async () => {
     setLoadingList(true)
-    const resultKanji = await fetchKanjiList(level, grammar, collection, search)
+    const resultKanji = await fetchKanjiList(
+      level,
+      grammar,
+      collection,
+      search,
+      0
+    )
     setKanjisList(resultKanji)
-    const resultVocabulary = await fetchVocabularyList(level, grammar, collection, search)
+    const resultVocabulary = await fetchVocabularyList(
+      level,
+      grammar,
+      collection,
+      search,
+      0
+    )
     setVocabularyList(resultVocabulary)
     setLoadingList(false)
-  }, [level, grammar, collection, search])
+  }, [
+    level,
+    grammar,
+    collection,
+    search
+  ])
 
+  // Fetch more data callbacks
+  const fetchMoreKanji = useCallback(async () => {
+    const resultKanji = await fetchKanjiList(
+      level,
+      grammar,
+      collection,
+      search,
+      kanjiListOffset
+    )
+    setKanjisList((arr) => [ ...arr, ...resultKanji ])
+  }, [
+    level,
+    grammar,
+    collection,
+    search,
+    kanjiListOffset
+  ])
+  const fetchMoreVocabulary = useCallback(async () => {
+    const resultVocabulary = await fetchVocabularyList(
+      level,
+      grammar,
+      collection,
+      search,
+      vocabularyListOffset
+    )
+    setVocabularyList((arr) => [ ...arr, ...resultVocabulary ])
+  }, [
+    level,
+    grammar,
+    collection,
+    search,
+    vocabularyListOffset
+  ])
+
+  // Fetch sentences and inflexions
   const fetchSentencesData = useCallback(async () => {
     const resultSentences = await fetchSentences(word.id)
     setSentencesList(resultSentences)
@@ -60,14 +122,31 @@ function App() {
   }, [word])
 
   useEffect(() => {
-    if (searchExecuted) {
-      fetchData()
-    }
-  }, [searchExecuted, fetchData, level, grammar, collection, search])
+    if (searchExecuted) fetchData()
+  }, [
+    searchExecuted,
+    fetchData,
+    level,
+    grammar,
+    collection,
+    search
+  ])
+
+  useEffect(() => {
+    if (kanjiListOffset > 0) fetchMoreKanji()
+    if (vocabularyListOffset > 0) fetchMoreVocabulary()
+  }, [
+    fetchMoreKanji,
+    fetchMoreVocabulary,
+    kanjiListOffset,
+    vocabularyListOffset
+  ])
 
   useEffect(() => {
     if (word) fetchSentencesData()
   }, [fetchSentencesData, word])
+
+
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [filterIndication, setFilterIndication] = useState(false)
@@ -232,6 +311,10 @@ function App() {
         vocabulary={vocabularyList}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
+        kanjiListOffset={kanjiListOffset}
+        setKanjisListOffset={setKanjisListOffset}
+        vocabularyListOffset={vocabularyListOffset}
+        setVocabularyListOffset={setVocabularyListOffset}
 
         // Current element
         currentElement={kanji || word}

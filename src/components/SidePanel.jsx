@@ -351,6 +351,10 @@ const SidePanel = (props) => {
         searchExecuted,
         setSearchExecuted,
         loading,
+        kanjiListOffset,
+        setKanjisListOffset,
+        vocabularyListOffset,
+        setVocabularyListOffset,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
@@ -387,6 +391,23 @@ const SidePanel = (props) => {
     useEffect(() => {
         if (searchExecuted && noWord) setDisplayKanjis(true)
     }, [searchExecuted, noKanji, noWord])
+
+    if (kanjis.length >= kanjiListOffset + 100) {
+        const kanjiContainer = document.getElementById('kanjisList')
+        kanjiContainer?.addEventListener('scroll', () => {
+            if ((kanjiContainer.offsetHeight + kanjiContainer.scrollTop) >= kanjiContainer.scrollHeight) {
+                setKanjisListOffset(kanjiListOffset + 100)
+            }
+        })
+    }
+    if (vocabulary.length >= vocabularyListOffset + 100) {
+        const vocabularyContainer = document.getElementById('vocabularyList')
+        vocabularyContainer?.addEventListener('scroll', () => {
+            if ((vocabularyContainer.offsetHeight + vocabularyContainer.scrollTop) >= vocabularyContainer.scrollHeight) {
+                setVocabularyListOffset(vocabularyListOffset + 100)
+            }
+        })
+    }
 
 
     return (

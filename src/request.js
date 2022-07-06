@@ -3,13 +3,13 @@ import axios from 'axios'
 const REQUEST_URL = 'https://frozen-coast-10724.herokuapp.com'
 // const REQUEST_URL = 'http://localhost:8000'
 
-export const fetchKanjiList = async (level, grammar, collection, search) => {
-    const result = await axios(`${REQUEST_URL}/kanjiList/${level}/${grammar}/${collection}/${search}`)
+export const fetchKanjiList = async (level, grammar, collection, search, offset) => {
+    const result = await axios(`${REQUEST_URL}/kanjiList/${offset}/${level}/${grammar}/${collection}/${search}`)
     return result.data
 }
 
-export const fetchVocabularyList = async (level, grammar, collection, search) => {
-    const result = await axios(`${REQUEST_URL}/vocabularyList/${level}/${grammar}/${collection}/${search}`)
+export const fetchVocabularyList = async (level, grammar, collection, search, offset) => {
+    const result = await axios(`${REQUEST_URL}/vocabularyList/${offset}/${level}/${grammar}/${collection}/${search}`)
     return result.data
 }
 

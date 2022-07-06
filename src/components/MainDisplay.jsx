@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import KanaReadings from "./KanaReadings"
 import WordDetails from "./WordDetails"
 import TrainingControls from "./TrainingControls"
@@ -98,7 +98,7 @@ const MainDisplay = (props) => {
                                     <div className="wordDisplayWordElementYomi jukujikun">
                                         {word.rareKanji ?
                                             word.elements.map((element, i) => 
-                                                <span className="wordDisplayWordElementKanji">{element.kanji || element.kana}</span>
+                                                <span className="wordDisplayWordElementKanji" key={i}>{element.kanji || element.kana}</span>
                                             )
                                             :
                                             <span>{word.jukujikun}</span>
