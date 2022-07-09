@@ -47,6 +47,7 @@ const DisplayHistory = (props) => {
     const {
         imgPath,
         displayHistory,
+        historyDisplayed,
         kanji,
         word,
         changeCurrentKanjiById,
@@ -71,7 +72,7 @@ const DisplayHistory = (props) => {
             className={open ? "open" : ""}
             onMouseLeave={() => setOpen(false)}
         >
-            {displayHistory.length > 0 && <div
+            {historyDisplayed && <div
                 id="historyIconContainer"
                 className={open ? "hiddenElement" : "hiddenElement selected"}
             >

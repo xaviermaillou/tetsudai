@@ -185,7 +185,7 @@ function App() {
   const [displayHistory, setDisplayHistory] = useState([])
   const [openedHistory, setOpenedHistory] = useState()
 
-  const prepareDisplayChange = useCallback(() => {
+  useEffect(() => {
     if ((kanji || word) && !openedHistory) {
       setDisplayHistory((arr) => arr
         .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id))
@@ -199,26 +199,20 @@ function App() {
 
   const changeCurrentKanjiById = useCallback(async (id, fromHistory) => {
     setLoadingMainDisplay(true)
-    prepareDisplayChange()
     const result = await fetchKanji(id)
     setWord(null)
     setKanji(result)
     setOpenedHistory(fromHistory)
     setLoadingMainDisplay(false)
-  }, [
-    prepareDisplayChange,
-  ])
+  }, [])
   const changeCurrentWordById = useCallback(async (id, fromHistory) => {
     setLoadingMainDisplay(true)
-    prepareDisplayChange()
     const result = await fetchWord(id)
     setKanji(null)
     setWord(result)
     setOpenedHistory(fromHistory)
     setLoadingMainDisplay(false)
-  }, [
-    prepareDisplayChange
-  ])
+  }, [])
 
   // Training mode
 
@@ -228,6 +222,7 @@ function App() {
   // Start the training
   // Changes trainingMode
   const toggleTraining = (type) => {
+    setMenuOpen(type === 0)
     setTrainingMode(type)
     setAllDisplayed(true)
     setFilterIndication(false)
@@ -236,7 +231,6 @@ function App() {
   // Removing current displayed element from its corresponding array of ids
   // Changes filteredKanjis and filteredWords
   const nextTrainingElement = () => {
-    prepareDisplayChange()
     if (trainingMode === 1) {
       if (filteredKanjis.length > 0 && kanji) setFilteredKanjis((arr) => arr
         .filter((el) => el.id !== kanji.id))
@@ -294,8 +288,7 @@ function App() {
         changeCurrentKanjiById(newKanjiId.id)
       } else setKanji(undefined)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredKanjis, trainingMode])
+  }, [filteredKanjis, trainingMode, changeCurrentKanjiById])
   useEffect(() => {
     if (trainingMode === 2) {
       if (filteredWords.length > 0) {
@@ -304,8 +297,7 @@ function App() {
         changeCurrentWordById(newWordId.id)
       } else setWord(undefined)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredWords, trainingMode])
+  }, [filteredWords, trainingMode, changeCurrentWordById])
 
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
@@ -325,7 +317,7 @@ function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         imgPath={imgPath}
-        historyDisplayed={displayHistory.length > 0}
+        historyDisplayed={displayHistory.length > 1}
 
         // Displayed element
         kanji={kanji}
@@ -394,6 +386,7 @@ function App() {
       <DisplayHistory
         imgPath={imgPath}
         displayHistory={displayHistory}
+        historyDisplayed={displayHistory.length > 1}
         kanji={kanji}
         word={word}
         changeCurrentKanjiById={changeCurrentKanjiById}
