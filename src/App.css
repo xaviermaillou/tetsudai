@@ -24,7 +24,6 @@
   transition: all 0.2s ease-out;
   padding: 0;
   margin: 0;
-  user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -129,16 +128,13 @@ input:focus {
 }
 #themeSwitcher {
   position: absolute;
-  top: 60px;
+  top: 130px;
   width: 100%;
   padding: 0px 14px;
   display: flex;
   justify-content: flex-start;
   animation-name: rerenderOpacity;
   animation-duration: 0.4s;
-}
-#themeSwitcher.down {
-  padding: 70px 14px;
 }
 #themeSwitcherPill {
   position: relative;
@@ -998,6 +994,9 @@ input:focus {
   #themeSwitcher {
     top: inherit;
     justify-content: flex-start;
+  }
+  #themeSwitcher.down {
+    padding: 70px 14px;
   }
   #introText {
     height: 100vh;
