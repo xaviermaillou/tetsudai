@@ -271,7 +271,7 @@ function App() {
     collection
   ])
 
-  // The proper fetching function is executed (functions beyond)
+  // The proper fetching function is executed (functions above)
   // Triggered with trainingMode
   useEffect(() => {
     if (trainingMode === 1) getTrainingKanji()
