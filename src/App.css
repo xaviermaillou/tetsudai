@@ -266,6 +266,7 @@ input:focus {
   align-items: flex-start;
   justify-content: space-between;
   opacity: 0.5;
+  transition: opacity 0s;
 }
 .yomiContainer.extendable {
   opacity: 1;

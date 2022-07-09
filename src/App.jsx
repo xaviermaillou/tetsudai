@@ -226,21 +226,8 @@ function App() {
     setTrainingMode(type)
     setAllDisplayed(true)
     setFilterIndication(false)
-  }
-
-  // Removing current displayed element from its corresponding array of ids
-  // Changes filteredKanjis and filteredWords
-  const nextTrainingElement = () => {
-    if (trainingMode === 1) {
-      if (filteredKanjis.length > 0 && kanji) setFilteredKanjis((arr) => arr
-        .filter((el) => el.id !== kanji.id))
-      else getTrainingKanji()
-    }
-    if (trainingMode === 2) {
-      if (filteredWords.length > 0 && word) setFilteredWords((arr) => arr
-        .filter((el) => el.id !== word.id))
-      else getTrainingVocabulary()
-    }
+    if (type === 1) getTrainingKanji()
+    if (type === 2) getTrainingVocabulary()
   }
 
   // Fetching array of ids corresponding to the state filters
@@ -271,31 +258,39 @@ function App() {
     collection
   ])
 
-  // The proper fetching function is executed (functions above)
-  // Triggered with trainingMode
-  useEffect(() => {
-    if (trainingMode === 1) getTrainingKanji()
-    if (trainingMode === 2) getTrainingVocabulary()
-  }, [trainingMode, getTrainingKanji, getTrainingVocabulary])
+  // Removing current displayed element from its corresponding array of ids
+  // Changes filteredKanjis and filteredWords
+  const nextTrainingElement = () => {
+    if (trainingMode === 1) {
+      if (filteredKanjis.length === 1) setKanji(undefined)
+      if (filteredKanjis.length > 0 && kanji) setFilteredKanjis((arr) => arr
+        .filter((el) => el.id !== kanji.id))
+      else getTrainingKanji()
+    }
+    if (trainingMode === 2) {
+      if (filteredWords.length === 1) setWord(undefined)
+      if (filteredWords.length > 0 && word) setFilteredWords((arr) => arr
+        .filter((el) => el.id !== word.id))
+      else getTrainingVocabulary()
+    }
+  }
 
   // A random id is picked and the corresponding element is fetched
   // Triggered with filteredKanjis and filteredWords
   useEffect(() => {
     if (trainingMode === 1) {
       if (filteredKanjis.length > 0) {
-        setWord(null)
         const newKanjiId = filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]
         changeCurrentKanjiById(newKanjiId.id)
-      } else setKanji(undefined)
+      }
     }
   }, [filteredKanjis, trainingMode, changeCurrentKanjiById])
   useEffect(() => {
     if (trainingMode === 2) {
       if (filteredWords.length > 0) {
-        setKanji(null)
         const newWordId = filteredWords[Math.floor(Math.random()*filteredWords.length)]
         changeCurrentWordById(newWordId.id)
-      } else setWord(undefined)
+      }
     }
   }, [filteredWords, trainingMode, changeCurrentWordById])
 

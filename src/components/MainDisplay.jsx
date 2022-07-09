@@ -146,7 +146,7 @@ const MainDisplay = (props) => {
                         </div>
                     )
                 }
-                {!!trainingMode && <TrainingControls
+                {(!!trainingMode && (kanji !== null || word !== null)) && <TrainingControls
                     imgPath={imgPath}
                     displayedElement={displayedElement}
                     displayElements={displayElements}

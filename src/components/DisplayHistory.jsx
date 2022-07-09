@@ -9,10 +9,12 @@ const HistoryElement = (props) => {
     } = props
 
     const handleClick = () => {
-        historyElementData.kanji ?
-        changeCurrentKanjiById(historyElementData.id, true)
-        :
-        changeCurrentWordById(historyElementData.id, true)
+        if (!selected) {
+            historyElementData.kanji ?
+            changeCurrentKanjiById(historyElementData.id, true)
+            :
+            changeCurrentWordById(historyElementData.id, true)
+        }
     }
 
     return (
