@@ -12,6 +12,8 @@ import {
   fetchInflexions,
   fetchKanji,
   fetchWord,
+  fetchKanjiTraining,
+  fetchVocabularyTraining,
 } from './request'
 
 function App() {
@@ -34,8 +36,8 @@ function App() {
   const [inflexions, setInflexions] = useState(undefined)
 
   // Training data
-  const [filteredKanjis, setFilteredKanjis] = useState([...kanjisList])
-  const [filteredWords, setFilteredWords] = useState([...vocabularyList])
+  const [filteredKanjis, setFilteredKanjis] = useState([])
+  const [filteredWords, setFilteredWords] = useState([])
 
   // Filtering states
   const [collection, setCollection] = useState(0)
@@ -182,26 +184,32 @@ function App() {
 
   const [displayHistory, setDisplayHistory] = useState([])
   const [openedHistory, setOpenedHistory] = useState()
-  const [trainingHistory, setTrainingHistory] = useState([])
 
-  const prepareDisplayChange = () => {
+  const prepareDisplayChange = useCallback(() => {
     if ((kanji || word) && !openedHistory) {
       const displayHistoryCopy = [ ...displayHistory ]
         .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id)
       displayHistoryCopy.push(kanji || word)
       setDisplayHistory(displayHistoryCopy)
     }
-  }
+  }, [
+    displayHistory,
+    openedHistory,
+    kanji,
+    word
+  ])
 
-  const changeCurrentKanjiById = async (id) => {
+  const changeCurrentKanjiById = useCallback(async (id) => {
     setLoadingMainDisplay(true)
     prepareDisplayChange()
     setWord(null)
     const result = await fetchKanji(id)
     setKanji(result)
     setLoadingMainDisplay(false)
-  }
-  const changeCurrentWordById = async (id, fromHistory) => {
+  }, [
+    prepareDisplayChange,
+  ])
+  const changeCurrentWordById = useCallback(async (id, fromHistory) => {
     setLoadingMainDisplay(true)
     prepareDisplayChange()
     setKanji(null)
@@ -209,54 +217,95 @@ function App() {
     setWord(result)
     setOpenedHistory(fromHistory)
     setLoadingMainDisplay(false)
-  }
-  const randomKanji = (type) => {
-    prepareDisplayChange()
-    const trainingHistoryCopy = [ ...trainingHistory ]
-    if (type === 1) {
-      setWord(null)
-      let remainingFilteredKanjis = [ ...filteredKanjis ]
-      trainingHistory.forEach((historyElement) => {
-        if (historyElement.kanji) remainingFilteredKanjis = remainingFilteredKanjis
-          .filter((remaining) => (remaining.kanji !== historyElement.kanji && (kanji ? remaining.kanji !== kanji.kanji : true)))
-      })
-      const newKanji = remainingFilteredKanjis[Math.floor(Math.random()*remainingFilteredKanjis.length)]
-      setKanji(newKanji)
-      if (newKanji) trainingHistoryCopy.push(newKanji)
-      if (remainingFilteredKanjis.length > 0) setTrainingHistory(trainingHistoryCopy)
-      else setTrainingHistory([])
-    } 
-    if (type === 2) {
-      setKanji(null)
-      let remainingFilteredWords = [ ...filteredWords ]
-      trainingHistory.forEach((historyElement) => {
-        if (historyElement.id) remainingFilteredWords = remainingFilteredWords
-          .filter((remaining) => (remaining.id !== historyElement.id && (word ? remaining.id !== word.id : true)))
-      })
-      const newWord = remainingFilteredWords[Math.floor(Math.random()*remainingFilteredWords.length)]
-      setWord(newWord)
-      if (newWord) trainingHistoryCopy.push(newWord)
-      if (remainingFilteredWords.length > 0) setTrainingHistory(trainingHistoryCopy)
-      else setTrainingHistory([])
-    }
-    setOpenedHistory(false)
-  }
+  }, [
+    prepareDisplayChange
+  ])
+
+  // Training mode
 
   const [trainingMode, setTrainingMode] = useState(0)
   const [allDisplayed, setAllDisplayed] = useState(true)
+
+  // Start the training
+  // Changes trainingMode
   const toggleTraining = (type) => {
     setTrainingMode(type)
     setAllDisplayed(true)
     setFilterIndication(false)
-    if (!!type) {
-      setMenuOpen(false)
-      randomKanji(type)
+  }
+
+  // Removing current displayed element from its corresponding array of ids
+  // Changes filteredKanjis and filteredWords
+  const nextTrainingElement = () => {
+    prepareDisplayChange()
+    if (trainingMode === 1) {
+      if (filteredKanjis.length > 0 && kanji) setFilteredKanjis((arr) => arr
+        .filter((el) => el.id !== kanji.id))
+      else getTrainingKanji()
+    }
+    if (trainingMode === 2) {
+      if (filteredWords.length > 0 && word) setFilteredWords((arr) => arr
+        .filter((el) => el.id !== word.id))
+      else getTrainingVocabulary()
     }
   }
 
+  // Fetching array of ids corresponding to the state filters
+  // Triggered with level, grammar and collecton
+  // Changes filteredKanjis and filteredWords
+  const getTrainingKanji = useCallback(async () => {
+    const resultKanji = await fetchKanjiTraining(
+      level,
+      grammar,
+      collection
+    )
+    setFilteredKanjis(resultKanji)
+  }, [
+    level,
+    grammar,
+    collection
+  ])
+  const getTrainingVocabulary = useCallback(async () => {
+    const resultVocabulary = await fetchVocabularyTraining(
+      level,
+      grammar,
+      collection
+    )
+    setFilteredWords(resultVocabulary)
+  }, [
+    level,
+    grammar,
+    collection
+  ])
+
+  // The proper fetching function is executed (functions beyond)
+  // Triggered with trainingMode
+  // Changes filteredKanjis and filteredWords
   useEffect(() => {
-    setTrainingHistory([])
-  }, [trainingMode])
+    if (trainingMode === 1) getTrainingKanji()
+    if (trainingMode === 2) getTrainingVocabulary()
+  }, [trainingMode, getTrainingKanji, getTrainingVocabulary])
+
+  // A random id is picked and the corresponding element is fetched
+  // Triggered with filteredKanjis and filteredWords
+  useEffect(() => {
+    if (trainingMode === 1) {
+      if (filteredKanjis.length > 0) {
+        setWord(null)
+        const newKanjiId = filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]
+        changeCurrentKanjiById(newKanjiId.id)
+      } else setKanji(undefined)
+    }
+  }, [filteredKanjis])
+  useEffect(() => {
+    if (trainingMode === 2) {
+      if (filteredWords.length > 0) {
+        setKanji(null)
+        const newWordId = filteredWords[Math.floor(Math.random()*filteredWords.length)]
+        changeCurrentWordById(newWordId.id)
+      } else setWord(undefined)
+    }
+  }, [filteredWords])
 
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
@@ -300,7 +349,7 @@ function App() {
         allDisplayed={allDisplayed}
         setAllDisplayed={setAllDisplayed}
         trainingMode={trainingMode}
-        randomKanji={randomKanji}
+        nextTrainingElement={nextTrainingElement}
         toggleTraining={toggleTraining}
       />
       <SidePanel 

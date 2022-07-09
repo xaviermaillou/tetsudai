@@ -437,6 +437,7 @@ input:focus {
 }
 
 .trainingEndNotifier {
+  margin-top: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

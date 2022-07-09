@@ -25,7 +25,7 @@ const MainDisplay = (props) => {
         setAllDisplayed,
         trainingMode,
         kanji,
-        randomKanji,
+        nextTrainingElement,
         compressed,
         collection,
         level,
@@ -75,7 +75,7 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les kanji ont été revus.</span>
+                            <span>Tous les kanji ont été étudiés.</span>
                         </div>
                     )
                 }
@@ -142,7 +142,7 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les mots ont été revus.</span>
+                            <span>Tous les mots ont été étudiés.</span>
                         </div>
                     )
                 }
@@ -152,7 +152,7 @@ const MainDisplay = (props) => {
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}
                     changeDisplayedElement={changeDisplayedElement}
-                    randomKanji={() =>randomKanji(trainingMode)}
+                    nextTrainingElement={() =>nextTrainingElement(trainingMode)}
                     collection={collection}
                     level={level}
                     grammar={grammar}

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const REQUEST_URL = 'https://frozen-coast-10724.herokuapp.com'
-// const REQUEST_URL = 'http://localhost:8000'
+// const REQUEST_URL = 'https://frozen-coast-10724.herokuapp.com'
+const REQUEST_URL = 'http://localhost:8000'
 
 export const fetchKanjiList = async (level, grammar, collection, search, offset) => {
     const result = await axios(`${REQUEST_URL}/kanjiList/${offset}/${level}/${grammar}/${collection}/${search}`)
@@ -30,5 +30,15 @@ export const fetchKanji = async (id) => {
 
 export const fetchWord = async (id) => {
     const result = await axios(`${REQUEST_URL}/word/${id}`)
+    return result.data
+}
+
+export const fetchKanjiTraining = async (level, grammar, collection) => {
+    const result = await axios(`${REQUEST_URL}/kanjiTrainingList/${level}/${grammar}/${collection}`)
+    return result.data
+}
+
+export const fetchVocabularyTraining = async (level, grammar, collection) => {
+    const result = await axios(`${REQUEST_URL}/vocabularyTrainingList/${level}/${grammar}/${collection}`)
     return result.data
 }

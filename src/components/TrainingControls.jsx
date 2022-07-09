@@ -7,7 +7,7 @@ const TrainingControls = (props) => {
         displayElements,
         allDisplayed,
         changeDisplayedElement,
-        randomKanji,
+        nextTrainingElement,
         collection,
         level,
         grammar,
@@ -43,7 +43,7 @@ const TrainingControls = (props) => {
                         <span>{collection ? collections[collection] : "Toutes"}</span>
                     </div>
                 </div>
-                <div id="trainingNext" onClick={randomKanji} className="clickable">
+                <div id="trainingNext" onClick={nextTrainingElement} className="clickable">
                     <span>
                         <img src={endedTraining ? `/img/${imgPath}/reset.png` : `/img/${imgPath}/next.png`} alt="random" />
                     </span>
