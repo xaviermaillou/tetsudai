@@ -51,12 +51,23 @@ function App() {
   const [word, setWord] = useState(null)
 
   // Loading states
-  const [loadingList, setLoadingList] = useState(false)
+  const [loadingKanjiList, setLoadingKanjiList] = useState(false)
+  const [loadingVocabularyList, setLoadingVocabularyList] = useState(false)
   const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
+
+  // Stops lists loading animations
+  // Triggered with kanjisList and vocabularyList
+  useEffect(() => {
+    setLoadingKanjiList(false)
+  }, [kanjisList])
+  useEffect(() => {
+    setLoadingVocabularyList(false)
+  }, [vocabularyList])
 
   // Fetch data callback
   const fetchData = useCallback(async () => {
-    setLoadingList(true)
+    setLoadingKanjiList(true)
+    setLoadingVocabularyList(true)
     const resultKanji = await fetchKanjiList(
       level,
       grammar,
@@ -73,7 +84,6 @@ function App() {
       0
     )
     setVocabularyList(resultVocabulary)
-    setLoadingList(false)
   }, [
     level,
     grammar,
@@ -197,13 +207,18 @@ function App() {
     word
   ])
 
+  // Stops main display loading animations
+  // Triggered with kanji and word
+  useEffect(() => {
+    setLoadingMainDisplay(false)
+  }, [kanji, word])
+
   const changeCurrentKanjiById = useCallback(async (id, fromHistory) => {
     setLoadingMainDisplay(true)
     const result = await fetchKanji(id)
     setWord(null)
     setKanji(result)
     setOpenedHistory(fromHistory)
-    setLoadingMainDisplay(false)
   }, [])
   const changeCurrentWordById = useCallback(async (id, fromHistory) => {
     setLoadingMainDisplay(true)
@@ -211,7 +226,6 @@ function App() {
     setKanji(null)
     setWord(result)
     setOpenedHistory(fromHistory)
-    setLoadingMainDisplay(false)
   }, [])
 
   // Training mode
@@ -376,7 +390,8 @@ function App() {
 
         searchExecuted={searchExecuted}
         setSearchExecuted={setSearchExecuted}
-        loading={loadingList}
+        loadingKanjiList={loadingKanjiList}
+        loadingVocabularyList={loadingVocabularyList}
       />
       <DisplayHistory
         imgPath={imgPath}

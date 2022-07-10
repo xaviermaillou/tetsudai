@@ -3,6 +3,7 @@ import KanaReadings from "./KanaReadings"
 import WordDetails from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { classes } from "../lib/common"
+import Loading from "./visualElements/Loading"
 
 const ThemeSwitcher = (props) => {
     const { darkMode, setDarkMode, historyDisplayed } = props
@@ -146,6 +147,11 @@ const MainDisplay = (props) => {
                         </div>
                     )
                 }
+                <div className="loadingAnimationContainer">
+                    <Loading
+                        isLoading={loading}
+                    />
+                </div>
                 {(!!trainingMode && (kanji !== null || word !== null)) && <TrainingControls
                     imgPath={imgPath}
                     displayedElement={displayedElement}

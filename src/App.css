@@ -17,6 +17,17 @@
     opacity: 1;
   }
 }
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -119,6 +130,52 @@ input:focus {
 .tooltip {
   font-size: 14px;
   opacity: 0.66;
+}
+
+/* ------------------------------------------------ LOADING ANIMATION ------------------------------------------------ */
+
+.loadingAnimationContainer {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.loadingAnimation {
+  height: 56px;
+  width: 56px;
+  animation-name: rerenderOpacity;
+  animation-duration: 2s;
+}
+.loadingAnimation .fourDotsContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation-name: spinning;
+  animation-duration: 1s;
+  animation-iteration-count: 100;
+}
+.loadingAnimation .fourDotsContainer .dotsRow {
+  height: 33%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.loadingAnimation .fourDotsContainer .dotsRow .dotsCell {
+  height: 100%;
+  width: 33%;
+}
+.loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
 }
 
 /* ------------------------------------------------ MAIN DISPLAY ------------------------------------------------ */
@@ -600,16 +657,6 @@ input:focus {
 }
 #wordsListFilters img {
   height: 14px
-}
-#wordsListFilters #loadingAnimation {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-#wordsListFilters #loadingAnimation img {
-  height: 56px;
 }
 #filtersIndicator {
   font-size: 14px;
@@ -1154,6 +1201,10 @@ input:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
 
+#App.light .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 #App.light #kanjiDisplayKanji,
 #App.light .wordDisplayWordElement span,
 #App.light .wordDisplayWordElementYomi span {
@@ -1286,6 +1337,10 @@ input:focus {
 
 #App.dark input:focus {
   border-bottom: 1px solid rgba(199, 192, 181, 0.8);
+}
+
+#App.dark .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
+  background-color: rgba(199, 192, 181, 0.5);
 }
 
 #App.dark #kanjiDisplayKanji,

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { pluralClasses, collections, levels } from "../lib/common"
+import Loading from "./visualElements/Loading"
 
 const TrainingModal = (props) => {
     const {
@@ -84,7 +85,6 @@ const ListHeader = (props) => {
         trainingMode,
         toggleTraining,
         setSearchExecuted,
-        loading,
     } = props
 
     const [openTrainingModal, setOpenTrainingModal] = useState(false)
@@ -175,14 +175,6 @@ const ListHeader = (props) => {
                 <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
                     <div className="tooltip">Sélectionnez les catégories dont vous voulez voir le contenu</div>
                 </div>
-                {loading &&
-                    <div id="loadingAnimation">
-                        <img
-                            src={`/img/${imgPath}/loading.gif`}
-                            alt="loading"
-                        />
-                    </div>
-                }
             </div>
             <TrainingModal
                 imgPath={imgPath}
@@ -350,7 +342,8 @@ const SidePanel = (props) => {
         toggleTraining,
         searchExecuted,
         setSearchExecuted,
-        loading,
+        loadingKanjiList,
+        loadingVocabularyList,
         kanjiListOffset,
         setKanjisListOffset,
         vocabularyListOffset,
@@ -443,7 +436,6 @@ const SidePanel = (props) => {
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
                 setSearchExecuted={setSearchExecuted}
-                loading={loading}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span>Kanji</span>
@@ -472,7 +464,12 @@ const SidePanel = (props) => {
                         key={i}
                     />
                 ))}
-                {noKanji && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
+                <div className="loadingAnimationContainer">
+                    <Loading
+                        isLoading={loadingKanjiList}
+                    />
+                </div>
+                {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
             </div>
             {/* searchExecuted && <span className={displayWords ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayWords(!displayWords)}>
                 Vocabulaire
@@ -502,7 +499,12 @@ const SidePanel = (props) => {
                         key={i}
                     />
                 ))}
-                {noWord && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
+                <div className="loadingAnimationContainer">
+                    <Loading
+                        isLoading={loadingVocabularyList}
+                    />
+                </div>
+                {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
             {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
         </div>
