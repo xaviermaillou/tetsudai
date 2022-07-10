@@ -2,7 +2,7 @@ import { useState } from "react"
 import KanaReadings from "./KanaReadings"
 import WordDetails from "./WordDetails"
 import TrainingControls from "./TrainingControls"
-import { classes } from "../lib/common"
+import { classes, verbGrammar } from "../lib/common"
 import Loading from "./visualElements/Loading"
 
 const ThemeSwitcher = (props) => {
@@ -123,7 +123,15 @@ const MainDisplay = (props) => {
                             }
                             <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
                             <div id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
-                                <div>{word.grammar.map((el, i) => <span key={i}>{i > 0 && ', '}{classes[el].toLowerCase()}</span>)}</div>
+                                <div>
+                                    {word.grammar.map((el, i) => (
+                                        <span key={i}>
+                                            {i > 0 && ', '}
+                                            {classes[el].toLowerCase()}
+                                            {word.verbPrecisions && ' ' + verbGrammar[word.verbPrecisions.grammar]}
+                                        </span>
+                                    ))}
+                                </div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
                                 {word.obscure && <div>⚠ très peu utilisé</div>}
                                 {word.common && <div>✓ courant</div>}
