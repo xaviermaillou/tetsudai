@@ -162,7 +162,7 @@ const Sentence = (props) => {
         <div className="sentencesElement">
             <div>
                 {sentence.elements.map((element, i) => (
-                    <span onClick={() => changeCurrentWordById(element.id, false)} className={referenceId === element.id ? "clickable highlighted" : "clickable"} key={i}>
+                    <span onClick={() => changeCurrentWordById(element.id, false)} className={referenceId === element.id ? "highlighted" : "clickable"} key={i}>
                         {element.word}
                     </span>
                 ))}
