@@ -37,7 +37,6 @@ const MainDisplay = (props) => {
         word,
         changeCurrentWordById,
         sentences,
-        inflexions,
         loading,
     } = props
 
@@ -140,7 +139,7 @@ const MainDisplay = (props) => {
                                 imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={sentences}
-                                inflexions={inflexions}
+                                inflexions={word.inflexions}
                                 kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}

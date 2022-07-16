@@ -9,7 +9,6 @@ import {
   fetchKanjiList,
   fetchVocabularyList,
   fetchSentences,
-  fetchInflexions,
   fetchKanji,
   fetchWord,
   fetchKanjiTraining,
@@ -33,7 +32,6 @@ function App() {
 
   // Complementary data
   const [sentencesList, setSentencesList] = useState([])
-  const [inflexions, setInflexions] = useState(undefined)
 
   // Training data
   const [filteredKanjis, setFilteredKanjis] = useState([])
@@ -125,12 +123,10 @@ function App() {
     vocabularyListOffset
   ])
 
-  // Fetch sentences and inflexions
+  // Fetch sentences
   const fetchSentencesData = useCallback(async () => {
     const resultSentences = await fetchSentences(word.id)
     setSentencesList(resultSentences)
-    const resultInflexions = await fetchInflexions(word.id)
-    setInflexions(resultInflexions)
   }, [word])
 
   useEffect(() => {
@@ -334,7 +330,6 @@ function App() {
         word={word}
         changeCurrentWordById={changeCurrentWordById}
         sentences={sentencesList}
-        inflexions={inflexions}
         loading={loadingMainDisplay}
 
         // Height
