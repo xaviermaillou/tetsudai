@@ -417,7 +417,13 @@ const SidePanel = (props) => {
                         :
                         <img src={`/img/${imgPath}/search.png`} alt="search" />
                     }
-                    <input value={searchCopy} onChange={(e) => {handleSearch(e.target.value)}} type="text" placeholder="Rechercher par romaji ou traduction" />
+                    <input
+                        value={searchCopy}
+                        onChange={(e) => {handleSearch(e.target.value)}}
+                        type="text"
+                        spellcheck="false"
+                        placeholder="Rechercher en japonais, romaji, français..."
+                    />
                 </div>
             </div>
             <ListHeader
