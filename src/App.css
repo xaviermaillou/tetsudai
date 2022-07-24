@@ -631,6 +631,16 @@ input:focus {
   height: 16px;
   opacity: 0.5;
 }
+#wordsListTrainerIcon.lowOpacity {
+  opacity: 0;
+  pointer-events: none;
+}
+#wordsListFilterIcon.highlighted {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.25);
+}
+#wordsListFilterIcon.highlighted img {
+  opacity: 1;
+}
 #wordsListFilters {
   height: 100%;
   width: 100%;
@@ -644,6 +654,9 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.wordsListHeaderRow.lowOpacity {
+  opacity: 0.25;
 }
 #filtersTip {
   z-index: 1600;
@@ -1025,6 +1038,7 @@ input:focus {
   }
   #logoContainer.full {
     height: 100vh;
+    bottom: 0px;
     opacity: 0.1;
   }
   #logoContainer img {
@@ -1193,12 +1207,22 @@ input:focus {
   color: rgba(0, 0, 0, 1);
 }
 
+#App.light input.highlighted {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 7.5px 7.5px -2.5px rgba(0, 0, 0, 0.1);
+}
+
 #App.light input::placeholder {
   color: rgba(0, 0, 0, 0.25);
 }
 
+#App.light input.highlighted::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 #App.light input:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: none;
 }
 
 #App.light .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {

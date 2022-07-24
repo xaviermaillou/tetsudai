@@ -37,17 +37,20 @@ const TrainingModal = (props) => {
 const FilterModal = (props) => {
     const {
         openFilter,
+        setOpenFilter,
         collection,
         setCollection,
         level,
         setLevel,
         grammar,
         setGrammar,
+        searchExecuted,
         setSearchExecuted,
     } = props
 
     const handleClick = (key, filterSetter) => {
         filterSetter(key)
+        if (!searchExecuted) setOpenFilter(false)
         setSearchExecuted(true)
     }
 
@@ -84,6 +87,7 @@ const ListHeader = (props) => {
         filterIndication,
         trainingMode,
         toggleTraining,
+        searchExecuted,
         setSearchExecuted,
     } = props
 
@@ -109,7 +113,7 @@ const ListHeader = (props) => {
         <div id="wordsListHeader">
             <div
                 id="wordsListTrainerIcon"
-                className="clickable"
+                className={searchExecuted ? "clickable" : "lowOpacity"}
                 onClick={() => handleTrainingIconClick()}
             >
                 <img
@@ -120,7 +124,7 @@ const ListHeader = (props) => {
             </div>
             <div
                 id="wordsListFilterIcon"
-                className="clickable"
+                className={(searchExecuted || openFilter) ? "clickable" : "clickable highlighted"}
                 onClick={() => handleFilterIconClick()}
             >
                 <img
@@ -132,7 +136,7 @@ const ListHeader = (props) => {
             <div id="wordsListFilters">
                 <div
                     id="filtersIndicator"
-                    className="wordsListHeaderRow"
+                    className={searchExecuted ? "wordsListHeaderRow" : "wordsListHeaderRow lowOpacity"}
                 >
                     <div></div>
                     {(collection || level || grammar) ? 
@@ -185,12 +189,14 @@ const ListHeader = (props) => {
             />
             <FilterModal
                 openFilter={openFilter}
+                setOpenFilter={setOpenFilter}
                 collection={collection}
                 setCollection={setCollection}
                 level={level}
                 setLevel={setLevel}
                 grammar={grammar}
                 setGrammar={setGrammar}
+                searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
         </div>
@@ -419,6 +425,7 @@ const SidePanel = (props) => {
                     }
                     <input
                         value={searchCopy}
+                        className={searchExecuted ? "" : "highlighted"}
                         onChange={(e) => {handleSearch(e.target.value)}}
                         type="text"
                         spellcheck="false"
@@ -441,6 +448,7 @@ const SidePanel = (props) => {
                 filterIndication={filterIndication}
                 trainingMode={trainingMode}
                 toggleTraining={toggleTraining}
+                searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
@@ -512,7 +520,7 @@ const SidePanel = (props) => {
                 </div>
                 {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
             </div>
-            {!searchExecuted && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
+            {false && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
         </div>
     )
 }
