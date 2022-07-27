@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import MainDisplay from './components/MainDisplay'
 import SidePanel from './components/SidePanel'
-import DisplayHistory from './components/DisplayHistory'
+import SideBar from './components/SideBar'
 import {
   fetchKanjiList,
   fetchVocabularyList,
@@ -14,6 +14,7 @@ import {
   fetchKanjiTraining,
   fetchVocabularyTraining,
 } from './request'
+import DisplayHistory from "./components/DisplayHistory"
 
 function App() {
   // Theme state
@@ -304,13 +305,10 @@ function App() {
     }
   }, [filteredWords, trainingMode, changeCurrentWordById])
 
+  const [openHistory, setOpenHistory] = useState(false)
+
   return (
     <div id="App" className={darkMode ? 'dark' : 'light'}>
-      <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
-        <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
-        <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
-        <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
-      </div>
       {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
@@ -388,12 +386,24 @@ function App() {
         loadingKanjiList={loadingKanjiList}
         loadingVocabularyList={loadingVocabularyList}
       />
-      <DisplayHistory
+      <SideBar
         imgPath={imgPath}
         displayHistory={displayHistory}
         historyDisplayed={displayHistory.length > 1}
+        openHistory={openHistory}
+        setOpenHistory={setOpenHistory}
         kanji={kanji}
         word={word}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        loadingMainDisplay={loadingMainDisplay}
+      />
+      <DisplayHistory
+        kanji={kanji}
+        word={word}
+        displayHistory={displayHistory}
+        openHistory={openHistory}
+        setOpenHistory={setOpenHistory}
         changeCurrentKanjiById={changeCurrentKanjiById}
         changeCurrentWordById={changeCurrentWordById}
       />

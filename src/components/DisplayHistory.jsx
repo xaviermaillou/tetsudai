@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const HistoryElement = (props) => {
     const {
         historyElementData,
@@ -47,16 +45,14 @@ const HistoryElement = (props) => {
 
 const DisplayHistory = (props) => {
     const {
-        imgPath,
-        displayHistory,
-        historyDisplayed,
         kanji,
         word,
+        displayHistory,
+        openHistory,
+        setOpenHistory,
         changeCurrentKanjiById,
-        changeCurrentWordById,
+        changeCurrentWordById
     } = props
-
-    const [open, setOpen] = useState(false)
 
     const checkSelected = (element) => {
         if (kanji && element.kanji) {
@@ -71,20 +67,9 @@ const DisplayHistory = (props) => {
     return (
         <div
             id="displayHistoryContainer"
-            className={open ? "open" : ""}
-            onMouseLeave={() => setOpen(false)}
+            className={openHistory ? "open" : ""}
+            onMouseLeave={() => setOpenHistory(false)}
         >
-            {historyDisplayed && <div
-                id="historyIconContainer"
-                className={open ? "hiddenElement" : "hiddenElement selected"}
-            >
-                <img
-                    className='clickable'
-                    src={`/img/${imgPath}/history.png`}
-                    alt='history'
-                    onClick={() => setOpen(true)}
-                />
-            </div>}
             <div id="displayHistory">
                 {displayHistory.map((e, i) => (
                     <HistoryElement

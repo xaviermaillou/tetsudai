@@ -103,14 +103,15 @@ input:focus {
 #logoContainer {
   z-index: 1000;
   position: absolute;
-  top: 10px;
-  left: 26px;
+  top: 44px;
+  left: 24px;
   opacity: 0.25;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 #logoContainer.full {
   z-index: 2000;
+  left: 0px;
   pointer-events: none;
 }
 #logoContainer.full img:nth-child(1) {
@@ -184,12 +185,12 @@ input:focus {
   opacity: 0;
 }
 #themeSwitcher {
+  z-index: 1000;
   position: absolute;
-  top: 130px;
+  top: 46px;
   width: 100%;
-  padding: 0px 14px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   animation-name: rerenderOpacity;
   animation-duration: 0.4s;
 }
@@ -199,7 +200,6 @@ input:focus {
   width: 56px;
   border-radius: 14px;
   opacity: 0.1;
-  transform: rotate(90deg);
 }
 #themeSwitcherDot {
   position: absolute;
@@ -227,10 +227,12 @@ input:focus {
   opacity: 1;
 }
 #kanjiDisplayKanji {
-  line-height: 38vh;
+  height: 38vh;
+  display: flex;
+  align-items: flex-end;
 }
 #kanjiDisplayKanji, #wordDisplayWord {
-  font-size: calc(80px + 20vh);
+  font-size: calc(60px + 15vh);
   font-family: source-han-sans-simplified-c;
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
@@ -622,6 +624,7 @@ input:focus {
 }
 #wordsListFilterIcon {
   right: 8px;
+  box-shadow: none;
 }
 #wordsListFilterIcon img.focused {
   animation-name: emphasize;
@@ -634,9 +637,6 @@ input:focus {
 #wordsListTrainerIcon.lowOpacity {
   opacity: 0;
   pointer-events: none;
-}
-#wordsListFilterIcon.highlighted {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.25);
 }
 #wordsListFilterIcon.highlighted img {
   opacity: 1;
@@ -1035,9 +1035,11 @@ input:focus {
     bottom: 20px;
     left: 18px;
     justify-content: center;
+    flex-direction: column;
   }
   #logoContainer.full {
     height: 100vh;
+    left: 26px;
     bottom: 0px;
     opacity: 0.1;
   }
@@ -1054,11 +1056,25 @@ input:focus {
     opacity: 1;
   }
   #themeSwitcher {
-    top: inherit;
+    z-index: 1000;
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    padding: 0px 14px;
+    display: flex;
+    justify-content: flex-start;
+    animation-name: rerenderOpacity;
+    animation-duration: 0.4s;
+  }
+  #themeSwitcher {
+    top: 5vh;
     justify-content: flex-start;
   }
   #themeSwitcher.down {
     padding: 70px 14px;
+  }
+  #themeSwitcherPill {
+    transform: rotate(90deg);
   }
   #introText {
     height: 100vh;
@@ -1175,6 +1191,7 @@ input:focus {
     width: 8%;
   }
   #historyIconContainer img {
+    z-index: 1000;
     display: block;
     position: fixed;
     top: 40px;
@@ -1267,6 +1284,10 @@ input:focus {
   background-color: rgba(255, 255, 255, 1);
 }
 
+#App.light #wordsListFilterIcon.highlighted {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.25);
+}
+
 #App.light #sidePanel {
   background-color: rgba(255, 255, 255, 0.95);
 }
@@ -1355,12 +1376,22 @@ input:focus {
   color: rgba(199, 192, 181, 1);
 }
 
+#App.dark input.highlighted {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.75);
+  box-shadow: 0px 7.5px 7.5px -2.5px rgba(0, 0, 0, 0.25);
+}
+
 #App.dark input::placeholder {
   color: rgba(199, 192, 181, 0.25);
 }
 
+#App.dark input.highlighted::placeholder {
+  color: rgba(199, 192, 181, 0.5);
+}
+
 #App.dark input:focus {
   border-bottom: 1px solid rgba(199, 192, 181, 0.8);
+  box-shadow: none;
 }
 
 #App.dark .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
@@ -1393,7 +1424,7 @@ input:focus {
 }
 
 #App.dark #filtersIndicator {
-  box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.1);
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
   background-color: rgba(199, 192, 181, 0.05);
 }
 
@@ -1403,6 +1434,10 @@ input:focus {
 
 #App.dark #wordsListTrainerIcon {
   background-color: rgba(36, 37, 37, 1);
+}
+
+#App.dark #wordsListFilterIcon.highlighted {
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.5);
 }
 
 #App.dark #sidePanel {
@@ -1415,7 +1450,7 @@ input:focus {
 }
 
 #App.dark #wordsListTrainingModalScreenshot img {
-  box-shadow: 0px 0px 7.5px rgba(36, 37, 37, 0.1);
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
 }
 
 #App.dark #wordsListTrainingModalButtons {

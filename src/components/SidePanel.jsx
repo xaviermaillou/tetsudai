@@ -170,9 +170,9 @@ const ListHeader = (props) => {
                             }
                         </div>
                         :
-                        <span id="filtersIndicatorsEmpty">
+                        (searchExecuted && <span id="filtersIndicatorsEmpty">
                             Aucune catégorie sélectionnée
-                        </span>
+                        </span>)
                     }
                     <div></div>
                 </div>

@@ -5,23 +5,9 @@ import TrainingControls from "./TrainingControls"
 import { classes, verbGrammar } from "../lib/common"
 import Loading from "./visualElements/Loading"
 
-const ThemeSwitcher = (props) => {
-    const { darkMode, setDarkMode, historyDisplayed } = props
-    return (
-        <div id="themeSwitcher" className={historyDisplayed ? "down" : ""}>
-            <div id="themeSwitcherPill" className="clickable" onClick={() => setDarkMode(!darkMode)}>
-                <div id="themeSwitcherDot"></div>
-            </div>
-        </div>
-    )
-}
-
 const MainDisplay = (props) => {
     const {
-        darkMode,
-        setDarkMode,
         imgPath,
-        historyDisplayed,
         allDisplayed,
         setAllDisplayed,
         trainingMode,
@@ -54,7 +40,6 @@ const MainDisplay = (props) => {
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
-                <ThemeSwitcher darkMode={darkMode} setDarkMode={setDarkMode} historyDisplayed={historyDisplayed} />
                 {kanji !== null &&
                     (kanji ?
                         <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
