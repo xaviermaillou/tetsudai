@@ -60,7 +60,7 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les kanji ont été étudiés.</span>
+                            <span>Tous les kanji ont été validés.</span>
                         </div>
                     )
                 }
@@ -135,7 +135,7 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les mots ont été étudiés.</span>
+                            <span>Tous les mots ont été validés.</span>
                         </div>
                     )
                 }
@@ -150,7 +150,7 @@ const MainDisplay = (props) => {
                     displayElements={displayElements}
                     allDisplayed={allDisplayed}
                     changeDisplayedElement={changeDisplayedElement}
-                    nextTrainingElement={() =>nextTrainingElement(trainingMode)}
+                    nextTrainingElement={nextTrainingElement}
                     collection={collection}
                     level={level}
                     grammar={grammar}

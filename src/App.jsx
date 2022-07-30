@@ -1,6 +1,7 @@
 // import firebase from './Firebase'
 import "firebase/firestore"
 import { useState, useEffect, useCallback } from 'react'
+import { useCookies } from "react-cookie"
 import './App.css'
 import MainDisplay from './components/MainDisplay'
 import SidePanel from './components/SidePanel'
@@ -17,13 +18,12 @@ import {
 import DisplayHistory from "./components/DisplayHistory"
 
 function App() {
-  // Theme state
-  const [darkMode, setDarkMode] = useState(false)
+  // Theme
+  const [cookies] = useCookies()
   const [imgPath, setImgPath] = useState('light')
   useEffect(() => {
-    if (darkMode) setImgPath('dark')
-    else setImgPath('light')
-  }, [darkMode])
+    if (cookies.theme) setImgPath(cookies.theme)
+  }, [cookies.theme])
 
   // Listing data
   const [kanjisList, setKanjisList] = useState([])
@@ -229,6 +229,7 @@ function App() {
 
   const [trainingMode, setTrainingMode] = useState(0)
   const [allDisplayed, setAllDisplayed] = useState(true)
+  const [forceNext, setForceNext] = useState(false)
 
   // Start the training
   // Changes trainingMode
@@ -245,24 +246,24 @@ function App() {
   // Triggered with level, grammar and collecton
   // Changes filteredKanjis and filteredWords
   const getTrainingKanji = useCallback(async () => {
-    const resultKanji = await fetchKanjiTraining(
+    const result = await fetchKanjiTraining(
       level,
       grammar,
       collection
     )
-    setFilteredKanjis(resultKanji)
+    setFilteredKanjis(result)
   }, [
     level,
     grammar,
     collection
   ])
   const getTrainingVocabulary = useCallback(async () => {
-    const resultVocabulary = await fetchVocabularyTraining(
+    const result = await fetchVocabularyTraining(
       level,
       grammar,
       collection
     )
-    setFilteredWords(resultVocabulary)
+    setFilteredWords(result)
   }, [
     level,
     grammar,
@@ -271,17 +272,23 @@ function App() {
 
   // Removing current displayed element from its corresponding array of ids
   // Changes filteredKanjis and filteredWords
-  const nextTrainingElement = () => {
+  const nextTrainingElement = (validated) => {
     if (trainingMode === 1) {
-      if (filteredKanjis.length === 1) setKanji(undefined)
-      if (filteredKanjis.length > 0 && kanji) setFilteredKanjis((arr) => arr
-        .filter((el) => el.id !== kanji.id))
+      if (filteredKanjis.length === 1 && validated) setKanji(undefined)
+      if (filteredKanjis.length > 0 && kanji) {
+        if (validated) setFilteredKanjis((arr) => arr
+          .filter((el) => el.id !== kanji.id))
+        else setForceNext(!forceNext)
+      }
       else getTrainingKanji()
     }
     if (trainingMode === 2) {
-      if (filteredWords.length === 1) setWord(undefined)
-      if (filteredWords.length > 0 && word) setFilteredWords((arr) => arr
-        .filter((el) => el.id !== word.id))
+      if (filteredWords.length === 1 && validated) setWord(undefined)
+      if (filteredWords.length > 0 && word) {
+        if (validated) setFilteredWords((arr) => arr
+          .filter((el) => el.id !== word.id))
+        else setForceNext(!forceNext)
+      }
       else getTrainingVocabulary()
     }
   }
@@ -295,7 +302,7 @@ function App() {
         changeCurrentKanjiById(newKanjiId.id)
       }
     }
-  }, [filteredKanjis, trainingMode, changeCurrentKanjiById])
+  }, [filteredKanjis, trainingMode, forceNext, changeCurrentKanjiById])
   useEffect(() => {
     if (trainingMode === 2) {
       if (filteredWords.length > 0) {
@@ -303,12 +310,12 @@ function App() {
         changeCurrentWordById(newWordId.id)
       }
     }
-  }, [filteredWords, trainingMode, changeCurrentWordById])
+  }, [filteredWords, trainingMode, forceNext, changeCurrentWordById])
 
   const [openHistory, setOpenHistory] = useState(false)
 
   return (
-    <div id="App" className={darkMode ? 'dark' : 'light'}>
+    <div id="App" className={imgPath}>
       {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
         <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
@@ -317,8 +324,6 @@ function App() {
       </div>}
       <MainDisplay
         // Theme switcher
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
         imgPath={imgPath}
         historyDisplayed={displayHistory.length > 1}
 
@@ -394,8 +399,6 @@ function App() {
         setOpenHistory={setOpenHistory}
         kanji={kanji}
         word={word}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
         loadingMainDisplay={loadingMainDisplay}
       />
       <DisplayHistory

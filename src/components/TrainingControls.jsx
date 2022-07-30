@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { useCookies } from "react-cookie"
 import { pluralClasses, collections, levels} from "../lib/common"
 
 const TrainingControls = (props) => {
@@ -15,6 +17,13 @@ const TrainingControls = (props) => {
         toggleTraining,
         endedTraining
     } = props
+
+    const [ready, setReady] = useState(false)
+
+    const handleNext = (review) => {
+        setReady(false)
+        nextTrainingElement(review)
+    }
 
     return (
         <div id="selectorAndControls">
@@ -43,9 +52,25 @@ const TrainingControls = (props) => {
                         <span>{collection ? collections[collection] : "Toutes"}</span>
                     </div>
                 </div>
-                <div id="trainingNext" onClick={nextTrainingElement} className="clickable">
+                <div id="trainingNext" className="clickable" width="20px">
+                    <span id="trainingNextChoice" className={ready ? "open" :  ""}>
+                        <img
+                            onClick={() => handleNext(true)}
+                            src={`/img/${imgPath}/good.png`}
+                            alt="good"
+                        />
+                        <img
+                            onClick={() => handleNext(false)}
+                            src={`/img/${imgPath}/good.png`}
+                            alt="good"
+                        />
+                    </span>
                     <span>
-                        <img src={endedTraining ? `/img/${imgPath}/reset.png` : `/img/${imgPath}/next.png`} alt="random" />
+                        <img
+                            onClick={() => endedTraining ? handleNext() : setReady(!ready)}
+                            src={endedTraining ? `/img/${imgPath}/reset.png` : `/img/${imgPath}/next.png`}
+                            alt="next"
+                        />
                     </span>
                 </div>
             </div>
