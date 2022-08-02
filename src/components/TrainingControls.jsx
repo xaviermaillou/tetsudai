@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useCookies } from "react-cookie"
 import { pluralClasses, collections, levels} from "../lib/common"
 
 const TrainingControls = (props) => {
