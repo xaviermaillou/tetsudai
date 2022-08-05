@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const REQUEST_URL = 'https://frozen-coast-10724.herokuapp.com'
-const REQUEST_URL = 'http://51.77.230.232:8000'
+const REQUEST_URL = 'https://frozen-coast-10724.herokuapp.com'
+// const REQUEST_URL = 'http://51.77.230.232:8000'
 // const REQUEST_URL = 'http://localhost:8000'
 
 export const fetchKanjiList = async (level, grammar, collection, search, offset) => {
