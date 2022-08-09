@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { pluralClasses, collections, levels} from "../lib/common"
+import { pluralClasses, collections, levels} from "tetsudai-common"
 
 const TrainingControls = (props) => {
     const {

@@ -2,7 +2,7 @@ import { useState } from "react"
 import KanaReadings from "./KanaReadings"
 import WordDetails from "./WordDetails"
 import TrainingControls from "./TrainingControls"
-import { classes, verbGrammar } from "../lib/common"
+import { classes, verbGrammar } from "tetsudai-common"
 import Loading from "./visualElements/Loading"
 
 const MainDisplay = (props) => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { pluralClasses, collections, levels } from "../lib/common"
+import { pluralClasses, collections, levels } from "tetsudai-common"
 import Loading from "./visualElements/Loading"
 
 const TrainingModal = (props) => {
