@@ -68,6 +68,10 @@ input {
 input:focus {
   outline: none;
 }
+input:placeholder-shown {
+  width: 100%;
+  text-overflow: ellipsis;
+}
 
 #header {
   z-index: 1000;
@@ -103,7 +107,7 @@ input:focus {
 #logoContainer {
   z-index: 1000;
   position: absolute;
-  top: 44px;
+  top: 26px;
   left: 24px;
   opacity: 0.25;
   display: flex;
@@ -114,11 +118,9 @@ input:focus {
   left: 0px;
   pointer-events: none;
 }
-#logoContainer.full img:nth-child(1) {
+#logoContainer.full img:nth-child(1), #logoContainer.full img:nth-child(3) {
   opacity: 0;
-}
-#logoContainer.full img:nth-child(3) {
-  opacity: 0;
+  width: 24px;
 }
 #logoContainer img {
   height: 32px;
@@ -187,7 +189,7 @@ input:focus {
 #themeSwitcher {
   z-index: 1000;
   position: absolute;
-  top: 46px;
+  top: 26px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -610,7 +612,7 @@ input:focus {
   position: fixed;
   left: 100vw;
   justify-content: flex-start;
-  padding: 24px 24px 24px 24px;
+  padding: 6px 24px 6px 24px;
 }
 #sidePanel.open {
   left: 0vw;
@@ -732,7 +734,7 @@ input:focus {
 }
 #wordsListSearchContainer {
   position: relative;
-  padding-left: 8vw;
+  padding-left: 32px;
 }
 #wordsListOpener {
   z-index: 2000;
@@ -1074,26 +1076,20 @@ input:focus {
   #logoContainer.full img {
     height: 192px;
   }
-  #logoContainer.full img:nth-child(1) {
+  #logoContainer.full img:nth-child(1), #logoContainer.full img:nth-child(3) {
     opacity: 1;
-  }
-  #logoContainer.full img:nth-child(3) {
-    opacity: 1;
+    width: inherit;
   }
   #themeSwitcher {
     z-index: 1000;
     position: absolute;
-    top: 130px;
+    top: 5vh;
     width: 100%;
     padding: 0px 14px;
     display: flex;
     justify-content: flex-start;
     animation-name: rerenderOpacity;
     animation-duration: 0.4s;
-  }
-  #themeSwitcher {
-    top: 5vh;
-    justify-content: flex-start;
   }
   #themeSwitcher.down {
     padding: 70px 14px;
@@ -1188,12 +1184,13 @@ input:focus {
   #sidePanel {
     width: 33vw;
     background: none;
+    padding: 26px;
   }
   #sidePanel.open {
     left: 67vw;
   }
   #wordsListSearchContainer {
-    padding-left: 0vw;
+    padding-left: 0px;
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
