@@ -189,7 +189,7 @@ function App() {
         setMenuOpen(true)
       }, 1000)
     } else {
-      setMenuOpen(true)
+      if (!params.element && !params.id) setMenuOpen(true)
     }
   }, [])
 

@@ -108,17 +108,16 @@ input:placeholder-shown {
   z-index: 1000;
   position: absolute;
   top: 26px;
-  left: 24px;
+  left: 0px;
   opacity: 0.25;
   display: flex;
   flex-direction: row;
 }
 #logoContainer.full {
   z-index: 2000;
-  left: 0px;
   pointer-events: none;
 }
-#logoContainer.full img:nth-child(1), #logoContainer.full img:nth-child(3) {
+#logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
   opacity: 0;
   width: 24px;
 }
@@ -256,7 +255,7 @@ input:placeholder-shown {
 #wordDisplayWord, #wordDisplayWordJukujikun {
   height: 38vh;
   width: 100%;
-  font-size: calc(40px + 10vh);
+  font-size: calc(40px - (1px - 5vw));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1076,6 +1075,10 @@ input:placeholder-shown {
   #logoContainer.full img {
     height: 192px;
   }
+  #logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
+    opacity: 1;
+    width: inherit;
+  }
   #logoContainer.full img:nth-child(1), #logoContainer.full img:nth-child(3) {
     opacity: 1;
     width: inherit;
@@ -1408,7 +1411,7 @@ input:placeholder-shown {
 
 #App.dark input.highlighted {
   border-bottom: 1px solid rgba(199, 192, 181, 0.75);
-  box-shadow: 0px 7.5px 7.5px -2.5px rgba(199, 192, 181, 0.2);
+  box-shadow: 0px 7.5px 7.5px -2.5px rgba(199, 192, 181, 0.1);
 }
 
 #App.dark input::placeholder {
@@ -1467,7 +1470,7 @@ input:placeholder-shown {
 }
 
 #App.dark #wordsListFilterIcon.highlighted {
-  box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.25);
+  box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.2);
 }
 
 #App.dark #sidePanel {

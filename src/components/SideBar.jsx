@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import ThemeSwitcher from "./ThemeSwitcher"
 
 const SideBar = (props) => {
@@ -13,10 +14,17 @@ const SideBar = (props) => {
         loadingMainDisplay
     } = props
 
+    const navigate = useNavigate()
+    const reloadPage = () => {
+        console.log('RELOAD')
+        navigate('/')
+        window.location.reload(false)
+    }
+
     return (
         <div id="sideBar">
             <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />
-            <div onClick={() => window.location.reload(false)} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
+            <div onClick={reloadPage} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
                 <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
