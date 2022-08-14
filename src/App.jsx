@@ -307,18 +307,20 @@ function App() {
     if (trainingMode === 1) {
       if (filteredKanjis.length > 0) {
         const newKanjiId = filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]
-        changeCurrentKanjiById(newKanjiId.id)
+        navigate(`/kanji/${newKanjiId.id}`)
       }
     }
-  }, [filteredKanjis, trainingMode, forceNext, changeCurrentKanjiById])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredKanjis, trainingMode, forceNext])
   useEffect(() => {
     if (trainingMode === 2) {
       if (filteredWords.length > 0) {
         const newWordId = filteredWords[Math.floor(Math.random()*filteredWords.length)]
-        changeCurrentWordById(newWordId.id)
+        navigate(`/word/${newWordId.id}`)
       }
     }
-  }, [filteredWords, trainingMode, forceNext, changeCurrentWordById])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredWords, trainingMode, forceNext])
 
   const [openHistory, setOpenHistory] = useState(false)
 
