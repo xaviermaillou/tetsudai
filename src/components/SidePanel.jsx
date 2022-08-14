@@ -428,7 +428,7 @@ const SidePanel = (props) => {
                         className={searchExecuted ? "" : "highlighted"}
                         onChange={(e) => {handleSearch(e.target.value)}}
                         type="text"
-                        spellcheck="false"
+                        spellCheck="false"
                         placeholder="Rechercher en japonais, romaji, français..."
                     />
                 </div>

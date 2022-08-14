@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
 import { CookiesProvider } from "react-cookie";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,7 +9,12 @@ createRoot(document.getElementById('root'))
   .render(
     <React.StrictMode>
       <CookiesProvider>
-        <App />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<App />} />
+            <Route path='/:element/:id' element={<App />} />
+          </Routes>
+        </BrowserRouter>
       </CookiesProvider>
     </React.StrictMode>
   );

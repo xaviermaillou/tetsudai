@@ -1,7 +1,8 @@
 // import firebase from './Firebase'
 import "firebase/firestore"
 import { useState, useEffect, useCallback } from 'react'
-import { useCookies } from "react-cookie"
+import { useCookies } from 'react-cookie'
+import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
 import MainDisplay from './components/MainDisplay'
 import SidePanel from './components/SidePanel'
@@ -46,8 +47,30 @@ function App() {
   const [searchExecuted, setSearchExecuted] = useState(false)
 
   // Main display data
+  const navigate = useNavigate()
+  const params = useParams()
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
+
+  const changeCurrentKanjiById = useCallback(async (id, fromHistory) => {
+    setLoadingMainDisplay(true)
+    const result = await fetchKanji(id)
+    setWord(null)
+    setKanji(result)
+    setOpenedHistory(fromHistory)
+  }, [])
+  const changeCurrentWordById = useCallback(async (id, fromHistory) => {
+    setLoadingMainDisplay(true)
+    const result = await fetchWord(id)
+    setKanji(null)
+    setWord(result)
+    setOpenedHistory(fromHistory)
+  }, [])
+
+  useEffect(() => {
+    if (params?.element === 'kanji') changeCurrentKanjiById(params.id)
+    if (params?.element === 'word') changeCurrentWordById(params.id)
+  }, [params, changeCurrentKanjiById, changeCurrentWordById])
 
   // Loading states
   const [loadingKanjiList, setLoadingKanjiList] = useState(false)
@@ -210,21 +233,6 @@ function App() {
     setLoadingMainDisplay(false)
   }, [kanji, word])
 
-  const changeCurrentKanjiById = useCallback(async (id, fromHistory) => {
-    setLoadingMainDisplay(true)
-    const result = await fetchKanji(id)
-    setWord(null)
-    setKanji(result)
-    setOpenedHistory(fromHistory)
-  }, [])
-  const changeCurrentWordById = useCallback(async (id, fromHistory) => {
-    setLoadingMainDisplay(true)
-    const result = await fetchWord(id)
-    setKanji(null)
-    setWord(result)
-    setOpenedHistory(fromHistory)
-  }, [])
-
   // Training mode
 
   const [trainingMode, setTrainingMode] = useState(0)
@@ -329,9 +337,9 @@ function App() {
 
         // Displayed element
         kanji={kanji}
-        changeCurrentKanjiById={changeCurrentKanjiById}
+        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
         word={word}
-        changeCurrentWordById={changeCurrentWordById}
+        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
         sentences={sentencesList}
         loading={loadingMainDisplay}
 
@@ -357,8 +365,8 @@ function App() {
         // Content
         kanjis={kanjisList}
         vocabulary={vocabularyList}
-        changeCurrentKanjiById={changeCurrentKanjiById}
-        changeCurrentWordById={changeCurrentWordById}
+        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
+        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
         kanjiListOffset={kanjiListOffset}
         setKanjisListOffset={setKanjisListOffset}
         vocabularyListOffset={vocabularyListOffset}
@@ -407,8 +415,8 @@ function App() {
         displayHistory={displayHistory}
         openHistory={openHistory}
         setOpenHistory={setOpenHistory}
-        changeCurrentKanjiById={changeCurrentKanjiById}
-        changeCurrentWordById={changeCurrentWordById}
+        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
+        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
       />
     </div>
   )
