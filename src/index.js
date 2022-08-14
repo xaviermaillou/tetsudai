@@ -4,6 +4,7 @@ import { CookiesProvider } from "react-cookie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PageNotFound from './components/404/PageNotFound';
 
 createRoot(document.getElementById('root'))
   .render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root'))
           <Routes>
             <Route path='/' element={<App />} />
             <Route path='/:element/:id' element={<App />} />
+            <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </CookiesProvider>

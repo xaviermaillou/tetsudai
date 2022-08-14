@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import ThemeSwitcher from "./ThemeSwitcher"
 
@@ -16,7 +15,6 @@ const SideBar = (props) => {
 
     const navigate = useNavigate()
     const reloadPage = () => {
-        console.log('RELOAD')
         navigate('/')
         window.location.reload(false)
     }

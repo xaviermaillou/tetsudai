@@ -191,7 +191,7 @@ function App() {
     } else {
       if (!params.element && !params.id) setMenuOpen(true)
     }
-  }, [])
+  }, [params])
 
   const checkTrainingFilters = () => {
     if (!menuOpen) {

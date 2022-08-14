@@ -134,6 +134,13 @@ input:placeholder-shown {
   opacity: 0.66;
 }
 
+#pageNotFoundBackToHome {
+  transform: rotate(-90deg);
+  height: 20px;
+  width: 20px;
+  margin-bottom: 36px;
+}
+
 /* ------------------------------------------------ LOADING ANIMATION ------------------------------------------------ */
 
 .loadingAnimationContainer {
