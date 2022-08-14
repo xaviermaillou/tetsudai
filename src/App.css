@@ -302,7 +302,7 @@ input:placeholder-shown {
   padding-bottom: 60px;
 }
 #kanas.expanded, #wordDetails.expanded {
-  height: calc(50vh - 32px);;
+  height: calc(50vh - 32px);
 }
 #wordDetails {
   display: flex;
@@ -1132,7 +1132,7 @@ input:placeholder-shown {
     font-size: 28px;
   }
   #kanas.expanded, #wordDetails.expanded {
-    height: calc(46vh - (2vw - 50px));
+    height: calc(50vh - 32px);
   }
   #wordDetails {
     flex-direction: row;
@@ -1141,7 +1141,7 @@ input:placeholder-shown {
     bottom: 0px;
   }
   #wordDetailsPlus.expanded {
-    height: calc(46vh - (2vw - 50px));
+    height: calc(50vh - 32px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
