@@ -255,11 +255,12 @@ input:placeholder-shown {
 #wordDisplayWord, #wordDisplayWordJukujikun {
   height: 38vh;
   width: 100%;
-  font-size: calc(40px - (1px - 5vw));
+  font-size: calc(40px - (1px - 2vw));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding-bottom: 16px;
 }
 #wordDisplayWordElements {
   display: flex;
@@ -279,8 +280,8 @@ input:placeholder-shown {
   white-space: nowrap;
 }
 .wordDisplayWordElementYomi {
-  font-size: calc(10px + 2.5vh);
-  line-height: calc(10px + 2.5vh);
+  font-size: calc(15px - (1px - 1vw));
+  line-height: calc(15px - (1px - 1vw));
   height: calc(20px + 5vh);
 }
 .wordDisplayWordElementYomi.jukujikun div {
@@ -295,13 +296,13 @@ input:placeholder-shown {
   height: 24vh;
   width: 80%;
   font-size: 20px;
-  margin: 2vh 16.25% 0 16.25%;
+  margin: 32px 16.25% 0 16.25%;
   overflow-y: scroll;
   font-family: source-han-sans-simplified-c;
   padding-bottom: 60px;
 }
 #kanas.expanded, #wordDetails.expanded {
-  height: 48vh;
+  height: calc(50vh - 32px);;
 }
 #wordDetails {
   display: flex;
@@ -1116,6 +1117,9 @@ input:placeholder-shown {
   }
   #introText.lowOpacity {
     opacity: 0.25;
+  }
+  #wordDisplayWord, #wordDisplayWordJukujikun {
+    font-size: calc(40px - (1px - 5vw));
   }
   #kanjiDisplayInfo, #wordDisplayInfo, #kanas, #wordDetails, #selector, #controls {
     width: 67.5%;
