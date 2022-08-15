@@ -271,7 +271,7 @@ const ListWord = (props) => {
     } = props
 
     const clickHandle = (id) => {
-        changeCurrentWordById(id, false)
+        changeCurrentWordById(id)
         if (window.innerWidth < window.innerHeight) setOpen(false)
     }
 
@@ -354,6 +354,7 @@ const SidePanel = (props) => {
         setKanjisListOffset,
         vocabularyListOffset,
         setVocabularyListOffset,
+        setOpenedHistory,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
@@ -402,6 +403,16 @@ const SidePanel = (props) => {
                 setVocabularyListOffset(vocabularyListOffset + 100)
             }
         })
+    }
+
+    const handleKanjiChange = (id) => {
+        setOpenedHistory(false)
+        changeCurrentKanjiById(id)
+    }
+
+    const handleWordChange = (id) => {
+        setOpenedHistory(false)
+        changeCurrentWordById(id)
     }
 
 
@@ -471,7 +482,7 @@ const SidePanel = (props) => {
                 {kanjis.map((item, i) => (
                     <ListKanji
                         kanji={item}
-                        changeCurrentKanjiById={changeCurrentKanjiById}
+                        changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                         setOpen={setOpen}
                         currentElement={currentElement}
                         importance={item.importance}
@@ -506,7 +517,7 @@ const SidePanel = (props) => {
                 {vocabulary.map((item, i) => (
                     <ListWord
                         word={item}
-                        changeCurrentWordById={changeCurrentWordById}
+                        changeCurrentWordById={(id) => handleWordChange(id)}
                         setOpen={setOpen}
                         currentElement={currentElement}
                         importance={item.importance}

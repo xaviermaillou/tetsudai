@@ -52,19 +52,17 @@ function App() {
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
 
-  const changeCurrentKanjiById = useCallback(async (id, fromHistory) => {
+  const changeCurrentKanjiById = useCallback(async (id) => {
     setLoadingMainDisplay(true)
     const result = await fetchKanji(id)
     setWord(null)
     setKanji(result)
-    setOpenedHistory(fromHistory)
   }, [])
-  const changeCurrentWordById = useCallback(async (id, fromHistory) => {
+  const changeCurrentWordById = useCallback(async (id) => {
     setLoadingMainDisplay(true)
     const result = await fetchWord(id)
     setKanji(null)
     setWord(result)
-    setOpenedHistory(fromHistory)
   }, [])
 
   useEffect(() => {
@@ -179,37 +177,6 @@ function App() {
   }, [fetchSentencesData, word])
 
 
-
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [filterIndication, setFilterIndication] = useState(false)
-
-  useEffect(() => {
-    if (window.innerWidth > window.innerHeight) {
-      setTimeout(() => {
-        setMenuOpen(true)
-      }, 1000)
-    } else {
-      if (!params.element && !params.id) setMenuOpen(true)
-    }
-  }, [params])
-
-  const checkTrainingFilters = () => {
-    if (!menuOpen) {
-      setMenuOpen(true)
-      setTimeout(() => {
-        setFilterIndication(true)
-        setTimeout(() => {
-          setFilterIndication(false)
-        }, 300)
-      }, 300)
-    } else {
-      setFilterIndication(true)
-      setTimeout(() => {
-        setFilterIndication(false)
-      }, 300)
-    }
-  }
-
   // Main display value handling
 
   const [displayHistory, setDisplayHistory] = useState([])
@@ -238,6 +205,38 @@ function App() {
   const [trainingMode, setTrainingMode] = useState(0)
   const [allDisplayed, setAllDisplayed] = useState(true)
   const [forceNext, setForceNext] = useState(false)
+
+  // Menu handling (is here because needs training mode value)
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [filterIndication, setFilterIndication] = useState(false)
+
+  useEffect(() => {
+    if (window.innerWidth > window.innerHeight && trainingMode === 0) {
+      setTimeout(() => {
+        setMenuOpen(true)
+      }, 1000)
+    } else {
+      if (!params.element && !params.id) setMenuOpen(true)
+    }
+  }, [params, trainingMode])
+
+  const checkTrainingFilters = () => {
+    if (!menuOpen) {
+      setMenuOpen(true)
+      setTimeout(() => {
+        setFilterIndication(true)
+        setTimeout(() => {
+          setFilterIndication(false)
+        }, 300)
+      }, 300)
+    } else {
+      setFilterIndication(true)
+      setTimeout(() => {
+        setFilterIndication(false)
+      }, 300)
+    }
+  }
 
   // Start the training
   // Changes trainingMode
@@ -338,6 +337,7 @@ function App() {
         historyDisplayed={displayHistory.length > 1}
 
         // Displayed element
+        setOpenedHistory={setOpenedHistory}
         kanji={kanji}
         changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
         word={word}
@@ -365,6 +365,7 @@ function App() {
         imgPath={imgPath}
 
         // Content
+        setOpenedHistory={setOpenedHistory}
         kanjis={kanjisList}
         vocabulary={vocabularyList}
         changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
@@ -417,6 +418,7 @@ function App() {
         displayHistory={displayHistory}
         openHistory={openHistory}
         setOpenHistory={setOpenHistory}
+        setOpenedHistory={setOpenedHistory}
         changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
       />

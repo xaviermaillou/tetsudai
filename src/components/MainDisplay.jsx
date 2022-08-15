@@ -24,6 +24,7 @@ const MainDisplay = (props) => {
         changeCurrentWordById,
         sentences,
         loading,
+        setOpenedHistory,
     } = props
 
     const [displayedElement, setDisplayedElement] = useState(0)
@@ -36,6 +37,15 @@ const MainDisplay = (props) => {
         setAllDisplayed(!allDisplayed)
     }
 
+    const handleKanjiChange = (id) => {
+        setOpenedHistory(false)
+        changeCurrentKanjiById(id)
+    }
+
+    const handleWordChange = (id) => {
+        setOpenedHistory(false)
+        changeCurrentWordById(id)
+    }
 
     return (
         <div id="mainDisplayContainer">
@@ -54,8 +64,8 @@ const MainDisplay = (props) => {
                                 kanji={kanji}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
-                                changeCurrentKanjiById={changeCurrentKanjiById}
-                                changeCurrentWordById={changeCurrentWordById}
+                                changeCurrentKanjiById={(id) => handleKanjiChange(id)}
+                                changeCurrentWordById={(id) => handleWordChange(id)}
                             />}
                         </div>
                         :
@@ -128,8 +138,8 @@ const MainDisplay = (props) => {
                                 kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
-                                changeCurrentKanjiById={changeCurrentKanjiById}
-                                changeCurrentWordById={changeCurrentWordById}
+                                changeCurrentKanjiById={(id) => handleKanjiChange(id)}
+                                changeCurrentWordById={(id) => handleWordChange(id)}
                                 referenceId={word.id}
                             />
                         </div>

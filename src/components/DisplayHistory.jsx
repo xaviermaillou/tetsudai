@@ -2,16 +2,18 @@ const HistoryElement = (props) => {
     const {
         historyElementData,
         selected,
+        setOpenedHistory,
         changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
 
     const handleClick = () => {
         if (!selected) {
+            setOpenedHistory(true)
             historyElementData.kanji ?
-            changeCurrentKanjiById(historyElementData.id, true)
+            changeCurrentKanjiById(historyElementData.id)
             :
-            changeCurrentWordById(historyElementData.id, true)
+            changeCurrentWordById(historyElementData.id)
         }
     }
 
@@ -50,6 +52,7 @@ const DisplayHistory = (props) => {
         displayHistory,
         openHistory,
         setOpenHistory,
+        setOpenedHistory,
         changeCurrentKanjiById,
         changeCurrentWordById
     } = props
@@ -75,6 +78,7 @@ const DisplayHistory = (props) => {
                     <HistoryElement
                         historyElementData={e}
                         selected={checkSelected(e)}
+                        setOpenedHistory={setOpenedHistory}
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         changeCurrentWordById={changeCurrentWordById}
                         key={i}
