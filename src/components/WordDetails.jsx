@@ -199,6 +199,7 @@ export const WordDetails = (props) => {
         pinnedSentence,
         setPinnedSentence,
         referenceId,
+        precisions,
     } = props
 
     return (
@@ -213,6 +214,7 @@ export const WordDetails = (props) => {
                     />
                 ))}
                 {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
+                <div id="wordPrecisions">{precisions}</div>
             </div>
             <div id="wordDetailsSentences">
                 <p className="kanasReadingsHeader">PHRASES</p>
