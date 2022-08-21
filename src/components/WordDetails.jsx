@@ -47,7 +47,6 @@ const Kosoado = (props) => {
 
 const VerbInflexionLine = (props) => {
     const { inflexion, tenseName, modeName } = props
-
     return (
         <div className="wordDetailsInflexionsMode">
             <span className="wordDetailsInflexionsVerb">{inflexion['polite']?.['main']}{inflexion['polite']?.['ending']}</span>
@@ -62,8 +61,8 @@ const VerbInflexionTense = (props) => {
 
     return (
         <div className="wordDetailsInflexionsTense">
-            <VerbInflexionLine inflexion={tense['affirmative']} tenseName={tenseName} modeName={'affirmative'} />
-            <VerbInflexionLine inflexion={tense['negative']} tenseName={tenseName} modeName={'negative'} />
+            {tense['affirmative'] && <VerbInflexionLine inflexion={tense['affirmative']} tenseName={tenseName} modeName={'affirmative'} />}
+            {tense['negative'] && <VerbInflexionLine inflexion={tense['negative']} tenseName={tenseName} modeName={'negative'} />}
         </div>
     )
 }
@@ -73,8 +72,9 @@ const Inflexions = (props) => {
 
     return (
         <div id="wordDetailsInflexions">
-            <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />
-            <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />
+            {inflexions['nonPast'] && <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />}
+            {inflexions['past'] && <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />}
+            {inflexions['adverb'] && <VerbInflexionTense tense={inflexions['adverb']} tenseName={'adverb'} />}
         </div>
     )
 }
@@ -192,8 +192,6 @@ export const WordDetails = (props) => {
         imgPath,
         elements,
         sentences,
-        inflexions,
-        kosoado,
         allDisplayed,
         expanded,
         changeCurrentKanjiById,

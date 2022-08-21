@@ -136,8 +136,6 @@ const MainDisplay = (props) => {
                                 imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={sentences}
-                                inflexions={word.inflexions}
-                                kosoado={word.kosoado}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiById={(id) => handleKanjiChange(id)}
