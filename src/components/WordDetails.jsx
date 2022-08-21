@@ -152,20 +152,35 @@ const Kanji = (props) => {
 
 const Sentence = (props) => {
     const {
+        imgPath,
         sentence,
         changeCurrentWordById,
         referenceId,
+        pinnedSentence,
+        setPinnedSentence,
     } = props
 
+    const handleWordClick = (e, id) => {
+        e.stopPropagation()
+        changeCurrentWordById(id)
+    }
 
     return (
         <div className="sentencesElement">
-            <div>
-                {sentence.elements.map((element, i) => (
-                    <span onClick={() => changeCurrentWordById(element.id)} className={referenceId === element.id ? "highlighted" : "clickable"} key={i}>
-                        {element.word}
-                    </span>
-                ))}
+            <div  className="sentence">
+                <img
+                    onClick={() => setPinnedSentence(sentence)}
+                    className={pinnedSentence?.id === sentence.id ? "highlighted" : "clickable"}
+                    src={`/img/${imgPath}/pin.png`}
+                    alt="unpin sentence"
+                />
+                <div>
+                    {sentence.elements.map((element, i) => (
+                        <span onClick={(e) => handleWordClick(e, element.id)} className={referenceId === element.id ? "highlighted" : "clickable"} key={i}>
+                            {element.word}
+                        </span>
+                    ))}
+                </div>
             </div>
             <div className="sentencesElementTranslation">{sentence.translation}</div>
         </div>
@@ -183,6 +198,8 @@ const WordDetails = (props) => {
         expanded,
         changeCurrentKanjiById,
         changeCurrentWordById,
+        pinnedSentence,
+        setPinnedSentence,
         referenceId,
     } = props
 
@@ -203,9 +220,12 @@ const WordDetails = (props) => {
                 <p className="kanasReadingsHeader">PHRASES</p>
                 {sentences?.map((sentence, i) => (
                     <Sentence
+                        imgPath={imgPath}
                         sentence={sentence}
                         changeCurrentWordById={changeCurrentWordById}
                         referenceId={referenceId}
+                        pinnedSentence={pinnedSentence}
+                        setPinnedSentence={setPinnedSentence}
                         key={i}
                     />
                 ))}

@@ -25,6 +25,8 @@ const MainDisplay = (props) => {
         sentences,
         loading,
         setOpenedHistory,
+        pinnedSentence,
+        setPinnedSentence,
     } = props
 
     const [displayedElement, setDisplayedElement] = useState(0)
@@ -140,6 +142,8 @@ const MainDisplay = (props) => {
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                                 changeCurrentWordById={(id) => handleWordChange(id)}
+                                pinnedSentence={pinnedSentence}
+                                setPinnedSentence={setPinnedSentence}
                                 referenceId={word.id}
                             />
                         </div>

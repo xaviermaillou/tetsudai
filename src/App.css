@@ -428,6 +428,21 @@ input:placeholder-shown {
   margin-top: 10px;
   font-size: 16px;
 }
+.sentence {
+  display: flex;
+  justify-content: space-between;
+}
+.sentence img {
+  height: 16px;
+  opacity: 0.25;
+  margin-top: 4px;
+}
+.sentence img.highlighted {
+  opacity: 0.75;
+}
+.sentence span {
+  white-space: nowrap;
+}
 .sentencesElementTranslation {
   opacity: 0.5;
 }
@@ -744,7 +759,7 @@ input:placeholder-shown {
   padding-left: 32px;
 }
 #wordsListOpener {
-  z-index: 2000;
+  z-index: 2200;
   height: 20px;
   opacity: 0.5;
   transform: rotate(-90deg);
@@ -1057,6 +1072,61 @@ input:placeholder-shown {
   overflow: hidden;
 }
 .historyElementMain span {
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------ PINNED SENTENCE ------------------------------------------------ */
+
+#pinnedSentenceContainer {
+  opacity: 0;
+  width: 16.25vw;
+  position: absolute;
+  top: 0px;
+  right: 0vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 48px;
+  
+}
+#pinnedSentenceContainer.open {
+  z-index: 2100;
+  opacity: 1;
+}
+#pinnedSentenceContainer.offset {
+  right: 33vw;
+  width: 10.8875vw;
+}
+#pinnedSentenceHeader {
+  height: 140px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#pinnedSentenceHeader img {
+  height: 20px;
+  margin-bottom: 6px;
+  opacity: 0.25;
+}
+#pinnedSentence {
+  height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow-y: scroll;
+  padding: 30px 0px;
+  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+  mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.pinnedSentenceElement {
+  font-size: 32px;
+  writing-mode: vertical-lr;
+  letter-spacing: 5px;
+  padding: 2.5px 0px;
+}
+.pinnedSentenceElement span {
+  opacity: 0.5;
   white-space: nowrap;
 }
 
@@ -1399,6 +1469,9 @@ input:placeholder-shown {
   }
   #App.light .historyElement.selected {
       border-right: 5px solid rgba(0, 0, 0, 0.1);
+  }
+  #App.light .pinnedSentenceElement.highlighted {
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
   }
 }
 

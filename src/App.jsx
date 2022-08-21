@@ -17,6 +17,7 @@ import {
   fetchVocabularyTraining,
 } from './request'
 import DisplayHistory from "./components/DisplayHistory"
+import PinnedSentence from "./components/PinnedSentence";
 
 function App() {
   // Theme
@@ -176,8 +177,7 @@ function App() {
     if (word) fetchSentencesData()
   }, [fetchSentencesData, word])
 
-
-  // Main display value handling
+  // History handling
 
   const [displayHistory, setDisplayHistory] = useState([])
   const [openedHistory, setOpenedHistory] = useState()
@@ -323,6 +323,9 @@ function App() {
 
   const [openHistory, setOpenHistory] = useState(false)
 
+  // Pinned sentence
+  const [pinnedSentence, setPinnedSentence] = useState()
+
   return (
     <div id="App" className={imgPath}>
       {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
@@ -343,6 +346,8 @@ function App() {
         word={word}
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
         sentences={sentencesList}
+        pinnedSentence={pinnedSentence}
+        setPinnedSentence={setPinnedSentence}
         loading={loadingMainDisplay}
 
         // Height
@@ -421,6 +426,14 @@ function App() {
         setOpenedHistory={setOpenedHistory}
         changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
+      />
+      <PinnedSentence
+        offset={menuOpen}
+        word={word}
+        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
+        pinnedSentence={pinnedSentence}
+        setPinnedSentence={setPinnedSentence}
+        imgPath={imgPath}
       />
     </div>
   )
