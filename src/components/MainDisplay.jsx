@@ -124,7 +124,7 @@ const MainDisplay = (props) => {
                                         <span key={i}>
                                             {i > 0 && ', '}
                                             {classes[el].toLowerCase()}
-                                            {word.verbPrecisions && ' ' + verbGrammar[word.verbPrecisions.grammar]}
+                                            {word.verbPrecisions && ' ' + (verbGrammar[word.verbPrecisions.grammar] || '')}
                                         </span>
                                     ))}
                                 </div>

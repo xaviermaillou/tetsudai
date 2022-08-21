@@ -194,6 +194,9 @@ function App() {
     word
   ])
 
+  // Pinned sentence
+  const [pinnedSentence, setPinnedSentence] = useState()
+
   // Stops main display loading animations
   // Triggered with kanji and word
   useEffect(() => {
@@ -208,18 +211,16 @@ function App() {
 
   // Menu handling (is here because needs training mode value)
 
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [filterIndication, setFilterIndication] = useState(false)
-
-  useEffect(() => {
-    if (window.innerWidth > window.innerHeight && trainingMode === 0) {
+  const [menuOpen, setMenuOpen] = useState(() => {
+    if (window.innerWidth > window.innerHeight) {
       setTimeout(() => {
         setMenuOpen(true)
       }, 1000)
     } else {
-      if (!params.element && !params.id) setMenuOpen(true)
+      if (!params.element && !params.id) return true
     }
-  }, [params, trainingMode])
+  })
+  const [filterIndication, setFilterIndication] = useState(false)
 
   const checkTrainingFilters = () => {
     if (!menuOpen) {
@@ -322,9 +323,6 @@ function App() {
   }, [filteredWords, trainingMode, forceNext])
 
   const [openHistory, setOpenHistory] = useState(false)
-
-  // Pinned sentence
-  const [pinnedSentence, setPinnedSentence] = useState()
 
   return (
     <div id="App" className={imgPath}>

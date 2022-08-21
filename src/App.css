@@ -426,6 +426,7 @@ input:placeholder-shown {
 }
 .sentencesElement {
   margin-top: 10px;
+  padding-right: 20px;
   font-size: 16px;
 }
 .sentence {
@@ -436,6 +437,7 @@ input:placeholder-shown {
   height: 16px;
   opacity: 0.25;
   margin-top: 4px;
+  display: none;
 }
 .sentence img.highlighted {
   opacity: 0.75;
@@ -1090,7 +1092,7 @@ input:placeholder-shown {
   
 }
 #pinnedSentenceContainer.open {
-  z-index: 2100;
+  z-index: 1000;
   opacity: 1;
 }
 #pinnedSentenceContainer.offset {
@@ -1258,6 +1260,13 @@ input:placeholder-shown {
   }
   .yomiContainer {
     width: 90%;
+  }
+  .sentencesElement {
+    padding-right: 0px;
+    padding-left: 20px;
+  }
+  .sentence img {
+    display: block;
   }
   #selector {
     justify-content: space-evenly;
