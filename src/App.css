@@ -449,6 +449,7 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 #wordDetailsPlus {
+  z-index: 1000;
   position: absolute;
   bottom: 60px;
   height: 50px;

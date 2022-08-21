@@ -1,6 +1,6 @@
 import { useState } from "react"
 import KanaReadings from "./KanaReadings"
-import WordDetails from "./WordDetails"
+import { WordDetails, WordDetailsPlus } from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { classes, verbGrammar } from "tetsudai-common"
 import Loading from "./visualElements/Loading"
@@ -146,6 +146,15 @@ const MainDisplay = (props) => {
                                 setPinnedSentence={setPinnedSentence}
                                 referenceId={word.id}
                             />
+                            {(!!!trainingMode && (word.inflexions || word.kosoado)) &&
+                                <WordDetailsPlus
+                                    imgPath={imgPath}
+                                    referenceId={word.id}
+                                    changeCurrentWordById={changeCurrentWordById}
+                                    inflexions={word.inflexions}
+                                    kosoado={word.kosoado}
+                                />
+                            }
                         </div>
                         :
                         <div className="trainingEndNotifier">

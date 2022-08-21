@@ -79,7 +79,7 @@ const Inflexions = (props) => {
     )
 }
 
-const WordDetailsPlus = (props) => {
+export const WordDetailsPlus = (props) => {
     const {
         imgPath,
         referenceId,
@@ -187,7 +187,7 @@ const Sentence = (props) => {
     )
 }
 
-const WordDetails = (props) => {
+export const WordDetails = (props) => {
     const {
         imgPath,
         elements,
@@ -231,17 +231,6 @@ const WordDetails = (props) => {
                 ))}
                 {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
             </div>
-            {(expanded && (inflexions || kosoado)) &&
-                <WordDetailsPlus
-                    imgPath={imgPath}
-                    referenceId={referenceId}
-                    changeCurrentWordById={changeCurrentWordById}
-                    inflexions={inflexions}
-                    kosoado={kosoado}
-                />
-            }
         </div>
     )
 }
-
-export default WordDetails
