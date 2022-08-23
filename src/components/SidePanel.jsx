@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { pluralClasses, collections, levels } from "tetsudai-common"
+import { dictionnary } from "tetsudai-common"
 import Loading from "./visualElements/Loading"
 
 const TrainingModal = (props) => {
@@ -57,17 +57,17 @@ const FilterModal = (props) => {
     return (
         <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
             <div>
-                {Object.values(pluralClasses).map((value, key) => (
+                {Object.values(dictionnary.pluralClasses).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </div>
             <div>
-                {Object.values(levels).map((value, key) => (
+                {Object.values(dictionnary.levels).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value ? value : 'Hors niveau'}</span>
                 ))}
             </div>
             <div>
-                {Object.values(collections).map((value, key) => (
+                {Object.values(dictionnary.collections).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setCollection)} className={collection === key ? "selected clickable" : "clickable"}>{value}</span>
                 ))}
             </div>
@@ -150,21 +150,21 @@ const ListHeader = (props) => {
                         <div id="filtersIndicatorRow">
                             {grammar !==0 &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{pluralClasses[grammar]}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.pluralClasses[grammar]}</span>&nbsp;&nbsp;
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar(0)} />
                                 </span>
                             }
                             {(level !==0 && grammar !==0) && <span>|</span>}
                             {level !==0 &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{levels[level] ? `JLPT ${levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel(0)} />
                                 </span>
                             }
                             {(collection !==0 && level !==0) && <span>|</span>}
                             {collection !==0 &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{collections[collection]}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.collections[collection]}</span>&nbsp;&nbsp;
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection(0)} />
                                 </span>
                             }

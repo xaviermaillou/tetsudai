@@ -2,7 +2,7 @@ import { useState } from "react"
 import KanaReadings from "./KanaReadings"
 import { WordDetails, WordDetailsPlus } from "./WordDetails"
 import TrainingControls from "./TrainingControls"
-import { classes, verbGrammar } from "tetsudai-common"
+import { dictionnary } from "tetsudai-common"
 import Loading from "./visualElements/Loading"
 
 const MainDisplay = (props) => {
@@ -123,8 +123,8 @@ const MainDisplay = (props) => {
                                     {word.grammar.map((el, i) => (
                                         <span key={i}>
                                             {i > 0 && ', '}
-                                            {classes[el].toLowerCase()}
-                                            {word.verbPrecisions && ' ' + (verbGrammar[word.verbPrecisions.grammar] || '')}
+                                            {dictionnary.classes[el].toLowerCase()}
+                                            {word.verbPrecisions && ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || '')}
                                         </span>
                                     ))}
                                 </div>
