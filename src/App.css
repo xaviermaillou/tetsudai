@@ -426,9 +426,10 @@ input:placeholder-shown {
 }
 #wordPrecisions {
   margin-top: 24px;
-  padding-right: 20px;
+  padding: 24px 20px 24px 0px;
   font-size: 16px;
   opacity: 0.66;
+  white-space: pre-wrap;
 }
 .sentencesElement {
   margin-top: 10px;
@@ -1394,6 +1395,10 @@ input:placeholder-shown {
   color: rgb(220, 121, 121);
 }
 
+#App.light #wordPrecisions {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 #App.light #wordDetailsPlus {
   border-top: 1px solid rgba(0, 0, 0, 0.1);;
   background-color: rgba(255, 255, 255, 0.9);
@@ -1549,6 +1554,10 @@ input:placeholder-shown {
   color: rgb(220, 121, 121);
 }
 
+#App.dark #wordPrecisions {
+  border-top: 1px solid rgba(199, 192, 181, 0.2);
+}
+
 #App.dark #wordDetailsPlus {
   border-top: 1px solid rgba(199, 192, 181, 0.1);;
   background-color: rgba(36, 37, 37, 0.9);
@@ -1640,5 +1649,8 @@ input:placeholder-shown {
   }
   #App.dark .historyElement.selected {
       border-right: 5px solid rgba(199, 192, 181, 0.25);
+  }
+  #App.dark .pinnedSentenceElement.highlighted {
+    border-left: 2px solid rgba(199, 192, 181, 0.25);
   }
 }
