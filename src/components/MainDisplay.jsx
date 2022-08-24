@@ -123,8 +123,11 @@ const MainDisplay = (props) => {
                                     {word.grammar.map((el, i) => (
                                         <span key={i}>
                                             {i > 0 && ', '}
-                                            {dictionnary.classes[el].toLowerCase()}
-                                            {word.verbPrecisions && ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || '')}
+                                            {el === 14 ?
+                                                'forme un verbe ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] + ' avec する'
+                                                :
+                                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] : '')
+                                            }
                                         </span>
                                     ))}
                                 </div>
