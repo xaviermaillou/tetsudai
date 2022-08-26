@@ -278,6 +278,18 @@ function App() {
     collection
   ])
 
+  useEffect(() => {
+    if (trainingMode === 1) getTrainingKanji()
+    if (trainingMode === 2) getTrainingVocabulary()
+  }, [
+    level,
+    grammar,
+    collection,
+    getTrainingKanji,
+    getTrainingVocabulary,
+    trainingMode
+  ])
+
   // Removing current displayed element from its corresponding array of ids
   // Changes filteredKanjis and filteredWords
   const nextTrainingElement = (validated) => {

@@ -322,6 +322,7 @@ input:placeholder-shown {
 #wordDetailsKanjis, #wordDetailsSentences {
   width: 100%;
   text-align: left;
+  padding-bottom: 40px;
 }
 #kanasExamples {
   justify-content: space-between;
@@ -1219,6 +1220,7 @@ input:placeholder-shown {
   #kanas, #wordDetails {
     height: calc(32vh - 19px);
     font-size: 28px;
+    padding-bottom: 0px;
   }
   #kanas.expanded, #wordDetails.expanded {
     height: calc(50vh - 32px);
@@ -1234,6 +1236,7 @@ input:placeholder-shown {
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
+    overflow: scroll;
   }
   #wordDetailsSentences {
     margin-top: 0px;
