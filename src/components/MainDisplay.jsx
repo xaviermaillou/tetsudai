@@ -124,7 +124,7 @@ const MainDisplay = (props) => {
                                         <span key={i}>
                                             {i > 0 && ', '}
                                             {el === 14 ?
-                                                'forme un verbe ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] + ' avec する'
+                                                'verbe ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] + ' avec する'
                                                 :
                                                 dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] : '')
                                             }
@@ -132,8 +132,14 @@ const MainDisplay = (props) => {
                                     ))}
                                 </div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
-                                {word.obscure && <div>⚠ très peu utilisé</div>}
-                                {word.common && <div>✓ courant</div>}
+                                {word.common ?
+                                    <div>✓ usage courant</div>
+                                    :
+                                    word.obscure ?
+                                        <div>⚠ très peu utilisé</div>
+                                        :
+                                        <div>usage peu fréquent</div>
+                                }
                             </div>
                             <WordDetails
                                 imgPath={imgPath}
