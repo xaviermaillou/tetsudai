@@ -323,6 +323,7 @@ input:placeholder-shown {
 }
 #wordDetailsSentences {
   margin-top: 20px;
+  padding-bottom: 70px;
 }
 #wordDetailsKanjis, #wordDetailsSentences {
   width: 100%;
