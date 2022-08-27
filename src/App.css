@@ -471,7 +471,7 @@ input:placeholder-shown {
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  height: calc(50vh - 16px);
+  height: calc(50vh - 32px);
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -1236,6 +1236,9 @@ input:placeholder-shown {
   }
   #wordDetails {
     flex-direction: row;
+  }
+  #wordDetailsPlus.expanded {
+    height: calc(50vh - 16px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
