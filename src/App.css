@@ -471,7 +471,7 @@ input:placeholder-shown {
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  height: calc(50vh - 32px);
+  height: calc(50vh - 48px);
 }
 #wordDetailsPlusIndicator {
   height: 50px;
