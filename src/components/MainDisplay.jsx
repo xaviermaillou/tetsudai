@@ -109,7 +109,7 @@ const MainDisplay = (props) => {
                                         {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
                                             <span className="wordDisplayWordElementKanji">{word.rareKanji ? element.kana : element.kanji || element.kana}</span>
                                             {element.kanji ?
-                                                <span className="wordDisplayWordElementYomi">{word.rareKanji ? element.kanji || element.kana : element.kana}</span>
+                                                <span className="wordDisplayWordElementYomi">{word.rareKanji ? element.kanji : element.kana || 'muet'}</span>
                                                 :
                                                 <span className="wordDisplayWordElementYomi"></span>
                                             }
