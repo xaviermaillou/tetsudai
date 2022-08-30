@@ -431,11 +431,13 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 #wordPrecisions {
-  margin-top: 24px;
   padding: 24px 20px 24px 0px;
   font-size: 16px;
   opacity: 0.66;
   white-space: pre-wrap;
+}
+#wordPrecisionsText {
+  margin-top: 12px;
 }
 .sentencesElement {
   margin-top: 10px;
@@ -446,14 +448,14 @@ input:placeholder-shown {
   display: flex;
   justify-content: space-between;
 }
-.sentence img {
+.sentencePin {
   height: 16px;
-  opacity: 0.25;
+  opacity: 0;
   margin-top: 4px;
   display: none;
 }
-.sentence img.highlighted {
-  opacity: 0.75;
+.sentencePin.highlighted {
+  opacity: 0.75 !important;
 }
 .sentence span {
   white-space: nowrap;
@@ -1283,8 +1285,11 @@ input:placeholder-shown {
     padding-right: 0px;
     padding-left: 20px;
   }
-  .sentence img {
+  .sentencePin {
     display: block;
+  }
+  .sentencesElement:hover .sentencePin {
+    opacity: 0.25;
   }
   #selector {
     justify-content: space-evenly;

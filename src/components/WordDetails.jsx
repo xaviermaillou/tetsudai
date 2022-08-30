@@ -167,10 +167,10 @@ const Sentence = (props) => {
 
     return (
         <div className="sentencesElement">
-            <div  className="sentence">
+            <div className="sentence">
                 <img
                     onClick={() => setPinnedSentence(sentence)}
-                    className={pinnedSentence?.id === sentence.id ? "highlighted" : "clickable"}
+                    className={pinnedSentence?.id === sentence.id ? "sentencePin highlighted" : "sentencePin clickable"}
                     src={`/img/${imgPath}/pin.png`}
                     alt="unpin sentence"
                 />
@@ -214,7 +214,14 @@ export const WordDetails = (props) => {
                     />
                 ))}
                 {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
-                {precisions && <div id="wordPrecisions">{precisions}</div>}
+                {precisions &&
+                    <div id="wordPrecisions">
+                        <p className="kanasReadingsHeader">SPÉCIFICITÉS</p>
+                        <p id="wordPrecisionsText">
+                            {precisions}
+                        </p>
+                    </div>
+                }
             </div>
             <div id="wordDetailsSentences">
                 <p className="kanasReadingsHeader">PHRASES</p>
