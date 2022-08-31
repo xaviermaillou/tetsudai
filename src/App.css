@@ -431,13 +431,20 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 #wordPrecisions {
+  margin-top: 24px;
   padding: 24px 20px 24px 0px;
   font-size: 16px;
-  opacity: 0.66;
   white-space: pre-wrap;
 }
+#wordPrecisions .kanasReadingsHeader {
+  margin-bottom: 12px;
+}
 #wordPrecisionsText {
-  margin-top: 12px;
+  opacity: 0.66;
+}
+.relatedWordsSubtitle {
+  font-size: 14px;
+  opacity: 0.66;
 }
 .sentencesElement {
   margin-top: 10px;

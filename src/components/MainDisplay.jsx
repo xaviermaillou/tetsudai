@@ -153,6 +153,7 @@ const MainDisplay = (props) => {
                                 setPinnedSentence={setPinnedSentence}
                                 referenceId={word.id}
                                 precisions={word.precisions}
+                                relatedWords={word.relatedWords}
                             />
                             {(!!!trainingMode && (word.inflexions || word.kosoado)) &&
                                 <WordDetailsPlus

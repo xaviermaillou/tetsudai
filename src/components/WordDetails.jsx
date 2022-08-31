@@ -200,6 +200,7 @@ export const WordDetails = (props) => {
         setPinnedSentence,
         referenceId,
         precisions,
+        relatedWords,
     } = props
 
     return (
@@ -214,12 +215,34 @@ export const WordDetails = (props) => {
                     />
                 ))}
                 {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
-                {precisions &&
+                {(precisions || Object.keys(relatedWords).length > 0) &&
                     <div id="wordPrecisions">
                         <p className="kanasReadingsHeader">SPÉCIFICITÉS</p>
-                        <p id="wordPrecisionsText">
-                            {precisions}
-                        </p>
+                        {precisions && 
+                            <p id="wordPrecisionsText">
+                                {precisions}
+                            </p>
+                        }
+                        {relatedWords &&
+                            Object.entries(relatedWords).map(([key, value], i) => (
+                                <>
+                                    <p className="relatedWordsSubtitle">{dictionnary[key]}</p>
+                                    <div className="yomiSingleExample open clickable" key={i} onClick={() => changeCurrentWordById(value.id)}>
+                                        <div className="yomiSingleExampleJapanese">
+                                            {value?.elements.map((element, j) => (
+                                                <div className="yomiSingleExampleKanjiKana" key={j}>
+                                                    {element.kanji ? <div>{element.kanji}</div> : <div>{element.kana}</div>}
+                                                    {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="yomiSingleExampleTranslation">
+                                            {value?.translation}
+                                        </div>
+                                    </div>
+                                </>
+                            ))
+                        }
                     </div>
                 }
             </div>
