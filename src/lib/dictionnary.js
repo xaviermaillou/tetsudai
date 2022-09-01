@@ -5,5 +5,7 @@ export const dictionnary = {
     affirmative: "+",
     negative: "-",
     baseWord: "MOT DE BASE",
-    suruForm: "FORME EN SURU",
+    suruForm: "FORME VERBALE AVEC SURU",
+    stem: "STEM",
+    verbForm: "FORME VERBALE",
 }
