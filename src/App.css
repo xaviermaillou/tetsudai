@@ -351,7 +351,7 @@ input:placeholder-shown {
   justify-content: space-between;
   align-items: center;
 }
-.yomiHeader span, .yomiSingleExampleJapanese {
+.yomiHeader span {
   white-space: nowrap;
 }
 .yomiExpander {
@@ -367,66 +367,52 @@ input:placeholder-shown {
   flex-direction: column;
   padding: 5px 0px;
 }
-.yomiSingleExample {
-  display: flex;
-  justify-content: space-between;
+.kanjiReadingsWordElement {
   height: 0px;
   overflow-y: hidden;
 }
-.yomiSingleExample.open {
+.kanjiReadingsWordElement.open {
   height: 56px;
 }
-.yomiSingleExampleJapanese, .yomiSingleExampleTranslation {
+.wordElement {
+  display: flex;
+  justify-content: space-between;
+}
+.wordElementTranslation {
   display: flex;
 }
-.yomiSingleExampleJapanese, .yomiSingleExampleTranslation, .kanasReadingsHeader {
+.wordElementTranslation, .kanasReadingsHeader {
   font-size: 16px;
 }
-.kanasSingleExampleKanas {
-  opacity: 0.5;
-}
-.yomiSingleExampleTranslation {
+.wordElementTranslation {
   opacity: 0.5;
   white-space: normal;
   text-align: right;
 }
-.yomiSingleExampleJapanese div {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.yomiSingleExampleKanjiKana {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px 5px;
-}
-.yomiSingleExampleKana {
-  opacity: 0.5;
-}
-.kanjisElement {
+.kanjiElement {
   display: flex;
 }
-.kanjisElementKanji {
+.kanjiElementKanji {
   width: 25%;
   text-align: left;
   font-size: 32px;
 }
-.kanjisElementKana {
+.kanjiElementKana {
   width: 75%;
   display: flex;
   flex-direction: column;
   text-align: right;
   font-size: 16px;
 }
-.kanjisElementKana div {
+.kanjiElementKana div {
   display: flex;
   justify-content: flex-end;
   flex-wrap: nowrap;
 }
-.kanjisElementKana span {
+.kanjiElementKana span {
   white-space: nowrap;
 }
-.kanjisListTranslation {
+.kanjiElementTranslation {
   opacity: 0.5;
 }
 #wordPrecisions {
@@ -970,30 +956,6 @@ input:placeholder-shown {
 .kanjisListElement {
   padding: 10px 20px;
 }
-.kanjisListElementKanji {
-  width: 25%;
-  text-align: left;
-  font-size: 28px;
-}
-.kanjisListElementKana {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-.kanjisListElementKana div {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-}
-.kanjisListElementKana span {
-  white-space: nowrap;
-}
-.kanjisListElementTranslation {
-  width: 100%;
-  opacity: 0.5;
-  white-space: nowrap;
-}
 .vocabularyListElementContainer {
   height: 0px;
   overflow: hidden;
@@ -1007,41 +969,34 @@ input:placeholder-shown {
   height: 100%;
   padding: 10px 20px;
 }
-.vocabularyListElementJapanese {
+.wordElementRegularJapanese {
   display: flex;
   white-space: nowrap;
   font-size: 16px;
 }
-.vocabularyListElementJapaneseJukujikun {
+.wordElementJukujikun {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.vocabularyListElementKanjiKana {
+.wordElementRegularJapaneseMainCharacters {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
   margin: 0px 5px;
 }
-.vocabularyListElementKanjiKana:nth-child(1) {
+.wordElementRegularJapaneseMainCharacters:nth-child(1) {
   margin-left: 0px;
 }
-.vocabularyListElementKanjiKana:last-child {
+.wordElementRegularJapaneseMainCharacters:last-child {
   margin-right: 0px;
 }
-.vocabularyListElementKanjiOnly {
+.wordElementJukujikunMainCharacters {
   display: flex;
 }
-.vocabularyListElementKana {
+.wordElementSecondaryCharacters {
   opacity: 0.5;
-}
-.vocabularyListElementTranslation {
-  display: flex;
-  font-size: 16px;
-  opacity: 0.5;
-  white-space: normal;
-  text-align: right;
 }
 
 /* ------------------------------------------------ DISPLAY HISTORY ------------------------------------------------ */
@@ -1287,10 +1242,10 @@ input:placeholder-shown {
   #onyomiExamples .yomiHeader {
     flex-direction: row-reverse;
   }
-  #onyomiExamples .yomiSingleExample {
+  #onyomiExamples .wordElement {
     flex-direction: row-reverse;
   }
-  #onyomiExamples .yomiSingleExampleTranslation {
+  #onyomiExamples .wordElementTranslation {
     text-align: left;
   }
   .yomiContainer {
@@ -1419,10 +1374,9 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#App.light .yomiSingleExampleKanjiKana.highlighted div,
 #App.light .sentencesElement .highlighted,
-#App.light .kanjisElementKana .highlighted,
-#App.light .vocabularyListElementKanjiKana.highlighted {
+#App.light .kanjiElementKana .highlighted,
+#App.light .wordElementRegularJapaneseMainCharacters.highlighted {
   color: rgb(220, 121, 121);
 }
 
@@ -1579,10 +1533,9 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(199, 192, 181, 0.2);
 }
 
-#App.dark .yomiSingleExampleKanjiKana.highlighted div,
 #App.dark .sentencesElement .highlighted,
-#App.dark .kanjisElementKana .highlighted,
-#App.dark .vocabularyListElementKanjiKana.highlighted {
+#App.dark .kanjiElementKana .highlighted,
+#App.dark .wordElementRegularJapaneseMainCharacters.highlighted {
   color: rgb(220, 121, 121);
 }
 

@@ -1,17 +1,17 @@
 const KanjiElement = (props) => {
 
-    const { kanji, changeCurrentKanjiById } = props
+    const { kanji, kanaToHighlight, changeCurrentKanjiById } = props
 
     return (
-        <div className="kanjisElement clickable" onClick={() => changeCurrentKanjiById(kanji.id)}>
-            <div className="kanjisElementKanji">
+        <div className="kanjiElement clickable" onClick={() => changeCurrentKanjiById(kanji.id)}>
+            <div className="kanjiElementKanji">
                 {kanji.kanji}
             </div>
-            <div className="kanjisElementKana">
+            <div className="kanjiElementKana">
                 <div>
                     {
                         kanji.readings.kunyomi?.map((item, i) => (
-                            <span key={i}>
+                            <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
                             </span>
@@ -25,14 +25,14 @@ const KanjiElement = (props) => {
                     }
                     {
                         kanji.readings.onyomi?.map((item, i) => (
-                            <span key={i}>
+                            <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
                                 {i > 0 && ', '}
                                 {item.kana}
                             </span>
                         ))
                     }
                 </div>
-                <div className="kanjisListTranslation">
+                <div className="kanjiElementTranslation">
                     {kanji.translation}
                 </div>
             </div>

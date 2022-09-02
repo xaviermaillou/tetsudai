@@ -2,10 +2,10 @@ const WordElement = (props) => {
     const { word, expanded = true, kanaToHighlight, changeCurrentWordById } = props
 
     return (
-        <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} onClick={() => changeCurrentWordById(word.id)}>
+        <div className={expanded ? "wordElement clickable open" : "wordElement"} onClick={() => changeCurrentWordById(word.id)}>
             {word.jukujikun ?
-                    <div className="vocabularyListElementJapaneseJukujikun">
-                        <div className="vocabularyListElementKanjiOnly">
+                    <div className="wordElementJukujikun">
+                        <div className="wordElementJukujikunMainCharacters">
                             {word.rareKanji ?
                                 <div>{word.jukujikun}</div>
                                 :
@@ -14,7 +14,7 @@ const WordElement = (props) => {
                                 ))
                             }
                         </div>
-                        <div className="vocabularyListElementKana">
+                        <div className="wordElementSecondaryCharacters">
                             {word.rareKanji ?
                                 word.elements.map((element, j) => (
                                     <span key={j}>{element.kanji || element.kana}</span>
@@ -25,12 +25,12 @@ const WordElement = (props) => {
                         </div>
                     </div>
                     :
-                    <div className="vocabularyListElementJapanese">
+                    <div className="wordElementRegularJapanese">
                         {word.elements.map((element, j) => (
-                            <div className={element.kana === kanaToHighlight ? "vocabularyListElementKanjiKana highlighted" : "vocabularyListElementKanjiKana"} key={j}>
+                            <div className={element.kana === kanaToHighlight ? "wordElementRegularJapaneseMainCharacters highlighted" : "wordElementRegularJapaneseMainCharacters"} key={j}>
                                 <div>{word.rareKanji ? element.kana : element.kanji || element.kana}</div>
                                 {element.kanji &&
-                                    <div className="vocabularyListElementKana">
+                                    <div className="wordElementSecondaryCharacters">
                                         {word.rareKanji ? element.kanji || element.kana : element.kana}
                                     </div>
                                 }
@@ -38,7 +38,7 @@ const WordElement = (props) => {
                         ))}
                     </div>
                 }
-            <div className="yomiSingleExampleTranslation">
+            <div className="wordElementTranslation">
                 {word?.translation}
             </div>
         </div>

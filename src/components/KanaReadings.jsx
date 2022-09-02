@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import WordElement from "./subComponents/wordElement"
+import WordElement from "./subComponents/WordElement"
 
 const Yomi = (props) => {
     const {
@@ -32,12 +32,14 @@ const Yomi = (props) => {
             </div>
             <div className="yomiExamples">
                 {wordExamples.map((wordExample, i) => (
-                    <WordElement
-                        word={wordExample}
-                        expanded={expanded}
-                        kanaToHighlight={example.kana}
-                        changeCurrentWordById={changeCurrentWordById}
-                    />
+                    <div className={expanded ? "kanjiReadingsWordElement open" : "kanjiReadingsWordElement"}>
+                        <WordElement
+                            word={wordExample}
+                            expanded={expanded}
+                            kanaToHighlight={example.kana}
+                            changeCurrentWordById={changeCurrentWordById}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
