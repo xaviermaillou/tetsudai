@@ -404,7 +404,6 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 .kanjisElement {
-  margin-top: 10px;
   display: flex;
 }
 .kanjisElementKanji {
@@ -432,7 +431,7 @@ input:placeholder-shown {
 }
 #wordPrecisions {
   margin-top: 24px;
-  padding: 24px 20px 24px 0px;
+  padding: 24px 0px 24px 0px;
   font-size: 16px;
   white-space: pre-wrap;
 }
@@ -969,7 +968,6 @@ input:placeholder-shown {
   height: 54px;
 }
 .kanjisListElement {
-  display: flex;
   padding: 10px 20px;
 }
 .kanjisListElementKanji {
@@ -1258,12 +1256,18 @@ input:placeholder-shown {
     overflow: scroll;
     padding-bottom: 40px;
   }
+  #wordDetailsKanjis {
+    padding-right: 20px;
+  }
+  .kanjisElementContainer {
+    margin-top: 10px;
+  }
+  #wordDetailsSentences {
+    padding-left: 20px;
+  }
   #wordDetailsSentences {
     margin-top: 0px;
     text-align: right;
-  }
-  .kanjisElement {
-    padding-right: 20px;
   }
   #kanasExamples {
     display: flex;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { dictionnary } from "tetsudai-common"
+import KanjiElement from "./subComponents/kanjiElement"
 import WordElement from "./subComponents/wordElement"
 import Loading from "./visualElements/Loading"
 
@@ -222,41 +223,12 @@ const ListKanji = (props) => {
         <div className={importance ? `importance${importance} kanjisListElementContainer open`: "kanjisListElementContainer open"} >
             <div 
                 className={(currentElement && currentElement.kanji && currentElement.id === kanji.id) ?
-                    "kanjisListElement clickable selected" : "kanjisListElement clickable"}
-                onClick={() => clickHandle(kanji.id)}
+                    "kanjisListElement selected" : "kanjisListElement"}
             >
-                <div className="kanjisListElementKanji">
-                    {kanji.kanji}
-                </div>
-                <div className="kanjisListElementKana">
-                    <div>
-                        {
-                            kanji.readings.kunyomi?.map((item, i) => (
-                                <span key={i}>
-                                    {i > 0 && ', '}
-                                    {item.kana}
-                                </span>
-                            ))
-                        }
-                        {
-                            (kanji.readings.kunyomi.length>0 && kanji.readings.onyomi.length>0) && 
-                            <>
-                                &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                            </>
-                        }
-                        {
-                            kanji.readings.onyomi?.map((item, i) => (
-                                <span key={i}>
-                                    {i > 0 && ', '}
-                                    {item.kana}
-                                </span>
-                            ))
-                        }
-                    </div>
-                    <div className="kanjisListElementTranslation">
-                        {kanji.translation}
-                    </div>
-                </div>
+                <KanjiElement
+                    kanji={kanji}
+                    changeCurrentKanjiById={clickHandle}
+                />
             </div>
         </div>
     )
@@ -281,7 +253,6 @@ const ListWord = (props) => {
             <div 
                 className={(currentElement && currentElement.elements && currentElement.id === word.id) ?
                     "vocabularyListElement selected" : "vocabularyListElement"}
-                onClick={() => clickHandle(word.id)}
             >
                 <WordElement
                     word={word}
@@ -463,14 +434,6 @@ const SidePanel = (props) => {
                 </div>
                 {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
             </div>
-            {/* searchExecuted && <span className={displayWords ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayWords(!displayWords)}>
-                Vocabulaire
-                {displayWords ?
-                    <img src="/img/less.png" alt="close words" />
-                    :
-                    <img src="/img/plus.png" alt="open words" />
-                }
-            </span> */}
             <div id="vocabularyList" className={searchExecuted ?
                 ((displayWords) ?
                     (displayKanjis ?

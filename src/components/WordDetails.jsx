@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { dictionnary } from "../lib/dictionnary"
+import KanjiElement from "./subComponents/kanjiElement"
 import WordElement from "./subComponents/wordElement"
 
 const Kosoado = (props) => {
@@ -108,49 +109,6 @@ export const WordDetailsPlus = (props) => {
     )
 }
 
-const Kanji = (props) => {
-    const {
-        element,
-        changeCurrentKanjiById,
-    } = props
-    return (
-        <div className="kanjisElement clickable" onClick={() => changeCurrentKanjiById(element.details.id)}>
-            <div className="kanjisElementKanji">
-                {element.details.kanji}
-            </div>
-            <div className="kanjisElementKana">
-                <div>
-                    {
-                        element.details.readings.kunyomi?.map((item, i) => (
-                            <span className={element.kana === item.kana ? "highlighted" : ""} key={i}>
-                                {i > 0 && ', '}
-                                {item.kana}
-                            </span>
-                        ))
-                    }
-                    {
-                        (element.details.readings.kunyomi.length>0 && element.details.readings.onyomi.length>0) && 
-                        <>
-                            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                        </>
-                    }
-                    {
-                        element.details.readings.onyomi?.map((item, i) => (
-                            <span className={element.kana === item.kana ? "highlighted" : ""} key={i}>
-                                {i > 0 && ', '}
-                                {item.kana}
-                            </span>
-                        ))
-                    }
-                </div>
-                <div className="kanjisListTranslation">
-                    {element.details.translation}
-                </div>
-            </div>
-        </div>
-    )
-}
-
 const Sentence = (props) => {
     const {
         imgPath,
@@ -209,11 +167,13 @@ export const WordDetails = (props) => {
             <div id="wordDetailsKanjis">
                 <p className="kanasReadingsHeader">KANJI</p>
                 {elements?.map((element, i) => (
-                    <Kanji
-                        element={element}
-                        changeCurrentKanjiById={changeCurrentKanjiById}
-                        key={i}
-                    />
+                    <div className="kanjisElementContainer">
+                        <KanjiElement
+                            kanji={element.details}
+                            changeCurrentKanjiById={changeCurrentKanjiById}
+                            key={i}
+                        />
+                    </div>
                 ))}
                 {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
                 {(precisions || Object.keys(relatedWords).length > 0) &&
