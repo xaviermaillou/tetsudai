@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { dictionnary } from "tetsudai-common"
+import WordElement from "./subComponents/wordElement"
 import Loading from "./visualElements/Loading"
 
 const TrainingModal = (props) => {
@@ -279,47 +280,13 @@ const ListWord = (props) => {
         <div className={importance ? `importance${importance} vocabularyListElementContainer open` : "vocabularyListElementContainer open"} >
             <div 
                 className={(currentElement && currentElement.elements && currentElement.id === word.id) ?
-                    "vocabularyListElement clickable selected" : "vocabularyListElement clickable"}
+                    "vocabularyListElement selected" : "vocabularyListElement"}
                 onClick={() => clickHandle(word.id)}
             >
-                {word.jukujikun ?
-                    <div className="vocabularyListElementJapaneseJukujikun">
-                        <div className="vocabularyListElementKanjiOnly">
-                            {word.rareKanji ?
-                                <div>{word.jukujikun}</div>
-                                :
-                                word.elements.map((element, j) => (
-                                    <div key={j}>{element.kanji || element.kana}</div>
-                                ))
-                            }
-                        </div>
-                        <div className="vocabularyListElementKana">
-                            {word.rareKanji ?
-                                word.elements.map((element, j) => (
-                                    <span key={j}>{element.kanji || element.kana}</span>
-                                ))
-                                :
-                                <span>{word.jukujikun}</span>
-                            }
-                        </div>
-                    </div>
-                    :
-                    <div className="vocabularyListElementJapanese">
-                        {word.elements.map((element, j) => (
-                            <div className="vocabularyListElementKanjiKana" key={j}>
-                                <div>{word.rareKanji ? element.kana : element.kanji || element.kana}</div>
-                                {element.kanji &&
-                                    <div className="vocabularyListElementKana">
-                                        {word.rareKanji ? element.kanji || element.kana : element.kana}
-                                    </div>
-                                }
-                            </div>
-                        ))}
-                    </div>
-                }
-                <div className="vocabularyListElementTranslation">
-                    {word.translation}
-                </div>
+                <WordElement
+                    word={word}
+                    changeCurrentWordById={clickHandle}
+                />
             </div>
         </div>
     )

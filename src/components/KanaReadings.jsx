@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import WordElement from "./subComponents/wordElement"
 
 const Yomi = (props) => {
     const {
@@ -13,11 +14,6 @@ const Yomi = (props) => {
     useEffect(() => {
         setExpanded(false)
     }, [example])
-
-    const handleKanjiClick = (e, id) => {
-        // e.stopPropagation()
-        // changeCurrentKanjiById(id, false)
-    }
 
     return (
         <div className={wordExamples.length > 0 ? "yomiContainer extendable" : "yomiContainer"}>
@@ -36,19 +32,12 @@ const Yomi = (props) => {
             </div>
             <div className="yomiExamples">
                 {wordExamples.map((wordExample, i) => (
-                    <div className={expanded ? "yomiSingleExample clickable open" : "yomiSingleExample"} key={i} onClick={() => changeCurrentWordById(wordExample.id)}>
-                        <div className="yomiSingleExampleJapanese">
-                            {wordExample?.elements.map((element, j) => (
-                                <div className={element.kana === example.kana ? "yomiSingleExampleKanjiKana highlighted" : "yomiSingleExampleKanjiKana"} key={j}>
-                                    {element.kanji ? <div className="clickable" onClick={(e) => handleKanjiClick(e, element.id)}>{element.kanji}</div> : <div>{element.kana}</div>}
-                                    {element.kanji && <div className="yomiSingleExampleKana">{element.kana}</div>}
-                                </div>
-                            ))}
-                        </div>
-                        <div className="yomiSingleExampleTranslation">
-                            {wordExample?.translation}
-                        </div>
-                    </div>
+                    <WordElement
+                        word={wordExample}
+                        expanded={expanded}
+                        kanaToHighlight={example.kana}
+                        changeCurrentWordById={changeCurrentWordById}
+                    />
                 ))}
             </div>
         </div>

@@ -1007,8 +1007,6 @@ input:placeholder-shown {
 }
 .vocabularyListElement {
   height: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 10px 20px;
 }
 .vocabularyListElementJapanese {
@@ -1026,7 +1024,13 @@ input:placeholder-shown {
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
-  margin-right: 10px;
+  margin: 0px 5px;
+}
+.vocabularyListElementKanjiKana:nth-child(1) {
+  margin-left: 0px;
+}
+.vocabularyListElementKanjiKana:last-child {
+  margin-right: 0px;
 }
 .vocabularyListElementKanjiOnly {
   display: flex;
@@ -1413,7 +1417,8 @@ input:placeholder-shown {
 
 #App.light .yomiSingleExampleKanjiKana.highlighted div,
 #App.light .sentencesElement .highlighted,
-#App.light .kanjisElementKana .highlighted {
+#App.light .kanjisElementKana .highlighted,
+#App.light .vocabularyListElementKanjiKana.highlighted {
   color: rgb(220, 121, 121);
 }
 
@@ -1572,7 +1577,8 @@ input:placeholder-shown {
 
 #App.dark .yomiSingleExampleKanjiKana.highlighted div,
 #App.dark .sentencesElement .highlighted,
-#App.dark .kanjisElementKana .highlighted {
+#App.dark .kanjisElementKana .highlighted,
+#App.dark .vocabularyListElementKanjiKana.highlighted {
   color: rgb(220, 121, 121);
 }
 
