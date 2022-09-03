@@ -106,6 +106,10 @@ const MainDisplay = (props) => {
                                 :
                                 <div id="wordDisplayWord" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                     <div id="wordDisplayWordElements">
+                                        {!!word.politePrefix && <div className="wordDisplayWordPrefix wordDisplayWordElement">
+                                            <span className="wordDisplayWordElementKanji">{word.politePrefix}</span>
+                                            <span className="wordDisplayWordElementYomi">politesse</span>
+                                        </div>}
                                         {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
                                             <span className="wordDisplayWordElementKanji">{word.rareKanji ? element.kana : element.kanji || element.kana}</span>
                                             {element.kanji ?

@@ -288,6 +288,9 @@ input:placeholder-shown {
 #wordDisplayWordKanjiOnly {
   display: flex;
 }
+.wordDisplayWordPrefix {
+  opacity: 0.25;
+}
 .wordDisplayWordElement {
   display: flex;
   flex-direction: column;
