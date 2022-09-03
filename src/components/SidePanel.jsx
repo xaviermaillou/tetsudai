@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { dictionnary } from "tetsudai-common"
-import KanjiElement from "./subComponents/jjj"
-import WordElement from "./subComponents/HHH"
+import KanjiElement from "./subComponents/KanjiElement"
+import WordElement from "./subComponents/WordElement"
 import Loading from "./visualElements/Loading"
 
 const TrainingModal = (props) => {
