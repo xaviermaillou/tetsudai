@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import WordElement from "./subComponents/WordElement"
+import WordElement from "./subComponents/HHH"
 
 const Yomi = (props) => {
     const {

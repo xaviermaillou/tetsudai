@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { dictionnary } from "../lib/dictionnary"
-import KanjiElement from "./subComponents/KanjiElement"
-import WordElement from "./subComponents/WordElement"
+import KanjiElement from "./subComponents/jjj"
+import WordElement from "./subComponents/HHH"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
