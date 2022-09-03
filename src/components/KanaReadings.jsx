@@ -35,7 +35,6 @@ const Yomi = (props) => {
                     <div className={expanded ? "kanjiReadingsWordElement open" : "kanjiReadingsWordElement"}>
                         <WordElement
                             word={wordExample}
-                            expanded={expanded}
                             kanaToHighlight={example.kana}
                             changeCurrentWordById={changeCurrentWordById}
                         />

@@ -1,8 +1,8 @@
 const WordElement = (props) => {
-    const { word, expanded = true, kanaToHighlight, changeCurrentWordById } = props
+    const { word, kanaToHighlight, changeCurrentWordById } = props
 
     return (
-        <div className={expanded ? "wordElement clickable open" : "wordElement"} onClick={() => changeCurrentWordById(word.id)}>
+        <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
             {word.jukujikun ?
                     <div className="wordElementJukujikun">
                         <div className="wordElementJukujikunMainCharacters">

@@ -382,8 +382,10 @@ input:placeholder-shown {
   height: 56px;
 }
 .wordElement {
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 10px 0px;
 }
 .wordElementTranslation {
   display: flex;
@@ -397,7 +399,9 @@ input:placeholder-shown {
   text-align: right;
 }
 .kanjiElement {
+  height: 100%;
   display: flex;
+  padding: 10px 0px;
 }
 .kanjiElementKanji {
   width: 25%;
@@ -423,7 +427,7 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 #wordPrecisions {
-  margin-top: 24px;
+  margin-top: 14px;
   padding: 24px 0px 24px 0px;
   font-size: 16px;
   white-space: pre-wrap;
@@ -952,29 +956,23 @@ input:placeholder-shown {
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
 .kanjisListElementContainer {
-  height: 0px;
+  height: 54px;
   overflow: hidden;
   flex-shrink: 0;
   order: 3;
 }
-.kanjisListElementContainer.open {
-  height: 54px;
-}
 .kanjisListElement {
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 .vocabularyListElementContainer {
-  height: 0px;
+  height: 54px;
   overflow: hidden;
   flex-shrink: 0;
   order: 5;
 }
-.vocabularyListElementContainer.open {
-  height: 54px;
-}
 .vocabularyListElement {
   height: 100%;
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 .wordElementRegularJapanese {
   display: flex;
@@ -1221,9 +1219,6 @@ input:placeholder-shown {
   #wordDetailsKanjis {
     padding-right: 20px;
   }
-  .kanjisElementContainer {
-    margin-top: 10px;
-  }
   #wordDetailsSentences {
     padding-left: 20px;
   }
@@ -1463,10 +1458,10 @@ input:placeholder-shown {
   border-bottom: 1px solid lightgray;
 }
 
-#App.light .kanjisListElementContainer.open {
+#App.light .kanjisListElementContainer {
   border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
-#App.light .vocabularyListElementContainer.open {
+#App.light .vocabularyListElementContainer {
   border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
 
@@ -1622,10 +1617,10 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(199, 192, 181, 0.1);
 }
 
-#App.dark .kanjisListElementContainer.open {
+#App.dark .kanjisListElementContainer {
   border-bottom: 1px solid rgba(199, 192, 181, 0.2);
 }
-#App.dark .vocabularyListElementContainer.open {
+#App.dark .vocabularyListElementContainer {
   border-bottom: 1px solid rgba(199, 192, 181, 0.2);
 }
 

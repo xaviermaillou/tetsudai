@@ -167,7 +167,7 @@ export const WordDetails = (props) => {
             <div id="wordDetailsKanjis">
                 <p className="kanasReadingsHeader">KANJI</p>
                 {elements?.map((element, i) => (
-                    <div className="kanjisElementContainer">
+                    <div>
                         <KanjiElement
                             kanji={element.details}
                             kanaToHighlight={element.kana}

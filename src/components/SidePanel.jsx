@@ -220,7 +220,7 @@ const ListKanji = (props) => {
     }
 
     return (
-        <div className={importance ? `importance${importance} kanjisListElementContainer open`: "kanjisListElementContainer open"} >
+        <div className={importance ? `importance${importance} kanjisListElementContainer`: "kanjisListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.kanji && currentElement.id === kanji.id) ?
                     "kanjisListElement selected" : "kanjisListElement"}
@@ -249,7 +249,7 @@ const ListWord = (props) => {
     }
 
     return (
-        <div className={importance ? `importance${importance} vocabularyListElementContainer open` : "vocabularyListElementContainer open"} >
+        <div className={importance ? `importance${importance} vocabularyListElementContainer` : "vocabularyListElementContainer"} >
             <div 
                 className={(currentElement && currentElement.elements && currentElement.id === word.id) ?
                     "vocabularyListElement selected" : "vocabularyListElement"}
