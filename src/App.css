@@ -112,6 +112,7 @@ input:placeholder-shown {
   opacity: 0.25;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 #logoContainer.full {
   z-index: 2000;
@@ -123,6 +124,9 @@ input:placeholder-shown {
 }
 #logoContainer img {
   height: 32px;
+}
+#logoContainer.full span {
+  opacity: 0;
 }
 
 #introText {

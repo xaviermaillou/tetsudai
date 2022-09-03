@@ -26,7 +26,7 @@ const SideBar = (props) => {
                 <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
-                beta
+                <span>beta</span>
             </div>
             {historyDisplayed && <div
                 id="historyIconContainer"
