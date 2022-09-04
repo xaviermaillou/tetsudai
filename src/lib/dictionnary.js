@@ -8,4 +8,8 @@ export const dictionnary = {
     suruForm: "FORME VERBALE AVEC SURU",
     stem: "STEM",
     verbForm: "FORME VERBALE",
+    stemUsedIn: "MOTS QUI UTILISENT SON STEM",
+    stemTakenFrom: "STEM UTILISÉ",
+    wordUsedIn: "MOTS QUI L'UTILISENT",
+    wordTakenFrom: "MOTS UTILISÉS",
 }

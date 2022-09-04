@@ -162,6 +162,8 @@ export const WordDetails = (props) => {
         relatedWords,
     } = props
 
+    let hasRelatedContent = false
+
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="wordDetailsKanjis">
@@ -177,28 +179,34 @@ export const WordDetails = (props) => {
                     </div>
                 ))}
                 {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
-                {(precisions || Object.keys(relatedWords).length > 0) &&
+                {precisions && 
                     <div id="wordPrecisions">
-                        <p className="kanasReadingsHeader">SPÉCIFICITÉS</p>
-                        {precisions && 
-                            <p id="wordPrecisionsText">
-                                {precisions}
-                            </p>
-                        }
-                        {relatedWords &&
-                            Object.entries(relatedWords).map(([key, value], i) => (
-                                <>
-                                    <p className="relatedWordsSubtitle">{dictionnary[key]}</p>
-                                    <WordElement
-                                        word={value}
-                                        changeCurrentWordById={changeCurrentWordById}
-                                        key={i}
-                                    />
-                                </>
-                            ))
-                        }
+                        <p id="wordPrecisionsText">
+                            {precisions}
+                        </p>
                     </div>
                 }
+                <div id="relatedWords">
+                    <p className="kanasReadingsHeader">MOTS ASSOCIÉS</p>
+                    {relatedWords &&
+                        Object.entries(relatedWords).map(([key, value], i) => (
+                            <>
+                                {value.length > 0 && <p className="relatedWordsSubtitle">{dictionnary[key]}</p>}
+                                {value.length > 0 && value.map((relatedWord) => {
+                                    hasRelatedContent = true
+                                    return (
+                                        <WordElement
+                                            word={relatedWord}
+                                            changeCurrentWordById={changeCurrentWordById}
+                                            key={i}
+                                        />
+                                    )
+                                })}
+                            </>
+                        ))
+                    }
+                    {!hasRelatedContent && <span className="tooltip">Aucun mot associé n'a été trouvé</span>}
+                </div>
             </div>
             <div id="wordDetailsSentences">
                 <p className="kanasReadingsHeader">PHRASES</p>

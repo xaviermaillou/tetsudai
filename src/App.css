@@ -388,15 +388,14 @@ input:placeholder-shown {
   padding: 10px 0px;
 }
 .wordElementTranslation {
+  max-width: 75%;
   display: flex;
-}
-.wordElementTranslation, .kanasReadingsHeader {
-  font-size: 16px;
-}
-.wordElementTranslation {
   opacity: 0.5;
   white-space: normal;
   text-align: right;
+}
+.wordElementTranslation, .kanasReadingsHeader {
+  font-size: 16px;
 }
 .kanjiElement {
   height: 100%;
@@ -426,13 +425,13 @@ input:placeholder-shown {
 .kanjiElementTranslation {
   opacity: 0.5;
 }
-#wordPrecisions {
+#wordPrecisions, #relatedWords {
   margin-top: 14px;
-  padding: 24px 0px 24px 0px;
+  padding: 24px 0px 14px 0px;
   font-size: 16px;
   white-space: pre-wrap;
 }
-#wordPrecisions .kanasReadingsHeader {
+#relatedWords .kanasReadingsHeader {
   margin-bottom: 12px;
 }
 #wordPrecisionsText {
@@ -1382,7 +1381,7 @@ input:placeholder-shown {
   color: rgb(220, 121, 121);
 }
 
-#App.light #wordPrecisions {
+#App.light #wordPrecisions, #App.light #relatedWords {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -1541,7 +1540,7 @@ input:placeholder-shown {
   color: rgb(220, 121, 121);
 }
 
-#App.dark #wordPrecisions {
+#App.dark #wordPrecisions, #App.dark #relatedWords {
   border-top: 1px solid rgba(199, 192, 181, 0.2);
 }
 
