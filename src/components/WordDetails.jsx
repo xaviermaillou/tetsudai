@@ -167,18 +167,6 @@ export const WordDetails = (props) => {
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="wordDetailsKanjis">
-                <p className="kanasReadingsHeader">KANJI</p>
-                {elements?.map((element, i) => (
-                    <div>
-                        <KanjiElement
-                            kanji={element.details}
-                            kanaToHighlight={element.kana}
-                            changeCurrentKanjiById={changeCurrentKanjiById}
-                            key={i}
-                        />
-                    </div>
-                ))}
-                {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
                 {precisions && 
                     <div id="wordPrecisions">
                         <p id="wordPrecisionsText">
@@ -186,6 +174,20 @@ export const WordDetails = (props) => {
                         </p>
                     </div>
                 }
+                <div id="relatedKanji">
+                    <p className="kanasReadingsHeader">KANJI</p>
+                    {elements?.map((element, i) => (
+                        <div>
+                            <KanjiElement
+                                kanji={element.details}
+                                kanaToHighlight={element.kana}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
+                                key={i}
+                            />
+                        </div>
+                    ))}
+                    {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
+                </div>
                 <div id="relatedWords">
                     <p className="kanasReadingsHeader">MOTS ASSOCIÉS</p>
                     {relatedWords &&
