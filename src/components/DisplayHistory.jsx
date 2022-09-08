@@ -35,7 +35,7 @@ const HistoryElement = (props) => {
                 :
                 <div className="historyElementMain">
                     {historyElementData.kanji || historyElementData.elements.map((e, i) => (
-                        <span key={i}>{historyElementData.rareKanji ? e.kana : e.kanji || e.kana}</span>
+                        <span key={i}>{e.option === "rareKanji" ? e.kana : e.kanji || e.kana}</span>
                     ))}
                 </div>
             }

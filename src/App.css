@@ -290,6 +290,7 @@ input:placeholder-shown {
 }
 .wordDisplayWordPrefix {
   opacity: 0.25;
+  transition: none;
 }
 .wordDisplayWordElement {
   display: flex;

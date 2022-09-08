@@ -88,14 +88,14 @@ const MainDisplay = (props) => {
                                             </div>
                                             :
                                             word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                                                <span className="wordDisplayWordElementKanji">{element.kanji || element.kana}</span>
+                                                <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</span>
                                             </div>)
                                         }
                                     </div>
                                     <div className="wordDisplayWordElementYomi jukujikun">
                                         {word.rareKanji ?
                                             word.elements.map((element, i) => 
-                                                <span className="wordDisplayWordElementKanji" key={i}>{element.kanji || element.kana}</span>
+                                                <span className="wordDisplayWordElementKanji" key={i}>{element.option === "rareKanji" ? element.kanji : element.kana}</span>
                                             )
                                             :
                                             <span>{word.jukujikun}</span>
@@ -106,16 +106,18 @@ const MainDisplay = (props) => {
                                 :
                                 <div id="wordDisplayWord" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                     <div id="wordDisplayWordElements">
-                                        {!!word.politePrefix && <div className="wordDisplayWordPrefix wordDisplayWordElement">
-                                            <span className="wordDisplayWordElementKanji">{word.politePrefix}</span>
-                                            <span className="wordDisplayWordElementYomi">politesse</span>
-                                        </div>}
-                                        {word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                                            <span className="wordDisplayWordElementKanji">{word.rareKanji ? element.kana : element.kanji || element.kana}</span>
-                                            {element.kanji ?
-                                                <span className="wordDisplayWordElementYomi">{word.rareKanji ? element.kanji : element.kana || 'muet'}</span>
+                                        {word.elements.map((element, i) => <div className={element.option === "politeElement" ? "wordDisplayWordPrefix wordDisplayWordElement" : "wordDisplayWordElement"} key={i}>
+                                            <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ?
+                                                element.kana
                                                 :
-                                                <span className="wordDisplayWordElementYomi"></span>
+                                                element.kanji || element.kana}</span>
+                                            {element.kanji ?
+                                                <span className="wordDisplayWordElementYomi">{element.option === "rareKanji" ? element.kanji : element.kana || 'muet'}</span>
+                                                :
+                                                element.option === "politeElement" ?
+                                                    <span className="wordDisplayWordElementYomi">politesse</span>
+                                                    :
+                                                    <span className="wordDisplayWordElementYomi"></span>
                                             }
                                         </div>)}
                                     </div>
