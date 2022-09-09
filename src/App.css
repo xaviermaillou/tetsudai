@@ -546,6 +546,7 @@ input:placeholder-shown {
   flex-direction: column;
   justify-content: center;
   opacity: 0.5;
+  transition: none;
 }
 
 /* ------------------------------------------------ TRAINING CONTROLS ------------------------------------------------ */

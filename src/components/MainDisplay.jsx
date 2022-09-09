@@ -27,6 +27,7 @@ const MainDisplay = (props) => {
         setOpenedHistory,
         pinnedSentence,
         setPinnedSentence,
+        endingReason,
     } = props
 
     const [displayedElement, setDisplayedElement] = useState(0)
@@ -72,7 +73,8 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les kanji ont été validés.</span>
+                            {endingReason === 1 && <span>Aucun kanji ne correspond à ces critères.</span>}
+                            {endingReason === 2 && <span>Tous les kanji ont été validés.</span>}
                         </div>
                     )
                 }
@@ -173,7 +175,8 @@ const MainDisplay = (props) => {
                         </div>
                         :
                         <div className="trainingEndNotifier">
-                            <span>Tous les mots ont été validés.</span>
+                            {endingReason === 1 && <span>Aucun mot ne correspond à ces critères.</span>}
+                            {endingReason === 2 && <span>Tous les mots ont été validés.</span>}
                         </div>
                     )
                 }

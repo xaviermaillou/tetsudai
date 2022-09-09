@@ -207,6 +207,7 @@ function App() {
 
   const [trainingMode, setTrainingMode] = useState(0)
   const [allDisplayed, setAllDisplayed] = useState(true)
+  const [endingReason, setEndingReason] = useState(undefined)
   const [forceNext, setForceNext] = useState(false)
 
   // Menu handling (is here because needs training mode value)
@@ -294,7 +295,10 @@ function App() {
   // Changes filteredKanjis and filteredWords
   const nextTrainingElement = (validated) => {
     if (trainingMode === 1) {
-      if (filteredKanjis.length === 1 && validated) setKanji(undefined)
+      if (filteredKanjis.length === 1 && validated) {
+        setEndingReason(2)
+        setKanji(undefined)
+      }
       if (filteredKanjis.length > 0 && kanji) {
         if (validated) setFilteredKanjis((arr) => arr
           .filter((el) => el.id !== kanji.id))
@@ -303,7 +307,10 @@ function App() {
       else getTrainingKanji()
     }
     if (trainingMode === 2) {
-      if (filteredWords.length === 1 && validated) setWord(undefined)
+      if (filteredWords.length === 1 && validated) {
+        setEndingReason(2)
+        setWord(undefined)
+      }
       if (filteredWords.length > 0 && word) {
         if (validated) setFilteredWords((arr) => arr
           .filter((el) => el.id !== word.id))
@@ -321,6 +328,10 @@ function App() {
         const newKanjiId = filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]
         navigate(`/kanji/${newKanjiId.id}`)
       }
+      else {
+        setEndingReason(1)
+        setKanji(undefined)
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filteredKanjis, trainingMode, forceNext])
@@ -329,6 +340,10 @@ function App() {
       if (filteredWords.length > 0) {
         const newWordId = filteredWords[Math.floor(Math.random()*filteredWords.length)]
         navigate(`/word/${newWordId.id}`)
+      }
+      else {
+        setEndingReason(1)
+        setWord(undefined)
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -375,6 +390,7 @@ function App() {
         trainingMode={trainingMode}
         nextTrainingElement={nextTrainingElement}
         toggleTraining={toggleTraining}
+        endingReason={endingReason}
       />
       <SidePanel 
         imgPath={imgPath}
