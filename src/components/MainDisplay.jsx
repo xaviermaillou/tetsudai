@@ -84,7 +84,7 @@ const MainDisplay = (props) => {
                             {word.jukujikun ? 
                                 <div id="wordDisplayWordJukujikun">
                                     <div id="wordDisplayWordKanjiOnly">
-                                        {word.rareKanji ?
+                                        {word.jukujikunAsMain ?
                                             <div className="wordDisplayWordElement">
                                                 <span>{word.jukujikun}</span>
                                             </div>
@@ -95,7 +95,7 @@ const MainDisplay = (props) => {
                                         }
                                     </div>
                                     <div className="wordDisplayWordElementYomi jukujikun">
-                                        {word.rareKanji ?
+                                        {word.jukujikunAsMain ?
                                             word.elements.map((element, i) => 
                                                 <span className="wordDisplayWordElementKanji" key={i}>{element.option === "rareKanji" ? element.kanji : element.kana}</span>
                                             )

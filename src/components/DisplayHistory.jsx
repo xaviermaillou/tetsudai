@@ -24,7 +24,7 @@ const HistoryElement = (props) => {
         >
             {historyElementData.jukujikun ?
                 <div className="historyElementMain">
-                    {historyElementData.rareKanji ?
+                    {historyElementData.jukujikunAsMain ?
                         <span>{historyElementData.jukujikun}</span>
                         :
                         historyElementData.elements.map((e, i) => (

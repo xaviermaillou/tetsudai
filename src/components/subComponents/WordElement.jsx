@@ -6,7 +6,7 @@ const WordElement = (props) => {
             {word.jukujikun ?
                     <div className="wordElementJukujikun">
                         <div className="wordElementJukujikunMainCharacters">
-                            {word.rareKanji ?
+                            {word.jukujikunAsMain ?
                                 <div>{word.jukujikun}</div>
                                 :
                                 word.elements.map((element, j) => (
@@ -15,7 +15,7 @@ const WordElement = (props) => {
                             }
                         </div>
                         <div className="wordElementSecondaryCharacters">
-                            {word.rareKanji ?
+                            {word.jukujikunAsMain ?
                                 word.elements.map((element, j) => (
                                     <span key={j}>{element.option === "rareKanji" ? element.kanji : element.kana}</span>
                                 ))
