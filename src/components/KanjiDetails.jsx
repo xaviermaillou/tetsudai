@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import KanjiElement from "./subComponents/KanjiElement"
 import WordElement from "./subComponents/WordElement"
 
 const Yomi = (props) => {
@@ -45,7 +46,7 @@ const Yomi = (props) => {
     )
 }
 
-const KanaReadings = (props) => {
+const KanjiDetails = (props) => {
     const {
         imgPath,
         kanji,
@@ -56,9 +57,37 @@ const KanaReadings = (props) => {
     } = props
 
     return (
-        <div id="kanas" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
-            <div id="kanasExamples">
-                <div id="kunyomiExamples">
+        <div id="kanjiDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
+            <div className="kanjiDetailsSection">
+                <div className="kanjiDetailsSubSection" >
+                    <p className="kanasReadingsHeader">KANJI QUI LE COMPOSENT</p>
+                    {kanji.kanjiTakenAsPartFrom.map((e, i) => (
+                        <div className="kanjiDetailsKanjiElements">
+                            <KanjiElement
+                                kanji={e}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
+                                key={i}
+                            />
+                        </div>
+                    ))}
+                    {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">Ce kanji n'esr composé d'aucun autre kanji</span>}
+                </div>
+                <div className="kanjiDetailsSubSection" >
+                    <p className="kanasReadingsHeader">KANJI QUI L'UTILISENT</p>
+                    {kanji.kanjiUsedAsPartIn.map((e, i) => (
+                        <div className="kanjiDetailsKanjiElements">
+                            <KanjiElement
+                                kanji={e}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
+                                key={i}
+                            />
+                        </div>
+                    ))}
+                    {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">Ce kanji n'est utilisé dans aucun autre kanji</span>}
+                </div>
+            </div>
+            <div className="kanjiDetailsSection">
+                <div className="kanjiDetailsSubSection" id="kunyomiExamples">
                     <p className="kanasReadingsHeader">KUNYOMI</p>
                     {kanji.readings.kunyomi?.map((e, i) => (
                         <Yomi
@@ -66,14 +95,14 @@ const KanaReadings = (props) => {
                             example={e}
                             wordExamples={kanji.vocabulary.filter((word) => word.elements
                                 .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
-                            key={i}
                             changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
+                            key={i}
                         />
                     ))}
                     {kanji.readings.kunyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun kunyomi</span>}
                 </div>
-                <div id="onyomiExamples">
+                <div className="kanjiDetailsSubSection" id="onyomiExamples">
                     <p className="kanasReadingsHeader">ONYOMI</p>
                     {kanji.readings.onyomi?.map((e, i) => (
                         <Yomi
@@ -81,9 +110,9 @@ const KanaReadings = (props) => {
                             example={e}
                             wordExamples={kanji.vocabulary.filter((word) => word.elements
                                 .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
-                            key={i}
                             changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
+                            key={i}
                         />
                     ))}
                     {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}
@@ -93,4 +122,4 @@ const KanaReadings = (props) => {
     )
 }
 
-export default KanaReadings
+export default KanjiDetails

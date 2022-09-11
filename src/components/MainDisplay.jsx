@@ -1,5 +1,5 @@
 import { useState } from "react"
-import KanaReadings from "./KanaReadings"
+import KanjiDetails from "./KanjiDetails"
 import { WordDetails, WordDetailsPlus } from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { dictionnary } from "tetsudai-common"
@@ -62,14 +62,14 @@ const MainDisplay = (props) => {
                                 <div>{kanji.strokes} traits</div>
                                 <div>{kanji.level ? `JLPT ${kanji.level}` : 'Hors JLPT'}</div>
                             </p>
-                            {kanji.readings && <KanaReadings
+                            <KanjiDetails
                                 imgPath={imgPath}
                                 kanji={kanji}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                                 changeCurrentWordById={(id) => handleWordChange(id)}
-                            />}
+                            />
                         </div>
                         :
                         <div className="trainingEndNotifier">
