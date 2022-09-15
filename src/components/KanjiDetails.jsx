@@ -117,6 +117,19 @@ const KanjiDetails = (props) => {
                     ))}
                     {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}
                 </div>
+                {kanji.relatedJukujikun && <div className="kanjiDetailsSubSection" id="jukujikunExamples">
+                    <p className="kanasReadingsHeader">JUKUJIKUN</p>
+                    {kanji.relatedJukujikun?.map((e, i) => (
+                        <div className="kanjiDetailsJukujikun">
+                            <WordElement
+                                word={e}
+                                changeCurrentWordById={changeCurrentWordById}
+                                key={i}
+                            />
+                        </div>
+                    ))}
+                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}
+                </div>}
             </div>
         </div>
     )

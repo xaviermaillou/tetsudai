@@ -327,7 +327,7 @@ input:placeholder-shown {
 #kanjiDetails.expanded, #wordDetails.expanded {
   height: calc(50vh - 16px);
 }
-#onyomiExamples {
+#jukujikunExamples {
   padding-bottom: 70px;
 }
 #wordDetailsSentences {
@@ -338,11 +338,8 @@ input:placeholder-shown {
   width: 100%;
   text-align: left;
 }
-.kanjiDetailsSection:nth-child(2) {
-  margin-top: 20px;
-}
 .kanjiDetailsSubSection {
-  margin-top: 1vh;
+  margin-top: 20px;
   text-align: left;
 }
 .yomiContainer {
@@ -1218,7 +1215,7 @@ input:placeholder-shown {
     overflow: scroll;
     padding-bottom: 40px;
   }
-  #onyomiExamples {
+  #jukujikunExamples {
     padding-bottom: 40px;
   }
   #wordDetailsKanjis {
@@ -1241,7 +1238,7 @@ input:placeholder-shown {
   .kanjiDetailsSubSection:nth-child(1) {
     margin-top: 0px;
   }
-  #kunyomiExamples, #onyomiExamples {
+  #kunyomiExamples, #onyomiExamples, #jukujikunExamples {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1252,13 +1249,16 @@ input:placeholder-shown {
   #kunyomiExamples .yomiHeader, #onyomiExamples .yomiHeader {
     flex-direction: row-reverse;
   }
-  #kunyomiExamples .wordElement, #onyomiExamples .wordElement {
+  #kunyomiExamples .wordElement, #onyomiExamples .wordElement, #jukujikunExamples .wordElement {
     flex-direction: row-reverse;
   }
-  #kunyomiExamples .wordElementTranslation, #onyomiExamples .wordElementTranslation {
+  #kunyomiExamples .wordElementTranslation, #onyomiExamples .wordElementTranslation , #jukujikunExamples .wordElementTranslation{
     text-align: left;
   }
-  .kanjiDetailsKanjiElements, .yomiContainer {
+  #jukujikunExamples .wordElementJukujikun {
+    align-items: flex-end;
+  }
+  .kanjiDetailsKanjiElements, .yomiContainer, .kanjiDetailsJukujikun {
     width: 92.5%;
   }
   .sentencesElement {
