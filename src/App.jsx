@@ -353,11 +353,11 @@ function App() {
 
   return (
     <div id="App" className={imgPath}>
-      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
-        <p>
+      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "" : "lowOpacity"}>
+        {/* <p>
           Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
           en lui fournissant un dictionnaire franco-japonais dont le contenu se veut à la fois complet et pertinent.
-        </p>
+        </p> */}
       </div>}
       <MainDisplay
         // Theme switcher
@@ -442,6 +442,7 @@ function App() {
         kanji={kanji}
         word={word}
         loadingMainDisplay={loadingMainDisplay}
+        searchExecuted={searchExecuted}
       />
       <DisplayHistory
         kanji={kanji}

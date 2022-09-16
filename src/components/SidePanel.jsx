@@ -48,6 +48,7 @@ const FilterModal = (props) => {
         setGrammar,
         searchExecuted,
         setSearchExecuted,
+        currentElement
     } = props
 
     const handleClick = (key, filterSetter) => {
@@ -57,7 +58,7 @@ const FilterModal = (props) => {
     }
 
     return (
-        <div id="wordsListFilterModal" className={openFilter ? "open" : ""}>
+        <div id="wordsListFilterModal" className={openFilter ? (searchExecuted || currentElement ? "open" : "open expanded") : (searchExecuted || currentElement ? "" : "expanded")}>
             <div>
                 {Object.values(dictionnary.pluralClasses).map((value, key) => (
                     <span key={key} onClick={() => handleClick(key, setGrammar)} className={grammar === key ? "selected clickable" : "clickable"}>{value}</span>
@@ -79,6 +80,8 @@ const FilterModal = (props) => {
 
 const ListHeader = (props) => {
     const {
+        openFilter,
+        setOpenFilter,
         imgPath,
         collection,
         setCollection,
@@ -91,6 +94,7 @@ const ListHeader = (props) => {
         toggleTraining,
         searchExecuted,
         setSearchExecuted,
+        currentElement,
     } = props
 
     const [openTrainingModal, setOpenTrainingModal] = useState(false)
@@ -99,13 +103,12 @@ const ListHeader = (props) => {
         setOpenFilter(false)
     }
 
-    const [openFilter, setOpenFilter] = useState(false)
     useEffect(() => {
         if (filterIndication) {
             setOpenTrainingModal(false)
             setOpenFilter(true)
         }
-    }, [filterIndication])
+    }, [filterIndication, setOpenFilter])
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter)
         setOpenTrainingModal(false)
@@ -200,6 +203,7 @@ const ListHeader = (props) => {
                 setGrammar={setGrammar}
                 searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
+                currentElement={currentElement}
             />
         </div>
     )
@@ -303,6 +307,7 @@ const SidePanel = (props) => {
 
     const [searchCopy, setSearchCopy] = useState(search)
 
+    const [openFilter, setOpenFilter] = useState(false)
 
     const toggle = () => {
         setOpen(!open)
@@ -353,9 +358,8 @@ const SidePanel = (props) => {
         changeCurrentWordById(id)
     }
 
-
     return (
-        <div id="sidePanel" className={open ? "open" : ""}>
+        <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
             <div id="wordsListSearchContainer">
                 {
                     currentElement !== null &&
@@ -383,6 +387,8 @@ const SidePanel = (props) => {
                 </div>
             </div>
             <ListHeader
+                openFilter={openFilter}
+                setOpenFilter={setOpenFilter}
                 imgPath={imgPath}
                 open={open}
                 toggle={toggle}
@@ -399,6 +405,7 @@ const SidePanel = (props) => {
                 toggleTraining={toggleTraining}
                 searchExecuted={searchExecuted}
                 setSearchExecuted={setSearchExecuted}
+                currentElement={currentElement}
             />
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span>Kanji</span>

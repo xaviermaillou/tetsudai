@@ -10,7 +10,8 @@ const SideBar = (props) => {
         setOpenHistory,
         kanji,
         word,
-        loadingMainDisplay
+        loadingMainDisplay,
+        searchExecuted,
     } = props
 
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ const SideBar = (props) => {
 
     return (
         <div id="sideBar">
-            <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />
+            {searchExecuted && <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />}
             <div onClick={reloadPage} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
                 <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
