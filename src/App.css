@@ -1291,6 +1291,7 @@ input:placeholder-shown {
     left: 0vw;
     width: 100vw;
     background: none !important;
+    transition-duration: 0.6s;
   }
   #wordsListSearchContainer {
     padding-left: 0px;
