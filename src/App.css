@@ -245,7 +245,9 @@ input:placeholder-shown {
 }
 #kanjiDisplayKanji, #wordDisplayWord {
   font-size: calc(60px + 15vh);
-  font-family: source-han-sans-simplified-c;
+}
+#kanjiDisplayKanji {
+  font-weight: 300;
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
   font-size: 24px;
@@ -318,7 +320,6 @@ input:placeholder-shown {
   font-size: 20px;
   margin: 32px 16.25% 0 16.25%;
   overflow-y: scroll;
-  font-family: source-han-sans-simplified-c;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
