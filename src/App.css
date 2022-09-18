@@ -656,7 +656,7 @@ input:placeholder-shown {
   position: fixed;
   left: 100vw;
   justify-content: flex-start;
-  padding: 6px 24px 6px 24px;
+  padding: 6px 24px;
 }
 #sidePanel.open {
   left: 0vw;
@@ -732,12 +732,18 @@ input:placeholder-shown {
 #filtersTip {
   z-index: 1600;
   opacity: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 #filtersTip.open {
   opacity: 1;
 }
 #filtersTip div {
   width: 100%;
+}
+#filtersTip div.expanded {
+  padding-right: 5px;
+  width: 360px;
 }
 #wordsListFilters img {
   height: 14px
@@ -824,7 +830,8 @@ input:placeholder-shown {
 #wordsListFilterModal {
   z-index: 1500;
   top: 112px;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  justify-content: flex-end;
 }
 #wordsListTrainingModal {
   z-index: 1600;
@@ -833,12 +840,12 @@ input:placeholder-shown {
   overflow: hidden;
 }
 #wordsListFilterModal div {
+  height: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: fit-content;
   align-items: flex-end;
-  padding: 0px 5px;
+  overflow-y: scroll;
 }
 #wordsListFilterModal div span {
   text-align: right;
@@ -854,7 +861,8 @@ input:placeholder-shown {
   height: calc(100vh - 155px);
 }
 #wordsListFilterModal span {
-  margin-bottom: 20px;
+  padding-right: 5px;
+  padding-bottom: 20px;
   opacity: 0.5;
 }
 #wordsListTrainingModalScreenshot {
@@ -891,7 +899,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 #wordsListFilterModal div span:nth-child(1) {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
   opacity: 0.75;
 }
 
@@ -1131,9 +1139,9 @@ input:placeholder-shown {
     flex-direction: column;
   }
   #logoContainer.full {
-    height: auto;
+    height: 100vh;
     left: 26px;
-    bottom: 20px;
+    bottom: 0px;
     opacity: 0.1;
   }
   #logoContainer img {
@@ -1176,14 +1184,14 @@ input:placeholder-shown {
     opacity: 0.75;
     position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
   }
   #introText.lowOpacity {
     opacity: 0;
   }
   #introText p {
-    width: 30%;
+    width: 40%;
+    margin-left: 242px;
   }
   #wordDisplayWord, #wordDisplayWordJukujikun {
     height: 38vh;
@@ -1288,17 +1296,18 @@ input:placeholder-shown {
     left: 67vw;
   }
   #sidePanel.expanded {
-    left: 0vw;
-    width: 100vw;
+    left: 212px;
+    width: calc(100vw - 212px);
+    padding-top: calc(50vh - 50px);
     background: none !important;
-    transition-duration: 0.6s;
+    transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
   }
   #wordsListSearchContainer {
     padding-left: 0px;
   }
   #wordsListFilterModal.expanded {
-    justify-content: center;
-    padding-right: 240px;
+    height: calc(50vh - 25px);
+    padding-right: 24px;
   }
   #wordsListFilterModal.expanded div {
     flex-grow: 0;
@@ -1422,7 +1431,7 @@ input:placeholder-shown {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-#App.light #wordsListFilterModal div {
+#App.light #wordsListFilterModal div span {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -1581,7 +1590,7 @@ input:placeholder-shown {
   background-color: rgba(199, 192, 181, 0.05);
 }
 
-#App.dark #wordsListFilterModal div {
+#App.dark #wordsListFilterModal div span {
   border-right: 1px solid rgba(199, 192, 181, 0.1);
 }
 

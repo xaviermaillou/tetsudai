@@ -182,7 +182,11 @@ const ListHeader = (props) => {
                     <div></div>
                 </div>
                 <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    <div className="tooltip">Sélectionnez les catégories dont vous voulez voir le contenu</div>
+                    {searchExecuted ?
+                        <div className="tooltip">Filtrer par classe grammaticale, niveau JLPT ou collection</div>
+                        :
+                        <div className="tooltip expanded">Sélectionner une catégorie pour en afficher le contenu</div>
+                    }
                 </div>
             </div>
             <TrainingModal

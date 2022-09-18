@@ -353,10 +353,10 @@ function App() {
 
   return (
     <div id="App" className={imgPath}>
-      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "lowOpacity" : ""}>
+      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "" : "lowOpacity"}>
         <p>
-          Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue,
-          en lui fournissant un dictionnaire focalisé sur l'interconnexion du vocabulaire et des kanji.
+          Tetsudai a pour vocation d'assister l'étudiant en <b>japonais</b> durant son apprentissage de la langue,
+          en lui fournissant un <b>dictionnaire</b> focalisé sur l'<b>interconnexion</b> du vocabulaire et des kanji.
         </p>
       </div>}
       <MainDisplay
