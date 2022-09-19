@@ -862,6 +862,7 @@ input:placeholder-shown {
   height: calc(100vh - 155px);
 }
 #wordsListFilterModal span {
+  padding-left: 20px;
   padding-right: 5px;
   padding-bottom: 20px;
   opacity: 0.5;
