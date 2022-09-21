@@ -121,7 +121,7 @@ const Sentence = (props) => {
 
     const handleWordClick = (e, id) => {
         e.stopPropagation()
-        changeCurrentWordById(id)
+        if (referenceId !== id) changeCurrentWordById(id)
     }
 
     return (
