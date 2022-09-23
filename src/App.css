@@ -242,7 +242,7 @@ input:placeholder-shown {
   display: flex;
   align-items: flex-end;
 }
-#kanjiDisplayKanji, #wordDisplayWord {
+#kanjiDisplayKanji {
   font-size: calc(60px + 15vh);
 }
 #kanjiDisplayKanji {
@@ -303,7 +303,7 @@ input:placeholder-shown {
 .wordDisplayWordElementYomi {
   font-size: calc(15px - (1px - 1vw));
   line-height: calc(15px - (1px - 1vw));
-  height: calc(20px + 5vh);
+  height: 20px;
 }
 .wordDisplayWordElementYomi.jukujikun div {
   font-size: 16px;
@@ -341,6 +341,9 @@ input:placeholder-shown {
 .kanjiDetailsSubSection {
   margin-top: 20px;
   text-align: left;
+}
+#onyomiExamples {
+  padding-bottom: 70px;
 }
 .yomiContainer {
   align-items: flex-start;
@@ -1246,6 +1249,9 @@ input:placeholder-shown {
   }
   .kanjiDetailsSubSection:nth-child(1) {
     margin-top: 0px;
+  }
+  #onyomiExamples {
+    padding-bottom: 40px;
   }
   #kunyomiExamples, #onyomiExamples, #jukujikunExamples {
     display: flex;
