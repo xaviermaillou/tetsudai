@@ -140,14 +140,14 @@ const MainDisplay = (props) => {
                                     ))}
                                 </div>
                                 <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
-                                {word.common ?
+                                {/* word.common ?
                                     <div>✓ usage courant</div>
                                     :
                                     word.obscure ?
                                         <div>⚠ très peu utilisé</div>
                                         :
                                         <div>usage peu fréquent</div>
-                                }
+                                 */}
                             </div>
                             <WordDetails
                                 imgPath={imgPath}
