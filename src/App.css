@@ -260,9 +260,6 @@ input:placeholder-shown {
   justify-content: center;
   width: 80%;
 }
-#wordDisplayInfo {
-  flex-direction: column;
-}
 #kanjiDisplayInfo div, #wordDisplayInfo div {
   margin: 0px 10px;
   white-space: nowrap;
@@ -325,6 +322,7 @@ input:placeholder-shown {
 }
 #kanjiDetails.expanded, #wordDetails.expanded {
   height: 50vh;
+  margin-top: 51px;
 }
 #wordDetailsSentences {
   margin-top: 20px;
