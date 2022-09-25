@@ -303,7 +303,6 @@ input:placeholder-shown {
 .wordDisplayWordElementYomi {
   font-size: calc(15px - (1px - 1vw));
   line-height: calc(15px - (1px - 1vw));
-  height: 20px;
 }
 .wordDisplayWordElementYomi.jukujikun div {
   font-size: 16px;
