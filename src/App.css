@@ -819,7 +819,6 @@ input:placeholder-shown {
   opacity: 0;
   position: absolute;
   left: 0px;
-  overflow-y: hidden;
   height: 0vh;
   width: 100%;
   display: flex;
@@ -827,7 +826,6 @@ input:placeholder-shown {
 #wordsListFilterModal {
   z-index: 1500;
   top: 112px;
-  overflow-y: hidden;
   justify-content: flex-end;
 }
 #wordsListTrainingModal {
@@ -842,10 +840,6 @@ input:placeholder-shown {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  overflow-y: scroll;
-}
-#wordsListFilterModal div span {
-  text-align: right;
 }
 #wordsListFilterModal.open {
   opacity: 1;
@@ -862,6 +856,7 @@ input:placeholder-shown {
   padding-right: 5px;
   padding-bottom: 20px;
   opacity: 0.5;
+  text-align: right;
 }
 #wordsListTrainingModalScreenshot {
   display: flex;
@@ -1309,6 +1304,7 @@ input:placeholder-shown {
   #wordsListFilterModal.expanded div {
     flex-grow: 0;
     margin-left: 40px;
+    overflow-y: scroll;
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
