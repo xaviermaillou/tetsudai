@@ -278,7 +278,7 @@ input:placeholder-shown {
 #wordDisplayWordElements {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-wrap: nowrap;
   overflow-x: scroll;
   margin-bottom: 24px;
@@ -822,6 +822,7 @@ input:placeholder-shown {
   height: 0vh;
   width: 100%;
   display: flex;
+  overflow-y: hidden;
 }
 #wordsListFilterModal {
   z-index: 1500;

@@ -66,7 +66,7 @@ const FilterModal = (props) => {
             </div>
             <div>
                 {Object.values(dictionnary.levels).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value ? value : 'Hors niveau'}</span>
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value ? `JLPT ${value}` : 'Hors niveau'}</span>
                 ))}
             </div>
             <div>

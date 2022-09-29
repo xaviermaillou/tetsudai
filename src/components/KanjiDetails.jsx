@@ -70,7 +70,7 @@ const KanjiDetails = (props) => {
                             />
                         </div>
                     ))}
-                    {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">Ce kanji n'esr composé d'aucun autre kanji</span>}
+                    {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">Ce kanji n'est composé d'aucun autre kanji</span>}
                 </div>
                 <div className="kanjiDetailsSubSection" >
                     <p className="kanasReadingsHeader">KANJI QUI L'UTILISENT</p>
