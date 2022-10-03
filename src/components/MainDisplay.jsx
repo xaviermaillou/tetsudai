@@ -60,7 +60,7 @@ const MainDisplay = (props) => {
                             <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                             <p id="kanjiDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{kanji.strokes} traits</div>
-                                <div>{kanji.level ? `JLPT ${kanji.level}` : 'Hors JLPT'}</div>
+                                <div>{kanji.level ? kanji.level : 'Hors JLPT'}</div>
                             </p>
                             <KanjiDetails
                                 imgPath={imgPath}
@@ -139,7 +139,7 @@ const MainDisplay = (props) => {
                                         </span>
                                     ))}
                                 </div>
-                                <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
+                                <div>{word.level ? word.level : 'Hors JLPT'}</div>
                                 {/* word.common ?
                                     <div>✓ usage courant</div>
                                     :

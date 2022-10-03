@@ -155,7 +155,7 @@ const ListHeader = (props) => {
                             {(level !==0 && grammar !==0) && <span>|</span>}
                             {level !==0 &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.levels[level] ? dictionnary.levels[level] : 'Hors JLPT'}</span>&nbsp;&nbsp;
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel(0)} />
                                 </span>
                             }
