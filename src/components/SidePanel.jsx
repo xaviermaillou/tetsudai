@@ -66,7 +66,7 @@ const FilterModal = (props) => {
             </div>
             <div>
                 {Object.values(dictionnary.levels).map((value, key) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value ? `JLPT ${value}` : 'Hors niveau'}</span>
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={level === key ? "selected clickable" : "clickable"}>{value ? value : 'Hors niveau'}</span>
                 ))}
             </div>
             <div>
@@ -145,13 +145,6 @@ const ListHeader = (props) => {
                 >
                     <div></div>
                     {(collection || level || grammar) ? 
-                        /* <span>
-                            {grammar || level ? "Eléments" : ""}
-                            {level ? ` de niveau ${levels[level]}` : ""}
-                            {grammar ? ` étant / contenant un${[6, 9, 10].includes(grammar) ? 'e' : ''} ${classes[grammar].toLowerCase()}` : ""}
-                            {!grammar && !level ? "Tous les éléments" : ""}
-                            {collection !== 0 && ` dans "${collections[collection]}"`}
-                        </span> */
                         <div id="filtersIndicatorRow">
                             {grammar !==0 &&
                                 <span className="filtersIndicatorsElement">
