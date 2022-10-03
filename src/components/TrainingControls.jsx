@@ -42,7 +42,7 @@ const TrainingControls = (props) => {
                 <div id="trainingFilters" onClick={checkTrainingFilters} className="clickable">
                     <div>
                         <span>Classe</span>
-                        <span>Niveau</span>
+                        <span>JLPT</span>
                         <span>Collection</span>
                     </div>
                     <div>
