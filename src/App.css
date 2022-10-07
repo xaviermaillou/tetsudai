@@ -413,7 +413,7 @@ input:placeholder-shown {
 .kanjiElementKana div {
   display: flex;
   justify-content: flex-end;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .kanjiElementKana span {
   white-space: nowrap;
