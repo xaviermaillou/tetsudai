@@ -24,6 +24,7 @@ const MainDisplay = (props) => {
         changeCurrentWordById,
         sentences,
         loading,
+        loadingSentences,
         setOpenedHistory,
         pinnedSentence,
         setPinnedSentence,
@@ -145,6 +146,7 @@ const MainDisplay = (props) => {
                                 imgPath={imgPath}
                                 elements={word.elements.filter((element) => element.details)}
                                 sentences={sentences}
+                                loadingSentences={loadingSentences}
                                 allDisplayed={allDisplayed}
                                 expanded={!!!trainingMode}
                                 changeCurrentKanjiById={(id) => handleKanjiChange(id)}

@@ -4,7 +4,7 @@ export const dictionnary = {
     adverb: "adverbe",
     affirmative: "+",
     negative: "-",
-    baseWord: "NOM ASSOCIÉ",
+    baseWord: "NOM UTILISÉ",
     suruForm: "FORME VERBALE AVEC SURU",
     stem: "FORME EN STEM",
     verbForm: "FORME VERBALE",

@@ -327,6 +327,7 @@ input:placeholder-shown {
 #wordDetailsSentences {
   margin-top: 20px;
   padding-bottom: 70px;
+  position: relative;
 }
 #wordDetailsKanjis, #wordDetailsSentences {
   width: 100%;

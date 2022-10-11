@@ -2,6 +2,7 @@ import { useState } from "react"
 import { dictionnary } from "../lib/dictionnary"
 import KanjiElement from "./subComponents/KanjiElement"
 import WordElement from "./subComponents/WordElement"
+import Loading from "./visualElements/Loading"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
@@ -151,6 +152,7 @@ export const WordDetails = (props) => {
         imgPath,
         elements,
         sentences,
+        loadingSentences,
         allDisplayed,
         expanded,
         changeCurrentKanjiById,
@@ -212,18 +214,28 @@ export const WordDetails = (props) => {
             </div>
             <div id="wordDetailsSentences">
                 <p className="kanasReadingsHeader">PHRASES</p>
-                {sentences?.map((sentence, i) => (
-                    <Sentence
-                        imgPath={imgPath}
-                        sentence={sentence}
-                        changeCurrentWordById={changeCurrentWordById}
-                        referenceId={referenceId}
-                        pinnedSentence={pinnedSentence}
-                        setPinnedSentence={setPinnedSentence}
-                        key={i}
-                    />
-                ))}
-                {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
+                {loadingSentences ?
+                    <div className="loadingAnimationContainer">
+                        <Loading
+                            isLoading={loadingSentences}
+                        />
+                    </div>
+                    :
+                    <div>
+                        {sentences?.map((sentence, i) => (
+                            <Sentence
+                                imgPath={imgPath}
+                                sentence={sentence}
+                                changeCurrentWordById={changeCurrentWordById}
+                                referenceId={referenceId}
+                                pinnedSentence={pinnedSentence}
+                                setPinnedSentence={setPinnedSentence}
+                                key={i}
+                            />
+                        ))}
+                        {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
+                    </div>
+                }
             </div>
         </div>
     )

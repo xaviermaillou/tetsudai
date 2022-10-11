@@ -75,6 +75,7 @@ function App() {
   const [loadingKanjiList, setLoadingKanjiList] = useState(false)
   const [loadingVocabularyList, setLoadingVocabularyList] = useState(false)
   const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
+  const [loadingSentences, setLoadingSentences] = useState(false)
 
   // Stops lists loading animations
   // Triggered with kanjisList and vocabularyList
@@ -148,6 +149,7 @@ function App() {
 
   // Fetch sentences
   const fetchSentencesData = useCallback(async () => {
+    setLoadingSentences(true)
     const resultSentences = await fetchSentences(word.id)
     setSentencesList(resultSentences)
   }, [word])
@@ -202,6 +204,12 @@ function App() {
   useEffect(() => {
     setLoadingMainDisplay(false)
   }, [kanji, word])
+
+  // Stops sentences loading animation
+  // Triggered with sentencesList
+  useEffect(() => {
+    setLoadingSentences(false)
+  }, [sentencesList])
 
   // Training mode
 
@@ -374,6 +382,7 @@ function App() {
         pinnedSentence={pinnedSentence}
         setPinnedSentence={setPinnedSentence}
         loading={loadingMainDisplay}
+        loadingSentences={loadingSentences}
 
         // Height
         compressed={menuOpen}
