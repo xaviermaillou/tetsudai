@@ -281,7 +281,7 @@ input:placeholder-shown {
   align-items: flex-start;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 #wordDisplayWordKanjiOnly {
   display: flex;
@@ -298,6 +298,8 @@ input:placeholder-shown {
   white-space: nowrap;
 }
 .wordDisplayWordElementYomi {
+  margin: 0px 12px;
+  padding-top: 6px;
   font-size: calc(15px - (1px - 1vw));
   line-height: calc(15px - (1px - 1vw));
 }
@@ -1399,11 +1401,8 @@ input:placeholder-shown {
   color: gray;
 }
 
-#App.light .wordDisplayWordElementYomi {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-}
-#App.light .wordDisplayWordElement:first-child .wordDisplayWordElementYomi {
-  border-left: none;
+#App.light .wordDisplayWordElementYomi.highlighted {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 #App.light .yomiContainer.extendable {
@@ -1567,11 +1566,8 @@ input:placeholder-shown {
   color: rgba(199, 192, 181, 0.75)
 }
 
-#App.dark .wordDisplayWordElementYomi {
-  border-left: 1px solid rgba(199, 192, 181, 0.2);
-}
-#App.dark .wordDisplayWordElement:first-child .wordDisplayWordElementYomi {
-  border-left: none;
+#App.dark .wordDisplayWordElementYomi.highlighted {
+  border-top: 1px solid rgba(199, 192, 181, 0.3);
 }
 
 #App.dark .yomiContainer.extendable {

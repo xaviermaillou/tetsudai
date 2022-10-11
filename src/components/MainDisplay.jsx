@@ -115,10 +115,10 @@ const MainDisplay = (props) => {
                                                 :
                                                 element.kanji || element.kana}</span>
                                             {element.kanji ?
-                                                <span className="wordDisplayWordElementYomi">{element.option === "rareKanji" ? element.kanji : element.kana || 'muet'}</span>
+                                                <span className="wordDisplayWordElementYomi highlighted">{element.option === "rareKanji" ? element.kanji : element.kana || 'muet'}</span>
                                                 :
                                                 element.option === "politeElement" ?
-                                                    <span className="wordDisplayWordElementYomi">politesse</span>
+                                                    <span className="wordDisplayWordElementYomi highlighted">politesse</span>
                                                     :
                                                     <span className="wordDisplayWordElementYomi"></span>
                                             }
