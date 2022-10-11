@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { dictionnary } from "../lib/dictionnary"
+import { localDictionnary } from "../lib/dictionnary"
+import { dictionnary } from "tetsudai-common"
 import KanjiElement from "./subComponents/KanjiElement"
 import WordElement from "./subComponents/WordElement"
 import Loading from "./visualElements/Loading"
@@ -53,7 +54,7 @@ const VerbInflexionLine = (props) => {
     return (
         <div className="wordDetailsInflexionsMode">
             <span className="wordDetailsInflexionsVerb">{inflexion['polite']?.['main']}{inflexion['polite']?.['ending']}</span>
-            <span className="wordDetailsInflexionsIndicator">{dictionnary[tenseName]} {dictionnary[modeName]}</span>
+            <span className="wordDetailsInflexionsIndicator">{localDictionnary[tenseName]} {localDictionnary[modeName]}</span>
             <span className="wordDetailsInflexionsVerb">{inflexion['neutral']?.['main']}{inflexion['neutral']?.['ending']}</span>
         </div>
     )
@@ -160,6 +161,8 @@ export const WordDetails = (props) => {
         pinnedSentence,
         setPinnedSentence,
         referenceId,
+        originLanguage,
+        originLanguageWord,
         precisions,
         relatedWords,
     } = props
@@ -169,6 +172,12 @@ export const WordDetails = (props) => {
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
             <div id="wordDetailsKanjis">
+                {originLanguage &&
+                    <div id="wordLanguage">
+                        <span>{dictionnary.languages[originLanguage]}</span>
+                        <span>{originLanguageWord}</span>
+                    </div>
+                }
                 {precisions && 
                     <div id="wordPrecisions">
                         <p id="wordPrecisionsText">
@@ -195,7 +204,7 @@ export const WordDetails = (props) => {
                     {relatedWords &&
                         Object.entries(relatedWords).map(([key, value], i) => (
                             <>
-                                {value.length > 0 && <p className="relatedWordsSubtitle">{dictionnary[key]}</p>}
+                                {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[key]}</p>}
                                 {value.length > 0 && value.map((relatedWord) => {
                                     hasRelatedContent = true
                                     return (

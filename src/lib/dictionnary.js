@@ -1,4 +1,4 @@
-export const dictionnary = {
+export const localDictionnary = {
     nonPast: "présent",
     past: "passé",
     adverb: "adverbe",

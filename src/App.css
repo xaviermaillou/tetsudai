@@ -424,11 +424,18 @@ input:placeholder-shown {
 .kanjiElementTranslation {
   opacity: 0.5;
 }
-#wordPrecisions, #relatedKanji {
+#wordLanguage {
+  display: flex;
+}
+#wordLanguage span:nth-child(2) {
+  opacity: 0.5;
+  margin-left: 6px;
+}
+#wordLanguage, #wordPrecisions, #relatedKanji {
   margin-bottom: 24px;
   padding-bottom: 24px;
 }
-#wordPrecisions, #relatedWords {
+#wordLanguage, #wordPrecisions, #relatedWords {
   font-size: 16px;
   white-space: pre-wrap;
 }

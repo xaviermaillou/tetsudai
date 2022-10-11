@@ -154,6 +154,8 @@ const MainDisplay = (props) => {
                                 pinnedSentence={pinnedSentence}
                                 setPinnedSentence={setPinnedSentence}
                                 referenceId={word.id}
+                                originLanguage={word.originLanguage}
+                                originLanguageWord={word.originLanguageWord}
                                 precisions={word.precisions}
                                 relatedWords={word.relatedWords}
                             />
