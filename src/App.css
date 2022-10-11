@@ -1398,6 +1398,13 @@ input:placeholder-shown {
   color: gray;
 }
 
+#App.light .wordDisplayWordElementYomi {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+#App.light .wordDisplayWordElement:first-child .wordDisplayWordElementYomi {
+  border-left: none;
+}
+
 #App.light .yomiContainer.extendable {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -1557,6 +1564,13 @@ input:placeholder-shown {
 #App.dark .wordDisplayWordElement span,
 #App.dark .wordDisplayWordElementYomi span {
   color: rgba(199, 192, 181, 0.75)
+}
+
+#App.dark .wordDisplayWordElementYomi {
+  border-left: 1px solid rgba(199, 192, 181, 0.2);
+}
+#App.dark .wordDisplayWordElement:first-child .wordDisplayWordElementYomi {
+  border-left: none;
 }
 
 #App.dark .yomiContainer.extendable {
