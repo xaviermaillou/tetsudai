@@ -426,12 +426,13 @@ input:placeholder-shown {
 }
 #wordLanguage {
   display: flex;
+  padding-bottom: 24px;
 }
 #wordLanguage span:nth-child(2) {
   opacity: 0.5;
   margin-left: 6px;
 }
-#wordLanguage, #wordPrecisions, #relatedKanji {
+#wordPrecisions, #relatedKanji {
   margin-bottom: 24px;
   padding-bottom: 24px;
 }
