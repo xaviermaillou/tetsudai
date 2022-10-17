@@ -331,11 +331,12 @@ const SidePanel = (props) => {
     useEffect(() => {
         if (searchExecuted
             && !loadingVocabularyList
+            && kanjis.length > 0
             && vocabulary.length === 0
         ) {
             setDisplayKanjis(true)
-        } else setDisplayKanjis(false)
-    }, [searchExecuted, loadingVocabularyList, vocabulary])
+        }
+    }, [searchExecuted, loadingVocabularyList, kanjis, vocabulary])
 
     if (kanjis.length >= kanjiListOffset + 100) {
         const kanjiContainer = document.getElementById('kanjisList')
