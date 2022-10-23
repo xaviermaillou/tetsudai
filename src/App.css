@@ -241,12 +241,22 @@ input:placeholder-shown {
   height: 38vh;
   display: flex;
   align-items: flex-end;
-}
-#kanjiDisplayKanji {
   font-size: calc(60px + 15vh);
-}
-#kanjiDisplayKanji {
   font-weight: 300;
+}
+#kanjiDisplayKanjiGhostLeft, #kanjiDisplayKanjiGhostRight {
+  position: absolute;
+  font-size: calc(30px + 7.5vh);
+  top: calc(35vh - calc(30px + 7.5vh));
+  opacity: 0.25;
+}
+#kanjiDisplayKanjiGhostLeft {
+  font-family: cursive;
+  left: 16.25%;
+}
+#kanjiDisplayKanjiGhostRight {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  right: 16.25%;
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
   font-size: 24px;
@@ -854,12 +864,12 @@ input:placeholder-shown {
   flex-direction: column;
   align-items: flex-end;
   overflow-y: scroll;
+  padding-bottom: 100px;
 }
 #wordsListFilterModal.open {
   opacity: 1;
   height: calc(100vh - 205px);
   padding-top: 15px;
-  padding-bottom: 100px;
 }
 #wordsListTrainingModal.open {
   opacity: 1;

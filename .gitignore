@@ -1,4 +1,4 @@
 .firebase
 node_modules
 build
-/src/config.json
+src/config.json

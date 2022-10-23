@@ -315,6 +315,7 @@ const SidePanel = (props) => {
         setSearchTimer(setTimeout(() => {
             setSearch(search)
             setSearchExecuted(true)
+            setOpenFilter(false)
         }, 500))
     }
     const handleSearch = (search) => {

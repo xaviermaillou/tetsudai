@@ -50,7 +50,7 @@ const MainDisplay = (props) => {
         setOpenedHistory(false)
         changeCurrentWordById(id)
     }
-
+console.log(kanji)
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
@@ -58,6 +58,8 @@ const MainDisplay = (props) => {
                     (kanji ?
                         <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
                             <p id="kanjiDisplayKanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
+                            <p id="kanjiDisplayKanjiGhostLeft" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
+                            <p id="kanjiDisplayKanjiGhostRight" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                             <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
                             <p id="kanjiDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{kanji.strokes} traits</div>

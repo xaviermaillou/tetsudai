@@ -5,8 +5,7 @@ import WordElement from "./subComponents/WordElement"
 const Yomi = (props) => {
     const {
         imgPath,
-        example,
-        wordExamples,
+        reading,
         // changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
@@ -14,16 +13,16 @@ const Yomi = (props) => {
     const [expanded, setExpanded] = useState(false)
     useEffect(() => {
         setExpanded(false)
-    }, [example])
+    }, [reading])
 
     return (
-        <div className={wordExamples.length > 0 ? "yomiContainer extendable" : "yomiContainer"}>
-            <div onClick={() => setExpanded(!expanded)} className={wordExamples.length > 0 ? "yomiHeader clickable" : "yomiHeader"}>
+        <div className={reading.examples.length > 0 ? "yomiContainer extendable" : "yomiContainer"}>
+            <div onClick={() => setExpanded(!expanded)} className={reading.examples.length > 0 ? "yomiHeader clickable" : "yomiHeader"}>
                 <span>
-                    {example.kana}
+                    {reading.kana}
                 </span>
                 <div>
-                    {wordExamples.length > 0 && (
+                    {reading.examples.length > 0 && (
                         expanded ?
                             <img className="yomiExpander open" src={`/img/${imgPath}/less.png`} alt="hide readings" />
                             :
@@ -32,11 +31,11 @@ const Yomi = (props) => {
                 </div>
             </div>
             <div className="yomiExamples">
-                {wordExamples.map((wordExample, i) => (
+                {reading.examples.map((wordExample, i) => (
                     <div className={expanded ? "kanjiReadingsWordElement open" : "kanjiReadingsWordElement"}>
                         <WordElement
                             word={wordExample}
-                            kanaToHighlight={example.kana}
+                            kanaToHighlight={reading.kana}
                             changeCurrentWordById={changeCurrentWordById}
                         />
                     </div>
@@ -89,12 +88,10 @@ const KanjiDetails = (props) => {
             <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection" id="kunyomiExamples">
                     <p className="kanasReadingsHeader">KUNYOMI</p>
-                    {kanji.readings.kunyomi?.map((e, i) => (
+                    {kanji.readings.kunyomi?.map((reading, i) => (
                         <Yomi
                             imgPath={imgPath}
-                            example={e}
-                            wordExamples={kanji.vocabulary.filter((word) => word.elements
-                                .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
+                            reading={reading}
                             changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
@@ -104,12 +101,10 @@ const KanjiDetails = (props) => {
                 </div>
                 <div className="kanjiDetailsSubSection" id="onyomiExamples">
                     <p className="kanasReadingsHeader">ONYOMI</p>
-                    {kanji.readings.onyomi?.map((e, i) => (
+                    {kanji.readings.onyomi?.map((reading, i) => (
                         <Yomi
                             imgPath={imgPath}
-                            example={e}
-                            wordExamples={kanji.vocabulary.filter((word) => word.elements
-                                .find((element) => (element.kana === e.kana && element.kanji === kanji.kanji)))}
+                            reading={reading}
                             changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
