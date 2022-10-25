@@ -50,7 +50,7 @@ const MainDisplay = (props) => {
         setOpenedHistory(false)
         changeCurrentWordById(id)
     }
-console.log(kanji)
+
     return (
         <div id="mainDisplayContainer">
             <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>

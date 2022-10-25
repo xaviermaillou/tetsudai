@@ -342,7 +342,7 @@ const SidePanel = (props) => {
     if (kanjis.length >= kanjiListOffset + 100) {
         const kanjiContainer = document.getElementById('kanjisList')
         kanjiContainer?.addEventListener('scroll', () => {
-            if ((kanjiContainer.offsetHeight + kanjiContainer.scrollTop) >= kanjiContainer.scrollHeight) {
+            if ((kanjiContainer.offsetHeight + kanjiContainer.scrollTop + 100) >= kanjiContainer.scrollHeight) {
                 setKanjisListOffset(kanjiListOffset + 100)
             }
         })
@@ -350,7 +350,8 @@ const SidePanel = (props) => {
     if (vocabulary.length >= vocabularyListOffset + 100) {
         const vocabularyContainer = document.getElementById('vocabularyList')
         vocabularyContainer?.addEventListener('scroll', () => {
-            if ((vocabularyContainer.offsetHeight + vocabularyContainer.scrollTop) >= vocabularyContainer.scrollHeight) {
+            if ((vocabularyContainer.offsetHeight + vocabularyContainer.scrollTop + 100) >= vocabularyContainer.scrollHeight) {
+                console.log('triggered')
                 setVocabularyListOffset(vocabularyListOffset + 100)
             }
         })
