@@ -3,7 +3,7 @@ import KanjiDetails from "./KanjiDetails"
 import { WordDetails, WordDetailsPlus } from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { dictionnary } from "tetsudai-common"
-import Loading from "./visualElements/Loading"
+import Loading from "../visualComponents/Loading"
 
 const MainDisplay = (props) => {
     const {

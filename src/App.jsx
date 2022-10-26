@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from 'react'
 import { useCookies } from 'react-cookie'
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
-import MainDisplay from './components/MainDisplay'
-import SidePanel from './components/SidePanel'
+import MainDisplay from './components/mainDisplay/MainDisplay'
+import SidePanel from './components/sidePanel/SidePanel'
 import SideBar from './components/SideBar'
 import {
   fetchKanjiList,

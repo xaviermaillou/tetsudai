@@ -362,7 +362,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 .yomiHeader {
-  margin: 5px 0px;
+  margin: 10px 0px 0px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1278,6 +1278,9 @@ input:placeholder-shown {
   }
   #kunyomiExamples .wordElementTranslation, #onyomiExamples .wordElementTranslation , #jukujikunExamples .wordElementTranslation{
     text-align: left;
+  }
+  #kunyomiExamples .tooltip, #onyomiExamples .tooltip {
+    margin-top: 10px;
   }
   #jukujikunExamples .wordElementJukujikun {
     align-items: flex-end;

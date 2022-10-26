@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { localDictionnary } from "../lib/dictionnary"
+import { localDictionnary } from "../../lib/dictionnary"
 import { dictionnary } from "tetsudai-common"
-import KanjiElement from "./subComponents/KanjiElement"
-import WordElement from "./subComponents/WordElement"
-import Loading from "./visualElements/Loading"
+import KanjiElement from "../subComponents/KanjiElement"
+import WordElement from "../subComponents/WordElement"
+import Loading from "../visualComponents/Loading"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
