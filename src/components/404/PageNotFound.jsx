@@ -18,7 +18,7 @@ const PageNotFound = () => {
                 <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
             </div>
-            <div id="introText">
+            <div id="pageNotFound">
                 <img
                     id="pageNotFoundBackToHome"
                     className="clickable"
