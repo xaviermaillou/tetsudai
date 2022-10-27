@@ -247,6 +247,8 @@ input:placeholder-shown {
   position: absolute;
   font-size: calc(30px + 7.5vh);
   top: calc(35vh - calc(30px + 7.5vh));
+}
+#kanjiDisplayKanjiGhostLeft.selected, #kanjiDisplayKanjiGhostRight.selected {
   opacity: 0.25;
 }
 #kanjiDisplayKanjiGhostLeft {
