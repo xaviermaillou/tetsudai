@@ -202,16 +202,16 @@ export const WordDetails = (props) => {
                 <div id="relatedWords">
                     <p className="kanasReadingsHeader">MOTS ASSOCIÉS</p>
                     {relatedWords &&
-                        Object.entries(relatedWords).map(([key, value], i) => (
+                        Object.entries(relatedWords).map(([key, value]) => (
                             <>
                                 {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[key]}</p>}
-                                {value.length > 0 && value.map((relatedWord) => {
+                                {value.length > 0 && value.map((relatedWord, i) => {
                                     hasRelatedContent = true
                                     return (
                                         <WordElement
                                             word={relatedWord}
                                             changeCurrentWordById={changeCurrentWordById}
-                                            key={i}
+                                            key={key + i}
                                         />
                                     )
                                 })}
