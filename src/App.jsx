@@ -56,14 +56,12 @@ function App() {
   const [word, setWord] = useState(null)
 
   const changeCurrentKanjiById = useCallback(async (id) => {
-    setLoadingMainDisplay(true)
-    const result = await fetchKanji(id)
+    const result = await fetchKanji(id, setLoadingMainDisplay)
     setWord(null)
     setKanji(result)
   }, [])
   const changeCurrentWordById = useCallback(async (id) => {
-    setLoadingMainDisplay(true)
-    const result = await fetchWord(id)
+    const result = await fetchWord(id, setLoadingMainDisplay)
     setKanji(null)
     setWord(result)
   }, [])
@@ -79,25 +77,15 @@ function App() {
   const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
   const [loadingSentences, setLoadingSentences] = useState(false)
 
-  // Stops lists loading animations
-  // Triggered with kanjisList and vocabularyList
-  useEffect(() => {
-    setLoadingKanjiList(false)
-  }, [kanjisList])
-  useEffect(() => {
-    setLoadingVocabularyList(false)
-  }, [vocabularyList])
-
   // Fetch data callback
   const fetchData = useCallback(async () => {
-    setLoadingKanjiList(true)
-    setLoadingVocabularyList(true)
     const resultKanji = await fetchKanjiList(
       level,
       grammar,
       collection,
       search,
-      0
+      0,
+      setLoadingKanjiList
     )
     setKanjisList(resultKanji)
     const resultVocabulary = await fetchVocabularyList(
@@ -105,7 +93,8 @@ function App() {
       grammar,
       collection,
       search,
-      0
+      0,
+      setLoadingVocabularyList
     )
     setVocabularyList(resultVocabulary)
   }, [
@@ -151,8 +140,7 @@ function App() {
 
   // Fetch sentences
   const fetchSentencesData = useCallback(async () => {
-    setLoadingSentences(true)
-    const resultSentences = await fetchSentences(word.id)
+    const resultSentences = await fetchSentences(word.id, setLoadingSentences)
     setSentencesList(resultSentences)
   }, [word])
 
@@ -200,18 +188,6 @@ function App() {
 
   // Pinned sentence
   const [pinnedSentence, setPinnedSentence] = useState()
-
-  // Stops main display loading animations
-  // Triggered with kanji and word
-  useEffect(() => {
-    setLoadingMainDisplay(false)
-  }, [kanji, word])
-
-  // Stops sentences loading animation
-  // Triggered with sentencesList
-  useEffect(() => {
-    setLoadingSentences(false)
-  }, [sentencesList])
 
   // Training mode
 

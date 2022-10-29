@@ -1,28 +1,38 @@
 import axios from 'axios'
 import config from './config.json'
 
-export const fetchKanjiList = async (level, grammar, collection, search, offset) => {
+export const fetchKanjiList = async (level, grammar, collection, search, offset, setLoading) => {
+    setLoading(true)
     const result = await axios.get(`${config.REQUEST_URL}/kanjiList/${offset}/${level}/${grammar}/${collection}/${search}`)
+    setLoading(false)
     return result.data
 }
 
-export const fetchVocabularyList = async (level, grammar, collection, search, offset) => {
+export const fetchVocabularyList = async (level, grammar, collection, search, offset, setLoading) => {
+    setLoading(true)
     const result = await axios.get(`${config.REQUEST_URL}/vocabularyList/${offset}/${level}/${grammar}/${collection}/${search}`)
+    setLoading(false)
     return result.data
 }
 
-export const fetchSentences = async (id) => {
+export const fetchSentences = async (id, setLoading) => {
+    setLoading(true)
     const result = await axios.get(`${config.REQUEST_URL}/sentences/${id}`)
+    setLoading(false)
     return result.data
 }
 
-export const fetchKanji = async (id) => {
+export const fetchKanji = async (id, setLoading) => {
+    setLoading(true)
     const result = await axios.get(`${config.REQUEST_URL}/kanji/${id}`)
+    setLoading(false)
     return result.data
 }
 
-export const fetchWord = async (id) => {
+export const fetchWord = async (id, setLoading) => {
+    setLoading(true)
     const result = await axios.get(`${config.REQUEST_URL}/word/${id}`)
+    setLoading(false)
     return result.data
 }
 
