@@ -78,7 +78,7 @@ function App() {
   const [loadingSentences, setLoadingSentences] = useState(false)
 
   // Fetch data callback
-  const fetchData = useCallback(async () => {
+  const fetchKanjiAndSetState = useCallback(async () => {
     const resultKanji = await fetchKanjiList(
       level,
       grammar,
@@ -88,6 +88,13 @@ function App() {
       setLoadingKanjiList
     )
     setKanjisList(resultKanji)
+  }, [
+    level,
+    grammar,
+    collection,
+    search
+  ])
+  const fetchVocabularyAndSetState = useCallback(async () => {
     const resultVocabulary = await fetchVocabularyList(
       level,
       grammar,
@@ -105,7 +112,7 @@ function App() {
   ])
 
   // Fetch more data callbacks
-  const fetchMoreKanji = useCallback(async () => {
+  const fetchMoreKanjiAndSetState = useCallback(async () => {
     const resultKanji = await fetchKanjiList(
       level,
       grammar,
@@ -121,7 +128,7 @@ function App() {
     search,
     kanjiListOffset
   ])
-  const fetchMoreVocabulary = useCallback(async () => {
+  const fetchMoreVocabularyAndSetState = useCallback(async () => {
     const resultVocabulary = await fetchVocabularyList(
       level,
       grammar,
@@ -145,22 +152,26 @@ function App() {
   }, [word])
 
   useEffect(() => {
-    if (searchExecuted) fetchData()
+    if (searchExecuted) {
+      fetchKanjiAndSetState()
+      fetchVocabularyAndSetState()
+    }
   }, [
     searchExecuted,
-    fetchData,
     level,
     grammar,
     collection,
-    search
+    search,
+    fetchKanjiAndSetState,
+    fetchVocabularyAndSetState
   ])
 
   useEffect(() => {
-    if (kanjiListOffset > 0) fetchMoreKanji()
-    if (vocabularyListOffset > 0) fetchMoreVocabulary()
+    if (kanjiListOffset > 0) fetchMoreKanjiAndSetState()
+    if (vocabularyListOffset > 0) fetchMoreVocabularyAndSetState()
   }, [
-    fetchMoreKanji,
-    fetchMoreVocabulary,
+    fetchMoreKanjiAndSetState,
+    fetchMoreVocabularyAndSetState,
     kanjiListOffset,
     vocabularyListOffset
   ])
