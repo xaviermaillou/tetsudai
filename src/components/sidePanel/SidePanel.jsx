@@ -92,7 +92,6 @@ const SidePanel = (props) => {
         const vocabularyContainer = document.getElementById('vocabularyList')
         vocabularyContainer?.addEventListener('scroll', () => {
             if ((vocabularyContainer.offsetHeight + vocabularyContainer.scrollTop + 100) >= vocabularyContainer.scrollHeight) {
-                console.log('triggered')
                 setVocabularyListOffset(vocabularyListOffset + 100)
             }
         })
