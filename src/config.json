@@ -1,3 +1,4 @@
 {
-    "REQUEST_URL": "https://tetsudai.org/api"
+    "DEV_REQUEST_URL": "http://localhost:8000",
+    "PROD_REQUEST_URL": "https://tetsudai.org/api"
 }
