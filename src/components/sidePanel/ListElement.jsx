@@ -1,16 +1,14 @@
 const ListElement = (props) => {
     const {
-        id,
-        currentElement,
+        isSelected,
         importance,
         child
     } = props
 
     return (
-        <div className={importance ? `importance${importance} kanjisListElementContainer`: "kanjisListElementContainer"} >
+        <div className={importance ? `importance${importance} listElementContainer`: "listElementContainer"} >
             <div 
-                className={(currentElement && currentElement.kanji && currentElement.id === id) ?
-                    "kanjisListElement selected" : "kanjisListElement"}
+                className={isSelected ? "listElement selected" : "listElement"}
             >
                 {child}
             </div>

@@ -175,8 +175,7 @@ const SidePanel = (props) => {
                 "hidden closed wordsListList"}>
                 {kanjis.map((item, i) => (
                     <ListElement
-                        id={item.id}
-                        currentElement={currentElement}
+                        isSelected={currentElement && currentElement.kanji && currentElement.id === item.id}
                         importance={item.importance}
                         child={
                             <KanjiElement
@@ -211,8 +210,7 @@ const SidePanel = (props) => {
                 "hidden closed wordsListList"}>
                 {vocabulary.map((item, i) => (
                     <ListElement
-                        id={item.id}
-                        currentElement={currentElement}
+                        isSelected={currentElement && currentElement.completeWord && currentElement.id === item.id}
                         importance={item.importance}
                         child={
                             <WordElement

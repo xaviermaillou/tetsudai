@@ -982,24 +982,15 @@ input:placeholder-shown {
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
-.kanjisListElementContainer {
+.listElementContainer {
   height: 54px;
   overflow: hidden;
   flex-shrink: 0;
   order: 3;
 }
-.kanjisListElement {
+.listElement {
   padding: 0px 20px;
-}
-.vocabularyListElementContainer {
-  height: 54px;
-  overflow: hidden;
-  flex-shrink: 0;
-  order: 5;
-}
-.vocabularyListElement {
   height: 100%;
-  padding: 0px 20px;
 }
 .wordElementRegularJapanese, .wordElementJukujikun {
   display: flex;
@@ -1501,11 +1492,7 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-#App.light .kanjisListElement.selected {
-  border-left: 5px solid rgba(0, 0, 0, 0.15);
-}
-
-#App.light .vocabularyListElement.selected {
+#App.light .listElement.selected {
   border-left: 5px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -1521,10 +1508,7 @@ input:placeholder-shown {
   border-bottom: 1px solid lightgray;
 }
 
-#App.light .kanjisListElementContainer {
-  border-bottom: 1px solid rgba(255, 183, 197, 0.5);
-}
-#App.light .vocabularyListElementContainer {
+#App.light .listElementContainer {
   border-bottom: 1px solid rgba(255, 183, 197, 0.5);
 }
 
@@ -1666,11 +1650,7 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(199, 192, 181, 0.25);
 }
 
-#App.dark .kanjisListElement.selected {
-  border-left: 5px solid rgba(199, 192, 181, 0.25);
-}
-
-#App.dark .vocabularyListElement.selected {
+#App.dark .listElement.selected {
   border-left: 5px solid rgba(199, 192, 181, 0.25);
 }
 
@@ -1686,10 +1666,7 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(199, 192, 181, 0.1);
 }
 
-#App.dark .kanjisListElementContainer {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
-}
-#App.dark .vocabularyListElementContainer {
+#App.dark .listElementContainer {
   border-bottom: 1px solid rgba(199, 192, 181, 0.2);
 }
 
