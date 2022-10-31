@@ -32,7 +32,7 @@ function App() {
   const [kanjiListOffset, setKanjisListOffset] = useState(0)
   const [vocabularyList, setVocabularyList] = useState([])
   const [vocabularyListOffset, setVocabularyListOffset] = useState(0)
-console.log(vocabularyListOffset)
+
   // Complementary data
   const [sentencesList, setSentencesList] = useState([])
 
