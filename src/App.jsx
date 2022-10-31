@@ -103,7 +103,10 @@ function App() {
       0,
       setLoadingVocabularyList
     )
-    setVocabularyList(resultVocabulary)
+    setVocabularyList(resultVocabulary.results)
+    if (resultVocabulary.sentence) setPinnedSentence({
+      elements: resultVocabulary.sentence
+    })
   }, [
     level,
     grammar,
@@ -138,7 +141,7 @@ function App() {
       vocabularyListOffset,
       setLoadingVocabularyList
     )
-    setVocabularyList((arr) => [ ...arr, ...resultVocabulary ])
+    setVocabularyList((arr) => [ ...arr, ...resultVocabulary.results ])
   }, [
     level,
     grammar,
