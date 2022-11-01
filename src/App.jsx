@@ -104,9 +104,16 @@ function App() {
       setLoadingVocabularyList
     )
     setVocabularyList(resultVocabulary.results)
-    if (resultVocabulary.sentence) setPinnedSentence({
-      elements: resultVocabulary.sentence
-    })
+    if (resultVocabulary.sentence && (window.innerWidth > window.innerHeight)) {
+      setSearchIsSentence(true)
+      setStoredSearchSentence({
+        elements: resultVocabulary.sentence
+      })
+    }
+    else {
+      setSearchIsSentence(false)
+      setStoredSearchSentence(undefined)
+    }
   }, [
     level,
     grammar,
@@ -211,6 +218,8 @@ function App() {
 
   // Pinned sentence
   const [pinnedSentence, setPinnedSentence] = useState()
+  const [searchIsSentence, setSearchIsSentence] = useState(false)
+  const [storedSearchSentence, setStoredSearchSentence] = useState()
 
   // Training mode
 
@@ -462,6 +471,9 @@ function App() {
         search={search}
         setSearch={setSearch}
         filterIndication={filterIndication}
+        searchIsSentence={searchIsSentence}
+        setPinnedSentence={setPinnedSentence}
+        storedSearchSentence={storedSearchSentence}
         
         // Training mode
         trainingMode={trainingMode}

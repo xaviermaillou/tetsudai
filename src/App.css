@@ -805,14 +805,19 @@ input:placeholder-shown {
   position: relative;
   padding-left: 32px;
 }
-#wordsListOpener {
+#wordsListOpener, #searchSentencePin {
   z-index: 2200;
   height: 20px;
   opacity: 0.5;
-  transform: rotate(-90deg);
   position: absolute;
   top: 24px;
+}
+#wordsListOpener {
   left: -64px;
+  transform: rotate(-90deg);
+}
+#searchSentencePin {
+  left: -24px;
 }
 #wordsListOpener.open {
   transform: rotate(90deg);
@@ -1346,6 +1351,9 @@ input:placeholder-shown {
   }
   #wordsListOpener.open {
     left: -32px;
+  }
+  #wordsListOpener.offset {
+    left: -64px;
   }
 
   #displayHistoryContainer {

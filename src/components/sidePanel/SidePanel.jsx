@@ -35,6 +35,9 @@ const SidePanel = (props) => {
         vocabularyListOffset,
         setVocabularyListOffset,
         setOpenedHistory,
+        searchIsSentence,
+        setPinnedSentence,
+        storedSearchSentence,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
@@ -49,6 +52,10 @@ const SidePanel = (props) => {
 
     const toggle = () => {
         setOpen(!open)
+    }
+
+    const pinSearchSentence = () => {
+        setPinnedSentence(storedSearchSentence)
     }
 
     const [searchTimer, setSearchTimer] = useState(undefined)
@@ -110,15 +117,24 @@ const SidePanel = (props) => {
     return (
         <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
             <div id="wordsListSearchContainer">
-                {
-                    currentElement !== null &&
+                {currentElement !== null &&
                     <img
                         id="wordsListOpener"
-                        className={open ? "open clickable" : "clickable"}
+                        className={open ? (searchIsSentence ? "offset open clickable" : "open clickable") : "clickable"}
                         onClick={toggle}
                         src={`/img/${imgPath}/up.png`}
                         alt="see all words"
-                    />}
+                    />
+                }
+                {(searchIsSentence && open) &&
+                    <img
+                        id="searchSentencePin"
+                        className="clickable"
+                        onClick={pinSearchSentence}
+                        src={`/img/${imgPath}/pin.png`}
+                        alt="pin search sentence"
+                    />
+                }
                 <div id="wordsListSearch">
                     {search ?
                         <img className="close clickable" onClick={() => handleSearch("")} src={`/img/${imgPath}/close.png`} alt="erase search" />

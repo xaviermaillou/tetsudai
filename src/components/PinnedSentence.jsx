@@ -18,7 +18,7 @@ const PinnedSentence = (props) => {
                 <img
                     onClick={() => setPinnedSentence(null)}
                     className="clickable"
-                    src={`/img/${imgPath}/unpin.png`}
+                    src={`/img/${imgPath}/close.png`}
                     alt="unpin sentence"
                 />
             </div>}
