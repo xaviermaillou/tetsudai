@@ -27,10 +27,10 @@ const PinnedSentence = (props) => {
                     <div 
                         onClick={() => handleWordClick(element.id)} 
                         className={word?.id === element.id ? 
-                            "pinnedSentenceElement highlighted"
+                            `pinnedSentenceElement importance${element.importance} highlighted`
                             :
                             element.id ? 
-                                "pinnedSentenceElement clickable"
+                                `pinnedSentenceElement importance${element.importance} clickable`
                                 :
                                 "pinnedSentenceElement"
                         }

@@ -24,6 +24,11 @@ export const fetchSentences = async (id, setLoading) => {
     return result.data
 }
 
+export const fetchSentenceData = async (sentence) => {
+    const result = await axios.post(`${API_URL}/sentence`, sentence)
+    return result.data
+}
+
 export const fetchKanji = async (id, setLoading) => {
     setLoading(true)
     const result = await axios.get(`${API_URL}/kanji/${id}`)

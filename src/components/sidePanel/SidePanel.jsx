@@ -36,7 +36,7 @@ const SidePanel = (props) => {
         setVocabularyListOffset,
         setOpenedHistory,
         searchIsSentence,
-        setPinnedSentence,
+        fetchSentence,
         storedSearchSentence,
     } = props
 
@@ -55,7 +55,7 @@ const SidePanel = (props) => {
     }
 
     const pinSearchSentence = () => {
-        setPinnedSentence(storedSearchSentence)
+        fetchSentence(storedSearchSentence)
     }
 
     const [searchTimer, setSearchTimer] = useState(undefined)

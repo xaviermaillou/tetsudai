@@ -27,7 +27,7 @@ const MainDisplay = (props) => {
         loadingSentences,
         setOpenedHistory,
         pinnedSentence,
-        setPinnedSentence,
+        fetchSentence,
         endingReason,
     } = props
 
@@ -154,7 +154,7 @@ const MainDisplay = (props) => {
                                 changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                                 changeCurrentWordById={(id) => handleWordChange(id)}
                                 pinnedSentence={pinnedSentence}
-                                setPinnedSentence={setPinnedSentence}
+                                fetchSentence={fetchSentence}
                                 referenceId={word.id}
                                 originLanguage={word.originLanguage}
                                 originLanguageWord={word.originLanguageWord}

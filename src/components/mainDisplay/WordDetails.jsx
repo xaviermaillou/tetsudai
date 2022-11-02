@@ -118,7 +118,7 @@ const Sentence = (props) => {
         changeCurrentWordById,
         referenceId,
         pinnedSentence,
-        setPinnedSentence,
+        fetchSentence,
     } = props
 
     const handleWordClick = (e, id) => {
@@ -130,7 +130,7 @@ const Sentence = (props) => {
         <div className="sentencesElement">
             <div className="sentence">
                 <img
-                    onClick={() => setPinnedSentence(sentence)}
+                    onClick={() => fetchSentence(sentence)}
                     className={pinnedSentence?.id === sentence.id ? "sentencePin highlighted" : "sentencePin clickable"}
                     src={`/img/${imgPath}/pin.png`}
                     alt="unpin sentence"
@@ -159,7 +159,7 @@ export const WordDetails = (props) => {
         changeCurrentKanjiById,
         changeCurrentWordById,
         pinnedSentence,
-        setPinnedSentence,
+        fetchSentence,
         referenceId,
         originLanguage,
         originLanguageWord,
@@ -238,7 +238,7 @@ export const WordDetails = (props) => {
                                 changeCurrentWordById={changeCurrentWordById}
                                 referenceId={referenceId}
                                 pinnedSentence={pinnedSentence}
-                                setPinnedSentence={setPinnedSentence}
+                                fetchSentence={fetchSentence}
                                 key={i}
                             />
                         ))}

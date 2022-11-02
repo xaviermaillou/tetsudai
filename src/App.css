@@ -975,10 +975,10 @@ input:placeholder-shown {
 .wordsListList.hidden {
   opacity: 0;
 }
-.importance2 {
+.listElementContainer.importance2 {
   order: 1 !important;
 }
-.importance1 {
+.listElementContainer.importance1 {
   order: 2 !important;
 }
 #vocabularyList {
@@ -1135,8 +1135,17 @@ input:placeholder-shown {
   padding: 2.5px 0px;
 }
 .pinnedSentenceElement span {
-  opacity: 0.5;
   white-space: nowrap;
+  opacity: 0.5;
+}
+.pinnedSentenceElement.importance0 span {
+  opacity: 0.5;
+}
+.pinnedSentenceElement.importance1 span {
+  opacity: 0.75;
+}
+.pinnedSentenceElement.importance2 span {
+  opacity: 1;
 }
 
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
@@ -1241,10 +1250,10 @@ input:placeholder-shown {
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
     overflow: scroll;
-    padding-bottom: 40px;
   }
   #wordDetailsKanjis {
     padding-right: 20px;
+    padding-bottom: 70px;
   }
   #wordDetailsSentences {
     padding-left: 20px;
@@ -1440,8 +1449,13 @@ input:placeholder-shown {
 
 #App.light .sentencesElement .highlighted,
 #App.light .kanjiElementKana .highlighted,
-#App.light .wordElementRegularJapaneseMainCharacters.highlighted {
+#App.light .wordElementRegularJapaneseMainCharacters.highlighted,
+#App.light .pinnedSentenceElement.importance2 span {
   color: rgb(220, 121, 121);
+}
+
+#App.light .pinnedSentenceElement.importance2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 #App.light #relatedKanji, #App.light #wordPrecisions {
@@ -1504,10 +1518,10 @@ input:placeholder-shown {
   border-left: 5px solid rgba(0, 0, 0, 0.15);
 }
 
-#App.light .importance2 {
+#App.light .listElementContainer.importance2 {
   background-color: rgba(255, 183, 197, 0.2);
 }
-#App.light .importance1 {
+#App.light .listElementContainer.importance1 {
   background-color: rgba(255, 183, 197, 0.15);
 }
 
@@ -1598,8 +1612,13 @@ input:placeholder-shown {
 
 #App.dark .sentencesElement .highlighted,
 #App.dark .kanjiElementKana .highlighted,
-#App.dark .wordElementRegularJapaneseMainCharacters.highlighted {
+#App.dark .wordElementRegularJapaneseMainCharacters.highlighted,
+#App.dark .pinnedSentenceElement.importance2 span {
   color: rgb(220, 121, 121);
+}
+
+#App.dark .pinnedSentenceElement.importance2 {
+  border-bottom: 1px solid rgba(199, 192, 181, 0.3);
 }
 
 #App.dark #relatedKanji, #App.dark #wordPrecisions {
@@ -1662,10 +1681,10 @@ input:placeholder-shown {
   border-left: 5px solid rgba(199, 192, 181, 0.25);
 }
 
-#App.dark .importance2 {
+#App.dark .listElementContainer.importance2 {
   background-color: rgba(199, 192, 181, 0.1);
 }
-#App.dark .importance1 {
+#App.dark .listElementContainer.importance1 {
   background-color: rgba(199, 192, 181, 0.05);
 }
 

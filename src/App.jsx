@@ -11,6 +11,7 @@ import {
   fetchKanjiList,
   fetchVocabularyList,
   fetchSentences,
+  fetchSentenceData,
   fetchKanji,
   fetchWord,
   fetchKanjiTraining,
@@ -158,7 +159,7 @@ function App() {
   ])
 
   // Fetch sentences
-  const fetchSentencesData = useCallback(async () => {
+  const fetchWordSentences = useCallback(async () => {
     const resultSentences = await fetchSentences(word.id, setLoadingSentences)
     setSentencesList(resultSentences)
   }, [word])
@@ -196,8 +197,8 @@ function App() {
   ])
 
   useEffect(() => {
-    if (word) fetchSentencesData()
-  }, [fetchSentencesData, word])
+    if (word) fetchWordSentences()
+  }, [fetchWordSentences, word])
 
   // History handling
 
@@ -220,6 +221,12 @@ function App() {
   const [pinnedSentence, setPinnedSentence] = useState()
   const [searchIsSentence, setSearchIsSentence] = useState(false)
   const [storedSearchSentence, setStoredSearchSentence] = useState()
+
+  // Fetch sentence data
+  const fetchSentence = async (sentence) => {
+    const resultSentence = await fetchSentenceData(sentence)
+    setPinnedSentence(resultSentence)
+  }
 
   // Training mode
 
@@ -419,7 +426,7 @@ function App() {
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
         sentences={sentencesList}
         pinnedSentence={pinnedSentence}
-        setPinnedSentence={setPinnedSentence}
+        fetchSentence={fetchSentence}
         loading={loadingMainDisplay}
         loadingSentences={loadingSentences}
 
@@ -472,7 +479,7 @@ function App() {
         setSearch={setSearch}
         filterIndication={filterIndication}
         searchIsSentence={searchIsSentence}
-        setPinnedSentence={setPinnedSentence}
+        fetchSentence={fetchSentence}
         storedSearchSentence={storedSearchSentence}
         
         // Training mode
