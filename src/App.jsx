@@ -478,9 +478,6 @@ function App() {
         search={search}
         setSearch={setSearch}
         filterIndication={filterIndication}
-        searchIsSentence={searchIsSentence}
-        fetchSentence={fetchSentence}
-        storedSearchSentence={storedSearchSentence}
         
         // Training mode
         trainingMode={trainingMode}
@@ -519,6 +516,9 @@ function App() {
         pinnedSentence={pinnedSentence}
         setPinnedSentence={setPinnedSentence}
         imgPath={imgPath}
+        searchIsSentence={searchIsSentence}
+        fetchSentence={fetchSentence}
+        storedSearchSentence={storedSearchSentence}
       />
     </div>
   )

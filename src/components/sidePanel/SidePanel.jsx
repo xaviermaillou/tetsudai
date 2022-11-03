@@ -35,9 +35,6 @@ const SidePanel = (props) => {
         vocabularyListOffset,
         setVocabularyListOffset,
         setOpenedHistory,
-        searchIsSentence,
-        fetchSentence,
-        storedSearchSentence,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
@@ -52,10 +49,6 @@ const SidePanel = (props) => {
 
     const toggle = () => {
         setOpen(!open)
-    }
-
-    const pinSearchSentence = () => {
-        fetchSentence(storedSearchSentence)
     }
 
     const [searchTimer, setSearchTimer] = useState(undefined)
@@ -120,19 +113,10 @@ const SidePanel = (props) => {
                 {currentElement !== null &&
                     <img
                         id="wordsListOpener"
-                        className={open ? (searchIsSentence ? "offset open clickable" : "open clickable") : "clickable"}
+                        className={open ? "open clickable" : "clickable"}
                         onClick={toggle}
                         src={`/img/${imgPath}/up.png`}
                         alt="see all words"
-                    />
-                }
-                {(searchIsSentence && open) &&
-                    <img
-                        id="searchSentencePin"
-                        className="clickable"
-                        onClick={pinSearchSentence}
-                        src={`/img/${imgPath}/pin.png`}
-                        alt="pin search sentence"
                     />
                 }
                 <div id="wordsListSearch">

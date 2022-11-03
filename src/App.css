@@ -1105,9 +1105,10 @@ input:placeholder-shown {
 #pinnedSentenceContainer.offset {
   right: 33vw;
   width: 10.8875vw;
+  padding-right: 36px;
 }
 #pinnedSentenceHeader {
-  height: 140px;
+  height: 76px;
   width: 40px;
   display: flex;
   justify-content: center;
@@ -1116,17 +1117,24 @@ input:placeholder-shown {
 #pinnedSentenceHeader img {
   height: 20px;
   margin-bottom: 6px;
-  opacity: 0.25;
+  opacity: 0.5;
+}
+#pinnedSentenceHeader.open img {
+  transform: rotate(180deg);
 }
 #pinnedSentence {
-  height: calc(100vh - 170px);
+  height: calc(0vh - 0px);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   overflow-y: scroll;
-  padding: 30px 0px;
+  padding: 0px;
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+}
+#pinnedSentence.open {
+  height: calc(100vh - 100px);
+  padding: 30px 0px;
 }
 .pinnedSentenceElement {
   font-size: 32px;

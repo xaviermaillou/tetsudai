@@ -132,7 +132,7 @@ const Sentence = (props) => {
                 <img
                     onClick={() => fetchSentence(sentence)}
                     className={pinnedSentence?.id === sentence.id ? "sentencePin highlighted" : "sentencePin clickable"}
-                    src={`/img/${imgPath}/pin.png`}
+                    src={`/img/${imgPath}/plus.png`}
                     alt="unpin sentence"
                 />
                 <div>
