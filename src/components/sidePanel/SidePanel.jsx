@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react"
-import ListElement from "./ListElement"
 import ListHeader from "./ListHeader"
-import KanjiElement from "../subComponents/KanjiElement"
-import WordElement from "../subComponents/WordElement"
-import Loading from "../visualComponents/Loading"
+import SearchSentence from "./SearchSentence"
+import ListSearchResults from "./ListSearchResults"
 
 const SidePanel = (props) => {
     const {
@@ -23,6 +21,8 @@ const SidePanel = (props) => {
         setGrammar,
         search,
         setSearch,
+        searchCopy,
+        handleSearch,
         filterIndication,
         trainingMode,
         toggleTraining,
@@ -35,34 +35,19 @@ const SidePanel = (props) => {
         vocabularyListOffset,
         setVocabularyListOffset,
         setOpenedHistory,
+        pinnedSentence,
+        searchIsSentence,
+        openFilter,
+        setOpenFilter,
     } = props
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
-    const [displayWords] = useState(true)
 
     const [noKanji, setNoKanji] = useState(true)
     const [noWord, setNoWord] = useState(true)
 
-    const [searchCopy, setSearchCopy] = useState(search)
-
-    const [openFilter, setOpenFilter] = useState(false)
-
     const toggle = () => {
         setOpen(!open)
-    }
-
-    const [searchTimer, setSearchTimer] = useState(undefined)
-    const runSearchTimer = (search) => {
-        setSearchTimer(setTimeout(() => {
-            setSearch(search)
-            setSearchExecuted(true)
-            setOpenFilter(false)
-        }, 500))
-    }
-    const handleSearch = (search) => {
-        setSearchCopy(search)
-        clearTimeout(searchTimer)
-        runSearchTimer(search)
     }
 
     useEffect(() => {
@@ -106,6 +91,8 @@ const SidePanel = (props) => {
         setOpenedHistory(false)
         changeCurrentWordById(id)
     }
+
+    const [openSentence, setOpenSentence] = useState(false)
 
     return (
         <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
@@ -156,84 +143,32 @@ const SidePanel = (props) => {
                 setSearchExecuted={setSearchExecuted}
                 currentElement={currentElement}
             />
-            {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
-                <span>Kanji</span>
-                {displayKanjis ?
-                    <img src={`/img/${imgPath}/less.png`} alt="close kanji" />
-                    :
-                    <img src={`/img/${imgPath}/plus.png`} alt="open kanji" />
-                }
-            </span>}
-            <div id="kanjisList" className={searchExecuted ?
-                (
-                    displayKanjis ?
-                        "wordsListList"
-                        :
-                        "closed wordsListList"
-                )
-                :
-                "hidden closed wordsListList"}>
-                {kanjis.map((item, i) => (
-                    <ListElement
-                        isSelected={currentElement && currentElement.kanji && currentElement.id === item.id}
-                        importance={item.importance}
-                        child={
-                            <KanjiElement
-                                kanji={item}
-                                changeCurrentKanjiById={
-                                    (id) => {
-                                        handleKanjiChange(id)
-                                        if (window.innerWidth < window.innerHeight) setOpen(false)
-                                    }
-                                }
-                            />
-                        }
-                        key={i}
-                    />
-                ))}
-                <div className="loadingAnimationContainer">
-                    <Loading
-                        isLoading={loadingKanjiList}
-                    />
-                </div>
-                {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
-            </div>
-            <div id="vocabularyList" className={searchExecuted ?
-                ((displayWords) ?
-                    (displayKanjis ?
-                        "wordsListList"
-                        :
-                        "extended wordsListList")
-                    :
-                    "closed wordsListList")
-                :
-                "hidden closed wordsListList"}>
-                {vocabulary.map((item, i) => (
-                    <ListElement
-                        isSelected={currentElement && currentElement.completeWord && currentElement.id === item.id}
-                        importance={item.importance}
-                        child={
-                            <WordElement
-                                word={item}
-                                changeCurrentWordById={
-                                    (id) => {
-                                        handleWordChange(id)
-                                        if (window.innerWidth < window.innerHeight) setOpen(false)
-                                    }
-                                }
-                            />
-                        }
-                        key={i}
-                    />
-                ))}
-                <div className="loadingAnimationContainer">
-                    <Loading
-                        isLoading={loadingVocabularyList}
-                    />
-                </div>
-                {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
-            </div>
-            {false && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
+            <SearchSentence
+                openSentence={openSentence}
+                setOpenSentence={setOpenSentence}
+                word={(currentElement && currentElement.completeWord) ? currentElement : undefined}
+                changeCurrentWordById={changeCurrentWordById}
+                pinnedSentence={pinnedSentence}
+                searchIsSentence={searchIsSentence}
+                setOpenMenu={setOpen}
+            />
+            <ListSearchResults
+                searchExecuted={searchExecuted}
+                currentElement={currentElement}
+                kanjis={kanjis}
+                loadingKanjiList={loadingKanjiList}
+                noKanji={noKanji}
+                displayKanjis={displayKanjis}
+                setDisplayKanjis={setDisplayKanjis}
+                handleKanjiChange={handleKanjiChange}
+                vocabulary={vocabulary}
+                loadingVocabularyList={loadingVocabularyList}
+                noWord={noWord}
+                handleWordChange={handleWordChange}
+                setOpen={setOpen}
+                imgPath={imgPath}
+                openSentence={openSentence}
+            />
         </div>
     )
 }

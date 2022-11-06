@@ -397,12 +397,20 @@ input:placeholder-shown {
   justify-content: space-between;
   padding: 10px 0px;
 }
-.wordElementTranslation {
+.wordElementDetails {
   max-width: 75%;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.wordElementTranslation {
+  min-height: 19px;
+  width: 100%;
   opacity: 0.5;
-  white-space: normal;
+  white-space: nowrap;
   text-align: right;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
 }
 .wordElementTranslation, .kanasReadingsHeader {
   font-size: 16px;
@@ -686,7 +694,7 @@ input:placeholder-shown {
 #wordsListHeader {
   position: relative;
   z-index: 1200;
-  height: 120px;
+  min-height: 120px;
   padding-bottom: 10px;
 }
 #wordsListTrainerIcon, #wordsListFilterIcon {
@@ -928,8 +936,14 @@ input:placeholder-shown {
 
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
 
+#searchResultsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .listIndicator {
-  height: 30px;
+  min-height: 30px;
+  width: 100%;
   line-height: 30px;
   overflow-y: hidden;
   font-size: 14px;
@@ -1086,74 +1100,66 @@ input:placeholder-shown {
 
 /* ------------------------------------------------ PINNED SENTENCE ------------------------------------------------ */
 
-#pinnedSentenceContainer {
+#searchSentenceContainer {
   opacity: 0;
-  width: 16.25vw;
-  position: absolute;
-  top: 0px;
-  right: 0vw;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 48px;
-  
+  flex-direction: column;  
 }
-#pinnedSentenceContainer.open {
+#searchSentenceContainer.open {
   z-index: 1000;
   opacity: 1;
 }
-#pinnedSentenceContainer.offset {
-  right: 33vw;
-  width: 10.8875vw;
-  padding-right: 36px;
-}
-#pinnedSentenceHeader {
-  height: 76px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-#pinnedSentenceHeader img {
-  height: 20px;
-  margin-bottom: 6px;
-  opacity: 0.5;
-}
-#pinnedSentenceHeader.open img {
-  transform: rotate(180deg);
-}
-#pinnedSentence {
+#searchSentence {
   height: calc(0vh - 0px);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   overflow-y: scroll;
   padding: 0px;
   -webkit-mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
-#pinnedSentence.open {
-  height: calc(100vh - 100px);
+#searchSentence.open {
+  height: calc(90vh - 222px);
   padding: 30px 0px;
 }
-.pinnedSentenceElement {
-  font-size: 32px;
-  writing-mode: vertical-lr;
-  letter-spacing: 5px;
-  padding: 2.5px 0px;
+.sentenceElementContainer {
+  display: flex;
+  padding: 0px 20px;
 }
-.pinnedSentenceElement span {
+.sentenceElementUsedWord {
   white-space: nowrap;
   opacity: 0.5;
+  font-size: 34px;
+  writing-mode: vertical-lr;
+  letter-spacing: 10px;
+  margin-top: 10px;
 }
-.pinnedSentenceElement.importance0 span {
+.sentenceElementContainer.importance0 .sentenceElementUsedWord {
   opacity: 0.5;
 }
-.pinnedSentenceElement.importance1 span {
+.sentenceElementContainer.importance1 .sentenceElementUsedWord {
   opacity: 0.75;
 }
-.pinnedSentenceElement.importance2 span {
+.sentenceElementContainer.importance2 .sentenceElementUsedWord {
   opacity: 1;
+}
+.sentenceElement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.sentenceElementInfo {
+  height: 54px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sentenceElementInfo .wordElement {
+  width: 90%;
 }
 
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
@@ -1355,10 +1361,10 @@ input:placeholder-shown {
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
-    height: calc(50vh - 144px);
+    height: calc(50vh - 148px);
   }
   .wordsListList.extended {
-    height: calc(100vh - 288px);
+    height: calc(100vh - 296px);
   }
   #mainDisplay.compressed {
     width: 67%;
@@ -1395,6 +1401,10 @@ input:placeholder-shown {
   #trainingNextChoice img {
     margin-left: 0px;
     margin-right: 20px;
+  }
+  #searchSentence.open {
+    height: calc(100vh - 230px);
+    padding: 30px 0px;
   }
 }
 
@@ -1458,11 +1468,11 @@ input:placeholder-shown {
 #App.light .sentencesElement .highlighted,
 #App.light .kanjiElementKana .highlighted,
 #App.light .wordElementRegularJapaneseMainCharacters.highlighted,
-#App.light .pinnedSentenceElement.importance2 span {
+#App.light .sentenceElementContainer.importance2 .sentenceElementUsedWord {
   color: rgb(220, 121, 121);
 }
 
-#App.light .pinnedSentenceElement.importance2 {
+#App.light .sentenceElementContainer {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -1555,7 +1565,7 @@ input:placeholder-shown {
   #App.light .historyElement.selected {
       border-right: 5px solid rgba(0, 0, 0, 0.1);
   }
-  #App.light .pinnedSentenceElement.highlighted {
+  #App.light .sentenceElementContainer.highlighted {
     border-left: 2px solid rgba(0, 0, 0, 0.1);
   }
 }
@@ -1621,11 +1631,11 @@ input:placeholder-shown {
 #App.dark .sentencesElement .highlighted,
 #App.dark .kanjiElementKana .highlighted,
 #App.dark .wordElementRegularJapaneseMainCharacters.highlighted,
-#App.dark .pinnedSentenceElement.importance2 span {
+#App.dark .sentenceElementContainer.importance2 .sentenceElementUsedWord {
   color: rgb(220, 121, 121);
 }
 
-#App.dark .pinnedSentenceElement.importance2 {
+#App.dark .sentenceElementContainer {
   border-bottom: 1px solid rgba(199, 192, 181, 0.3);
 }
 
@@ -1718,7 +1728,7 @@ input:placeholder-shown {
   #App.dark .historyElement.selected {
       border-right: 5px solid rgba(199, 192, 181, 0.25);
   }
-  #App.dark .pinnedSentenceElement.highlighted {
+  #App.dark .sentenceElementContainer.highlighted {
     border-left: 2px solid rgba(199, 192, 181, 0.25);
   }
 }

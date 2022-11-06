@@ -1,5 +1,7 @@
+import { dictionnary } from "tetsudai-common"
+
 const WordElement = (props) => {
-    const { word, kanaToHighlight, changeCurrentWordById } = props
+    const { word, kanaToHighlight, changeCurrentWordById, grammar, verbPrecisions } = props
 
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
@@ -26,7 +28,7 @@ const WordElement = (props) => {
                     </div>
                     :
                     <div className="wordElementRegularJapanese">
-                        {word.elements.map((element, j) => (
+                        {word.elements?.map((element, j) => (
                             <div className={element.kana === kanaToHighlight ? "wordElementRegularJapaneseMainCharacters highlighted" : "wordElementRegularJapaneseMainCharacters"} key={j}>
                                 <div>{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</div>
                                 {element.kanji &&
@@ -38,8 +40,22 @@ const WordElement = (props) => {
                         ))}
                     </div>
                 }
-            <div className="wordElementTranslation">
-                {word?.translation}
+            <div className="wordElementDetails">
+                <div className="wordElementTranslation">
+                    {word?.translation}
+                </div>
+                {grammar && <div>
+                        {grammar.map((el, i) => (
+                            <span key={i}>
+                            {i > 0 && ', '}
+                            {el === 14 ?
+                                'verbe ' + dictionnary.verbGrammar[verbPrecisions?.grammar] + ' avec する'
+                                :
+                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + dictionnary.verbGrammar[verbPrecisions?.grammar] : '')
+                            }
+                        </span>
+                        ))}
+                    </div>}
             </div>
         </div>
     )

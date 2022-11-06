@@ -18,7 +18,6 @@ import {
   fetchVocabularyTraining,
 } from './request'
 import DisplayHistory from "./components/DisplayHistory"
-import PinnedSentence from "./components/PinnedSentence";
 
 function App() {
   // Theme
@@ -48,7 +47,24 @@ function App() {
   const [level, setLevel] = useState(0)
   const [grammar, setGrammar] = useState(0)
   const [search, setSearch] = useState("")
+  const [searchCopy, setSearchCopy] = useState(search)
   const [searchExecuted, setSearchExecuted] = useState(false)
+
+  const [openFilter, setOpenFilter] = useState(false)
+
+  const [searchTimer, setSearchTimer] = useState(undefined)
+    const runSearchTimer = (search) => {
+        setSearchTimer(setTimeout(() => {
+            setSearch(search)
+            setSearchExecuted(true)
+            setOpenFilter(false)
+        }, 500))
+    }
+    const handleSearch = (search) => {
+        setSearchCopy(search)
+        clearTimeout(searchTimer)
+        runSearchTimer(search)
+    }
 
   // Main display data
   const navigate = useNavigate()
@@ -105,15 +121,15 @@ function App() {
       setLoadingVocabularyList
     )
     setVocabularyList(resultVocabulary.results)
-    if (resultVocabulary.sentence && (window.innerWidth > window.innerHeight)) {
+    if (resultVocabulary.sentence) {
       setSearchIsSentence(true)
-      setStoredSearchSentence({
+      fetchSentence({
         elements: resultVocabulary.sentence
       })
     }
     else {
       setSearchIsSentence(false)
-      setStoredSearchSentence(undefined)
+      setPinnedSentence(undefined)
     }
   }, [
     level,
@@ -167,10 +183,10 @@ function App() {
   useEffect(() => {
     if (searchExecuted) {
       const kanjiContainer = document.getElementById('kanjisList')
-      kanjiContainer.scrollTop = 0
+      if (kanjiContainer) kanjiContainer.scrollTop = 0
       setKanjisListOffset(0)
       const vocabularyContainer = document.getElementById('vocabularyList')
-      vocabularyContainer.scrollTop = 0
+      if (vocabularyContainer) vocabularyContainer.scrollTop = 0
       setVocabularyListOffset(0)
       
       fetchKanjiAndSetState()
@@ -220,7 +236,6 @@ function App() {
   // Pinned sentence
   const [pinnedSentence, setPinnedSentence] = useState()
   const [searchIsSentence, setSearchIsSentence] = useState(false)
-  const [storedSearchSentence, setStoredSearchSentence] = useState()
 
   // Fetch sentence data
   const fetchSentence = async (sentence) => {
@@ -426,7 +441,8 @@ function App() {
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
         sentences={sentencesList}
         pinnedSentence={pinnedSentence}
-        fetchSentence={fetchSentence}
+        handleSearch={handleSearch}
+        setSearchExecuted={setSearchExecuted}
         loading={loadingMainDisplay}
         loadingSentences={loadingSentences}
 
@@ -461,6 +477,10 @@ function App() {
         vocabularyListOffset={vocabularyListOffset}
         setVocabularyListOffset={setVocabularyListOffset}
 
+        // Sentence
+        pinnedSentence={pinnedSentence}
+        searchIsSentence={searchIsSentence}
+
         // Current element
         currentElement={kanji || word}
 
@@ -477,7 +497,11 @@ function App() {
         setGrammar={setGrammar}
         search={search}
         setSearch={setSearch}
+        searchCopy={searchCopy}
+        handleSearch={handleSearch}
         filterIndication={filterIndication}
+        openFilter={openFilter}
+        setOpenFilter={setOpenFilter}
         
         // Training mode
         trainingMode={trainingMode}
@@ -508,17 +532,6 @@ function App() {
         setOpenedHistory={setOpenedHistory}
         changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
         changeCurrentWordById={(id) => navigate(`/word/${id}`)}
-      />
-      <PinnedSentence
-        offset={menuOpen}
-        word={word}
-        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
-        pinnedSentence={pinnedSentence}
-        setPinnedSentence={setPinnedSentence}
-        imgPath={imgPath}
-        searchIsSentence={searchIsSentence}
-        fetchSentence={fetchSentence}
-        storedSearchSentence={storedSearchSentence}
       />
     </div>
   )

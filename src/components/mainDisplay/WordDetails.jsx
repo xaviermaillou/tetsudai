@@ -118,26 +118,33 @@ const Sentence = (props) => {
         changeCurrentWordById,
         referenceId,
         pinnedSentence,
-        fetchSentence,
+        handleSearch,
+        setSearchExecuted,
     } = props
 
     const handleWordClick = (e, id) => {
         e.stopPropagation()
-        if (referenceId !== id) changeCurrentWordById(id)
+        if (id && referenceId !== id) changeCurrentWordById(id)
+    }
+
+    const handleSearchClick = () => {
+        const sentenceString = sentence.elements.map((element) => element.word).join("")
+        setSearchExecuted(true)
+        handleSearch(sentenceString)
     }
 
     return (
         <div className="sentencesElement">
             <div className="sentence">
                 <img
-                    onClick={() => fetchSentence(sentence)}
+                    onClick={handleSearchClick}
                     className={pinnedSentence?.id === sentence.id ? "sentencePin highlighted" : "sentencePin clickable"}
-                    src={`/img/${imgPath}/plus.png`}
+                    src={`/img/${imgPath}/search.png`}
                     alt="unpin sentence"
                 />
                 <div>
                     {sentence.elements.map((element, i) => (
-                        <span onClick={(e) => handleWordClick(e, element.id)} className={referenceId === element.id ? "highlighted" : "clickable"} key={i}>
+                        <span onClick={(e) => handleWordClick(e, element.id)} className={referenceId === element.id ? "highlighted" : (element.id ? "clickable" : "")} key={i}>
                             {element.word}
                         </span>
                     ))}
@@ -159,7 +166,8 @@ export const WordDetails = (props) => {
         changeCurrentKanjiById,
         changeCurrentWordById,
         pinnedSentence,
-        fetchSentence,
+        handleSearch,
+        setSearchExecuted,
         referenceId,
         originLanguage,
         originLanguageWord,
@@ -238,7 +246,8 @@ export const WordDetails = (props) => {
                                 changeCurrentWordById={changeCurrentWordById}
                                 referenceId={referenceId}
                                 pinnedSentence={pinnedSentence}
-                                fetchSentence={fetchSentence}
+                                handleSearch={handleSearch}
+                                setSearchExecuted={setSearchExecuted}
                                 key={i}
                             />
                         ))}
