@@ -253,11 +253,11 @@ input:placeholder-shown {
 }
 #kanjiDisplayKanjiGhostLeft {
   font-family: cursive;
-  left: 16.25%;
+  left: 8.125%;
 }
 #kanjiDisplayKanjiGhostRight {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  right: 16.25%;
+  right: 8.125%;
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
   font-size: 24px;
@@ -393,12 +393,12 @@ input:placeholder-shown {
 }
 .wordElement {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
 }
 .wordElementDetails {
-  max-width: 75%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1126,6 +1126,7 @@ input:placeholder-shown {
 }
 .sentenceElementContainer {
   display: flex;
+  max-width: 100%;
   padding: 0px 20px;
 }
 .sentenceElementUsedWord {
@@ -1146,20 +1147,18 @@ input:placeholder-shown {
   opacity: 1;
 }
 .sentenceElement {
-  width: 100%;
+  width: calc(100% - 40.5px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
   
 }
 .sentenceElementInfo {
   height: 54px;
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
-}
-.sentenceElementInfo .wordElement {
-  width: 90%;
 }
 
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
@@ -1235,6 +1234,12 @@ input:placeholder-shown {
   }
   #pageNotFound p {
     margin-left: 42px;
+  }
+  #kanjiDisplayKanjiGhostLeft {
+    left: 16.25%;
+  }
+  #kanjiDisplayKanjiGhostRight {
+    right: 16.25%;
   }
   #wordDisplayWord, #wordDisplayWordJukujikun {
     height: 38vh;
