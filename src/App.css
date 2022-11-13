@@ -324,10 +324,10 @@ input:placeholder-shown {
 /* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
 
 #kanjiDetails {
-  height: calc(100vh - 537px);
+  height: calc(100vh - 597px);
 }
 #wordDetails {
-  height: calc(100vh - 447px);
+  height: calc(100vh - 507px);
 }
 #kanjiDetails, #wordDetails {
   z-index: 900;
@@ -403,6 +403,7 @@ input:placeholder-shown {
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
+  overflow-x: hidden;
 }
 .wordElementDetails {
   display: flex;
@@ -585,8 +586,9 @@ input:placeholder-shown {
 #selectorAndControls {
   display: flex;
   flex-direction: column;
-  min-height: 130px;
-  padding-bottom: 20px;
+  height: 100px;
+  min-height: 100px;
+  margin-bottom: 90px;
   justify-content: space-between;
 }
 #selector {
@@ -1259,10 +1261,10 @@ input:placeholder-shown {
     font-size: 32px
   }
   #kanjiDetails {
-    height: calc(100vh - 547px);
+    height: calc(100vh - 537px);
   }
   #wordDetails {
-    height: calc(100vh - 507px);
+    height: calc(100vh - 497px);
   }
   #kanjiDetails, #wordDetails {
     font-size: 28px;
@@ -1327,6 +1329,9 @@ input:placeholder-shown {
   }
   .kanjiDetailsKanjiElements, .yomiContainer, .kanjiDetailsJukujikun {
     width: 92.5%;
+  }
+  #selectorAndControls {
+    margin-bottom: 20px;
   }
   .sentencesElement {
     padding-right: 0px;
