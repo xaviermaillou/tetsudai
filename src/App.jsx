@@ -252,7 +252,7 @@ function App() {
   // Menu handling (is here because needs training mode value)
 
   const [menuOpen, setMenuOpen] = useState(() => {
-    if (window.innerWidth > window.innerHeight) {
+    if (window.innerWidth > 961) {
       setTimeout(() => {
         setMenuOpen(true)
       }, 1000)

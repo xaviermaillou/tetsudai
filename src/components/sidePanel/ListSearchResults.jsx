@@ -50,7 +50,7 @@ const ListSearchResults = (props) => {
                                 changeCurrentKanjiById={
                                     (id) => {
                                         handleKanjiChange(id)
-                                        if (window.innerWidth < window.innerHeight) setOpen(false)
+                                        if (window.innerWidth < 961) setOpen(false)
                                     }
                                 }
                             />
@@ -82,7 +82,7 @@ const ListSearchResults = (props) => {
                                 changeCurrentWordById={
                                     (id) => {
                                         handleWordChange(id)
-                                        if (window.innerWidth < window.innerHeight) setOpen(false)
+                                        if (window.innerWidth < 961) setOpen(false)
                                     }
                                 }
                             />

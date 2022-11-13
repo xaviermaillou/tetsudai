@@ -18,7 +18,7 @@ const SearchSentence = (props) => {
 
     const handleWordClick = (id) => {
         if (id && word?.id !== id) changeCurrentWordById(id)
-        if (window.innerWidth < window.innerHeight) setOpenMenu(false)
+        if (window.innerWidth < 961) setOpenMenu(false)
     }
 
     return (
