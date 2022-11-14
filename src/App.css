@@ -238,7 +238,8 @@ input:placeholder-shown {
   opacity: 1;
 }
 #kanjiDisplayKanji {
-  height: 240px;
+  height: 220px;
+  min-height: 220px;
   display: flex;
   align-items: flex-end;
   font-size: calc(60px + 15vh);
