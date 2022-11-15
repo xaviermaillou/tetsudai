@@ -238,17 +238,17 @@ input:placeholder-shown {
   opacity: 1;
 }
 #kanjiDisplayKanji {
-  height: 220px;
-  min-height: 220px;
+  height: 200px;
+  min-height: 200px;
   display: flex;
   align-items: flex-end;
-  font-size: calc(60px + 15vh);
+  font-size: 200px;
   font-weight: 300;
 }
 #kanjiDisplayKanjiGhostLeft, #kanjiDisplayKanjiGhostRight {
   position: absolute;
-  font-size: calc(30px + 7.5vh);
-  top: calc(35vh - calc(30px + 7.5vh));
+  font-size: 100px;
+  top: 140px;
 }
 #kanjiDisplayKanjiGhostLeft.selected, #kanjiDisplayKanjiGhostRight.selected {
   opacity: 0.25;
@@ -282,8 +282,9 @@ input:placeholder-shown {
 #wordDisplayWord, #wordDisplayWordJukujikun {
   width: 100%;
   padding-top: 32px;
+  height: 150px;
   min-height: 150px;
-  font-size: calc(40px - (1px - 2vw));
+  font-size: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -598,7 +599,7 @@ input:placeholder-shown {
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
-  padding: 1vh 10px;
+  padding: 5px 10px;
 }
 #selector span {
   font-size: 20px;
@@ -1241,6 +1242,10 @@ input:placeholder-shown {
   #pageNotFound p {
     margin-left: 42px;
   }
+  #kanjiDisplayKanji {
+    height: 220px;
+    min-height: 220px;
+  }
   #kanjiDisplayKanjiGhostLeft {
     left: 16.25%;
   }
@@ -1248,6 +1253,7 @@ input:placeholder-shown {
     right: 16.25%;
   }
   #wordDisplayWord, #wordDisplayWordJukujikun {
+    height: 200px;
     min-height: 200px;
     padding-top: 0px;
     font-size: calc(40px - (1px - 5vw));
@@ -1346,7 +1352,7 @@ input:placeholder-shown {
   }
   #selector {
     justify-content: space-evenly;
-    padding: 1vh 0px;
+    padding: 5px 0px;
   }
   #controls {
     padding: 0vh 0px;
