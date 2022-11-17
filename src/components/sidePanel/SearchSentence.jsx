@@ -10,11 +10,16 @@ const SearchSentence = (props) => {
         pinnedSentence,
         searchIsSentence,
         setOpenMenu,
+        imgPath
     } = props
 
     useEffect(() => {
         setOpenSentence(!!searchIsSentence)
     }, [searchIsSentence, setOpenSentence])
+
+    const handleCloseClick = () => {
+        setOpenSentence(false)
+    }
 
     const handleWordClick = (id) => {
         if (id && word?.id !== id) changeCurrentWordById(id)
@@ -23,6 +28,11 @@ const SearchSentence = (props) => {
 
     return (
         <div id="searchSentenceContainer" className={openSentence ? "open" : ""}>
+            <div id="searchSentenceHeader">
+                <span></span>
+                <span className="tooltip">Phrase détectée</span>
+                <span onClick={handleCloseClick}><img className="clickable" src={`/img/${imgPath}/close.png`} alt="close sentence" /></span>
+            </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>
                 {pinnedSentence?.elements.map((element, i) => (
                     <SentenceElement

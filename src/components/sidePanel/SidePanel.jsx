@@ -151,6 +151,7 @@ const SidePanel = (props) => {
                 pinnedSentence={pinnedSentence}
                 searchIsSentence={searchIsSentence}
                 setOpenMenu={setOpen}
+                imgPath={imgPath}
             />
             <ListSearchResults
                 searchExecuted={searchExecuted}
