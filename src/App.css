@@ -1131,6 +1131,10 @@ input:placeholder-shown {
   padding: 0px 27px;
   display: flex;
   justify-content: space-between;
+  height: 0px;
+}
+#searchSentenceHeader.open {
+  height: 20px;
 }
 #searchSentenceHeader img {
   height: 10px;

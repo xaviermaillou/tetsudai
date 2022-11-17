@@ -28,7 +28,7 @@ const SearchSentence = (props) => {
 
     return (
         <div id="searchSentenceContainer" className={openSentence ? "open" : ""}>
-            <div id="searchSentenceHeader">
+            <div id="searchSentenceHeader" className={openSentence ? "open" : ""}>
                 <span></span>
                 <span className="tooltip">Phrase détectée</span>
                 <span onClick={handleCloseClick}><img className="clickable" src={`/img/${imgPath}/close.png`} alt="close sentence" /></span>
