@@ -272,6 +272,7 @@ input:placeholder-shown {
   display: flex;
   justify-content: center;
   width: 80%;
+  padding-bottom: 5px;
 }
 #kanjiDisplayInfo div, #wordDisplayInfo div {
   margin: 0px 10px;
@@ -326,16 +327,16 @@ input:placeholder-shown {
 /* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
 
 #kanjiDetails {
-  height: calc(100vh - 597px);
+  height: calc(100vh - 592px);
 }
 #wordDetails {
-  height: calc(100vh - 507px);
+  height: calc(100vh - 502px);
 }
 #kanjiDetails, #wordDetails {
   z-index: 900;
   width: 80%;
   font-size: 20px;
-  margin: 32px 16.25% 0 16.25%;
+  margin: 0px 16.25% 0 16.25%;
   overflow-y: scroll;
   padding-bottom: 60px;
   display: flex;
@@ -353,6 +354,10 @@ input:placeholder-shown {
 #wordDetailsKanjis, #wordDetailsSentences {
   width: 100%;
   text-align: left;
+  padding-top: 32px;
+}
+.kanjiDetailsSection:nth-child(1) {
+  padding-top: 32px;
 }
 .kanjiDetailsSection:nth-child(2) {
   padding-bottom: 70px;
@@ -512,7 +517,7 @@ input:placeholder-shown {
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  height: calc(50vh + 110px);
+  height: calc(50vh + 132px);
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -1269,10 +1274,10 @@ input:placeholder-shown {
     font-size: 32px
   }
   #kanjiDetails {
-    height: calc(100vh - 537px);
+    height: calc(100vh - 532px);
   }
   #wordDetails {
-    height: calc(100vh - 497px);
+    height: calc(100vh - 492px);
   }
   #kanjiDetails, #wordDetails {
     font-size: 28px;
@@ -1283,7 +1288,7 @@ input:placeholder-shown {
     height: auto;
   }
   #wordDetailsPlus.expanded {
-    height: calc(50vh + 50px);
+    height: calc(50vh + 72px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
@@ -1295,8 +1300,6 @@ input:placeholder-shown {
   }
   #wordDetailsSentences {
     padding-left: 20px;
-  }
-  #wordDetailsSentences {
     margin-top: 0px;
     text-align: right;
   }
@@ -1307,7 +1310,7 @@ input:placeholder-shown {
   }
   .kanjiDetailsSection:nth-child(2) {
     margin-top: 0px;
-    padding-bottom: 40px;
+    padding-top: 32px;
   }
   .kanjiDetailsSubSection:nth-child(1) {
     margin-top: 0px;
@@ -1536,6 +1539,11 @@ input:placeholder-shown {
   box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.25);
 }
 
+#App.light #kanjiDisplayInfo,
+#App.light #wordDisplayInfo {
+  box-shadow: 0px 7.5px 7.5px -5px rgba(240, 240, 240, 1);
+}
+
 #App.light #sidePanel {
   background-color: rgba(255, 255, 255, 0.95);
 }
@@ -1697,6 +1705,11 @@ input:placeholder-shown {
 
 #App.dark #wordsListFilterIcon.highlighted {
   box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.2);
+}
+
+#App.dark #kanjiDisplayInfo,
+#App.dark #wordDisplayInfo {
+  box-shadow: 0px 7.5px 7.5px -5px rgba(52, 52, 52, 1);
 }
 
 #App.dark #sidePanel {
