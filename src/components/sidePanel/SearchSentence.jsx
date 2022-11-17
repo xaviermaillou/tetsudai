@@ -15,7 +15,7 @@ const SearchSentence = (props) => {
 
     useEffect(() => {
         setOpenSentence(!!searchIsSentence)
-    }, [searchIsSentence, setOpenSentence])
+    }, [pinnedSentence, searchIsSentence, setOpenSentence])
 
     const handleCloseClick = () => {
         setOpenSentence(false)
