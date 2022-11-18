@@ -25,7 +25,7 @@ const SentenceElement = (props) => {
                         word={element}
                         changeCurrentWordById={handleWordClick}
                         grammar={element.grammar?.class}
-                        verbPrecisions={element.verbPrecisions}
+                        tense={element.grammar?.tense}
                     />
                 </div>}
             </div>

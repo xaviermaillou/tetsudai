@@ -4,6 +4,8 @@ export const localDictionnary = {
     adverb: "adverbe",
     affirmative: "+",
     negative: "-",
+    neutral: "neutre",
+    polite: "formel",
     baseWord: "NOM UTILISÉ",
     suruForm: "FORME VERBALE AVEC SURU",
     stem: "FORME EN STEM",

@@ -1,7 +1,14 @@
 import { dictionnary } from "tetsudai-common"
+import { localDictionnary } from "../../lib/dictionnary"
 
 const WordElement = (props) => {
-    const { word, kanaToHighlight, changeCurrentWordById, grammar, verbPrecisions } = props
+    const {
+        word,
+        kanaToHighlight,
+        changeCurrentWordById,
+        grammar,
+        tense,
+    } = props
 
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
@@ -48,10 +55,11 @@ const WordElement = (props) => {
                         {grammar.map((el, i) => (
                             <span key={i}>
                             {i > 0 && ', '}
-                            {el === 14 ?
-                                'verbe ' + dictionnary.verbGrammar[verbPrecisions?.grammar] + ' avec する'
-                                :
-                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + dictionnary.verbGrammar[verbPrecisions?.grammar] : '')
+                            {dictionnary.classes[el].toLowerCase()}
+                            {tense &&
+                                <span>
+                                    {Object.entries(tense).map(([key, value]) => <span key={key}> {localDictionnary[value]}</span>)}
+                                </span>
                             }
                         </span>
                         ))}
