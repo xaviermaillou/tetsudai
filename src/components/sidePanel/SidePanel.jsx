@@ -122,27 +122,29 @@ const SidePanel = (props) => {
                     />
                 </div>
             </div>
-            <ListHeader
-                openFilter={openFilter}
-                setOpenFilter={setOpenFilter}
-                imgPath={imgPath}
-                open={open}
-                toggle={toggle}
-                collection={collection}
-                setCollection={setCollection}
-                level={level}
-                setLevel={setLevel}
-                grammar={grammar}
-                setGrammar={setGrammar}
-                search={search}
-                setSearch={setSearch}
-                filterIndication={filterIndication}
-                trainingMode={trainingMode}
-                toggleTraining={toggleTraining}
-                searchExecuted={searchExecuted}
-                setSearchExecuted={setSearchExecuted}
-                currentElement={currentElement}
-            />
+            {!openSentence &&
+                <ListHeader
+                    openFilter={openFilter}
+                    setOpenFilter={setOpenFilter}
+                    imgPath={imgPath}
+                    open={open}
+                    toggle={toggle}
+                    collection={collection}
+                    setCollection={setCollection}
+                    level={level}
+                    setLevel={setLevel}
+                    grammar={grammar}
+                    setGrammar={setGrammar}
+                    search={search}
+                    setSearch={setSearch}
+                    filterIndication={filterIndication}
+                    trainingMode={trainingMode}
+                    toggleTraining={toggleTraining}
+                    searchExecuted={searchExecuted}
+                    setSearchExecuted={setSearchExecuted}
+                    currentElement={currentElement}
+                />
+            }
             <SearchSentence
                 openSentence={openSentence}
                 setOpenSentence={setOpenSentence}

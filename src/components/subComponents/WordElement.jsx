@@ -56,7 +56,7 @@ const WordElement = (props) => {
                             <span key={i}>
                             {i > 0 && ', '}
                             {dictionnary.classes[el].toLowerCase()}
-                            {tense &&
+                            {(tense && (el === 3 || el === 4)) &&
                                 <span>
                                     {Object.entries(tense).map(([key, value]) => <span key={key}> {localDictionnary[value]}</span>)}
                                 </span>
