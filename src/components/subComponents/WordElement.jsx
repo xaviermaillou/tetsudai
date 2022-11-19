@@ -7,9 +7,8 @@ const WordElement = (props) => {
         kanaToHighlight,
         changeCurrentWordById,
         grammar,
-        tense,
     } = props
-
+console.log(word, grammar)
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
             {word.jukujikun ?
@@ -51,19 +50,16 @@ const WordElement = (props) => {
                 <div className="wordElementTranslation">
                     {word?.translation}
                 </div>
-                {grammar && <div>
-                        {grammar.map((el, i) => (
-                            <span key={i}>
-                            {i > 0 && ', '}
-                            {dictionnary.classes[el].toLowerCase()}
-                            {(tense && (el === 3 || el === 4)) &&
-                                <span>
-                                    {Object.entries(tense).map(([key, value]) => <span key={key}> {localDictionnary[value]}</span>)}
-                                </span>
-                            }
-                        </span>
-                        ))}
-                    </div>}
+                {grammar &&
+                    <div>
+                        {dictionnary.classes[grammar.function].toLowerCase()}
+                        {grammar.tense &&
+                            <span>
+                                {Object.entries(grammar.tense).map(([key, value]) => <span key={key}> {localDictionnary[value]}</span>)}
+                            </span>
+                        }
+                    </div>
+                }
             </div>
         </div>
     )

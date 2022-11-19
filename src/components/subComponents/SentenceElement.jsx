@@ -10,7 +10,7 @@ const SentenceElement = (props) => {
     return (
         <div 
             onClick={() => handleWordClick(element.id)}
-            className={word?.id === element.id ?
+            className={(element.id && word?.id === element.id) ?
                 `sentenceElementContainer importance${element.importance} clickable highlighted`
                 :
                 element.id ?
@@ -24,8 +24,7 @@ const SentenceElement = (props) => {
                     <WordElement
                         word={element}
                         changeCurrentWordById={handleWordClick}
-                        grammar={element.grammar?.class}
-                        tense={element.grammar?.tense}
+                        grammar={element.sentenceGrammar}
                     />
                 </div>}
             </div>
