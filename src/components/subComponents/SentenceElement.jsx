@@ -7,29 +7,37 @@ const SentenceElement = (props) => {
         handleWordClick,
     } = props
 
+    const firstFoundElement = element.foundElements[0]
+
     return (
         <div 
-            onClick={() => handleWordClick(element.id)}
-            className={(element.id && word?.id === element.id) ?
-                `sentenceElementContainer importance${element.importance} clickable highlighted`
+            onClick={() => !element.ambiguity ? handleWordClick(firstFoundElement.id) : null}
+            className={(!element.ambiguity && firstFoundElement.id && word?.id === firstFoundElement.id) ?
+                `sentenceElementContainer importance${firstFoundElement.importance} clickable highlighted`
                 :
-                element.id ?
-                    `sentenceElementContainer importance${element.importance} clickable`
+                (!element.ambiguity && firstFoundElement.id) ?
+                    `sentenceElementContainer importance${firstFoundElement.importance} clickable`
+                    :
+                    element.ambiguity ?
+                    "sentenceElementContainer ambiguous"
                     :
                     "sentenceElementContainer"
             }
         >
             <div className="sentenceElement">
-                {element.id && <div className="sentenceElementInfo">
-                    <WordElement
-                        word={element}
-                        changeCurrentWordById={handleWordClick}
-                        grammar={element.sentenceGrammar}
-                    />
+                {element.ambiguity && <span className="tooltip sentenceElementAmbiguity">Plusieurs mots peuvent correspondre</span>}
+                {firstFoundElement.id && <div className={element.ambiguity ? "sentenceElementInfo extended" : "sentenceElementInfo"}>
+                    {element.foundElements.map((foundElement) => (
+                        <WordElement
+                            word={foundElement}
+                            changeCurrentWordById={handleWordClick}
+                            grammar={foundElement.sentenceGrammar}
+                        />
+                    ))}
                 </div>}
             </div>
             <span className="sentenceElementUsedWord">
-                {element.word}
+                {firstFoundElement.word}
             </span>
         </div>
     )

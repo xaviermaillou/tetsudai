@@ -1184,11 +1184,23 @@ input:placeholder-shown {
   overflow-x: hidden;
   
 }
+.sentenceElementAmbiguity {
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 20px;
+}
 .sentenceElementInfo {
   height: 54px;
   width: calc(100% - 20px);
   display: flex;
   align-items: center;
+}
+.sentenceElementInfo.extended {
+  height: fit-content;
+  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
@@ -1524,6 +1536,14 @@ input:placeholder-shown {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+#App.light .sentenceElementContainer.highlighted {
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#App.light .sentenceElementContainer.ambiguous {
+  background-color: rgba(255, 183, 197, 0.15);
+}
+
 #App.light #relatedKanji, #App.light #wordPrecisions {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -1618,9 +1638,6 @@ input:placeholder-shown {
   #App.light .historyElement.selected {
       border-right: 5px solid rgba(0, 0, 0, 0.1);
   }
-  #App.light .sentenceElementContainer.highlighted {
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-  }
 }
 
 /* ------------------------------------------------ DARK THEME ------------------------------------------------ */
@@ -1690,6 +1707,14 @@ input:placeholder-shown {
 
 #App.dark .sentenceElementContainer {
   border-bottom: 1px solid rgba(199, 192, 181, 0.3);
+}
+
+#App.dark .sentenceElementContainer.highlighted {
+  border-left: 2px solid rgba(199, 192, 181, 0.25);
+}
+
+#App.dark .sentenceElementContainer.ambiguous {
+  background-color: rgba(199, 192, 181, 0.1);
 }
 
 #App.dark #relatedKanji, #App.dark #wordPrecisions {
@@ -1785,8 +1810,5 @@ input:placeholder-shown {
   }
   #App.dark .historyElement.selected {
       border-right: 5px solid rgba(199, 192, 181, 0.25);
-  }
-  #App.dark .sentenceElementContainer.highlighted {
-    border-left: 2px solid rgba(199, 192, 181, 0.25);
   }
 }
