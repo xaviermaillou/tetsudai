@@ -8,7 +8,7 @@ const WordElement = (props) => {
         changeCurrentWordById,
         grammar,
     } = props
-console.log(word, grammar)
+
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
             {word.jukujikun ?
