@@ -296,7 +296,6 @@ input:placeholder-shown {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
-  overflow-x: scroll;
   margin-bottom: 18px;
 }
 #wordDisplayWordKanjiOnly {
