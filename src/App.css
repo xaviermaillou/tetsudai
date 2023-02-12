@@ -410,7 +410,6 @@ input:placeholder-shown {
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
-  overflow-x: hidden;
 }
 .wordElementDetails {
   display: flex;
@@ -437,6 +436,7 @@ input:placeholder-shown {
 }
 .kanjiElementKanji {
   width: 25%;
+  line-height: 100%;
   text-align: left;
   font-size: 32px;
 }
@@ -452,7 +452,9 @@ input:placeholder-shown {
 }
 .kanjiElementKana div {
   width: 100%;
-  overflow-x: hidden;
+  height: 50%;
+  line-height: 100%;
+  overflow: hidden;
   white-space: nowrap;
   text-align: right;
   text-overflow: ellipsis;
@@ -1044,6 +1046,7 @@ input:placeholder-shown {
   flex-direction: column;
   align-items: center;
   margin: 0px 5px;
+  line-height: 100%;
 }
 .wordElementRegularJapaneseMainCharacters:nth-child(1) {
   margin-left: 0px;
