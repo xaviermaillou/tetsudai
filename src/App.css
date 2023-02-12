@@ -739,6 +739,7 @@ input:placeholder-shown {
 }
 #wordsListTrainerIcon {
   left: 2px;
+  display: none;
 }
 #wordsListFilterIcon {
   right: 8px;
