@@ -515,7 +515,7 @@ input:placeholder-shown {
 #wordDetailsPlus {
   z-index: 1000;
   position: absolute;
-  bottom: 0px;
+  bottom: 0dvh;
   height: 50px;
   width: 100%;
   font-size: 16px;
