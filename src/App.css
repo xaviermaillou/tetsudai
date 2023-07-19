@@ -516,13 +516,13 @@ input:placeholder-shown {
   z-index: 1000;
   position: absolute;
   top: calc(100dvh - 50px);
-  height: calc(50dvh + 132px);
+  height: calc(100dvh - 290px);
   width: 100%;
   font-size: 16px;
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  top: calc(50dvh - 132px);
+  top: 290px;
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -1323,7 +1323,10 @@ input:placeholder-shown {
     height: auto;
   }
   #wordDetailsPlus {
-    height: calc(50vh + 72px);
+    height: calc(100dvh - 350px);
+  }
+  #wordDetailsPlus.expanded {
+    top: 350px;
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
