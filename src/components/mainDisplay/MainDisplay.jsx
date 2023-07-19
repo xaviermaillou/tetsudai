@@ -162,6 +162,7 @@ const MainDisplay = (props) => {
                                 originLanguageWord={word.originLanguageWord}
                                 precisions={word.precisions}
                                 relatedWords={word.relatedWords}
+                                bottomSpace={(word.inflexions || word.kosoado)}
                             />
                             {(!!!trainingMode && (word.inflexions || word.kosoado)) &&
                                 <WordDetailsPlus

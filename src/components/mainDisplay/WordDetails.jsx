@@ -173,13 +173,14 @@ export const WordDetails = (props) => {
         originLanguageWord,
         precisions,
         relatedWords,
+        bottomSpace,
     } = props
 
     let hasRelatedContent = false
 
     return (
         <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
-            <div id="wordDetailsKanjis">
+            <div id="wordDetailsKanjis" className={bottomSpace ? "bottomSpace" : ""}>
                 {originLanguage &&
                     <div id="wordLanguage">
                         <span>{dictionnary.languages[originLanguage]}</span>
@@ -229,7 +230,7 @@ export const WordDetails = (props) => {
                     {!hasRelatedContent && <span className="tooltip">Aucun mot associé n'a été trouvé</span>}
                 </div>
             </div>
-            <div id="wordDetailsSentences">
+            <div id="wordDetailsSentences" className={bottomSpace ? "bottomSpace" : ""}>
                 <p className="kanasReadingsHeader">PHRASES</p>
                 {loadingSentences ?
                     <div className="loadingAnimationContainer">
