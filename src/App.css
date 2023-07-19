@@ -515,14 +515,14 @@ input:placeholder-shown {
 #wordDetailsPlus {
   z-index: 1000;
   position: absolute;
-  bottom: 0dvh;
-  height: 50px;
+  top: calc(100dvh - 50px);
+  height: calc(50dvh + 132px);
   width: 100%;
   font-size: 16px;
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  height: calc(50vh + 132px);
+  top: calc(50dvh - 132px);
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -1322,7 +1322,7 @@ input:placeholder-shown {
   #kanjiDetails.expanded, #wordDetails.expanded {
     height: auto;
   }
-  #wordDetailsPlus.expanded {
+  #wordDetailsPlus {
     height: calc(50vh + 72px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
