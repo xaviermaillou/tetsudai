@@ -63,6 +63,7 @@ input {
   border: none;
   width: 100%;
   font-size: 16px;
+  border-radius: 0px;
 }
 input:focus {
   outline: none;
@@ -1557,7 +1558,7 @@ input:placeholder-shown {
 
 #App.light #wordDetailsPlus {
   border-top: 1px solid rgba(0, 0, 0, 0.1);;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 #App.light .kosoadoRow div.selected {
@@ -1587,12 +1588,12 @@ input:placeholder-shown {
 }
 
 #App.light #sidePanel {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 #App.light #wordsListFilterModal,
 #App.light #wordsListTrainingModal {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 #App.light #wordsListTrainingModalScreenshot img {
@@ -1633,7 +1634,7 @@ input:placeholder-shown {
 }
 
 #App.light #displayHistoryContainer {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 1);
 }
 @media (min-aspect-ratio: 1/1) {
   #App.light .historyElement {
@@ -1730,7 +1731,7 @@ input:placeholder-shown {
 
 #App.dark #wordDetailsPlus {
   border-top: 1px solid rgba(199, 192, 181, 0.1);;
-  background-color: rgba(36, 37, 37, 0.9);
+  background-color: rgba(36, 37, 37, 1);
 }
 
 #App.dark .kosoadoRow div.selected {
@@ -1760,12 +1761,12 @@ input:placeholder-shown {
 }
 
 #App.dark #sidePanel {
-  background-color: rgba(36, 37, 37, 0.9);
+  background-color: rgba(36, 37, 37, 1);
 }
 
 #App.dark #wordsListFilterModal,
 #App.dark #wordsListTrainingModal {
-  background-color: rgba(36, 37, 37, 0.9);
+  background-color: rgba(36, 37, 37, 1);
 }
 
 #App.dark #wordsListTrainingModalScreenshot img {
@@ -1806,7 +1807,7 @@ input:placeholder-shown {
 }
 
 #App.dark #displayHistoryContainer {
-  background-color: rgba(36, 37, 37, 0.95)
+  background-color: rgba(36, 37, 37, 1)
 }
 @media (min-aspect-ratio: 1/1) {
   #App.dark .historyElement {
