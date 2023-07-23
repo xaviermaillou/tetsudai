@@ -51,11 +51,11 @@ const WordElement = (props) => {
                     {word?.translation}
                 </div>
                 {grammar &&
-                    <div>
+                    <div className="wordElementGrammar">
                         {dictionnary.classes[grammar.function].toLowerCase()}
                         {grammar.tense &&
-                            <span>
-                                {Object.entries(grammar.tense).map(([key, value]) => <span key={key}> {localDictionnary[value]}</span>)}
+                            <span className="wordElementGrammarTense">
+                                {Object.entries(grammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[value]}</span>)}
                             </span>
                         }
                     </div>
