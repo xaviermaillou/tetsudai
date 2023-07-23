@@ -259,11 +259,11 @@ input:placeholder-shown {
   opacity: 0.25;
 }
 #kanjiDisplayKanjiGhostLeft {
-  font-family: cursive;
+  font-family: 'Noto Serif JP';
   left: 8.125%;
 }
 #kanjiDisplayKanjiGhostRight {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Noto Sans TC';
   right: 8.125%;
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
