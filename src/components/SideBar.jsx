@@ -22,8 +22,16 @@ const SideBar = (props) => {
 
     return (
         <div id="sideBar">
-            {(searchExecuted || kanji || word) && <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />}
-            <div onClick={reloadPage} id="logoContainer" className={kanji === null && word === null && !loadingMainDisplay ? 'full' : 'clickable'}>
+            {(kanji || word) && <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />}
+            <div
+                onClick={reloadPage}
+                id="logoContainer"
+                className={kanji === null && word === null && !loadingMainDisplay ?
+                    (searchExecuted ? 'full executed' : 'full')
+                    :
+                    'clickable'
+                }
+            >
                 <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
                 <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />

@@ -108,10 +108,10 @@ input:placeholder-shown {
   z-index: 1000;
   position: absolute;
   top: 26px;
-  left: 0px;
+  left: 32px;
   opacity: 0.25;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 #logoContainer.full {
@@ -119,8 +119,12 @@ input:placeholder-shown {
   pointer-events: none;
 }
 #logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
+  height: 0px;
   opacity: 0;
-  width: 24px;
+}
+#logoContainer.full:not(.executed) img:nth-child(1), #logoContainer.full:not(.executed) img:nth-child(3) {
+  height: 32px;
+  opacity: 1;
 }
 #logoContainer img {
   height: 32px;
@@ -711,6 +715,15 @@ input:placeholder-shown {
 #sidePanel.open {
   left: 0vw;
 }
+#sidePanel.expanded {
+  left: 0px;
+  padding-top: calc(50dvh - 50px);
+  background: none !important;
+  transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
+}
+#sidePanel.expanded #wordsListSearchContainer {
+  padding-left: 0px;
+}
 
 /* ------------------------------------------------ SIDE PANEL HEADER ------------------------------------------------ */
 
@@ -908,6 +921,12 @@ input:placeholder-shown {
   opacity: 1;
   height: calc(100vh - 205px);
   padding-top: 15px;
+}
+#wordsListFilterModal.expanded {
+  height: calc(50vh - 25px);
+}
+#wordsListFilterModal.expanded div {
+  overflow-y: scroll;
 }
 #wordsListTrainingModal.open {
   opacity: 1;
@@ -1222,7 +1241,6 @@ input:placeholder-shown {
     bottom: 20px;
     left: 18px;
     justify-content: center;
-    flex-direction: column;
   }
   #logoContainer.full {
     height: 100vh;
@@ -1231,10 +1249,10 @@ input:placeholder-shown {
     opacity: 0.1;
   }
   #logoContainer img {
-    height: 48px;
+    height: 48px !important;
   }
   #logoContainer.full img {
-    height: 192px;
+    height: 192px !important;
   }
   #logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
     opacity: 1;
@@ -1417,21 +1435,16 @@ input:placeholder-shown {
   #sidePanel.expanded {
     left: 212px;
     width: calc(100vw - 212px);
-    padding-top: calc(50vh - 50px);
-    background: none !important;
-    transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
   }
   #wordsListSearchContainer {
     padding-left: 0px;
   }
   #wordsListFilterModal.expanded {
-    height: calc(50vh - 25px);
     padding-right: 24px;
   }
   #wordsListFilterModal.expanded div {
     flex-grow: 0;
     margin-left: 40px;
-    overflow-y: scroll;
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
