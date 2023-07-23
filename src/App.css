@@ -101,14 +101,14 @@ input:placeholder-shown {
 
 #App {
   text-align: center;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #logoContainer {
   z-index: 1000;
   position: absolute;
   top: 26px;
-  left: 32px;
+  left: 24px;
   opacity: 0.25;
   display: flex;
   flex-direction: column;
@@ -227,7 +227,7 @@ input:placeholder-shown {
   z-index: 800;
   padding-top: 88px;
   position: fixed;
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -277,7 +277,7 @@ input:placeholder-shown {
   display: flex;
   justify-content: center;
   width: 80%;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 #kanjiDisplayInfo div, #wordDisplayInfo div {
   margin: 0px 10px;
@@ -287,13 +287,11 @@ input:placeholder-shown {
 }
 #wordDisplayWord, #wordDisplayWordJukujikun {
   width: 100%;
-  padding-top: 32px;
-  height: 150px;
-  min-height: 150px;
+  height: 130px;
+  min-height: 130px;
   font-size: 60px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
 }
 #wordDisplayWordElements {
@@ -331,10 +329,10 @@ input:placeholder-shown {
 /* ------------------------------------------------ KANAS & KANJIS ------------------------------------------------ */
 
 #kanjiDetails {
-  height: calc(100vh - 592px);
+  height: calc(100dvh - 592px);
 }
 #wordDetails {
-  height: calc(100vh - 502px);
+  height: calc(100dvh - 502px);
 }
 #kanjiDetails, #wordDetails {
   z-index: 900;
@@ -368,6 +366,9 @@ input:placeholder-shown {
 }
 .kanjiDetailsSection:nth-child(2) {
   padding-bottom: 70px;
+}
+.kanjiDetailsSection:nth-child(1) .kanjiDetailsSubSection:nth-child(1) {
+  margin-top: 0px;
 }
 .kanjiDetailsSubSection {
   margin-top: 20px;
@@ -523,13 +524,13 @@ input:placeholder-shown {
   z-index: 1000;
   position: absolute;
   top: calc(100dvh - 50px);
-  height: calc(100dvh - 290px);
+  height: calc(100dvh - 280px);
   width: 100%;
   font-size: 16px;
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  top: 290px;
+  top: 280px;
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -592,7 +593,7 @@ input:placeholder-shown {
 }
 
 .trainingEndNotifier {
-  margin-top: 35vh;
+  margin-top: 35dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -705,10 +706,10 @@ input:placeholder-shown {
   display: flex;
   flex-direction: column;
   z-index: 1100;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   position: fixed;
-  left: 100vw;
+  left: 100dvw;
   justify-content: flex-start;
   padding: 6px 24px;
 }
@@ -891,7 +892,7 @@ input:placeholder-shown {
   opacity: 0;
   position: absolute;
   left: 0px;
-  height: 0vh;
+  height: 0dvh;
   width: 100%;
   display: flex;
   overflow-y: hidden;
@@ -919,18 +920,18 @@ input:placeholder-shown {
 }
 #wordsListFilterModal.open {
   opacity: 1;
-  height: calc(100vh - 205px);
+  height: calc(100dvh - 205px);
   padding-top: 15px;
 }
 #wordsListFilterModal.expanded {
-  height: calc(50vh - 25px);
+  height: calc(50dvh - 25px);
 }
 #wordsListFilterModal.expanded div {
   overflow-y: scroll;
 }
 #wordsListTrainingModal.open {
   opacity: 1;
-  height: calc(100vh - 155px);
+  height: calc(100dvh - 155px);
 }
 #wordsListFilterModal span {
   padding-left: 20px;
@@ -1011,20 +1012,20 @@ input:placeholder-shown {
   order: 10;
 }
 .wordsListList {
-  height: calc(50vh - 122px);
+  height: calc(50dvh - 122px);
   position: relative;
-  padding-top: 1vh;
-  padding-bottom: 3vh;
+  padding-top: 1dvh;
+  padding-bottom: 3dvh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   opacity: 1;
 }
 .wordsListList.extended {
-  height: calc(100vh - 244px);
+  height: calc(100dvh - 244px);
 }
 .wordsListList.closed {
-  height: calc(0vh - 0px);
+  height: calc(0dvh - 0px);
   overflow-y: hidden;
   padding: 0;
 }
@@ -1089,7 +1090,7 @@ input:placeholder-shown {
 
 #displayHistoryContainer {
   z-index: 2000;
-  height: 100vh;
+  height: 100dvh;
   width: 8%;
   position: absolute;
   top: 0px;
@@ -1171,7 +1172,7 @@ input:placeholder-shown {
   height: 10px;
 }
 #searchSentence {
-  height: calc(0vh - 0px);
+  height: calc(0dvh - 0px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1181,7 +1182,7 @@ input:placeholder-shown {
   mask: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
 }
 #searchSentence.open {
-  height: calc(90vh - 160px);
+  height: calc(90dvh - 160px);
   padding: 30px 0px;
 }
 .sentenceElementContainer {
@@ -1243,7 +1244,7 @@ input:placeholder-shown {
     justify-content: center;
   }
   #logoContainer.full {
-    height: 100vh;
+    height: 100dvh;
     left: 26px;
     bottom: 0px;
     opacity: 0.1;
@@ -1265,7 +1266,7 @@ input:placeholder-shown {
   #themeSwitcher {
     z-index: 1000;
     position: absolute;
-    top: 5vh;
+    top: 5dvh;
     width: 100%;
     padding: 0px 14px;
     display: flex;
@@ -1280,7 +1281,7 @@ input:placeholder-shown {
     transform: rotate(90deg);
   }
   #introText, #pageNotFound {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     text-align: justify;
     font-size: 18px;
@@ -1315,9 +1316,8 @@ input:placeholder-shown {
     right: 16.25%;
   }
   #wordDisplayWord, #wordDisplayWordJukujikun {
-    height: 200px;
-    min-height: 200px;
-    padding-top: 0px;
+    height: 190px;
+    min-height: 190px;
     font-size: 100px;
   }
   #kanjiDisplayInfo, #wordDisplayInfo, #kanjiDetails, #wordDetails, #selector, #controls {
@@ -1330,10 +1330,10 @@ input:placeholder-shown {
     font-size: 32px
   }
   #kanjiDetails {
-    height: calc(100vh - 532px);
+    height: calc(100dvh - 532px);
   }
   #wordDetails {
-    height: calc(100vh - 492px);
+    height: calc(100dvh - 492px);
   }
   #kanjiDetails, #wordDetails {
     font-size: 28px;
@@ -1344,10 +1344,10 @@ input:placeholder-shown {
     height: auto;
   }
   #wordDetailsPlus {
-    height: calc(100dvh - 350px);
+    height: calc(100dvh - 320px);
   }
   #wordDetailsPlus.expanded {
-    top: 350px;
+    top: 320px;
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
@@ -1421,7 +1421,7 @@ input:placeholder-shown {
     padding: 5px 0px;
   }
   #controls {
-    padding: 0vh 0px;
+    padding: 0dvh 0px;
     justify-content: space-evenly;
   }
   #sidePanel {
@@ -1448,13 +1448,16 @@ input:placeholder-shown {
   }
   .wordsListList {
     /* 156px is half of the height of the filters+search */
-    height: calc(50vh - 148px);
+    height: calc(50dvh - 148px);
   }
   .wordsListList.extended {
-    height: calc(100vh - 296px);
+    height: calc(100dvh - 296px);
   }
   #vocabularyList {
     padding-bottom: 32px;
+  }
+  #mainDisplay {
+    padding-top: 60px;
   }
   #mainDisplay.compressed {
     width: 67%;
@@ -1493,7 +1496,7 @@ input:placeholder-shown {
     margin-right: 20px;
   }
   #searchSentence.open {
-    height: calc(100vh - 170px);
+    height: calc(100dvh - 170px);
     padding: 30px 0px;
   }
 }
