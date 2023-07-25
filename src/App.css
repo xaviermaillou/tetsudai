@@ -918,7 +918,7 @@ input:placeholder-shown {
 }
 #wordsListFilterModal.open {
   opacity: 1;
-  height: calc(100dvh - 205px);
+  height: calc(100dvh - 175px);
   padding-top: 15px;
 }
 #wordsListFilterModal.expanded {
@@ -1444,6 +1444,9 @@ input:placeholder-shown {
   }
   #wordsListSearchContainer {
     padding-left: 0px;
+  }
+  #wordsListFilterModal.open {
+    height: calc(100dvh - 195px);
   }
   #wordsListFilterModal.expanded {
     padding-right: 24px;
