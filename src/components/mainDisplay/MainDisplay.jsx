@@ -138,7 +138,7 @@ const MainDisplay = (props) => {
                                             {el === 14 ?
                                                 'verbe ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] + ' avec する'
                                                 :
-                                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] : '')
+                                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')
                                             }
                                         </span>
                                     ))}
