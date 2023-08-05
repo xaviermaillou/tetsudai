@@ -43,7 +43,7 @@ const Kosoado = (props) => {
                 <div onClick={() => changeCurrentWordById(936)} className={referenceId === 936 ? "selected" : "clickable"}>そちら</div>
                 <div onClick={() => changeCurrentWordById(756)} className={referenceId === 756 ? "selected" : "clickable"}>あちら</div>
                 <div onClick={() => changeCurrentWordById(984)} className={referenceId === 984 ? "selected" : "clickable"}>どちら</div>
-                <div className="kosoadoIndicator">déterminatif</div>
+                <div className="kosoadoIndicator">direction</div>
             </div>
             <div className="kosoadoRow">
                 <div className="kosoadoIndicator">proche</div>
