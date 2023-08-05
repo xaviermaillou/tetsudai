@@ -921,7 +921,7 @@ input:placeholder-shown {
   height: calc(100dvh - 175px);
   padding-top: 15px;
 }
-#wordsListFilterModal.expanded {
+#wordsListFilterModal.expanded.open {
   height: calc(50dvh - 25px);
 }
 #wordsListFilterModal.expanded div {
