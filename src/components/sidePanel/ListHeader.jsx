@@ -70,26 +70,26 @@ const ListHeader = (props) => {
                     className={searchExecuted ? "wordsListHeaderRow" : "wordsListHeaderRow lowOpacity"}
                 >
                     <div></div>
-                    {(collection || level || grammar) ? 
+                    {(collection !== "0" || level !== "0" || grammar !== "0") ? 
                         <div id="filtersIndicatorRow">
-                            {grammar !==0 &&
+                            {grammar !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary.pluralClasses[grammar]}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar("0")} />
                                 </span>
                             }
-                            {(level !==0 && grammar !==0) && <span>|</span>}
-                            {level !==0 &&
+                            {(level !== "0" && grammar !== "0") && <span>|</span>}
+                            {level !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel("0")} />
                                 </span>
                             }
-                            {(collection !==0 && level !==0) && <span>|</span>}
-                            {collection !==0 &&
+                            {(collection !== "0" && level !== "0") && <span>|</span>}
+                            {collection !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary.collections[collection]}</span>&nbsp;&nbsp;
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection(0)} />
+                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection("0")} />
                                 </span>
                             }
                         </div>

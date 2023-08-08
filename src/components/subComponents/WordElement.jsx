@@ -48,7 +48,7 @@ const WordElement = (props) => {
                 }
             <div className="wordElementDetails">
                 <div className="wordElementTranslation">
-                    {word?.translation}
+                    {word?.translation.join('; ')}
                 </div>
                 {grammar &&
                     <div className="wordElementGrammar">

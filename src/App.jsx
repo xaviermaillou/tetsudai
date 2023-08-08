@@ -43,9 +43,9 @@ function App() {
   const [filteredWordsPutAside, setFilteredWordsPutAside] = useState([])
 
   // Filtering states
-  const [collection, setCollection] = useState(0)
-  const [level, setLevel] = useState(0)
-  const [grammar, setGrammar] = useState(0)
+  const [collection, setCollection] = useState("0")
+  const [level, setLevel] = useState("0")
+  const [grammar, setGrammar] = useState("0")
   const [search, setSearch] = useState("")
   const [searchCopy, setSearchCopy] = useState(search)
   const [searchExecuted, setSearchExecuted] = useState(false)

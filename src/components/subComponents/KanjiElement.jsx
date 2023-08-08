@@ -33,7 +33,7 @@ const KanjiElement = (props) => {
                     }
                 </div>
                 <div className="kanjiElementTranslation">
-                    {kanji.translation}
+                    {kanji.translation.join('; ')}
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ const HistoryElement = (props) => {
                     ))}
                 </div>
             }
-            <span className="historyElementTranslation">{historyElementData.translation}</span>
+            <span className="historyElementTranslation">{historyElementData.translation.join('; ')}</span>
             <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
         </div>
     )

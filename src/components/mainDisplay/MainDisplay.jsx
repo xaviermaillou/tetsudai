@@ -61,7 +61,7 @@ const MainDisplay = (props) => {
                             <p id="kanjiDisplayKanji" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                             <p id="kanjiDisplayKanjiGhostLeft" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
                             <p id="kanjiDisplayKanjiGhostRight" className={displayedElement === 0 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.kanji}</p>
-                            <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation}</p>
+                            <p id="kanjiDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{kanji.translation.join('; ')}</p>
                             <p id="kanjiDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>{kanji.strokes} traits</div>
                                 <div>{kanji.level ? kanji.level : 'Hors JLPT'}</div>
@@ -129,17 +129,13 @@ const MainDisplay = (props) => {
                                     </div>
                                 </div>
                             }
-                            <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation}</p>
+                            <p id="wordDisplayTranslation" className={displayedElement === 1 || allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>{word.translation.join('; ')}</p>
                             <div id="wordDisplayInfo" className={allDisplayed ? 'hiddenElement selected' : 'hiddenElement'}>
                                 <div>
                                     {word.grammar.map((el, i) => (
                                         <span key={i}>
                                             {i > 0 && ', '}
-                                            {el === 14 ?
-                                                'verbe ' + dictionnary.verbGrammar[word.verbPrecisions.grammar] + ' avec する'
-                                                :
-                                                dictionnary.classes[el].toLowerCase() + (el === 3 ? ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')
-                                            }
+                                            {dictionnary.classes[el].toLowerCase() + (el === "vb" ? ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')}
                                         </span>
                                     ))}
                                 </div>

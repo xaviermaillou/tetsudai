@@ -25,7 +25,7 @@ export const fetchSentences = async (id, setLoading) => {
 }
 
 export const fetchSentenceData = async (sentence) => {
-    const result = await axios.post(`${API_URL}/sentence`, sentence)
+    const result = await axios.post(`${API_URL}/foundSentence`, sentence)
     return result.data
 }
 
