@@ -1,5 +1,3 @@
-// import firebase from './Firebase'
-import "firebase/firestore"
 import { useState, useEffect, useCallback } from 'react'
 import { useCookies } from 'react-cookie'
 import { useNavigate, useParams } from 'react-router-dom';
