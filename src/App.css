@@ -1316,10 +1316,10 @@ input:placeholder-shown {
     font-size: 200px;
   }
   #kanjiDisplayKanjiGhostLeft {
-    left: 16.25%;
+    left: calc(20% + 43px);
   }
   #kanjiDisplayKanjiGhostRight {
-    right: 16.25%;
+    right: calc(20% - 43px);
   }
   #wordDisplayWord, #wordDisplayWordJukujikun {
     height: 190px;
@@ -1467,6 +1467,7 @@ input:placeholder-shown {
   }
   #mainDisplay {
     padding-top: 60px;
+    padding-left: 86px;
   }
   #mainDisplay.compressed {
     width: 67%;
