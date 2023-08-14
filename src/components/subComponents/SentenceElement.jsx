@@ -31,7 +31,7 @@ const SentenceElement = (props) => {
                         <WordElement
                             word={foundElement}
                             changeCurrentWordById={handleWordClick}
-                            grammar={foundElement.sentenceGrammar}
+                            sentenceGrammar={foundElement.sentenceGrammar}
                         />
                     ))}
                 </div>}

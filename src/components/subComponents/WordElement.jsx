@@ -6,7 +6,7 @@ const WordElement = (props) => {
         word,
         kanaToHighlight,
         changeCurrentWordById,
-        grammar,
+        sentenceGrammar,
     } = props
 
     return (
@@ -50,12 +50,12 @@ const WordElement = (props) => {
                 <div className="wordElementTranslation">
                     {word?.translation.join('; ')}
                 </div>
-                {grammar &&
+                {sentenceGrammar &&
                     <div className="wordElementGrammar">
-                        {dictionnary.classes[grammar.function].toLowerCase()}
-                        {grammar.tense &&
+                        {dictionnary.classes[sentenceGrammar.function].toLowerCase()}
+                        {sentenceGrammar.tense &&
                             <span className="wordElementGrammarTense">
-                                {Object.entries(grammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[value]}</span>)}
+                                {Object.entries(sentenceGrammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[value]}</span>)}
                             </span>
                         }
                     </div>
