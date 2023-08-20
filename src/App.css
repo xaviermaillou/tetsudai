@@ -973,6 +973,7 @@ input:placeholder-shown {
 }
 #wordsListFilterModal span.selected, #wordsListTrainingModalButtons span.selected {
   opacity: 1;
+  padding-left: 15px;
   padding-right: 10px;
 }
 #wordsListFilterModal div span:nth-child(1) {
