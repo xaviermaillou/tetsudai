@@ -338,7 +338,7 @@ input:placeholder-shown {
   z-index: 900;
   width: 80%;
   font-size: 20px;
-  margin: 0px 16.25% 0 16.25%;
+  margin: 0px 10% 0 10%;
   overflow-y: scroll;
   padding-bottom: 60px;
   display: flex;
@@ -1330,9 +1330,9 @@ input:placeholder-shown {
     min-height: 190px;
     font-size: 100px;
   }
-  #kanjiDisplayInfo, #wordDisplayInfo, #kanjiDetails, #wordDetails, #selector, #controls {
-    width: 67.5%;
-  }
+  /* #kanjiDisplayInfo, #wordDisplayInfo, #kanjiDetails, #wordDetails, #selector, #controls {
+    width: 90%;
+  } */
   #wordDisplayInfo {
     flex-direction: row;
   }
