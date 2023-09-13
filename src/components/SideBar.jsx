@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import ThemeSwitcher from "./ThemeSwitcher"
 
 const SideBar = (props) => {
     const {
@@ -22,7 +21,6 @@ const SideBar = (props) => {
 
     return (
         <div id="sideBar">
-            {(kanji || word) && <ThemeSwitcher historyDisplayed={displayHistory.length > 1} />}
             <div
                 onClick={reloadPage}
                 id="logoContainer"

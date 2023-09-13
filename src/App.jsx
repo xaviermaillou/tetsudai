@@ -19,11 +19,12 @@ import DisplayHistory from "./components/DisplayHistory"
 
 function App() {
   // Theme
-  const [cookies] = useCookies()
   const [imgPath, setImgPath] = useState('light')
   useEffect(() => {
-    if (cookies.theme) setImgPath(cookies.theme)
-  }, [cookies.theme])
+    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)")
+    if (darkTheme.matches) setImgPath("dark")
+    else setImgPath("light")
+  }, [])
 
   // Listing data
   const [kanjisList, setKanjisList] = useState([])

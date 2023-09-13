@@ -373,6 +373,11 @@ input:placeholder-shown {
 .kanjiDetailsSubSection {
   margin-top: 20px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.kanjiDetailsSubSection .tooltip {
+  margin-top: 10px;
 }
 .yomiContainer {
   align-items: flex-start;
@@ -1403,9 +1408,6 @@ input:placeholder-shown {
   }
   #kunyomiExamples .wordElementTranslation, #onyomiExamples .wordElementTranslation , #jukujikunExamples .wordElementTranslation{
     text-align: left;
-  }
-  #kunyomiExamples .tooltip, #onyomiExamples .tooltip {
-    margin-top: 10px;
   }
   #jukujikunExamples .wordElementJukujikun {
     align-items: flex-end;
