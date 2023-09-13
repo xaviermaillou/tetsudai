@@ -1166,7 +1166,7 @@ input:placeholder-shown {
 #searchSentenceHeader {
   z-index: 2000;
   width: 100%;
-  padding: 0px 27px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   height: 0px;
@@ -1659,10 +1659,10 @@ input:placeholder-shown {
 }
 
 #App.light .listElementContainer.importance2 {
-  background-color: rgba(255, 183, 197, 0.2);
+  background-color: rgba(255, 183, 197, 0.15);
 }
 #App.light .listElementContainer.importance1 {
-  background-color: rgba(255, 183, 197, 0.15);
+  background-color: rgba(255, 183, 197, 0.05);
 }
 
 #App.light #selector {
@@ -1832,10 +1832,10 @@ input:placeholder-shown {
 }
 
 #App.dark .listElementContainer.importance2 {
-  background-color: rgba(199, 192, 181, 0.1);
+  background-color: rgba(199, 192, 181, 0.05);
 }
 #App.dark .listElementContainer.importance1 {
-  background-color: rgba(199, 192, 181, 0.05);
+  background-color: rgba(199, 192, 181, 0.01);
 }
 
 #App.dark #selector {
