@@ -7,14 +7,12 @@ const KanjiDetails = (props) => {
     const {
         imgPath,
         kanji,
-        allDisplayed,
-        expanded,
         changeCurrentKanjiById,
         changeCurrentWordById,
     } = props
 
     return (
-        <div id="kanjiDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
+        <div id="kanjiDetails" className='expanded'>
             <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection" >
                     <p className="kanasReadingsHeader">KANJI QUI LE COMPOSENT</p>

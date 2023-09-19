@@ -35,9 +35,7 @@
   transition: all 0.2s ease-out;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: monospace
 }
 
 ::-webkit-scrollbar {
@@ -62,7 +60,7 @@ input {
   background: none;
   border: none;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 0px;
 }
 input:focus {
@@ -109,7 +107,7 @@ input:placeholder-shown {
   position: absolute;
   top: 26px;
   left: 24px;
-  opacity: 0.25;
+  opacity: 0.5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,7 +136,7 @@ input:placeholder-shown {
 }
 
 .tooltip {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.66;
 }
 
@@ -199,30 +197,6 @@ input:placeholder-shown {
 #kanjiDisplay.rerenderOpacity, #wordDisplay.rerenderOpacity {
   opacity: 0;
 }
-#themeSwitcher {
-  z-index: 1000;
-  position: absolute;
-  top: 26px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  animation-name: rerenderOpacity;
-  animation-duration: 0.4s;
-}
-#themeSwitcherPill {
-  position: relative;
-  height: 28px;
-  width: 56px;
-  border-radius: 14px;
-  opacity: 0.1;
-}
-#themeSwitcherDot {
-  position: absolute;
-  top: 1px;
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
-}
 #mainDisplay {
   z-index: 800;
   padding-top: 88px;
@@ -254,8 +228,6 @@ input:placeholder-shown {
   position: absolute;
   font-size: 100px;
   top: 140px;
-}
-#kanjiDisplayKanjiGhostLeft.selected, #kanjiDisplayKanjiGhostRight.selected {
   opacity: 0.25;
 }
 #kanjiDisplayKanjiGhostLeft {
@@ -268,6 +240,9 @@ input:placeholder-shown {
 }
 #kanjiDisplayTranslation, #wordDisplayTranslation {
   height: fit-content;
+  flex-shrink: 0;
+  width: 80%;
+  overflow: auto;
   font-size: 24px;
   font-weight: 100;
   padding: 0px 20px;
@@ -322,7 +297,7 @@ input:placeholder-shown {
   line-height: 20px;
 }
 .wordDisplayWordElementYomi.jukujikun div {
-  font-size: 16px;
+  font-size: 14px;
   opacity: 0.5;
 }
 
@@ -443,7 +418,7 @@ input:placeholder-shown {
   overflow-x: hidden;
 }
 .wordElementTranslation, .kanasReadingsHeader {
-  font-size: 16px;
+  font-size: 14px;
 }
 .kanjiElement {
   height: 100%;
@@ -460,7 +435,7 @@ input:placeholder-shown {
   width: 75%;
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 14px;
   align-items: flex-end;
 }
 .kanjiElementKana span {
@@ -491,7 +466,7 @@ input:placeholder-shown {
   padding-bottom: 24px;
 }
 #wordLanguage, #wordPrecisions, #relatedWords {
-  font-size: 16px;
+  font-size: 14px;
   white-space: pre-wrap;
 }
 #relatedWords .kanasReadingsHeader {
@@ -501,12 +476,12 @@ input:placeholder-shown {
   opacity: 0.66;
 }
 .relatedWordsSubtitle {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.66;
 }
 .sentencesElement {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .sentence {
   display: flex;
@@ -532,8 +507,8 @@ input:placeholder-shown {
   position: absolute;
   top: calc(100dvh - 50px);
   height: calc(100dvh - 280px);
-  width: 100%;
-  font-size: 16px;
+  width: 80%;
+  font-size: 14px;
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
@@ -599,114 +574,6 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 
-.trainingEndNotifier {
-  margin-top: 35dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0.5;
-  transition: none;
-}
-
-/* ------------------------------------------------ TRAINING CONTROLS ------------------------------------------------ */
-
-#selectorAndControls {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  min-height: 100px;
-  margin-bottom: 90px;
-  justify-content: space-between;
-}
-#selector {
-  z-index: 1000;
-  width: 80%;
-  margin: 0px auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 10px;
-}
-#selector span {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  opacity: 0.25;
-}
-#selector span.selected {
-  opacity: 0.5;
-}
-#selector img {
-  height: 20px;
-}
-#controls {
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 0px auto;
-  padding: 0px 10px;
-}
-#controls div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-#trainingClose {
-  opacity: 0.5;
-}
-#trainingFilters {
-  width: 16px;
-  display: flex;
-  opacity: 0.5;
-}
-#trainingFilters div {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 2.5px;
-}
-#trainingFilters div:nth-child(1) {
-  align-items: flex-end;
-}
-#trainingFilters div:nth-child(2) {
-  align-items: flex-start;
-}
-#trainingFilters span {
-  white-space: nowrap;
-}
-#controls img {
-  height: 20px;
-}
-#trainingNext {
-  opacity: 0.5;
-  width: 20px;
-  position: relative;
-}
-#trainingNextChoice {
-  position: absolute;
-  padding-bottom: 2px;
-  right: 40px;
-  width: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  justify-content: flex-end;
-}
-#trainingNextChoice.open {
-  width: 120px;
-}
-#trainingNextChoice img {
-  margin-left: 20px;
-}
-#trainingNextChoice img:nth-child(1) {
-  margin-bottom: 5px;
-}
-#trainingNextChoice img:nth-child(2) {
-  margin-top: 5px;
-  transform: scale(1, -1);
-}
-
 /* ------------------------------------------------ SIDE PANEL ------------------------------------------------ */
 
 #sidePanel {
@@ -725,12 +592,15 @@ input:placeholder-shown {
 }
 #sidePanel.expanded {
   left: 0px;
-  padding-top: calc(50dvh - 50px);
+  padding-top: calc(50dvh - 20px);
   background: none !important;
   transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
 }
 #sidePanel.expanded #wordsListSearchContainer {
   padding-left: 0px;
+}
+#sidePanel.expanded #searchResultsContainer {
+  opacity: 0;
 }
 
 /* ------------------------------------------------ SIDE PANEL HEADER ------------------------------------------------ */
@@ -798,7 +668,7 @@ input:placeholder-shown {
   align-items: center;
 }
 .wordsListHeaderRow.lowOpacity {
-  opacity: 0.25;
+  opacity: 0;
 }
 #filtersTip {
   z-index: 1600;
@@ -820,11 +690,10 @@ input:placeholder-shown {
   height: 14px
 }
 #filtersIndicator {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-radius: 20px;
 }
 #filtersIndicatorsElement, #filtersIndicatorRow {
   width: 90%;
@@ -887,13 +756,12 @@ input:placeholder-shown {
   height: 16px;
   position: absolute;
   right: 20px;
-  opacity: 0.5;
 }
 #wordsListSearch img.close {
   height: 12px;
 }
 
-#wordsListFilterModal, #wordsListTrainingModal {
+#wordsListFilterModal {
   opacity: 0;
   position: absolute;
   left: 0px;
@@ -906,12 +774,6 @@ input:placeholder-shown {
   z-index: 1500;
   top: 112px;
   justify-content: flex-end;
-}
-#wordsListTrainingModal {
-  z-index: 1600;
-  top: 75px;
-  flex-direction: column;
-  overflow: hidden;
 }
 #wordsListFilterModal div {
   height: 100%;
@@ -934,54 +796,20 @@ input:placeholder-shown {
 #wordsListFilterModal.expanded div {
   overflow-y: scroll;
 }
-#wordsListTrainingModal.open {
-  opacity: 1;
-  height: calc(100dvh - 155px);
-}
 #wordsListFilterModal span {
+  flex-shrink: 0;
+  width: 100%;
   padding-left: 20px;
   padding-right: 5px;
-  padding-bottom: 20px;
-  opacity: 0.66;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: right;
-}
-#wordsListTrainingModalScreenshot {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0px;
-  opacity: 0.75;
-}
-#wordsListTrainingModalScreenshot img {
-  width: 50%;
-  margin: 0px -18%;
-}
-#wordsListTrainingModalScreenshot img:nth-child(1) {
-  transform: rotate(-15deg);
-}
-#wordsListTrainingModalScreenshot img:nth-child(2) {
-  transform: rotate(0deg);
-}
-#wordsListTrainingModalScreenshot img:nth-child(3) {
-  transform: rotate(15deg);
-}
-#wordsListTrainingModalButtons {
-  width: 100%;
-  height: 100px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-#wordsListTrainingModalButtons span {
-  opacity: 0.75;
-}
-#wordsListFilterModal span.selected, #wordsListTrainingModalButtons span.selected {
-  opacity: 1;
-  padding-left: 15px;
-  padding-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #wordsListFilterModal div span:nth-child(1) {
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* ------------------------------------------------ SIDE PANEL LISTS ------------------------------------------------ */
@@ -996,7 +824,7 @@ input:placeholder-shown {
   width: 100%;
   line-height: 30px;
   overflow-y: hidden;
-  font-size: 14px;
+  font-size: 12px;
   position: relative;
 }
 .listIndicator span {
@@ -1012,15 +840,14 @@ input:placeholder-shown {
   transform: rotate(180deg);
 }
 .noElementsFilteredIndicator {
-  margin-top: 20%;
+  margin-top: 60%;
   opacity: 0.5;
-  font-size: 14px;
+  font-size: 12px;
   order: 10;
 }
 .wordsListList {
   height: calc(50dvh - 122px);
   position: relative;
-  padding-top: 1dvh;
   padding-bottom: 3dvh;
   overflow-y: scroll;
   display: flex;
@@ -1028,7 +855,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 .wordsListList.extended {
-  height: calc(100dvh - 244px);
+  height: calc(100dvh - 183px);
 }
 .wordsListList.closed {
   height: calc(0dvh - 0px);
@@ -1046,10 +873,7 @@ input:placeholder-shown {
 }
 #vocabularyList {
   margin-top: 33px;
-  padding-top: 8%;
   padding-bottom: 128px;
-  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0) 0, rgba(255,255,255,1) 20px, rgba(255,255,255,1) calc(100% - 20px), rgba(255,255,255,0) 100%);
-  mask: linear-gradient(to top, rgba(255,255,255,0) 0, rgba(255,255,255,1) 20px, rgba(255,255,255,1) calc(100% - 20px), rgba(255,255,255,0) 100%);
 }
 .listElementContainer {
   height: 54px;
@@ -1064,7 +888,7 @@ input:placeholder-shown {
 .wordElementRegularJapanese, .wordElementJukujikun {
   display: flex;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 14px;
 }
 .wordElementJukujikun {
   flex-direction: column;
@@ -1134,12 +958,12 @@ input:placeholder-shown {
   overflow-x: hidden;
 }
 .historyElementLabel {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.33;
   margin: 5px 0px;
 }
 .historyElementTranslation {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.5;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1157,6 +981,7 @@ input:placeholder-shown {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 #searchSentenceContainer.open {
   z-index: 1000;
@@ -1202,7 +1027,7 @@ input:placeholder-shown {
   font-size: 34px;
   writing-mode: vertical-lr;
   letter-spacing: 10px;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 .sentenceElementContainer.importance0 .sentenceElementUsedWord {
   opacity: 0.5;
@@ -1277,23 +1102,7 @@ input:placeholder-shown {
     opacity: 1;
     width: inherit;
   }
-  #themeSwitcher {
-    z-index: 1000;
-    position: absolute;
-    top: 50px;
-    width: 100%;
-    padding: 0px 14px;
-    display: flex;
-    justify-content: flex-start;
-    animation-name: rerenderOpacity;
-    animation-duration: 0.4s;
-  }
-  #themeSwitcher.down {
-    padding: 70px 14px;
-  }
-  #themeSwitcherPill {
-    transform: rotate(90deg);
-  }
+
   #introText, #pageNotFound {
     height: 100dvh;
     width: 100vw;
@@ -1359,9 +1168,10 @@ input:placeholder-shown {
   }
   #wordDetailsPlus {
     height: calc(100dvh - 320px);
+    width: calc((100% - 86px) - ((100% - 86px) * (20/100)));
   }
   #wordDetailsPlus.expanded {
-    top: 320px;
+    top: 322px;
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
@@ -1425,7 +1235,7 @@ input:placeholder-shown {
     display: block;
   }
   .sentencesElement:hover .sentencePin {
-    opacity: 0.25;
+    opacity: 0.5;
   }
   #selector {
     justify-content: space-evenly;
@@ -1465,7 +1275,7 @@ input:placeholder-shown {
     height: calc(50dvh - 148px);
   }
   .wordsListList.extended {
-    height: calc(100dvh - 296px);
+    height: calc(100dvh - 268px);
   }
   #vocabularyList {
     padding-bottom: 32px;
@@ -1486,6 +1296,13 @@ input:placeholder-shown {
   #wordsListOpener.offset {
     left: -64px;
   }
+  #wordsListSearch {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #wordsListSearch img {
+    right: 0px;
+  }
 
   #displayHistoryContainer {
     width: 8%;
@@ -1497,18 +1314,10 @@ input:placeholder-shown {
     top: 40px;
     left: 24px;
     height: 32px;
-    opacity: 0.33;
+    opacity: 0.5;
   }
   .historyElement {
     justify-content: flex-end;
-  }
-  #trainingNextChoice {
-    left: 40px;
-    justify-content: flex-start;
-  }
-  #trainingNextChoice img {
-    margin-left: 0px;
-    margin-right: 20px;
   }
   #searchSentence.open {
     height: calc(100dvh - 100px);
@@ -1516,347 +1325,157 @@ input:placeholder-shown {
   }
 }
 
-/* ------------------------------------------------ LIGHT THEME ------------------------------------------------ */
-
-#App.light #themeSwitcherPill {
-  border: 3px solid rgb(0, 0, 0);
-}
-#App.light #themeSwitcherDot {
-  background-color: rgb(0, 0, 0);
-  left: 1px;
-}
+/* ------------------------------------------------ COLORS ------------------------------------------------ */
 
 #App.light {
-  color: darkslategrey;
-  background-color: white;
-}
-
-#App.light input {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  color: rgba(0, 0, 0, 1);
-}
-
-#App.light input.highlighted {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-}
-#App.light input.highlighted:focus {
-  box-shadow: 0px 7.5px 7.5px -2.5px rgba(0, 0, 0, 0.1);
-}
-
-#App.light input::placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
-
-#App.light input.highlighted::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-#App.light input:focus {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.9);
-}
-
-#App.light .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-#App.light #kanjiDisplayKanji,
-#App.light .wordDisplayWordElement span,
-#App.light .wordDisplayWordElementYomi span {
-  color: gray;
-}
-
-#App.light .wordDisplayWordElementYomi.highlighted {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-#App.light .yomiContainer.extendable {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#App.light .sentencesElement .highlighted,
-#App.light .kanjiElementKana .highlighted,
-#App.light .wordElementRegularJapaneseMainCharacters.highlighted,
-#App.light .sentenceElementContainer.importance2 .sentenceElementUsedWord {
-  color: rgb(220, 121, 121);
-}
-
-#App.light .sentenceElementContainer {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-#App.light .sentenceElementContainer.highlighted {
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-#App.light .sentenceElementContainer.ambiguous {
-  background-color: rgba(255, 183, 197, 0.15);
-}
-
-#App.light #relatedKanji, #App.light #wordPrecisions {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#App.light #wordDetailsPlus {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-#App.light .kosoadoRow div.selected {
-  background-color: rgba(255, 183, 197, 0.15);
-}
-
-#App.light #filtersIndicator {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-#App.light #wordsListFilterModal div span {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#App.light #wordsListTrainerIcon {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-#App.light #wordsListFilterIcon.highlighted {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.25);
-}
-
-#App.light #kanjiDisplayInfo,
-#App.light #wordDisplayInfo {
-  box-shadow: 0px 7.5px 7.5px -5px rgba(240, 240, 240, 1);
-}
-
-#App.light #sidePanel {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-#App.light #wordsListFilterModal,
-#App.light #wordsListTrainingModal {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-#App.light #wordsListTrainingModalScreenshot img {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
-}
-
-#App.light #wordsListTrainingModalButtons {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-#App.light .listIndicator {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-#App.light #kanjisList {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-#App.light .listElement.selected {
-  border-left: 5px solid rgba(0, 0, 0, 0.15);
-}
-
-#App.light .listElementContainer.importance2 {
-  background-color: rgba(255, 183, 197, 0.15);
-}
-#App.light .listElementContainer.importance1 {
-  background-color: rgba(255, 183, 197, 0.05);
-}
-
-#App.light #selector {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-}
-
-#App.light .listElementContainer {
-  border-bottom: 1px solid rgba(255, 183, 197, 0.5);
-}
-
-#App.light #displayHistoryContainer {
-  background-color: rgba(255, 255, 255, 1);
-}
-@media (min-aspect-ratio: 1/1) {
-  #App.light .historyElement {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  #App.light .historyElement:nth-child(1) {
-      border-bottom: none;
-  }
-  #App.light .historyElement.selected {
-      border-right: 5px solid rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* ------------------------------------------------ DARK THEME ------------------------------------------------ */
-
-#App.dark #themeSwitcherPill {
-  border: 3px solid rgb(199, 192, 181);
-}
-#App.dark #themeSwitcherDot {
-  background-color: rgb(199, 192, 181);
-  left: 28px;
+  --backgroundColor: rgba(255, 255, 255, 1);
+  --primaryColor: rgba(0, 0, 0, 1);
+  --secondaryColor: rgba(0, 0, 0, 0.75);
+  --lightenedColor: rgba(0, 0, 0, 0.5);
+  --paleColor: rgba(0, 0, 0, 0.25);
+  --veryPaleColor: rgba(0, 0, 0, 0.1);
+  --extremelyPaleColor: rgba(0, 0, 0, 0.05);
 }
 
 #App.dark {
-  color: rgb(199, 192, 181);
-  background-color: rgb(36, 37, 37);
+  --backgroundColor: rgba(0, 0, 0, 1);
+  --primaryColor: rgba(255, 255, 0, 1);
+  --secondaryColor: rgba(255, 255, 0, 0.75);
+  --lightenedColor: rgba(255, 255, 0, 0.5);
+  --paleColor: rgba(255, 255, 0, 0.25);
+  --veryPaleColor: rgba(255, 255, 0, 0.1);
 }
 
-#App.dark input {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.6);
-  color: rgba(199, 192, 181, 1);
+#App {
+  color: var(--primaryColor);
+  background-color: var(--backgroundColor);
 }
 
-#App.dark input.highlighted {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.75);
+input {
+  border-bottom: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
+  caret-color: var(--primaryColor);
 }
 
-#App.dark input.highlighted:focus {
-  box-shadow: 0px 7.5px 7.5px -2.5px rgba(199, 192, 181, 0.1);
+input::placeholder {
+  color: var(--lightenedColor);
 }
 
-#App.dark input::placeholder {
-  color: rgba(199, 192, 181, 0.5);
+input.highlighted::placeholder {
+  color: var(--secondaryColor);
 }
 
-#App.dark input.highlighted::placeholder {
-  color: rgba(199, 192, 181, 0.7);
+.loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
+  background-color: var(--lightenedColor);
 }
 
-#App.dark input:focus {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.9);
+#kanjisList, #vocabularyList, #searchSentenceContainer, .listIndicator {
+  border: 1px solid var(--primaryColor);
 }
 
-#App.dark .loadingAnimation .fourDotsContainer .dotsRow .dotsCell.dot div {
-  background-color: rgba(199, 192, 181, 0.5);
+.listIndicator {
+  border-bottom: none;
 }
 
-#App.dark #kanjiDisplayKanji,
-#App.dark .wordDisplayWordElement span,
-#App.dark .wordDisplayWordElementYomi span {
-  color: rgba(199, 192, 181, 1)
+#kanjisList {
+  border-top: none;
 }
 
-#App.dark .wordDisplayWordElementYomi.highlighted {
-  border-top: 1px solid rgba(199, 192, 181, 0.5);
+#kanjiDisplayTranslation, #wordDisplayTranslation {
+  color: var(--primaryColor);
 }
 
-#App.dark .yomiContainer.extendable {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+#kanjiDisplayKanji,
+.wordDisplayWordElement span,
+.wordDisplayWordElementYomi span {
+  color: var(--primaryColor);
 }
 
-#App.dark .sentencesElement .highlighted,
-#App.dark .kanjiElementKana .highlighted,
-#App.dark .wordElementRegularJapaneseMainCharacters.highlighted,
-#App.dark .sentenceElementContainer.importance2 .sentenceElementUsedWord {
-  color: rgb(255, 150, 150);
+.wordDisplayWordElementYomi.highlighted {
+  border-top: 1px solid var(--primaryColor);
 }
 
-#App.dark .sentenceElementContainer {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.3);
+.yomiContainer.extendable {
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark .sentenceElementContainer.highlighted {
-  border-left: 2px solid rgba(199, 192, 181, 0.25);
+.sentencesElement .highlighted,
+.kanjiElementKana .highlighted,
+.wordElementRegularJapaneseMainCharacters.highlighted {
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark .sentenceElementContainer.ambiguous {
-  background-color: rgba(199, 192, 181, 0.1);
+.sentenceElementContainer {
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark #relatedKanji, #App.dark #wordPrecisions {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
+.sentenceElementContainer.highlighted {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
 }
 
-#App.dark #wordDetailsPlus {
-  border-top: 1px solid rgba(199, 192, 181, 0.1);;
-  background-color: rgba(36, 37, 37, 1);
+#relatedKanji, #wordPrecisions {
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark .kosoadoRow div.selected {
-  background-color: rgba(199, 192, 181, 0.1);
+#wordDetailsPlus {
+  border-top: 1px solid var(--primaryColor);
+  background-color: var(--backgroundColor);
 }
 
-#App.dark #filtersIndicator {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
-  background-color: rgba(199, 192, 181, 0.05);
+#filtersIndicator {
+  border: 1px solid var(--primaryColor);
 }
 
-#App.dark #wordsListFilterModal div span {
-  border-right: 1px solid rgba(199, 192, 181, 0.2);
+#wordsListFilterModal div span {
+  border-right: 1px solid var(--primaryColor);
 }
 
-#App.dark #wordsListTrainerIcon {
-  background-color: rgba(36, 37, 37, 1);
+#kanjiDisplayInfo, #wordDisplayInfo {
+  border-bottom: 2px solid var(--primaryColor);
 }
 
-#App.dark #wordsListFilterIcon.highlighted {
-  box-shadow: 0px 0px 7.5px rgba(199, 192, 181, 0.2);
+#sidePanel {
+  background-color: var(--backgroundColor);
 }
 
-#App.dark #kanjiDisplayInfo,
-#App.dark #wordDisplayInfo {
-  box-shadow: 0px 7.5px 7.5px -5px rgba(52, 52, 52, 1);
+#wordsListFilterModal {
+  background-color: var(--backgroundColor);
 }
 
-#App.dark #sidePanel {
-  background-color: rgba(36, 37, 37, 1);
+.listElement.selected, #wordsListFilterModal span.selected, .kosoadoRow div.selected {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
 }
 
-#App.dark #wordsListFilterModal,
-#App.dark #wordsListTrainingModal {
-  background-color: rgba(36, 37, 37, 1);
+.listElementContainer.importance2, .sentenceElementContainer.ambiguous {
+  background-color: var(--veryPaleColor);
+}
+.listElementContainer.importance1 {
+  background-color: var(--extremelyPaleColor);
 }
 
-#App.dark #wordsListTrainingModalScreenshot img {
-  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+#selector {
+  border-top: 1px solid var(--primaryColor);
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark #wordsListTrainingModalButtons {
-  border-top: 1px solid rgba(199, 192, 181, 0.25);
-  border-bottom: 1px solid rgba(199, 192, 181, 0.25);
+.listElementContainer {
+  border-bottom: 1px solid var(--primaryColor);
 }
 
-#App.dark .listIndicator {
-  border-top: 1px solid rgba(199, 192, 181, 0.4);
-}
-
-#App.dark #kanjisList {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.4);
-}
-
-#App.dark .listElement.selected {
-  border-left: 5px solid rgba(199, 192, 181, 0.25);
-}
-
-#App.dark .listElementContainer.importance2 {
-  background-color: rgba(199, 192, 181, 0.05);
-}
-#App.dark .listElementContainer.importance1 {
-  background-color: rgba(199, 192, 181, 0.01);
-}
-
-#App.dark #selector {
-  border-top: 1px solid rgba(199, 192, 181, 0.1);
-  border-bottom: 1px solid rgba(199, 192, 181, 0.1);
-}
-
-#App.dark .listElementContainer {
-  border-bottom: 1px solid rgba(199, 192, 181, 0.2);
-}
-
-#App.dark #displayHistoryContainer {
-  background-color: rgba(36, 37, 37, 1)
+#displayHistoryContainer {
+  background-color: var(--backgroundColor);
 }
 @media (min-aspect-ratio: 1/1) {
-  #App.dark .historyElement {
-      border-bottom: 1px solid rgba(199, 192, 181, 0.1);
+  .historyElement {
+      border-bottom: 1px solid var(--primaryColor);
   }
-  #App.dark .historyElement:nth-child(1) {
+  .historyElement:nth-child(1) {
       border-bottom: none;
   }
-  #App.dark .historyElement.selected {
-      border-right: 5px solid rgba(199, 192, 181, 0.25);
+  .historyElement.selected {
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
   }
 }

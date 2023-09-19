@@ -11,10 +11,12 @@ const KanjiElement = (props) => {
                 <div>
                     {
                         kanji.readings.kunyomi?.map((item, i) => (
-                            <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
+                            <>
                                 {i > 0 && ', '}
-                                {item.kana}
-                            </span>
+                                <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
+                                    {item.kana}
+                                </span>
+                            </>
                         ))
                     }
                     {
@@ -25,10 +27,13 @@ const KanjiElement = (props) => {
                     }
                     {
                         kanji.readings.onyomi?.map((item, i) => (
-                            <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
+                            <>
                                 {i > 0 && ', '}
-                                {item.kana}
-                            </span>
+                                <span className={item.kana === kanaToHighlight ? "highlighted" : ""} key={i}>
+                                    
+                                    {item.kana}
+                                </span>
+                            </>
                         ))
                     }
                 </div>

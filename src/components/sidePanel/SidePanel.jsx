@@ -24,8 +24,6 @@ const SidePanel = (props) => {
         searchCopy,
         handleSearch,
         filterIndication,
-        trainingMode,
-        toggleTraining,
         searchExecuted,
         setSearchExecuted,
         loadingKanjiList,
@@ -138,8 +136,6 @@ const SidePanel = (props) => {
                     search={search}
                     setSearch={setSearch}
                     filterIndication={filterIndication}
-                    trainingMode={trainingMode}
-                    toggleTraining={toggleTraining}
                     searchExecuted={searchExecuted}
                     setSearchExecuted={setSearchExecuted}
                     currentElement={currentElement}

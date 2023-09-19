@@ -168,8 +168,6 @@ export const WordDetails = (props) => {
         elements,
         sentences,
         loadingSentences,
-        allDisplayed,
-        expanded,
         changeCurrentKanjiById,
         changeCurrentWordById,
         pinnedSentence,
@@ -186,7 +184,7 @@ export const WordDetails = (props) => {
     let hasRelatedContent = false
 
     return (
-        <div id="wordDetails" className={allDisplayed ? (expanded ? 'hiddenElement selected expanded' : 'hiddenElement selected') : 'hiddenElement'}>
+        <div id="wordDetails" className='expanded'>
             <div id="wordDetailsKanjis" className={bottomSpace ? "bottomSpace" : ""}>
                 {originLanguage &&
                     <div id="wordLanguage">

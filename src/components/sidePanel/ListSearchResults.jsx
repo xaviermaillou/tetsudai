@@ -34,7 +34,7 @@ const ListSearchResults = (props) => {
             </span>}
             {!openSentence && <div id="kanjisList" className={searchExecuted ?
                 (displayKanjis ?
-                    "wordsListList"
+                    "extended wordsListList"
                     :
                     "closed wordsListList"
                 )

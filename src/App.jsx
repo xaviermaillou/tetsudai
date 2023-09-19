@@ -453,14 +453,6 @@ function App() {
         level={level}
         grammar={grammar}
         checkTrainingFilters={checkTrainingFilters}
-
-        // Training mode
-        allDisplayed={allDisplayed}
-        setAllDisplayed={setAllDisplayed}
-        trainingMode={trainingMode}
-        nextTrainingElement={nextTrainingElement}
-        toggleTraining={toggleTraining}
-        endingReason={endingReason}
       />
       <SidePanel 
         imgPath={imgPath}
@@ -501,10 +493,6 @@ function App() {
         filterIndication={filterIndication}
         openFilter={openFilter}
         setOpenFilter={setOpenFilter}
-        
-        // Training mode
-        trainingMode={trainingMode}
-        toggleTraining={toggleTraining}
 
         searchExecuted={searchExecuted}
         setSearchExecuted={setSearchExecuted}

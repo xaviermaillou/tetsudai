@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { dictionnary } from "tetsudai-common"
 import FilterModal from "./FilterModal"
-import TrainingModal from "./TrainingModal"
 
 
 const ListHeader = (props) => {
@@ -16,42 +15,25 @@ const ListHeader = (props) => {
         grammar,
         setGrammar,
         filterIndication,
-        trainingMode,
-        toggleTraining,
         searchExecuted,
         setSearchExecuted,
         currentElement,
     } = props
 
-    const [openTrainingModal, setOpenTrainingModal] = useState(false)
-    const handleTrainingIconClick = () => {
-        setOpenTrainingModal(!openTrainingModal)
-        setOpenFilter(false)
-    }
-
     useEffect(() => {
         if (filterIndication) {
-            setOpenTrainingModal(false)
             setOpenFilter(true)
         }
     }, [filterIndication, setOpenFilter])
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter)
-        setOpenTrainingModal(false)
     }
 
     return (
         <div id="wordsListHeader">
             <div
-                id="wordsListTrainerIcon"
                 className={searchExecuted ? "clickable" : "lowOpacity"}
-                onClick={() => handleTrainingIconClick()}
             >
-                <img
-                    className={openTrainingModal ? "open" : ""}
-                    src={`/img/${imgPath}/book.png`}
-                    alt="training"
-                />
             </div>
             <div
                 id="wordsListFilterIcon"
@@ -108,13 +90,6 @@ const ListHeader = (props) => {
                     }
                 </div>
             </div>
-            <TrainingModal
-                imgPath={imgPath}
-                openTrainingModal={openTrainingModal}
-                setOpenTrainingModal={setOpenTrainingModal}
-                trainingMode={trainingMode}
-                toggleTraining={toggleTraining}
-            />
             <FilterModal
                 openFilter={openFilter}
                 setOpenFilter={setOpenFilter}
