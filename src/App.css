@@ -241,11 +241,11 @@ input:placeholder-shown {
 #kanjiDisplayTranslation, #wordDisplayTranslation {
   height: fit-content;
   flex-shrink: 0;
-  width: 80%;
+  width: 100%;
   overflow: auto;
   font-size: 24px;
   font-weight: 100;
-  padding: 0px 20px;
+  padding: 0px 10%;
   white-space: nowrap;
 }
 #kanjiDisplayInfo, #wordDisplayInfo {
@@ -507,7 +507,7 @@ input:placeholder-shown {
   position: absolute;
   top: calc(100dvh - 50px);
   height: calc(100dvh - 280px);
-  width: 80%;
+  width: 100%;
   font-size: 14px;
   overflow: hidden;
 }
@@ -592,7 +592,7 @@ input:placeholder-shown {
 }
 #sidePanel.expanded {
   left: 0px;
-  padding-top: calc(50dvh - 20px);
+  padding-top: calc(50dvh - 30px);
   background: none !important;
   transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
 }
@@ -611,13 +611,12 @@ input:placeholder-shown {
   min-height: 120px;
   padding-bottom: 10px;
 }
-#wordsListTrainerIcon, #wordsListFilterIcon {
+#wordsListFilterIcon {
   z-index: 1000;
   position: absolute;
   bottom: 62px;
   height: 36px;
   width: 36px;
-  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,30 +624,19 @@ input:placeholder-shown {
 #wordsListFilterIcon img {
   transform: rotate(180deg);
 }
-#wordsListTrainerIcon img.open {
-  opacity: 1;
-}
 #wordsListFilterIcon img.open {
   transform: rotate(0deg);
 }
-#wordsListTrainerIcon {
-  left: 2px;
-  display: none;
-}
 #wordsListFilterIcon {
-  right: 8px;
+  right: 0px;
   box-shadow: none;
 }
 #wordsListFilterIcon img.focused {
   animation-name: emphasize;
   animation-duration: 0.4s;
 }
-#wordsListTrainerIcon img, #wordsListFilterIcon img {
+#wordsListFilterIcon img {
   height: 16px;
-}
-#wordsListTrainerIcon.lowOpacity {
-  opacity: 0;
-  pointer-events: none;
 }
 #wordsListFilterIcon.highlighted img {
   opacity: 1;
@@ -707,16 +695,14 @@ input:placeholder-shown {
   justify-content: center;
   align-items: center;
 }
-#filtersIndicatorRow span {
-  opacity: 0.9;
-}
 #filtersIndicatorRow img {
-  height: 8px;
+  height: 9px;
 }
 .filtersIndicatorsElement {
   padding: 0px 5px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 8px;
 }
 .filtersIndicatorsElement span {
   text-overflow: ellipsis;
@@ -734,18 +720,18 @@ input:placeholder-shown {
 }
 #wordsListOpener {
   left: -64px;
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 #searchSentencePin {
   left: -24px;
 }
 #wordsListOpener.open {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   left: 10px;
 }
 #wordsListSearch {
   position: relative;
-  padding: 24px 20px 0px 20px;
+  padding: 24px 0px 0px 20px;
   height: 56px;
   overflow-y: hidden;
 }
@@ -755,7 +741,7 @@ input:placeholder-shown {
 #wordsListSearch img {
   height: 16px;
   position: absolute;
-  right: 20px;
+  right: 0px;
 }
 #wordsListSearch img.close {
   height: 12px;
@@ -997,7 +983,7 @@ input:placeholder-shown {
 }
 #searchSentenceHeader.open {
   height: 20px;
-  margin-top: 20px;
+  margin: 20px 0px;
 }
 #searchSentenceHeader img {
   height: 10px;
@@ -1009,12 +995,10 @@ input:placeholder-shown {
   flex-direction: column;
   overflow-y: scroll;
   padding: 0px;
-  -webkit-mask: linear-gradient(to top, rgba(255,255,255,0) 0, rgba(255,255,255,1) 20px, rgba(255,255,255,1) calc(100% - 20px), rgba(255,255,255,0) 100%);
-  mask: linear-gradient(to top, rgba(255,255,255,0) 0, rgba(255,255,255,1) 20px, rgba(255,255,255,1) calc(100% - 20px), rgba(255,255,255,0) 100%);
 }
 #searchSentence.open {
   height: calc(100dvh - 80px);
-  padding: 30px 0px;
+  padding-bottom: 80px;
 }
 .sentenceElementContainer {
   display: flex;
@@ -1255,7 +1239,7 @@ input:placeholder-shown {
   }
   #sidePanel.expanded {
     left: 212px;
-    width: calc(100vw - 212px);
+    width: calc(100vw - 424px);
   }
   #wordsListSearchContainer {
     padding-left: 0px;
@@ -1321,7 +1305,6 @@ input:placeholder-shown {
   }
   #searchSentence.open {
     height: calc(100dvh - 100px);
-    padding: 30px 0px;
   }
 }
 
@@ -1402,7 +1385,7 @@ input.highlighted::placeholder {
 .sentencesElement .highlighted,
 .kanjiElementKana .highlighted,
 .wordElementRegularJapaneseMainCharacters.highlighted {
-  border-bottom: 1px solid var(--primaryColor);
+  background-color: var(--paleColor);
 }
 
 .sentenceElementContainer {
@@ -1421,10 +1404,6 @@ input.highlighted::placeholder {
 #wordDetailsPlus {
   border-top: 1px solid var(--primaryColor);
   background-color: var(--backgroundColor);
-}
-
-#filtersIndicator {
-  border: 1px solid var(--primaryColor);
 }
 
 #wordsListFilterModal div span {

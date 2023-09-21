@@ -100,7 +100,7 @@ const SidePanel = (props) => {
                         id="wordsListOpener"
                         className={open ? "open clickable" : "clickable"}
                         onClick={toggle}
-                        src={`/img/${imgPath}/up.png`}
+                        src={`/img/${imgPath}/next.png`}
                         alt="see all words"
                     />
                 }

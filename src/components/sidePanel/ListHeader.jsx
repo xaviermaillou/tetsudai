@@ -56,21 +56,21 @@ const ListHeader = (props) => {
                         <div id="filtersIndicatorRow">
                             {grammar !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.pluralClasses[grammar]}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.pluralClasses[grammar]}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar("0")} />
                                 </span>
                             }
                             {(level !== "0" && grammar !== "0") && <span>|</span>}
                             {level !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel("0")} />
                                 </span>
                             }
                             {(collection !== "0" && level !== "0") && <span>|</span>}
                             {collection !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.collections[collection]}</span>&nbsp;&nbsp;
+                                    <span>{dictionnary.collections[collection]}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection("0")} />
                                 </span>
                             }
