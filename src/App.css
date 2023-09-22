@@ -710,7 +710,7 @@ input:placeholder-shown {
 }
 #wordsListSearchContainer {
   position: relative;
-  padding-left: 32px;
+  padding-left: 52px;
 }
 #wordsListOpener, #searchSentencePin {
   z-index: 2200;
@@ -731,7 +731,7 @@ input:placeholder-shown {
 }
 #wordsListSearch {
   position: relative;
-  padding: 24px 0px 0px 20px;
+  padding: 24px 0px 0px 0px;
   height: 56px;
   overflow-y: hidden;
 }
@@ -841,7 +841,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 .wordsListList.extended {
-  height: calc(100dvh - 183px);
+  height: calc(100dvh - 263px);
 }
 .wordsListList.closed {
   height: calc(0dvh - 0px);
@@ -859,7 +859,7 @@ input:placeholder-shown {
 }
 #vocabularyList {
   margin-top: 33px;
-  padding-bottom: 128px;
+  padding-bottom: 32px;
 }
 .listElementContainer {
   height: 54px;
@@ -870,6 +870,13 @@ input:placeholder-shown {
 .listElement {
   padding: 0px 20px;
   height: 100%;
+}
+.listElement ,
+.listElement div,
+.sentenceElementContainer,
+.sentenceElementContainer div,
+.sentenceElementContainer span {
+  transition: none;
 }
 .wordElementRegularJapanese, .wordElementJukujikun {
   display: flex;
@@ -1261,9 +1268,6 @@ input:placeholder-shown {
   .wordsListList.extended {
     height: calc(100dvh - 268px);
   }
-  #vocabularyList {
-    padding-bottom: 32px;
-  }
   #mainDisplay {
     padding-top: 60px;
     padding-left: 86px;
@@ -1315,9 +1319,9 @@ input:placeholder-shown {
   --primaryColor: rgba(0, 0, 0, 1);
   --secondaryColor: rgba(0, 0, 0, 0.75);
   --lightenedColor: rgba(0, 0, 0, 0.5);
-  --paleColor: rgba(0, 0, 0, 0.25);
-  --veryPaleColor: rgba(0, 0, 0, 0.1);
-  --extremelyPaleColor: rgba(0, 0, 0, 0.05);
+  --paleColor: rgba(0, 0, 0, 0.15);
+  --veryPaleColor: rgba(0, 0, 0, 0.075);
+  --extremelyPaleColor: rgba(0, 0, 0, 0.025);
 }
 
 #App.dark {
@@ -1428,10 +1432,10 @@ input.highlighted::placeholder {
 }
 
 .listElementContainer.importance2, .sentenceElementContainer.ambiguous {
-  background-color: var(--veryPaleColor);
+  background-color: var(--paleColor);
 }
 .listElementContainer.importance1 {
-  background-color: var(--extremelyPaleColor);
+  background-color: var(--veryPaleColor);
 }
 
 #selector {
