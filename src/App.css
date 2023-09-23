@@ -616,7 +616,7 @@ input:placeholder-shown {
   position: absolute;
   bottom: 62px;
   height: 36px;
-  width: 36px;
+  width: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -731,12 +731,13 @@ input:placeholder-shown {
 }
 #wordsListSearch {
   position: relative;
-  padding: 24px 0px 0px 0px;
+  padding: 22px 0px 0px 0px;
   height: 56px;
   overflow-y: hidden;
 }
 #wordsListSearch input {
   padding-right: 20px;
+  font-size: 16px;
 }
 #wordsListSearch img {
   height: 16px;
@@ -834,7 +835,6 @@ input:placeholder-shown {
 .wordsListList {
   height: calc(50dvh - 122px);
   position: relative;
-  padding-bottom: 3dvh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -891,6 +891,7 @@ input:placeholder-shown {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin: 0px 5px;
   line-height: 100%;

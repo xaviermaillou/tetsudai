@@ -22,7 +22,7 @@ const KanjiElement = (props) => {
                     {
                         (kanji.readings.kunyomi.length>0 && kanji.readings.onyomi.length>0) && 
                         <>
-                            &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;|&nbsp;
                         </>
                     }
                     {
@@ -38,7 +38,7 @@ const KanjiElement = (props) => {
                     }
                 </div>
                 <div className="kanjiElementTranslation">
-                    {kanji.translation.join('; ')}
+                    {kanji.translation.join(' | ')}
                 </div>
             </div>
         </div>
