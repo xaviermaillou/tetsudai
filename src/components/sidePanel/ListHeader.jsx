@@ -14,17 +14,11 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
-        filterIndication,
         searchExecuted,
         setSearchExecuted,
         currentElement,
     } = props
 
-    useEffect(() => {
-        if (filterIndication) {
-            setOpenFilter(true)
-        }
-    }, [filterIndication, setOpenFilter])
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter)
     }

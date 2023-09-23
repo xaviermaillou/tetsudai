@@ -35,12 +35,6 @@ function App() {
   // Complementary data
   const [sentencesList, setSentencesList] = useState([])
 
-  // Training data
-  const [filteredKanjis, setFilteredKanjis] = useState([])
-  const [filteredWords, setFilteredWords] = useState([])
-  const [filteredKanjisPutAside, setFilteredKanjisPutAside] = useState([])
-  const [filteredWordsPutAside, setFilteredWordsPutAside] = useState([])
-
   // Filtering states
   const [collection, setCollection] = useState("0")
   const [level, setLevel] = useState("0")
@@ -70,6 +64,16 @@ function App() {
   const params = useParams()
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
+
+  const [menuOpen, setMenuOpen] = useState(() => {
+    if (window.innerWidth > 961) {
+      setTimeout(() => {
+        setMenuOpen(true)
+      }, 1000)
+    } else {
+      if (!params.element && !params.id) return true
+    }
+  })
 
   const changeCurrentKanjiById = useCallback(async (id) => {
     const result = await fetchKanji(id, setLoadingMainDisplay)
@@ -242,181 +246,6 @@ function App() {
     setPinnedSentence(resultSentence)
   }
 
-  // Training mode
-
-  const [trainingMode, setTrainingMode] = useState(0)
-  const [allDisplayed, setAllDisplayed] = useState(true)
-  const [endingReason, setEndingReason] = useState(undefined)
-
-  // Menu handling (is here because needs training mode value)
-
-  const [menuOpen, setMenuOpen] = useState(() => {
-    if (window.innerWidth > 961) {
-      setTimeout(() => {
-        setMenuOpen(true)
-      }, 1000)
-    } else {
-      if (!params.element && !params.id) return true
-    }
-  })
-  const [filterIndication, setFilterIndication] = useState(false)
-
-  const checkTrainingFilters = () => {
-    if (!menuOpen) {
-      setMenuOpen(true)
-      setTimeout(() => {
-        setFilterIndication(true)
-        setTimeout(() => {
-          setFilterIndication(false)
-        }, 300)
-      }, 300)
-    } else {
-      setFilterIndication(true)
-      setTimeout(() => {
-        setFilterIndication(false)
-      }, 300)
-    }
-  }
-
-  // Start the training
-  // Changes trainingMode
-  const toggleTraining = (type) => {
-    setMenuOpen(type === 0)
-    setTrainingMode(type)
-    setAllDisplayed(true)
-    setFilterIndication(false)
-    if (type === 1) getTrainingKanji()
-    if (type === 2) getTrainingVocabulary()
-  }
-
-  // Fetching array of ids corresponding to the state filters
-  // Triggered with level, grammar and collecton
-  // Changes filteredKanjis and filteredWords
-  const getTrainingKanji = useCallback(async () => {
-    const result = await fetchKanjiTraining(
-      level,
-      grammar,
-      collection
-    )
-    setFilteredKanjis(result)
-    setFilteredKanjisPutAside([])
-  }, [
-    level,
-    grammar,
-    collection
-  ])
-  const getTrainingVocabulary = useCallback(async () => {
-    const result = await fetchVocabularyTraining(
-      level,
-      grammar,
-      collection
-    )
-    setFilteredWords(result)
-    setFilteredWordsPutAside([])
-  }, [
-    level,
-    grammar,
-    collection
-  ])
-
-  useEffect(() => {
-    if (trainingMode === 1) getTrainingKanji()
-    if (trainingMode === 2) getTrainingVocabulary()
-  }, [
-    level,
-    grammar,
-    collection,
-    getTrainingKanji,
-    getTrainingVocabulary,
-    trainingMode
-  ])
-
-  // Removing current displayed element from its corresponding array of ids
-  // Changes filteredKanjis and filteredWords
-  const nextTrainingElement = (validated) => {
-    if (trainingMode === 1) {
-      // Ending of training loop
-      // if at least one element has been put aside, we restart the loop with the put aside element(s)
-      // otherwhise we just end the training session
-      if (filteredKanjis.length === 1 && filteredKanjisPutAside.length === 0 && validated) {
-        setEndingReason(2)
-        setKanji(undefined)
-      }
-      else if (filteredKanjis.length === 1 
-        && (validated === true || validated === false)) {
-        validated ?
-        setFilteredKanjis(filteredKanjisPutAside)
-          :
-          setFilteredKanjis([ ...filteredKanjisPutAside, { id: kanji.id } ])
-          setFilteredKanjisPutAside([])
-      }
-
-      else if (filteredKanjis.length > 0 && kanji
-        && (validated === true || validated === false)) {
-        setFilteredKanjis((arr) => arr
-          .filter((el) => el.id !== kanji.id))
-        if (!validated) setFilteredKanjisPutAside((arr) => (arr) => [...arr, { id: kanji.id }])
-      }
-      else getTrainingKanji()
-    }
-    if (trainingMode === 2) {
-      // Ending of training loop
-      // if at least one element has been put aside, we restart the loop with the put aside element(s)
-      // otherwhise we just end the training session
-      if (filteredWords.length === 1 && filteredWordsPutAside.length === 0 && validated) {
-        setEndingReason(2)
-        setWord(undefined)
-      }
-      else if (filteredWords.length === 1 
-        && (validated === true || validated === false)) {
-        validated ?
-          setFilteredWords(filteredWordsPutAside)
-          :
-          setFilteredWords([ ...filteredWordsPutAside, { id: word.id } ])
-        setFilteredWordsPutAside([])
-      }
-
-      else if (filteredWords.length > 0 && word
-        && (validated === true || validated === false)) {
-        setFilteredWords((arr) => arr
-          .filter((el) => el.id !== word.id))
-        if (!validated) setFilteredWordsPutAside((arr) => [...arr, { id: word.id }])
-      }
-      else getTrainingVocabulary()
-    }
-  }
-
-  // A random id is picked and the corresponding element is fetched
-  // Triggered with filteredKanjis and filteredWords
-  useEffect(() => {
-    if (trainingMode === 1) {
-      if (filteredKanjis.length > 0) {
-        const newKanjiId = filteredKanjis[Math.floor(Math.random()*filteredKanjis.length)]
-        navigate(`/kanji/${newKanjiId.id}`)
-      }
-      else {
-        setEndingReason(1)
-        setKanji(undefined)
-      }
-    }
-  // For some reason it requires to add "navigate" to the dependencies array, which causes an infinite loop
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredKanjis, trainingMode])
-  useEffect(() => {
-    if (trainingMode === 2) {
-      if (filteredWords.length > 0) {
-        const newWordId = filteredWords[Math.floor(Math.random()*filteredWords.length)]
-        navigate(`/word/${newWordId.id}`)
-      }
-      else {
-        setEndingReason(1)
-        setWord(undefined)
-      }
-    }
-  // For some reason it requires to add "navigate" to the dependencies array, which causes an infinite loop
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredWords, trainingMode])
-
   const [openHistory, setOpenHistory] = useState(false)
 
   return (
@@ -448,11 +277,8 @@ function App() {
         // Height
         compressed={menuOpen}
 
-        // Filters
-        collection={collection}
-        level={level}
-        grammar={grammar}
-        checkTrainingFilters={checkTrainingFilters}
+        // Menu toggle
+        setMenuOpen={setMenuOpen}
       />
       <SidePanel 
         imgPath={imgPath}
@@ -490,7 +316,6 @@ function App() {
         setSearch={setSearch}
         searchCopy={searchCopy}
         handleSearch={handleSearch}
-        filterIndication={filterIndication}
         openFilter={openFilter}
         setOpenFilter={setOpenFilter}
 

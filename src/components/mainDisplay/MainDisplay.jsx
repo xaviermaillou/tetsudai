@@ -10,10 +10,6 @@ const MainDisplay = (props) => {
         imgPath,
         kanji,
         compressed,
-        collection,
-        level,
-        grammar,
-        checkTrainingFilters,
         changeCurrentKanjiById,
         word,
         changeCurrentWordById,
@@ -24,6 +20,7 @@ const MainDisplay = (props) => {
         pinnedSentence,
         handleSearch,
         setSearchExecuted,
+        setMenuOpen,
     } = props
 
     const handleKanjiChange = (id) => {
@@ -116,7 +113,6 @@ const MainDisplay = (props) => {
                             <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
                         </div>
                         <WordDetails
-                            imgPath={imgPath}
                             elements={word.elements.filter((element) => element.details)}
                             sentences={sentences}
                             loadingSentences={loadingSentences}
@@ -131,6 +127,7 @@ const MainDisplay = (props) => {
                             precisions={word.precisions}
                             relatedWords={word.relatedWords}
                             bottomSpace={(word.inflexions || word.kosoado)}
+                            setMenuOpen={setMenuOpen}
                         />
                         {(word.inflexions || word.kosoado) &&
                             <WordDetailsPlus

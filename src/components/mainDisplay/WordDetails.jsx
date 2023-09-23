@@ -120,38 +120,27 @@ export const WordDetailsPlus = (props) => {
 
 const Sentence = (props) => {
     const {
-        imgPath,
         sentence,
-        changeCurrentWordById,
         referenceId,
         pinnedSentence,
         handleSearch,
         setSearchExecuted,
+        setMenuOpen,
     } = props
 
-    const handleWordClick = (e, id) => {
-        e.stopPropagation()
-        if (id && referenceId !== id) changeCurrentWordById(id)
-    }
-
-    const handleSearchClick = () => {
+    const handleSentenceClick = () => {
         const sentenceString = sentence.elements.map((element) => element.word).join("")
         setSearchExecuted(true)
         handleSearch(sentenceString)
+        setMenuOpen(true)
     }
 
     return (
-        <div className="sentencesElement">
+        <div onClick={handleSentenceClick} className={`sentencesElement clickable${pinnedSentence?.id === sentence.id ? ' selected' : ''}`}>
             <div className="sentence">
-                <img
-                    onClick={handleSearchClick}
-                    className={pinnedSentence?.id === sentence.id ? "sentencePin highlighted" : "sentencePin clickable"}
-                    src={`/img/${imgPath}/search.png`}
-                    alt="unpin sentence"
-                />
                 <div>
                     {sentence.elements.map((element, i) => (
-                        <span onClick={(e) => handleWordClick(e, element.id)} className={referenceId === element.id ? "highlighted" : (element.id ? "clickable" : "")} key={i}>
+                        <span className={referenceId === element.id ? "highlighted" : ""} key={i}>
                             {element.word}
                         </span>
                     ))}
@@ -164,7 +153,6 @@ const Sentence = (props) => {
 
 export const WordDetails = (props) => {
     const {
-        imgPath,
         elements,
         sentences,
         loadingSentences,
@@ -179,6 +167,7 @@ export const WordDetails = (props) => {
         precisions,
         relatedWords,
         bottomSpace,
+        setMenuOpen,
     } = props
 
     let hasRelatedContent = false
@@ -247,13 +236,12 @@ export const WordDetails = (props) => {
                     <div>
                         {sentences?.map((sentence, i) => (
                             <Sentence
-                                imgPath={imgPath}
                                 sentence={sentence}
-                                changeCurrentWordById={changeCurrentWordById}
                                 referenceId={referenceId}
                                 pinnedSentence={pinnedSentence}
                                 handleSearch={handleSearch}
                                 setSearchExecuted={setSearchExecuted}
+                                setMenuOpen={setMenuOpen}
                                 key={i}
                             />
                         ))}
