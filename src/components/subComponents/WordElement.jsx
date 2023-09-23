@@ -52,7 +52,7 @@ const WordElement = (props) => {
                 </div>
                 {sentenceGrammar &&
                     <div className="wordElementGrammar">
-                        {dictionnary.classes[sentenceGrammar.function].toLowerCase()}
+                        {dictionnary.classes[sentenceGrammar.function]?.toLowerCase()}
                         {sentenceGrammar.tense &&
                             <span className="wordElementGrammarTense">
                                 {Object.entries(sentenceGrammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[value]}</span>)}
