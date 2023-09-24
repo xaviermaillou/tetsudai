@@ -1013,6 +1013,9 @@ input:placeholder-shown {
   padding: 0px 20px;
 }
 .sentenceElementUsedWord {
+  min-height: 54px;
+  width: 51px;
+  flex-shrink: 0;
   white-space: nowrap;
   opacity: 0.5;
   font-size: 34px;
