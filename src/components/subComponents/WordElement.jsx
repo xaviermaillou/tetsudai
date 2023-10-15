@@ -1,5 +1,7 @@
 import { dictionnary } from "tetsudai-common"
 import { localDictionnary } from "../../lib/dictionnary"
+import { useContext } from "react"
+import LanguageContext from "../../contexts/Language"
 
 const WordElement = (props) => {
     const {
@@ -8,6 +10,8 @@ const WordElement = (props) => {
         changeCurrentWordById,
         sentenceGrammar,
     } = props
+
+    const language = useContext(LanguageContext)
 
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
@@ -52,10 +56,10 @@ const WordElement = (props) => {
                 </div>
                 {sentenceGrammar &&
                     <div className="wordElementGrammar">
-                        {dictionnary.classes[sentenceGrammar.function]?.toLowerCase()}
+                        {dictionnary[language].classes[sentenceGrammar.function]?.toLowerCase()}
                         {sentenceGrammar.tense &&
                             <span className="wordElementGrammarTense">
-                                {Object.entries(sentenceGrammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[value]}</span>)}
+                                {Object.entries(sentenceGrammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[language][value]}</span>)}
                             </span>
                         }
                     </div>

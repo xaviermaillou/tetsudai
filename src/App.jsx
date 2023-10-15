@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, createContext } from 'react'
 import { useCookies } from 'react-cookie'
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
@@ -12,12 +12,19 @@ import {
   fetchSentenceData,
   fetchKanji,
   fetchWord,
-  fetchKanjiTraining,
-  fetchVocabularyTraining,
 } from './request'
 import DisplayHistory from "./components/DisplayHistory"
+import LanguageContext from './contexts/Language';
+import { localDictionnary } from './lib/dictionnary';
 
 function App() {
+  // Language
+  const [language, setLanguage] = useState('en')
+  useEffect(() => {
+    const userLanguage = navigator.languages[0]?.split('-')?.[0]
+    setLanguage(['fr', 'en'].includes(userLanguage) ? userLanguage : 'en')
+  }, [])
+
   // Theme
   const [imgPath, setImgPath] = useState('light')
   useEffect(() => {
@@ -249,103 +256,104 @@ function App() {
   const [openHistory, setOpenHistory] = useState(false)
 
   return (
-    <div id="App" className={imgPath}>
-      {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "" : "lowOpacity"}>
-        <p>
-          Tetsudai a pour vocation d'assister l'étudiant en <b>japonais</b> durant son apprentissage de la langue,
-          en lui fournissant un <b>dictionnaire</b> focalisé sur l'<b>interconnexion</b> du vocabulaire et des kanji.
-        </p>
-      </div>}
-      <MainDisplay
-        // Theme switcher
-        imgPath={imgPath}
-        historyDisplayed={displayHistory.length > 1}
+    <LanguageContext.Provider value={language}>
+      <div id="App" className={imgPath}>
+        {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "" : "lowOpacity"}>
+          <p>
+            {localDictionnary[language].appDescription}
+          </p>
+        </div>}
+        <MainDisplay
+          // Theme switcher
+          imgPath={imgPath}
+          historyDisplayed={displayHistory.length > 1}
 
-        // Displayed element
-        setOpenedHistory={setOpenedHistory}
-        kanji={kanji}
-        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
-        word={word}
-        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
-        sentences={sentencesList}
-        pinnedSentence={pinnedSentence}
-        handleSearch={handleSearch}
-        setSearchExecuted={setSearchExecuted}
-        loading={loadingMainDisplay}
-        loadingSentences={loadingSentences}
+          // Displayed element
+          setOpenedHistory={setOpenedHistory}
+          kanji={kanji}
+          changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
+          word={word}
+          changeCurrentWordById={(id) => navigate(`/word/${id}`)}
+          sentences={sentencesList}
+          pinnedSentence={pinnedSentence}
+          handleSearch={handleSearch}
+          setSearchExecuted={setSearchExecuted}
+          loading={loadingMainDisplay}
+          loadingSentences={loadingSentences}
 
-        // Height
-        compressed={menuOpen}
+          // Height
+          compressed={menuOpen}
 
-        // Menu toggle
-        setMenuOpen={setMenuOpen}
-      />
-      <SidePanel 
-        imgPath={imgPath}
+          // Menu toggle
+          setMenuOpen={setMenuOpen}
+        />
+        <SidePanel 
+          imgPath={imgPath}
 
-        // Content
-        setOpenedHistory={setOpenedHistory}
-        kanjis={kanjisList}
-        vocabulary={vocabularyList}
-        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
-        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
-        kanjiListOffset={kanjiListOffset}
-        setKanjisListOffset={setKanjisListOffset}
-        vocabularyListOffset={vocabularyListOffset}
-        setVocabularyListOffset={setVocabularyListOffset}
+          // Content
+          setOpenedHistory={setOpenedHistory}
+          kanjis={kanjisList}
+          vocabulary={vocabularyList}
+          changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
+          changeCurrentWordById={(id) => navigate(`/word/${id}`)}
+          kanjiListOffset={kanjiListOffset}
+          setKanjisListOffset={setKanjisListOffset}
+          vocabularyListOffset={vocabularyListOffset}
+          setVocabularyListOffset={setVocabularyListOffset}
 
-        // Sentence
-        pinnedSentence={pinnedSentence}
-        searchIsSentence={searchIsSentence}
+          // Sentence
+          pinnedSentence={pinnedSentence}
+          searchIsSentence={searchIsSentence}
 
-        // Current element
-        currentElement={kanji || word}
+          // Current element
+          currentElement={kanji || word}
 
-        // Menu toggle
-        open={menuOpen}
-        setOpen={setMenuOpen}
+          // Menu toggle
+          open={menuOpen}
+          setOpen={setMenuOpen}
 
-        // Filters
-        collection={collection}
-        setCollection={setCollection}
-        level={level}
-        setLevel={setLevel}
-        grammar={grammar}
-        setGrammar={setGrammar}
-        search={search}
-        setSearch={setSearch}
-        searchCopy={searchCopy}
-        handleSearch={handleSearch}
-        openFilter={openFilter}
-        setOpenFilter={setOpenFilter}
+          // Filters
+          collection={collection}
+          setCollection={setCollection}
+          level={level}
+          setLevel={setLevel}
+          grammar={grammar}
+          setGrammar={setGrammar}
+          search={search}
+          setSearch={setSearch}
+          searchCopy={searchCopy}
+          handleSearch={handleSearch}
+          openFilter={openFilter}
+          setOpenFilter={setOpenFilter}
 
-        searchExecuted={searchExecuted}
-        setSearchExecuted={setSearchExecuted}
-        loadingKanjiList={loadingKanjiList}
-        loadingVocabularyList={loadingVocabularyList}
-      />
-      <SideBar
-        imgPath={imgPath}
-        displayHistory={displayHistory}
-        historyDisplayed={displayHistory.length > 1}
-        openHistory={openHistory}
-        setOpenHistory={setOpenHistory}
-        kanji={kanji}
-        word={word}
-        loadingMainDisplay={loadingMainDisplay}
-        searchExecuted={searchExecuted}
-      />
-      <DisplayHistory
-        kanji={kanji}
-        word={word}
-        displayHistory={displayHistory}
-        openHistory={openHistory}
-        setOpenHistory={setOpenHistory}
-        setOpenedHistory={setOpenedHistory}
-        changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
-        changeCurrentWordById={(id) => navigate(`/word/${id}`)}
-      />
-    </div>
+          searchExecuted={searchExecuted}
+          setSearchExecuted={setSearchExecuted}
+          loadingKanjiList={loadingKanjiList}
+          loadingVocabularyList={loadingVocabularyList}
+        />
+        <SideBar
+          imgPath={imgPath}
+          displayHistory={displayHistory}
+          historyDisplayed={displayHistory.length > 1}
+          openHistory={openHistory}
+          setOpenHistory={setOpenHistory}
+          kanji={kanji}
+          word={word}
+          loadingMainDisplay={loadingMainDisplay}
+          searchExecuted={searchExecuted}
+        />
+        <DisplayHistory
+          kanji={kanji}
+          word={word}
+          displayHistory={displayHistory}
+          openHistory={openHistory}
+          setOpenHistory={setOpenHistory}
+          setOpenedHistory={setOpenedHistory}
+          changeCurrentKanjiById={(id) => navigate(`/kanji/${id}`)}
+          changeCurrentWordById={(id) => navigate(`/word/${id}`)}
+        />
+      </div>
+    </LanguageContext.Provider>
   )
 }
 

@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { localDictionnary } from "../../lib/dictionnary"
 import { dictionnary } from "tetsudai-common"
 import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
 import Loading from "../visualComponents/Loading"
+import LanguageContext from "../../contexts/Language"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
@@ -58,10 +59,12 @@ const Kosoado = (props) => {
 
 const VerbInflexionLine = (props) => {
     const { inflexion, tenseName, modeName } = props
+    const language = useContext(LanguageContext)
+    
     return (
         <div className="wordDetailsInflexionsMode">
             <span className="wordDetailsInflexionsVerb">{inflexion['polite']?.['main']}{inflexion['polite']?.['ending']}</span>
-            <span className="wordDetailsInflexionsIndicator">{localDictionnary[tenseName]} {localDictionnary[modeName]}</span>
+            <span className="wordDetailsInflexionsIndicator">{localDictionnary[language][tenseName]} {localDictionnary[language][modeName]}</span>
             <span className="wordDetailsInflexionsVerb">{inflexion['neutral']?.['main']}{inflexion['neutral']?.['ending']}</span>
         </div>
     )
@@ -98,13 +101,15 @@ export const WordDetailsPlus = (props) => {
         inflexions,
         kosoado
     } = props
+
+    const language = useContext(LanguageContext)
     
     const [open, setOpen] = useState(false)
 
     return (
         <div id="wordDetailsPlus" className={open ? "expanded" : ""}>
             <div id="wordDetailsPlusIndicator" className="clickable" onClick={() => setOpen(!open)}>
-                {inflexions && <span>CONJUGAISON</span>}
+                {inflexions && <span>{localDictionnary[language].inflexions}</span>}
                 {kosoado && <span>KOSOADO</span>}
                 {open ?
                     <img className="open" src={`/img/${imgPath}/less.png`} alt="hide readings" />
@@ -170,6 +175,8 @@ export const WordDetails = (props) => {
         setMenuOpen,
     } = props
 
+    const language = useContext(LanguageContext)
+
     let hasRelatedContent = false
 
     return (
@@ -177,7 +184,7 @@ export const WordDetails = (props) => {
             <div id="wordDetailsKanjis" className={bottomSpace ? "bottomSpace" : ""}>
                 {originLanguage &&
                     <div id="wordLanguage">
-                        <span>{dictionnary.languages[originLanguage]}</span>
+                        <span>{dictionnary[language].languages[originLanguage]}</span>
                         <span>{originLanguageWord}</span>
                     </div>
                 }
@@ -200,14 +207,14 @@ export const WordDetails = (props) => {
                             />
                         </div>
                     ))}
-                    {elements.length === 0 && <span className="tooltip">Ce mot n'est composé d'aucun kanji</span>}
+                    {elements.length === 0 && <span className="tooltip">{localDictionnary[language].noKanji}</span>}
                 </div>
                 <div id="relatedWords">
-                    <p className="kanasReadingsHeader">MOTS ASSOCIÉS</p>
+                    <p className="kanasReadingsHeader">{localDictionnary[language].relatedWords}</p>
                     {relatedWords &&
                         Object.entries(relatedWords).map(([key, value]) => (
                             <>
-                                {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[key]}</p>}
+                                {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[language][key]}</p>}
                                 {value.length > 0 && value.map((relatedWord, i) => {
                                     hasRelatedContent = true
                                     return (
@@ -221,11 +228,11 @@ export const WordDetails = (props) => {
                             </>
                         ))
                     }
-                    {!hasRelatedContent && <span className="tooltip">Aucun mot associé n'a été trouvé</span>}
+                    {!hasRelatedContent && <span className="tooltip">{localDictionnary[language].noWord}</span>}
                 </div>
             </div>
             <div id="wordDetailsSentences" className={bottomSpace ? "bottomSpace" : ""}>
-                <p className="kanasReadingsHeader">PHRASES</p>
+                <p className="kanasReadingsHeader">{localDictionnary[language].sentences}</p>
                 {loadingSentences ?
                     <div className="loadingAnimationContainer">
                         <Loading
@@ -245,7 +252,7 @@ export const WordDetails = (props) => {
                                 key={i}
                             />
                         ))}
-                        {sentences.length === 0 && <span className="tooltip">Aucune phrase trouvée avec ce mot</span>}
+                        {sentences.length === 0 && <span className="tooltip">{localDictionnary[language].noSentence}</span>}
                     </div>
                 }
             </div>

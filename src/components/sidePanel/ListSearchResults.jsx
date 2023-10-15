@@ -2,6 +2,9 @@ import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
 import Loading from "../visualComponents/Loading"
 import ListElement from "../subComponents/ListElement"
+import { localDictionnary } from "../../lib/dictionnary"
+import { useContext } from "react"
+import LanguageContext from "../../contexts/Language"
 
 const ListSearchResults = (props) => {
     const {
@@ -21,6 +24,8 @@ const ListSearchResults = (props) => {
         imgPath,
         openSentence,
     } = props
+
+    const language = useContext(LanguageContext)
 
     return (
         <div id="searchResultsContainer">
@@ -63,7 +68,7 @@ const ListSearchResults = (props) => {
                         isLoading={loadingKanjiList}
                     />
                 </div>
-                {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">Aucun kanji ne correspond à ces filtres</div>}
+                {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyKanjiSearch}</div>}
             </div>}
             {!openSentence && <div id="vocabularyList" className={searchExecuted ?
                 (displayKanjis ?
@@ -95,9 +100,9 @@ const ListSearchResults = (props) => {
                         isLoading={loadingVocabularyList}
                     />
                 </div>
-                {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">Aucun mot ne correspond à ces filtres</div>}
+                {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyWordSearch}</div>}
             </div>}
-            {false && <span className="tooltip">Lancez une recherche ou appliquez des catégories<br />pour commencer à explorer</span>}
+            {false && <span className="tooltip">{localDictionnary[language].searchGlobalTip}</span>}
         </div>
     )
 }

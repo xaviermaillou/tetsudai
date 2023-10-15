@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import ListHeader from "./ListHeader"
 import SearchSentence from "./SearchSentence"
 import ListSearchResults from "./ListSearchResults"
+import { localDictionnary } from "../../lib/dictionnary"
+import LanguageContext from "../../contexts/Language"
 
 const SidePanel = (props) => {
     const {
@@ -37,6 +39,8 @@ const SidePanel = (props) => {
         openFilter,
         setOpenFilter,
     } = props
+
+    const language = useContext(LanguageContext)
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
 
@@ -115,7 +119,7 @@ const SidePanel = (props) => {
                         onChange={(e) => {handleSearch(e.target.value)}}
                         type="text"
                         spellCheck="false"
-                        placeholder="Rechercher en japonais, romaji, français..."
+                        placeholder={localDictionnary[language].searchPlaceholder}
                     />
                 </div>
             </div>

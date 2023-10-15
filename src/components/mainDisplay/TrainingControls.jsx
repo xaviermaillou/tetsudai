@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { dictionnary } from "tetsudai-common"
+import LanguageContext from "../../contexts/Language"
 
 const TrainingControls = (props) => {
     const {
@@ -16,6 +17,8 @@ const TrainingControls = (props) => {
         toggleTraining,
         endedTraining
     } = props
+
+    const language = useContext(LanguageContext)
 
     const [ready, setReady] = useState(false)
 
@@ -46,9 +49,9 @@ const TrainingControls = (props) => {
                         <span>Collection</span>
                     </div>
                     <div>
-                        <span>{grammar ? dictionnary.pluralClasses[grammar] : "Toutes"}</span>
-                        <span>{level ? (dictionnary.levels[level] ? dictionnary.levels[level] : "Hors niveau") : "Tous"}</span>
-                        <span>{collection ? dictionnary.collections[collection] : "Toutes"}</span>
+                        <span>{grammar ? dictionnary[language].pluralClasses[grammar] : "Toutes"}</span>
+                        <span>{level ? (dictionnary[language].levels[level] ? dictionnary[language].levels[level] : "Hors niveau") : "Tous"}</span>
+                        <span>{collection ? dictionnary[language].collections[collection] : "Toutes"}</span>
                     </div>
                 </div>
                 <div id="trainingNext" className="clickable" width="20px">

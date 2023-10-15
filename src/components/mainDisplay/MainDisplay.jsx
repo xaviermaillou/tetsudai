@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import KanjiDetails from "./KanjiDetails"
 import { WordDetails, WordDetailsPlus } from "./WordDetails"
 import TrainingControls from "./TrainingControls"
 import { dictionnary } from "tetsudai-common"
 import Loading from "../visualComponents/Loading"
+import LanguageContext from "../../contexts/Language"
+import { localDictionnary } from "../../lib/dictionnary"
 
 const MainDisplay = (props) => {
     const {
@@ -22,6 +24,8 @@ const MainDisplay = (props) => {
         setSearchExecuted,
         setMenuOpen,
     } = props
+
+    const language = useContext(LanguageContext)
 
     const handleKanjiChange = (id) => {
         setOpenedHistory(false)
@@ -44,7 +48,7 @@ const MainDisplay = (props) => {
                         <p id="kanjiDisplayTranslation">{kanji.translation.join(' | ')}</p>
                         <p id="kanjiDisplayInfo">
                             <div>{kanji.strokes} traits</div>
-                            <div>{kanji.level ? kanji.level : 'Hors JLPT'}</div>
+                            <div>{kanji.level ? kanji.level : localDictionnary[language].noJLPT}</div>
                         </p>
                         <KanjiDetails
                             imgPath={imgPath}
@@ -106,11 +110,11 @@ const MainDisplay = (props) => {
                                 {word.grammar.map((el, i) => (
                                     <span key={i}>
                                         {i > 0 && ', '}
-                                        {dictionnary.classes[el].toLowerCase() + (el === "vb" ? ' ' + (dictionnary.verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')}
+                                        {dictionnary[language].classes[el].toLowerCase() + (el === "vb" ? ' ' + (dictionnary[language].verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')}
                                     </span>
                                 ))}
                             </div>
-                            <div>{word.level ? `JLPT ${word.level}` : 'Hors JLPT'}</div>
+                            <div>{word.level ? `JLPT ${word.level}` : localDictionnary[language].noJLPT}</div>
                         </div>
                         <WordDetails
                             elements={word.elements.filter((element) => element.details)}

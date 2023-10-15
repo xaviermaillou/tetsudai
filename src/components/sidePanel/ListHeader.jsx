@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { dictionnary } from "tetsudai-common"
+import { localDictionnary } from "../../lib/dictionnary"
 import FilterModal from "./FilterModal"
+import LanguageContext from "../../contexts/Language"
 
 
 const ListHeader = (props) => {
@@ -18,6 +20,8 @@ const ListHeader = (props) => {
         setSearchExecuted,
         currentElement,
     } = props
+
+    const language = useContext(LanguageContext)
 
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter)
@@ -50,37 +54,37 @@ const ListHeader = (props) => {
                         <div id="filtersIndicatorRow">
                             {grammar !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.pluralClasses[grammar]}</span>
+                                    <span>{dictionnary[language].pluralClasses[grammar]}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar("0")} />
                                 </span>
                             }
                             {(level !== "0" && grammar !== "0") && <span>|</span>}
                             {level !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.levels[level] ? `JLPT ${dictionnary.levels[level]}` : 'Hors JLPT'}</span>
+                                    <span>{dictionnary[language].levels[level] ? `JLPT ${dictionnary[language].levels[level]}` : localDictionnary[language].noJLPT}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel("0")} />
                                 </span>
                             }
                             {(collection !== "0" && level !== "0") && <span>|</span>}
                             {collection !== "0" &&
                                 <span className="filtersIndicatorsElement">
-                                    <span>{dictionnary.collections[collection]}</span>
+                                    <span>{dictionnary[language].collections[collection]}</span>
                                     <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection("0")} />
                                 </span>
                             }
                         </div>
                         :
                         (searchExecuted && <span id="filtersIndicatorsEmpty">
-                            Aucune catégorie sélectionnée
+                            {localDictionnary[language].noSelection}
                         </span>)
                     }
                     <div></div>
                 </div>
                 <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
                     {searchExecuted ?
-                        <div className="tooltip">Filtrer par classe grammaticale, niveau JLPT ou collection</div>
+                        <div className="tooltip">{localDictionnary[language].selectCategory2}</div>
                         :
-                        <div className="tooltip expanded">Sélectionner une catégorie pour en afficher le contenu</div>
+                        <div className="tooltip expanded">{localDictionnary[language].selectCategory}</div>
                     }
                 </div>
             </div>

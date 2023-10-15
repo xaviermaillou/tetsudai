@@ -1,6 +1,9 @@
 import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
 import Yomi from "./Yomi"
+import { localDictionnary } from "../../lib/dictionnary"
+import { useContext } from "react"
+import LanguageContext from "../../contexts/Language"
 
 
 const KanjiDetails = (props) => {
@@ -11,11 +14,13 @@ const KanjiDetails = (props) => {
         changeCurrentWordById,
     } = props
 
+    const language = useContext(LanguageContext)
+
     return (
         <div id="kanjiDetails" className='expanded'>
             <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection" >
-                    <p className="kanasReadingsHeader">KANJI QUI LE COMPOSENT</p>
+                    <p className="kanasReadingsHeader">{localDictionnary[language].kanjiTakenFrom}</p>
                     {kanji.kanjiTakenAsPartFrom.map((e, i) => (
                         <div className="kanjiDetailsKanjiElements">
                             <KanjiElement
@@ -25,10 +30,10 @@ const KanjiDetails = (props) => {
                             />
                         </div>
                     ))}
-                    {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">Ce kanji n'est composé d'aucun autre kanji</span>}
+                    {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">{localDictionnary[language].noKanjiInKanji}</span>}
                 </div>
                 <div className="kanjiDetailsSubSection" >
-                    <p className="kanasReadingsHeader">KANJI QUI L'UTILISENT</p>
+                    <p className="kanasReadingsHeader">{localDictionnary[language].kanjiUsedIn}</p>
                     {kanji.kanjiUsedAsPartIn.map((e, i) => (
                         <div className="kanjiDetailsKanjiElements">
                             <KanjiElement
@@ -38,7 +43,7 @@ const KanjiDetails = (props) => {
                             />
                         </div>
                     ))}
-                    {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">Ce kanji n'est utilisé dans aucun autre kanji</span>}
+                    {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">{localDictionnary[language].kanjiInNoKanji}</span>}
                 </div>
             </div>
             <div className="kanjiDetailsSection">
@@ -53,7 +58,7 @@ const KanjiDetails = (props) => {
                             key={i}
                         />
                     ))}
-                    {kanji.readings.kunyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun kunyomi</span>}
+                    {kanji.readings.kunyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noKunyomi}</span>}
                 </div>
                 <div className="kanjiDetailsSubSection" id="onyomiExamples">
                     <p className="kanasReadingsHeader">ONYOMI</p>
@@ -66,7 +71,7 @@ const KanjiDetails = (props) => {
                             key={i}
                         />
                     ))}
-                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}
+                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noOnyomi}</span>}
                 </div>
                 {kanji.relatedJukujikun.length > 0 && <div className="kanjiDetailsSubSection" id="jukujikunExamples">
                     <p className="kanasReadingsHeader">JUKUJIKUN</p>
@@ -79,7 +84,7 @@ const KanjiDetails = (props) => {
                             />
                         </div>
                     ))}
-                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">Ce kanji ne comporte aucun onyomi</span>}
+                    {kanji.relatedJukujikun.length === 0 && <span className="tooltip">{localDictionnary[language].noJukujikun}</span>}
                 </div>}
             </div>
         </div>
