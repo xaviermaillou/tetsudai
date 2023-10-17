@@ -1,5 +1,7 @@
 export const localDictionnary = {
     fr: {
+        word: "mot",
+        kanji: "kanji",
         nonPast: "présent",
         past: "passé",
         adverb: "adverbe",
@@ -7,6 +9,8 @@ export const localDictionnary = {
         negative: "-",
         neutral: "neutre",
         polite: "formel",
+        detectedSentence: "Phrase détectée",
+        wordsConflict: "Plusieurs mots peuvent correspondre",
         noJLPT: "Hors JLPT",
         kanjiTakenFrom: "KANJI QUI LE COMPOSENT",
         kanjiUsedIn: "KANJI QUI L'UTILISENT",
@@ -38,6 +42,8 @@ export const localDictionnary = {
             en lui fournissant un dictionnaire focalisé sur l'interconnexion du vocabulaire et des kanji.`,
     },
     en: {
+        word: "word",
+        kanji: "kanji",
         nonPast: "present",
         past: "past",
         adverb: "adverb",
@@ -45,6 +51,8 @@ export const localDictionnary = {
         negative: "-",
         neutral: "neutral",
         polite: "formal",
+        detectedSentence: "Detected sentence",
+        wordsConflict: "Several words may correspond",
         noJLPT: "Out of JLPT",
         kanjiTakenFrom: "KANJI THAT COMPOSE IT",
         kanjiUsedIn: "KANJI THAT USE IT",

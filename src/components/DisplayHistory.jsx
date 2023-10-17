@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import LanguageContext from "../contexts/Language"
+import { localDictionnary } from "../lib/dictionnary"
 
 const HistoryElement = (props) => {
     const {
@@ -45,7 +46,7 @@ const HistoryElement = (props) => {
                 </div>
             }
             <span className="historyElementTranslation">{historyElementData.translation[language].join(' | ')}</span>
-            <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
+            <span className="historyElementLabel">{historyElementData.kanji ? localDictionnary[language].kanji : localDictionnary[language].word}</span>
         </div>
     )
 }

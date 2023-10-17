@@ -1,5 +1,7 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import SentenceElement from "../subComponents/SentenceElement"
+import { localDictionnary } from "../../lib/dictionnary"
+import LanguageContext from "../../contexts/Language"
 
 const SearchSentence = (props) => {
     const {
@@ -12,6 +14,8 @@ const SearchSentence = (props) => {
         setOpenMenu,
         imgPath
     } = props
+
+    const language = useContext(LanguageContext)
 
     useEffect(() => {
         setOpenSentence(!!searchIsSentence)
@@ -30,7 +34,7 @@ const SearchSentence = (props) => {
         <div id="searchSentenceContainer" className={openSentence ? "open" : ""}>
             <div id="searchSentenceHeader" className={openSentence ? "open" : ""}>
                 <span></span>
-                <span className="tooltip">Phrase détectée</span>
+                <span className="tooltip">{localDictionnary[language].detectedSentence}</span>
                 <span onClick={handleCloseClick}><img className="clickable" src={`/img/${imgPath}/close.png`} alt="close sentence" /></span>
             </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>

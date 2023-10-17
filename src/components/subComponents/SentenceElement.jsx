@@ -1,4 +1,7 @@
+import { useContext } from "react"
 import WordElement from "./WordElement"
+import LanguageContext from "../../contexts/Language"
+import { localDictionnary } from "../../lib/dictionnary"
 
 const SentenceElement = (props) => {
     const {
@@ -6,6 +9,8 @@ const SentenceElement = (props) => {
         word,
         handleWordClick,
     } = props
+
+    const language = useContext(LanguageContext)
 
     const firstFoundElement = element.foundElements[0]
 
@@ -25,7 +30,7 @@ const SentenceElement = (props) => {
             }
         >
             <div className="sentenceElement">
-                {element.ambiguity && <span className="tooltip sentenceElementAmbiguity">Plusieurs mots peuvent correspondre</span>}
+                {element.ambiguity && <span className="tooltip sentenceElementAmbiguity">{localDictionnary[language].wordsConflict}</span>}
                 {firstFoundElement.id && <div className={element.ambiguity ? "sentenceElementInfo extended" : "sentenceElementInfo"}>
                     {element.foundElements.map((foundElement) => (
                         <WordElement
