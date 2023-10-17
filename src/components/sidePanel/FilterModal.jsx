@@ -2,6 +2,7 @@
 import { useContext } from "react"
 import { dictionnary } from "tetsudai-common"
 import LanguageContext from "../../contexts/Language"
+import { localDictionnary } from "../../lib/dictionnary"
 
 const FilterModal = (props) => {
     const {
@@ -30,17 +31,23 @@ const FilterModal = (props) => {
         <div id="wordsListFilterModal" className={openFilter ? (searchExecuted || currentElement ? "open" : "open expanded") : (searchExecuted || currentElement ? "" : "expanded")}>
             <div>
                 {Object.entries(dictionnary[language].pluralClasses).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={(!!searchExecuted && grammar === key) ? "selected clickable" : "clickable"}>{value}</span>
+                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={(!!searchExecuted && grammar === key) ? "selected clickable" : "clickable"}>
+                        {value}
+                    </span>
                 ))}
             </div>
             <div>
                 {Object.entries(dictionnary[language].levels).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={(!!searchExecuted && level === key) ? "selected clickable" : "clickable"}>{value ? (key === "0" ? value : `JLPT ${value}`) : 'Hors niveau'}</span>
+                    <span key={key} onClick={() => handleClick(key, setLevel)} className={(!!searchExecuted && level === key) ? "selected clickable" : "clickable"}>
+                        {value ? (key === "0" ? value : `JLPT ${value}`) : localDictionnary[language].noJLPT}
+                    </span>
                 ))}
             </div>
             <div>
                 {Object.entries(dictionnary[language].collections).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setCollection)} className={(!!searchExecuted && collection === key) ? "selected clickable" : "clickable"}>{value}</span>
+                    <span key={key} onClick={() => handleClick(key, setCollection)} className={(!!searchExecuted && collection === key) ? "selected clickable" : "clickable"}>
+                        {value}
+                    </span>
                 ))}
             </div>
         </div>

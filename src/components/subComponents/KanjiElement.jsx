@@ -1,6 +1,11 @@
+import { useContext } from "react"
+import LanguageContext from "../../contexts/Language"
+
 const KanjiElement = (props) => {
 
     const { kanji, kanaToHighlight, changeCurrentKanjiById } = props
+
+    const language = useContext(LanguageContext)
 
     return (
         <div className="kanjiElement clickable" onClick={() => changeCurrentKanjiById(kanji.id)}>
@@ -38,7 +43,7 @@ const KanjiElement = (props) => {
                     }
                 </div>
                 <div className="kanjiElementTranslation">
-                    {kanji.translation.join(' | ')}
+                    {kanji.translation[language].join(' | ')}
                 </div>
             </div>
         </div>

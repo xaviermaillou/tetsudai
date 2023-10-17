@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import LanguageContext from "../contexts/Language"
+
 const HistoryElement = (props) => {
     const {
         historyElementData,
@@ -16,6 +19,8 @@ const HistoryElement = (props) => {
             changeCurrentWordById(historyElementData.id)
         }
     }
+
+    const language = useContext(LanguageContext)
 
     return (
         <div
@@ -39,7 +44,7 @@ const HistoryElement = (props) => {
                     ))}
                 </div>
             }
-            <span className="historyElementTranslation">{historyElementData.translation.join(' | ')}</span>
+            <span className="historyElementTranslation">{historyElementData.translation[language].join(' | ')}</span>
             <span className="historyElementLabel">{historyElementData.kanji ? "kanji" : "mot"}</span>
         </div>
     )

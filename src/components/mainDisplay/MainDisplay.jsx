@@ -45,7 +45,7 @@ const MainDisplay = (props) => {
                         <p id="kanjiDisplayKanji">{kanji.kanji}</p>
                         <p id="kanjiDisplayKanjiGhostLeft">{kanji.kanji}</p>
                         <p id="kanjiDisplayKanjiGhostRight">{kanji.kanji}</p>
-                        <p id="kanjiDisplayTranslation">{kanji.translation.join(' | ')}</p>
+                        <p id="kanjiDisplayTranslation">{kanji.translation[language].join(' | ')}</p>
                         <p id="kanjiDisplayInfo">
                             <div>{kanji.strokes} traits</div>
                             <div>{kanji.level ? kanji.level : localDictionnary[language].noJLPT}</div>
@@ -104,7 +104,7 @@ const MainDisplay = (props) => {
                                 </div>
                             </div>
                         }
-                        <p id="wordDisplayTranslation">{word.translation.join(' | ')}</p>
+                        <p id="wordDisplayTranslation">{word.translation[language].join(' | ')}</p>
                         <div id="wordDisplayInfo">
                             <div>
                                 {word.grammar.map((el, i) => (

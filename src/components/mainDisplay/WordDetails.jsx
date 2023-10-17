@@ -133,6 +133,8 @@ const Sentence = (props) => {
         setMenuOpen,
     } = props
 
+    const language = useContext(LanguageContext)
+
     const handleSentenceClick = () => {
         const sentenceString = sentence.elements.map((element) => element.word).join("")
         setSearchExecuted(true)
@@ -151,7 +153,7 @@ const Sentence = (props) => {
                     ))}
                 </div>
             </div>
-            <div className="sentencesElementTranslation">{sentence.translation}</div>
+            <div className="sentencesElementTranslation">{sentence.translation[language]}</div>
         </div>
     )
 }
@@ -188,10 +190,10 @@ export const WordDetails = (props) => {
                         <span>{originLanguageWord}</span>
                     </div>
                 }
-                {precisions && 
+                {precisions[language] && 
                     <div id="wordPrecisions">
                         <p id="wordPrecisionsText">
-                            {precisions}
+                            {precisions[language]}
                         </p>
                     </div>
                 }
