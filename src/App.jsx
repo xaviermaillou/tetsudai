@@ -1,5 +1,4 @@
-import { useState, useEffect, useCallback, createContext } from 'react'
-import { useCookies } from 'react-cookie'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
 import MainDisplay from './components/mainDisplay/MainDisplay'
@@ -333,7 +332,6 @@ function App() {
         />
         <SideBar
           imgPath={imgPath}
-          displayHistory={displayHistory}
           historyDisplayed={displayHistory.length > 1}
           openHistory={openHistory}
           setOpenHistory={setOpenHistory}

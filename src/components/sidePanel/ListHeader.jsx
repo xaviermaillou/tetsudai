@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { dictionnary } from "tetsudai-common"
 import { localDictionnary } from "../../lib/dictionnary"
 import FilterModal from "./FilterModal"

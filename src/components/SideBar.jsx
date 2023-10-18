@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 const SideBar = (props) => {
     const {
         imgPath,
-        displayHistory,
         historyDisplayed,
         openHistory,
         setOpenHistory,

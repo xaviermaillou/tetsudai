@@ -1,7 +1,6 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import KanjiDetails from "./KanjiDetails"
 import { WordDetails, WordDetailsPlus } from "./WordDetails"
-import TrainingControls from "./TrainingControls"
 import { dictionnary } from "tetsudai-common"
 import Loading from "../visualComponents/Loading"
 import LanguageContext from "../../contexts/Language"
