@@ -341,6 +341,7 @@ function App() {
           searchExecuted={searchExecuted}
         />
         <DisplayHistory
+          imgPath={imgPath}
           kanji={kanji}
           word={word}
           displayHistory={displayHistory}

@@ -6,6 +6,7 @@ const HistoryElement = (props) => {
     const {
         historyElementData,
         selected,
+        setOpenHistory,
         setOpenedHistory,
         changeCurrentKanjiById,
         changeCurrentWordById,
@@ -13,6 +14,7 @@ const HistoryElement = (props) => {
 
     const handleClick = () => {
         if (!selected) {
+            setOpenHistory(false)
             setOpenedHistory(true)
             historyElementData.kanji ?
             changeCurrentKanjiById(historyElementData.id)
@@ -53,6 +55,7 @@ const HistoryElement = (props) => {
 
 const DisplayHistory = (props) => {
     const {
+        imgPath,
         kanji,
         word,
         displayHistory,
@@ -79,11 +82,18 @@ const DisplayHistory = (props) => {
             className={openHistory ? "open" : ""}
             onMouseLeave={() => setOpenHistory(false)}
         >
+            <img
+                onClick={() => setOpenHistory(false)}
+                className="clickable"
+                src={`/img/${imgPath}/close.png`}
+                alt="close sentence"
+            />
             <div id="displayHistory">
                 {displayHistory.map((e, i) => (
                     <HistoryElement
                         historyElementData={e}
                         selected={checkSelected(e)}
+                        setOpenHistory={setOpenHistory}
                         setOpenedHistory={setOpenedHistory}
                         changeCurrentKanjiById={changeCurrentKanjiById}
                         changeCurrentWordById={changeCurrentWordById}
