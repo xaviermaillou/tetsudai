@@ -223,6 +223,7 @@ input:placeholder-shown {
 #kanjiDisplayKanji {
   height: 200px;
   min-height: 200px;
+  line-height: 115%;
   display: flex;
   align-items: flex-end;
   font-size: 180px;
@@ -774,7 +775,7 @@ input:placeholder-shown {
   flex-direction: column;
   align-items: flex-end;
   overflow-y: scroll;
-  padding-bottom: 100px;
+  padding-bottom: 160px;
 }
 #wordsListFilterModal.open {
   opacity: 1;
@@ -783,9 +784,6 @@ input:placeholder-shown {
 }
 #wordsListFilterModal.expanded.open {
   height: calc(50dvh - 25px);
-}
-#wordsListFilterModal.expanded div {
-  overflow-y: scroll;
 }
 #wordsListFilterModal span {
   flex-shrink: 0;
@@ -930,9 +928,13 @@ input:placeholder-shown {
 }
 #displayHistoryContainer img {
   height: 20px;
-  position: absolute;
+  position: fixed;
   top: 28px;
-  right: 24px;
+  right: calc(100vw - 0px);
+  opacity: 0;
+}
+#displayHistoryContainer.open img {
+  right: calc(24px);
   opacity: 0.5;
 }
 #historyIconContainer img {
