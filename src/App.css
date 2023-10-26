@@ -112,7 +112,7 @@ input:placeholder-shown {
   align-items: center;
 }
 #logoContainer.full:not(.executed) {
-  top: calc(25% - 72px);
+  top: calc(25% - 54px);
   left: 0px;
   z-index: 2000;
   pointer-events: none;

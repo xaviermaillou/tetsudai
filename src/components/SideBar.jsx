@@ -35,7 +35,7 @@ const SideBar = (props) => {
             </div>
             {historyDisplayed && <div
                 id="historyIconContainer"
-                className={openHistory ? "hiddenElement" : "hiddenElement selected"}
+                className={(openHistory || !searchExecuted) ? "hiddenElement" : "hiddenElement selected"}
             >
                 <img
                     className='clickable'
