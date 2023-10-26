@@ -106,29 +106,33 @@ input:placeholder-shown {
   z-index: 1000;
   position: absolute;
   top: 26px;
-  left: 24px;
-  opacity: 0.5;
+  left: calc(50% - 48px);
+  opacity: 0.25;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-#logoContainer.full {
+#logoContainer.full:not(.executed) {
+  top: calc(25% - 72px);
+  left: calc(50% - 222px);
   z-index: 2000;
   pointer-events: none;
 }
-#logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
+/* #logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
   height: 0px;
   opacity: 0;
 }
 #logoContainer.full:not(.executed) img:nth-child(1), #logoContainer.full:not(.executed) img:nth-child(3) {
   height: 32px;
   opacity: 1;
-}
+} */
 #logoContainer img {
   height: 32px;
 }
 #logoContainer.full span {
   opacity: 0;
+}
+#logoContainer.full:not(.executed) img {
+  height: 148px;
 }
 
 #introText, #pageNotFound {
@@ -252,7 +256,8 @@ input:placeholder-shown {
   display: flex;
   justify-content: center;
   width: 80%;
-  padding-bottom: 20px;
+  padding-top: 8px;
+  padding-bottom: 12px;
 }
 #kanjiDisplayInfo div, #wordDisplayInfo div {
   margin: 0px 10px;
@@ -596,7 +601,7 @@ input:placeholder-shown {
   background: none !important;
   transition: left 0.4s ease-out, width 0.4s ease-out, background 0s;
 }
-#sidePanel.expanded #wordsListSearchContainer {
+#sidePanel #wordsListSearchContainer.expanded {
   padding-left: 0px;
 }
 #sidePanel.expanded #searchResultsContainer {
@@ -934,7 +939,7 @@ input:placeholder-shown {
   z-index: 1000;
   display: block;
   position: fixed;
-  top: 80px;
+  top: 24px;
   left: 22px;
   height: 32px;
   opacity: 0.5;
@@ -1084,30 +1089,23 @@ input:placeholder-shown {
 
 @media (min-width:961px) {
   #logoContainer {
-    top: auto;
-    bottom: 20px;
-    left: 18px;
+    flex-direction: column !important;
+    top: auto !important;
+    bottom: 20px !important;
+    left: 18px !important;
     justify-content: center;
   }
   #logoContainer.full {
-    height: 100dvh;
-    left: 26px;
-    bottom: 0px;
-    opacity: 0.075;
+    height: 100dvh !important;
+    left: 26px !important;
+    bottom: 0px !important;
+    opacity: 0.075 !important;
   }
   #logoContainer img {
     height: 48px !important;
   }
   #logoContainer.full img {
     height: 192px !important;
-  }
-  #logoContainer img:nth-child(1), #logoContainer img:nth-child(3) {
-    opacity: 1;
-    width: inherit;
-  }
-  #logoContainer.full img:nth-child(1), #logoContainer.full img:nth-child(3) {
-    opacity: 1;
-    width: inherit;
   }
 
   #introText, #pageNotFound {
@@ -1150,9 +1148,6 @@ input:placeholder-shown {
     min-height: 190px;
     font-size: 100px;
   }
-  /* #kanjiDisplayInfo, #wordDisplayInfo, #kanjiDetails, #wordDetails, #selector, #controls {
-    width: 90%;
-  } */
   #wordDisplayInfo {
     flex-direction: row;
   }

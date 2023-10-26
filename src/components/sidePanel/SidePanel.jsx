@@ -97,7 +97,7 @@ const SidePanel = (props) => {
 
     return (
         <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
-            <div id="wordsListSearchContainer">
+            <div id={currentElement ? "wordsListSearchContainer" : "wordsListSearchContainer expanded"}>
                 {(currentElement !== null && window.innerWidth <= 961) &&
                     <img
                         id="wordsListOpener"

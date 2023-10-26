@@ -231,10 +231,14 @@ function App() {
   const [openedHistory, setOpenedHistory] = useState()
 
   useEffect(() => {
+    setDisplayHistory(JSON.parse(localStorage.getItem('history')) || [])
+  }, [])
+
+  useEffect(() => {
     if ((kanji || word) && !openedHistory) {
-      setDisplayHistory((arr) => arr
-        .filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id))
-      setDisplayHistory((arr) => [ ...arr, kanji || word ])
+      const newHistory = [ ...displayHistory.filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id), kanji || word ]
+      setDisplayHistory(newHistory)
+      localStorage.setItem('history', JSON.stringify(newHistory))
     }
   }, [
     openedHistory,
