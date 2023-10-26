@@ -113,7 +113,7 @@ input:placeholder-shown {
 }
 #logoContainer.full:not(.executed) {
   top: calc(25% - 72px);
-  left: calc(50% - 222px);
+  left: 0px;
   z-index: 2000;
   pointer-events: none;
 }
@@ -132,7 +132,7 @@ input:placeholder-shown {
   opacity: 0;
 }
 #logoContainer.full:not(.executed) img {
-  height: 148px;
+  height: calc(100vw / 3);
 }
 
 #introText, #pageNotFound {
