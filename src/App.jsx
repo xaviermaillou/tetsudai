@@ -52,18 +52,18 @@ function App() {
   const [openFilter, setOpenFilter] = useState(false)
 
   const [searchTimer, setSearchTimer] = useState(undefined)
-    const runSearchTimer = (search) => {
-        setSearchTimer(setTimeout(() => {
-            setSearch(search)
-            setSearchExecuted(true)
-            setOpenFilter(false)
-        }, 500))
-    }
-    const handleSearch = (search) => {
-        setSearchCopy(search)
-        clearTimeout(searchTimer)
-        runSearchTimer(search)
-    }
+  const runSearchTimer = (search) => {
+      setSearchTimer(setTimeout(() => {
+          setSearch(search)
+          setSearchExecuted(true)
+          setOpenFilter(false)
+      }, 500))
+  }
+  const handleSearch = (search) => {
+      setSearchCopy(search)
+      clearTimeout(searchTimer)
+      runSearchTimer(search)
+  }
 
   // Main display data
   const navigate = useNavigate()
@@ -200,6 +200,13 @@ function App() {
       
       fetchKanjiAndSetState()
       fetchVocabularyAndSetState()
+
+      localStorage.setItem('search', JSON.stringify({
+        level,
+        grammar,
+        collection,
+        search
+      }))
     }
   }, [
     searchExecuted,

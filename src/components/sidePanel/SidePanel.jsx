@@ -137,7 +137,7 @@ const SidePanel = (props) => {
                     grammar={grammar}
                     setGrammar={setGrammar}
                     search={search}
-                    setSearch={setSearch}
+                    handleSearch={handleSearch}
                     searchExecuted={searchExecuted}
                     setSearchExecuted={setSearchExecuted}
                     currentElement={currentElement}

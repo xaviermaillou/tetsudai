@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { dictionnary } from "tetsudai-common"
 import { localDictionnary } from "../../lib/dictionnary"
 import FilterModal from "./FilterModal"
@@ -16,15 +16,30 @@ const ListHeader = (props) => {
         setLevel,
         grammar,
         setGrammar,
+        handleSearch,
         searchExecuted,
         setSearchExecuted,
         currentElement,
     } = props
 
+    const [lastSearch, setLastSearch] = useState(null)
+
+    useEffect(() => {
+        setLastSearch(JSON.parse(localStorage.getItem('search')))
+    }, [])
+
     const language = useContext(LanguageContext)
 
     const handleFilterIconClick = () => {
         setOpenFilter(!openFilter)
+    }
+
+    const retrieveLastSearch = () => {
+        setGrammar(lastSearch.grammar)
+        setLevel(lastSearch.level)
+        setCollection(lastSearch.collection)
+        handleSearch(lastSearch.search)
+        setSearchExecuted(true)
     }
 
     return (
@@ -47,7 +62,7 @@ const ListHeader = (props) => {
             <div id="wordsListFilters">
                 <div
                     id="filtersIndicator"
-                    className={searchExecuted ? "wordsListHeaderRow" : "wordsListHeaderRow lowOpacity"}
+                    className="wordsListHeaderRow"
                 >
                     <div></div>
                     {(collection !== "0" || level !== "0" || grammar !== "0") ? 
@@ -74,9 +89,18 @@ const ListHeader = (props) => {
                             }
                         </div>
                         :
-                        (searchExecuted && <span id="filtersIndicatorsEmpty">
-                            {localDictionnary[language].noSelection}
-                        </span>)
+                        (searchExecuted ?
+                            <span id="filtersIndicatorsEmpty">
+                                {localDictionnary[language].noSelection}
+                            </span>
+                            :
+                            (lastSearch && <div
+                                onClick={retrieveLastSearch}
+                                className="clickable"
+                            >
+                                {localDictionnary[language].retrieveLastSearch}
+                            </div>)
+                        )
                     }
                     <div></div>
                 </div>
