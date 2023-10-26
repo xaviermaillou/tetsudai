@@ -80,7 +80,7 @@ const DisplayHistory = (props) => {
         <div
             id="displayHistoryContainer"
             className={openHistory ? "open" : ""}
-            // onMouseLeave={() => setOpenHistory(false)}
+            onMouseLeave={() => setOpenHistory(false)}
         >
             <img
                 onClick={() => setOpenHistory(false)}

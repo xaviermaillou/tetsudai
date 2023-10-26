@@ -4,6 +4,7 @@ import Yomi from "./Yomi"
 import { localDictionnary } from "../../lib/dictionnary"
 import { useContext } from "react"
 import LanguageContext from "../../contexts/Language"
+import FiveFirstElements from "../subComponents/FiveFirstElements"
 
 
 const KanjiDetails = (props) => {
@@ -19,7 +20,7 @@ const KanjiDetails = (props) => {
     return (
         <div id="kanjiDetails" className='expanded'>
             <div className="kanjiDetailsSection">
-                <div className="kanjiDetailsSubSection" >
+                <div className="kanjiDetailsSubSection">
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiTakenFrom}</p>
                     {kanji.kanjiTakenAsPartFrom.map((e, i) => (
                         <div className="kanjiDetailsKanjiElements">
@@ -32,17 +33,19 @@ const KanjiDetails = (props) => {
                     ))}
                     {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">{localDictionnary[language].noKanjiInKanji}</span>}
                 </div>
-                <div className="kanjiDetailsSubSection" >
+                <div className="kanjiDetailsSubSection">
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiUsedIn}</p>
-                    {kanji.kanjiUsedAsPartIn.map((e, i) => (
-                        <div className="kanjiDetailsKanjiElements">
-                            <KanjiElement
-                                kanji={e}
-                                changeCurrentKanjiById={changeCurrentKanjiById}
-                                key={i}
-                            />
-                        </div>
-                    ))}
+                    <FiveFirstElements
+                        loop={kanji.kanjiUsedAsPartIn.map((e, i) => (
+                            <div className="mainDisplayElementContainer kanjiDetailsKanjiElements">
+                                <KanjiElement
+                                    kanji={e}
+                                    changeCurrentKanjiById={changeCurrentKanjiById}
+                                    key={i}
+                                />
+                            </div>
+                        ))}
+                    />
                     {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">{localDictionnary[language].kanjiInNoKanji}</span>}
                 </div>
             </div>
@@ -53,7 +56,6 @@ const KanjiDetails = (props) => {
                         <Yomi
                             imgPath={imgPath}
                             reading={reading}
-                            changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
                         />
@@ -66,7 +68,6 @@ const KanjiDetails = (props) => {
                         <Yomi
                             imgPath={imgPath}
                             reading={reading}
-                            changeCurrentKanjiById={changeCurrentKanjiById}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
                         />
@@ -75,15 +76,17 @@ const KanjiDetails = (props) => {
                 </div>
                 {kanji.relatedJukujikun.length > 0 && <div className="kanjiDetailsSubSection" id="jukujikunExamples">
                     <p className="kanasReadingsHeader">JUKUJIKUN</p>
-                    {kanji.relatedJukujikun?.map((e, i) => (
-                        <div className="kanjiDetailsJukujikun">
-                            <WordElement
-                                word={e}
-                                changeCurrentWordById={changeCurrentWordById}
-                                key={i}
-                            />
-                        </div>
-                    ))}
+                    <FiveFirstElements
+                        loop={kanji.relatedJukujikun?.map((e, i) => (
+                            <div className="mainDisplayElementContainer kanjiDetailsJukujikun">
+                                <WordElement
+                                    word={e}
+                                    changeCurrentWordById={changeCurrentWordById}
+                                    key={i}
+                                />
+                            </div>
+                        ))}
+                    />
                     {kanji.relatedJukujikun.length === 0 && <span className="tooltip">{localDictionnary[language].noJukujikun}</span>}
                 </div>}
             </div>

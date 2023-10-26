@@ -95,7 +95,7 @@ const MainDisplay = (props) => {
                                             <span className="wordDisplayWordElementYomi highlighted">{element.option === "rareKanji" ? element.kanji : element.kana || 'muet'}</span>
                                             :
                                             element.option === "politeElement" ?
-                                                <span className="wordDisplayWordElementYomi highlighted">politesse</span>
+                                                <span className="wordDisplayWordElementYomi highlighted">{localDictionnary[language].honorific}</span>
                                                 :
                                                 <span className="wordDisplayWordElementYomi"></span>
                                         }

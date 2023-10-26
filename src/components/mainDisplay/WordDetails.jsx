@@ -5,6 +5,7 @@ import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
 import Loading from "../visualComponents/Loading"
 import LanguageContext from "../../contexts/Language"
+import FiveFirstElements from "../subComponents/FiveFirstElements"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
@@ -214,21 +215,25 @@ export const WordDetails = (props) => {
                 <div id="relatedWords">
                     <p className="kanasReadingsHeader">{localDictionnary[language].relatedWords}</p>
                     {relatedWords &&
-                        Object.entries(relatedWords).map(([key, value]) => (
-                            <>
-                                {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[language][key]}</p>}
-                                {value.length > 0 && value.map((relatedWord, i) => {
-                                    hasRelatedContent = true
-                                    return (
-                                        <WordElement
-                                            word={relatedWord}
-                                            changeCurrentWordById={changeCurrentWordById}
-                                            key={key + i}
-                                        />
-                                    )
-                                })}
-                            </>
-                        ))
+                        Object.entries(relatedWords).map(([key, value]) => {
+                            if (value.length > 0) hasRelatedContent = true
+                            return (
+                                <>
+                                    {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[language][key]}</p>}
+                                    <FiveFirstElements
+                                        loop={value.map((relatedWord, i) => (
+                                            <div className="mainDisplayElementContainer">
+                                                <WordElement
+                                                    word={relatedWord}
+                                                    changeCurrentWordById={changeCurrentWordById}
+                                                    key={key + i}
+                                                />
+                                            </div>
+                                        ))}
+                                    />
+                                </>
+                            )
+                        })
                     }
                     {!hasRelatedContent && <span className="tooltip">{localDictionnary[language].noWord}</span>}
                 </div>
@@ -243,17 +248,21 @@ export const WordDetails = (props) => {
                     </div>
                     :
                     <div>
-                        {sentences?.map((sentence, i) => (
-                            <Sentence
-                                sentence={sentence}
-                                referenceId={referenceId}
-                                pinnedSentence={pinnedSentence}
-                                handleSearch={handleSearch}
-                                setSearchExecuted={setSearchExecuted}
-                                setMenuOpen={setMenuOpen}
-                                key={i}
-                            />
-                        ))}
+                        <FiveFirstElements
+                            loop={sentences?.map((sentence, i) => (
+                                <div className="mainDisplaySentenceContainer">
+                                    <Sentence
+                                        sentence={sentence}
+                                        referenceId={referenceId}
+                                        pinnedSentence={pinnedSentence}
+                                        handleSearch={handleSearch}
+                                        setSearchExecuted={setSearchExecuted}
+                                        setMenuOpen={setMenuOpen}
+                                        key={i}
+                                    />
+                                </div>
+                            ))}
+                        />
                         {sentences.length === 0 && <span className="tooltip">{localDictionnary[language].noSentence}</span>}
                     </div>
                 }
