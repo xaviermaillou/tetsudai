@@ -528,7 +528,7 @@ input:placeholder-shown {
 #wordDetailsPlus {
   z-index: 1000;
   position: absolute;
-  top: calc(100dvh - 50px);
+  top: calc(100dvh - 70px);
   height: calc(100dvh - 280px);
   width: 100%;
   font-size: 14px;
@@ -558,6 +558,10 @@ input:placeholder-shown {
 #wordDetailsInflexions {
   display: flex;
   flex-direction: column;
+  opacity: 0;
+}
+#wordDetailsPlus.expanded #wordDetailsInflexions {
+  opacity: 1;
 }
 .wordDetailsInflexionsTense {
   margin: 10px 0px;
@@ -1190,6 +1194,7 @@ input:placeholder-shown {
   #wordDetailsPlus {
     height: calc(100dvh - 320px);
     width: calc((100% - 86px) - ((100% - 86px) * (20/100)));
+    top: calc(100dvh - 50px);
   }
   #wordDetailsPlus.expanded {
     top: 322px;
