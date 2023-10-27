@@ -528,14 +528,15 @@ input:placeholder-shown {
 #wordDetailsPlus {
   z-index: 1000;
   position: absolute;
-  top: calc(100dvh - 70px);
+  top: calc(100dvh - 50px);
   height: calc(100dvh - 280px);
   width: 100%;
   font-size: 14px;
   overflow: hidden;
 }
 #wordDetailsPlus.expanded {
-  top: 280px;
+  top: calc(88px + 20dvh + 24px + 35px);
+  
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -1194,10 +1195,9 @@ input:placeholder-shown {
   #wordDetailsPlus {
     height: calc(100dvh - 320px);
     width: calc((100% - 86px) - ((100% - 86px) * (20/100)));
-    top: calc(100dvh - 50px);
   }
   #wordDetailsPlus.expanded {
-    top: 322px;
+    top: calc(60px + 22dvh + 28px + 35px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
