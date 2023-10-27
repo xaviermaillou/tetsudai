@@ -565,7 +565,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 .wordDetailsInflexionsTense {
-  margin: 10px 0px;
+  padding: 10px 0px;
 }
 .wordDetailsInflexionsMode {
   display: flex;
@@ -938,8 +938,9 @@ input:placeholder-shown {
 
 #displayHistoryContainer {
   z-index: 2000;
-  height: 100dvh;
-  width: 100%;
+  height: calc(100dvh - 16px);
+  width: calc(100% - 16px);
+  margin: 8px;
   position: absolute;
   top: 0px;
   left: -100%;
@@ -969,12 +970,12 @@ input:placeholder-shown {
   opacity: 0.5;
 }
 #displayHistory {
-  margin-top: 40px;
-  padding: 0px 10px 40px 10px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
 }
+
 .historyElement {
   z-index: 2100;
   width: 100%;
@@ -982,6 +983,9 @@ input:placeholder-shown {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+}
+.historyElement:nth-child(1) {
+  border-bottom: none;
 }
 .historyElementMain {
   display: flex;
@@ -1402,7 +1406,7 @@ input.highlighted::placeholder {
 }
 
 #kanjisList, #vocabularyList, #searchSentenceContainer, .listIndicator {
-  border: 1px solid var(--primaryColor);
+  border: 1px solid var(--lightenedColor);
 }
 
 .listIndicator {
@@ -1437,10 +1441,6 @@ input.highlighted::placeholder {
   background-color: var(--paleColor);
 }
 
-.sentenceElementContainer {
-  border-bottom: 1px solid var(--primaryColor);
-}
-
 .sentenceElementContainer.highlighted {
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
@@ -1453,6 +1453,18 @@ input.highlighted::placeholder {
 #wordDetailsPlus {
   border-top: 1px solid var(--primaryColor);
   background-color: var(--backgroundColor);
+}
+
+.wordDetailsInflexionsTense, #kosoadoTable {
+  border: 1px solid var(--lightenedColor);
+}
+
+.wordDetailsInflexionsMode:first-child, .kosoadoRow:not(:last-child) {
+  border-bottom: 1px solid var(--paleColor);
+}
+
+.kosoadoRow div:not(:last-child) {
+  border-right: 1px solid var(--paleColor);
 }
 
 #wordsListFilterModal div span {
@@ -1488,24 +1500,18 @@ input.highlighted::placeholder {
   border-bottom: 1px solid var(--primaryColor);
 }
 
-.listElementContainer {
-  border-bottom: 1px solid var(--primaryColor);
+.listElementContainer, .sentenceElementContainer, .historyElement {
+  border-bottom: 1px solid var(--lightenedColor);
+}
+
+#displayHistoryContainer {
+  border: 1px solid var(--lightenedColor);
 }
 
 #displayHistoryContainer {
   background-color: var(--backgroundColor);
 }
 
-#displayHistory {
-  margin-top: 80px;
-}
-
-.historyElement {
-  border-bottom: 1px solid var(--primaryColor);
-}
-.historyElement:nth-child(1) {
-  border-bottom: none;
-}
 .historyElement.selected {
 background-color: var(--primaryColor);
 color: var(--backgroundColor);
