@@ -28,27 +28,36 @@ const FilterModal = (props) => {
     }
 
     return (
-        <div id="wordsListFilterModal" className={openFilter ? (searchExecuted || currentElement ? "open" : "open expanded") : (searchExecuted || currentElement ? "" : "expanded")}>
-            <div>
-                {Object.entries(dictionnary[language].pluralClasses).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setGrammar)} className={(!!searchExecuted && grammar === key) ? "selected clickable" : "clickable"}>
-                        {value}
-                    </span>
-                ))}
+        <div id="wordsListFilterModalContainer" className={openFilter ? 'open' : ''}>
+            <div id="filtersTip" className={`wordsListHeaderRow${openFilter ? ' open' : ''}${searchExecuted ? '' : ' expanded'}`}>
+                {searchExecuted ?
+                    <div className="tooltip">{localDictionnary[language].selectCategory2}</div>
+                    :
+                    <div className="tooltip">{localDictionnary[language].selectCategory}</div>
+                }
             </div>
-            <div>
-                {Object.entries(dictionnary[language].levels).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setLevel)} className={(!!searchExecuted && level === key) ? "selected clickable" : "clickable"}>
-                        {value ? (key === "0" ? value : `JLPT ${value}`) : localDictionnary[language].noJLPT}
-                    </span>
-                ))}
-            </div>
-            <div>
-                {Object.entries(dictionnary[language].collections).map(([key, value]) => (
-                    <span key={key} onClick={() => handleClick(key, setCollection)} className={(!!searchExecuted && collection === key) ? "selected clickable" : "clickable"}>
-                        {value}
-                    </span>
-                ))}
+            <div id="wordsListFilterModal" className={openFilter ? (searchExecuted || currentElement ? "open" : "open expanded") : (searchExecuted || currentElement ? "" : "expanded")}>
+                <div>
+                    {Object.entries(dictionnary[language].pluralClasses).map(([key, value]) => (
+                        <span key={key} onClick={() => handleClick(key, setGrammar)} className={(!!searchExecuted && grammar === key) ? "selected clickable" : "clickable"}>
+                            {value}
+                        </span>
+                    ))}
+                </div>
+                <div>
+                    {Object.entries(dictionnary[language].levels).map(([key, value]) => (
+                        <span key={key} onClick={() => handleClick(key, setLevel)} className={(!!searchExecuted && level === key) ? "selected clickable" : "clickable"}>
+                            {value ? (key === "0" ? value : `JLPT ${value}`) : localDictionnary[language].noJLPT}
+                        </span>
+                    ))}
+                </div>
+                <div>
+                    {Object.entries(dictionnary[language].collections).map(([key, value]) => (
+                        <span key={key} onClick={() => handleClick(key, setCollection)} className={(!!searchExecuted && collection === key) ? "selected clickable" : "clickable"}>
+                            {value}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     )

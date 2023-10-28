@@ -76,6 +76,12 @@ const DisplayHistory = (props) => {
         return false
     }
 
+    const handleClose = (e) => {
+        console.log('TEST')
+        e.stopPropagation()
+        setOpenHistory(false)
+    }
+
     return (
         <div
             id="displayHistoryContainer"
@@ -83,7 +89,7 @@ const DisplayHistory = (props) => {
             onMouseLeave={() => setOpenHistory(false)}
         >
             <img
-                onClick={() => setOpenHistory(false)}
+                onClick={(e) => handleClose(e)}
                 className="clickable"
                 src={`/img/${imgPath}/close.png`}
                 alt="close sentence"

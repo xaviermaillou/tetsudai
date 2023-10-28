@@ -123,27 +123,26 @@ const SidePanel = (props) => {
                     />
                 </div>
             </div>
-            {!openSentence &&
-                <ListHeader
-                    openFilter={openFilter}
-                    setOpenFilter={setOpenFilter}
-                    imgPath={imgPath}
-                    open={open}
-                    toggle={toggle}
-                    collection={collection}
-                    setCollection={setCollection}
-                    level={level}
-                    setLevel={setLevel}
-                    grammar={grammar}
-                    setGrammar={setGrammar}
-                    search={search}
-                    handleSearch={handleSearch}
-                    searchExecuted={searchExecuted}
-                    setSearchExecuted={setSearchExecuted}
-                    currentElement={currentElement}
-                />
-            }
-            <SearchSentence
+            <ListHeader
+                openFilter={openFilter}
+                setOpenFilter={setOpenFilter}
+                openSentence={openSentence}
+                imgPath={imgPath}
+                open={open}
+                toggle={toggle}
+                collection={collection}
+                setCollection={setCollection}
+                level={level}
+                setLevel={setLevel}
+                grammar={grammar}
+                setGrammar={setGrammar}
+                search={search}
+                handleSearch={handleSearch}
+                searchExecuted={searchExecuted}
+                setSearchExecuted={setSearchExecuted}
+                currentElement={currentElement}
+            />
+            {pinnedSentence && <SearchSentence
                 openSentence={openSentence}
                 setOpenSentence={setOpenSentence}
                 word={(currentElement && currentElement.completeWord) ? currentElement : undefined}
@@ -152,7 +151,7 @@ const SidePanel = (props) => {
                 searchIsSentence={searchIsSentence}
                 setOpenMenu={setOpen}
                 imgPath={imgPath}
-            />
+            />}
             <ListSearchResults
                 searchExecuted={searchExecuted}
                 currentElement={currentElement}

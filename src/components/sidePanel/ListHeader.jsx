@@ -9,6 +9,7 @@ const ListHeader = (props) => {
     const {
         openFilter,
         setOpenFilter,
+        openSentence,
         imgPath,
         collection,
         setCollection,
@@ -43,11 +44,8 @@ const ListHeader = (props) => {
     }
 
     return (
-        <div id="wordsListHeader">
-            <div
-                className={searchExecuted ? "clickable" : "lowOpacity"}
-            >
-            </div>
+        <div id="wordsListHeader" className={openSentence ? "" : "open"}>
+            <div />
             <div
                 id="wordsListFilterIcon"
                 className={(searchExecuted || openFilter) ? "clickable" : "clickable highlighted"}
@@ -103,14 +101,7 @@ const ListHeader = (props) => {
                         )
                     }
                     <div></div>
-                </div>
-                <div id="filtersTip" className={openFilter ? "wordsListHeaderRow open" : "wordsListHeaderRow"}>
-                    {searchExecuted ?
-                        <div className="tooltip">{localDictionnary[language].selectCategory2}</div>
-                        :
-                        <div className="tooltip expanded">{localDictionnary[language].selectCategory}</div>
-                    }
-                </div>
+                </div> 
             </div>
             <FilterModal
                 openFilter={openFilter}

@@ -21,8 +21,8 @@ const SearchSentence = (props) => {
         setOpenSentence(!!searchIsSentence)
     }, [pinnedSentence, searchIsSentence, setOpenSentence])
 
-    const handleCloseClick = () => {
-        setOpenSentence(false)
+    const handleOpenSentence = () => {
+        setOpenSentence(!openSentence)
     }
 
     const handleWordClick = (id) => {
@@ -32,10 +32,10 @@ const SearchSentence = (props) => {
 
     return (
         <div id="searchSentenceContainer" className={openSentence ? "open" : ""}>
-            <div id="searchSentenceHeader" className={openSentence ? "open" : ""}>
+            <div id="searchSentenceHeader" onClick={handleOpenSentence} className={openSentence ? "listIndicator clickable" : "listIndicator clickable closed"}>
                 <span></span>
                 <span className="tooltip">{localDictionnary[language].detectedSentence}</span>
-                <span onClick={handleCloseClick}><img className="clickable" src={`/img/${imgPath}/close.png`} alt="close sentence" /></span>
+                <span><img className="clickable" src={`/img/${imgPath}/plus.png`} alt="close sentence" /></span>
             </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>
                 {pinnedSentence?.elements.map((element, i) => (
