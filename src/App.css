@@ -530,7 +530,7 @@ input:placeholder-shown {
   position: absolute;
   top: calc(100dvh - 50px);
   height: calc(100dvh - 280px);
-  width: 100%;
+  width: 80%;
   font-size: 14px;
   overflow: hidden;
 }
@@ -1388,7 +1388,7 @@ input:placeholder-shown {
 }
 
 #App.dark {
-  --backgroundColor: rgba(0, 0, 0, 1);
+  --backgroundColor: rgba(40, 45, 50, 1);
   --primaryColor: rgba(255, 255, 0, 1);
   --secondaryColor: rgba(255, 255, 0, 0.75);
   --lightenedColor: rgba(255, 255, 0, 0.5);
@@ -1446,7 +1446,7 @@ input.highlighted::placeholder {
 }
 
 .wordDisplayWordElementYomi.highlighted {
-  border-top: 1px solid var(--primaryColor);
+  border-top: 1px solid var(--lightenedColor);
 }
 
 .yomiContainer {
@@ -1465,11 +1465,11 @@ input.highlighted::placeholder {
 }
 
 #relatedKanji, #wordPrecisions {
-  border-bottom: 1px solid var(--primaryColor);
+  border-bottom: 1px solid var(--lightenedColor);
 }
 
 #wordDetailsPlus {
-  border-top: 1px solid var(--primaryColor);
+  border-top: 1px solid var(--lightenedColor);
   background-color: var(--backgroundColor);
 }
 
@@ -1490,7 +1490,7 @@ input.highlighted::placeholder {
 }
 
 #kanjiDisplayInfo, #wordDisplayInfo {
-  border-bottom: 2px solid var(--primaryColor);
+  border-bottom: 2px solid var(--lightenedColor);
 }
 
 #sidePanel {
