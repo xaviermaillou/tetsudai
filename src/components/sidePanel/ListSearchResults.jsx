@@ -22,14 +22,13 @@ const ListSearchResults = (props) => {
         handleWordChange,
         setOpen,
         imgPath,
-        openSentence,
     } = props
 
     const language = useContext(LanguageContext)
 
     return (
         <div id="searchResultsContainer">
-            {(searchExecuted && !openSentence) && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
+            {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span>Kanji</span>
                 {displayKanjis ?
                     <img src={`/img/${imgPath}/less.png`} alt="close kanji" />
@@ -37,7 +36,7 @@ const ListSearchResults = (props) => {
                     <img src={`/img/${imgPath}/plus.png`} alt="open kanji" />
                 }
             </span>}
-            {!openSentence && <div id="kanjisList" className={searchExecuted ?
+            <div id="kanjisList" className={searchExecuted ?
                 (displayKanjis ?
                     "extended wordsListList"
                     :
@@ -69,8 +68,8 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyKanjiSearch}</div>}
-            </div>}
-            {!openSentence && <div id="vocabularyList" className={searchExecuted ?
+            </div>
+            <div id="vocabularyList" className={searchExecuted ?
                 (displayKanjis ?
                     "wordsListList"
                     :
@@ -101,7 +100,7 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyWordSearch}</div>}
-            </div>}
+            </div>
             {false && <span className="tooltip">{localDictionnary[language].searchGlobalTip}</span>}
         </div>
     )

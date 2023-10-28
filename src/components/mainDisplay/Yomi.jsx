@@ -19,7 +19,7 @@ const Yomi = (props) => {
             <div className="yomiExamples">
                 <FiveFirstElements
                     loop={reading.examples.map((wordExample, i) => (
-                        <div className="mainDisplayElementContainer">
+                        <div className="mainDisplayElementContainer" key={i}>
                             <WordElement
                                 word={wordExample}
                                 kanaToHighlight={reading.kana}

@@ -35,7 +35,6 @@ const SidePanel = (props) => {
         setVocabularyListOffset,
         setOpenedHistory,
         pinnedSentence,
-        searchIsSentence,
         openFilter,
         setOpenFilter,
     } = props
@@ -148,7 +147,6 @@ const SidePanel = (props) => {
                 word={(currentElement && currentElement.completeWord) ? currentElement : undefined}
                 changeCurrentWordById={changeCurrentWordById}
                 pinnedSentence={pinnedSentence}
-                searchIsSentence={searchIsSentence}
                 setOpenMenu={setOpen}
                 imgPath={imgPath}
             />}
@@ -167,7 +165,6 @@ const SidePanel = (props) => {
                 handleWordChange={handleWordChange}
                 setOpen={setOpen}
                 imgPath={imgPath}
-                openSentence={openSentence}
             />
         </div>
     )

@@ -45,10 +45,10 @@ const MainDisplay = (props) => {
                         <p id="kanjiDisplayKanjiGhostLeft">{kanji.kanji}</p>
                         <p id="kanjiDisplayKanjiGhostRight">{kanji.kanji}</p>
                         <p id="kanjiDisplayTranslation">{kanji.translation[language].join(' | ')}</p>
-                        <p id="kanjiDisplayInfo">
+                        <div id="kanjiDisplayInfo">
                             <div>{kanji.strokes} traits</div>
                             <div>{kanji.level ? kanji.level : localDictionnary[language].noJLPT}</div>
-                        </p>
+                        </div>
                         <KanjiDetails
                             imgPath={imgPath}
                             kanji={kanji}
@@ -60,7 +60,7 @@ const MainDisplay = (props) => {
                 {word !== null &&
                     <div id="wordDisplay" className={loading ? "rerenderOpacity" : ""}>
                         {word.jukujikun ? 
-                            <div id="wordDisplayWordJukujikun">
+                            <div id="wordDisplayWordJukujikun" className={word.completeWord.length > 4 ? "smallFont" : ""}>
                                 <div id="wordDisplayWordKanjiOnly">
                                     {word.jukujikunAsMain ?
                                         <div className="wordDisplayWordElement">
@@ -84,7 +84,7 @@ const MainDisplay = (props) => {
                                 </div>
                             </div>
                             :
-                            <div id="wordDisplayWord">
+                            <div id="wordDisplayWord" className={word.completeWord.length > 4 ? "smallFont" : ""}>
                                 <div id="wordDisplayWordElements">
                                     {word.elements.map((element, i) => <div className={element.option === "politeElement" ? "wordDisplayWordPrefix wordDisplayWordElement" : "wordDisplayWordElement"} key={i}>
                                         <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ?

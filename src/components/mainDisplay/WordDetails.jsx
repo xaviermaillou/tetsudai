@@ -201,12 +201,11 @@ export const WordDetails = (props) => {
                 <div id="relatedKanji">
                     <p className="kanasReadingsHeader">KANJI</p>
                     {elements?.map((element, i) => (
-                        <div>
+                        <div key={i}>
                             <KanjiElement
                                 kanji={element.details}
                                 kanaToHighlight={element.kana}
                                 changeCurrentKanjiById={changeCurrentKanjiById}
-                                key={i}
                             />
                         </div>
                     ))}
@@ -218,20 +217,19 @@ export const WordDetails = (props) => {
                         Object.entries(relatedWords).map(([key, value]) => {
                             if (value.length > 0) hasRelatedContent = true
                             return (
-                                <>
+                                <div key={key}>
                                     {value.length > 0 && <p className="relatedWordsSubtitle">{localDictionnary[language][key]}</p>}
                                     <FiveFirstElements
                                         loop={value.map((relatedWord, i) => (
-                                            <div className="mainDisplayElementContainer">
+                                            <div className="mainDisplayElementContainer" key={i}>
                                                 <WordElement
                                                     word={relatedWord}
                                                     changeCurrentWordById={changeCurrentWordById}
-                                                    key={key + i}
                                                 />
                                             </div>
                                         ))}
                                     />
-                                </>
+                                </div>
                             )
                         })
                     }
@@ -250,7 +248,7 @@ export const WordDetails = (props) => {
                     <div>
                         <FiveFirstElements
                             loop={sentences?.map((sentence, i) => (
-                                <div className="mainDisplaySentenceContainer">
+                                <div className="mainDisplaySentenceContainer" key={i}>
                                     <Sentence
                                         sentence={sentence}
                                         referenceId={referenceId}
@@ -258,7 +256,6 @@ export const WordDetails = (props) => {
                                         handleSearch={handleSearch}
                                         setSearchExecuted={setSearchExecuted}
                                         setMenuOpen={setMenuOpen}
-                                        key={i}
                                     />
                                 </div>
                             ))}

@@ -32,11 +32,12 @@ const SentenceElement = (props) => {
             <div className="sentenceElement">
                 {element.ambiguity && <span className="tooltip sentenceElementAmbiguity">{localDictionnary[language].wordsConflict}</span>}
                 {firstFoundElement.id && <div className={element.ambiguity ? "sentenceElementInfo extended" : "sentenceElementInfo"}>
-                    {element.foundElements.map((foundElement) => (
+                    {element.foundElements.map((foundElement, i) => (
                         <WordElement
                             word={foundElement}
                             changeCurrentWordById={handleWordClick}
                             sentenceGrammar={foundElement.sentenceGrammar}
+                            key={i}
                         />
                     ))}
                 </div>}

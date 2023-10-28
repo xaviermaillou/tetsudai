@@ -23,11 +23,10 @@ const KanjiDetails = (props) => {
                 <div className="kanjiDetailsSubSection">
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiTakenFrom}</p>
                     {kanji.kanjiTakenAsPartFrom.map((e, i) => (
-                        <div className="kanjiDetailsKanjiElements">
+                        <div className="kanjiDetailsKanjiElements" key={i}>
                             <KanjiElement
                                 kanji={e}
                                 changeCurrentKanjiById={changeCurrentKanjiById}
-                                key={i}
                             />
                         </div>
                     ))}
@@ -37,11 +36,10 @@ const KanjiDetails = (props) => {
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiUsedIn}</p>
                     <FiveFirstElements
                         loop={kanji.kanjiUsedAsPartIn.map((e, i) => (
-                            <div className="mainDisplayElementContainer kanjiDetailsKanjiElements">
+                            <div className="mainDisplayElementContainer kanjiDetailsKanjiElements" key={i}>
                                 <KanjiElement
                                     kanji={e}
                                     changeCurrentKanjiById={changeCurrentKanjiById}
-                                    key={i}
                                 />
                             </div>
                         ))}
@@ -78,11 +76,10 @@ const KanjiDetails = (props) => {
                     <p className="kanasReadingsHeader">JUKUJIKUN</p>
                     <FiveFirstElements
                         loop={kanji.relatedJukujikun?.map((e, i) => (
-                            <div className="mainDisplayElementContainer kanjiDetailsJukujikun">
+                            <div className="mainDisplayElementContainer kanjiDetailsJukujikun" key={i}>
                                 <WordElement
                                     word={e}
                                     changeCurrentWordById={changeCurrentWordById}
-                                    key={i}
                                 />
                             </div>
                         ))}

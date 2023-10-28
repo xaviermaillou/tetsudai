@@ -275,6 +275,10 @@ input:placeholder-shown {
   flex-direction: column;
   align-items: center;
 }
+#wordDisplayWord.smallFont, #wordDisplayWordJukujikun.smallFont {
+  font-size: 5dvh;
+  justify-content: center;
+}
 #wordDisplayWordElements {
   display: flex;
   justify-content: center;
@@ -1186,6 +1190,9 @@ input:placeholder-shown {
     height: 22dvh;
     min-height: 22dvh;
     font-size: 11dvh;
+  }
+  #wordDisplayWord.smallFont, #wordDisplayWordJukujikun.smallFont {
+    font-size: 8dvh;
   }
   #wordDisplayInfo {
     flex-direction: row;

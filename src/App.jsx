@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   // Theme
-  const [imgPath, setImgPath] = useState('light')
+  const [imgPath, setImgPath] = useState(null)
   useEffect(() => {
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)")
     if (darkTheme.matches) setImgPath("dark")
@@ -131,13 +131,11 @@ function App() {
     )
     setVocabularyList(resultVocabulary.results)
     if (resultVocabulary.sentence) {
-      setSearchIsSentence(true)
       fetchSentence({
         elements: resultVocabulary.sentence
       })
     }
     else {
-      setSearchIsSentence(false)
       setPinnedSentence(undefined)
     }
   }, [
@@ -255,7 +253,6 @@ function App() {
 
   // Pinned sentence
   const [pinnedSentence, setPinnedSentence] = useState()
-  const [searchIsSentence, setSearchIsSentence] = useState(false)
 
   // Fetch sentence data
   const fetchSentence = async (sentence) => {
@@ -264,6 +261,8 @@ function App() {
   }
 
   const [openHistory, setOpenHistory] = useState(false)
+
+  if(!imgPath) return
 
   return (
     <LanguageContext.Provider value={language}>
@@ -313,7 +312,6 @@ function App() {
 
           // Sentence
           pinnedSentence={pinnedSentence}
-          searchIsSentence={searchIsSentence}
 
           // Current element
           currentElement={kanji || word}
