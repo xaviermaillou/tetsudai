@@ -44,7 +44,7 @@ const ListSearchResults = (props) => {
                 )
                 :
                 "hidden closed wordsListList"}>
-                {kanjis.map((item, i) => (
+                {!!kanjis && kanjis.map((item, i) => (
                     <ListElement
                         isSelected={currentElement && currentElement.kanji && currentElement.id === item.id}
                         importance={item.importance}
@@ -68,6 +68,7 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyKanjiSearch}</div>}
+                {(!!!kanjis && !noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">No data available</div>}
             </div>
             <div id="vocabularyList" className={searchExecuted ?
                 (displayKanjis ?
@@ -76,7 +77,7 @@ const ListSearchResults = (props) => {
                     "extended wordsListList")
                 :
                 "hidden closed wordsListList"}>
-                {vocabulary.map((item, i) => (
+                {!!vocabulary && vocabulary.map((item, i) => (
                     <ListElement
                         isSelected={currentElement && currentElement.completeWord && currentElement.id === item.id}
                         importance={item.importance}
@@ -100,6 +101,7 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyWordSearch}</div>}
+                {(!!!vocabulary && !noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">No data available</div>}
             </div>
             {false && <span className="tooltip">{localDictionnary[language].searchGlobalTip}</span>}
         </div>

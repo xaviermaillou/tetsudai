@@ -51,21 +51,21 @@ const SidePanel = (props) => {
     }
 
     useEffect(() => {
-        setNoKanji(kanjis.length === 0)
-        setNoWord(vocabulary.length === 0)
+        setNoKanji(typeof kanjis === "array" && kanjis?.length === 0)
+        setNoWord(typeof vocabulary === "array" && vocabulary?.length === 0)
     }, [kanjis, vocabulary])
 
     useEffect(() => {
         if (searchExecuted
             && !loadingVocabularyList
-            && kanjis.length > 0
-            && vocabulary.length === 0
+            && kanjis?.length > 0
+            && vocabulary?.length === 0
         ) {
             setDisplayKanjis(true)
         }
     }, [searchExecuted, loadingVocabularyList, kanjis, vocabulary])
 
-    if (kanjis.length >= kanjiListOffset + 100) {
+    if (kanjis?.length >= kanjiListOffset + 100) {
         const kanjiContainer = document.getElementById('kanjisList')
         kanjiContainer?.addEventListener('scroll', () => {
             if ((kanjiContainer.offsetHeight + kanjiContainer.scrollTop + 100) >= kanjiContainer.scrollHeight) {
@@ -73,7 +73,7 @@ const SidePanel = (props) => {
             }
         })
     }
-    if (vocabulary.length >= vocabularyListOffset + 100) {
+    if (vocabulary?.length >= vocabularyListOffset + 100) {
         const vocabularyContainer = document.getElementById('vocabularyList')
         vocabularyContainer?.addEventListener('scroll', () => {
             if ((vocabularyContainer.offsetHeight + vocabularyContainer.scrollTop + 100) >= vocabularyContainer.scrollHeight) {

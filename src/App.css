@@ -1334,8 +1334,6 @@ input:placeholder-shown {
   #mainDisplay {
     padding-top: 60px;
     padding-left: 86px;
-  }
-  #mainDisplay.compressed {
     width: 67%;
   }
   #wordsListFilters {

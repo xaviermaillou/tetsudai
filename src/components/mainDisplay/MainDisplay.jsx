@@ -10,7 +10,6 @@ const MainDisplay = (props) => {
     const {
         imgPath,
         kanji,
-        compressed,
         changeCurrentKanjiById,
         word,
         changeCurrentWordById,
@@ -21,6 +20,7 @@ const MainDisplay = (props) => {
         pinnedSentence,
         handleSearch,
         setSearchExecuted,
+        elementFetched,
         setMenuOpen,
     } = props
 
@@ -36,10 +36,12 @@ const MainDisplay = (props) => {
         changeCurrentWordById(id)
     }
 
+    if (!elementFetched) return null
+
     return (
         <div id="mainDisplayContainer">
-            <div id="mainDisplay" className={compressed ? "mainContainer compressed" : "mainContainer"}>
-                {kanji !== null &&
+            <div id="mainDisplay" className="mainContainer">
+                {kanji &&
                     <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
                         <p id="kanjiDisplayKanji">{kanji.kanji}</p>
                         <p id="kanjiDisplayKanjiGhostLeft">{kanji.kanji}</p>
@@ -57,7 +59,7 @@ const MainDisplay = (props) => {
                         />
                     </div>
                 }
-                {word !== null &&
+                {word &&
                     <div id="wordDisplay" className={loading ? "rerenderOpacity" : ""}>
                         {word.jukujikun ? 
                             <div id="wordDisplayWordJukujikun" className={word.completeWord.length > 4 ? "smallFont" : ""}>
@@ -148,6 +150,9 @@ const MainDisplay = (props) => {
                         isLoading={loading}
                     />
                 </div>
+                {(!!!kanji && !!!word && !loading) &&
+                    <span>No data available</span>
+                }
             </div>
         </div>
     )

@@ -48,6 +48,7 @@ function App() {
   const [search, setSearch] = useState("")
   const [searchCopy, setSearchCopy] = useState(search)
   const [searchExecuted, setSearchExecuted] = useState(false)
+  const [elementFetched, setElementFetched]  = useState(false)
 
   const [openFilter, setOpenFilter] = useState(false)
 
@@ -82,11 +83,13 @@ function App() {
   })
 
   const changeCurrentKanjiById = useCallback(async (id) => {
+    setElementFetched(true)
     const result = await fetchKanji(id, setLoadingMainDisplay)
     setWord(null)
     setKanji(result)
   }, [])
   const changeCurrentWordById = useCallback(async (id) => {
+    setElementFetched(true)
     const result = await fetchWord(id, setLoadingMainDisplay)
     setKanji(null)
     setWord(result)
@@ -155,6 +158,7 @@ function App() {
       kanjiListOffset,
       setLoadingKanjiList
     )
+    if (!!!resultKanji) return
     setKanjisList((arr) => [ ...arr, ...resultKanji ])
   }, [
     level,
@@ -172,6 +176,7 @@ function App() {
       vocabularyListOffset,
       setLoadingVocabularyList
     )
+    if (!!!resultVocabulary) return
     setVocabularyList((arr) => [ ...arr, ...resultVocabulary.results ])
   }, [
     level,
@@ -287,11 +292,9 @@ function App() {
           pinnedSentence={pinnedSentence}
           handleSearch={handleSearch}
           setSearchExecuted={setSearchExecuted}
+          elementFetched={elementFetched}
           loading={loadingMainDisplay}
           loadingSentences={loadingSentences}
-
-          // Height
-          compressed={menuOpen}
 
           // Menu toggle
           setMenuOpen={setMenuOpen}
