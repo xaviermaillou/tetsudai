@@ -22,14 +22,14 @@ const WordElement = (props) => {
                                 <div>{word.jukujikun}</div>
                                 :
                                 word.elements.map((element, j) => (
-                                    <div key={j}>{element.kanji || element.kana}</div>
+                                    <div key={j}>{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</div>
                                 ))
                             }
                         </div>
                         <div className="wordElementSecondaryCharacters">
                             {word.jukujikunAsMain ?
                                 word.elements.map((element, j) => (
-                                    <span key={j}>{element.kanji || element.kana}</span>
+                                    <span key={j}>{element.option === "rareKanji" ? element.kanji : element.kana}</span>
                                 ))
                                 :
                                 <span>{word.jukujikun}</span>
