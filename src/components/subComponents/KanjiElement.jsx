@@ -12,7 +12,7 @@ const KanjiElement = (props) => {
             <div className="kanjiElementKanji">
                 {kanji.kanji}
             </div>
-            <div className="kanjiElementKana">
+            <div className="kanjiElementDetails">
                 <div>
                     {
                         kanji.readings.kunyomi?.map((item, i) => (
