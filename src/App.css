@@ -1479,7 +1479,7 @@ input.highlighted::placeholder {
 }
 
 #wordDetailsPlus {
-  border-top: 1px solid var(--lightenedColor);
+  border-top: 1px solid var(--secondaryColor);
   background-color: var(--backgroundColor);
 }
 
