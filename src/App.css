@@ -540,7 +540,6 @@ input:placeholder-shown {
   height: calc(100dvh - 280px);
   width: 80%;
   font-size: 14px;
-  overflow: hidden;
 }
 #wordDetailsPlus.expanded {
   top: calc(88px + 20dvh + 24px + 35px);
@@ -580,7 +579,9 @@ input:placeholder-shown {
   justify-content: space-between;
 }
 .wordDetailsInflexionsVerb {
-  width: calc(50% - 75px);
+  width: calc(50% - 65px);
+  white-space: nowrap;
+  direction: rtl;
 }
 .wordDetailsInflexionsMode span:nth-child(1) {
   text-align: right;
@@ -1482,12 +1483,18 @@ input.highlighted::placeholder {
   background-color: var(--backgroundColor);
 }
 
-.wordDetailsInflexionsTense, #kosoadoTable {
+#kosoadoTable {
   border: 1px solid var(--lightenedColor);
 }
+.wordDetailsInflexionsTense:first-child {
+  border-top: 1px solid var(--lightenedColor);
+}
+.wordDetailsInflexionsTense {
+  border-bottom: 1px solid var(--lightenedColor);
+}
 
-.wordDetailsInflexionsMode:first-child, .kosoadoRow:not(:last-child) {
-  border-bottom: 1px solid var(--paleColor);
+.wordDetailsInflexionsMode:not(:first-child), .kosoadoRow:not(:last-child) {
+  border-top: 1px solid var(--paleColor);
 }
 
 .kosoadoRow div:not(:last-child) {
