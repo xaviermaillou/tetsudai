@@ -28,8 +28,9 @@ function App() {
   const [imgPath, setImgPath] = useState(null)
   useEffect(() => {
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)")
-    if (darkTheme.matches) setImgPath("dark")
-    else setImgPath("light")
+    const changeTheme = () => setImgPath(darkTheme.matches ? "dark" : "light")
+    changeTheme()
+    darkTheme.addEventListener("change", () => changeTheme())
   }, [])
 
   // Listing data
