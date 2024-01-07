@@ -89,6 +89,8 @@ const Inflexions = (props) => {
         <div id="wordDetailsInflexions">
             {inflexions['nonPast'] && <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />}
             {inflexions['past'] && <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />}
+            {inflexions['nonPastProgressive'] && <VerbInflexionTense tense={inflexions['nonPastProgressive']} tenseName={'nonPastProgressive'} />}
+            {inflexions['volitional'] && <VerbInflexionTense tense={inflexions['volitional']} tenseName={'volitional'} />}
             {inflexions['adverb'] && <VerbInflexionTense tense={inflexions['adverb']} tenseName={'adverb'} />}
         </div>
     )

@@ -580,7 +580,7 @@ input:placeholder-shown {
   justify-content: space-between;
 }
 .wordDetailsInflexionsVerb {
-  width: calc(50% - 50px);
+  width: calc(50% - 75px);
 }
 .wordDetailsInflexionsMode span:nth-child(1) {
   text-align: right;
