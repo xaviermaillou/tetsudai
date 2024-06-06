@@ -454,14 +454,14 @@ input:placeholder-shown {
 .kanjiElementDetails div {
   width: 100%;
   height: 50%;
-  line-height: 90%;
+  line-height: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-align: right;
   text-overflow: ellipsis;
 }
 .kanjiElementTranslation {
-  margin-top: 5px;
+  margin-top: 2px;
   opacity: 0.5;
 }
 #wordLanguage {
@@ -1493,7 +1493,7 @@ input.highlighted::placeholder {
   border-bottom: 1px solid var(--lightenedColor);
 }
 
-.wordDetailsInflexionsMode:not(:first-child), .kosoadoRow:not(:last-child) {
+.wordDetailsInflexionsMode:not(:first-child), .kosoadoRow {
   border-top: 1px solid var(--paleColor);
 }
 
