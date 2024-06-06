@@ -17,23 +17,9 @@ const KanjiDetails = (props) => {
 
     const language = useContext(LanguageContext)
 
-    const containerRef = useRef(null)
-    const leftSectionRef = useRef(null)
-    const rightSectionRef = useRef(null)
-
-    const scrollToTopObject = {
-        top: 0
-      }
-
-    useEffect(() => {
-        containerRef?.current.scrollTo(scrollToTopObject)
-        leftSectionRef?.current.scrollTo(scrollToTopObject)
-        rightSectionRef?.current.scrollTo(scrollToTopObject)
-    }, [kanji])
-
     return (
-        <div id="kanjiDetails" className='expanded' ref={containerRef}>
-            <div className="kanjiDetailsSection" ref={leftSectionRef}>
+        <div id="kanjiDetails" className='expanded'>
+            <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection">
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiTakenFrom}</p>
                     {kanji.kanjiTakenAsPartFrom.map((e, i) => (
@@ -61,7 +47,7 @@ const KanjiDetails = (props) => {
                     {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">{localDictionnary[language].kanjiInNoKanji}</span>}
                 </div>
             </div>
-            <div className="kanjiDetailsSection" ref={rightSectionRef}>
+            <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection" id="kunyomiExamples">
                     <p className="kanasReadingsHeader">KUNYOMI</p>
                     {kanji.readings.kunyomi?.map((reading, i) => (

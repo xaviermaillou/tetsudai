@@ -182,25 +182,11 @@ export const WordDetails = (props) => {
 
     const language = useContext(LanguageContext)
 
-    const containerRef = useRef(null)
-    const leftSectionRef = useRef(null)
-    const rightSectionRef = useRef(null)
-
-    const scrollToTopObject = {
-        top: 0
-      }
-
-    useEffect(() => {
-        containerRef?.current.scrollTo(scrollToTopObject)
-        leftSectionRef?.current.scrollTo(scrollToTopObject)
-        rightSectionRef?.current.scrollTo(scrollToTopObject)
-    }, [referenceId])
-
     let hasRelatedContent = false
 
     return (
-        <div id="wordDetails" className='expanded' ref={containerRef}>
-            <div id="wordDetailsKanjis" className={bottomSpace ? "bottomSpace" : ""} ref={leftSectionRef}>
+        <div id="wordDetails" className='expanded'>
+            <div id="wordDetailsKanjis" className={bottomSpace ? "bottomSpace" : ""}>
                 {originLanguage &&
                     <div id="wordLanguage">
                         <span>{dictionnary[language].languages[originLanguage]}</span>
@@ -252,7 +238,7 @@ export const WordDetails = (props) => {
                     {!hasRelatedContent && <span className="tooltip">{localDictionnary[language].noWord}</span>}
                 </div>
             </div>
-            <div id="wordDetailsSentences" className={bottomSpace ? "bottomSpace" : ""} ref={rightSectionRef}>
+            <div id="wordDetailsSentences" className={bottomSpace ? "bottomSpace" : ""}>
                 <p className="kanasReadingsHeader">{localDictionnary[language].sentences}</p>
                 {loadingSentences ?
                     <div className="loadingAnimationContainer">

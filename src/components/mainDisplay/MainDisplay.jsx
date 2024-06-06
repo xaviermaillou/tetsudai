@@ -39,7 +39,7 @@ const MainDisplay = (props) => {
     if (!elementFetched) return null
 
     return (
-        <div id="mainDisplayContainer">
+        <div id="mainDisplayContainer" key={kanji?.id || word?.id}>
             <div id="mainDisplay" className="mainContainer">
                 {kanji &&
                     <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
