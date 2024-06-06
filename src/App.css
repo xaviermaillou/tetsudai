@@ -789,6 +789,7 @@ input:placeholder-shown {
   height: 16px;
   position: absolute;
   right: 0px;
+  transition: height 0s;
 }
 #wordsListSearch img.close {
   height: 12px;
