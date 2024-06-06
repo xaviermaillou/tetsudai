@@ -1,3 +1,5 @@
+// Legacy component, not used anymore
+
 import { useContext, useState } from "react"
 import { dictionnary } from "tetsudai-common"
 import LanguageContext from "../../contexts/Language"
