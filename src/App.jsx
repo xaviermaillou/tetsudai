@@ -48,6 +48,7 @@ function App() {
   const [grammar, setGrammar] = useState("0")
   const [search, setSearch] = useState("")
   const [searchCopy, setSearchCopy] = useState(search)
+  const [previousSearch, setPreviousSearch] = useState("")
   const [searchExecuted, setSearchExecuted] = useState(false)
   const [elementFetched, setElementFetched]  = useState(false)
 
@@ -134,6 +135,7 @@ function App() {
       setLoadingVocabularyList
     )
     setVocabularyList(resultVocabulary.results)
+    if (previousSearch === search) return
     if (resultVocabulary.sentence) {
       fetchSentence({
         elements: resultVocabulary.sentence
@@ -146,7 +148,8 @@ function App() {
     level,
     grammar,
     collection,
-    search
+    search,
+    previousSearch
   ])
 
   // Fetch more data callbacks
@@ -204,6 +207,8 @@ function App() {
       
       fetchKanjiAndSetState()
       fetchVocabularyAndSetState()
+
+      setPreviousSearch(search)
 
       localStorage.setItem('search', JSON.stringify({
         level,
