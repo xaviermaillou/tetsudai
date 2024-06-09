@@ -785,13 +785,16 @@ input:placeholder-shown {
   padding-right: 20px;
   font-size: 16px;
 }
-#wordsListSearch img {
-  height: 16px;
+#wordsListSearch .icon {
   position: absolute;
   right: 0px;
-  transition: height 0s;
+  height: 20px;
 }
-#wordsListSearch img.close {
+#wordsListSearch .icon img {
+  height: 16px;
+  transition: none;
+}
+#wordsListSearch .icon img.close {
   height: 12px;
 }
 

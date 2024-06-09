@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, useRef } from "react"
 import ListHeader from "./ListHeader"
 import SearchSentence from "./SearchSentence"
 import ListSearchResults from "./ListSearchResults"
@@ -91,6 +91,12 @@ const SidePanel = (props) => {
         changeCurrentWordById(id)
     }
 
+    const inputRef = useRef(null)
+
+    const handleIconClick = () => {
+        search ? handleSearch("") : inputRef.current?.focus()
+    }
+
     const [openSentence, setOpenSentence] = useState(false)
 
     return (
@@ -106,11 +112,13 @@ const SidePanel = (props) => {
                     />
                 }
                 <div id="wordsListSearch">
-                    {search ?
-                        <img className="close clickable" onClick={() => handleSearch("")} src={`/img/${imgPath}/close.png`} alt="erase search" />
-                        :
-                        <img src={`/img/${imgPath}/search.png`} alt="search" />
-                    }
+                    <div className="icon clickable" onClick={handleIconClick}>
+                        {search ?
+                            <img className="close" src={`/img/${imgPath}/close.png`} alt="erase search" />
+                            :
+                            <img src={`/img/${imgPath}/search.png`} alt="search" />
+                        }
+                    </div>
                     <input
                         value={searchCopy}
                         className={searchExecuted ? "" : "highlighted"}
@@ -118,6 +126,7 @@ const SidePanel = (props) => {
                         type="text"
                         spellCheck="false"
                         placeholder={localDictionnary[language].searchPlaceholder}
+                        ref={inputRef}
                     />
                 </div>
             </div>
