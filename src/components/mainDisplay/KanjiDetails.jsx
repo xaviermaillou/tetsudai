@@ -2,14 +2,13 @@ import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
 import Yomi from "./Yomi"
 import { localDictionnary } from "../../lib/dictionnary"
-import { useContext, useEffect, useRef } from "react"
+import { useContext } from "react"
 import LanguageContext from "../../contexts/Language"
 import FiveFirstElements from "../subComponents/FiveFirstElements"
 
 
 const KanjiDetails = (props) => {
     const {
-        imgPath,
         kanji,
         changeCurrentKanjiById,
         changeCurrentWordById,
@@ -52,7 +51,6 @@ const KanjiDetails = (props) => {
                     <p className="kanasReadingsHeader">KUNYOMI</p>
                     {kanji.readings.kunyomi?.map((reading, i) => (
                         <Yomi
-                            imgPath={imgPath}
                             reading={reading}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
@@ -64,7 +62,6 @@ const KanjiDetails = (props) => {
                     <p className="kanasReadingsHeader">ONYOMI</p>
                     {kanji.readings.onyomi?.map((reading, i) => (
                         <Yomi
-                            imgPath={imgPath}
                             reading={reading}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}

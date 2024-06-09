@@ -22,7 +22,6 @@ const SidePanel = (props) => {
         grammar,
         setGrammar,
         search,
-        setSearch,
         searchCopy,
         handleSearch,
         searchExecuted,

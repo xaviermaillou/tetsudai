@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react"
 import WordElement from "../subComponents/WordElement"
 import FiveFirstElements from "../subComponents/FiveFirstElements"
 
 const Yomi = (props) => {
     const {
-        imgPath,
         reading,
         changeCurrentWordById,
     } = props

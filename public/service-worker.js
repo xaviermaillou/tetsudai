@@ -4,7 +4,7 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
     .then(async (response) => {
-        if (event.request.method === "POST") return
+        if (event.request.method === "POST") return response
         const cache = await caches.open(CACHE_NAME)
         cache.put(event.request, response.clone())
         return response

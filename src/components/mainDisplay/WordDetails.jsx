@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useState } from "react"
 import { localDictionnary } from "../../lib/dictionnary"
 import { dictionnary } from "tetsudai-common"
 import KanjiElement from "../subComponents/KanjiElement"
@@ -46,6 +46,13 @@ const Kosoado = (props) => {
                 <div onClick={() => changeCurrentWordById(756)} className={referenceId === 756 ? "selected" : "clickable"}>あちら</div>
                 <div onClick={() => changeCurrentWordById(984)} className={referenceId === 984 ? "selected" : "clickable"}>どちら</div>
                 <div className="kosoadoIndicator">direction</div>
+            </div>
+            <div className="kosoadoRow">
+                <div onClick={() => changeCurrentWordById(1027)} className={referenceId === 1027 ? "selected" : "clickable"}>こんな</div>
+                <div onClick={() => changeCurrentWordById(1203)} className={referenceId === 1203 ? "selected" : "clickable"}>そんな</div>
+                <div onClick={() => changeCurrentWordById(1204)} className={referenceId === 1204 ? "selected" : "clickable"}>あんあ</div>
+                <div onClick={() => changeCurrentWordById(1205)} className={referenceId === 1205 ? "selected" : "clickable"}>どんな</div>
+                <div className="kosoadoIndicator">type</div>
             </div>
             <div className="kosoadoRow">
                 <div className="kosoadoIndicator">proche</div>

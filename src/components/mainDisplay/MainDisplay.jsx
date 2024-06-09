@@ -52,7 +52,6 @@ const MainDisplay = (props) => {
                             <div>{kanji.level ? kanji.level : localDictionnary[language].noJLPT}</div>
                         </div>
                         <KanjiDetails
-                            imgPath={imgPath}
                             kanji={kanji}
                             changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                             changeCurrentWordById={(id) => handleWordChange(id)}

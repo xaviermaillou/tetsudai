@@ -337,7 +337,6 @@ function App() {
           grammar={grammar}
           setGrammar={setGrammar}
           search={search}
-          setSearch={setSearch}
           searchCopy={searchCopy}
           handleSearch={handleSearch}
           openFilter={openFilter}
