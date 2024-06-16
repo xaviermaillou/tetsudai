@@ -133,7 +133,7 @@ const SidePanel = (props) => {
             <ListHeader
                 openFilter={openFilter}
                 setOpenFilter={setOpenFilter}
-                openSentence={openSentence}
+                openSentence={!!pinnedSentence && openSentence}
                 imgPath={imgPath}
                 open={open}
                 toggle={toggle}
