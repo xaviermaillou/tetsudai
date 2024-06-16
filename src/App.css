@@ -96,6 +96,9 @@ input:placeholder-shown {
 .clickable:hover {
   cursor: pointer;
 }
+.bold {
+  font-weight: 900;
+}
 
 #App {
   text-align: center;
@@ -415,13 +418,16 @@ input:placeholder-shown {
   min-width: 40%;
   max-width: 80%;
 }
-.wordElementDetails div {
-  line-height: 110%;
-}
 .wordElementTranslation {
+  opacity: 0.5;
+}
+.wordElementGrammar {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.wordElementTranslation, .wordElementGrammar {
   min-height: 19px;
   width: 100%;
-  opacity: 0.5;
   white-space: nowrap;
   text-align: right;
   text-overflow: ellipsis;
@@ -556,7 +562,7 @@ input:placeholder-shown {
 #wordDetailsPlusIndicator img {
   height: 12px;
   position: absolute;
-  top: 20px;
+  top: 19px;
   left: calc(50% + 70px);
   transform: rotate(180deg);
 }
@@ -1273,7 +1279,9 @@ input:placeholder-shown {
   #kunyomiExamples .wordElement, #onyomiExamples .wordElement, #jukujikunExamples .wordElement {
     flex-direction: row-reverse;
   }
-  #kunyomiExamples .wordElementTranslation, #onyomiExamples .wordElementTranslation , #jukujikunExamples .wordElementTranslation {
+  #kunyomiExamples .wordElementDetails div,
+  #onyomiExamples .wordElementDetails div,
+  #jukujikunExamples .wordElementDetails div {
     text-align: left;
   }
   #kunyomiExamples .tooltip, #onyomiExamples .tooltip , #jukujikunExamples .tooltip {

@@ -33,7 +33,7 @@ const SearchSentence = (props) => {
         <div id="searchSentenceContainer" className={openSentence ? "open" : ""}>
             <div id="searchSentenceHeader" onClick={handleOpenSentence} className={openSentence ? "listIndicator clickable" : "listIndicator clickable closed"}>
                 <span></span>
-                <span className="tooltip">{localDictionnary[language].detectedSentence}</span>
+                <span className="tooltip bold">{localDictionnary[language].detectedSentence}</span>
                 <span><img className="clickable" src={openSentence ? `/img/${imgPath}/less.png` : `/img/${imgPath}/plus.png`} alt={openSentence ? "close sentence" : "open sentence"} /></span>
             </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>

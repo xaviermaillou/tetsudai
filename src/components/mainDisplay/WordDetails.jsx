@@ -118,7 +118,7 @@ export const WordDetailsPlus = (props) => {
 
     return (
         <div id="wordDetailsPlus" className={open ? "expanded" : ""}>
-            <div id="wordDetailsPlusIndicator" className="clickable" onClick={() => setOpen(!open)}>
+            <div id="wordDetailsPlusIndicator" className="clickable bold" onClick={() => setOpen(!open)}>
                 {inflexions && <span>{localDictionnary[language].inflexions}</span>}
                 {kosoado && <span>KOSOADO</span>}
                 {open ?

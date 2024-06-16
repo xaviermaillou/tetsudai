@@ -94,7 +94,7 @@ const ListHeader = (props) => {
                             :
                             (lastSearch && <div
                                 onClick={retrieveLastSearch}
-                                className="clickable"
+                                className="clickable bold"
                             >
                                 {localDictionnary[language].retrieveLastSearch}
                             </div>)

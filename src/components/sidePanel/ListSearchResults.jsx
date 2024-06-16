@@ -29,7 +29,7 @@ const ListSearchResults = (props) => {
     return (
         <div id="searchResultsContainer">
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
-                <span>Kanji</span>
+                <span className="bold">Kanji</span>
                 {displayKanjis ?
                     <img src={`/img/${imgPath}/less.png`} alt="close kanji" />
                     :

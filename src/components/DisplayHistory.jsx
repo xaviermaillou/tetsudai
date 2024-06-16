@@ -77,7 +77,6 @@ const DisplayHistory = (props) => {
     }
 
     const handleClose = (e) => {
-        console.log('TEST')
         e.stopPropagation()
         setOpenHistory(false)
     }

@@ -51,10 +51,7 @@ const WordElement = (props) => {
                     </div>
                 }
             <div className="wordElementDetails">
-                <div className="wordElementTranslation">
-                    {word?.translation[language].join(' | ')}
-                </div>
-                {sentenceGrammar &&
+                {sentenceGrammar ?
                     <div className="wordElementGrammar">
                         {dictionnary[language].classes[sentenceGrammar.function]?.toLowerCase()}
                         {sentenceGrammar.tense &&
@@ -63,7 +60,19 @@ const WordElement = (props) => {
                             </span>
                         }
                     </div>
+                    :
+                    <div className="wordElementGrammar">
+                        {word?.grammar.map((el, i) => (
+                            <span key={i}>
+                                {i > 0 && ', '}
+                                {dictionnary[language].classes[el].toLowerCase() + (el === "vb" ? ' ' + (dictionnary[language].verbGrammar[word.verbPrecisions.grammar] || 'irrégulier') : '')}
+                            </span>
+                        ))}
+                    </div>
                 }
+                <div className="wordElementTranslation">
+                    {word?.translation[language].join(' | ')}
+                </div>
             </div>
         </div>
     )
