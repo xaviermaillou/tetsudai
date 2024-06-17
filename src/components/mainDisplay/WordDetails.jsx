@@ -66,13 +66,13 @@ const Kosoado = (props) => {
 }
 
 const VerbInflexionLine = (props) => {
-    const { inflexion, tenseName, modeName } = props
+    const { inflexion, modeName } = props
     const language = useContext(LanguageContext)
     
     return (
-        <div className="wordDetailsInflexionsMode">
+        <div className="wordDetailsInflexionsLine">
             <span className="wordDetailsInflexionsVerb">{inflexion['polite']?.['main']}{inflexion['polite']?.['ending']}</span>
-            <span className="wordDetailsInflexionsIndicator">{localDictionnary[language][tenseName]} {localDictionnary[language][modeName]}</span>
+            <span className="wordDetailsInflexionsIndicator bold">{localDictionnary[language][modeName]}</span>
             <span className="wordDetailsInflexionsVerb">{inflexion['neutral']?.['main']}{inflexion['neutral']?.['ending']}</span>
         </div>
     )
@@ -80,11 +80,26 @@ const VerbInflexionLine = (props) => {
 
 const VerbInflexionTense = (props) => {
     const { tense, tenseName } = props
+    const language = useContext(LanguageContext)
 
     return (
         <div className="wordDetailsInflexionsTense">
-            {tense['affirmative'] && <VerbInflexionLine inflexion={tense['affirmative']} tenseName={tenseName} modeName={'affirmative'} />}
-            {tense['negative'] && <VerbInflexionLine inflexion={tense['negative']} tenseName={tenseName} modeName={'negative'} />}
+            <p className="wordDetailsInflexionsTenseTitle">{localDictionnary[language][tenseName]}</p>
+            {tense['affirmative'] && <VerbInflexionLine inflexion={tense['affirmative']} modeName={'affirmative'} />}
+            {tense['negative'] && <VerbInflexionLine inflexion={tense['negative']} modeName={'negative'} />}
+        </div>
+    )
+}
+
+const VerbInflexionMood = (props) => {
+    const { nonPastTense, pastTense, moodName } = props
+    const language = useContext(LanguageContext)
+
+    return (
+        <div className="wordDetailsInflexionsMood">
+            <p className="wordDetailsInflexionsMoodTitle">{localDictionnary[language][moodName]}</p>
+            <VerbInflexionTense tense={nonPastTense} tenseName={'nonPast'} />
+            <VerbInflexionTense tense={pastTense} tenseName={'past'} />
         </div>
     )
 }
@@ -94,10 +109,16 @@ const Inflexions = (props) => {
 
     return (
         <div id="wordDetailsInflexions">
-            {inflexions['nonPast'] && <VerbInflexionTense tense={inflexions['nonPast']} tenseName={'nonPast'} />}
-            {inflexions['past'] && <VerbInflexionTense tense={inflexions['past']} tenseName={'past'} />}
-            {inflexions['nonPastProgressive'] && <VerbInflexionTense tense={inflexions['nonPastProgressive']} tenseName={'nonPastProgressive'} />}
-            {inflexions['volitional'] && <VerbInflexionTense tense={inflexions['volitional']} tenseName={'volitional'} />}
+            {(inflexions['nonPast'] && inflexions['past']) &&
+                <VerbInflexionMood nonPastTense={inflexions['nonPast']} pastTense={inflexions['past']} moodName={'indicative'} />
+            }
+            {(inflexions['nonPastProgressive'] && inflexions['pastProgressive']) &&
+                <VerbInflexionMood nonPastTense={inflexions['nonPastProgressive']} pastTense={inflexions['pastProgressive']} moodName={'progressive'} />
+            }
+            {(inflexions['nonPastDesiderative'] && inflexions['pastDesiderative']) &&
+                <VerbInflexionMood nonPastTense={inflexions['nonPastDesiderative']} pastTense={inflexions['pastDesiderative']} moodName={'desiderative'} />
+            }
+            {/* {inflexions['volitional'] && <VerbInflexionTense tense={inflexions['volitional']} tenseName={'volitional'} />} */}
             {inflexions['adverb'] && <VerbInflexionTense tense={inflexions['adverb']} tenseName={'adverb'} />}
         </div>
     )

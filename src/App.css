@@ -570,32 +570,52 @@ input:placeholder-shown {
   transform: rotate(0deg);
 }
 #wordDetailsInflexions {
+  height: 100%;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   opacity: 0;
+  padding-bottom: 42px;
 }
 #wordDetailsPlus.expanded #wordDetailsInflexions {
   opacity: 1;
 }
+.wordDetailsInflexionsMood {
+  margin-bottom: 42px;
+}
+.wordDetailsInflexionsMoodTitle {
+  padding-top: 16px;
+  padding-bottom: 12px;
+  opacity: 0.8;
+  font-size: 12px;
+}
 .wordDetailsInflexionsTense {
   padding: 10px 0px;
 }
-.wordDetailsInflexionsMode {
+.wordDetailsInflexionsTenseTitle {
+  padding-bottom: 6px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+.wordDetailsInflexionsLine {
   display: flex;
   justify-content: space-between;
 }
 .wordDetailsInflexionsVerb {
-  width: calc(50% - 65px);
+  width: calc(50% - 16px);
   white-space: nowrap;
   direction: rtl;
 }
-.wordDetailsInflexionsMode span:nth-child(1) {
+.wordDetailsInflexionsVerb:first-child {
+  opacity: 0.8;
+}
+.wordDetailsInflexionsLine span:nth-child(1) {
   text-align: right;
 }
 .wordDetailsInflexionsIndicator {
   opacity: 0.5;
 }
-.wordDetailsInflexionsMode span:nth-child(3) {
+.wordDetailsInflexionsLine span:nth-child(3) {
   text-align: left;
 }
 #kosoadoTable {
@@ -1499,14 +1519,13 @@ input.highlighted::placeholder {
 #kosoadoTable {
   border: 1px solid var(--lightenedColor);
 }
-.wordDetailsInflexionsTense:first-child {
-  border-top: 1px solid var(--lightenedColor);
+.wordDetailsInflexionsMood {
+  border: 1px solid var(--lightenedColor);
 }
 .wordDetailsInflexionsTense {
-  border-bottom: 1px solid var(--lightenedColor);
+  border-top: 1px solid var(--paleColor);
 }
-
-.wordDetailsInflexionsMode:not(:first-child), .kosoadoRow {
+.kosoadoRow {
   border-top: 1px solid var(--paleColor);
 }
 
