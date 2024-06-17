@@ -570,7 +570,7 @@ input:placeholder-shown {
   transform: rotate(0deg);
 }
 #wordDetailsInflexions {
-  height: 100%;
+  height: calc(100% - 50px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -579,9 +579,6 @@ input:placeholder-shown {
 }
 #wordDetailsPlus.expanded #wordDetailsInflexions {
   opacity: 1;
-}
-.wordDetailsInflexionsMood {
-  margin-bottom: 42px;
 }
 .wordDetailsInflexionsMoodTitle {
   padding-top: 16px;
@@ -1519,11 +1516,11 @@ input.highlighted::placeholder {
 #kosoadoTable {
   border: 1px solid var(--lightenedColor);
 }
-.wordDetailsInflexionsMood {
-  border: 1px solid var(--lightenedColor);
-}
-.wordDetailsInflexionsTense {
+.wordDetailsInflexionsMood:first-child {
   border-top: 1px solid var(--paleColor);
+}
+.wordDetailsInflexionsMood {
+  border-bottom: 1px solid var(--paleColor);
 }
 .kosoadoRow {
   border-top: 1px solid var(--paleColor);
