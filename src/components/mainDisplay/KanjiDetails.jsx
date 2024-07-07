@@ -19,6 +19,15 @@ const KanjiDetails = (props) => {
     return (
         <div id="kanjiDetails" className='expanded'>
             <div className="kanjiDetailsSection">
+                {kanji.precisions[language] &&
+                    <div className="kanjiDetailsSubSection">
+                        <div id="kanjiPrecisions">
+                            <p id="kanjiPrecisionsText">
+                                {kanji.precisions[language]}
+                            </p>
+                        </div>
+                    </div>
+                }
                 <div className="kanjiDetailsSubSection">
                     <p className="kanasReadingsHeader">{localDictionnary[language].kanjiTakenFrom}</p>
                     {kanji.kanjiTakenAsPartFrom.map((e, i) => (

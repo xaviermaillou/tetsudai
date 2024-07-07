@@ -478,11 +478,13 @@ input:placeholder-shown {
   opacity: 0.5;
   margin-left: 6px;
 }
-#wordPrecisions, #relatedKanji {
-  margin-bottom: 24px;
+#kanjiPrecisions, #wordPrecisions, #relatedKanji {
   padding-bottom: 24px;
 }
-#wordLanguage, #wordPrecisions, #relatedWords {
+#wordPrecisions, #relatedKanji {
+  margin-bottom: 24px;
+}
+#kanjiPrecisions, #wordLanguage, #wordPrecisions, #relatedWords {
   font-size: 14px;
   white-space: pre-wrap;
 }
@@ -510,7 +512,7 @@ input:placeholder-shown {
   max-height: 200px;
   padding-bottom: 12px;
 }
-#wordPrecisionsText {
+#kanjiPrecisionsText, #wordPrecisionsText {
   opacity: 0.66;
 }
 .relatedWordsSubtitle {
@@ -1504,7 +1506,7 @@ input.highlighted::placeholder {
   color: var(--backgroundColor);
 }
 
-#relatedKanji, #wordPrecisions {
+#kanjiPrecisions, #relatedKanji, #wordPrecisions {
   border-bottom: 1px solid var(--lightenedColor);
 }
 
