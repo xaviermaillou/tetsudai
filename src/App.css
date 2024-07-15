@@ -336,6 +336,18 @@ input:placeholder-shown {
 #kanjiDetails.expanded, #wordDetails.expanded {
   height: auto;
 }
+#kanjiOrigin .kanasReadingsHeader {
+  opacity: 0.75;
+}
+#kanjiOrigin .kanjiElementKanji {
+  opacity: 0.75;
+}
+#kanjiOrigin .kanjiReadings {
+  opacity: 0.66;
+}
+#kanjiOrigin .kanjiElementKanji {
+  font-family: 'Noto Serif TC';
+}
 #wordDetailsSentences.bottomSpace {
   padding-bottom: 120px;
 }

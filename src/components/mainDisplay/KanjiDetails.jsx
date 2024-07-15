@@ -54,6 +54,30 @@ const KanjiDetails = (props) => {
                     />
                     {kanji.kanjiUsedAsPartIn.length === 0 && <span className="tooltip">{localDictionnary[language].kanjiInNoKanji}</span>}
                 </div>
+                {!!kanji.origin.pinyin &&
+                    <div id="kanjiOrigin" className="kanjiDetailsSubSection">
+                        <p className="kanasReadingsHeader">{localDictionnary[language].kanjiOrigin}</p>
+                        <div className="kanjiDetailsKanjiElements">
+                            <KanjiElement
+                                kanji={{
+                                    kanji: kanji.kanji,
+                                    readings: {
+                                        kunyomi: [],
+                                        onyomi: [{
+                                            kana: kanji.origin.pinyin
+                                        }]
+                                    },
+                                    translation: kanji.origin.sameMeaning ? {
+                                        fr: [localDictionnary.fr.sameMeaning],
+                                        en: [localDictionnary.en.sameMeaning]
+                                    } : kanji.origin.otherMeaning
+                                }}
+                                changeCurrentKanjiById={changeCurrentKanjiById}
+                            />
+                        </div>
+                        {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">{localDictionnary[language].noKanjiInKanji}</span>}
+                    </div>
+                }
             </div>
             <div className="kanjiDetailsSection">
                 <div className="kanjiDetailsSubSection" id="kunyomiExamples">

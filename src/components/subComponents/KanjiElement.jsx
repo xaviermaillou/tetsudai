@@ -8,12 +8,12 @@ const KanjiElement = (props) => {
     const language = useContext(LanguageContext)
 
     return (
-        <div className="kanjiElement clickable" onClick={() => changeCurrentKanjiById(kanji.id)}>
+        <div className={`kanjiElement${kanji.id ? ' clickable' : ''}`} onClick={() => kanji.id ? changeCurrentKanjiById(kanji.id) : null}>
             <div className="kanjiElementKanji">
                 {kanji.kanji}
             </div>
             <div className="kanjiElementDetails">
-                <div>
+                <div className="kanjiReadings">
                     {
                         kanji.readings.kunyomi?.map((item, i) => (
                             <span key={i}>
