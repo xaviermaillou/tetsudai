@@ -387,7 +387,7 @@ input:placeholder-shown {
   opacity: 1;
 }
 .yomiContainer .fiveFirstElements .tooltip {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .yomiHeader {
   margin-top: 4px;
@@ -410,7 +410,9 @@ input:placeholder-shown {
 .yomiExamples {
   display: flex;
   flex-direction: column;
-  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-left: 1px solid;
 }
 .wordElement {
   height: 100%;
@@ -1321,6 +1323,12 @@ input:placeholder-shown {
   .kanjiDetailsKanjiElements, .yomiContainer, #jukujikunExamples .fiveFirstElements {
     width: 92.5%;
   }
+  .yomiExamples {
+    padding-left: 0px;
+    padding-right: 10px;
+    border-left: none;
+    border-right: 1px solid;
+  }
   #selectorAndControls {
     margin-bottom: 20px;
   }
@@ -1500,8 +1508,8 @@ input.highlighted::placeholder {
   border-top: 1px solid var(--lightenedColor);
 }
 
-.yomiContainer {
-  border-bottom: 1px solid var(--lightenedColor);
+.yomiExamples {
+  border-color: var(--paleColor);
 }
 
 .sentencesElement .highlighted,

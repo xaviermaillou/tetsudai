@@ -75,7 +75,6 @@ const KanjiDetails = (props) => {
                                 changeCurrentKanjiById={changeCurrentKanjiById}
                             />
                         </div>
-                        {kanji.kanjiTakenAsPartFrom.length === 0 && <span className="tooltip">{localDictionnary[language].noKanjiInKanji}</span>}
                     </div>
                 }
             </div>
