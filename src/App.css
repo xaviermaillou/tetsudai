@@ -239,7 +239,7 @@ input:placeholder-shown {
   opacity: 0.25;
 }
 #kanjiDisplayKanjiGhostLeft {
-  font-family: 'Noto Serif JP';
+  font-family: 'LXGW WenKai TC';
   left: 8.125%;
 }
 #kanjiDisplayKanjiGhostRight {
@@ -335,9 +335,6 @@ input:placeholder-shown {
 }
 #kanjiDetails.expanded, #wordDetails.expanded {
   height: auto;
-}
-#kanjiOrigin .kanasReadingsHeader {
-  opacity: 0.75;
 }
 #kanjiOrigin .kanjiElementKanji {
   opacity: 0.75;
