@@ -60,7 +60,7 @@ const KanjiDetails = (props) => {
                         <div className="kanjiDetailsKanjiElements">
                             <KanjiElement
                                 kanji={{
-                                    kanji: kanji.kanji,
+                                    kanji: kanji.origin.sinogram || kanji.kanji,
                                     readings: {
                                         kunyomi: [],
                                         onyomi: [{

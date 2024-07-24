@@ -342,9 +342,9 @@ input:placeholder-shown {
 #kanjiOrigin .kanjiReadings {
   opacity: 0.66;
 }
-#kanjiOrigin .kanjiElementKanji {
+/* #kanjiOrigin .kanjiElementKanji {
   font-family: 'Noto Serif TC';
-}
+} */
 #wordDetailsSentences.bottomSpace {
   padding-bottom: 120px;
 }
