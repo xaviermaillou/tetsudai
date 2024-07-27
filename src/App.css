@@ -1151,6 +1151,8 @@ input:placeholder-shown {
   width: 100%;
   padding-top: 5px;
   padding-left: 20px;
+  font-weight: 600;
+  opacity: 0.5;
 }
 .sentenceElementInfo {
   height: 54px;
@@ -1160,8 +1162,6 @@ input:placeholder-shown {
 }
 .sentenceElementInfo.extended {
   height: fit-content;
-  width: calc(100% - 20px);
-  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -1583,6 +1583,10 @@ input.highlighted::placeholder {
 }
 
 .listElementContainer, .sentenceElementContainer, .historyElement {
+  border-bottom: 1px solid var(--lightenedColor);
+}
+
+.sentenceElementInfo.extended .wordElement:not(:last-child) {
   border-bottom: 1px solid var(--lightenedColor);
 }
 

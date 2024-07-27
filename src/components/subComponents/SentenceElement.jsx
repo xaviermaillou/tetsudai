@@ -24,9 +24,9 @@ const SentenceElement = (props) => {
                     `sentenceElementContainer importance${firstFoundElement.importance} clickable`
                     :
                     element.ambiguity ?
-                    "sentenceElementContainer ambiguous"
-                    :
-                    "sentenceElementContainer"
+                        "sentenceElementContainer ambiguous"
+                        :
+                        "sentenceElementContainer"
             }
         >
             <div className="sentenceElement">
