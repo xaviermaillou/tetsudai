@@ -19,7 +19,6 @@
     "web-vitals": "^4.1.0"
   },
   "main": "./main.js",
-  "homepage": "./",
   "scripts": {
     "start": "PORT=9000 react-scripts start",
     "build": "react-scripts build",
@@ -29,6 +28,7 @@
     "electron:dev": "electron .",
     "electron:start": "electron-forge start",
     "electron:package": "electron-forge package",
+    "electron:build": "PUBLIC_URL=./ react-scripts build",
     "electron:make": "electron-forge make"
   },
   "eslintConfig": {
