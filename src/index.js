@@ -1,10 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
 import { CookiesProvider } from "react-cookie";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PageNotFound from './components/404/PageNotFound';
+import isElectron from 'is-electron';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -18,18 +19,21 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+const Router = isElectron() ? HashRouter : BrowserRouter
+
 
 createRoot(document.getElementById('root'))
   .render(
     <React.StrictMode>
+      {isElectron() && <div class="titleBar" />}
       <CookiesProvider>
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path='/' element={<App />} />
             <Route path='/:element/:id' element={<App />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </CookiesProvider>
     </React.StrictMode>
   );

@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import LanguageContext from "../contexts/Language"
 import { localDictionnary } from "../lib/dictionnary"
+import Icon from "./subComponents/Icon"
+import isElectron from "is-electron"
 
 const HistoryElement = (props) => {
     const {
@@ -27,7 +29,7 @@ const HistoryElement = (props) => {
 
     return (
         <div
-            className={selected ? "historyElement clickable selected" : "historyElement clickable"}
+            className={`historyElement clickable${selected ? " selected" : ""}`}
             onClick={handleClick}
         >
             {historyElementData.jukujikun ?
@@ -84,10 +86,10 @@ const DisplayHistory = (props) => {
     return (
         <div
             id="displayHistoryContainer"
-            className={openHistory ? "open" : ""}
+            className={`${openHistory ? "open" : ""}${isElectron() ? " electron" : ""}`}
             onMouseLeave={() => setOpenHistory(false)}
         >
-            <img
+            <Icon
                 onClick={(e) => handleClose(e)}
                 className="clickable"
                 src={`/img/${imgPath}/close.png`}

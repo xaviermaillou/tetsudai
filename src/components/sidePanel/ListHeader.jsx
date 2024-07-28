@@ -3,6 +3,7 @@ import { dictionnary } from "tetsudai-common"
 import { localDictionnary } from "../../lib/dictionnary"
 import FilterModal from "./FilterModal"
 import LanguageContext from "../../contexts/Language"
+import Icon from "../subComponents/Icon"
 
 
 const ListHeader = (props) => {
@@ -51,7 +52,7 @@ const ListHeader = (props) => {
                 className={(searchExecuted || openFilter) ? "clickable" : "clickable highlighted"}
                 onClick={() => handleFilterIconClick()}
             >
-                <img
+                <Icon
                     className={openFilter ? "open" : ""}
                     src={`/img/${imgPath}/up.png`}
                     alt="search"
@@ -68,21 +69,21 @@ const ListHeader = (props) => {
                             {grammar !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary[language].pluralClasses[grammar]}</span>
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar("0")} />
+                                    <Icon className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setGrammar("0")} />
                                 </span>
                             }
                             {(level !== "0" && grammar !== "0") && <span>|</span>}
                             {level !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary[language].levels[level] ? `JLPT ${dictionnary[language].levels[level]}` : localDictionnary[language].noJLPT}</span>
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel("0")} />
+                                    <Icon className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setLevel("0")} />
                                 </span>
                             }
                             {(collection !== "0" && level !== "0") && <span>|</span>}
                             {collection !== "0" &&
                                 <span className="filtersIndicatorsElement">
                                     <span>{dictionnary[language].collections[collection]}</span>
-                                    <img className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection("0")} />
+                                    <Icon className="clickable" src={`/img/${imgPath}/close.png`} alt="close filter" onClick={() => setCollection("0")} />
                                 </span>
                             }
                         </div>

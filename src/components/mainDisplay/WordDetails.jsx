@@ -6,6 +6,7 @@ import WordElement from "../subComponents/WordElement"
 import Loading from "../visualComponents/Loading"
 import LanguageContext from "../../contexts/Language"
 import FiveFirstElements from "../subComponents/FiveFirstElements"
+import Icon from "../subComponents/Icon"
 
 const Kosoado = (props) => {
     const { referenceId, changeCurrentWordById } = props
@@ -143,9 +144,9 @@ export const WordDetailsPlus = (props) => {
                 {inflexions && <span>{localDictionnary[language].inflexions}</span>}
                 {kosoado && <span>KOSOADO</span>}
                 {open ?
-                    <img className="open" src={`/img/${imgPath}/less.png`} alt="hide readings" />
+                    <Icon className="open" src={`/img/${imgPath}/less.png`} alt="hide readings" />
                     :
-                    <img src={`/img/${imgPath}/plus.png`} alt="show readings" />
+                    <Icon src={`/img/${imgPath}/plus.png`} alt="show readings" />
                 }
             </div>
             {inflexions && <Inflexions inflexions={inflexions} />}

@@ -3,6 +3,7 @@
 import { useContext, useState } from "react"
 import { dictionnary } from "tetsudai-common"
 import LanguageContext from "../../contexts/Language"
+import Icon from "../subComponents/Icon"
 
 const TrainingControls = (props) => {
     const {
@@ -34,14 +35,14 @@ const TrainingControls = (props) => {
             <div id="selector">
                 <span className={(displayedElement === 0 && !allDisplayed) ? 'selected clickable' : 'clickable'} onClick={() => changeDisplayedElement(0)}>本</span>
                 <span onClick={displayElements} className={allDisplayed ? 'selected clickable' : 'clickable'}>
-                    <img src={allDisplayed ? `/img/${imgPath}/view-opened.png` : `/img/${imgPath}/view-closed.png`} alt={allDisplayed ? "hide" : "view"} />
+                    <Icon src={allDisplayed ? `/img/${imgPath}/view-opened.png` : `/img/${imgPath}/view-closed.png`} alt={allDisplayed ? "hide" : "view"} />
                 </span>
                 <span className={(displayedElement === 1 && !allDisplayed) ? 'selected clickable' : 'clickable'} onClick={() => changeDisplayedElement(1)}>fr</span>
             </div>
             <div id="controls" >
                 <div id="trainingClose" className="clickable">
                     <span onClick={() => toggleTraining(0)}>
-                        <img src={`/img/${imgPath}/close.png`} alt="stop training" />
+                        <Icon src={`/img/${imgPath}/close.png`} alt="stop training" />
                     </span>
                 </div>
                 <div id="trainingFilters" onClick={checkTrainingFilters} className="clickable">
@@ -58,19 +59,19 @@ const TrainingControls = (props) => {
                 </div>
                 <div id="trainingNext" className="clickable" width="20px">
                     <span id="trainingNextChoice" className={ready ? "open" :  ""}>
-                        <img
+                        <Icon
                             onClick={() => handleNext(true)}
                             src={`/img/${imgPath}/good.png`}
                             alt="good"
                         />
-                        <img
+                        <Icon
                             onClick={() => handleNext(false)}
                             src={`/img/${imgPath}/good.png`}
                             alt="good"
                         />
                     </span>
                     <span>
-                        <img
+                        <Icon
                             onClick={() => endedTraining ? handleNext() : setReady(!ready)}
                             src={endedTraining ? `/img/${imgPath}/reset.png` : `/img/${imgPath}/next.png`}
                             alt="next"

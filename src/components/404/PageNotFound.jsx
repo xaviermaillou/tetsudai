@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import Icon from '../subComponents/Icon';
 
 const PageNotFound = () => {
     const [cookies] = useCookies()
@@ -14,12 +15,12 @@ const PageNotFound = () => {
     return (
         <div id="App" className={imgPath}>
             <div id="logoContainer" className='full'>
-                <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
-                <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
-                <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo1.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo2.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo3.png`} alt='logo' />
             </div>
             <div id="pageNotFound">
-                <img
+                <Icon
                     id="pageNotFoundBackToHome"
                     className="clickable"
                     onClick={() => navigate('/')}

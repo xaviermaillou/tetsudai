@@ -5,6 +5,7 @@ import ListElement from "../subComponents/ListElement"
 import { localDictionnary } from "../../lib/dictionnary"
 import { useContext } from "react"
 import LanguageContext from "../../contexts/Language"
+import Icon from "../subComponents/Icon"
 
 const ListSearchResults = (props) => {
     const {
@@ -31,9 +32,9 @@ const ListSearchResults = (props) => {
             {searchExecuted && <span className={displayKanjis ? "listIndicator clickable" : "listIndicator clickable closed"} onClick={() => setDisplayKanjis(!displayKanjis)}>
                 <span className="bold">Kanji</span>
                 {displayKanjis ?
-                    <img src={`/img/${imgPath}/less.png`} alt="close kanji" />
+                    <Icon src={`/img/${imgPath}/less.png`} alt="close kanji" />
                     :
-                    <img src={`/img/${imgPath}/plus.png`} alt="open kanji" />
+                    <Icon src={`/img/${imgPath}/plus.png`} alt="open kanji" />
                 }
             </span>}
             <div id="kanjisList" className={searchExecuted ?

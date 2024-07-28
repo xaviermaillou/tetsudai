@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import SentenceElement from "../subComponents/SentenceElement"
 import { localDictionnary } from "../../lib/dictionnary"
 import LanguageContext from "../../contexts/Language"
+import Icon from "../subComponents/Icon"
 
 const SearchSentence = (props) => {
     const {
@@ -34,7 +35,7 @@ const SearchSentence = (props) => {
             <div id="searchSentenceHeader" onClick={handleOpenSentence} className={openSentence ? "listIndicator clickable" : "listIndicator clickable closed"}>
                 <span></span>
                 <span className="tooltip bold">{localDictionnary[language].detectedSentence}</span>
-                <span><img className="clickable" src={openSentence ? `/img/${imgPath}/less.png` : `/img/${imgPath}/plus.png`} alt={openSentence ? "close sentence" : "open sentence"} /></span>
+                <span><Icon className="clickable" src={openSentence ? `/img/${imgPath}/less.png` : `/img/${imgPath}/plus.png`} alt={openSentence ? "close sentence" : "open sentence"} /></span>
             </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>
                 {pinnedSentence?.elements?.map((element, i) => (

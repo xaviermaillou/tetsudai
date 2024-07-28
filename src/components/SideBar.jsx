@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import Icon from './subComponents/Icon';
+import isElectron from 'is-electron';
 
 const SideBar = (props) => {
     const {
@@ -29,15 +31,15 @@ const SideBar = (props) => {
                     'clickable'
                 }
             >
-                <img src={`/img/${imgPath}/Logo1.png`} alt='logo' />
-                <img src={`/img/${imgPath}/Logo2.png`} alt='logo' />
-                <img src={`/img/${imgPath}/Logo3.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo1.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo2.png`} alt='logo' />
+                <Icon src={`/img/${imgPath}/Logo3.png`} alt='logo' />
             </div>
             {historyDisplayed && <div
                 id="historyIconContainer"
-                className={(openHistory || !searchExecuted) ? "hiddenElement" : "hiddenElement selected"}
+                className={`hiddenElement${openHistory || !searchExecuted ? "" : " selected"}${isElectron() ? " electron" : ""}`}
             >
-                <img
+                <Icon
                     className='clickable'
                     src={`/img/${imgPath}/history.png`}
                     alt='history'

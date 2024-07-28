@@ -46,6 +46,15 @@ html {
   overflow: hidden;
 }
 
+.titleBar {
+  -webkit-app-select: none;
+  -webkit-app-region: drag;
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  z-index: 5000;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1017,6 +1026,10 @@ input:placeholder-shown {
 #displayHistoryContainer.open {
   left: 0%;
 }
+#displayHistoryContainer.electron {
+  top: 40px;
+  height: calc(100dvh - 56px);
+}
 #displayHistoryContainer img {
   height: 20px;
   position: fixed;
@@ -1037,6 +1050,9 @@ input:placeholder-shown {
   height: 32px;
   opacity: 0.5;
   z-index: 1000;
+}
+#historyIconContainer.electron img {
+  top: 56px;
 }
 #displayHistory {
   padding-top: 80px;
@@ -1424,6 +1440,9 @@ input:placeholder-shown {
     left: 24px;
     height: 32px;
     opacity: 0.5;
+  }
+  #historyIconContainer.electron img {
+    top: 72px;
   }
   .historyElement {
     padding: 15px 0px;

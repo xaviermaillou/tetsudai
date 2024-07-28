@@ -1,9 +1,13 @@
 {
   "name": "tetsudai",
   "version": "0.1.0",
+  "description": "Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue, en lui fournissant un dictionnaire focalisé sur l'interconnexion du vocabulaire et des kanji.",
   "private": true,
   "dependencies": {
     "axios": "^1.7.2",
+    "electron-is-dev": "^3.0.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "is-electron": "^2.2.2",
     "react": "^18.0.0",
     "react-cookie": "^7.1.4",
     "react-dom": "^18.0.0",
@@ -14,12 +18,18 @@
     "tetsudai-common": "git+ssh://git@github.com:xaviermaillou/tetsudai-common.git",
     "web-vitals": "^4.1.0"
   },
+  "main": "./main.js",
+  "homepage": "./",
   "scripts": {
     "start": "PORT=9000 react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && sudo rm -r /var/www/html/tetsudai.org/* && sudo cp -r /home/ubuntu/tetsudai-project/tetsudai/build/. /var/www/html/tetsudai.org",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron:dev": "electron .",
+    "electron:start": "electron-forge start",
+    "electron:package": "electron-forge package",
+    "electron:make": "electron-forge make"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +50,15 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.24.7"
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^31.3.0"
   }
 }

@@ -4,6 +4,7 @@ import SearchSentence from "./SearchSentence"
 import ListSearchResults from "./ListSearchResults"
 import { localDictionnary } from "../../lib/dictionnary"
 import LanguageContext from "../../contexts/Language"
+import Icon from "../subComponents/Icon"
 
 const SidePanel = (props) => {
     const {
@@ -103,7 +104,7 @@ const SidePanel = (props) => {
         <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
             <div id={currentElement ? "wordsListSearchContainer" : "wordsListSearchContainer expanded"}>
                 {(currentElement !== null && window.innerWidth <= 961) &&
-                    <img
+                    <Icon
                         id="wordsListOpener"
                         className={open ? "open clickable" : "clickable"}
                         onClick={toggle}
@@ -114,9 +115,9 @@ const SidePanel = (props) => {
                 <div id="wordsListSearch">
                     <div className="icon clickable" onClick={handleIconClick}>
                         {search ?
-                            <img className="close" src={`/img/${imgPath}/close.png`} alt="erase search" />
+                            <Icon className="close" src={`/img/${imgPath}/close.png`} alt="erase search" />
                             :
-                            <img src={`/img/${imgPath}/search.png`} alt="search" />
+                            <Icon src={`/img/${imgPath}/search.png`} alt="search" />
                         }
                     </div>
                     <input
