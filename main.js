@@ -6,9 +6,10 @@ const path = require('path')
 const createWindow = () => {
     const window = new BrowserWindow({
         width: 1920,
+        minWidth: 384,
         height: 1080,
+        minHeight: 768,
         title: "Tetsudai",
-        icon: path.join(__dirname, '/build/favicon.ico'),
         titleBarStyle: 'hidden',
         trafficLightPosition: { x: 10, y: 10 },
         frame: false

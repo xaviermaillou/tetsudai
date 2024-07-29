@@ -1,9 +1,12 @@
-const { FusesPlugin } = require('@electron-forge/plugin-fuses');
-const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const { FusesPlugin } = require('@electron-forge/plugin-fuses')
+const { FuseV1Options, FuseVersion } = require('@electron/fuses')
+const path = require('path')
 
 module.exports = {
   packagerConfig: {
+    name: "Tetsudai",
     asar: true,
+    icon: path.join(__dirname, '/build/appIcon'),
   },
   rebuildConfig: {},
   makers: [
@@ -41,4 +44,4 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
-};
+}
