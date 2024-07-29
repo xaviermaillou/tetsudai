@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import PageNotFound from './components/404/PageNotFound';
 import isElectron from 'is-electron';
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && !isElectron()) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
       .then((registration) => {

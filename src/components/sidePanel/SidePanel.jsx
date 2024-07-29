@@ -5,6 +5,7 @@ import ListSearchResults from "./ListSearchResults"
 import { localDictionnary } from "../../lib/dictionnary"
 import LanguageContext from "../../contexts/Language"
 import Icon from "../subComponents/Icon"
+import isElectron from "is-electron"
 
 const SidePanel = (props) => {
     const {
@@ -101,7 +102,10 @@ const SidePanel = (props) => {
     const [openSentence, setOpenSentence] = useState(false)
 
     return (
-        <div id="sidePanel" className={open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}>
+        <div
+            id="sidePanel"
+            className={`${open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}${isElectron() ? " electron" : ""}`}
+        >
             <div id={currentElement ? "wordsListSearchContainer" : "wordsListSearchContainer expanded"}>
                 {(currentElement !== null && window.innerWidth <= 961) &&
                     <Icon

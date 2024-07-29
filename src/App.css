@@ -260,7 +260,7 @@ input:placeholder-shown {
   flex-shrink: 0;
   width: 100%;
   overflow: auto;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 100;
   padding: 0px 10%;
   white-space: nowrap;
@@ -669,6 +669,9 @@ input:placeholder-shown {
   justify-content: flex-start;
   padding: 6px 24px;
 }
+#sidePanel.electron {
+  padding-top: 32px;
+}
 #sidePanel.open {
   left: 0vw;
 }
@@ -1038,6 +1041,9 @@ input:placeholder-shown {
   opacity: 0;
   z-index: 3000;
 }
+#displayHistoryContainer.electron img {
+  top: 68px;
+}
 #displayHistoryContainer.open img {
   right: calc(24px);
   opacity: 0.5;
@@ -1193,6 +1199,9 @@ input:placeholder-shown {
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
 
 @media (min-width:961px) {
+  #mainDisplay {
+    padding-top: 60px;
+  }
   #logoContainer {
     flex-direction: column !important;
     top: auto !important;
@@ -1237,6 +1246,11 @@ input:placeholder-shown {
   #pageNotFound p {
     margin-left: 42px;
   }
+  #mainDisplay {
+    padding-top: 60px;
+    padding-left: 72px;
+    width: 60%;
+  }
   #kanjiDisplayKanji {
     height: 22dvh;
     min-height: 22dvh;
@@ -1260,7 +1274,99 @@ input:placeholder-shown {
     flex-direction: row;
   }
   #kanjiDisplayTranslation, #wordDisplayTranslation {
-    font-size: 24px
+    font-size: 20px
+  }
+  #wordDetailsPlus {
+    width: calc((100% - 72px) - ((100% - 72px) * (20/100)));
+  }
+  #wordDetailsPlus.expanded {
+    top: calc(60px + 22dvh + 60px);
+  }
+  #sidePanel {
+    width: 40vw;
+    background: none;
+    padding: 26px;
+  }
+  #sidePanel.open:not(.expanded) {
+    left: 60vw;
+  }
+  #sidePanel.expanded {
+    left: 212px;
+    width: calc(100vw - 424px);
+  }
+  #wordsListSearchContainer {
+    padding-left: 0px;
+  }
+  #wordsListFilterModal.open {
+    height: calc(100dvh - 195px);
+  }
+  #wordsListFilterModal.expanded {
+    padding-right: 24px;
+  }
+  #wordsListFilterModal.expanded div {
+    flex-grow: 0;
+    margin-left: 40px;
+  }
+  .wordsListList {
+    /* 156px is half of the height of the filters+search */
+    height: calc(50dvh - 148px);
+  }
+  .wordsListList.extended {
+    height: calc(100dvh - 220px);
+  }
+  #wordsListFilters {
+    padding-left: 0;
+  }
+  #filtersTip.expanded {
+    justify-content: flex-end;
+  }
+  #wordsListOpener.open {
+    left: -32px;
+  }
+  #wordsListOpener.offset {
+    left: -64px;
+  }
+  #wordsListSearch {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #wordsListSearch img {
+    right: 0px;
+  }
+
+  #displayHistoryContainer {
+    width: 60%;
+  }
+  #displayHistoryContainer.open img {
+    right: calc(40vw + 12px);
+  }
+  #historyIconContainer img {
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    top: 40px;
+    left: 24px;
+    height: 32px;
+    opacity: 0.5;
+  }
+  #historyIconContainer.electron img {
+    top: 72px;
+  }
+  .historyElement {
+    padding: 15px 0px;
+    justify-content: flex-end;
+  }
+  #searchSentence.open {
+    height: calc(100dvh - 100px);
+  }
+}
+
+/* ------------------------------------------------ WIDE VIEW ------------------------------------------------ */
+
+@media (min-width:1324px) {
+  #mainDisplay {
+    padding-left: 86px;
+    width: 67%;
   }
   #kanjiDetails {
     height: calc(100dvh - 532px);
@@ -1279,9 +1385,6 @@ input:placeholder-shown {
   #wordDetailsPlus {
     height: calc(100dvh - 320px);
     width: calc((100% - 86px) - ((100% - 86px) * (20/100)));
-  }
-  #wordDetailsPlus.expanded {
-    top: calc(60px + 22dvh + 28px + 35px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;
@@ -1374,82 +1477,14 @@ input:placeholder-shown {
     background: none;
     padding: 26px;
   }
-  #sidePanel.open {
+  #sidePanel.open:not(.expanded) {
     left: 67vw;
   }
-  #sidePanel.expanded {
-    left: 212px;
-    width: calc(100vw - 424px);
-  }
-  #wordsListSearchContainer {
-    padding-left: 0px;
-  }
-  #wordsListFilterModal.open {
-    height: calc(100dvh - 195px);
-  }
-  #wordsListFilterModal.expanded {
-    padding-right: 24px;
-  }
-  #wordsListFilterModal.expanded div {
-    flex-grow: 0;
-    margin-left: 40px;
-  }
-  .wordsListList {
-    /* 156px is half of the height of the filters+search */
-    height: calc(50dvh - 148px);
-  }
-  .wordsListList.extended {
-    height: calc(100dvh - 220px);
-  }
-  #mainDisplay {
-    padding-top: 60px;
-    padding-left: 86px;
-    width: 67%;
-  }
-  #wordsListFilters {
-    padding-left: 0;
-  }
-  #filtersTip.expanded {
-    justify-content: flex-end;
-  }
-  #wordsListOpener.open {
-    left: -32px;
-  }
-  #wordsListOpener.offset {
-    left: -64px;
-  }
-  #wordsListSearch {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  #wordsListSearch img {
-    right: 0px;
-  }
-
   #displayHistoryContainer {
     width: 8%;
   }
   #displayHistoryContainer img {
     display: none;
-  }
-  #historyIconContainer img {
-    z-index: 1000;
-    display: block;
-    position: fixed;
-    top: 40px;
-    left: 24px;
-    height: 32px;
-    opacity: 0.5;
-  }
-  #historyIconContainer.electron img {
-    top: 72px;
-  }
-  .historyElement {
-    padding: 15px 0px;
-    justify-content: flex-end;
-  }
-  #searchSentence.open {
-    height: calc(100dvh - 100px);
   }
 }
 
