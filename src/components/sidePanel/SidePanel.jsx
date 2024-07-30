@@ -107,7 +107,7 @@ const SidePanel = (props) => {
             className={`${open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}${isElectron() ? " electron" : ""}`}
         >
             <div id={currentElement ? "wordsListSearchContainer" : "wordsListSearchContainer expanded"}>
-                {(currentElement !== null && window.innerWidth <= 961) &&
+                {currentElement !== null &&
                     <Icon
                         id="wordsListOpener"
                         className={open ? "open clickable" : "clickable"}

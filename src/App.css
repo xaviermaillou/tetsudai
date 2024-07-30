@@ -223,6 +223,9 @@ input:placeholder-shown {
   flex-direction: column;
   justify-content: space-between;
 }
+#mainDisplay.hidden {
+  opacity: 0;
+}
 #kanjiDisplay, #wordDisplay {
   height: 100%;
   align-items: center;
@@ -570,8 +573,7 @@ input:placeholder-shown {
   font-size: 14px;
 }
 #wordDetailsPlus.expanded {
-  top: calc(88px + 20dvh + 24px + 35px);
-  
+  top: calc(88px + 20dvh + 55px); 
 }
 #wordDetailsPlusIndicator {
   height: 50px;
@@ -592,7 +594,7 @@ input:placeholder-shown {
   transform: rotate(0deg);
 }
 #wordDetailsInflexions {
-  height: calc(100% - 50px);
+  height: calc(100% - 97px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -665,7 +667,7 @@ input:placeholder-shown {
   height: 100dvh;
   width: 100dvw;
   position: fixed;
-  left: 100dvw;
+  right: -100dvw;
   justify-content: flex-start;
   padding: 6px 24px;
 }
@@ -673,7 +675,7 @@ input:placeholder-shown {
   padding-top: 32px;
 }
 #sidePanel.open {
-  left: 0vw;
+  right: 0vw;
 }
 #sidePanel.expanded {
   left: 0px;
@@ -1018,7 +1020,7 @@ input:placeholder-shown {
 
 #displayHistoryContainer {
   z-index: 2000;
-  height: calc(100dvh - 16px);
+  height: calc(100dvh - 35px);
   width: calc(100% - 16px);
   margin: 8px;
   position: absolute;
@@ -1199,9 +1201,6 @@ input:placeholder-shown {
 /* ------------------------------------------------ DESKTOP VIEW ------------------------------------------------ */
 
 @media (min-width:961px) {
-  #mainDisplay {
-    padding-top: 60px;
-  }
   #logoContainer {
     flex-direction: column !important;
     top: auto !important;
@@ -1283,6 +1282,7 @@ input:placeholder-shown {
     top: calc(60px + 22dvh + 60px);
   }
   #sidePanel {
+    right: 0vw;
     width: 40vw;
     background: none;
     padding: 26px;
@@ -1320,11 +1320,8 @@ input:placeholder-shown {
   #filtersTip.expanded {
     justify-content: flex-end;
   }
-  #wordsListOpener.open {
-    left: -32px;
-  }
-  #wordsListOpener.offset {
-    left: -64px;
+  #wordsListOpener {
+    display: none;
   }
   #wordsListSearch {
     padding-left: 0px;
@@ -1368,6 +1365,9 @@ input:placeholder-shown {
     padding-left: 86px;
     width: 67%;
   }
+  #mainDisplay.hidden {
+    opacity: 0.5;
+  }
   #kanjiDetails {
     height: calc(100dvh - 532px);
   }
@@ -1385,6 +1385,9 @@ input:placeholder-shown {
   #wordDetailsPlus {
     height: calc(100dvh - 320px);
     width: calc((100% - 86px) - ((100% - 86px) * (20/100)));
+  }
+  #wordDetailsInflexions {
+    height: calc(100% - 53px);
   }
   #wordDetailsKanjis, #wordDetailsSentences {
     width: 50%;

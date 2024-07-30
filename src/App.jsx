@@ -304,6 +304,9 @@ function App() {
 
           // Menu toggle
           setMenuOpen={setMenuOpen}
+
+          // History is displayed
+          openHistory={openHistory}
         />
         <SidePanel 
           imgPath={imgPath}

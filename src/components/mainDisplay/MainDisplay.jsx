@@ -22,6 +22,7 @@ const MainDisplay = (props) => {
         setSearchExecuted,
         elementFetched,
         setMenuOpen,
+        openHistory,
     } = props
 
     const language = useContext(LanguageContext)
@@ -40,7 +41,7 @@ const MainDisplay = (props) => {
 
     return (
         <div id="mainDisplayContainer" key={kanji?.id || word?.id}>
-            <div id="mainDisplay" className="mainContainer">
+            <div id="mainDisplay" className={`mainContainer${openHistory ? " hidden" : ""}`}>
                 {kanji &&
                     <div id="kanjiDisplay" className={loading ? "rerenderOpacity" : ""}>
                         <p id="kanjiDisplayKanji">{kanji.kanji}</p>
