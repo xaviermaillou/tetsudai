@@ -74,15 +74,7 @@ function App() {
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
 
-  const [menuOpen, setMenuOpen] = useState(() => {
-    if (window.innerWidth > 961) {
-      setTimeout(() => {
-        setMenuOpen(true)
-      }, 1000)
-    } else {
-      if (!params.element && !params.id) return true
-    }
-  })
+  const [menuOpen, setMenuOpen] = useState(!params.element && !params.id)
 
   const changeCurrentKanjiById = useCallback(async (id) => {
     setElementFetched(true)

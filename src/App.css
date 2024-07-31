@@ -1236,7 +1236,7 @@ input:placeholder-shown {
     opacity: 0;
   }
   #introText p {
-    width: 40%;
+    width: 30%;
     margin-left: 242px;
   }
   #pageNotFound h1 {
@@ -1361,6 +1361,9 @@ input:placeholder-shown {
 /* ------------------------------------------------ WIDE VIEW ------------------------------------------------ */
 
 @media (min-width:1324px) {
+  #introText p {
+    width: 40%;
+  }
   #mainDisplay {
     padding-left: 86px;
     width: 67%;
