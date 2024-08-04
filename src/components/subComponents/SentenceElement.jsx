@@ -14,6 +14,8 @@ const SentenceElement = (props) => {
 
     const firstFoundElement = element.foundElements[0]
 
+    const isNumeric = firstFoundElement.word.match(/^\d+$/)
+
     return (
         <div 
             onClick={() => !element.ambiguity ? handleWordClick(firstFoundElement.id) : null}
@@ -42,9 +44,17 @@ const SentenceElement = (props) => {
                     ))}
                 </div>}
             </div>
-            <span className="sentenceElementUsedWord">
-                {firstFoundElement.word}
-            </span>
+            {isNumeric ?
+                <span className="sentenceElementUsedNumber">
+                    {firstFoundElement.word.split("").map((number) => (
+                        <span>{number}</span>
+                    ))}
+                </span>
+                :
+                <span className="sentenceElementUsedWord">
+                    {firstFoundElement.word}
+                </span>
+            }
         </div>
     )
 }

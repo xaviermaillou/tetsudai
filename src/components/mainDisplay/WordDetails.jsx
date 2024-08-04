@@ -168,7 +168,7 @@ const Sentence = (props) => {
     const language = useContext(LanguageContext)
 
     const handleSentenceClick = () => {
-        const sentenceString = sentence.elements.map((element) => element.word).join("")
+        const sentenceString = sentence.sections.map((section) => section.string).join("")
         setSearchExecuted(true)
         handleSearch(sentenceString)
         setMenuOpen(true)
@@ -178,11 +178,15 @@ const Sentence = (props) => {
         <div onClick={handleSentenceClick} className={`sentencesElement clickable${pinnedSentence?.id === sentence.id ? ' selected' : ''}`}>
             <div className="sentence">
                 <div>
-                    {sentence.elements.map((element, i) => (
-                        <span className={referenceId === element.id ? "highlighted" : ""} key={i}>
-                            {element.word}
-                        </span>
-                    ))}
+                    {sentence
+                        .sections.map((section, i) => (
+                            section.match ?
+                                <span className="highlighted" key={section.string}>{section.string}</span>
+                                :
+                                section.string.split("").map(char => <span key={char}>{char}</span>)
+                            
+                        ))
+                    }
                 </div>
             </div>
             <div className="sentencesElementTranslation">{sentence.translation[language]}</div>

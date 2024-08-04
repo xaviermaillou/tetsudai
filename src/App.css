@@ -1154,6 +1154,16 @@ input:placeholder-shown {
   letter-spacing: 10px;
   padding-top: 10px;
 }
+.sentenceElementUsedNumber {
+  width: 51px;
+  font-size: 34px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+.sentenceElementUsedNumber span {
+  padding-bottom: 8px;
+}
 .sentenceElementContainer.importance0 .sentenceElementUsedWord {
   opacity: 0.5;
 }
