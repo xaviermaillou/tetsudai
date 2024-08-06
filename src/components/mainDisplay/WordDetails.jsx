@@ -179,11 +179,11 @@ const Sentence = (props) => {
             <div className="sentence">
                 <div>
                     {sentence
-                        .sections.map((section, i) => (
+                        .sections.map((section) => (
                             section.match ?
                                 <span className="highlighted" key={section.string}>{section.string}</span>
                                 :
-                                section.string.split("").map(char => <span key={char}>{char}</span>)
+                                section.string.split("").map((char, i) => <span key={char + referenceId + i}>{char}</span>)
                             
                         ))
                     }
