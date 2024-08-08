@@ -1,13 +1,14 @@
-const { BrowserWindow, app, autoUpdater, ipcMain } = require("electron")
+const { BrowserWindow, app, ipcMain } = require("electron")
 const url = require('url')
 const path = require('path')
+const { autoUpdater } = require("electron-updater")
 // const isDev = require('electron-is-dev')
 
 const createWindow = () => {
   const window = new BrowserWindow({
-      width: 800,
+      width: 1600,
       minWidth: 384,
-      height: 600,
+      height: 900,
       minHeight: 768,
       title: "Tetsudai",
       titleBarStyle: 'hidden',
@@ -36,7 +37,7 @@ app.whenReady().then(() => {
     repo: 'tetsudai',
     releaseType: 'release'
   })
-  autoUpdater.checkForUpdates()
+  autoUpdater.checkForUpdatesAndNotify()
 })
 
 app.on('window-all-closed', () => {
