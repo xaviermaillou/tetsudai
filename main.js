@@ -1,45 +1,68 @@
-const { BrowserWindow, app } = require("electron")
+const { BrowserWindow, app, autoUpdater, ipcMain } = require("electron")
 const url = require('url')
 const path = require('path')
 // const isDev = require('electron-is-dev')
 
 const createWindow = () => {
-    const window = new BrowserWindow({
-        width: 1920,
-        minWidth: 384,
-        height: 1080,
-        minHeight: 768,
-        title: "Tetsudai",
-        titleBarStyle: 'hidden',
-        trafficLightPosition: { x: 10, y: 10 },
-        frame: false
-    })
+  const window = new BrowserWindow({
+      width: 800,
+      minWidth: 384,
+      height: 600,
+      minHeight: 768,
+      title: "Tetsudai",
+      titleBarStyle: 'hidden',
+      trafficLightPosition: { x: 10, y: 10 },
+      frame: false
+  })
 
-    // window.webContents.openDevTools()
+  // window.webContents.openDevTools()
 
-    // window.setMenuBarVisibility(false)
+  // window.setMenuBarVisibility(false)
 
-    const baseURL = path.join(__dirname, '/build/index.html')
+  const baseURL = path.join(__dirname, '/build/index.html')
 
-    window.loadURL(url.format({
-        pathname: baseURL,
-        protocol: "file:",
-        slashes: true
-    }))
+  window.loadURL(url.format({
+      pathname: baseURL,
+      protocol: "file:",
+      slashes: true
+  }))
 }
 
 app.whenReady().then(() => {
-    createWindow()
+  createWindow()
+  autoUpdater.setFeedURL({
+    provider: 'github',
+    owner: 'xaviermaillou',
+    repo: 'tetsudai',
+    releaseType: 'release'
+  })
+  autoUpdater.checkForUpdates()
 })
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-      app.quit()
-    }
-  })
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
   
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
-    }
-  })
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
+
+autoUpdater.on('update-available', () => {
+  window.webContents.send('update_available');
+})
+
+autoUpdater.on('update-not-available', () => {
+  window.webContents.send('update_not_available');
+})
+
+autoUpdater.on('update-downloaded', () => {
+  window.webContents.send('update_downloaded');
+})
+
+ipcMain.on('restart_app', () => {
+  autoUpdater.quitAndInstall();
+});
