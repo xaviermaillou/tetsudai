@@ -4,8 +4,10 @@ const path = require('path')
 const { autoUpdater } = require("electron-updater")
 // const isDev = require('electron-is-dev')
 
+let window
+
 const createWindow = () => {
-  const window = new BrowserWindow({
+  window = new BrowserWindow({
       width: 1400,
       minWidth: 384,
       height: 900,
