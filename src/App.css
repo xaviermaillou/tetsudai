@@ -1589,7 +1589,11 @@ input.highlighted::placeholder {
 }
 
 .sentenceElementContainer.highlighted {
-  background-color: var(--paleColor);
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+}
+.sentenceElementContainer.highlighted .sentenceElementUsedWord {
+  opacity: 1;
 }
 
 #kanjiPrecisions, #relatedKanji, #wordPrecisions {

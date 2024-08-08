@@ -1,6 +1,6 @@
 {
   "name": "tetsudai",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Tetsudai a pour vocation d'assister l'étudiant en japonais durant son apprentissage de la langue, en lui fournissant un dictionnaire focalisé sur l'interconnexion du vocabulaire et des kanji.",
   "private": true,
   "dependencies": {
