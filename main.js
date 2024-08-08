@@ -6,7 +6,7 @@ const { autoUpdater } = require("electron-updater")
 
 const createWindow = () => {
   const window = new BrowserWindow({
-      width: 1600,
+      width: 1400,
       minWidth: 384,
       height: 900,
       minHeight: 768,
@@ -38,6 +38,18 @@ app.whenReady().then(() => {
     releaseType: 'release'
   })
   autoUpdater.checkForUpdatesAndNotify()
+
+  autoUpdater.on('update-available', () => {
+    window.webContents.send('update_available');
+  })
+  
+  autoUpdater.on('update-not-available', () => {
+    window.webContents.send('update_not_available');
+  })
+  
+  autoUpdater.on('update-downloaded', () => {
+    window.webContents.send('update_downloaded');
+  })
 })
 
 app.on('window-all-closed', () => {
@@ -50,18 +62,6 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
-})
-
-autoUpdater.on('update-available', () => {
-  window.webContents.send('update_available');
-})
-
-autoUpdater.on('update-not-available', () => {
-  window.webContents.send('update_not_available');
-})
-
-autoUpdater.on('update-downloaded', () => {
-  window.webContents.send('update_downloaded');
 })
 
 ipcMain.on('restart_app', () => {
