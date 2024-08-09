@@ -80,7 +80,7 @@ const ListSearchResults = (props) => {
                 "hidden closed wordsListList"}>
                 {!!vocabulary && vocabulary.map((item, i) => (
                     <ListElement
-                        isSelected={currentElement && currentElement.completeWord && currentElement.id === item.id}
+                        isSelected={currentElement && currentElement.primaryWord && currentElement.id === item.id}
                         importance={item.importance}
                         child={
                             <WordElement

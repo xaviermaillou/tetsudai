@@ -157,7 +157,7 @@ const SidePanel = (props) => {
             {pinnedSentence && <SearchSentence
                 openSentence={openSentence}
                 setOpenSentence={setOpenSentence}
-                word={(currentElement && currentElement.completeWord) ? currentElement : undefined}
+                word={(currentElement && currentElement.primaryWord) ? currentElement : undefined}
                 changeCurrentWordById={changeCurrentWordById}
                 pinnedSentence={pinnedSentence}
                 setOpenMenu={setOpen}

@@ -62,7 +62,7 @@ const MainDisplay = (props) => {
                 {word &&
                     <div id="wordDisplay" className={loading ? "rerenderOpacity" : ""}>
                         {word.jukujikun ? 
-                            <div id="wordDisplayWordJukujikun" className={word.completeWord.length > 4 ? "smallFont" : ""}>
+                            <div id="wordDisplayWordJukujikun" className={word.primaryWord.length > 4 ? "smallFont" : ""}>
                                 <div id="wordDisplayWordKanjiOnly">
                                     {word.jukujikunAsMain ?
                                         <div className="wordDisplayWordElement">
@@ -86,7 +86,7 @@ const MainDisplay = (props) => {
                                 </div>
                             </div>
                             :
-                            <div id="wordDisplayWord" className={word.completeWord.length > 4 ? "smallFont" : ""}>
+                            <div id="wordDisplayWord" className={word.primaryWord.length > 4 ? "smallFont" : ""}>
                                 <div id="wordDisplayWordElements">
                                     {word.elements.map((element, i) => <div className={element.option === "politeElement" ? "wordDisplayWordPrefix wordDisplayWordElement" : "wordDisplayWordElement"} key={i}>
                                         <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ?
