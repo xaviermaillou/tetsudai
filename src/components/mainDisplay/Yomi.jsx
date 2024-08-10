@@ -1,5 +1,6 @@
 import WordElement from "../subComponents/WordElement"
 import FiveFirstElements from "../subComponents/FiveFirstElements"
+import { kanasDictionnary } from "tetsudai-common"
 
 const Yomi = (props) => {
     const {
@@ -20,7 +21,7 @@ const Yomi = (props) => {
                         <div className="mainDisplayElementContainer" key={i}>
                             <WordElement
                                 word={wordExample}
-                                kanaToHighlight={reading.kana}
+                                kanaToHighlight={kanasDictionnary.kanasRegularization(reading.kana)}
                                 changeCurrentWordById={changeCurrentWordById}
                             />
                         </div>

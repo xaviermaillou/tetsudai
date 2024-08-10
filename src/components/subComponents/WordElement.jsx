@@ -1,4 +1,4 @@
-import { dictionnary } from "tetsudai-common"
+import { dictionnary, kanasDictionnary } from "tetsudai-common"
 import { localDictionnary } from "../../lib/dictionnary"
 import { useContext } from "react"
 import LanguageContext from "../../contexts/Language"
@@ -39,7 +39,15 @@ const WordElement = (props) => {
                     :
                     <div className="wordElementRegularJapanese">
                         {word.elements?.map((element, j) => (
-                            <div className={element.kana === kanaToHighlight ? "wordElementRegularJapaneseMainCharacters highlighted" : "wordElementRegularJapaneseMainCharacters"} key={j}>
+                            <div
+                                className={
+                                    kanasDictionnary.kanasRegularization(element.kana) === kanaToHighlight ?
+                                        "wordElementRegularJapaneseMainCharacters highlighted"
+                                        :
+                                        "wordElementRegularJapaneseMainCharacters"
+                                }
+                                key={j}
+                            >
                                 <div>{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</div>
                                 {element.kanji &&
                                     <div className="wordElementSecondaryCharacters">
