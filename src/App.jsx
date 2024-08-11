@@ -7,7 +7,6 @@ import SideBar from './components/SideBar'
 import {
   fetchKanjiList,
   fetchVocabularyList,
-  fetchSentences,
   fetchSentenceData,
   fetchKanji,
   fetchWord,
@@ -86,7 +85,8 @@ function App() {
     setElementFetched(true)
     const result = await fetchWord(id, setLoadingMainDisplay)
     setKanji(null)
-    setWord(result)
+    setWord(result.word)
+    setSentencesList(result.sentences)
   }, [])
 
   useEffect(() => {
@@ -182,12 +182,6 @@ function App() {
     vocabularyListOffset
   ])
 
-  // Fetch sentences
-  const fetchWordSentences = useCallback(async () => {
-    const resultSentences = await fetchSentences(word.id, setLoadingSentences)
-    setSentencesList(resultSentences)
-  }, [word])
-
   useEffect(() => {
     if (searchExecuted) {
       const kanjiContainer = document.getElementById('kanjisList')
@@ -228,10 +222,6 @@ function App() {
     kanjiListOffset,
     vocabularyListOffset
   ])
-
-  useEffect(() => {
-    if (word) fetchWordSentences()
-  }, [fetchWordSentences, word])
 
   // History handling
 

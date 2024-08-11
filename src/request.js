@@ -20,14 +20,6 @@ export const fetchVocabularyList = async (level, grammar, collection, search, of
     return result.data
 }
 
-export const fetchSentences = async (id, setLoading) => {
-    setLoading(true)
-    const result = await axios.get(`${API_URL}/sentences/${id}`)
-    validation.validateDataObjectsArray(result.data, types.EnrichedSentence, [])
-    setLoading(false)
-    return result.data
-}
-
 export const fetchSentenceData = async (sentence) => {
     const result = await axios.post(`${API_URL}/foundSentence`, sentence)
     return result.data
@@ -44,7 +36,8 @@ export const fetchKanji = async (id, setLoading) => {
 export const fetchWord = async (id, setLoading) => {
     setLoading(true)
     const result = await axios.get(`${API_URL}/word/${id}`)
-    validation.validateDataObject(result.data, types.EnrichedWord)
+    validation.validateDataObject(result.data.word, types.EnrichedWord)
+    validation.validateDataObjectsArray(result.data.sentences, types.EnrichedSentence, [])
     setLoading(false)
     return result.data
 }
