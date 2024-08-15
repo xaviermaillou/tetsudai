@@ -22,14 +22,14 @@ const WordElement = (props) => {
                                 <div>{word.jukujikun}</div>
                                 :
                                 word.elements.map((element, j) => (
-                                    <div key={j}>{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</div>
+                                    <div key={j}>{element.options.rareKanji ? element.kana : element.kanji || element.kana}</div>
                                 ))
                             }
                         </div>
                         <div className="wordElementSecondaryCharacters">
                             {word.jukujikunAsMain ?
                                 word.elements.map((element, j) => (
-                                    <span key={j}>{element.option === "rareKanji" ? element.kanji : element.kana || element.kanji}</span>
+                                    <span key={j}>{element.options.rareKanji ? element.kanji : element.kana || element.kanji}</span>
                                 ))
                                 :
                                 <span>{word.jukujikun}</span>
@@ -48,10 +48,10 @@ const WordElement = (props) => {
                                 }
                                 key={j}
                             >
-                                <div>{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</div>
+                                <div>{element.options.rareKanji ? element.kana : element.kanji || element.kana}</div>
                                 {element.kanji &&
                                     <div className="wordElementSecondaryCharacters">
-                                        {element.option === "rareKanji" ? element.kanji : element.kana}
+                                        {element.options.rareKanji ? element.kanji : element.kana}
                                     </div>
                                 }
                             </div>

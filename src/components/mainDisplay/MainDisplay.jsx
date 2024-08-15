@@ -70,14 +70,14 @@ const MainDisplay = (props) => {
                                         </div>
                                         :
                                         word.elements.map((element, i) => <div className="wordDisplayWordElement" key={i}>
-                                            <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ? element.kana : element.kanji || element.kana}</span>
+                                            <span className="wordDisplayWordElementKanji">{element.options.rareKanji ? element.kana : element.kanji || element.kana}</span>
                                         </div>)
                                     }
                                 </div>
                                 <div className="wordDisplayWordElementYomi jukujikun">
                                     {word.jukujikunAsMain ?
                                         word.elements.map((element, i) => 
-                                            <span className="wordDisplayWordElementKanji" key={i}>{element.option === "rareKanji" ? (element.kanji || element.kana) : (element.kana || element.kanji)}</span>
+                                            <span className="wordDisplayWordElementKanji" key={i}>{element.options.rareKanji ? (element.kanji || element.kana) : (element.kana || element.kanji)}</span>
                                         )
                                         :
                                         <span>{word.jukujikun}</span>
@@ -88,15 +88,15 @@ const MainDisplay = (props) => {
                             :
                             <div id="wordDisplayWord" className={word.primaryWord.length > 4 ? "smallFont" : ""}>
                                 <div id="wordDisplayWordElements">
-                                    {word.elements.map((element, i) => <div className={element.option === "politeElement" ? "wordDisplayWordPrefix wordDisplayWordElement" : "wordDisplayWordElement"} key={i}>
-                                        <span className="wordDisplayWordElementKanji">{element.option === "rareKanji" ?
+                                    {word.elements.map((element, i) => <div className={element.options.politeElement ? "wordDisplayWordPrefix wordDisplayWordElement" : "wordDisplayWordElement"} key={i}>
+                                        <span className="wordDisplayWordElementKanji">{element.options.rareKanji ?
                                             element.kana
                                             :
                                             element.kanji || element.kana}</span>
                                         {element.kanji ?
-                                            <span className="wordDisplayWordElementYomi highlighted">{element.option === "rareKanji" ? element.kanji : element.kana || 'muet'}</span>
+                                            <span className="wordDisplayWordElementYomi highlighted">{element.options.rareKanji ? element.kanji : element.kana || 'muet'}</span>
                                             :
-                                            element.option === "politeElement" ?
+                                            element.options.politeElement ?
                                                 <span className="wordDisplayWordElementYomi highlighted">{localDictionnary[language].honorific}</span>
                                                 :
                                                 <span className="wordDisplayWordElementYomi"></span>
