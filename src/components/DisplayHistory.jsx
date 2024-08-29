@@ -38,14 +38,14 @@ const HistoryElement = (props) => {
                         <span>{historyElementData.jukujikun}</span>
                         :
                         historyElementData.elements.map((e, i) => (
-                            <span key={i}>{e.options.rareKanji ? e.kana : e.kanji || e.kana}</span>
+                            <span key={i}>{e.options?.rareKanji ? e.kana : e.kanji || e.kana}</span>
                         ))
                     }
                 </div>
                 :
                 <div className="historyElementMain">
                     {historyElementData.kanji || historyElementData.elements.map((e, i) => (
-                        <span key={i}>{e.options.rareKanji ? e.kana : e.kanji || e.kana}</span>
+                        <span key={i}>{e.options?.rareKanji ? e.kana : e.kanji || e.kana}</span>
                     ))}
                 </div>
             }
