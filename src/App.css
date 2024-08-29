@@ -366,7 +366,7 @@ input:placeholder-shown {
   padding-top: 32px;
 }
 #wordDetailsSentences {
-  padding-top: 12px;
+  padding-top: 24px;
   padding-bottom: 70px;
   position: relative;
 }
@@ -411,6 +411,10 @@ input:placeholder-shown {
 .yomiHeader span {
   white-space: nowrap;
 }
+.yomiExtensionsHeader {
+  margin-top: 4px;
+  font-size: 16px;
+}
 .yomiExpander {
   height: 12px;
   opacity: 0.5;
@@ -425,6 +429,9 @@ input:placeholder-shown {
   padding-left: 10px;
   margin-bottom: 10px;
   border-left: 1px solid;
+}
+.yomiExtensions {
+  margin-top: -10px;
 }
 .wordElement {
   height: 100%;
@@ -458,6 +465,12 @@ input:placeholder-shown {
 }
 .wordElementTranslation, .kanasReadingsHeader {
   font-size: 14px;
+}
+.yomiExamplesSubHeader {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  opacity: 0.5;
 }
 .kanjiElement {
   height: 100%;
@@ -543,7 +556,7 @@ input:placeholder-shown {
   opacity: 0.66;
 }
 .sentencesElement {
-  margin-top: 10px;
+  margin-top: 6px;
   font-size: 14px;
 }
 .sentence {
@@ -1430,27 +1443,29 @@ input:placeholder-shown {
   .kanjiDetailsSubSection:nth-child(1) {
     margin-top: 0px;
   }
-  #kunyomiExamples, #onyomiExamples, #jukujikunExamples {
+  #kunyomiExamples, #onyomiExamples, #irregularExamples, #jukujikunExamples {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  #kunyomiExamples .yomiContainer, #onyomiExamples .yomiContainer {
+  #kunyomiExamples .yomiContainer, #onyomiExamples .yomiContainer, #irregularExamples .yomiContainer {
     flex-direction: row-reverse;
   }
-  #kunyomiExamples .yomiHeader, #onyomiExamples .yomiHeader {
+  #kunyomiExamples .yomiHeader, #onyomiExamples .yomiHeader, #irregularExamples .yomiHeader {
     flex-direction: row-reverse;
   }
-  #kunyomiExamples .wordElement, #onyomiExamples .wordElement, #jukujikunExamples .wordElement {
+  #kunyomiExamples .wordElement, #onyomiExamples .wordElement, #irregularExamples .wordElement, #jukujikunExamples .wordElement {
     flex-direction: row-reverse;
   }
   #kunyomiExamples .wordElementDetails div,
   #onyomiExamples .wordElementDetails div,
+  #irregularExamples .wordElementDetails div,
   #jukujikunExamples .wordElementDetails div {
     text-align: left;
   }
-  #kunyomiExamples .tooltip, #onyomiExamples .tooltip , #jukujikunExamples .tooltip {
+  #kunyomiExamples .tooltip, #onyomiExamples .tooltip, #irregularExamples .tooltip, #jukujikunExamples .tooltip {
     text-align: right;
+    font-weight: 900;
   }
   #jukujikunExamples .wordElementJukujikun {
     align-items: flex-end;
@@ -1463,6 +1478,12 @@ input:placeholder-shown {
     padding-right: 10px;
     border-left: none;
     border-right: 1px solid;
+  }
+  .yomiExamplesSubHeader {
+    text-align: right;
+  }
+  .yomiExtensionsHeader {
+    font-size: 20px;
   }
   #selectorAndControls {
     margin-bottom: 20px;
@@ -1580,6 +1601,9 @@ input.highlighted::placeholder {
 
 .yomiExamples {
   border-color: var(--paleColor);
+}
+.yomiExtensions {
+  border-color: var(--veryPaleColor);
 }
 
 .sentencesElement .highlighted,

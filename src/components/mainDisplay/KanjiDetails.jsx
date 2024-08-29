@@ -93,14 +93,26 @@ const KanjiDetails = (props) => {
                 <div className="kanjiDetailsSubSection" id="onyomiExamples">
                     <p className="kanasReadingsHeader">ONYOMI</p>
                     {kanji.readings.onyomi?.map((reading, i) => (
+                        <>
+                            <Yomi
+                                reading={reading}
+                                changeCurrentWordById={changeCurrentWordById}
+                                key={i}
+                            />
+                        </>
+                    ))}
+                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noOnyomi}</span>}
+                </div>
+                {kanji.readings.irregular?.length > 0 && <div className="kanjiDetailsSubSection" id="irregularExamples">
+                    <p className="kanasReadingsHeader">{localDictionnary[language].irregular}</p>
+                    {kanji.readings.irregular?.map((reading, i) => (
                         <Yomi
                             reading={reading}
                             changeCurrentWordById={changeCurrentWordById}
                             key={i}
                         />
                     ))}
-                    {kanji.readings.onyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noOnyomi}</span>}
-                </div>
+                </div>}
                 {kanji.relatedJukujikun.length > 0 && <div className="kanjiDetailsSubSection" id="jukujikunExamples">
                     <p className="kanasReadingsHeader">JUKUJIKUN</p>
                     <FiveFirstElements
@@ -113,7 +125,6 @@ const KanjiDetails = (props) => {
                             </div>
                         ))}
                     />
-                    {kanji.relatedJukujikun.length === 0 && <span className="tooltip">{localDictionnary[language].noJukujikun}</span>}
                 </div>}
             </div>
         </div>
