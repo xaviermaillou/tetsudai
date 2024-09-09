@@ -104,7 +104,7 @@ const KanjiDetails = (props) => {
                     {kanji.readings.onyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noOnyomi}</span>}
                 </div>
                 {kanji.readings.irregular?.length > 0 && <div className="kanjiDetailsSubSection" id="irregularExamples">
-                    <p className="kanasReadingsHeader">{localDictionnary[language].irregular}</p>
+                    <p className="kanasReadingsHeader">{localDictionnary[language].irregularReadings}</p>
                     {kanji.readings.irregular?.map((reading, i) => (
                         <Yomi
                             reading={reading}

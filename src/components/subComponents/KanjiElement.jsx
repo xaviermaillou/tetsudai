@@ -1,14 +1,19 @@
 import { useContext } from "react"
 import LanguageContext from "../../contexts/Language"
+import { localDictionnary } from "../../lib/dictionnary"
 
 const KanjiElement = (props) => {
 
-    const { kanji, kanaToHighlight, changeCurrentKanjiById } = props
+    const { kanji, kanaToHighlight, changeCurrentKanjiById, options } = props
 
     const language = useContext(LanguageContext)
 
     return (
         <div className={`kanjiElement${kanji.id ? ' clickable' : ''}`} onClick={() => kanji.id ? changeCurrentKanjiById(kanji.id) : null}>
+            <div className="kanjiElementLabel">
+                {options?.irregular && <span>{localDictionnary[language].irregularReading}</span>}
+                {options?.ateji && <span>ateji</span>}
+            </div>
             <div className="kanjiElementKanji">
                 {kanji.kanji}
             </div>

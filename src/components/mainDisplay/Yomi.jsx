@@ -11,9 +11,12 @@ const Yomi = (props) => {
     return (
         <div className={reading.examples.length > 0 ? "yomiContainer extendable" : "yomiContainer"}>
             <div className="yomiHeader">
-                <span>
-                    {reading.kana}
-                </span>
+                <div>
+                    <span>
+                        {reading.kana}
+                    </span>
+                    {reading.variations.map(variation => <span className="yomiVariation" key={variation}><span>,</span>{variation}</span>)}
+                </div>
             </div>
             <div className="yomiExamples">
                 <FiveFirstElements
@@ -21,7 +24,10 @@ const Yomi = (props) => {
                         <div className="mainDisplayElementContainer" key={i}>
                             <WordElement
                                 word={wordExample}
-                                kanaToHighlight={kanasDictionnary.kanasRegularization(reading.kana)}
+                                kanasToHighlight={[
+                                    kanasDictionnary.kanasRegularization(reading.kana),
+                                    ...(reading.variations?.map(variation => kanasDictionnary.kanasRegularization((variation))) || [])
+                                ]}
                                 changeCurrentWordById={changeCurrentWordById}
                             />
                         </div>

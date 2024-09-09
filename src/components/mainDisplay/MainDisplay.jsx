@@ -129,6 +129,7 @@ const MainDisplay = (props) => {
                             referenceId={word.id}
                             originLanguage={word.originLanguage}
                             originLanguageWord={word.originLanguageWord}
+                            chineseLegacy={word.chineseLegacy}
                             precisions={word.precisions}
                             relatedWords={word.relatedWords}
                             bottomSpace={(word.inflexions || word.kosoado)}

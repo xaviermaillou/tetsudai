@@ -207,6 +207,7 @@ export const WordDetails = (props) => {
         referenceId,
         originLanguage,
         originLanguageWord,
+        chineseLegacy,
         precisions,
         relatedWords,
         bottomSpace,
@@ -226,6 +227,11 @@ export const WordDetails = (props) => {
                         <span>{originLanguageWord}</span>
                     </div>
                 }
+                {chineseLegacy &&
+                    <div id="wordChineseLegacy">
+                        <span>{localDictionnary[language].chineseLegacy}</span>
+                    </div>
+                }
                 {precisions[language] && 
                     <div id="wordPrecisions">
                         <p id="wordPrecisionsText">
@@ -241,6 +247,7 @@ export const WordDetails = (props) => {
                                 kanji={element.details}
                                 kanaToHighlight={element.kana}
                                 changeCurrentKanjiById={changeCurrentKanjiById}
+                                options={element.options}
                             />
                         </div>
                     ))}

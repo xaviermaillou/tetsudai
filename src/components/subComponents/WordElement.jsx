@@ -6,7 +6,7 @@ import LanguageContext from "../../contexts/Language"
 const WordElement = (props) => {
     const {
         word,
-        kanaToHighlight,
+        kanasToHighlight,
         changeCurrentWordById,
         sentenceGrammar,
     } = props
@@ -41,7 +41,7 @@ const WordElement = (props) => {
                         {word.elements?.map((element, j) => (
                             <div
                                 className={
-                                    kanasDictionnary.kanasRegularization(element.kana) === kanaToHighlight ?
+                                    kanasToHighlight?.includes(kanasDictionnary.kanasRegularization(element.kana)) ?
                                         "wordElementRegularJapaneseMainCharacters highlighted"
                                         :
                                         "wordElementRegularJapaneseMainCharacters"
