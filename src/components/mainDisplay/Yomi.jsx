@@ -15,7 +15,7 @@ const Yomi = (props) => {
                     <span>
                         {reading.kana}
                     </span>
-                    {reading.variations.map(variation => <span className="yomiVariation" key={variation}><span>,</span>{variation}</span>)}
+                    {reading.variations?.map(variation => <span className="yomiVariation" key={variation}><span>,</span>{variation}</span>)}
                 </div>
             </div>
             <div className="yomiExamples">
