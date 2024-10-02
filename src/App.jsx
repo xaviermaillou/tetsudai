@@ -98,7 +98,6 @@ function App() {
   const [loadingKanjiList, setLoadingKanjiList] = useState(false)
   const [loadingVocabularyList, setLoadingVocabularyList] = useState(false)
   const [loadingMainDisplay, setLoadingMainDisplay] = useState(false)
-  const [loadingSentences, setLoadingSentences] = useState(false)
 
   // Fetch data callback
   const fetchKanjiAndSetState = useCallback(async () => {
@@ -234,9 +233,11 @@ function App() {
 
   useEffect(() => {
     if ((kanji || word) && !openedHistory) {
-      const newHistory = [ ...displayHistory.filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id), kanji || word ]
-      setDisplayHistory(newHistory)
-      localStorage.setItem('history', JSON.stringify(newHistory))
+      setDisplayHistory(prevState => {
+        const newHistory = [ ...prevState.filter((e) => kanji ? e.kanji !== kanji.kanji : e.id !== word.id), kanji || word ]
+        localStorage.setItem('history', JSON.stringify(newHistory))
+        return newHistory
+      })
     }
   }, [
     openedHistory,
@@ -282,7 +283,6 @@ function App() {
           setSearchExecuted={setSearchExecuted}
           elementFetched={elementFetched}
           loading={loadingMainDisplay}
-          loadingSentences={loadingSentences}
 
           // Menu toggle
           setMenuOpen={setMenuOpen}

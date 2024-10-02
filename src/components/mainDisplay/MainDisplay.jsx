@@ -15,7 +15,6 @@ const MainDisplay = (props) => {
         changeCurrentWordById,
         sentences,
         loading,
-        loadingSentences,
         setOpenedHistory,
         pinnedSentence,
         handleSearch,
@@ -120,7 +119,6 @@ const MainDisplay = (props) => {
                         <WordDetails
                             elements={word.elements.filter((element) => element.details)}
                             sentences={sentences}
-                            loadingSentences={loadingSentences}
                             changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                             changeCurrentWordById={(id) => handleWordChange(id)}
                             pinnedSentence={pinnedSentence}
@@ -129,7 +127,6 @@ const MainDisplay = (props) => {
                             referenceId={word.id}
                             originLanguage={word.originLanguage}
                             originLanguageWord={word.originLanguageWord}
-                            chineseLegacy={word.chineseLegacy}
                             precisions={word.precisions}
                             relatedWords={word.relatedWords}
                             bottomSpace={(word.inflexions || word.kosoado)}

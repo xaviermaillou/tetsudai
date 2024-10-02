@@ -52,8 +52,8 @@ const SidePanel = (props) => {
     }
 
     useEffect(() => {
-        setNoKanji(typeof kanjis === "array" && kanjis?.length === 0)
-        setNoWord(typeof vocabulary === "array" && vocabulary?.length === 0)
+        setNoKanji(Array.isArray(kanjis) && kanjis?.length === 0)
+        setNoWord(Array.isArray(vocabulary) && vocabulary?.length === 0)
     }, [kanjis, vocabulary])
 
     useEffect(() => {

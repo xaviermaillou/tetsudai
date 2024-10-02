@@ -3,7 +3,6 @@ import { localDictionnary } from "../../lib/dictionnary"
 import { dictionnary } from "tetsudai-common"
 import KanjiElement from "../subComponents/KanjiElement"
 import WordElement from "../subComponents/WordElement"
-import Loading from "../visualComponents/Loading"
 import LanguageContext from "../../contexts/Language"
 import FiveFirstElements from "../subComponents/FiveFirstElements"
 import Icon from "../subComponents/Icon"
@@ -179,11 +178,11 @@ const Sentence = (props) => {
             <div className="sentence">
                 <div>
                     {sentence
-                        .sections.map((section) => (
+                        .sections.map((section, i) => (
                             section.match ?
-                                <span className="highlighted" key={section.string}>{section.string}</span>
+                                <span className="highlighted" key={section.string + i}>{section.string}</span>
                                 :
-                                section.string.split("").map((char, i) => <span key={char + referenceId + i}>{char}</span>)
+                                section.string.split("").map((char, j) => <span key={char + referenceId + j}>{char}</span>)
                             
                         ))
                     }
@@ -198,7 +197,6 @@ export const WordDetails = (props) => {
     const {
         elements,
         sentences,
-        loadingSentences,
         changeCurrentKanjiById,
         changeCurrentWordById,
         pinnedSentence,
@@ -207,7 +205,6 @@ export const WordDetails = (props) => {
         referenceId,
         originLanguage,
         originLanguageWord,
-        chineseLegacy,
         precisions,
         relatedWords,
         bottomSpace,
@@ -225,11 +222,6 @@ export const WordDetails = (props) => {
                     <div id="wordLanguage">
                         <span>{dictionnary[language].languages[originLanguage]}</span>
                         <span>{originLanguageWord}</span>
-                    </div>
-                }
-                {chineseLegacy &&
-                    <div id="wordChineseLegacy">
-                        <span>{localDictionnary[language].chineseLegacy}</span>
                     </div>
                 }
                 {precisions[language] && 
@@ -280,31 +272,23 @@ export const WordDetails = (props) => {
             </div>
             <div id="wordDetailsSentences" className={bottomSpace ? "bottomSpace" : ""}>
                 <p className="kanasReadingsHeader">{localDictionnary[language].sentences}</p>
-                {loadingSentences ?
-                    <div className="loadingAnimationContainer">
-                        <Loading
-                            isLoading={loadingSentences}
-                        />
-                    </div>
-                    :
-                    <div>
-                        <FiveFirstElements
-                            loop={sentences?.map((sentence, i) => (
-                                <div className="mainDisplaySentenceContainer" key={i}>
-                                    <Sentence
-                                        sentence={sentence}
-                                        referenceId={referenceId}
-                                        pinnedSentence={pinnedSentence}
-                                        handleSearch={handleSearch}
-                                        setSearchExecuted={setSearchExecuted}
-                                        setMenuOpen={setMenuOpen}
-                                    />
-                                </div>
-                            ))}
-                        />
-                        {sentences.length === 0 && <span className="tooltip">{localDictionnary[language].noSentence}</span>}
-                    </div>
-                }
+                <div>
+                    <FiveFirstElements
+                        loop={sentences?.map((sentence, i) => (
+                            <div className="mainDisplaySentenceContainer" key={i}>
+                                <Sentence
+                                    sentence={sentence}
+                                    referenceId={referenceId}
+                                    pinnedSentence={pinnedSentence}
+                                    handleSearch={handleSearch}
+                                    setSearchExecuted={setSearchExecuted}
+                                    setMenuOpen={setMenuOpen}
+                                />
+                            </div>
+                        ))}
+                    />
+                    {sentences.length === 0 && <span className="tooltip">{localDictionnary[language].noSentence}</span>}
+                </div>
             </div>
         </div>
     )
