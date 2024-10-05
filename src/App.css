@@ -352,7 +352,7 @@ input:placeholder-shown {
   opacity: 0.75;
 }
 #kanjiOrigin .kanjiReadings {
-  opacity: 0.66;
+  opacity: 0.75;
 }
 /* #kanjiOrigin .kanjiElementKanji {
   font-family: 'Noto Serif TC';
