@@ -67,6 +67,11 @@ const WordElement = (props) => {
                                 {Object.entries(sentenceGrammar.tense).map(([key, value]) => <span key={key}>&nbsp;{localDictionnary[language][value]}</span>)}
                             </span>
                         }
+                        {sentenceGrammar.form &&
+                            <span className="wordElementGrammarTense">
+                                <span>&nbsp;{localDictionnary[language][sentenceGrammar.form]}</span>
+                            </span>
+                        }
                     </div>
                     :
                     <div className="wordElementGrammar">
