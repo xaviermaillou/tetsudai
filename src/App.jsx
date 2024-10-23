@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
 import MainDisplay from './components/mainDisplay/MainDisplay'
@@ -256,11 +256,45 @@ function App() {
 
   const [openHistory, setOpenHistory] = useState(false)
 
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  }
+
+  const handleTouchEnd = () => {
+    if (!!touchEnd && (touchStart - touchEnd > 150)) {
+      setMenuOpen(true)
+    }
+    if (!!touchEnd && (touchStart - touchEnd < -150)) {
+      setMenuOpen(false)
+    }
+    setTouchEnd(0)
+  }
+
+  const handleScroll = (e) => {
+    const delta = e.deltaX
+    if (delta > 10) setMenuOpen(true)
+    if (delta < -10) setMenuOpen(false)
+  }
+
   if(!imgPath) return
 
   return (
     <LanguageContext.Provider value={language}>
-      <div id="App" className={imgPath}>
+      <div
+        id="App"
+        className={imgPath}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onWheel={handleScroll}
+      >
         {(kanji === null && word === null && !loadingMainDisplay) && <div id="introText" className={searchExecuted ? "" : "lowOpacity"}>
           <p>
             {localDictionnary[language].appDescription}
