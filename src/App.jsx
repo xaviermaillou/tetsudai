@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
 import MainDisplay from './components/mainDisplay/MainDisplay'
@@ -117,6 +117,8 @@ function App() {
     search
   ])
   const fetchVocabularyAndSetState = useCallback(async () => {
+    if (previousSearch === search) return
+    setPinnedSentence(undefined)
     const resultVocabulary = await fetchVocabularyList(
       level,
       grammar,
@@ -126,14 +128,10 @@ function App() {
       setLoadingVocabularyList
     )
     setVocabularyList(resultVocabulary.results)
-    if (previousSearch === search) return
     if (resultVocabulary.sentence) {
       fetchSentence({
         elements: resultVocabulary.sentence
       })
-    }
-    else {
-      setPinnedSentence(undefined)
     }
   }, [
     level,
@@ -256,31 +254,40 @@ function App() {
 
   const [openHistory, setOpenHistory] = useState(false)
 
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
+  const [touchXStart, setTouchXStart] = useState(0)
+  const [touchXEnd, setTouchXEnd] = useState(0)
+  const [touchYStart, setTouchYStart] = useState(0)
+  const [touchYEnd, setTouchYEnd] = useState(0)
 
   const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchXStart(e.targetTouches[0].clientX)
+    setTouchYStart(e.targetTouches[0].clientY)
   }
 
   const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    setTouchXEnd(e.targetTouches[0].clientX)
+    setTouchYEnd(e.targetTouches[0].clientY)
   }
 
   const handleTouchEnd = () => {
-    if (!!touchEnd && (touchStart - touchEnd > 150)) {
-      setMenuOpen(true)
+    if (Math.abs(touchYStart - touchYEnd) < 100 && (!!kanji || !!word)) {
+      if (!!touchXEnd && (touchXStart - touchXEnd > 100)) {
+        setMenuOpen(true)
+      }
+      if (!!touchXEnd && (touchXStart - touchXEnd < -100)) {
+        setMenuOpen(false)
+      }
     }
-    if (!!touchEnd && (touchStart - touchEnd < -150)) {
-      setMenuOpen(false)
-    }
-    setTouchEnd(0)
+    setTouchXEnd(0)
+    setTouchYEnd(0)
   }
 
   const handleScroll = (e) => {
-    const delta = e.deltaX
-    if (delta > 10) setMenuOpen(true)
-    if (delta < -10) setMenuOpen(false)
+    const { deltaX, deltaY } = e
+    if (Math.abs(deltaY) < 10 && (!!kanji || !!word)) {
+      if (deltaX > 10) setMenuOpen(true)
+      if (deltaX < -10) setMenuOpen(false)
+    }
   }
 
   if(!imgPath) return

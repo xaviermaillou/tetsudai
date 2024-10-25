@@ -4,7 +4,7 @@ import { localDictionnary } from "../../lib/dictionnary"
 import LanguageContext from "../../contexts/Language"
 import Icon from "../subComponents/Icon"
 
-const SearchSentence = (props) => {
+const FoundSentence = (props) => {
     const {
         openSentence,
         setOpenSentence,
@@ -51,4 +51,4 @@ const SearchSentence = (props) => {
     )
 }
 
-export default SearchSentence
+export default FoundSentence

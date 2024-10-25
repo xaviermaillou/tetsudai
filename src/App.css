@@ -859,18 +859,19 @@ input:placeholder-shown {
 }
 #wordsListSearch {
   position: relative;
-  padding: 22px 0px 0px 0px;
   height: 56px;
   overflow-y: hidden;
 }
 #wordsListSearch input {
+  padding-top: 22px;
   padding-right: 20px;
   font-size: 16px;
 }
 #wordsListSearch .icon {
   position: absolute;
   right: 0px;
-  height: 20px;
+  padding-top: 22px;
+  padding-left: 16px;
 }
 #wordsListSearch .icon img {
   height: 16px;
@@ -1364,10 +1365,6 @@ input:placeholder-shown {
   }
   #wordsListOpener {
     display: none;
-  }
-  #wordsListSearch {
-    padding-left: 0px;
-    padding-right: 0px;
   }
   #wordsListSearch img {
     right: 0px;

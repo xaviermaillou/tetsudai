@@ -1,11 +1,9 @@
-import { useState, useEffect, useContext, useRef } from "react"
+import { useState, useEffect } from "react"
 import ListHeader from "./ListHeader"
-import SearchSentence from "./SearchSentence"
+import FoundSentence from "./FoundSentence"
 import ListSearchResults from "./ListSearchResults"
-import { localDictionnary } from "../../lib/dictionnary"
-import LanguageContext from "../../contexts/Language"
-import Icon from "../subComponents/Icon"
 import isElectron from "is-electron"
+import Search from "./Search"
 
 const SidePanel = (props) => {
     const {
@@ -39,8 +37,6 @@ const SidePanel = (props) => {
         openFilter,
         setOpenFilter,
     } = props
-
-    const language = useContext(LanguageContext)
 
     const [displayKanjis, setDisplayKanjis] = useState(false)
 
@@ -93,12 +89,6 @@ const SidePanel = (props) => {
         changeCurrentWordById(id)
     }
 
-    const inputRef = useRef(null)
-
-    const handleIconClick = () => {
-        search ? handleSearch("") : inputRef.current?.focus()
-    }
-
     const [openSentence, setOpenSentence] = useState(false)
 
     return (
@@ -106,35 +96,16 @@ const SidePanel = (props) => {
             id="sidePanel"
             className={`${open ? (searchExecuted || currentElement ? "open" : "open expanded") : ""}${isElectron() ? " electron" : ""}`}
         >
-            <div id={currentElement ? "wordsListSearchContainer" : "wordsListSearchContainer expanded"}>
-                {currentElement !== null &&
-                    <Icon
-                        id="wordsListOpener"
-                        className={open ? "open clickable" : "clickable"}
-                        onClick={toggle}
-                        src={`/img/${imgPath}/next.png`}
-                        alt="see all words"
-                    />
-                }
-                <div id="wordsListSearch">
-                    <div className="icon clickable" onClick={handleIconClick}>
-                        {search ?
-                            <Icon className="close" src={`/img/${imgPath}/close.png`} alt="erase search" />
-                            :
-                            <Icon src={`/img/${imgPath}/search.png`} alt="search" />
-                        }
-                    </div>
-                    <input
-                        value={searchCopy}
-                        className={searchExecuted ? "" : "highlighted"}
-                        onChange={(e) => {handleSearch(e.target.value)}}
-                        type="text"
-                        spellCheck="false"
-                        placeholder={localDictionnary[language].searchPlaceholder}
-                        ref={inputRef}
-                    />
-                </div>
-            </div>
+            <Search
+                imgPath={imgPath}
+                currentElement={currentElement}
+                search={search}
+                searchCopy={searchCopy}
+                handleSearch={handleSearch}
+                searchExecuted={searchExecuted}
+                open={open}
+                toggle={toggle}
+            />
             <ListHeader
                 openFilter={openFilter}
                 setOpenFilter={setOpenFilter}
@@ -154,7 +125,7 @@ const SidePanel = (props) => {
                 setSearchExecuted={setSearchExecuted}
                 currentElement={currentElement}
             />
-            {pinnedSentence && <SearchSentence
+            {pinnedSentence && <FoundSentence
                 openSentence={openSentence}
                 setOpenSentence={setOpenSentence}
                 word={(currentElement && currentElement.primaryWord) ? currentElement : undefined}
