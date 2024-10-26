@@ -93,13 +93,11 @@ const KanjiDetails = (props) => {
                 <div className="kanjiDetailsSubSection" id="onyomiExamples">
                     <p className="kanasReadingsHeader">ONYOMI</p>
                     {kanji.readings.onyomi?.map((reading, i) => (
-                        <>
-                            <Yomi
-                                reading={reading}
-                                changeCurrentWordById={changeCurrentWordById}
-                                key={i}
-                            />
-                        </>
+                        <Yomi
+                            reading={reading}
+                            changeCurrentWordById={changeCurrentWordById}
+                            key={i}
+                        />
                     ))}
                     {kanji.readings.onyomi.length === 0 && <span className="tooltip">{localDictionnary[language].noOnyomi}</span>}
                 </div>
