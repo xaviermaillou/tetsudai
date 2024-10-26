@@ -117,7 +117,7 @@ function App() {
     search
   ])
   const fetchVocabularyAndSetState = useCallback(async () => {
-    if (previousSearch === search) return
+    if (!!search && previousSearch === search) return
     setPinnedSentence(undefined)
     const resultVocabulary = await fetchVocabularyList(
       level,
