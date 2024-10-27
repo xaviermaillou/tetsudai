@@ -454,6 +454,9 @@ input:placeholder-shown {
   min-width: 40%;
   max-width: 80%;
 }
+.wordElementDetails.extended {
+  max-width: 100%;
+}
 .wordElementTranslation {
   opacity: 0.5;
 }

@@ -61,7 +61,7 @@ const WordElement = (props) => {
                         ))}
                     </div>)
             }
-            <div className="wordElementDetails">
+            <div className={`wordElementDetails${sentenceGrammar ? " extended" : ""}`}>
                 {sentenceGrammar ?
                     <div className="wordElementGrammar">
                         {dictionnary[language].classes[sentenceGrammar.function]?.toLowerCase()}

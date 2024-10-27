@@ -272,10 +272,10 @@ function App() {
   const handleTouchEnd = () => {
     if (Math.abs(touchYStart - touchYEnd) < 100 && (!!kanji || !!word)) {
       if (!!touchXEnd && (touchXStart - touchXEnd > 100)) {
-        setMenuOpen(true)
+        openHistory ? setOpenHistory(false) : setMenuOpen(true)
       }
       if (!!touchXEnd && (touchXStart - touchXEnd < -100)) {
-        setMenuOpen(false)
+        menuOpen ? setMenuOpen(false) : setOpenHistory(true)
       }
     }
     setTouchXEnd(0)
@@ -285,12 +285,12 @@ function App() {
   const handleScroll = (e) => {
     const { deltaX, deltaY } = e
     if (Math.abs(deltaY) < 10 && (!!kanji || !!word)) {
-      if (deltaX > 10) setMenuOpen(true)
-      if (deltaX < -10) setMenuOpen(false)
+      if (deltaX > 10) openHistory ? setOpenHistory(false) : setMenuOpen(true)
+      if (deltaX < -10) menuOpen ? setMenuOpen(false) : setOpenHistory(true)
     }
   }
 
-  if(!imgPath) return
+  if (!imgPath) return
 
   return (
     <LanguageContext.Provider value={language}>
