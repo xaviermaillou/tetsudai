@@ -259,7 +259,15 @@ function App() {
   const [touchYStart, setTouchYStart] = useState(0)
   const [touchYEnd, setTouchYEnd] = useState(0)
 
+  const [scrolledAsSlide, setScrolledAsSlide] = useState(false)
+
+  const slide = (slideLeft, slideRight) => {
+    if (slideLeft) openHistory ? setOpenHistory(false) : setMenuOpen(true)
+    if (slideRight) menuOpen ? setMenuOpen(false) : setOpenHistory(true)
+  }
+
   const handleTouchStart = (e) => {
+    if (e.target.scrollWidth > e.target.clientWidth) return
     setTouchXStart(e.targetTouches[0].clientX)
     setTouchYStart(e.targetTouches[0].clientY)
   }
@@ -270,23 +278,19 @@ function App() {
   }
 
   const handleTouchEnd = () => {
-    if (Math.abs(touchYStart - touchYEnd) < 100 && (!!kanji || !!word)) {
-      if (!!touchXEnd && (touchXStart - touchXEnd > 100)) {
-        openHistory ? setOpenHistory(false) : setMenuOpen(true)
-      }
-      if (!!touchXEnd && (touchXStart - touchXEnd < -100)) {
-        menuOpen ? setMenuOpen(false) : setOpenHistory(true)
-      }
-    }
+    if (Math.abs(touchYStart - touchYEnd) < 100 && (!!kanji || !!word) && !!touchXEnd)
+      slide(touchXStart - touchXEnd > 100, touchXStart - touchXEnd < -100)
     setTouchXEnd(0)
     setTouchYEnd(0)
   }
 
   const handleScroll = (e) => {
+    if (e.target.scrollWidth > e.target.clientWidth) return
     const { deltaX, deltaY } = e
-    if (Math.abs(deltaY) < 10 && (!!kanji || !!word)) {
-      if (deltaX > 10) openHistory ? setOpenHistory(false) : setMenuOpen(true)
-      if (deltaX < -10) menuOpen ? setMenuOpen(false) : setOpenHistory(true)
+    if (Math.abs(deltaY) < 10 && Math.abs(deltaX) > 10 && (!!kanji || !!word) && !scrolledAsSlide) {
+      slide(deltaX > 10, deltaX < -10)
+      setScrolledAsSlide(true)
+      setTimeout(() => setScrolledAsSlide(false), 1000)
     }
   }
 
