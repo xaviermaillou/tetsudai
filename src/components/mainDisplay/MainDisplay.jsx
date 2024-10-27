@@ -149,7 +149,7 @@ const MainDisplay = (props) => {
                     />
                 </div>
                 {(!!!kanji && !!!word && !loading) &&
-                    <span>No data available</span>
+                    <span>Aucune donnée disponible</span>
                 }
             </div>
         </div>

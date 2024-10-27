@@ -15,7 +15,10 @@ const WordElement = (props) => {
 
     return (
         <div className="wordElement clickable" onClick={() => changeCurrentWordById(word.id)}>
-            {word.jukujikun ?
+            {!!sentenceGrammar ?
+                <div />
+                :
+                (word.jukujikun ?
                     <div className="wordElementJukujikun">
                         <div className="wordElementJukujikunMainCharacters">
                             {word.jukujikunAsMain ?
@@ -56,8 +59,8 @@ const WordElement = (props) => {
                                 }
                             </div>
                         ))}
-                    </div>
-                }
+                    </div>)
+            }
             <div className="wordElementDetails">
                 {sentenceGrammar ?
                     <div className="wordElementGrammar">

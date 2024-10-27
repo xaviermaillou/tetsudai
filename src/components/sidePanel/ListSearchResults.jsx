@@ -69,7 +69,7 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyKanjiSearch}</div>}
-                {(!!!kanjis && !noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">No data available</div>}
+                {(!!!kanjis && !noKanji && !loadingKanjiList) && <div className="noElementsFilteredIndicator">Aucune donnée disponible</div>}
             </div>
             <div id="vocabularyList" className={searchExecuted ?
                 (displayKanjis ?
@@ -102,7 +102,7 @@ const ListSearchResults = (props) => {
                     />
                 </div>
                 {(noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">{localDictionnary[language].emptyWordSearch}</div>}
-                {(!!!vocabulary && !noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">No data available</div>}
+                {(!!!vocabulary && !noWord && !loadingVocabularyList) && <div className="noElementsFilteredIndicator">Aucune donnée disponible</div>}
             </div>
             {false && <span className="tooltip">{localDictionnary[language].searchGlobalTip}</span>}
         </div>

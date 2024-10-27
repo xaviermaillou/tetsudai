@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useMemo } from "react"
 import WordElement from "./WordElement"
 import LanguageContext from "../../contexts/Language"
 import { localDictionnary } from "../../lib/dictionnary"
@@ -12,9 +12,9 @@ const SentenceElement = (props) => {
 
     const language = useContext(LanguageContext)
 
-    const firstFoundElement = element.foundElements[0]
+    const firstFoundElement = useMemo(() => element.foundElements[0], [element.foundElements])
 
-    const isNumeric = firstFoundElement.word.match(/^\d+$/)
+    const isNumeric = useMemo(() => firstFoundElement.word.match(/^\d+$/), [firstFoundElement.word])
 
     return (
         <div 
