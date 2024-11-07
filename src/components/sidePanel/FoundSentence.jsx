@@ -38,7 +38,7 @@ const FoundSentence = (props) => {
                 <span><Icon className="clickable" src={openSentence ? `/img/${imgPath}/less.png` : `/img/${imgPath}/plus.png`} alt={openSentence ? "close sentence" : "open sentence"} /></span>
             </div>
             <div id="searchSentence" className={openSentence ? "open" : ""}>
-                {pinnedSentence?.elements?.map((element, i) => (
+                {pinnedSentence?.map((element, i) => (
                     <SentenceElement
                         element={element}
                         word={word}

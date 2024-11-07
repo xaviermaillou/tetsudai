@@ -16,7 +16,6 @@ const MainDisplay = (props) => {
         sentences,
         loading,
         setOpenedHistory,
-        pinnedSentence,
         handleSearch,
         setSearchExecuted,
         elementFetched,
@@ -121,7 +120,6 @@ const MainDisplay = (props) => {
                             sentences={sentences}
                             changeCurrentKanjiById={(id) => handleKanjiChange(id)}
                             changeCurrentWordById={(id) => handleWordChange(id)}
-                            pinnedSentence={pinnedSentence}
                             handleSearch={handleSearch}
                             setSearchExecuted={setSearchExecuted}
                             referenceId={word.id}

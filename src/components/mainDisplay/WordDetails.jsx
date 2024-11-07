@@ -158,7 +158,6 @@ const Sentence = (props) => {
     const {
         sentence,
         referenceId,
-        pinnedSentence,
         handleSearch,
         setSearchExecuted,
         setMenuOpen,
@@ -174,7 +173,7 @@ const Sentence = (props) => {
     }
 
     return (
-        <div onClick={handleSentenceClick} className={`sentencesElement clickable${pinnedSentence?.id === sentence.id ? ' selected' : ''}`}>
+        <div onClick={handleSentenceClick} className={`sentencesElement clickable`}>
             <div className="sentence">
                 <div>
                     {sentence
@@ -199,7 +198,6 @@ export const WordDetails = (props) => {
         sentences,
         changeCurrentKanjiById,
         changeCurrentWordById,
-        pinnedSentence,
         handleSearch,
         setSearchExecuted,
         referenceId,
@@ -279,7 +277,6 @@ export const WordDetails = (props) => {
                                 <Sentence
                                     sentence={sentence}
                                     referenceId={referenceId}
-                                    pinnedSentence={pinnedSentence}
                                     handleSearch={handleSearch}
                                     setSearchExecuted={setSearchExecuted}
                                     setMenuOpen={setMenuOpen}

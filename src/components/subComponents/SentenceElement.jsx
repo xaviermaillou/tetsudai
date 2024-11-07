@@ -14,7 +14,7 @@ const SentenceElement = (props) => {
 
     const firstFoundElement = useMemo(() => element.foundElements[0], [element.foundElements])
 
-    const isNumeric = useMemo(() => firstFoundElement.word.match(/^\d+$/), [firstFoundElement.word])
+    const isNumeric = useMemo(() => firstFoundElement.matching.match(/^\d+$/), [firstFoundElement.matching])
 
     return (
         <div 
@@ -46,13 +46,13 @@ const SentenceElement = (props) => {
             </div>
             {isNumeric ?
                 <span className="sentenceElementUsedNumber">
-                    {firstFoundElement.word.split("").map((number) => (
+                    {firstFoundElement.matching.split("").map((number) => (
                         <span>{number}</span>
                     ))}
                 </span>
                 :
                 <span className="sentenceElementUsedWord">
-                    {firstFoundElement.word}
+                    {firstFoundElement.matching}
                 </span>
             }
         </div>

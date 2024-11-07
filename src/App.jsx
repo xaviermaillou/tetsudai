@@ -7,7 +7,6 @@ import SideBar from './components/SideBar'
 import {
   fetchKanjiList,
   fetchVocabularyList,
-  fetchSentenceData,
   fetchKanji,
   fetchWord,
 } from './request'
@@ -73,6 +72,9 @@ function App() {
   const [kanji, setKanji] = useState(null)
   const [word, setWord] = useState(null)
 
+   // Pinned sentence
+   const [pinnedSentence, setPinnedSentence] = useState()
+
   const [menuOpen, setMenuOpen] = useState(!params.element && !params.id)
 
   const changeCurrentKanjiById = useCallback(async (id) => {
@@ -129,9 +131,7 @@ function App() {
     )
     setVocabularyList(resultVocabulary.results)
     if (resultVocabulary.sentence) {
-      fetchSentence({
-        elements: resultVocabulary.sentence
-      })
+      setPinnedSentence(resultVocabulary.sentence)
     }
   }, [
     level,
@@ -243,15 +243,6 @@ function App() {
     word
   ])
 
-  // Pinned sentence
-  const [pinnedSentence, setPinnedSentence] = useState()
-
-  // Fetch sentence data
-  const fetchSentence = async (sentence) => {
-    const resultSentence = await fetchSentenceData(sentence)
-    setPinnedSentence(resultSentence)
-  }
-
   const [openHistory, setOpenHistory] = useState(false)
 
   const [touchXStart, setTouchXStart] = useState(0)
@@ -323,7 +314,6 @@ function App() {
           word={word}
           changeCurrentWordById={(id) => navigate(`/word/${id}`)}
           sentences={sentencesList}
-          pinnedSentence={pinnedSentence}
           handleSearch={handleSearch}
           setSearchExecuted={setSearchExecuted}
           elementFetched={elementFetched}
